@@ -4,7 +4,7 @@ object Dependencies {
 
   val test = Seq(
     "uk.gov.hmrc"                %% "webdriver-factory"       % "0.12.0" % Test,
-    "org.scalatest"              %% "scalatest"               % "3.1.14" % Test,
+    "org.scalatest"              %% "scalatest"               % "3.1.4" % Test,
     "io.cucumber"                %% "cucumber-scala"          % "6.1.1" % Test,
     "io.cucumber"                %  "cucumber-junit"          % "6.1.1" % Test,
     "junit"                      %  "junit"                   % "4.12"  % Test,

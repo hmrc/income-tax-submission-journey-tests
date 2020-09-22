@@ -3,6 +3,10 @@
 ENV=${1:-local}
 BROWSER=${2:-chrome}
 
+echo "Starting ZAP Daemon..."
+./run_zap_daemon.sh
+sleep 10
+
 if [ "$BROWSER" = "chrome" ]; then
     DRIVER="-Dwebdriver.chrome.driver=/usr/local/bin/chromedriver"
 elif [ "$BROWSER" = "firefox" ]; then

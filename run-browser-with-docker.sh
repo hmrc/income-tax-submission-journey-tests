@@ -21,7 +21,7 @@ port_mappings=$(sm -s | grep PASS | awk '{ print $12"->"$12 }' | paste -sd "," -
 port_mappings="$port_mappings,11000->11000"
 
 # Alternatively, port_mappings can be explicitly initialised as below:
-#port_mappings="9032->9032,9250->9250,9080->9080"
+#port_mappings="9302->9302,9250->9250,9080->9080"
 
 #######################################
 # Defines the BROWSER variable from the argument passed to the script

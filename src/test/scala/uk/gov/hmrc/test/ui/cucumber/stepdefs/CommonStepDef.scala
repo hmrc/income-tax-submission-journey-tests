@@ -14,11 +14,23 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import org.scalatest.Matchers
+import uk.gov.hmrc.test.ui.pages.CommonPage
 
-trait BasePage extends Matchers {
-  val url: String
+class CommonStepDef extends BaseStepDef {
+
+  Given("""^an individual user navigates to the Income Tax Submission start page$""") { () =>
+    driver.navigate().to(CommonPage.url + "/individual/start")
+    eventually {
+      driver.getTitle should be(CommonPage.title)
+    }
+  }
+
+  Given("""^an agent navigates to the Income Tax Submission start page$""") { () =>
+    driver.navigate().to(CommonPage.url + "/agent/start")
+    eventually {
+      driver.getTitle should be(CommonPage.title)
+    }
+  }
 }
-

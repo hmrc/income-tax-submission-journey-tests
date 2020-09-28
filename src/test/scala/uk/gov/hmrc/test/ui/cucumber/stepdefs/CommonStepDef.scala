@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import uk.gov.hmrc.test.ui.pages.CommonPage
+import org.openqa.selenium.By
 
 class CommonStepDef extends BaseStepDef {
 
@@ -32,5 +33,17 @@ class CommonStepDef extends BaseStepDef {
     eventually {
       driver.getTitle should be(CommonPage.title)
     }
+  }
+
+  When("""^I click the provide updates button$""") { () =>
+    driver.findElement(By.cssSelector("#main-content > div > div > main > div > a")).click()
+  }
+
+  Then("""^I should be on the individual overview page$""") { () =>
+    driver.getCurrentUrl should be (CommonPage.url + "/individual/index")
+  }
+
+  Then("""^I should be on the agent overview page$""") { () =>
+    driver.getCurrentUrl should be (CommonPage.url + "/agent/index")
   }
 }

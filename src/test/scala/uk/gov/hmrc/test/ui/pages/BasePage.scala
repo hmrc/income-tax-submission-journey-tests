@@ -16,9 +16,50 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+import java.util
+
+import io.cucumber.datatable.DataTable
 import org.scalatest.Matchers
 
 trait BasePage extends Matchers {
-  val url: String
-}
+  val url: String = ""
 
+  var redirectUrl: String = ""
+  var credentialStrength: String = ""
+  var confidenceLevel: String = ""
+  var affinityGroup: String = ""
+  var niNumber: String = ""
+  var enrolmentKeyOne: String = ""
+  var identifierNameOne: String = ""
+  var identifierValueOne: String = ""
+  var enrolmentKeyTwo: String = ""
+  var identifierNameTwo: String = ""
+  var identifierValueTwo: String = ""
+
+
+  def useDataTable(data: DataTable): Unit = {
+    var firstColumn: String = ""
+    val secondColumn: Int = 1
+    val tableContent: util.List[util.Map[String, String]] = data.asMaps(classOf[String], classOf[String])
+
+    def getColumnValue(row: Int) = data.row(row).get(secondColumn)
+
+    for (row <- 0 to tableContent.toArray().length) {
+      firstColumn = data.row(row).get(0)
+      firstColumn match {
+        case "Redirect url" => redirectUrl = getColumnValue(row)
+        case "Credential Strength" => credentialStrength = getColumnValue(row)
+        case "Confidence Level" => confidenceLevel = getColumnValue(row)
+        case "Affinity Group" => affinityGroup = getColumnValue(row)
+        case "Nino" => niNumber = getColumnValue(row)
+        case "Enrolment Key 1" => enrolmentKeyOne = getColumnValue(row)
+        case "Identifier Name 1" => identifierNameOne = getColumnValue(row)
+        case "Identifier Value 1" => identifierValueOne = getColumnValue(row)
+        case "Enrolment Key 2" => enrolmentKeyTwo = getColumnValue(row)
+        case "Identifier Name 2" => identifierNameTwo = getColumnValue(row)
+        case "Identifier Value 2" => identifierValueTwo = getColumnValue(row)
+        case _ =>
+      }
+    }
+  }
+}

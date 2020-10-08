@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 
 object CommonPage extends BasePage {
-  val url: String = TestConfiguration.url("income-tax-submission-frontend")
+  override val url: String = TestConfiguration.url("income-tax-submission-frontend")
   val title = "Income Tax Submission"
 
 }

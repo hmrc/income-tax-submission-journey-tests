@@ -21,29 +21,16 @@ import org.openqa.selenium.By
 
 class CommonStepDef extends BaseStepDef {
 
-  Given("""^an individual user navigates to the Income Tax Submission start page$""") { () =>
-    driver.navigate().to(CommonPage.url + "/individual/start")
-    eventually {
-      driver.getTitle should be(CommonPage.title)
-    }
-  }
-
-  Given("""^an agent navigates to the Income Tax Submission start page$""") { () =>
-    driver.navigate().to(CommonPage.url + "/agent/start")
-    eventually {
-      driver.getTitle should be(CommonPage.title)
-    }
-  }
-
-  When("""^I click the provide updates button$""") { () =>
+  When("""^the user click the provide updates button$""") { () =>
     driver.findElement(By.cssSelector("#main-content > div > div > main > div > a")).click()
   }
 
-  Then("""^I should be on the individual overview page$""") { () =>
-    driver.getCurrentUrl should be (CommonPage.url + "/individual/index")
+  Then("""^the user will redirect to the Income Tax Submission start page$""") { () =>
+    driver.getCurrentUrl should be (CommonPage.url + "/start")
   }
 
-  Then("""^I should be on the agent overview page$""") { () =>
-    driver.getCurrentUrl should be (CommonPage.url + "/agent/index")
+  Then("""^the user should be on the overview page$""") { () =>
+    driver.getCurrentUrl should be (CommonPage.url + "/index")
   }
+
 }

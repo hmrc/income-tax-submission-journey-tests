@@ -21,7 +21,7 @@ import org.openqa.selenium.By
 
 class CommonStepDef extends BaseStepDef {
 
-  When("""^the user click the provide updates button$""") { () =>
+  When("""^the user clicks the provide updates button$""") { () =>
     driver.findElement(By.cssSelector("#main-content > div > div > main > div > a")).click()
   }
 
@@ -32,5 +32,15 @@ class CommonStepDef extends BaseStepDef {
   Then("""^the user should be on the overview page$""") { () =>
     driver.getCurrentUrl should be (CommonPage.url + "/view")
   }
+
+  Given ("""^the user clicks on the dividends link$^""") { () =>
+    driver.findElement(By.cssSelector(
+      "#main-content > div > div > main > div > ol > li:nth-child(1) > ol > li:nth-child(4) > span.app-task-list__task-name > a\n"
+    )).click()
+  }
+
+
+
+
 
 }

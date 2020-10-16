@@ -21,10 +21,10 @@ Feature: End to End Income Tax Submission feature
     Given the user clicks on the dividends link
     Then the user should be on the received UK dividends page
     When the user clicks the no radio button
-    And clicks continue
+    And the user clicks the continue button
     Then the user should be on the authorised unit trusts, investment companies/trusts page
     When the user clicks the no radio button
-    And clicks continue
+    And the user clicks the continue button
     Then the user should be on the dividends check your answers page
     When the user clicks the save and continue button
     Then the user should be on the overview page
@@ -47,16 +47,16 @@ Feature: End to End Income Tax Submission feature
     Given the user clicks on the dividends link
     Then the user should be on the received UK dividends page
     When the user clicks the yes radio button
-    And clicks continue
+    And the user clicks the continue button
     Then the user should be on the UK dividends amount page
-    When the user enters a value of £1000
-    And clicks continue
+    When the user selects the UK dividends amount field and enters a value of £1000
+    And the user clicks the continue button
     Then the user should be on the authorised unit trusts, investment companies/trusts page
     When the user clicks the yes radio button
-    And clicks continue
+    And the user clicks the continue button
     Then the user should be on the authorised unit trusts, investment companies/trusts amount page
-    When the user enters a value of £500
-    And clicks continue
+    When the user selects the UK other dividends amount field and enters a value of £500
+    And the user clicks the continue button
     Then the user should be on the dividends check your answers page
     When the user clicks the save and continue button
     Then the user should be on the overview page

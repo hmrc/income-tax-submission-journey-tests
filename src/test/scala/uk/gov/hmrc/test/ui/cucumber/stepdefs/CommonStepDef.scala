@@ -21,14 +21,6 @@ import org.openqa.selenium.By
 
 class CommonStepDef extends BaseStepDef {
 
-  And ("""^clicks continue$"""){ () =>
-    driver.findElement(By.cssSelector("#main-content > div > div > form > button.govuk-button.govuk-\!-margin-right-1")).click()
-  }
-
-  When("""^the user clicks the provide updates button$""") { () =>
-    driver.findElement(By.cssSelector("#main-content > div > div > main > div > a")).click()
-  }
-
   Then("""^the user will redirect to the Income Tax Submission start page$""") { () =>
     driver.getCurrentUrl should be (CommonPage.url + "/start")
   }
@@ -37,50 +29,24 @@ class CommonStepDef extends BaseStepDef {
     driver.getCurrentUrl should be (CommonPage.url + "/view")
   }
 
-  Given ("""^the user clicks on the dividends link$^""") { () =>
-    driver.findElement(By.cssSelector(
-      "#main-content > div > div > main > div > ol > li:nth-child(1) > ol > li:nth-child(4) > span.app-task-list__task-name > a"
-    )).click()
+  Given ("""^the user clicks on the (.*) link$^""") { linkName: String =>
+    CommonPage.clickOnLink(linkName)
   }
 
   Then("""^the user should be on the received UK dividends page$""") { () =>
     driver.getCurrentUrl should be(CommonPage.url + "/dividends/dividend-uk-status")
   }
 
-  Then("""^the user should be on the UK dividends amount page$""") { () =>
-    driver.getCurrentUrl should be(CommonPage.url + "/dividends/dividend-uk-amount")
+  When ("""^the user clicks the (.*) radio button$""") { radioButtonBoolean: String =>
+    CommonPage.clickOnRadioButton(radioButtonBoolean)
   }
 
-  When ("""^the user clicks the no radio button$""") { () =>
-    driver.findElement(By.id("dividend-uk-status-2")).click()
+  When ("""^the user clicks the (.*) button$""") { buttonTitle: String =>
+    CommonPage.clickOnButton(buttonTitle)
   }
 
-  When ("""^the user clicks the yes radio button$""") { () =>
-    driver.findElement(By.id("dividend-uk-status")).click()
-  }
-
-  Then ("""^the user should be on the authorised unit trusts, investment companies/trusts page$""") { () =>
-    driver.getCurrentUrl should be (CommonPage.url + "/dividends/other-dividend-status")
-  }
-
-  Then ("""^the user should be on the authorised unit trusts, investment companies/trusts amount page$""") { () =>
-    driver.getCurrentUrl should be (CommonPage.url + "/dividends/other-dividend-amount")
-  }
-
-  Then ("""^the user should be on the dividends check your answers page$""") { () =>
-    driver.getCurrentUrl should be (CommonPage.url + "/dividends/summary")
-  }
-
-  When ("""^the user clicks the save and continue button$""") { () =>
-    driver.findElement(By.cssSelector("#main-content > div > div > form > button.govuk-button.govuk-\!-margin-right-1")).click()
-  }
-
-  When ("""^the user enters a value of £1000$""") { () =>
-    driver.findElement(By.id("dividend-uk-amount")).sendKeys("1000")
-  }
-
-  When ("""^the user enters a value of £500$""") { () =>
-    driver.findElement(By.id("other-dividend-amount")).sendKeys("500")
+  When ("""^the user selects the (.*) field and enters a value of £(.*)$""") { (valueTextBox: String, value: String) =>
+    CommonPage.enterValue(valueTextBox,value)
   }
 
 }

@@ -10,11 +10,11 @@ trait CommonElements extends BasePage with Matchers{
 
   val elements: Map[String, By] = Map(
     //Common Elements
-    "yes"                  -> By.id("dividend-uk-status"),
-    "no"                   -> By.id("dividend-uk-status-2"),
+    "yes"                  -> By.id("yes_no_yes"),
+    "no"                   -> By.id("yes_no_no"),
     "save and continue"    -> By.cssSelector("#main-content > div > div > form > button.govuk-button.govuk-\!-margin-right-1"),
     "provide updates"      -> By.cssSelector("#main-content > div > div > main > div > a"),
-    "continue"             -> By.cssSelector("#main-content > div > div > form > button.govuk-button.govuk-\!-margin-right-1"),
+    "continue"             -> By.id("continue"),
 
     //Dividends Elements
     "dividends"                 -> By.cssSelector("#main-content > div > div > main > div > ol > li:nth-child(1) > ol > li:nth-child(4) > span.app-task-list__task-name > a"),

@@ -6,7 +6,7 @@ import org.openqa.selenium.By
 class DividendsStepDef extends BaseStepDef {
 
   Then("""^the user should be on the received UK dividends page$""") { () =>
-    driver.getCurrentUrl should be(CommonPage.url + "/dividends/dividend-uk-status")
+    driver.getCurrentUrl should be(CommonPage.url + "/dividends/uk-dividends")
   }
 
   Then("""^the user should be on the UK dividends amount page$""") { () =>
@@ -14,7 +14,7 @@ class DividendsStepDef extends BaseStepDef {
   }
 
   Then ("""^the user should be on the authorised unit trusts, investment companies/trusts page$""") { () =>
-    driver.getCurrentUrl should be (CommonPage.url + "/dividends/other-dividend-status")
+    driver.getCurrentUrl should be (CommonPage.url + "/dividends/other-dividends")
   }
 
   Then ("""^the user should be on the authorised unit trusts, investment companies/trusts amount page$""") { () =>

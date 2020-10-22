@@ -30,7 +30,7 @@ class CommonStepDef extends BaseStepDef {
   }
 
   Then("""^the user should be on the overview page$""") { () =>
-    driver.getCurrentUrl should be (CommonPage.url + "/index")
+    driver.getCurrentUrl should be (CommonPage.url + "/view")
   }
 
 }

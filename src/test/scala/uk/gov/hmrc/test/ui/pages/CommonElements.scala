@@ -18,8 +18,8 @@ trait CommonElements extends BasePage with Matchers{
 
     //Dividends Elements
     "dividends"                 -> By.cssSelector("#main-content > div > div > main > div > ol > li:nth-child(1) > ol > li:nth-child(4) > span.app-task-list__task-name > a"),
-    "UK dividends amount"       -> By.id("dividend-uk-amount") ,
-    "UK other dividends amount" -> By.id("other-dividend-uk-amount")
+    "UK dividends amount"       -> By.id("amount"),
+    "UK other dividends amount" -> By.id("amount")
 
     //Interest Elements
 

@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import uk.gov.hmrc.test.ui.pages.CommonPage
-import org.openqa.selenium.By
 
 class CommonStepDef extends BaseStepDef {
 
@@ -29,15 +28,11 @@ class CommonStepDef extends BaseStepDef {
     driver.getCurrentUrl should be (CommonPage.url + "/view")
   }
 
-  Given ("""^the user clicks on the (.*) link$^""") { linkName: String =>
+  Given ("""^the user clicks on the (.*) link$""") { linkName: String =>
     CommonPage.clickOnLink(linkName)
   }
 
-  Then("""^the user should be on the received UK dividends page$""") { () =>
-    driver.getCurrentUrl should be(CommonPage.url + "/dividends/dividend-uk-status")
-  }
-
-  When ("""^the user clicks the (.*) radio button$""") { radioButtonBoolean: String =>
+  When ("""^the user selects the (.*) radio button$""") { radioButtonBoolean: String =>
     CommonPage.clickOnRadioButton(radioButtonBoolean)
   }
 

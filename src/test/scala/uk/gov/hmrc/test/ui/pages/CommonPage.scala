@@ -16,10 +16,32 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 
-object CommonPage extends BasePage {
+object CommonPage extends BasePage with CommonElements {
   override val url: String = TestConfiguration.url("income-tax-submission-frontend")
   val title = "Income Tax Submission"
+
+  def clickOnLink(linkName: String): Unit = {
+    val selector: By = load(linkName)
+    clickOn(selector)
+  }
+
+  def clickOnRadioButton(radioButtonBoolean: String): Unit = {
+    val selector: By = load(radioButtonBoolean)
+    clickOn(selector)
+  }
+
+  def enterValue(valueTextBox: String,value:String): Unit = {
+    val selector: By = load(valueTextBox)
+    sendKeys(selector, value)
+  }
+
+  def clickOnButton(buttonTitle:String): Unit = {
+    val selector: By = load(buttonTitle)
+    clickOn(selector)
+  }
+
 
 }

@@ -17,13 +17,8 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import uk.gov.hmrc.test.ui.pages.CommonPage
-import org.openqa.selenium.By
 
 class CommonStepDef extends BaseStepDef {
-
-  When("""^the user click the provide updates button$""") { () =>
-    driver.findElement(By.cssSelector("#main-content > div > div > main > div > a")).click()
-  }
 
   Then("""^the user will redirect to the Income Tax Submission start page$""") { () =>
     driver.getCurrentUrl should be (CommonPage.url + "/start")
@@ -31,6 +26,22 @@ class CommonStepDef extends BaseStepDef {
 
   Then("""^the user should be on the overview page$""") { () =>
     driver.getCurrentUrl should be (CommonPage.url + "/view")
+  }
+
+  Given ("""^the user clicks on the (.*) link$""") { linkName: String =>
+    CommonPage.clickOnLink(linkName)
+  }
+
+  When ("""^the user selects the (.*) radio button$""") { radioButtonBoolean: String =>
+    CommonPage.clickOnRadioButton(radioButtonBoolean)
+  }
+
+  When ("""^the user clicks the (.*) button$""") { buttonTitle: String =>
+    CommonPage.clickOnButton(buttonTitle)
+  }
+
+  When ("""^the user selects the (.*) field and enters a value of £(.*)$""") { (valueTextBox: String, value: String) =>
+    CommonPage.enterValue(valueTextBox,value)
   }
 
 }

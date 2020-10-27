@@ -14,19 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.pages
 
-import org.scalatest.concurrent.Eventually
-import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import io.cucumber.scala.{EN, ScalaDsl}
-import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.webdriver.SingletonDriver
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
 
-import scala.util.Try
+object DividendsPage {
 
-trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers{
+  lazy val url: String = TestConfiguration.url("personal-income-tax-submission-frontend")
 
-  sys.addShutdownHook {
-    Try(SingletonDriver.closeInstance)
-  }
 }

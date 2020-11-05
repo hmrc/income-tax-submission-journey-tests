@@ -7,7 +7,7 @@ Feature: End to End Income Tax Submission feature
 
   Scenario: Minimal flow - Individual User - Dividends
     When the user logs into the service with the following details
-      |Redirect url       |/start           |
+      |Redirect url       |/2020/start      |
       |Credential Strength|strong           |
       |Confidence Level   |200              |
       |Affinity Group     |Individual       |
@@ -31,16 +31,16 @@ Feature: End to End Income Tax Submission feature
 
   Scenario: Maximal flow - Agent User - Dividends
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/agent-access/1234567890 |
-      |Credential Strength|weak                               |
-      |Confidence Level   |50                                 |
-      |Affinity Group     |Agent                              |
-      |Enrolment Key 1    |HMRC-MTD-IT                        |
-      |Identifier Name 1  |MTDITID                            |
-      |Identifier Value 1 |1234567890                         |
-      |Enrolment Key 2    |HMRC-AS-AGENT                      |
-      |Identifier Name 2  |AgentReferenceNumber               |
-      |Identifier Value 2 |XARN1234567                        |
+      |Redirect url       |/test-only/2020/agent-access/1234567890 |
+      |Credential Strength|weak                                    |
+      |Confidence Level   |50                                      |
+      |Affinity Group     |Agent                                   |
+      |Enrolment Key 1    |HMRC-MTD-IT                             |
+      |Identifier Name 1  |MTDITID                                 |
+      |Identifier Value 1 |1234567890                              |
+      |Enrolment Key 2    |HMRC-AS-AGENT                           |
+      |Identifier Name 2  |AgentReferenceNumber                    |
+      |Identifier Value 2 |XARN1234567                             |
     Then the user will redirect to the Income Tax Submission start page
     When the user clicks the provide updates button
     Then the user should be on the overview page

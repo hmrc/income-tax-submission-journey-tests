@@ -21,11 +21,11 @@ import uk.gov.hmrc.test.ui.pages.CommonPage
 class CommonStepDef extends BaseStepDef {
 
   Then("""^the user will redirect to the Income Tax Submission start page$""") { () =>
-    driver.getCurrentUrl should be (CommonPage.url + "/start")
+    driver.getCurrentUrl should be (CommonPage.url + "/2020/start")
   }
 
   Then("""^the user should be on the overview page$""") { () =>
-    driver.getCurrentUrl should be (CommonPage.url + "/view")
+    driver.getCurrentUrl should be (CommonPage.url + "/2020/view")
   }
 
   Given ("""^the user clicks on the (.*) link$""") { linkName: String =>
@@ -41,7 +41,7 @@ class CommonStepDef extends BaseStepDef {
   }
 
   When ("""^the user selects the (.*) field and enters a value of £(.*)$""") { (valueTextBox: String, value: String) =>
-    CommonPage.enterValue(valueTextBox,value)
+    CommonPage.enterValue(valueTextBox, value)
   }
 
 }

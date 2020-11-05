@@ -16,28 +16,28 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import uk.gov.hmrc.test.ui.pages.{CommonPage, DividendsPage}
+import uk.gov.hmrc.test.ui.pages.DividendsPage
 
 class DividendsStepDef extends BaseStepDef {
 
   Then("""^the user should be on the received UK dividends page$""") { () =>
-    driver.getCurrentUrl should be(DividendsPage.url + "/dividends/uk-dividends")
+    driver.getCurrentUrl should be(DividendsPage.url + "/2020/dividends/uk-dividends")
   }
 
   Then("""^the user should be on the UK dividends amount page$""") { () =>
-    driver.getCurrentUrl should be(DividendsPage.url + "/dividends/uk-dividends-amount")
+    driver.getCurrentUrl should be(DividendsPage.url + "/2020/dividends/uk-dividends-amount")
   }
 
   Then ("""^the user should be on the authorised unit trusts, investment companies/trusts page$""") { () =>
-    driver.getCurrentUrl should be (DividendsPage.url + "/dividends/other-dividends")
+    driver.getCurrentUrl should be (DividendsPage.url + "/2020/dividends/other-dividends")
   }
 
   Then ("""^the user should be on the authorised unit trusts, investment companies/trusts amount page$""") { () =>
-    driver.getCurrentUrl should be (DividendsPage.url + "/dividends/other-dividends-amount")
+    driver.getCurrentUrl should be (DividendsPage.url + "/2020/dividends/other-dividends-amount")
   }
 
   Then ("""^the user should be on the dividends check your answers page$""") { () =>
-    driver.getCurrentUrl should be (DividendsPage.url + "/dividends/check-your-answers")
+    driver.getCurrentUrl should be (DividendsPage.url + "/2020/dividends/check-your-answers")
   }
 
 }

@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import uk.gov.hmrc.test.ui.pages.DividendsPage
+import uk.gov.hmrc.test.ui.pages.{CommonElements, DividendsPage}
 
 class DividendsStepDef extends BaseStepDef {
 

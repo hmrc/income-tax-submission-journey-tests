@@ -17,8 +17,8 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BasePage, CommonPage}
 import uk.gov.hmrc.test.ui.pages.AuthLoginPage._
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BasePage, CommonPage}
 
 class AuthStepDef extends BasePage with BaseStepDef {
 

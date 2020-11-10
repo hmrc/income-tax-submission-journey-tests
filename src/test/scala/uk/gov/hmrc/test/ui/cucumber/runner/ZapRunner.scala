@@ -16,8 +16,7 @@
 
 package uk.gov.hmrc.test.ui.cucumber.runner
 
-import io.cucumber.junit.Cucumber
-import io.cucumber.junit.CucumberOptions
+import io.cucumber.junit.{Cucumber, CucumberOptions}
 import org.junit.runner.RunWith
 
 @RunWith(classOf[Cucumber])

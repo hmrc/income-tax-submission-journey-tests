@@ -60,3 +60,21 @@ Feature: End to End Income Tax Submission feature
     Then the user should be on the dividends check your answers page
     When the user clicks the save and continue button
 #    Then the user should be on the overview page
+
+  Scenario: Returing flow - Individual User - Dividends
+    When the user logs into the service with the following details
+          |Redirect url       |/2020/start      |
+          |Credential Strength|strong           |
+          |Confidence Level   |200              |
+          |Affinity Group     |Individual       |
+          |Nino               |AA123456B        |
+          |Enrolment Key 1    |HMRC-MTD-IT      |
+          |Identifier Name 1  |MTDITID          |
+          |Identifier Value 1 |1234567891       |
+    Then the user will redirect to the Income Tax Submission start page
+    When the user clicks the provide updates button
+    Then the user should be on the overview page
+    Given the user clicks on the dividends link
+    Then the user should be on the dividends check your answers page
+    When the user clicks the save and continue button
+#    Then the user should be on the overview page

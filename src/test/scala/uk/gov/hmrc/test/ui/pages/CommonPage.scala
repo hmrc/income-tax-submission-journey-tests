@@ -43,5 +43,4 @@ object CommonPage extends BasePage with CommonElements {
     clickOn(selector)
   }
 
-
 }

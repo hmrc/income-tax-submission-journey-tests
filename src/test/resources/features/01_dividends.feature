@@ -27,7 +27,7 @@ Feature: End to End Income Tax Submission feature
     And the user clicks the continue button
     Then the user should be on the dividends check your answers page
     When the user clicks the save and continue button
-#    Then the user should be on the overview page
+    Then the user should be on the overview page
 
   Scenario: Maximal flow - Agent User - Dividends
     When the user logs into the service with the following details
@@ -59,9 +59,9 @@ Feature: End to End Income Tax Submission feature
     And the user clicks the continue button
     Then the user should be on the dividends check your answers page
     When the user clicks the save and continue button
-#    Then the user should be on the overview page
+    Then the user should be on the overview page
 
-  Scenario: Returing flow - Individual User - Dividends
+  Scenario: Returning flow - Individual User - Dividends
     When the user logs into the service with the following details
           |Redirect url       |/2020/start      |
           |Credential Strength|strong           |
@@ -77,4 +77,4 @@ Feature: End to End Income Tax Submission feature
     Given the user clicks on the dividends link
     Then the user should be on the dividends check your answers page
     When the user clicks the save and continue button
-#    Then the user should be on the overview page
+    Then the user should be on the overview page

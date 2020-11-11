@@ -37,7 +37,7 @@ class DividendsStepDef extends BaseStepDef {
   }
 
   Then ("""^the user should be on the dividends check your answers page$""") { () =>
-    driver.getCurrentUrl should be (DividendsPage.url + "/2020/dividends/check-your-answers")
+    driver.getCurrentUrl should be(DividendsPage.url + "/2020/dividends/check-your-answers")
   }
 
 }

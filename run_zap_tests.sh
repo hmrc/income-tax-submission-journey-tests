@@ -20,3 +20,4 @@ fi
 sh insert-data.sh
 sbt -Dbrowser=$BROWSER -Denvironment=$ENV $DRIVER -Dzap.proxy=true "testOnly uk.gov.hmrc.test.ui.cucumber.runner.ZapRunner"
 sbt "testOnly uk.gov.hmrc.test.ui.ZapSpec"
+curl -X DELETE http://localhost:9303/setup/all-data

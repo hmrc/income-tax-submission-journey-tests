@@ -9,6 +9,6 @@ elif [ "$BROWSER" = "firefox" ]; then
     DRIVER="-Dwebdriver.gecko.driver=/usr/local/bin/geckodriver"
 fi
 
-sh insert-data.sh
+sh insert_data.sh
 sbt -Dbrowser=$BROWSER -Denvironment=$ENV $DRIVER "testOnly uk.gov.hmrc.test.ui.cucumber.runner.Runner"
 curl -X DELETE http://localhost:9303/setup/all-data

@@ -36,6 +36,22 @@ class DividendsStepDef extends BaseStepDef {
     driver.getCurrentUrl should be (DividendsPage.url + "/2020/dividends/other-dividends-amount")
   }
 
+  Then("""^the user should be on the received UK dividends page in edit mode$""") { () =>
+    driver.getCurrentUrl should be(DividendsPage.url + "/2020/dividends/uk-dividends?isEditMode=true")
+  }
+
+  Then("""^the user should be on the UK dividends amount page in edit mode$""") { () =>
+    driver.getCurrentUrl should be(DividendsPage.url + "/2020/dividends/uk-dividends-amount?isEditMode=true")
+  }
+
+  Then ("""^the user should be on the authorised unit trusts, investment companies/trusts page in edit mode$""") { () =>
+    driver.getCurrentUrl should be (DividendsPage.url + "/2020/dividends/other-dividends?isEditMode=true")
+  }
+
+  Then ("""^the user should be on the authorised unit trusts, investment companies/trusts amount page in edit mode$""") { () =>
+    driver.getCurrentUrl should be (DividendsPage.url + "/2020/dividends/other-dividends-amount?isEditMode=true")
+  }
+
   Then ("""^the user should be on the dividends check your answers page$""") { () =>
     driver.getCurrentUrl should be(DividendsPage.url + "/2020/dividends/check-your-answers")
   }

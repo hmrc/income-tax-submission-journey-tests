@@ -37,17 +37,6 @@ http://localhost:9303/setup/data
 
 curl -X POST -H "Content-Type: application/json" \
     -d '{
-	"uri": "/income-tax/nino/1234567890/income-source/dividends/annual/2020",
-	"method":"POST",
-	"status":200,
-	"response": {
-	  "string": "ok"
-	}
-}' \
-http://localhost:9303/setup/data
-
-curl -X POST -H "Content-Type: application/json" \
-    -d '{
 	"uri": "/income-tax/nino/1234567891/income-source/dividends/annual/2020",
 	"method":"POST",
 	"status":200,

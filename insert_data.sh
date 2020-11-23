@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 curl -X POST -H "Content-Type: application/json" \
     -d '{
-	"uri": "/income-tax/nino/1234567891/income-source/dividends/annual/2020",
+	"uri": "/income-tax/nino/AA000001A/income-source/dividends/annual/2020",
 	"method":"GET",
 	"status":200,
 	"response": {
@@ -13,7 +13,7 @@ http://localhost:9303/setup/data
 
 curl -X POST -H "Content-Type: application/json" \
     -d '{
-	"uri": "/income-tax/nino/1234567892/income-source/dividends/annual/2020",
+	"uri": "/income-tax/nino/AA000002A/income-source/dividends/annual/2020",
 	"method":"GET",
 	"status":200,
 	"response": {
@@ -25,7 +25,7 @@ http://localhost:9303/setup/data
 
 curl -X POST -H "Content-Type: application/json" \
     -d '{
-	"uri": "/income-tax/nino/1234567893/income-source/dividends/annual/2020",
+	"uri": "/income-tax/nino/AA000003A/income-source/dividends/annual/2020",
 	"method":"GET",
 	"status":200,
 	"response": {
@@ -37,7 +37,7 @@ http://localhost:9303/setup/data
 
 curl -X POST -H "Content-Type: application/json" \
     -d '{
-	"uri": "/income-tax/nino/1234567891/income-source/dividends/annual/2020",
+	"uri": "/income-tax/nino/AA000001A/income-source/dividends/annual/2020",
 	"method":"POST",
 	"status":200,
 	"response": {
@@ -48,7 +48,7 @@ http://localhost:9303/setup/data
 
 curl -X POST -H "Content-Type: application/json" \
     -d '{
-	"uri": "/income-tax/nino/1234567892/income-source/dividends/annual/2020",
+	"uri": "/income-tax/nino/AA000002A/income-source/dividends/annual/2020",
 	"method":"POST",
 	"status":200,
 	"response": {
@@ -59,7 +59,7 @@ http://localhost:9303/setup/data
 
 curl -X POST -H "Content-Type: application/json" \
     -d '{
-	"uri": "/income-tax/nino/1234567893/income-source/dividends/annual/2020",
+	"uri": "/income-tax/nino/AA000003A/income-source/dividends/annual/2020",
 	"method":"POST",
 	"status":200,
 	"response": {

@@ -1,20 +1,20 @@
 @MVP @ZAP
 
-Feature: End to End Income Tax Submission feature
+Feature: Dividends Journeys - Income Tax Submission
 
   Background:
     Given the user navigates to the auth login page
 
   Scenario: Minimal flow - Individual User - Dividends
     When the user logs into the service with the following details
-      |Redirect url       |/2020/start      |
-      |Credential Strength|strong           |
-      |Confidence Level   |200              |
-      |Affinity Group     |Individual       |
-      |Nino               |AA123456A        |
-      |Enrolment Key 1    |HMRC-MTD-IT      |
-      |Identifier Name 1  |MTDITID          |
-      |Identifier Value 1 |1234567890       |
+      |Redirect url       |/test-only/2020/additional-parameters?NINO=AA123456A |
+      |Credential Strength|strong                                               |
+      |Confidence Level   |200                                                  |
+      |Affinity Group     |Individual                                           |
+      |Nino               |AA123456A                                            |
+      |Enrolment Key 1    |HMRC-MTD-IT                                          |
+      |Identifier Name 1  |MTDITID                                              |
+      |Identifier Value 1 |1234567890                                           |
     Then the user will redirect to the Income Tax Submission start page
     When the user clicks the provide updates button
     Then the user should be on the overview page
@@ -42,7 +42,8 @@ Feature: End to End Income Tax Submission feature
       |Identifier Name 2  |AgentReferenceNumber                    |
       |Identifier Value 2 |XARN1234567                             |
     Then the user will redirect to the Income Tax Submission start page
-    When the user clicks the provide updates button
+    When the client nino is passed into session
+    And the user clicks the provide updates button
     Then the user should be on the overview page
     When the user clicks on the dividends link
     Then the user should be on the received UK dividends page
@@ -63,14 +64,14 @@ Feature: End to End Income Tax Submission feature
 
   Scenario: Returning flow - Individual User - Dividends
     When the user logs into the service with the following details
-          |Redirect url       |/2020/start      |
-          |Credential Strength|strong           |
-          |Confidence Level   |200              |
-          |Affinity Group     |Individual       |
-          |Nino               |AA123456B        |
-          |Enrolment Key 1    |HMRC-MTD-IT      |
-          |Identifier Name 1  |MTDITID          |
-          |Identifier Value 1 |1234567891       |
+          |Redirect url       |/test-only/2020/additional-parameters?NINO=AA000001A  |
+          |Credential Strength|strong                                                |
+          |Confidence Level   |200                                                   |
+          |Affinity Group     |Individual                                            |
+          |Nino               |AA000001A                                             |
+          |Enrolment Key 1    |HMRC-MTD-IT                                           |
+          |Identifier Name 1  |MTDITID                                               |
+          |Identifier Value 1 |1234567891                                            |
     Then the user will redirect to the Income Tax Submission start page
     When the user clicks the provide updates button
     Then the user should be on the overview page
@@ -81,14 +82,14 @@ Feature: End to End Income Tax Submission feature
 
   Scenario: Returning flow - Individual User with prior UK Dividends & Other Dividends, Review but no change - Dividends
     When the user logs into the service with the following details
-      |Redirect url       |/2020/start |
-      |Credential Strength|strong      |
-      |Confidence Level   |200         |
-      |Affinity Group     |Individual  |
-      |Nino               |AA123456A   |
-      |Enrolment Key 1    |HMRC-MTD-IT |
-      |Identifier Name 1  |MTDITID     |
-      |Identifier Value 1 |1234567892  |
+      |Redirect url       |/test-only/2020/additional-parameters?NINO=AA000002A |
+      |Credential Strength|strong                                               |
+      |Confidence Level   |200                                                  |
+      |Affinity Group     |Individual                                           |
+      |Nino               |AA000002A                                            |
+      |Enrolment Key 1    |HMRC-MTD-IT                                          |
+      |Identifier Name 1  |MTDITID                                              |
+      |Identifier Value 1 |1234567892                                           |
     Then the user will redirect to the Income Tax Submission start page
     When the user clicks the provide updates button
     Then the user should be on the overview page
@@ -119,7 +120,8 @@ Feature: End to End Income Tax Submission feature
       |Identifier Name 2  |AgentReferenceNumber                    |
       |Identifier Value 2 |XARN1234567                             |
     Then the user will redirect to the Income Tax Submission start page
-    When the user clicks the provide updates button
+    When the client nino with prior data is passed into session
+    And the user clicks the provide updates button
     Then the user should be on the overview page
     When the user clicks on the dividends link
     And the user clicks on the change uk dividends amount link

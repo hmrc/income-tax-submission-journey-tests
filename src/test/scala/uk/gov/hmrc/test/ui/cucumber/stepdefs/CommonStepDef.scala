@@ -28,20 +28,27 @@ class CommonStepDef extends BaseStepDef {
     driver.getCurrentUrl should be (CommonPage.url + "/2020/view")
   }
 
-  Given ("""^the user clicks on the (.*) link$""") { linkName: String =>
+  Given("""^the user clicks on the (.*) link$""") { linkName: String =>
     CommonPage.clickOnLink(linkName)
   }
 
-  When ("""^the user selects the (.*) radio button$""") { radioButtonBoolean: String =>
+  When("""^the user selects the (.*) radio button$""") { radioButtonBoolean: String =>
     CommonPage.clickOnRadioButton(radioButtonBoolean)
   }
 
-  When ("""^the user clicks the (.*) button$""") { buttonTitle: String =>
+  When("""^the user clicks the (.*) button$""") { buttonTitle: String =>
     CommonPage.clickOnButton(buttonTitle)
   }
 
-  When ("""^the user selects the (.*) field and enters a value of £(.*)$""") { (valueTextBox: String, value: String) =>
+  When("""^the user selects the (.*) field and enters a value of £(.*)$""") { (valueTextBox: String, value: String) =>
     CommonPage.enterValue(valueTextBox, value)
   }
 
+  When("""^the client nino is passed into session$"""){ () =>
+    driver.navigate().to(CommonPage.url + "/test-only/2020/additional-parameters?NINO=AA123456A")
+  }
+
+  When("""^the client nino with prior data is passed into session$"""){ () =>
+    driver.navigate().to(CommonPage.url + "/test-only/2020/additional-parameters?NINO=AA000003A")
+  }
 }

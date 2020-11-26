@@ -1,20 +1,20 @@
 @MVP @ZAP
 
-Feature: End to End Income Tax Submission feature
+Feature: Interest Journeys - Income Tax Submission
 
   Background:
     Given the user navigates to the auth login page
 
   Scenario: Minimal flow - Individual User - Interest
     When the user logs into the service with the following details
-      |Redirect url       |/start           |
-      |Credential Strength|strong           |
-      |Confidence Level   |200              |
-      |Affinity Group     |Individual       |
-      |Nino               |AA123456A        |
-      |Enrolment Key 1    |HMRC-MTD-IT      |
-      |Identifier Name 1  |MTDITID          |
-      |Identifier Value 1 |1234567890       |
+      |Redirect url       |/test-only/2020/additional-parameters?NINO=AA123456A |
+      |Credential Strength|strong                                               |
+      |Confidence Level   |200                                                  |
+      |Affinity Group     |Individual                                           |
+      |Nino               |AA123456A                                            |
+      |Enrolment Key 1    |HMRC-MTD-IT                                          |
+      |Identifier Name 1  |MTDITID                                              |
+      |Identifier Value 1 |1234567890                                           |
     Then the user will redirect to the Income Tax Submission start page
     When the user clicks the provide updates button
     Then the user should be on the overview page
@@ -51,44 +51,44 @@ Feature: End to End Income Tax Submission feature
     And the user clicks the continue button
     Then the user should be on the UK untaxed interest details page
     When the user selects the UK untaxed interest account name field and enters a value of Tesco
-    Then the user selects the UK untaxed interest amount earned field and enters a value of £1000
+    Then the user selects the UK untaxed interest amount earned field and enters a value of 1000
     And the user clicks the continue button
     Then the user should be on the UK untaxed interest account summary page
     When the user clicks on the add another account link
     Then the user should be on the UK untaxed interest details page
     When the user selects the UK untaxed interest account name field and enters a value of Morrisons
-    Then the user selects the UK untaxed interest amount earned field and enters a value of £1500
+    Then the user selects the UK untaxed interest amount earned field and enters a value of 1500
     And the user clicks the continue button
     Then the user should be on the UK untaxed interest account summary page
     When the user clicks on the add another account link
     Then the user should be on the UK untaxed interest details page
     When the user selects the UK untaxed interest account name field and enters a value of Sainsbury's
-    Then the user selects the UK untaxed interest amount earned field and enters a value of £2500
+    Then the user selects the UK untaxed interest amount earned field and enters a value of 2500
     And the user clicks the continue button
     Then the user should be on the UK untaxed interest account summary page
     And the user clicks the continue button
-    Then the user should be on the UK taxed interest page
+    Then the user should be on the received UK taxed interest page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be on the UK taxed interest details page
     When the user selects the UK taxed interest account name field and enters a value of Asda
-    Then the user selects the UK taxed interest amount earned field and enters a value of £500
+    Then the user selects the UK taxed interest amount earned field and enters a value of 500
     And the user clicks the continue button
-    Then the user should be on the UK taxed account summary page
+    Then the user should be on the UK taxed interest account summary page
     When the user clicks on the add another account link
     Then the user should be on the UK taxed interest details page
     When the user selects the UK taxed interest account name field and enters a value of Aldi
-    Then the user selects the UK taxed interest amount earned field and enters a value of £600
+    Then the user selects the UK taxed interest amount earned field and enters a value of 600
     And the user clicks the continue button
-    Then the user should be on the UK taxed account summary page
+    Then the user should be on the UK taxed interest account summary page
     When the user clicks on the add another account link
     Then the user should be on the UK taxed interest details page
     When the user selects the UK taxed interest account name field and enters a value of Lidl
-    Then the user selects the UK taxed interest amount earned field and enters a value of £700
+    Then the user selects the UK taxed interest amount earned field and enters a value of 700
     And the user clicks the continue button
-    Then the user should be on the UK taxed account summary page
+    Then the user should be on the UK taxed interest account summary page
     And the user clicks the continue button
-    Then the user should be on the dividends check your answers page
+    Then the user should be on the interest check your answers page
     When the user clicks the save and continue button
     Then the user should be on the overview page
 
@@ -167,7 +167,7 @@ Feature: End to End Income Tax Submission feature
 #    When the user selects the change button
 #    Then the user should be on the UK untaxed interest earned page
 #    Then the user selects the a different amount radio button
-#    And the user selects the a different amount value field and enters a value of £2000
+#    And the user selects the a different amount value field and enters a value of 2000
 #    And the user clicks the continue button
 #    Then the user should be on the UK untaxed interest account page
 #    And the user clicks the continue button
@@ -177,7 +177,7 @@ Feature: End to End Income Tax Submission feature
 #    When the user selects the change button
 #    Then the user should be on the UK taxed interest earned page
 #    Then the user selects the a different amount radio button
-#    And the user selects the a different amount value field and enters a value of £750
+#    And the user selects the a different amount value field and enters a value of 750
 #    And the user clicks the continue button
 #    Then the user should be on the UK taxed interest account page
 #    And the user clicks the continue button

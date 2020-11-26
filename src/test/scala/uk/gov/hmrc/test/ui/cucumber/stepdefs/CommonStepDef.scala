@@ -40,7 +40,7 @@ class CommonStepDef extends BaseStepDef {
     CommonPage.clickOnButton(buttonTitle)
   }
 
-  When("""^the user selects the (.*) field and enters a value of £(.*)$""") { (valueTextBox: String, value: String) =>
+  When("""^the user selects the (.*) field and enters a value of (.*)$""") { (valueTextBox: String, value: String) =>
     CommonPage.enterValue(valueTextBox, value)
   }
 

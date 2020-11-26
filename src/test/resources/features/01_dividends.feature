@@ -50,13 +50,13 @@ Feature: Dividends Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be on the UK dividends amount page
-    When the user selects the UK dividends amount field and enters a value of £1000
+    When the user selects the UK dividends amount field and enters a value of 1000
     And the user clicks the continue button
     Then the user should be on the authorised unit trusts, investment companies/trusts page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be on the authorised unit trusts, investment companies/trusts amount page
-    When the user selects the UK other dividends amount field and enters a value of £500
+    When the user selects the UK other dividends amount field and enters a value of 500
     And the user clicks the continue button
     Then the user should be on the dividends check your answers page
     When the user clicks the save and continue button
@@ -127,13 +127,13 @@ Feature: Dividends Journeys - Income Tax Submission
     And the user clicks on the change uk dividends amount link
     Then the user should be on the UK dividends amount page
     When the user selects the other amount radio button
-    And the user selects the other amount value field and enters a value of £2000
+    And the user selects the other amount value field and enters a value of 2000
     And the user clicks the continue button
     Then the user should be on the dividends check your answers page
     When the user clicks on the change other dividends amount link
     Then the user should be on the authorised unit trusts, investment companies/trusts amount page
     When the user selects the other amount radio button
-    And the user selects the other amount value field and enters a value of £1000
+    And the user selects the other amount value field and enters a value of 1000
     And the user clicks the continue button
     Then the user should be on the dividends check your answers page
     When the user clicks the save and continue button

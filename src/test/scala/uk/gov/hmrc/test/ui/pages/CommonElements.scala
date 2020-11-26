@@ -40,9 +40,15 @@ trait CommonElements extends BasePage with Matchers{
     "prior amount"              -> By.id("prior-amount"),
     "other amount value"        -> By.id("other-amount-input"),
     "change uk dividends amount" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a"),
-    "change other dividends amount" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a")
+    "change other dividends amount" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a"),
 
     //Interest Elements
+    "interest"                 -> By.id("interest_link"),
+    "UK untaxed interest amount earned" -> By.id("amount"),
+    "UK taxed interest amount earned" -> By.id("amount"),
+    "UK untaxed interest account name" -> By.id("amount2"),
+    "UK taxed interest account name"-> By.id("amount2")
+
 
   )
 }

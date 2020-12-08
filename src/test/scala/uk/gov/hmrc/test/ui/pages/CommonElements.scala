@@ -33,21 +33,22 @@ trait CommonElements extends BasePage with Matchers{
     "continue"             -> By.id("continue"),
 
     //Dividends Elements
-    "dividends"                 -> By.id("dividends_link"),
-    "UK dividends amount"       -> By.id("amount"),
-    "UK other dividends amount" -> By.id("amount"),
-    "other amount"              -> By.id("other-amount"),
-    "prior amount"              -> By.id("prior-amount"),
-    "other amount value"        -> By.id("other-amount-input"),
-    "change uk dividends amount" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a"),
+    "dividends"                     -> By.id("dividends_link"),
+    "UK dividends amount"           -> By.id("amount"),
+    "UK other dividends amount"     -> By.id("amount"),
+    "other amount"                  -> By.id("other-amount"),
+    "prior amount"                  -> By.id("prior-amount"),
+    "other amount value"            -> By.id("other-amount-input"),
+    "change uk dividends amount"    -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a"),
     "change other dividends amount" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a"),
 
     //Interest Elements
-    "interest"                 -> By.id("interest_link"),
-    "UK untaxed interest amount earned" -> By.id("amount"),
-    "UK taxed interest amount earned" -> By.id("amount"),
-    "UK untaxed interest account name" -> By.id("amount2"),
-    "UK taxed interest account name"-> By.id("amount2")
+    "interest"                          -> By.id("interest_link"),
+    "UK untaxed interest amount earned" -> By.id("untaxedAmount"),
+    "UK taxed interest amount earned"   -> By.id("incomeTaxAmount"),
+    "UK untaxed interest account name"  -> By.id("accountName"),
+    "UK taxed interest account name"    -> By.id("friendlyName"),
+    "add another account"               -> By.cssSelector("#main-content > div > div > div:nth-child(4) > a")
 
 
   )

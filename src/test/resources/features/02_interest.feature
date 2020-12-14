@@ -92,7 +92,7 @@ Feature: Interest Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be on the overview page
 
-  Scenario: Maximal flow - Agent User  - Interest
+  Scenario: Account Removal flow - Agent User  - Interest
     When the user logs into the service with the following details
       |Redirect url       |/test-only/2020/agent-access/1234567890 |
       |Credential Strength|weak                                    |
@@ -118,7 +118,7 @@ Feature: Interest Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be on the UK untaxed interest account summary page
     When the user clicks on the remove link
-    Then the user should be on the remove account page
+    Then the user should be on the remove untaxed account page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be on the received UK taxed interest page
@@ -130,7 +130,7 @@ Feature: Interest Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be on the UK taxed interest account summary page
     When the user clicks on the remove link
-    Then the user should be on the remove account page
+    Then the user should be on the remove taxed account page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be on the interest check your answers page

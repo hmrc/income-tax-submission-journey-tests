@@ -48,8 +48,12 @@ class InterestStepDef extends BaseStepDef {
     driver.getCurrentUrl should be(PersonalIncomePage.url + "/2020/interest/check-your-answers")
   }
 
-  Then("""^the user should be on the remove account page$""") { () =>
-    driver.getCurrentUrl should be(PersonalIncomePage.url + "/2020/interest/remove-account")
+  Then("""^the user should be on the remove untaxed account page$""") { () =>
+    driver.getCurrentUrl should be(PersonalIncomePage.url + "/2020/interest/remove-untaxed-account")
+  }
+
+  Then("""^the user should be on the remove taxed account page$""") { () =>
+    driver.getCurrentUrl should be(PersonalIncomePage.url + "/2020/interest/remove-taxed-account")
   }
 
 }

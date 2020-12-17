@@ -123,18 +123,18 @@ Feature: Interest Journeys - Income Tax Submission
     Then the user selects the UK untaxed interest amount earned field and enters a value of 1000
     And the user clicks the continue button
     Then the user should be on the UK untaxed interest account summary page
-    When the user clicks on the remove account 1 link
-    Then the user should be on the remove untaxed account page
+    When the user clicks on the remove account link
+#    Then the user should be on the remove untaxed account page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be on the UK untaxed interest account summary page
-    When the user clicks on the remove account 1 link
-    Then the user should be on the remove untaxed account page
+    When the user clicks on the remove account link
+#    Then the user should be on the remove untaxed account page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be on the UK untaxed interest account summary page
-    When the user clicks on the remove account 2 link
-    Then the user should be on the remove untaxed account page
+    When the user clicks on the remove account link
+#    Then the user should be on the remove untaxed account page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be on the received UK taxed interest page
@@ -151,18 +151,18 @@ Feature: Interest Journeys - Income Tax Submission
     Then the user selects the UK taxed interest amount earned field and enters a value of 500
     And the user clicks the continue button
     Then the user should be on the UK taxed interest account summary page
-    When the user clicks on the remove account 1 link
-    Then the user should be on the remove taxed account page
+    When the user clicks on the remove account link
+#    Then the user should be on the remove taxed account page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be on the UK taxed interest account summary page
+    When the user clicks on the remove account link
+#    Then the user should be on the remove taxed account page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be on the UK taxed interest account summary page
-    When the user clicks on the remove account 2 link
-    Then the user should be on the remove taxed account page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be on the UK taxed interest account summary page
-    When the user clicks on the remove account 2 link
-    Then the user should be on the remove taxed account page
+    When the user clicks on the remove account link
+#    Then the user should be on the remove taxed account page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be on the interest check your answers page

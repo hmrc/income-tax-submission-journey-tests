@@ -1,4 +1,4 @@
-@MVP @ZAP
+@MVP @ZAP @RMV
 
 Feature: Interest Journeys - Income Tax Submission
 
@@ -124,17 +124,17 @@ Feature: Interest Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be on the UK untaxed interest account summary page
     When the user clicks on the remove account link
-#    Then the user should be on the remove untaxed account page
+    Then the user should be redirected to the "Are you sure you want to remove this account? - Register your income tax return with HMRC - Gov.UK" page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be on the UK untaxed interest account summary page
     When the user clicks on the remove account link
-#    Then the user should be on the remove untaxed account page
+    Then the user should be redirected to the "Are you sure you want to remove this account? - Register your income tax return with HMRC - Gov.UK" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be on the UK untaxed interest account summary page
     When the user clicks on the remove account link
-#    Then the user should be on the remove untaxed account page
+    Then the user should be redirected to the "Are you sure you want to remove this account? - Register your income tax return with HMRC - Gov.UK" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be on the received UK taxed interest page
@@ -152,17 +152,17 @@ Feature: Interest Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be on the UK taxed interest account summary page
     When the user clicks on the remove account link
-#    Then the user should be on the remove taxed account page
+    Then the user should be redirected to the "Are you sure you want to remove this account? - Register your income tax return with HMRC - Gov.UK" page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be on the UK taxed interest account summary page
     When the user clicks on the remove account link
-#    Then the user should be on the remove taxed account page
+    Then the user should be redirected to the "Are you sure you want to remove this account? - Register your income tax return with HMRC - Gov.UK" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be on the UK taxed interest account summary page
     When the user clicks on the remove account link
-#    Then the user should be on the remove taxed account page
+    Then the user should be redirected to the "Are you sure you want to remove this account? - Register your income tax return with HMRC - Gov.UK" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be on the interest check your answers page

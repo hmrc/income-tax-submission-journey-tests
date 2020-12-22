@@ -92,6 +92,83 @@ Feature: Interest Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be on the overview page
 
+  Scenario: Account Removal flow - Agent User  - Interest
+    When the user logs into the service with the following details
+      |Redirect url       |/test-only/2020/agent-access/1234567890 |
+      |Credential Strength|weak                                    |
+      |Confidence Level   |50                                      |
+      |Affinity Group     |Agent                                   |
+      |Enrolment Key 1    |HMRC-MTD-IT                             |
+      |Identifier Name 1  |MTDITID                                 |
+      |Identifier Value 1 |1234567890                              |
+      |Enrolment Key 2    |HMRC-AS-AGENT                           |
+      |Identifier Name 2  |AgentReferenceNumber                    |
+      |Identifier Value 2 |XARN1234567                             |
+    Then the user will redirect to the Income Tax Submission start page
+    When the client nino is passed into session
+    And the user clicks the provide updates button
+    Then the user should be on the overview page
+    When the user clicks on the interest link
+    Then the user should be on the received UK untaxed interest page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be on the UK untaxed interest details page
+    When the user selects the UK untaxed interest account name field and enters a value of Tesco
+    Then the user selects the UK untaxed interest amount earned field and enters a value of 1000
+    And the user clicks the continue button
+    Then the user should be on the UK untaxed interest account summary page
+    When the user clicks on the add another account link
+    Then the user should be on the UK untaxed interest details page
+    When the user selects the UK untaxed interest account name field and enters a value of Asda
+    Then the user selects the UK untaxed interest amount earned field and enters a value of 1000
+    And the user clicks the continue button
+    Then the user should be on the UK untaxed interest account summary page
+    When the user clicks on the remove account link
+    Then the user should be redirected to the "Are you sure you want to remove this account? - Register your income tax return with HMRC - Gov.UK" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be on the UK untaxed interest account summary page
+    When the user clicks on the remove account link
+    Then the user should be redirected to the "Are you sure you want to remove this account? - Register your income tax return with HMRC - Gov.UK" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be on the UK untaxed interest account summary page
+    When the user clicks on the remove account link
+    Then the user should be redirected to the "Are you sure you want to remove this account? - Register your income tax return with HMRC - Gov.UK" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be on the received UK taxed interest page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be on the UK taxed interest details page
+    When the user selects the UK taxed interest account name field and enters a value of Asda
+    Then the user selects the UK taxed interest amount earned field and enters a value of 500
+    And the user clicks the continue button
+    Then the user should be on the UK taxed interest account summary page
+    When the user clicks on the add another account link
+    Then the user should be on the UK taxed interest details page
+    When the user selects the UK taxed interest account name field and enters a value of Tesco
+    Then the user selects the UK taxed interest amount earned field and enters a value of 500
+    And the user clicks the continue button
+    Then the user should be on the UK taxed interest account summary page
+    When the user clicks on the remove account link
+    Then the user should be redirected to the "Are you sure you want to remove this account? - Register your income tax return with HMRC - Gov.UK" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be on the UK taxed interest account summary page
+    When the user clicks on the remove account link
+    Then the user should be redirected to the "Are you sure you want to remove this account? - Register your income tax return with HMRC - Gov.UK" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be on the UK taxed interest account summary page
+    When the user clicks on the remove account link
+    Then the user should be redirected to the "Are you sure you want to remove this account? - Register your income tax return with HMRC - Gov.UK" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be on the interest check your answers page
+    When the user clicks the save and continue button
+    Then the user should be on the overview page
+
 #  Scenario: Returning flow - Individual User - Interest
 #    When the user logs into the service with the following details
 #      |Redirect url       |/test-only/2020/additional-parameters?NINO=AA000001A  |

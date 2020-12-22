@@ -48,6 +48,4 @@ class InterestStepDef extends BaseStepDef {
     driver.getCurrentUrl should be(PersonalIncomePage.url + "/2020/interest/check-your-answers")
   }
 
-
-
 }

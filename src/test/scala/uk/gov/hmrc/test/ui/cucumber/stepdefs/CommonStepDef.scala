@@ -51,4 +51,9 @@ class CommonStepDef extends BaseStepDef {
   When("""^the client nino with prior data is passed into session$"""){ () =>
     driver.navigate().to(CommonPage.url + "/test-only/2020/additional-parameters?NINO=AA000003A")
   }
+
+  Then("""^the user should be redirected to the "(.*)" page$""") { (title: String) =>
+    driver.getTitle should be(title)
+  }
+
 }

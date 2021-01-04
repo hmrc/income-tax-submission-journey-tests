@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.CommonPage
 
 class CommonStepDef extends BaseStepDef {
@@ -54,6 +55,11 @@ class CommonStepDef extends BaseStepDef {
 
   Then("""^the user should be redirected to the "(.*)" page$""") { (title: String) =>
     driver.getTitle should be(title)
+  }
+
+  And( """^the user should see the correct Accessibility Statement url$""") {() =>
+    val href = driver.findElement(By.linkText("Accessibility statement")).getAttribute("href").contains("/accessibility-statement/income-tax-submission")
+    href shouldBe true
   }
 
 }

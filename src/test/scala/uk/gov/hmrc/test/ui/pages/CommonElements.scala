@@ -45,9 +45,9 @@ trait CommonElements extends BasePage with Matchers{
     //Interest Elements
     "interest"                          -> By.id("interest_link"),
     "UK untaxed interest amount earned" -> By.id("untaxedAmount"),
-    "UK taxed interest amount earned"   -> By.id("incomeTaxAmount"),
-    "UK untaxed interest account name"  -> By.id("accountName"),
-    "UK taxed interest account name"    -> By.id("friendlyName"),
+    "UK taxed interest amount earned"   -> By.id("taxedAmount"),
+    "UK untaxed interest account name"  -> By.id("untaxedAccountName"),
+    "UK taxed interest account name"    -> By.id("taxedAccountName"),
     "add another account"               -> By.cssSelector("#main-content > div > div > div:nth-child(4) > a"),
     "remove account"                    -> By.cssSelector("#main-content > div > div > div.govuk-summary-list > div:nth-child(1) > dd:nth-child(3) > a")
 

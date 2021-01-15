@@ -33,7 +33,7 @@ Feature: Dividends Journeys - Income Tax Submission
     When the user logs into the service with the following details
       |Redirect url       |/test-only/2020/agent-access/1234567890 |
       |Credential Strength|weak                                    |
-      |Confidence Level   |50                                      |
+      |Confidence Level   |200                                      |
       |Affinity Group     |Agent                                   |
       |Enrolment Key 1    |HMRC-MTD-IT                             |
       |Identifier Name 1  |MTDITID                                 |
@@ -111,7 +111,7 @@ Feature: Dividends Journeys - Income Tax Submission
     When the user logs into the service with the following details
       |Redirect url       |/test-only/2020/agent-access/1234567893 |
       |Credential Strength|weak                                    |
-      |Confidence Level   |50                                      |
+      |Confidence Level   |200                                     |
       |Affinity Group     |Agent                                   |
       |Enrolment Key 1    |HMRC-MTD-IT                             |
       |Identifier Name 1  |MTDITID                                 |

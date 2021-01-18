@@ -31,14 +31,14 @@ trait CommonElements extends BasePage with Matchers{
     "save and continue"    -> By.cssSelector("#main-content > div > div > form > button"),
     "provide updates"      -> By.cssSelector("#main-content > div > div > a"),
     "continue"             -> By.id("continue"),
+    "other amount"         -> By.id("other-amount"),
+    "prior amount"         -> By.id("prior-amount"),
+    "other amount value"   -> By.id("other-amount-input"),
 
     //Dividends Elements
     "dividends"                     -> By.id("dividends_link"),
     "UK dividends amount"           -> By.id("amount"),
     "UK other dividends amount"     -> By.id("amount"),
-    "other amount"                  -> By.id("other-amount"),
-    "prior amount"                  -> By.id("prior-amount"),
-    "other amount value"            -> By.id("other-amount-input"),
     "change uk dividends amount"    -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a"),
     "change other dividends amount" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a"),
 
@@ -49,8 +49,10 @@ trait CommonElements extends BasePage with Matchers{
     "UK untaxed interest account name"  -> By.id("untaxedAccountName"),
     "UK taxed interest account name"    -> By.id("taxedAccountName"),
     "add another account"               -> By.cssSelector("#main-content > div > div > div:nth-child(4) > a"),
-    "remove account"                    -> By.cssSelector("#main-content > div > div > div.govuk-summary-list > div:nth-child(1) > dd:nth-child(3) > a")
-
-
+    "remove account"                    -> By.cssSelector("#main-content > div > div > div.govuk-summary-list > div:nth-child(1) > dd:nth-child(3) > a"),
+    "first account change"              -> By.cssSelector("#main-content > div > div > div.govuk-summary-list > div:nth-child(1) > dd:nth-child(3) > a"),
+    "second account change"             -> By.cssSelector("#main-content > div > div > div.govuk-summary-list > div:nth-child(2) > dd:nth-child(3) > a"),
+    "change uk untaxed interest accounts summary" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a"),
+    "change uk taxed interest accounts summary"  -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a")
   )
 }

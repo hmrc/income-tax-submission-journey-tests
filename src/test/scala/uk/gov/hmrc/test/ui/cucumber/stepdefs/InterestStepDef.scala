@@ -28,7 +28,7 @@ class InterestStepDef extends BaseStepDef {
     driver.getCurrentUrl should be(PersonalIncomePage.url + "/2020/interest/untaxed-uk-interest-details")
   }
 
-  Then("""^the user should be on the UK untaxed interest account summary page$""") { () =>
+  Then("""^the user should be on the UK untaxed interest accounts summary page$""") { () =>
     driver.getCurrentUrl should be(PersonalIncomePage.url + "/2020/interest/untaxed-uk-interest-account-summary")
   }
 
@@ -40,12 +40,29 @@ class InterestStepDef extends BaseStepDef {
     driver.getCurrentUrl should be(PersonalIncomePage.url + "/2020/interest/taxed-uk-interest-details")
   }
 
-  Then("""^the user should be on the UK taxed interest account summary page$""") { () =>
+  Then("""^the user should be on the UK taxed interest accounts summary page$""") { () =>
     driver.getCurrentUrl should be(PersonalIncomePage.url + "/2020/interest/taxed-uk-interest-account-summary")
   }
 
   Then("""^the user should be on the interest check your answers page$""") { () =>
     driver.getCurrentUrl should be(PersonalIncomePage.url + "/2020/interest/check-your-answers")
   }
+
+  Then("""^the user should be on the Halifax untaxed interest account page$""") { () =>
+    driver.getCurrentUrl should be(PersonalIncomePage.url + "/2020/interest/change-untaxed-interest-account?accountId=first")
+  }
+
+  Then("""^the user should be on the Nationwide untaxed interest account page$""") { () =>
+    driver.getCurrentUrl should be(PersonalIncomePage.url + "/2020/interest/change-untaxed-interest-account?accountId=second")
+  }
+
+  Then("""^the user should be on the Monzo taxed interest account page$""") { () =>
+    driver.getCurrentUrl should be(PersonalIncomePage.url + "/2020/interest/change-taxed-interest-account?accountId=third")
+  }
+
+  Then("""^the user should be on the TSB Account taxed interest account page$""") { () =>
+    driver.getCurrentUrl should be(PersonalIncomePage.url + "/2020/interest/change-taxed-interest-account?accountId=fourth")
+  }
+
 
 }

@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+#-----Dividends GET Stub Data-----
+
 curl -X POST -H "Content-Type: application/json" \
     -d '{
 	"uri": "/income-tax/nino/AA000001A/income-source/dividends/annual/2020",
@@ -35,6 +38,8 @@ curl -X POST -H "Content-Type: application/json" \
 }' \
 http://localhost:9303/setup/data
 
+#-----Dividends POST Stub Data-----
+
 curl -X POST -H "Content-Type: application/json" \
     -d '{
 	"uri": "/income-tax/nino/AA000001A/income-source/dividends/annual/2020",
@@ -67,6 +72,19 @@ curl -X POST -H "Content-Type: application/json" \
 	}
 }' \
 http://localhost:9303/setup/data
+
+curl -X POST -H "Content-Type: application/json" \
+    -d '{
+	"uri": "/income-tax/nino/AA123456A/income-source/dividends/annual/2020",
+	"method":"POST",
+	"status":200,
+	"response": {
+		  "string": "ok"
+	}
+}' \
+http://localhost:9303/setup/data
+
+#-----Interest GET Stub Data-----
 
 curl -X POST -H "Content-Type: application/json" \
     -d '{
@@ -165,3 +183,50 @@ curl -X POST -H "Content-Type: application/json" \
     }
     }' \
 http://localhost:9303/setup/data
+
+#-----Interest POST Stub Data-----
+
+curl -X POST -H "Content-Type: application/json" \
+    -d '{
+	"uri": "/income-tax/nino/AA000003A/income-source/savings/annual/2020",
+	"method":"POST",
+	"status":200,
+	"response": {
+		  "string": "ok"
+	}
+}' \
+http://localhost:9303/setup/data
+
+curl -X POST -H "Content-Type: application/json" \
+    -d '{
+	"uri": "/income-tax/income-sources/nino/AA000003A",
+	"method":"POST",
+	"status":200,
+	"response": {
+		  "incomeSourceId": "first"
+	}
+}' \
+http://localhost:9303/setup/data
+
+curl -X POST -H "Content-Type: application/json" \
+    -d '{
+	"uri": "/income-tax/nino/AA123456A/income-source/savings/annual/2020",
+	"method":"POST",
+	"status":200,
+	"response": {
+		  "string": "ok"
+	}
+}' \
+http://localhost:9303/setup/data
+
+curl -X POST -H "Content-Type: application/json" \
+    -d '{
+	"uri": "/income-tax/income-sources/nino/AA123456A",
+	"method":"POST",
+	"status":200,
+	"response": {
+		  "incomeSourceId": "first"
+	}
+}' \
+http://localhost:9303/setup/data
+

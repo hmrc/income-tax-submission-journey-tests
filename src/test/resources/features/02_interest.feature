@@ -92,6 +92,7 @@ Feature: Interest Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be on the overview page
 
+
   Scenario: Account Removal flow - Agent User  - Interest
     When the user logs into the service with the following details
       |Redirect url       |/test-only/2020/agent-access/1234567890 |

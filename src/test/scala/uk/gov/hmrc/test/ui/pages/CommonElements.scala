@@ -55,8 +55,5 @@ trait CommonElements extends BasePage with Matchers{
     "change uk untaxed interest accounts summary" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a"),
     "change uk taxed interest accounts summary"  -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a"),
 
-    //Tax Calculation Elements
-    "view estimation"                   -> By.id("calculation_link"),
-    "Tax calculation to date"           -> By.cssSelector()
   )
 }

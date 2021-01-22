@@ -29,6 +29,7 @@ Feature: Interest Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be on the overview page
 
+
   Scenario: Maximal flow - Agent User - Interest
     When the user logs into the service with the following details
       |Redirect url       |/test-only/2020/agent-access/1234567890 |
@@ -216,3 +217,4 @@ Feature: Interest Journeys - Income Tax Submission
     Then the user should be on the interest check your answers page
     When the user clicks the save and continue button
     Then the user should be on the overview page
+    And the user should see the correct View estimation url

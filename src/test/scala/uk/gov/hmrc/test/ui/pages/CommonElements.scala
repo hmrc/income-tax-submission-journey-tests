@@ -53,6 +53,7 @@ trait CommonElements extends BasePage with Matchers{
     "first account change"              -> By.cssSelector("#main-content > div > div > div.govuk-summary-list > div:nth-child(1) > dd:nth-child(3) > a"),
     "second account change"             -> By.cssSelector("#main-content > div > div > div.govuk-summary-list > div:nth-child(2) > dd:nth-child(3) > a"),
     "change uk untaxed interest accounts summary" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a"),
-    "change uk taxed interest accounts summary"  -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a")
+    "change uk taxed interest accounts summary"  -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a"),
+
   )
 }

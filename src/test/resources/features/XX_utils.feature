@@ -34,3 +34,4 @@ Feature: Util Journeys - Income Tax Submission
     When the user clicks on the dividends link
     Then the user should be on the received UK dividends page
     And the user should see the correct Accessibility Statement url
+

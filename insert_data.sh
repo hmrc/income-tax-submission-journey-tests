@@ -73,17 +73,6 @@ curl -X POST -H "Content-Type: application/json" \
 }' \
 http://localhost:9303/setup/data
 
-curl -X POST -H "Content-Type: application/json" \
-    -d '{
-	"uri": "/income-tax/nino/AA123456A/income-source/dividends/annual/2020",
-	"method":"POST",
-	"status":200,
-	"response": {
-		  "string": "ok"
-	}
-}' \
-http://localhost:9303/setup/data
-
 #-----Interest GET Stub Data-----
 
 curl -X POST -H "Content-Type: application/json" \
@@ -207,26 +196,3 @@ curl -X POST -H "Content-Type: application/json" \
 	}
 }' \
 http://localhost:9303/setup/data
-
-curl -X POST -H "Content-Type: application/json" \
-    -d '{
-	"uri": "/income-tax/nino/AA123456A/income-source/savings/annual/2020",
-	"method":"POST",
-	"status":200,
-	"response": {
-		  "string": "ok"
-	}
-}' \
-http://localhost:9303/setup/data
-
-curl -X POST -H "Content-Type: application/json" \
-    -d '{
-	"uri": "/income-tax/income-sources/nino/AA123456A",
-	"method":"POST",
-	"status":200,
-	"response": {
-		  "incomeSourceId": "first"
-	}
-}' \
-http://localhost:9303/setup/data
-

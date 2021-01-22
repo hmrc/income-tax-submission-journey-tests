@@ -28,6 +28,7 @@ Feature: Dividends Journeys - Income Tax Submission
     Then the user should be on the dividends check your answers page
     When the user clicks the save and continue button
     Then the user should be on the overview page
+    And the user should see the correct View estimation url
 
   Scenario: Maximal flow - Agent User - Dividends
     When the user logs into the service with the following details
@@ -61,6 +62,7 @@ Feature: Dividends Journeys - Income Tax Submission
     Then the user should be on the dividends check your answers page
     When the user clicks the save and continue button
     Then the user should be on the overview page
+    And the user should see the correct View estimation url
 
   Scenario: Returning flow - Individual User - Dividends
     When the user logs into the service with the following details
@@ -79,6 +81,7 @@ Feature: Dividends Journeys - Income Tax Submission
     Then the user should be on the dividends check your answers page
     When the user clicks the save and continue button
     Then the user should be on the overview page
+    And the user should see the correct View estimation url
 
   Scenario: Returning flow - Individual User with prior UK Dividends & Other Dividends, Review but no change - Dividends
     When the user logs into the service with the following details
@@ -106,6 +109,7 @@ Feature: Dividends Journeys - Income Tax Submission
     Then the user should be on the dividends check your answers page
     When the user clicks the save and continue button
     Then the user should be on the overview page
+    And the user should see the correct View estimation url
 
   Scenario: Returning flow - Agent User with prior UK Dividends & Other Dividends, Review & Change - Dividends -
     When the user logs into the service with the following details
@@ -138,3 +142,4 @@ Feature: Dividends Journeys - Income Tax Submission
     Then the user should be on the dividends check your answers page
     When the user clicks the save and continue button
     Then the user should be on the overview page
+    And the user should see the correct View estimation url

@@ -28,6 +28,7 @@ Feature: Interest Journeys - Income Tax Submission
     Then the user should be on the interest check your answers page
     When the user clicks the save and continue button
     Then the user should be on the overview page
+    And the user should see the correct View estimation url
 
   Scenario: Maximal flow - Agent User - Interest
     When the user logs into the service with the following details
@@ -91,7 +92,7 @@ Feature: Interest Journeys - Income Tax Submission
     Then the user should be on the interest check your answers page
     When the user clicks the save and continue button
     Then the user should be on the overview page
-
+    And the user should see the correct View estimation url
 
   Scenario: Account Removal flow - Agent User  - Interest
     When the user logs into the service with the following details
@@ -169,6 +170,7 @@ Feature: Interest Journeys - Income Tax Submission
     Then the user should be on the interest check your answers page
     When the user clicks the save and continue button
     Then the user should be on the overview page
+    And the user should see the correct View estimation url
 
   Scenario: Returning flow - Individual User with prior UK Untaxed & Taxed Interest, Review & change - Interest
     When the user logs into the service with the following details
@@ -217,3 +219,4 @@ Feature: Interest Journeys - Income Tax Submission
     Then the user should be on the interest check your answers page
     When the user clicks the save and continue button
     Then the user should be on the overview page
+    And the user should see the correct View estimation url

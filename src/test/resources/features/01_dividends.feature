@@ -7,7 +7,7 @@ Feature: Dividends Journeys - Income Tax Submission
 
   Scenario: Minimal flow - Individual User - Dividends
     When the user logs into the service with the following details
-      |Redirect url       |/2020/start                                          |
+      |Redirect url       |/2022/start                                          |
       |Credential Strength|strong                                               |
       |Confidence Level   |200                                                  |
       |Affinity Group     |Individual                                           |
@@ -31,7 +31,7 @@ Feature: Dividends Journeys - Income Tax Submission
 
   Scenario: Maximal flow - Agent User - Dividends
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2020/additional-parameters?NINO=AA123456A&MTDITID=1234567890    |
+      |Redirect url       |/test-only/2022/additional-parameters?NINO=AA123456A&MTDITID=1234567890    |
       |Credential Strength|weak                                                                       |
       |Confidence Level   |200                                                                        |
       |Affinity Group     |Agent                                                                      |
@@ -63,7 +63,7 @@ Feature: Dividends Journeys - Income Tax Submission
 
   Scenario: Returning flow - Individual User - Dividends
     When the user logs into the service with the following details
-          |Redirect url       |/2020/start                                           |
+          |Redirect url       |/2022/start                                           |
           |Credential Strength|strong                                                |
           |Confidence Level   |200                                                   |
           |Affinity Group     |Individual                                            |
@@ -82,7 +82,7 @@ Feature: Dividends Journeys - Income Tax Submission
 
   Scenario: Returning flow - Individual User with prior UK Dividends & Other Dividends, Review but no change - Dividends
     When the user logs into the service with the following details
-      |Redirect url       |/2020/start                                          |
+      |Redirect url       |/2022/start                                          |
       |Credential Strength|strong                                               |
       |Confidence Level   |200                                                  |
       |Affinity Group     |Individual                                           |
@@ -110,7 +110,7 @@ Feature: Dividends Journeys - Income Tax Submission
 
   Scenario: Returning flow - Agent User with prior UK Dividends & Other Dividends, Review & Change - Dividends -
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2020/additional-parameters?NINO=AA000003A&MTDITID=1234567893  |
+      |Redirect url       |/test-only/2022/additional-parameters?NINO=AA000003A&MTDITID=1234567893  |
       |Credential Strength|weak                                                                     |
       |Confidence Level   |200                                                                      |
       |Affinity Group     |Agent                                                                    |

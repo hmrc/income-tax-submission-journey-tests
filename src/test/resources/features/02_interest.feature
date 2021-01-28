@@ -7,7 +7,7 @@ Feature: Interest Journeys - Income Tax Submission
 
   Scenario: Minimal flow - Individual User - Interest
     When the user logs into the service with the following details
-      |Redirect url       |/2020/start                                          |
+      |Redirect url       |/2022/start                                          |
       |Credential Strength|strong                                               |
       |Confidence Level   |200                                                  |
       |Affinity Group     |Individual                                           |
@@ -32,7 +32,7 @@ Feature: Interest Journeys - Income Tax Submission
 
   Scenario: Maximal flow - Agent User - Interest
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2020/additional-parameters?NINO=AA123456A&MTDITID=1234567890  |
+      |Redirect url       |/test-only/2022/additional-parameters?NINO=AA123456A&MTDITID=1234567890  |
       |Credential Strength|weak                                                                     |
       |Confidence Level   |200                                                                      |
       |Affinity Group     |Agent                                                                    |
@@ -94,7 +94,7 @@ Feature: Interest Journeys - Income Tax Submission
 
   Scenario: Account Removal flow - Agent User  - Interest
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2020/additional-parameters?NINO=AA123456A&MTDITID=1234567890  |
+      |Redirect url       |/test-only/2022/additional-parameters?NINO=AA123456A&MTDITID=1234567890  |
       |Credential Strength|weak                                                                     |
       |Confidence Level   |200                                                                      |
       |Affinity Group     |Agent                                                                    |
@@ -170,7 +170,7 @@ Feature: Interest Journeys - Income Tax Submission
 
   Scenario: Returning flow - Individual User with prior UK Untaxed & Taxed Interest, Review & change - Interest
     When the user logs into the service with the following details
-      |Redirect url       |/2020/start                                          |
+      |Redirect url       |/2022/start                                          |
       |Credential Strength|strong                                               |
       |Confidence Level   |200                                                  |
       |Affinity Group     |Individual                                           |

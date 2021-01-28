@@ -22,11 +22,11 @@ import uk.gov.hmrc.test.ui.pages.CommonPage
 class CommonStepDef extends BaseStepDef {
 
   Then("""^the user will redirect to the Income Tax Submission start page$""") { () =>
-    driver.getCurrentUrl should be (CommonPage.url + "/2020/start")
+    driver.getCurrentUrl should be (CommonPage.url + "/2022/start")
   }
 
   Then("""^the user should be on the overview page$""") { () =>
-    driver.getCurrentUrl should be (CommonPage.url + "/2020/view")
+    driver.getCurrentUrl should be (CommonPage.url + "/2022/view")
   }
 
   Given("""^the user clicks on the (.*) link$""") { linkName: String =>
@@ -55,7 +55,7 @@ class CommonStepDef extends BaseStepDef {
   }
 
   And( """^the user should see the correct View estimation url$""") { () =>
-    val href = driver.findElement(By.linkText("View estimation")).getAttribute("href").contains("/income-through-software/return/2020/calculate")
+    val href = driver.findElement(By.linkText("View estimation")).getAttribute("href").contains("/income-through-software/return/2022/calculate")
     href shouldBe true
   }
 

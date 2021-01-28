@@ -46,7 +46,7 @@ curl -X POST -H "Content-Type: application/json" \
 	"method":"POST",
 	"status":200,
 	"response": {
-		  "string": "ok"
+		  "transactionReference": "0123456789123456"
 	}
 }' \
 http://localhost:9303/setup/data
@@ -57,7 +57,7 @@ curl -X POST -H "Content-Type: application/json" \
 	"method":"POST",
 	"status":200,
 	"response": {
-		  "string": "ok"
+		  "transactionReference": "0123456789123457"
 	}
 }' \
 http://localhost:9303/setup/data
@@ -68,7 +68,7 @@ curl -X POST -H "Content-Type: application/json" \
 	"method":"POST",
 	"status":200,
 	"response": {
-		  "string": "ok"
+		  "transactionReference": "0123456789123458"
 	}
 }' \
 http://localhost:9303/setup/data
@@ -181,7 +181,7 @@ curl -X POST -H "Content-Type: application/json" \
 	"method":"POST",
 	"status":200,
 	"response": {
-		  "string": "ok"
+		  "transactionReference": "0123456789123459"
 	}
 }' \
 http://localhost:9303/setup/data

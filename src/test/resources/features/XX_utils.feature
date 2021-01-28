@@ -7,7 +7,7 @@ Feature: Util Journeys - Income Tax Submission
 
   Scenario: Minimal flow - Individual User - Check Accessibility link : Income Tax Frontend
     When the user logs into the service with the following details
-      |Redirect url       |/2020/start                                          |
+      |Redirect url       |/2022/start                                          |
       |Credential Strength|strong                                               |
       |Confidence Level   |200                                                  |
       |Affinity Group     |Individual                                           |
@@ -20,7 +20,7 @@ Feature: Util Journeys - Income Tax Submission
 
   Scenario: Minimal flow - Individual User - Check Accessibility link : Personal Income Tax Frontend
     When the user logs into the service with the following details
-      |Redirect url       |/2020/start                                          |
+      |Redirect url       |/2022/start                                          |
       |Credential Strength|strong                                               |
       |Confidence Level   |200                                                  |
       |Affinity Group     |Individual                                           |
@@ -34,4 +34,3 @@ Feature: Util Journeys - Income Tax Submission
     When the user clicks on the dividends link
     Then the user should be on the received UK dividends page
     And the user should see the correct Accessibility Statement url
-

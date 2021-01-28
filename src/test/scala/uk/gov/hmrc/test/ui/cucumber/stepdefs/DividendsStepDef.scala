@@ -21,39 +21,39 @@ import uk.gov.hmrc.test.ui.pages.PersonalIncomePage
 class DividendsStepDef extends BaseStepDef {
 
   Then("""^the user should be on the received UK dividends page$""") { () =>
-    driver.getCurrentUrl should be(PersonalIncomePage.url + "/2020/dividends/uk-dividends")
+    driver.getCurrentUrl should be(PersonalIncomePage.url + "/2022/dividends/uk-dividends")
   }
 
   Then("""^the user should be on the UK dividends amount page$""") { () =>
-    driver.getCurrentUrl should be(PersonalIncomePage.url + "/2020/dividends/uk-dividends-amount")
+    driver.getCurrentUrl should be(PersonalIncomePage.url + "/2022/dividends/uk-dividends-amount")
   }
 
   Then("""^the user should be on the authorised unit trusts, investment companies/trusts page$""") { () =>
-    driver.getCurrentUrl should be (PersonalIncomePage.url + "/2020/dividends/other-dividends")
+    driver.getCurrentUrl should be (PersonalIncomePage.url + "/2022/dividends/other-dividends")
   }
 
   Then("""^the user should be on the authorised unit trusts, investment companies/trusts amount page$""") { () =>
-    driver.getCurrentUrl should be (PersonalIncomePage.url + "/2020/dividends/other-dividends-amount")
+    driver.getCurrentUrl should be (PersonalIncomePage.url + "/2022/dividends/other-dividends-amount")
   }
 
   Then("""^the user should be on the received UK dividends page in edit mode$""") { () =>
-    driver.getCurrentUrl should be(PersonalIncomePage.url + "/2020/dividends/uk-dividends?isEditMode=true")
+    driver.getCurrentUrl should be(PersonalIncomePage.url + "/2022/dividends/uk-dividends?isEditMode=true")
   }
 
   Then("""^the user should be on the UK dividends amount page in edit mode$""") { () =>
-    driver.getCurrentUrl should be(PersonalIncomePage.url + "/2020/dividends/uk-dividends-amount?isEditMode=true")
+    driver.getCurrentUrl should be(PersonalIncomePage.url + "/2022/dividends/uk-dividends-amount?isEditMode=true")
   }
 
   Then("""^the user should be on the authorised unit trusts, investment companies/trusts page in edit mode$""") { () =>
-    driver.getCurrentUrl should be (PersonalIncomePage.url + "/2020/dividends/other-dividends?isEditMode=true")
+    driver.getCurrentUrl should be (PersonalIncomePage.url + "/2022/dividends/other-dividends?isEditMode=true")
   }
 
   Then("""^the user should be on the authorised unit trusts, investment companies/trusts amount page in edit mode$""") { () =>
-    driver.getCurrentUrl should be (PersonalIncomePage.url + "/2020/dividends/other-dividends-amount?isEditMode=true")
+    driver.getCurrentUrl should be (PersonalIncomePage.url + "/2022/dividends/other-dividends-amount?isEditMode=true")
   }
 
   Then("""^the user should be on the dividends check your answers page$""") { () =>
-    driver.getCurrentUrl should be(PersonalIncomePage.url + "/2020/dividends/check-your-answers")
+    driver.getCurrentUrl should be(PersonalIncomePage.url + "/2022/dividends/check-your-answers")
   }
 
 }

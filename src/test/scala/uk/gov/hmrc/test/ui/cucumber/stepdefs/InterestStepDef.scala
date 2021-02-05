@@ -25,7 +25,7 @@ class InterestStepDef extends BaseStepDef {
   }
 
   Then("""^the user should be on the UK untaxed interest details page$""") { () =>
-    driver.getCurrentUrl should be(PersonalIncomePage.url + "/2022/interest/untaxed-uk-interest-details")
+    driver.getCurrentUrl startsWith (PersonalIncomePage.url + "/2022/interest/untaxed-uk-interest-details/")
   }
 
   Then("""^the user should be on the UK untaxed interest accounts summary page$""") { () =>
@@ -37,7 +37,7 @@ class InterestStepDef extends BaseStepDef {
   }
 
   Then("""^the user should be on the UK taxed interest details page$""") { () =>
-    driver.getCurrentUrl should be(PersonalIncomePage.url + "/2022/interest/taxed-uk-interest-details")
+    driver.getCurrentUrl startsWith (PersonalIncomePage.url + "/2022/interest/taxed-uk-interest-details/")
   }
 
   Then("""^the user should be on the UK taxed interest accounts summary page$""") { () =>

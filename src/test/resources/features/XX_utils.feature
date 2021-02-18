@@ -18,9 +18,11 @@ Feature: Util Journeys - Income Tax Submission
     Then the user will redirect to the Income Tax Submission start page
 #    Check for the Income Tax Frontend
     And the user should see the correct Accessibility Statement url
+    And the user should see the correct sign out url
     When the user clicks the provide updates button
     Then the user should be on the overview page
     When the user clicks on the dividends link
     Then the user should be on the received UK dividends page
 #  Check for the Personal Income Tax Frontend
     And the user should see the correct Accessibility Statement url
+    And the user should see the correct sign out url

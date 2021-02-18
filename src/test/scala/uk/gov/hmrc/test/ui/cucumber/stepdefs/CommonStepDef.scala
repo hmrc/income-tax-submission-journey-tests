@@ -54,6 +54,11 @@ class CommonStepDef extends BaseStepDef {
     driver.findElement(By.linkText("Accessibility statement")).getAttribute("href") should include (expectedHref)
   }
 
+  And( """^the user should see the correct sign out url$""") { () =>
+    val expectedHref = "sign out url Bolaji"
+    driver.findElement(By.linkText("sign out")).getAttribute("href") should include (expectedHref)
+  }
+
   And( """^the user should see the correct View estimation url$""") { () =>
     val href = driver.findElement(By.linkText("View estimation")).getAttribute("href").contains("/income-through-software/return/2022/calculate")
     href shouldBe true

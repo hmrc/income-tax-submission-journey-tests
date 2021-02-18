@@ -21,7 +21,6 @@ import uk.gov.hmrc.test.ui.conf.TestConfiguration
 
 object CommonPage extends BasePage with CommonElements {
   override val url: String = TestConfiguration.url("income-tax-submission-frontend")
-  val title = "Income Tax Submission"
 
   def clickOnLink(linkName: String): Unit = {
     val selector: By = load(linkName)

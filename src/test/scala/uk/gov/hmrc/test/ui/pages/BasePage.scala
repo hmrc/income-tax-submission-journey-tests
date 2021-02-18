@@ -65,11 +65,11 @@ trait BasePage extends Matchers with BrowserDriver{
     }
   }
 
-  def clickOn(selector: By) = {
+  def clickOn(selector: By): Unit = {
     driver.findElement(selector).click()
   }
 
-  def sendKeys(selector: By, value: String) = {
+  def sendKeys(selector: By, value: String): Unit = {
     driver.findElement(selector).clear()
     driver.findElement(selector).sendKeys(value)
   }

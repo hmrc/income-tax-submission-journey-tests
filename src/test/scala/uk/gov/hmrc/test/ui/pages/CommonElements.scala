@@ -26,14 +26,14 @@ trait CommonElements extends BasePage with Matchers{
 
   val elements: Map[String, By] = Map(
     //Common Elements
-    "yes"                  -> By.id("yes_no_yes"),
-    "no"                   -> By.id("yes_no_no"),
+    "yes"                  -> By.id("value"),
+    "no"                   -> By.id("value-no"),
     "save and continue"    -> By.cssSelector("#main-content > div > div > form > button"),
     "provide updates"      -> By.cssSelector("#main-content > div > div > a"),
     "continue"             -> By.id("continue"),
-    "other amount"         -> By.id("other-amount"),
-    "prior amount"         -> By.id("prior-amount"),
-    "other amount value"   -> By.id("other-amount-input"),
+    "other amount"         -> By.id("otherAmount"),
+    "prior amount"         -> By.id("whichAmount"),
+    "other amount value"   -> By.id("amount"),
 
     //Dividends Elements
     "dividends"                     -> By.id("dividends_link"),
@@ -48,8 +48,8 @@ trait CommonElements extends BasePage with Matchers{
     "UK taxed interest amount earned"   -> By.id("taxedAmount"),
     "UK untaxed interest account name"  -> By.id("untaxedAccountName"),
     "UK taxed interest account name"    -> By.id("taxedAccountName"),
-    "add another account"               -> By.cssSelector("#main-content > div > div > div:nth-child(4) > a"),
-    "remove account"                    -> By.cssSelector("#main-content > div > div > div.govuk-summary-list > div:nth-child(1) > dd:nth-child(3) > a"),
+    "add another account"               -> By.cssSelector("#main-content > div > div > div.govuk-\\!-margin-bottom-6 > a"),
+    "remove account"                    -> By.cssSelector("#main-content > div > div > div.govuk-summary-list > div > dd:nth-child(3) > a"),
     "first account change"              -> By.cssSelector("#main-content > div > div > div.govuk-summary-list > div:nth-child(1) > dd:nth-child(3) > a"),
     "second account change"             -> By.cssSelector("#main-content > div > div > div.govuk-summary-list > div:nth-child(2) > dd:nth-child(3) > a"),
     "change uk untaxed interest accounts summary" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a"),

@@ -31,7 +31,7 @@ Feature: Dividends Journeys - Income Tax Submission
 
   Scenario: Maximal flow - Agent User - Dividends
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2022/additional-parameters?NINO=AA123456A&MTDITID=1234567890    |
+      |Redirect url       |/test-only/2022/additional-parameters?NINO=AA123457A&MTDITID=1234567890    |
       |Credential Strength|weak                                                                       |
       |Confidence Level   |200                                                                        |
       |Affinity Group     |Agent                                                                      |

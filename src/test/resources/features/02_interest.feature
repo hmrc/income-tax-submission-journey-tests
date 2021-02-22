@@ -32,7 +32,7 @@ Feature: Interest Journeys - Income Tax Submission
 
   Scenario: Maximal flow - Agent User - Interest
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2022/additional-parameters?NINO=AA123456A&MTDITID=1234567890  |
+      |Redirect url       |/test-only/2022/additional-parameters?NINO=AA123457A&MTDITID=1234567890  |
       |Credential Strength|weak                                                                     |
       |Confidence Level   |200                                                                      |
       |Affinity Group     |Agent                                                                    |
@@ -50,19 +50,19 @@ Feature: Interest Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be on the UK untaxed interest details page
-    When the user selects the UK untaxed interest account name field and enters a value of Tesco
+    When the user selects the UK untaxed interest account name field and enters a value of Tesco Bank
     And the user selects the UK untaxed interest amount earned field and enters a value of 1000
     And the user clicks the continue button
     Then the user should be on the UK untaxed interest accounts summary page
     When the user clicks on the add another account link
     Then the user should be on the UK untaxed interest details page
-    When the user selects the UK untaxed interest account name field and enters a value of Morrisons
+    When the user selects the UK untaxed interest account name field and enters a value of Virgin Bank
     And the user selects the UK untaxed interest amount earned field and enters a value of 1500
     And the user clicks the continue button
     Then the user should be on the UK untaxed interest accounts summary page
     When the user clicks on the add another account link
     Then the user should be on the UK untaxed interest details page
-    When the user selects the UK untaxed interest account name field and enters a value of Sainsbury's
+    When the user selects the UK untaxed interest account name field and enters a value of Sainsburys Bank
     And the user selects the UK untaxed interest amount earned field and enters a value of 2500
     And the user clicks the continue button
     Then the user should be on the UK untaxed interest accounts summary page
@@ -71,19 +71,19 @@ Feature: Interest Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be on the UK taxed interest details page
-    When the user selects the UK taxed interest account name field and enters a value of Asda
+    When the user selects the UK taxed interest account name field and enters a value of Skipton
     And the user selects the UK taxed interest amount earned field and enters a value of 500
     And the user clicks the continue button
     Then the user should be on the UK taxed interest accounts summary page
     When the user clicks on the add another account link
     Then the user should be on the UK taxed interest details page
-    When the user selects the UK taxed interest account name field and enters a value of Aldi
+    When the user selects the UK taxed interest account name field and enters a value of Kent Reliance
     And the user selects the UK taxed interest amount earned field and enters a value of 600
     And the user clicks the continue button
     Then the user should be on the UK taxed interest accounts summary page
     When the user clicks on the add another account link
     Then the user should be on the UK taxed interest details page
-    When the user selects the UK taxed interest account name field and enters a value of Lidl
+    When the user selects the UK taxed interest account name field and enters a value of RBS
     And the user selects the UK taxed interest amount earned field and enters a value of 700
     And the user clicks the continue button
     Then the user should be on the UK taxed interest accounts summary page
@@ -112,13 +112,13 @@ Feature: Interest Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be on the UK untaxed interest details page
-    When the user selects the UK untaxed interest account name field and enters a value of Tesco
+    When the user selects the UK untaxed interest account name field and enters a value of Tesco Bank
     And the user selects the UK untaxed interest amount earned field and enters a value of 1000
     And the user clicks the continue button
     Then the user should be on the UK untaxed interest accounts summary page
     When the user clicks on the add another account link
     Then the user should be on the UK untaxed interest details page
-    When the user selects the UK untaxed interest account name field and enters a value of Asda
+    When the user selects the UK untaxed interest account name field and enters a value of Skipton
     And the user selects the UK untaxed interest amount earned field and enters a value of 1000
     And the user clicks the continue button
     Then the user should be on the UK untaxed interest accounts summary page
@@ -140,13 +140,13 @@ Feature: Interest Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be on the UK taxed interest details page
-    When the user selects the UK taxed interest account name field and enters a value of Asda
+    When the user selects the UK taxed interest account name field and enters a value of Skipton
     And the user selects the UK taxed interest amount earned field and enters a value of 500
     And the user clicks the continue button
     Then the user should be on the UK taxed interest accounts summary page
     When the user clicks on the add another account link
     Then the user should be on the UK taxed interest details page
-    When the user selects the UK taxed interest account name field and enters a value of Tesco
+    When the user selects the UK taxed interest account name field and enters a value of Tesco Bank
     And the user selects the UK taxed interest amount earned field and enters a value of 500
     And the user clicks the continue button
     Then the user should be on the UK taxed interest accounts summary page

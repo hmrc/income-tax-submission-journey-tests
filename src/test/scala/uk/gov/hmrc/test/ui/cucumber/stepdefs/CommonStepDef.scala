@@ -21,15 +21,14 @@ import uk.gov.hmrc.test.ui.pages.CommonPage
 
 class CommonStepDef extends BaseStepDef {
 
-  Then("""^the user will redirect to the Income Tax Submission start page$""") { () =>
-    driver.getCurrentUrl should be (CommonPage.url + "/2022/start")
+  val serviceName = "Update and submit an Income Tax Return"
+  val govUkExtension = "Gov.UK"
+
+  Then("""^the user should be redirected to the "(.*)" page$""") { (title: String) =>
+    driver.getTitle should be(s"$title - $serviceName - $govUkExtension")
   }
 
-  Then("""^the user should be on the overview page$""") { () =>
-    driver.getCurrentUrl should be (CommonPage.url + "/2022/view")
-  }
-
-  Given("""^the user clicks on the (.*) link$""") { linkName: String =>
+  When("""^the user clicks on the (.*) link$""") { linkName: String =>
     CommonPage.clickOnLink(linkName)
   }
 
@@ -45,16 +44,12 @@ class CommonStepDef extends BaseStepDef {
     CommonPage.enterValue(valueTextBox, value)
   }
 
-  Then("""^the user should be redirected to the "(.*)" page$""") { (title: String) =>
-    driver.getTitle should be(title)
-  }
-
-  And( """^the user should see the correct Accessibility Statement url$""") { () =>
+  Then( """^the user should see the correct Accessibility Statement url$""") { () =>
     val expectedHref = "/accessibility-statement/income-tax-submission"
     driver.findElement(By.linkText("Accessibility statement")).getAttribute("href") should include (expectedHref)
   }
 
-  And( """^the user should see the correct View estimation url$""") { () =>
+  Then( """^the user should see the correct View estimation url$""") { () =>
     val href = driver.findElement(By.linkText("View estimation")).getAttribute("href").contains("/income-through-software/return/2022/calculate")
     href shouldBe true
   }

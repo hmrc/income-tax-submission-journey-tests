@@ -15,19 +15,19 @@ Feature: Interest Journeys - Income Tax Submission
       |Enrolment Key 1    |HMRC-MTD-IT                                          |
       |Identifier Name 1  |MTDITID                                              |
       |Identifier Value 1 |1234567890                                           |
-    Then the user will redirect to the Income Tax Submission start page
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the provide updates button
-    Then the user should be on the overview page
+    Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the interest link
-    Then the user should be on the received UK untaxed interest page
+    Then the user should be redirected to the "Did you receive any untaxed interest from the UK?" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be on the received UK taxed interest page
+    Then the user should be redirected to the "Did you receive any taxed interest from the UK?" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be on the interest check your answers page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks the save and continue button
-    Then the user should be on the overview page
+    Then the user should be redirected to the "Your Income Tax Return" page
 
 
   Scenario: Maximal flow - Agent User - Interest
@@ -42,55 +42,55 @@ Feature: Interest Journeys - Income Tax Submission
       |Enrolment Key 2    |HMRC-AS-AGENT                                                            |
       |Identifier Name 2  |AgentReferenceNumber                                                     |
       |Identifier Value 2 |XARN1234567                                                              |
-    Then the user will redirect to the Income Tax Submission start page
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the provide updates button
-    Then the user should be on the overview page
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the interest link
-    Then the user should be on the received UK untaxed interest page
+    Then the user should be redirected to the "Did your client receive any untaxed interest from the UK?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be on the UK untaxed interest details page
+    Then the user should be redirected to the "UK untaxed interest account details" page
     When the user selects the UK untaxed interest account name field and enters a value of Tesco Bank
     And the user selects the UK untaxed interest amount earned field and enters a value of 1000
     And the user clicks the continue button
-    Then the user should be on the UK untaxed interest accounts summary page
+    Then the user should be redirected to the "You have added 1 account" page
     When the user clicks on the add another account link
-    Then the user should be on the UK untaxed interest details page
-    When the user selects the UK untaxed interest account name field and enters a value of Virgin Bank
+    Then the user should be redirected to the "UK untaxed interest account details" page
+    When the user selects the UK untaxed interest account name field and enters a value of First Direct
     And the user selects the UK untaxed interest amount earned field and enters a value of 1500
     And the user clicks the continue button
-    Then the user should be on the UK untaxed interest accounts summary page
+    Then the user should be redirected to the "You have added 2 accounts" page
     When the user clicks on the add another account link
-    Then the user should be on the UK untaxed interest details page
-    When the user selects the UK untaxed interest account name field and enters a value of Sainsburys Bank
+    Then the user should be redirected to the "UK untaxed interest account details" page
+    When the user selects the UK untaxed interest account name field and enters a value of Sainburys Bank
     And the user selects the UK untaxed interest amount earned field and enters a value of 2500
     And the user clicks the continue button
-    Then the user should be on the UK untaxed interest accounts summary page
+    Then the user should be redirected to the "You have added 3 accounts" page
     When the user clicks the continue button
-    Then the user should be on the received UK taxed interest page
+    Then the user should be redirected to the "Did your client receive any taxed interest from the UK?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be on the UK taxed interest details page
-    When the user selects the UK taxed interest account name field and enters a value of Skipton
+    Then the user should be redirected to the "UK taxed interest account details" page
+    When the user selects the UK taxed interest account name field and enters a value of RBS
     And the user selects the UK taxed interest amount earned field and enters a value of 500
     And the user clicks the continue button
-    Then the user should be on the UK taxed interest accounts summary page
+    Then the user should be redirected to the "You have added 1 account" page
     When the user clicks on the add another account link
-    Then the user should be on the UK taxed interest details page
-    When the user selects the UK taxed interest account name field and enters a value of Kent Reliance
+    Then the user should be redirected to the "UK taxed interest account details" page
+    When the user selects the UK taxed interest account name field and enters a value of Skipton
     And the user selects the UK taxed interest amount earned field and enters a value of 600
     And the user clicks the continue button
-    Then the user should be on the UK taxed interest accounts summary page
+    Then the user should be redirected to the "You have added 2 accounts" page
     When the user clicks on the add another account link
-    Then the user should be on the UK taxed interest details page
-    When the user selects the UK taxed interest account name field and enters a value of RBS
+    Then the user should be redirected to the "UK taxed interest account details" page
+    When the user selects the UK taxed interest account name field and enters a value of Goldman $achs
     And the user selects the UK taxed interest amount earned field and enters a value of 700
     And the user clicks the continue button
-    Then the user should be on the UK taxed interest accounts summary page
+    Then the user should be redirected to the "You have added 3 accounts" page
     When the user clicks the continue button
-    Then the user should be on the interest check your answers page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks the save and continue button
-    Then the user should be on the overview page
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
 
   Scenario: Account Removal flow - Agent User  - Interest
     When the user logs into the service with the following details
@@ -104,69 +104,69 @@ Feature: Interest Journeys - Income Tax Submission
       |Enrolment Key 2    |HMRC-AS-AGENT                                                            |
       |Identifier Name 2  |AgentReferenceNumber                                                     |
       |Identifier Value 2 |XARN1234567                                                              |
-    Then the user will redirect to the Income Tax Submission start page
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the provide updates button
-    Then the user should be on the overview page
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the interest link
-    Then the user should be on the received UK untaxed interest page
+    Then the user should be redirected to the "Did your client receive any untaxed interest from the UK?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be on the UK untaxed interest details page
+    Then the user should be redirected to the "UK untaxed interest account details" page
     When the user selects the UK untaxed interest account name field and enters a value of Tesco Bank
     And the user selects the UK untaxed interest amount earned field and enters a value of 1000
     And the user clicks the continue button
-    Then the user should be on the UK untaxed interest accounts summary page
+    Then the user should be redirected to the "You have added 1 account" page
     When the user clicks on the add another account link
-    Then the user should be on the UK untaxed interest details page
-    When the user selects the UK untaxed interest account name field and enters a value of Skipton
+    Then the user should be redirected to the "UK untaxed interest account details" page
+    When the user selects the UK untaxed interest account name field and enters a value of First Direct
     And the user selects the UK untaxed interest amount earned field and enters a value of 1000
     And the user clicks the continue button
-    Then the user should be on the UK untaxed interest accounts summary page
+    Then the user should be redirected to the "You have added 2 accounts" page
     When the user clicks on the remove account link
-    Then the user should be redirected to the "Are you sure you want to remove this account? - Register your income tax return with HMRC - Gov.UK" page
+    Then the user should be redirected to the "Are you sure you want to remove this account?" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be on the UK untaxed interest accounts summary page
+    Then the user should be redirected to the "You have added 2 accounts" page
     When the user clicks on the remove account link
-    Then the user should be redirected to the "Are you sure you want to remove this account? - Register your income tax return with HMRC - Gov.UK" page
+    Then the user should be redirected to the "Are you sure you want to remove this account?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be on the UK untaxed interest accounts summary page
+    Then the user should be redirected to the "You have added 1 account" page
     When the user clicks on the remove account link
-    Then the user should be redirected to the "Are you sure you want to remove this account? - Register your income tax return with HMRC - Gov.UK" page
+    Then the user should be redirected to the "Are you sure you want to remove this account?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be on the received UK taxed interest page
+    Then the user should be redirected to the "Did your client receive any taxed interest from the UK?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be on the UK taxed interest details page
-    When the user selects the UK taxed interest account name field and enters a value of Skipton
+    Then the user should be redirected to the "UK taxed interest account details" page
+    When the user selects the UK taxed interest account name field and enters a value of Sainburys Bank
     And the user selects the UK taxed interest amount earned field and enters a value of 500
     And the user clicks the continue button
-    Then the user should be on the UK taxed interest accounts summary page
+    Then the user should be redirected to the "You have added 1 account" page
     When the user clicks on the add another account link
-    Then the user should be on the UK taxed interest details page
+    Then the user should be redirected to the "UK taxed interest account details" page
     When the user selects the UK taxed interest account name field and enters a value of Tesco Bank
     And the user selects the UK taxed interest amount earned field and enters a value of 500
     And the user clicks the continue button
-    Then the user should be on the UK taxed interest accounts summary page
+    Then the user should be redirected to the "You have added 2 accounts" page
     When the user clicks on the remove account link
-    Then the user should be redirected to the "Are you sure you want to remove this account? - Register your income tax return with HMRC - Gov.UK" page
+    Then the user should be redirected to the "Are you sure you want to remove this account?" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be on the UK taxed interest accounts summary page
+    Then the user should be redirected to the "You have added 2 accounts" page
     When the user clicks on the remove account link
-    Then the user should be redirected to the "Are you sure you want to remove this account? - Register your income tax return with HMRC - Gov.UK" page
+    Then the user should be redirected to the "Are you sure you want to remove this account?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be on the UK taxed interest accounts summary page
+    Then the user should be redirected to the "You have added 1 account" page
     When the user clicks on the remove account link
-    Then the user should be redirected to the "Are you sure you want to remove this account? - Register your income tax return with HMRC - Gov.UK" page
+    Then the user should be redirected to the "Are you sure you want to remove this account?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be on the interest check your answers page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks the save and continue button
-    Then the user should be on the overview page
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
 
   Scenario: Returning flow - Individual User with prior UK Untaxed & Taxed Interest, Review & change - Interest
     When the user logs into the service with the following details
@@ -178,41 +178,41 @@ Feature: Interest Journeys - Income Tax Submission
       |Enrolment Key 1    |HMRC-MTD-IT                                          |
       |Identifier Name 1  |MTDITID                                              |
       |Identifier Value 1 |1234567890                                           |
-    Then the user will redirect to the Income Tax Submission start page
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the provide updates button
-    Then the user should be on the overview page
+    Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the interest link
-    Then the user should be on the interest check your answers page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks on the change uk untaxed interest accounts summary link
-    Then the user should be on the UK untaxed interest accounts summary page
+    Then the user should be redirected to the "You have added 2 accounts" page
     When the user clicks on the first account change link
-    Then the user should be on the Halifax untaxed interest account page
+    Then the user should be redirected to the "Untaxed interest earned" page
     When the user selects the prior amount radio button
     And the user clicks the continue button
-    Then the user should be on the UK untaxed interest accounts summary page
+    Then the user should be redirected to the "You have added 2 accounts" page
     When the user clicks on the second account change link
-    Then the user should be on the Nationwide untaxed interest account page
+    Then the user should be redirected to the "Untaxed interest earned" page
     When the user selects the other amount radio button
     And the user selects the other amount value field and enters a value of 100.01
     And the user clicks the continue button
-    Then the user should be on the UK untaxed interest accounts summary page
+    Then the user should be redirected to the "You have added 2 accounts" page
     When the user clicks the continue button
-    Then the user should be on the interest check your answers page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks on the change uk taxed interest accounts summary link
-    Then the user should be on the UK taxed interest accounts summary page
+    Then the user should be redirected to the "You have added 2 accounts" page
     When the user clicks on the first account change link
-    Then the user should be on the Monzo taxed interest account page
+    Then the user should be redirected to the "Taxed interest earned" page
     When the user selects the prior amount radio button
     And the user clicks the continue button
-    Then the user should be on the UK taxed interest accounts summary page
+    Then the user should be redirected to the "You have added 2 accounts" page
     When the user clicks on the second account change link
-    Then the user should be on the TSB Account taxed interest account page
+    Then the user should be redirected to the "Taxed interest earned" page
     When the user selects the other amount radio button
     And the user selects the other amount value field and enters a value of 6000
     And the user clicks the continue button
-    Then the user should be on the UK taxed interest accounts summary page
+    Then the user should be redirected to the "You have added 2 accounts" page
     When the user clicks the continue button
-    Then the user should be on the interest check your answers page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks the save and continue button
-    Then the user should be on the overview page
+    Then the user should be redirected to the "Your Income Tax Return" page
     And the user should see the correct View estimation url

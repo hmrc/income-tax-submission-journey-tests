@@ -25,4 +25,4 @@ Feature: Util Journeys - Income Tax Submission
     Then the user should be on the received UK dividends page
 #  Check for the Personal Income Tax Frontend
     And the user should see the correct Accessibility Statement url
-    And the user should see the correct sign out url
+    And the user should see the correct personal income sign out url

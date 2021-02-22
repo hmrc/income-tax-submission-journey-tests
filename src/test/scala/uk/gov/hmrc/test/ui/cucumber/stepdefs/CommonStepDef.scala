@@ -22,7 +22,7 @@ import uk.gov.hmrc.test.ui.pages.CommonPage
 class CommonStepDef extends BaseStepDef {
 
   val serviceName = "Update and submit an Income Tax Return"
-  val govUkExtension = "Gov.UK"
+  val govUkExtension = "GOV.UK"
 
   Then("""^the user should be redirected to the "(.*)" page$""") { (title: String) =>
     driver.getTitle should be(s"$title - $serviceName - $govUkExtension")

@@ -66,4 +66,9 @@ class CommonStepDef extends BaseStepDef {
     href shouldBe true
   }
 
+  And( """^the user should see the correct client-authorisation url$""") { () =>
+    val expectedHref = "https://www.gov.uk/guidance/client-authorisation-an-overview"
+    driver.findElement(By.id("client_auth_link")).getAttribute("href") should include (expectedHref)
+  }
+
 }

@@ -10,7 +10,7 @@ object Dependencies {
     "junit"                      %  "junit"                   % "4.12"  % Test,
     "com.novocode"               %  "junit-interface"         % "0.11"  % Test,
     "uk.gov.hmrc"                %% "zap-automation"          % "2.8.0" % Test,
-    "com.typesafe"               %  "config"                  % "1.3.2" % Test
+    "com.typesafe"               %  "config"                  % "1.3.2" % Test,
+    "org.apache.commons"         %  "commons-io"              % "1.3.2" % Test
   )
-
 }

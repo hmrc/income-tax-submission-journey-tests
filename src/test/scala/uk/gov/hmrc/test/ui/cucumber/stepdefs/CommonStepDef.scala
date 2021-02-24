@@ -16,8 +16,9 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import org.openqa.selenium.By
+import org.openqa.selenium.{By, JavascriptExecutor}
 import uk.gov.hmrc.test.ui.pages.CommonPage
+import uk.gov.hmrc.test.ui.pages.CommonPage.takeScreenShot
 
 class CommonStepDef extends BaseStepDef {
 
@@ -61,9 +62,31 @@ class CommonStepDef extends BaseStepDef {
   }
 
   And( """^the user should see the correct View estimation url$""") { () =>
-
     val href = driver.findElement(By.linkText("View estimation")).getAttribute("href").contains("/income-through-software/return/2022/calculate")
     href shouldBe true
+  }
+
+  And("""^I take screenshots of the (.*), (.*)$""") { (languageDirectory: String, fileName: String) =>
+    val jsx: JavascriptExecutor = driver.asInstanceOf[JavascriptExecutor]
+
+    val scrollHeight = jsx.executeScript("return (document.body || document.documentElement).scrollHeight").toString.toInt
+    var windowHeight = jsx.executeScript("return window.innerHeight").toString.toInt
+    var screenshotCount = 1
+
+    def windowScroll(sHeight: Int, wHeight: Int): AnyVal = {
+      (sHeight, wHeight) match {
+        case (sH, wH) if sH > wH =>
+          takeScreenShot(fileName + s" Part $screenshotCount", languageDirectory)
+          screenshotCount += 1
+          jsx.executeScript(s"window.scrollTo(0, $windowHeight)")
+          windowHeight += jsx.executeScript("return window.innerHeight").toString.toInt
+          windowScroll(sHeight, windowHeight)
+        case _ =>
+          takeScreenShot(fileName + s" Part $screenshotCount", languageDirectory)
+          screenshotCount += 1
+      }
+      windowScroll(scrollHeight, windowHeight)
+    }
   }
 
 }

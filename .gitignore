@@ -8,6 +8,7 @@ logs
 *.DS_Store
 /.project
 .history
+Screenshots/
 
 # IDE files
 /.idea

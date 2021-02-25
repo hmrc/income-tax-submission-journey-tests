@@ -27,7 +27,7 @@ Feature: Util Journeys - Income Tax Submission
     And the user should see the correct Accessibility Statement url
     And the user should see the correct personal income sign out url
 
-  Scenario: Checking the client authorisation link for agents - frontend
+  Scenario: Checking the client authorisation link for agents
     When the user logs into the service with the following details
       |Redirect url       |/test-only/2022/additional-parameters?NINO=AA123456A&MTDITID=1234567890  |
       |Credential Strength|weak                                                                     |
@@ -38,17 +38,6 @@ Feature: Util Journeys - Income Tax Submission
       |Identifier Value 1 |XARN1234567                                                              |
     Then the user should be redirected to the "There’s a problem" page
     And the user should see the correct client-authorisation url
-
-  Scenario: Checking the client authorisation link for agents - personal
-    When the user logs into the service with the following details
-      |Redirect url       |/test-only/2022/additional-parameters?NINO=AA123456A&MTDITID=1234567890            |
-      |Credential Strength|weak                                                                               |
-      |Confidence Level   |200                                                                                |
-      |Affinity Group     |Agent                                                                              |
-      |Enrolment Key 1    |HMRC-AS-AGENT                                                                      |
-      |Identifier Name 1  |AgentReferenceNumber                                                               |
-      |Identifier Value 1 |XARN1234567                                                                        |
-    Then the user should be redirected to the "There’s a problem" page
     Then user navigates to the untaxed interest page
     Then the user should be redirected to the "There’s a problem" page
     And the user should see the correct client-authorisation url

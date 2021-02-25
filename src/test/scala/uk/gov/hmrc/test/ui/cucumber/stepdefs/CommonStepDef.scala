@@ -66,4 +66,13 @@ class CommonStepDef extends BaseStepDef {
     href shouldBe true
   }
 
+  And( """^the user should see the correct client-authorisation url$""") { () =>
+    val expectedHref = "https://www.gov.uk/guidance/client-authorisation-an-overview"
+    driver.findElement(By.id("client_auth_link")).getAttribute("href") should include (expectedHref)
+  }
+
+  Then("""^user navigates to the untaxed interest page$""") { () =>
+    driver.navigate().to("http://localhost:9308/income-through-software/return/personal-income/2022/interest/untaxed-uk-interest")
+  }
+
 }

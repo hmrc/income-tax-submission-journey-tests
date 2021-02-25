@@ -33,12 +33,9 @@ Feature: Util Journeys - Income Tax Submission
       |Credential Strength|weak                                                                     |
       |Confidence Level   |200                                                                      |
       |Affinity Group     |Agent                                                                    |
-      |Enrolment Key 1    |HMRC-MTD-IT                                                              |
-      |Identifier Name 1  |MTDITID                                                                  |
-      |Identifier Value 1 |1234567893                                                               |
-      |Enrolment Key 2    |HMRC-AS-AGENT                                                            |
-      |Identifier Name 2  |AgentReferenceNumber                                                     |
-      |Identifier Value 2 |XARN1234567                                                              |
+      |Enrolment Key 1    |HMRC-AS-AGENT                                                            |
+      |Identifier Name 1  |AgentReferenceNumber                                                     |
+      |Identifier Value 1 |XARN1234567                                                              |
     Then the user should be redirected to the "There’s a problem" page
     And the user should see the correct client-authorisation url
 
@@ -48,12 +45,9 @@ Feature: Util Journeys - Income Tax Submission
       |Credential Strength|weak                                                                               |
       |Confidence Level   |200                                                                                |
       |Affinity Group     |Agent                                                                              |
-      |Enrolment Key 1    |HMRC-MTD-IT                                                                        |
-      |Identifier Name 1  |MTDITID                                                                            |
-      |Identifier Value 1 |1234567893                                                                         |
-      |Enrolment Key 2    |HMRC-AS-AGENT                                                                      |
-      |Identifier Name 2  |AgentReferenceNumber                                                               |
-      |Identifier Value 2 |XARN1234567                                                                        |
+      |Enrolment Key 1    |HMRC-AS-AGENT                                                                      |
+      |Identifier Name 1  |AgentReferenceNumber                                                               |
+      |Identifier Value 1 |XARN1234567                                                                        |
     Then the user should be redirected to the "There’s a problem" page
     Then user navigates to the untaxed interest page
     Then the user should be redirected to the "There’s a problem" page

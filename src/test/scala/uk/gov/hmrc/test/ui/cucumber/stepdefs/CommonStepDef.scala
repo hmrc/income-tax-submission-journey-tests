@@ -71,4 +71,8 @@ class CommonStepDef extends BaseStepDef {
     driver.findElement(By.id("client_auth_link")).getAttribute("href") should include (expectedHref)
   }
 
+  Then("""^user navigates to the untaxed interest page$""") { () =>
+    driver.navigate().to("http://localhost:9308/income-through-software/return/personal-income/2022/interest/untaxed-uk-interest")
+  }
+
 }

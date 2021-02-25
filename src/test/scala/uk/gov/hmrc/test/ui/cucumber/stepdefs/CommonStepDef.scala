@@ -83,10 +83,8 @@ class CommonStepDef extends BaseStepDef {
           windowScroll(sHeight, windowHeight)
         case _ =>
           takeScreenShot(fileName + s" Part $screenshotCount", languageDirectory)
-          screenshotCount += 1
       }
-      windowScroll(scrollHeight, windowHeight)
     }
+    windowScroll(scrollHeight, windowHeight)
   }
-
 }

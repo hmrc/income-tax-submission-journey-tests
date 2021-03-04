@@ -32,16 +32,16 @@ Feature: Interest Journeys - Income Tax Submission
 
   Scenario: Maximal flow - Agent User - Interest
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2022/additional-parameters?NINO=AA123457A&MTDITID=1234567890  |
-      |Credential Strength|weak                                                                     |
-      |Confidence Level   |200                                                                      |
-      |Affinity Group     |Agent                                                                    |
-      |Enrolment Key 1    |HMRC-MTD-IT                                                              |
-      |Identifier Name 1  |MTDITID                                                                  |
-      |Identifier Value 1 |1234567890                                                               |
-      |Enrolment Key 2    |HMRC-AS-AGENT                                                            |
-      |Identifier Name 2  |AgentReferenceNumber                                                     |
-      |Identifier Value 2 |XARN1234567                                                              |
+      |Redirect url       |/test-only/2022/additional-parameters?ClientNino=AA123457A&ClientMTDID=1234567890  |
+      |Credential Strength|weak                                                                               |
+      |Confidence Level   |200                                                                                |
+      |Affinity Group     |Agent                                                                              |
+      |Enrolment Key 1    |HMRC-MTD-IT                                                                        |
+      |Identifier Name 1  |MTDITID                                                                        |
+      |Identifier Value 1 |1234567890                                                                         |
+      |Enrolment Key 2    |HMRC-AS-AGENT                                                                      |
+      |Identifier Name 2  |AgentReferenceNumber                                                               |
+      |Identifier Value 2 |XARN1234567                                                                        |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the provide updates button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -94,16 +94,16 @@ Feature: Interest Journeys - Income Tax Submission
 
   Scenario: Account Removal flow - Agent User  - Interest
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2022/additional-parameters?NINO=AA123456A&MTDITID=1234567890  |
-      |Credential Strength|weak                                                                     |
-      |Confidence Level   |200                                                                      |
-      |Affinity Group     |Agent                                                                    |
-      |Enrolment Key 1    |HMRC-MTD-IT                                                              |
-      |Identifier Name 1  |MTDITID                                                                  |
-      |Identifier Value 1 |1234567890                                                               |
-      |Enrolment Key 2    |HMRC-AS-AGENT                                                            |
-      |Identifier Name 2  |AgentReferenceNumber                                                     |
-      |Identifier Value 2 |XARN1234567                                                              |
+      |Redirect url       |/test-only/2022/additional-parameters?ClientNino=AA123456A&ClientMTDID=1234567890  |
+      |Credential Strength|weak                                                                               |
+      |Confidence Level   |200                                                                                |
+      |Affinity Group     |Agent                                                                              |
+      |Enrolment Key 1    |HMRC-MTD-IT                                                                        |
+      |Identifier Name 1  |MTDITID                                                                      |
+      |Identifier Value 1 |1234567890                                                                         |
+      |Enrolment Key 2    |HMRC-AS-AGENT                                                                      |
+      |Identifier Name 2  |AgentReferenceNumber                                                               |
+      |Identifier Value 2 |XARN1234567                                                                        |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the provide updates button
     Then the user should be redirected to the "Your client’s Income Tax Return" page

@@ -72,3 +72,14 @@ curl -X POST -H "Content-Type: application/json" \
 	}
 }' \
 http://localhost:9303/setup/data
+
+curl -X POST -H "Content-Type: application/json" \
+    -d '{
+	"uri": "/income-tax/nino/AA123457A/income-source/dividends/annual/2022",
+	"method":"POST",
+	"status":200,
+	"response": {
+	    "transactionReference": "0123456789123461"
+	}
+}' \
+http://localhost:9303/setup/data

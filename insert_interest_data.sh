@@ -38,7 +38,7 @@ http://localhost:9303/setup/data
 
 curl -X POST -H "Content-Type: application/json" \
     -d '{
-    "uri": "/income-tax/nino/AA000003A/income-sources/savings/annual/2022?incomeSourceId=first",
+    "uri": "/income-tax/nino/AA000003A/income-source/savings/annual/2022?incomeSourceId=first",
     "method": "GET",
     "status": 200,
     "response":{
@@ -54,7 +54,7 @@ http://localhost:9303/setup/data
 
 curl -X POST -H "Content-Type: application/json" \
     -d '{
-    "uri": "/income-tax/nino/AA000003A/income-sources/savings/annual/2022?incomeSourceId=second",
+    "uri": "/income-tax/nino/AA000003A/income-source/savings/annual/2022?incomeSourceId=second",
     "method": "GET",
     "status": 200,
     "response":{
@@ -70,7 +70,7 @@ http://localhost:9303/setup/data
 
 curl -X POST -H "Content-Type: application/json" \
     -d '{
-    "uri": "/income-tax/nino/AA000003A/income-sources/savings/annual/2022?incomeSourceId=third",
+    "uri": "/income-tax/nino/AA000003A/income-source/savings/annual/2022?incomeSourceId=third",
     "method": "GET",
     "status": 200,
     "response":{
@@ -86,7 +86,7 @@ http://localhost:9303/setup/data
 
 curl -X POST -H "Content-Type: application/json" \
     -d '{
-    "uri": "/income-tax/nino/AA000003A/income-sources/savings/annual/2022?incomeSourceId=fourth",
+    "uri": "/income-tax/nino/AA000003A/income-source/savings/annual/2022?incomeSourceId=fourth",
     "method": "GET",
     "status": 200,
     "response":{

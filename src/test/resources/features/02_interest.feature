@@ -37,7 +37,7 @@ Feature: Interest Journeys - Income Tax Submission
       |Confidence Level   |200                                                                                |
       |Affinity Group     |Agent                                                                              |
       |Enrolment Key 1    |HMRC-MTD-IT                                                                        |
-      |Identifier Name 1  |MTDITID                                                                        |
+      |Identifier Name 1  |MTDITID                                                                            |
       |Identifier Value 1 |1234567890                                                                         |
       |Enrolment Key 2    |HMRC-AS-AGENT                                                                      |
       |Identifier Name 2  |AgentReferenceNumber                                                               |
@@ -54,19 +54,22 @@ Feature: Interest Journeys - Income Tax Submission
     And the user selects the UK untaxed interest amount earned field and enters a value of 1000
     And the user clicks the continue button
     Then the user should be redirected to the "UK untaxed interest account" page
-    When the user clicks on the add another account link
+    When the user selects the yes radio button
+    And the user clicks the continue button
     Then the user should be redirected to the "UK untaxed interest account details" page
     When the user selects the UK untaxed interest account name field and enters a value of First Direct
     And the user selects the UK untaxed interest amount earned field and enters a value of 1500
     And the user clicks the continue button
     Then the user should be redirected to the "UK untaxed interest accounts" page
-    When the user clicks on the add another account link
+    When the user selects the yes radio button
+    And the user clicks the continue button
     Then the user should be redirected to the "UK untaxed interest account details" page
     When the user selects the UK untaxed interest account name field and enters a value of Sainburys Bank
     And the user selects the UK untaxed interest amount earned field and enters a value of 2500
     And the user clicks the continue button
     Then the user should be redirected to the "UK untaxed interest accounts" page
-    When the user clicks the continue button
+    When the user selects the no radio button
+    And the user clicks the continue button
     Then the user should be redirected to the "Did your client receive any taxed interest from the UK?" page
     When the user selects the yes radio button
     And the user clicks the continue button
@@ -75,19 +78,22 @@ Feature: Interest Journeys - Income Tax Submission
     And the user selects the UK taxed interest amount earned field and enters a value of 500
     And the user clicks the continue button
     Then the user should be redirected to the "UK taxed interest account" page
-    When the user clicks on the add another account link
+    When the user selects the yes radio button
+    And the user clicks the continue button
     Then the user should be redirected to the "UK taxed interest account details" page
     When the user selects the UK taxed interest account name field and enters a value of Skipton
     And the user selects the UK taxed interest amount earned field and enters a value of 600
     And the user clicks the continue button
     Then the user should be redirected to the "UK taxed interest accounts" page
-    When the user clicks on the add another account link
+    When the user selects the yes radio button
+    And the user clicks the continue button
     Then the user should be redirected to the "UK taxed interest account details" page
     When the user selects the UK taxed interest account name field and enters a value of Goldman $achs
     And the user selects the UK taxed interest amount earned field and enters a value of 700
     And the user clicks the continue button
     Then the user should be redirected to the "UK taxed interest accounts" page
-    When the user clicks the continue button
+    When the user selects the no radio button
+    And the user clicks the continue button
     Then the user should be redirected to the "Check your answers" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -99,7 +105,7 @@ Feature: Interest Journeys - Income Tax Submission
       |Confidence Level   |200                                                                                |
       |Affinity Group     |Agent                                                                              |
       |Enrolment Key 1    |HMRC-MTD-IT                                                                        |
-      |Identifier Name 1  |MTDITID                                                                      |
+      |Identifier Name 1  |MTDITID                                                                            |
       |Identifier Value 1 |1234567890                                                                         |
       |Enrolment Key 2    |HMRC-AS-AGENT                                                                      |
       |Identifier Name 2  |AgentReferenceNumber                                                               |
@@ -116,7 +122,8 @@ Feature: Interest Journeys - Income Tax Submission
     And the user selects the UK untaxed interest amount earned field and enters a value of 1000
     And the user clicks the continue button
     Then the user should be redirected to the "UK untaxed interest account" page
-    When the user clicks on the add another account link
+    When the user selects the yes radio button
+    And the user clicks the continue button
     Then the user should be redirected to the "UK untaxed interest account details" page
     When the user selects the UK untaxed interest account name field and enters a value of First Direct
     And the user selects the UK untaxed interest amount earned field and enters a value of 1000
@@ -144,7 +151,8 @@ Feature: Interest Journeys - Income Tax Submission
     And the user selects the UK taxed interest amount earned field and enters a value of 500
     And the user clicks the continue button
     Then the user should be redirected to the "UK taxed interest account" page
-    When the user clicks on the add another account link
+    When the user selects the yes radio button
+    And the user clicks the continue button
     Then the user should be redirected to the "UK taxed interest account details" page
     When the user selects the UK taxed interest account name field and enters a value of Tesco Bank
     And the user selects the UK taxed interest amount earned field and enters a value of 500
@@ -196,7 +204,8 @@ Feature: Interest Journeys - Income Tax Submission
     And the user selects the other amount value field and enters a value of 100.01
     And the user clicks the continue button
     Then the user should be redirected to the "UK untaxed interest accounts" page
-    When the user clicks the continue button
+    When the user selects the no radio button
+    And the user clicks the continue button
     Then the user should be redirected to the "Check your answers" page
     When the user clicks on the change uk taxed interest accounts summary link
     Then the user should be redirected to the "UK taxed interest accounts" page
@@ -211,7 +220,8 @@ Feature: Interest Journeys - Income Tax Submission
     And the user selects the other amount value field and enters a value of 6000
     And the user clicks the continue button
     Then the user should be redirected to the "UK taxed interest accounts" page
-    When the user clicks the continue button
+    When the user selects the no radio button
+    And the user clicks the continue button
     Then the user should be redirected to the "Check your answers" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your Income Tax Return" page

@@ -74,5 +74,8 @@ class CommonStepDef extends BaseStepDef {
   Then("""^user navigates to the untaxed interest page$""") { () =>
     driver.navigate().to("http://localhost:9308/income-through-software/return/personal-income/2022/interest/untaxed-uk-interest")
   }
+  Then("""^user navigates to the Update and submit an Income Tax Return page with tax year "(.*)"$""") { (taxYear: Int) =>
+    driver.navigate().to(s"http://localhost:9302/income-through-software/return/$taxYear/start")
+}
 
 }

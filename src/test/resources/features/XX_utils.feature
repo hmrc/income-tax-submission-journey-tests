@@ -42,5 +42,18 @@ Feature: Util Journeys - Income Tax Submission
     Then the user should be redirected to the "There’s a problem" page
     And the user should see the correct client-authorisation url
 
+  Scenario: Checking the user cannot submit against other tax years
+    When the user logs into the service with the following details
+      |Redirect url       |/2022/start                                          |
+      |Credential Strength|strong                                               |
+      |Confidence Level   |200                                                  |
+      |Affinity Group     |Individual                                           |
+      |Nino               |AA123456A                                            |
+      |Enrolment Key 1    |HMRC-MTD-IT                                          |
+      |Identifier Name 1  |MTDITID                                              |
+      |Identifier Value 1 |1234567890                                           |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then user navigates to the Update and submit an Income Tax Return page with tax year "2019"
+    Then the user should be redirected to the "Page not found" page
 
 

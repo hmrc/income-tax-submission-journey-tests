@@ -42,7 +42,7 @@ Feature: Util Journeys - Income Tax Submission
     Then the user should be redirected to the "There’s a problem" page
     And the user should see the correct client-authorisation url
 
-  Scenario: Checking the user cannot submit against other tax years
+  Scenario: Checking the user cannot submit against other tax years on personal frontend
     When the user logs into the service with the following details
       |Redirect url       |/2022/start                                          |
       |Credential Strength|strong                                               |
@@ -53,7 +53,10 @@ Feature: Util Journeys - Income Tax Submission
       |Identifier Name 1  |MTDITID                                              |
       |Identifier Value 1 |1234567890                                           |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    Then user navigates to the Update and submit an Income Tax Return page with tax year "2019"
+    When user navigates to the current page with tax year "2024"
+    Then the user should be redirected to the "Page not found" page
+    Then user navigates to the untaxed interest page
+    When user navigates to the current page with tax year "2024"
     Then the user should be redirected to the "Page not found" page
 
 

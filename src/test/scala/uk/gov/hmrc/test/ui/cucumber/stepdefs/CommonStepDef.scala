@@ -75,4 +75,10 @@ class CommonStepDef extends BaseStepDef {
     driver.navigate().to("http://localhost:9308/income-through-software/return/personal-income/2022/interest/untaxed-uk-interest")
   }
 
+  Then("""^user navigates to the current page with tax year "(.*)"$""") { (taxYear: Int) =>
+    val currentUrl = driver.getCurrentUrl
+    val newUrl = currentUrl.replace("2022", s"$taxYear")
+    driver.navigate().to(newUrl)
+  }
+
 }

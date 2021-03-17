@@ -48,10 +48,10 @@ trait CommonElements extends BasePage with Matchers{
     "UK taxed interest amount earned"   -> By.id("taxedAmount"),
     "UK untaxed interest account name"  -> By.id("untaxedAccountName"),
     "UK taxed interest account name"    -> By.id("taxedAccountName"),
-    "add another account"               -> By.cssSelector("#main-content > div > div > div.govuk-\\!-margin-bottom-6 > a"),
-    "remove account"                    -> By.cssSelector("#main-content > div > div > div.govuk-summary-list > div > dd:nth-child(3) > a"),
-    "first account change"              -> By.cssSelector("#main-content > div > div > div.govuk-summary-list > div:nth-child(1) > dd:nth-child(3) > a"),
-    "second account change"             -> By.cssSelector("#main-content > div > div > div.govuk-summary-list > div:nth-child(2) > dd:nth-child(3) > a"),
+    "remove account"                    -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(1) > span.hmrc-add-to-a-list__remove > a"),
+    "first account change"              -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(1) > span.hmrc-add-to-a-list__change > a"),
+    "second account change"             -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(2) > span.hmrc-add-to-a-list__change > a"),
+
     "change uk untaxed interest accounts summary" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a"),
     "change uk taxed interest accounts summary"  -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a"),
 

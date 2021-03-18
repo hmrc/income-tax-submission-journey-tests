@@ -83,24 +83,34 @@ class CommonStepDef extends BaseStepDef {
 
   And("""^I take screenshots of the (.*), (.*)$""") { (languageDirectory: String, fileName: String) =>
     val jsx: JavascriptExecutor = driver.asInstanceOf[JavascriptExecutor]
+    val scrollHeight = jsx.executeScript("return (document.body || document.documentElement).scrollHeight").toString.toFloat
+    val windowHeight = jsx.executeScript("return window.innerHeight").toString.toFloat
 
-    val scrollHeight = jsx.executeScript("return (document.body || document.documentElement).scrollHeight").toString.toInt
-    var windowHeight = jsx.executeScript("return window.innerHeight").toString.toInt
-    var screenshotCount = 1
-
-    def windowScroll(sHeight: Int, wHeight: Int): AnyVal = {
-      (sHeight, wHeight) match {
-        case (sH, wH) if sH > wH =>
-          takeScreenShot(fileName + s" Part $screenshotCount", languageDirectory)
-          screenshotCount += 1
-          jsx.executeScript(s"window.scrollTo(0, $windowHeight)")
-          windowHeight += jsx.executeScript("return window.innerHeight").toString.toInt
-          windowScroll(sHeight, windowHeight)
-        case _ =>
-          takeScreenShot(fileName + s" Part $screenshotCount", languageDirectory)
-      }
-    }
-    windowScroll(scrollHeight, windowHeight)
+    val zoomLevel: Float = windowHeight/scrollHeight
+    jsx.executeScript(s"document.body.style.zoom = '$zoomLevel'")
+    takeScreenShot(fileName, languageDirectory)
+    jsx.executeScript(s"document.body.style.zoom = '1.0'")
   }
 
+//  And("""^I take screenshots of the (.*), (.*)$""") { (languageDirectory: String, fileName: String) =>
+//    val jsx: JavascriptExecutor = driver.asInstanceOf[JavascriptExecutor]
+//    val scrollHeight = jsx.executeScript("return (document.body || document.documentElement).scrollHeight").toString.toInt
+//    var windowHeight = jsx.executeScript("return window.innerHeight").toString.toInt
+//
+//    var screenshotCount = 1
+//
+//    def windowScroll(sHeight: Int, wHeight: Int): AnyVal = {
+//      (sHeight, wHeight) match {
+//        case (sH, wH) if sH > wH =>
+//          takeScreenShot(fileName + s" Part $screenshotCount", languageDirectory)
+//          screenshotCount += 1
+//          jsx.executeScript(s"window.scrollTo(0, $windowHeight)")
+//          windowHeight += jsx.executeScript("return window.innerHeight").toString.toInt
+//          windowScroll(sHeight, windowHeight)
+//        case _ =>
+//          takeScreenShot(fileName + s" Part $screenshotCount", languageDirectory)
+//      }
+//    }
+//    windowScroll(scrollHeight, windowHeight)
+//  }
 }

@@ -1,4 +1,4 @@
-@MVP @ZAP
+@MVP @ZAP @dividends
 
 Feature: Dividends Journeys - Income Tax Submission
 
@@ -48,7 +48,7 @@ Feature: Dividends Journeys - Income Tax Submission
     Then the user should be redirected to the "Did your client receive any dividends from companies in the UK?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "What is the total amount of dividends earned from companies in the UK?" page
+    Then the user should be redirected to the "How much did your client get in dividends from UK-based companies?" page
     When the user selects the UK dividends amount field and enters a value of 1000
     And the user clicks the continue button
     Then the user should be redirected to the "Did your client receive any dividends from trusts or open ended investment companies?" page
@@ -96,8 +96,7 @@ Feature: Dividends Journeys - Income Tax Submission
     When the user clicks on the dividends link
     Then the user should be redirected to the "Check your answers" page
     When the user clicks on the change uk dividends amount link
-    Then the user should be redirected to the "What is the total amount of dividends earned from companies in the UK?" page
-    When the user selects the prior amount radio button
+    Then the user should be redirected to the "How much did you get in dividends from UK-based companies?" page
     And the user clicks the continue button
     Then the user should be redirected to the "Check your answers" page
     When the user clicks on the change other dividends amount link
@@ -127,8 +126,7 @@ Feature: Dividends Journeys - Income Tax Submission
     When the user clicks on the dividends link
     Then the user should be redirected to the "Check your answers" page
     When the user clicks on the change uk dividends amount link
-    Then the user should be redirected to the "What is the total amount of dividends earned from companies in the UK?" page
-    When the user selects the other amount radio button
+    Then the user should be redirected to the "How much did you get in dividends from UK-based companies?" page
     And the user selects the other amount value field and enters a value of 2000
     And the user clicks the continue button
     Then the user should be redirected to the "Check your answers" page

@@ -126,7 +126,7 @@ Feature: Dividends Journeys - Income Tax Submission
     When the user clicks on the dividends link
     Then the user should be redirected to the "Check your answers" page
     When the user clicks on the change uk dividends amount link
-    Then the user should be redirected to the "How much did you get in dividends from UK-based companies?" page
+    Then the user should be redirected to the "How much did your client get in dividends from UK-based companies?" page
     And the user selects the other amount value field and enters a value of 2000
     And the user clicks the continue button
     Then the user should be redirected to the "Check your answers" page

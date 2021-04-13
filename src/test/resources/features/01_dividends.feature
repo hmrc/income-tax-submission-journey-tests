@@ -16,7 +16,7 @@ Feature: Dividends Journeys - Income Tax Submission
       |Identifier Name 1  |MTDITID                                              |
       |Identifier Value 1 |1234567890                                           |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the provide updates button
+    When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the dividends link
     Then the user should be redirected to the "Did you receive any dividends from companies in the UK?" page
@@ -42,7 +42,7 @@ Feature: Dividends Journeys - Income Tax Submission
       |Identifier Name 2  |AgentReferenceNumber                                                                 |
       |Identifier Value 2 |XARN1234567                                                                          |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the provide updates button
+    When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the dividends link
     Then the user should be redirected to the "Did your client receive any dividends from companies in the UK?" page
@@ -72,7 +72,7 @@ Feature: Dividends Journeys - Income Tax Submission
           |Identifier Name 1  |MTDITID                                               |
           |Identifier Value 1 |1234567891                                            |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the provide updates button
+    When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the dividends link
     Then the user should be redirected to the "Check your answers" page
@@ -91,7 +91,7 @@ Feature: Dividends Journeys - Income Tax Submission
       |Identifier Name 1  |MTDITID                                              |
       |Identifier Value 1 |1234567892                                           |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the provide updates button
+    When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the dividends link
     Then the user should be redirected to the "Check your answers" page
@@ -122,7 +122,7 @@ Feature: Dividends Journeys - Income Tax Submission
       |Identifier Name 2  |AgentReferenceNumber                                                               |
       |Identifier Value 2 |XARN1234567                                                                        |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the provide updates button
+    When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the dividends link
     Then the user should be redirected to the "Check your answers" page

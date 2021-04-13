@@ -54,7 +54,7 @@ Feature: Dividends Journeys - Income Tax Submission
     Then the user should be redirected to the "Did your client receive any dividends from trusts or open ended investment companies?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "What is the total amount of dividends from trusts or open ended investment companies?" page
+    Then the user should be redirected to the "How much did your client get in dividends from UK-based trusts and open-ended investment companies?" page
     When the user selects the UK other dividends amount field and enters a value of 500
     And the user clicks the continue button
     Then the user should be redirected to the "Check your answers" page
@@ -100,8 +100,8 @@ Feature: Dividends Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your answers" page
     When the user clicks on the change other dividends amount link
-    Then the user should be redirected to the "What is the total amount of dividends from trusts or open ended investment companies?" page
-    When the user selects the prior amount radio button
+    Then the user should be redirected to the "How much did you get in dividends from UK-based trusts and open-ended investment companies?" page
+    When the user selects the UK other dividends amount field and enters a value of 500
     And the user clicks the continue button
     Then the user should be redirected to the "Check your answers" page
     When the user clicks the save and continue button
@@ -131,8 +131,7 @@ Feature: Dividends Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your answers" page
     When the user clicks on the change other dividends amount link
-    Then the user should be redirected to the "What is the total amount of dividends from trusts or open ended investment companies?" page
-    When the user selects the other amount radio button
+    Then the user should be redirected to the "How much did your client get in dividends from UK-based trusts and open-ended investment companies?" page
     And the user selects the other amount value field and enters a value of 1000
     And the user clicks the continue button
     Then the user should be redirected to the "Check your answers" page

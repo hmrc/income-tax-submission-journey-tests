@@ -116,7 +116,7 @@ Feature: Dividends Journeys - Income Tax Submission
       |Confidence Level   |200                                                                                |
       |Affinity Group     |Agent                                                                              |
       |Enrolment Key 1    |HMRC-MTD-IT                                                                        |
-      |Identifier Name 1  |MTDITID                                                                        |
+      |Identifier Name 1  |MTDITID                                                                            |
       |Identifier Value 1 |1234567893                                                                         |
       |Enrolment Key 2    |HMRC-AS-AGENT                                                                      |
       |Identifier Name 2  |AgentReferenceNumber                                                               |

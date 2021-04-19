@@ -22,7 +22,7 @@ Feature: Util Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the dividends link
-    Then the user should be redirected to the "Did you receive any dividends from companies in the UK?" page
+    Then the user should be redirected to the "Did you get dividends from UK-based companies?" page
 #  Check for the Personal Income Tax Frontend
     And the user should see the correct Accessibility Statement url
     And the user should see the correct personal income sign out url

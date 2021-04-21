@@ -37,10 +37,10 @@ Feature: Util Journeys - Income Tax Submission
       |Identifier Name 1  |AgentReferenceNumber                                                                |
       |Identifier Value 1 |XARN1234567                                                                         |
     Then the user should be redirected to the "There’s a problem" page
-    And the user should see the correct client-authorisation url
+    And the user should see the correct Authorise you as an agent url
     Then user navigates to the untaxed interest page
     Then the user should be redirected to the "There’s a problem" page
-    And the user should see the correct client-authorisation url
+    And the user should see the correct Authorise you as an agent url
 
   Scenario: Checking the user cannot submit against other tax years on personal frontend
     When the user logs into the service with the following details

@@ -44,31 +44,16 @@ class CommonStepDef extends BaseStepDef {
     CommonPage.enterValue(valueTextBox, value)
   }
 
-  Then( """^the user should see the correct Accessibility Statement url$""") { () =>
-    val expectedHref = "/accessibility-statement/income-tax-submission"
-    driver.findElement(By.linkText("Accessibility statement")).getAttribute("href") should include (expectedHref)
-  }
-
-
-  And( """^the user should see the correct sign out url$""") { () =>
-    val expectedHref = "/income-through-software/return/sign-out"
-    driver.findElement(By.linkText("Sign out")).getAttribute("href") should include (expectedHref)
-  }
-
-  And( """^the user should see the correct personal income sign out url$""") { () =>
-    val expectedHref = "/income-through-software/return/personal-income/sign-out"
-    driver.findElement(By.linkText("Sign out")).getAttribute("href") should include (expectedHref)
-  }
-
-  And( """^the user should see the correct View estimation url$""") { () =>
-
-    val href = driver.findElement(By.linkText("View estimation")).getAttribute("href").contains("/income-through-software/return/2022/calculate")
-    href shouldBe true
-  }
-
-  And( """^the user should see the correct client-authorisation url$""") { () =>
-    val expectedHref = "https://www.gov.uk/guidance/client-authorisation-an-overview"
-    driver.findElement(By.id("client_auth_link")).getAttribute("href") should include (expectedHref)
+  Then( """^the user should see the correct (.*) url$""") { ( url: String) =>
+    val expectedUrl: (String, String) = url match {
+      case "Accessibility Statement" => ("Accessibility statement", "/accessibility-statement/income-tax-submission")
+      case "sign out" => ("Sign out", "/income-through-software/return/sign-out")
+      case "personal income sign out" => ("Sign out", "/income-through-software/return/personal-income/sign-out")
+      case "View estimation" => ("View estimation", "/income-through-software/return/2022/calculate")
+      case "Authorise you as an agent" => ("authorise you as their agent (opens in new tab)", "https://www.gov.uk/guidance/client-authorisation-an-overview")
+      case _ => fail("Invalid url input parameter")
+    }
+    driver.findElement(By.linkText(expectedUrl._1)).getAttribute("href") should include (expectedUrl._2)
   }
 
   Then("""^user navigates to the untaxed interest page$""") { () =>

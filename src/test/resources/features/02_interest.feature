@@ -88,7 +88,7 @@ Feature: Interest Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "UK taxed interest account details" page
-    When the user selects the UK taxed interest account name field and enters a value of Goldman $achs
+    When the user selects the UK taxed interest account name field and enters a value of Goldman achs
     And the user selects the UK taxed interest amount earned field and enters a value of 700
     And the user clicks the continue button
     Then the user should be redirected to the "UK taxed interest accounts" page

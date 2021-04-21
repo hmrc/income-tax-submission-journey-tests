@@ -29,11 +29,7 @@ trait CommonElements extends BasePage with Matchers{
     "yes"                  -> By.id("value"),
     "no"                   -> By.id("value-no"),
     "save and continue"    -> By.cssSelector("#main-content > div > div > form > button"),
-    "provide updates"      -> By.cssSelector("#main-content > div > div > a"),
     "continue"             -> By.id("continue"),
-    "other amount"         -> By.id("otherAmount"),
-    "prior amount"         -> By.id("whichAmount"),
-    "other amount value"   -> By.id("amount"),
 
     //Dividends Elements
     "dividends"                     -> By.id("dividends_link"),
@@ -46,6 +42,8 @@ trait CommonElements extends BasePage with Matchers{
     "interest"                          -> By.id("interest_link"),
     "UK untaxed interest amount earned" -> By.id("untaxedAmount"),
     "UK taxed interest amount earned"   -> By.id("taxedAmount"),
+    "UK untaxed interest updated amount earned" -> By.id("amount"),
+    "UK taxed interest updated amount earned"   -> By.id("amount"),
     "UK untaxed interest account name"  -> By.id("untaxedAccountName"),
     "UK taxed interest account name"    -> By.id("taxedAccountName"),
     "remove account"                    -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(1) > span.hmrc-add-to-a-list__remove > a"),

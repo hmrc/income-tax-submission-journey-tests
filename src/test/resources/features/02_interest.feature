@@ -195,12 +195,12 @@ Feature: Interest Journeys - Income Tax Submission
     Then the user should be redirected to the "UK untaxed interest accounts" page
     When the user clicks on the first account change link
     Then the user should be redirected to the "How much untaxed UK interest did you get?" page
-    And the user selects the other amount value field and enters a value of 100.01
+    And the user selects the UK untaxed interest updated amount earned field and enters a value of 100.01
     And the user clicks the continue button
     Then the user should be redirected to the "UK untaxed interest accounts" page
     When the user clicks on the second account change link
     Then the user should be redirected to the "How much untaxed UK interest did you get?" page
-    And the user selects the other amount value field and enters a value of 100.01
+    And the user selects the UK untaxed interest updated amount earned field and enters a value of 100.01
     And the user clicks the continue button
     Then the user should be redirected to the "UK untaxed interest accounts" page
     When the user selects the no radio button
@@ -210,12 +210,12 @@ Feature: Interest Journeys - Income Tax Submission
     Then the user should be redirected to the "UK taxed interest accounts" page
     When the user clicks on the first account change link
     Then the user should be redirected to the "How much taxed UK interest did you get?" page
-    And the user selects the other amount value field and enters a value of 100.01
+    And the user selects the UK taxed interest updated amount earned field and enters a value of 100.01
     And the user clicks the continue button
     Then the user should be redirected to the "UK taxed interest accounts" page
     When the user clicks on the second account change link
     Then the user should be redirected to the "How much taxed UK interest did you get?" page
-    And the user selects the other amount value field and enters a value of 6000
+    And the user selects the UK taxed interest updated amount earned field and enters a value of 6000
     And the user clicks the continue button
     Then the user should be redirected to the "UK taxed interest accounts" page
     When the user selects the no radio button
@@ -246,12 +246,12 @@ Feature: Interest Journeys - Income Tax Submission
     Then the user should be redirected to the "UK untaxed interest accounts" page
     When the user clicks on the first account change link
     Then the user should be redirected to the "How much untaxed UK interest did your client get?" page
-    And the user selects the other amount value field and enters a value of 100.01
+    And the user selects the UK untaxed interest updated amount earned field and enters a value of 100.01
     And the user clicks the continue button
     Then the user should be redirected to the "UK untaxed interest accounts" page
     When the user clicks on the second account change link
     Then the user should be redirected to the "How much untaxed UK interest did your client get?" page
-    And the user selects the other amount value field and enters a value of 100.01
+    And the user selects the UK untaxed interest updated amount earned field and enters a value of 100.01
     And the user clicks the continue button
     Then the user should be redirected to the "UK untaxed interest accounts" page
     When the user selects the no radio button
@@ -261,12 +261,12 @@ Feature: Interest Journeys - Income Tax Submission
     Then the user should be redirected to the "UK taxed interest accounts" page
     When the user clicks on the first account change link
     Then the user should be redirected to the "How much taxed UK interest did your client get?" page
-    And the user selects the other amount value field and enters a value of 100.01
+    And the user selects the UK taxed interest updated amount earned field and enters a value of 100.01
     And the user clicks the continue button
     Then the user should be redirected to the "UK taxed interest accounts" page
     When the user clicks on the second account change link
     Then the user should be redirected to the "How much taxed UK interest did your client get?" page
-    And the user selects the other amount value field and enters a value of 6000
+    And the user selects the UK taxed interest updated amount earned field and enters a value of 6000
     And the user clicks the continue button
     Then the user should be redirected to the "UK taxed interest accounts" page
     When the user selects the no radio button

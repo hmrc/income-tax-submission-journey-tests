@@ -66,4 +66,71 @@ class CommonStepDef extends BaseStepDef {
     driver.navigate().to(newUrl)
   }
 
+  Then("""^I navigate to the home page$""") { () =>
+    driver.navigate().to("https://www.instagram.com/")
+  }
+
+  Then("""^I click the accept all button""") { () =>
+    driver.findElement(By.cssSelector("button.bIiDR")).click()
+  }
+
+  Then("""^I enter my username""") { () =>
+    driver.findElement(By.cssSelector("#loginForm > div > div:nth-child(1) > div > label > input")).clear()
+    driver.findElement(By.cssSelector("#loginForm > div > div:nth-child(1) > div > label > input")).sendKeys("joey-boi-2k9@hotmail.co.uk")
+  }
+
+  Then("""^I enter my password""") { () =>
+    driver.findElement(By.cssSelector("#loginForm > div > div:nth-child(2) > div > label > input")).clear()
+    driver.findElement(By.cssSelector("#loginForm > div > div:nth-child(2) > div > label > input")).sendKeys("Wrekin5!")
+  }
+
+  Then("""^I click the login button""") { () =>
+    driver.findElement(By.cssSelector("#loginForm > div > div:nth-child(3) > button > div")).click()
+  }
+
+  Then("""^I wait""") { () =>
+    Thread.sleep(5000)
+  }
+
+  Then("""^I click the not now button""") { () =>
+    driver.findElement(By.cssSelector("#react-root > section > main > div > div > div > div > button")).click()
+  }
+
+  Then("""^I click the second not now button""") { () =>
+    driver.findElement(By.cssSelector("body > div.RnEpo.Yx5HN > div > div > div > div.mt3GC > button.aOOlW.HoLwm")).click()
+  }
+
+  Then("""^I navigate to the JMOORE page$""") { () =>
+    driver.navigate().to("https://www.instagram.com/jmooregaming/")
+  }
+
+  Then("""^I save the first follower""") { () =>
+    for (a <- 1 to 100){
+      val f = {
+        if (isDisplayedId(a)) {
+          driver.findElement(By.cssSelector(s"div.PZuss > li:nth-child($a) > div > div:nth-child(2) > div > div> div> span > a")).getAttribute("title")
+        }
+      }
+      println(f)
+    }
+  }
+
+  def findById(number: Int) = driver.findElement(By.cssSelector(s"div.PZuss > li:nth-child($number) > div > div:nth-child(2) > div> div> div> span> a"))
+
+
+  def isDisplayedId(number: Int, timeOutInSeconds: Int = 10): Boolean = {
+    val endTime = System.currentTimeMillis + timeOutInSeconds * 1000
+    while (System.currentTimeMillis < endTime) {
+      try {
+        if (findById(number).isDisplayed && findById(number).isEnabled) {
+          return true
+        }
+      } catch {
+        case _: Throwable => false
+      }
+      Thread.sleep(100)
+    }
+    false
+  }
+
 }

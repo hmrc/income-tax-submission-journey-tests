@@ -18,6 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.CommonPage
+import uk.gov.hmrc.test.ui.pages.CommonPage.load
 
 class CommonStepDef extends BaseStepDef {
 
@@ -66,4 +67,8 @@ class CommonStepDef extends BaseStepDef {
     driver.navigate().to(newUrl)
   }
 
+  Then("""^the user cannot click the (.*) link$""") { linkName: String =>
+    val selector: By = load("Unclickable " + linkName)
+    driver.findElement(selector).getAttribute("href") shouldBe null
+  }
 }

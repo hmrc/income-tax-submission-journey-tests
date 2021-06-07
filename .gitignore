@@ -9,6 +9,7 @@ logs
 *.DS_Store
 /.project
 .history
+dast-config-manager
 
 # IDE files
 /.idea

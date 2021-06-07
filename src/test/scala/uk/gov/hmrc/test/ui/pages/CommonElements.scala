@@ -63,6 +63,10 @@ trait CommonElements extends BasePage with Matchers{
     "return to overview"              -> By.id("returnToOverviewPageBtn"),
     "Unclickable employment"          -> By.cssSelector("#main-content > div > div > ol > li:nth-child(1) > ol > li:nth-child(5) > span.app-task-list__task-name"),
     "Unclickable benefits"            -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(2) > span.hmrc-add-to-a-list__identifier.hmrc-add-to-a-list__identifier--light"),
-    "Unclickable expenses"            -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(3) > span.hmrc-add-to-a-list__identifier.hmrc-add-to-a-list__identifier--light")
+    "Unclickable expenses"            -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(3) > span.hmrc-add-to-a-list__identifier.hmrc-add-to-a-list__identifier--light"),
+
+    //GiftAid Elements
+    "GiftAid" -> By.id("giftAid_link")
+
   )
 }

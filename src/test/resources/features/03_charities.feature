@@ -76,5 +76,5 @@ Feature: Charities Journeys - Income Tax Submission
     When the user clicks on the GiftAid link
     Then the user should be redirected to the "Check your client’s donations to charity" page
     When the user clicks the save and continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
     And the user should see the correct View estimation url

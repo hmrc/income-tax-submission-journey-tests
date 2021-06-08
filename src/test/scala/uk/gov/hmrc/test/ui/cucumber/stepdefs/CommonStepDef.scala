@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.pages.CommonPage
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, CommonPage}
 import uk.gov.hmrc.test.ui.pages.CommonPage.load
 
 class CommonStepDef extends BaseStepDef {
@@ -52,16 +52,24 @@ class CommonStepDef extends BaseStepDef {
       case "personal income sign out" => ("Sign out", "/income-through-software/return/personal-income/sign-out")
       case "View estimation" => ("View estimation", "/income-through-software/return/2022/calculate")
       case "Authorise you as an agent" => ("authorise you as their agent (opens in new tab)", "https://www.gov.uk/guidance/client-authorisation-an-overview")
+      case "employment sign out" => ("Sign out", "/income-through-software/return/employment-income/sign-out")
       case _ => fail("Invalid url input parameter")
     }
     driver.findElement(By.linkText(expectedUrl._1)).getAttribute("href") should include (expectedUrl._2)
   }
 
-  Then("""^user navigates to the untaxed interest page$""") { () =>
-    driver.navigate().to("http://localhost:9308/income-through-software/return/personal-income/2022/interest/untaxed-uk-interest")
+  Then("""^the user navigates to the (.*) page$""") { (url: String) =>
+    val expectedUrl: String = url match {
+      case "untaxed interest" => "http://localhost:9308/income-through-software/return/personal-income/2022/interest/untaxed-uk-interest"
+      case "employment summary" => "http://localhost:9317/income-through-software/return/employment-income/2022/employment-summary"
+      case "interest check your answers" => "http://localhost:9308/income-through-software/return/personal-income/2022/interest/check-your-answers"
+      case "auth login" => AuthLoginPage.url
+      case _ => fail("Invalid url input parameter")
+    }
+    driver.navigate().to(expectedUrl)
   }
 
-  Then("""^user navigates to the current page with tax year "(.*)"$""") { (taxYear: Int) =>
+  Then("""^the user navigates to the current page with tax year "(.*)"$""") { (taxYear: Int) =>
     val currentUrl = driver.getCurrentUrl
     val newUrl = currentUrl.replace("2022", s"$taxYear")
     driver.navigate().to(newUrl)

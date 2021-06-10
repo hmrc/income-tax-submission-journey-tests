@@ -19,13 +19,13 @@ Feature: Interest Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the interest link
-    Then the user should be redirected to the "Did you receive any untaxed interest from the UK?" page
+    Then the user should be redirected to the "Did you get untaxed interest from the UK?" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Did you receive any taxed interest from the UK?" page
+    Then the user should be redirected to the "Did you get taxed interest from the UK?" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Check your answers" page
+    Then the user should be redirected to the "Check your taxed and untaxed UK interest" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your Income Tax Return" page
 
@@ -46,55 +46,55 @@ Feature: Interest Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the interest link
-    Then the user should be redirected to the "Did your client receive any untaxed interest from the UK?" page
+    Then the user should be redirected to the "Did your client get untaxed interest from the UK?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "UK untaxed interest account details" page
+    Then the user should be redirected to the "Add an account with untaxed UK interest" page
     When the user selects the UK untaxed interest account name field and enters a value of Tesco Bank
     And the user selects the UK untaxed interest amount earned field and enters a value of 1000
     And the user clicks the continue button
-    Then the user should be redirected to the "UK untaxed interest account" page
+    Then the user should be redirected to the "Accounts with untaxed UK interest" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "UK untaxed interest account details" page
+    Then the user should be redirected to the "Add an account with untaxed UK interest" page
     When the user selects the UK untaxed interest account name field and enters a value of First Direct
     And the user selects the UK untaxed interest amount earned field and enters a value of 1500
     And the user clicks the continue button
-    Then the user should be redirected to the "UK untaxed interest accounts" page
+    Then the user should be redirected to the "Accounts with untaxed UK interest" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "UK untaxed interest account details" page
+    Then the user should be redirected to the "Add an account with untaxed UK interest" page
     When the user selects the UK untaxed interest account name field and enters a value of Sainburys Bank
     And the user selects the UK untaxed interest amount earned field and enters a value of 2500
     And the user clicks the continue button
-    Then the user should be redirected to the "UK untaxed interest accounts" page
+    Then the user should be redirected to the "Accounts with untaxed UK interest" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Did your client receive any taxed interest from the UK?" page
+    Then the user should be redirected to the "Did your client get taxed interest from the UK?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "UK taxed interest account details" page
+    Then the user should be redirected to the "Add an account with taxed UK interest" page
     When the user selects the UK taxed interest account name field and enters a value of RBS
     And the user selects the UK taxed interest amount earned field and enters a value of 500
     And the user clicks the continue button
-    Then the user should be redirected to the "UK taxed interest account" page
+    Then the user should be redirected to the "Accounts with taxed UK interest" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "UK taxed interest account details" page
+    Then the user should be redirected to the "Add an account with taxed UK interest" page
     When the user selects the UK taxed interest account name field and enters a value of Skipton
     And the user selects the UK taxed interest amount earned field and enters a value of 600
     And the user clicks the continue button
-    Then the user should be redirected to the "UK taxed interest accounts" page
+    Then the user should be redirected to the "Accounts with taxed UK interest" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "UK taxed interest account details" page
-    When the user selects the UK taxed interest account name field and enters a value of Goldman achs
+    Then the user should be redirected to the "Add an account with taxed UK interest" page
+    When the user selects the UK taxed interest account name field and enters a value of Goldman Sachs
     And the user selects the UK taxed interest amount earned field and enters a value of 700
     And the user clicks the continue button
-    Then the user should be redirected to the "UK taxed interest accounts" page
+    Then the user should be redirected to the "Accounts with taxed UK interest" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Check your answers" page
+    Then the user should be redirected to the "Check your client’s taxed and untaxed UK interest" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
 
@@ -114,65 +114,65 @@ Feature: Interest Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the interest link
-    Then the user should be redirected to the "Did your client receive any untaxed interest from the UK?" page
+    Then the user should be redirected to the "Did your client get untaxed interest from the UK?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "UK untaxed interest account details" page
+    Then the user should be redirected to the "Add an account with untaxed UK interest" page
     When the user selects the UK untaxed interest account name field and enters a value of Tesco Bank
     And the user selects the UK untaxed interest amount earned field and enters a value of 1000
     And the user clicks the continue button
-    Then the user should be redirected to the "UK untaxed interest account" page
+    Then the user should be redirected to the "Accounts with untaxed UK interest" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "UK untaxed interest account details" page
+    Then the user should be redirected to the "Add an account with untaxed UK interest" page
     When the user selects the UK untaxed interest account name field and enters a value of First Direct
     And the user selects the UK untaxed interest amount earned field and enters a value of 1000
     And the user clicks the continue button
-    Then the user should be redirected to the "UK untaxed interest accounts" page
+    Then the user should be redirected to the "Accounts with untaxed UK interest" page
     When the user clicks on the remove account link
     Then the user should be redirected to the "Are you sure you want to remove this account?" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "UK untaxed interest accounts" page
+    Then the user should be redirected to the "Accounts with untaxed UK interest" page
     When the user clicks on the remove account link
     Then the user should be redirected to the "Are you sure you want to remove this account?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "UK untaxed interest account" page
+    Then the user should be redirected to the "Accounts with untaxed UK interest" page
     When the user clicks on the remove account link
     Then the user should be redirected to the "Are you sure you want to remove this account?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Did your client receive any taxed interest from the UK?" page
+    Then the user should be redirected to the "Did your client get taxed interest from the UK?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "UK taxed interest account details" page
-    When the user selects the UK taxed interest account name field and enters a value of Sainburys Bank
+    Then the user should be redirected to the "Add an account with taxed UK interest" page
+    When the user selects the UK taxed interest account name field and enters a value of Sainsbury’s Bank
     And the user selects the UK taxed interest amount earned field and enters a value of 500
     And the user clicks the continue button
-    Then the user should be redirected to the "UK taxed interest account" page
+    Then the user should be redirected to the "Accounts with taxed UK interest" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "UK taxed interest account details" page
+    Then the user should be redirected to the "Add an account with taxed UK interest" page
     When the user selects the UK taxed interest account name field and enters a value of Tesco Bank
     And the user selects the UK taxed interest amount earned field and enters a value of 500
     And the user clicks the continue button
-    Then the user should be redirected to the "UK taxed interest accounts" page
+    Then the user should be redirected to the "Accounts with taxed UK interest" page
     When the user clicks on the remove account link
     Then the user should be redirected to the "Are you sure you want to remove this account?" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "UK taxed interest accounts" page
+    Then the user should be redirected to the "Accounts with taxed UK interest" page
     When the user clicks on the remove account link
     Then the user should be redirected to the "Are you sure you want to remove this account?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "UK taxed interest account" page
+    Then the user should be redirected to the "Accounts with taxed UK interest" page
     When the user clicks on the remove account link
     Then the user should be redirected to the "Are you sure you want to remove this account?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Check your answers" page
+    Then the user should be redirected to the "Check your client’s taxed and untaxed UK interest" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
 
@@ -190,37 +190,37 @@ Feature: Interest Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the interest link
-    Then the user should be redirected to the "Check your answers" page
+    Then the user should be redirected to the "Check your taxed and untaxed UK interest" page
     When the user clicks on the change uk untaxed interest accounts summary link
-    Then the user should be redirected to the "UK untaxed interest accounts" page
+    Then the user should be redirected to the "Accounts with untaxed UK interest" page
     When the user clicks on the first account change link
     Then the user should be redirected to the "How much untaxed UK interest did you get?" page
     And the user selects the UK untaxed interest updated amount earned field and enters a value of 100.01
     And the user clicks the continue button
-    Then the user should be redirected to the "UK untaxed interest accounts" page
+    Then the user should be redirected to the "Accounts with untaxed UK interest" page
     When the user clicks on the second account change link
     Then the user should be redirected to the "How much untaxed UK interest did you get?" page
     And the user selects the UK untaxed interest updated amount earned field and enters a value of 100.01
     And the user clicks the continue button
-    Then the user should be redirected to the "UK untaxed interest accounts" page
+    Then the user should be redirected to the "Accounts with untaxed UK interest" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Check your answers" page
+    Then the user should be redirected to the "Check your taxed and untaxed UK interest" page
     When the user clicks on the change uk taxed interest accounts summary link
-    Then the user should be redirected to the "UK taxed interest accounts" page
+    Then the user should be redirected to the "Accounts with taxed UK interest" page
     When the user clicks on the first account change link
     Then the user should be redirected to the "How much taxed UK interest did you get?" page
     And the user selects the UK taxed interest updated amount earned field and enters a value of 100.01
     And the user clicks the continue button
-    Then the user should be redirected to the "UK taxed interest accounts" page
+    Then the user should be redirected to the "Accounts with taxed UK interest" page
     When the user clicks on the second account change link
     Then the user should be redirected to the "How much taxed UK interest did you get?" page
     And the user selects the UK taxed interest updated amount earned field and enters a value of 6000
     And the user clicks the continue button
-    Then the user should be redirected to the "UK taxed interest accounts" page
+    Then the user should be redirected to the "Accounts with taxed UK interest" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Check your answers" page
+    Then the user should be redirected to the "Check your taxed and untaxed UK interest" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     And the user should see the correct View estimation url
@@ -241,37 +241,37 @@ Feature: Interest Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the interest link
-    Then the user should be redirected to the "Check your answers" page
+    Then the user should be redirected to the "Check your client’s taxed and untaxed UK interest" page
     When the user clicks on the change uk untaxed interest accounts summary link
-    Then the user should be redirected to the "UK untaxed interest accounts" page
+    Then the user should be redirected to the "Accounts with untaxed UK interest" page
     When the user clicks on the first account change link
     Then the user should be redirected to the "How much untaxed UK interest did your client get?" page
     And the user selects the UK untaxed interest updated amount earned field and enters a value of 100.01
     And the user clicks the continue button
-    Then the user should be redirected to the "UK untaxed interest accounts" page
+    Then the user should be redirected to the "Accounts with untaxed UK interest" page
     When the user clicks on the second account change link
     Then the user should be redirected to the "How much untaxed UK interest did your client get?" page
     And the user selects the UK untaxed interest updated amount earned field and enters a value of 100.01
     And the user clicks the continue button
-    Then the user should be redirected to the "UK untaxed interest accounts" page
+    Then the user should be redirected to the "Accounts with untaxed UK interest" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Check your answers" page
+    Then the user should be redirected to the "Check your client’s taxed and untaxed UK interest" page
     When the user clicks on the change uk taxed interest accounts summary link
-    Then the user should be redirected to the "UK taxed interest accounts" page
+    Then the user should be redirected to the "Accounts with taxed UK interest" page
     When the user clicks on the first account change link
     Then the user should be redirected to the "How much taxed UK interest did your client get?" page
     And the user selects the UK taxed interest updated amount earned field and enters a value of 100.01
     And the user clicks the continue button
-    Then the user should be redirected to the "UK taxed interest accounts" page
+    Then the user should be redirected to the "Accounts with taxed UK interest" page
     When the user clicks on the second account change link
     Then the user should be redirected to the "How much taxed UK interest did your client get?" page
     And the user selects the UK taxed interest updated amount earned field and enters a value of 6000
     And the user clicks the continue button
-    Then the user should be redirected to the "UK taxed interest accounts" page
+    Then the user should be redirected to the "Accounts with taxed UK interest" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Check your answers" page
+    Then the user should be redirected to the "Check your client’s taxed and untaxed UK interest" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     And the user should see the correct View estimation url

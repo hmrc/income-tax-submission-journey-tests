@@ -67,7 +67,7 @@ Feature: Util Journeys - Income Tax Submission
     Then the user should be redirected to the "Page not found" page
 #  Check for the Personal Income Tax Frontend
     When the user navigates to the interest check your answers page
-    Then the user should be redirected to the "Check your taxed and untaxed UK interest" page
+    Then the user should be redirected to the "Check your UK interest" page
     When the user navigates to the current page with tax year "2024"
     Then the user should be redirected to the "Page not found" page
  #  Check for the Income Tax Employment Frontend

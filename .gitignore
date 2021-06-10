@@ -27,4 +27,4 @@ lib_managed
 src_managed/
 project/project
 project/target
-.bsp
+/.bsp

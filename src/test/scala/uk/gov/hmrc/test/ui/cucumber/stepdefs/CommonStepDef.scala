@@ -62,7 +62,7 @@ class CommonStepDef extends BaseStepDef {
     val expectedUrl: String = url match {
       case "untaxed interest" => "http://localhost:9308/income-through-software/return/personal-income/2022/interest/untaxed-uk-interest"
       case "employment summary" => "http://localhost:9317/income-through-software/return/employment-income/2022/employment-summary"
-      case "interest check your answers" => "http://localhost:9308/income-through-software/return/personal-income/2022/interest/check-your-answers"
+      case "interest check your answers" => "http://localhost:9308/income-through-software/return/personal-income/2022/interest/check-interest"
       case "auth login" => AuthLoginPage.url
       case _ => fail("Invalid url input parameter")
     }

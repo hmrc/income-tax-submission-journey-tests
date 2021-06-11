@@ -16,14 +16,16 @@ Add a link to the relevant story in Jira
  - [ ]  Have you looked at the JIRA story to make sure all Acceptance Criteria has been met?
 
 ##### After Reviewing
- - [ ]  Have you checked for merge conflicts?
+ - [ ]  Have you checked for merge conflicts or any changes in the current master that may affect
+ the current pull request?
  - [ ]  Have you checked to make sure there are no builds in the pipeline before you merge? 
  - [ ]  Have you moved the task to “in pipeline” on Jira?
 
 ### Checklist PR Raiser
 ##### Before creating PR
  - [ ]  Have you run the journey tests? 
- - [ ]  Have you addressed warnings where appropriate? 
+ - [ ]  Have you addressed warnings where appropriate?
+ - [ ]  Have you rebased against the current version of master? 
 
 ##### After PRs been Reviewed
  - [ ]  Have you checked for merge conflicts?

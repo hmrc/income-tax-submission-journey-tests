@@ -31,6 +31,7 @@ trait CommonElements extends BasePage with Matchers{
     "save and continue"    -> By.cssSelector("#main-content > div > div > form > button"),
     "continue"             -> By.id("continue"),
     "back"                 -> By.cssSelector("a.govuk-back-link"),
+    "remove account"       -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(1) > span.hmrc-add-to-a-list__remove > a")
 
     //Dividends Elements
     "dividends"                     -> By.id("dividends_link"),
@@ -47,7 +48,6 @@ trait CommonElements extends BasePage with Matchers{
     "UK taxed interest updated amount earned"   -> By.id("amount"),
     "UK untaxed interest account name"  -> By.id("untaxedAccountName"),
     "UK taxed interest account name"    -> By.id("taxedAccountName"),
-    "remove account"                    -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(1) > span.hmrc-add-to-a-list__remove > a"),
     "first account change"              -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(1) > span.hmrc-add-to-a-list__change > a"),
     "second account change"             -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(2) > span.hmrc-add-to-a-list__change > a"),
     "change uk untaxed interest accounts summary" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a"),
@@ -76,6 +76,7 @@ trait CommonElements extends BasePage with Matchers{
     "Total value of qualifying shares or securities" -> By.id("amount"),
     "Value of land or property" -> By.id("amount"),
     "Value of qualifying shares, securities, land or property donated to overseas charities" -> By.id("amount"),
+    "Name of overseas charity you donated shares, securities, land or property to" -> By.id("amount"),
     "Name of overseas charity your client donated shares, securities, land or property to" -> By.id("amount"),
     "change amount donated to charity using Gift Aid" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
     "change amount of one-off donations to charity using Gift Aid" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),

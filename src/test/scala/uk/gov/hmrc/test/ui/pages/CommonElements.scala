@@ -52,6 +52,8 @@ trait CommonElements extends BasePage with Matchers{
     "second account change"             -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(2) > span.hmrc-add-to-a-list__change > a"),
     "change uk untaxed interest accounts summary" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a"),
     "change uk taxed interest accounts summary"  -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a"),
+    "Halifax" -> By.id("WhateverTheRadioIdIs"),
+    "Nationwide" -> By.id("WhateverTheRadioIdIs"),
 
     //Employment Elements
     "employment"                      -> By.linkText("Employment"),

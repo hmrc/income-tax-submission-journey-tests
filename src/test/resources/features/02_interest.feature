@@ -275,3 +275,93 @@ Feature: Interest Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     And the user should see the correct View estimation url
+
+  Scenario: Individual user with taxed/untaxed interest for a previous tax year, chooses a previous account for both
+    When the user logs into the service with the following details
+      |Redirect url       |/2022/start                                          |
+      |Credential Strength|strong                                               |
+      |Confidence Level   |200                                                  |
+      |Affinity Group     |Individual                                           |
+      |Nino               |AA000002A                                            |
+      |Enrolment Key 1    |HMRC-MTD-IT                                          |
+      |Identifier Name 1  |MTDITID                                              |
+      |Identifier Value 1 |1234567890                                           |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the interest link
+    Then the user should be redirected to the "Did you get untaxed interest from the UK?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Which account did you get untaxed UK interest from?" page
+    When the user selects the Halifax radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much untaxed UK interest did you get from Halifax?" page
+    And the user selects the UK untaxed interest updated amount earned field and enters a value of 100.01
+    And the user clicks the continue button
+    Then the user should be redirected to the "Accounts with untaxed UK interest" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get taxed interest from the UK?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Which account did you get untaxed UK interest from?" page
+    When the user selects the Nationwide radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much untaxed UK interest did you get from Nationwide?" page
+    And the user selects the UK untaxed interest updated amount earned field and enters a value of 100.01
+    And the user clicks the continue button
+    Then the user should be redirected to the "Accounts with taxed UK interest" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your taxed and untaxed UK interest" page
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    And the user should see the correct View estimation url
+
+  Scenario: Agent user with taxed/untaxed interest for a previous tax year, chooses new accounts for both
+    When the user logs into the service with the following details
+      |Redirect url       |/test-only/2022/additional-parameters?ClientNino=AA000002A&ClientMTDID=1234567893  |
+      |Credential Strength|weak                                                                               |
+      |Confidence Level   |200                                                                                |
+      |Affinity Group     |Agent                                                                              |
+      |Enrolment Key 1    |HMRC-MTD-IT                                                                        |
+      |Identifier Name 1  |MTDITID                                                                            |
+      |Identifier Value 1 |1234567893                                                                         |
+      |Enrolment Key 2    |HMRC-AS-AGENT                                                                      |
+      |Identifier Name 2  |AgentReferenceNumber                                                               |
+      |Identifier Value 2 |XARN1234567
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the interest link
+    Then the user should be redirected to the "Did your client get untaxed interest from the UK?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Which account did your client get untaxed UK interest from?" page
+    When the user selects the add a new account radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Add an account with untaxed UK interest" page
+    When the user selects the UK untaxed interest account name field and enters a value of First Direct
+    And the user selects the UK untaxed interest amount earned field and enters a value of 1000
+    And the user clicks the continue button
+    Then the user should be redirected to the "Accounts with untaxed UK interest" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your client get taxed interest from the UK?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Which account did you get untaxed UK interest from?" page
+    When the user selects the add a new account radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Add an account with taxed UK interest" page
+    When the user selects the UK taxed interest account name field and enters a value of Sainsbury’s Bank
+    And the user selects the UK taxed interest amount earned field and enters a value of 500
+    And the user clicks the continue button
+    Then the user should be redirected to the "Accounts with taxed UK interest" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your client’s taxed and untaxed UK interest" page
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    And the user should see the correct View estimation url

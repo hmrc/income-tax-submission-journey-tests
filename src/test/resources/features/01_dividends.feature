@@ -86,7 +86,7 @@ Feature: Dividends Journeys - Income Tax Submission
       |Credential Strength|strong                                               |
       |Confidence Level   |200                                                  |
       |Affinity Group     |Individual                                           |
-      |Nino               |AA000002A                                            |
+      |Nino               |AA000001A                                            |
       |Enrolment Key 1    |HMRC-MTD-IT                                          |
       |Identifier Name 1  |MTDITID                                              |
       |Identifier Value 1 |1234567892                                           |

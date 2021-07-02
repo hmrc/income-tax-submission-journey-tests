@@ -17,8 +17,10 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.{By, JavascriptExecutor}
-import uk.gov.hmrc.test.ui.pages.CommonPage
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, CommonPage}
+import uk.gov.hmrc.test.ui.pages.CommonPage.load
 import uk.gov.hmrc.test.ui.pages.CommonPage.takeScreenShot
+
 
 class CommonStepDef extends BaseStepDef {
 
@@ -45,40 +47,39 @@ class CommonStepDef extends BaseStepDef {
     CommonPage.enterValue(valueTextBox, value)
   }
 
-  Then( """^the user should see the correct Accessibility Statement url$""") { () =>
-    val expectedHref = "/accessibility-statement/income-tax-submission"
-    driver.findElement(By.linkText("Accessibility statement")).getAttribute("href") should include (expectedHref)
+  Then( """^the user should see the correct (.*) url$""") { ( url: String) =>
+    val expectedUrl: (String, String) = url match {
+      case "Accessibility Statement" => ("Accessibility statement", "/accessibility-statement/income-tax-submission")
+      case "sign out" => ("Sign out", "/income-through-software/return/sign-out")
+      case "personal income sign out" => ("Sign out", "/income-through-software/return/personal-income/sign-out")
+      case "View estimation" => ("View estimation", "/income-through-software/return/2022/calculate")
+      case "Authorise you as an agent" => ("authorise you as their agent (opens in new tab)", "https://www.gov.uk/guidance/client-authorisation-an-overview")
+      case "employment sign out" => ("Sign out", "/income-through-software/return/employment-income/sign-out")
+      case _ => fail("Invalid url input parameter")
+    }
+    driver.findElement(By.linkText(expectedUrl._1)).getAttribute("href") should include (expectedUrl._2)
   }
 
-
-  And( """^the user should see the correct sign out url$""") { () =>
-    val expectedHref = "/income-through-software/return/sign-out"
-    driver.findElement(By.linkText("Sign out")).getAttribute("href") should include (expectedHref)
+  Then("""^the user navigates to the (.*) page$""") { (url: String) =>
+    val expectedUrl: String = url match {
+      case "untaxed interest" => "http://localhost:9308/income-through-software/return/personal-income/2022/interest/untaxed-uk-interest"
+      case "employment summary" => "http://localhost:9317/income-through-software/return/employment-income/2022/employment-summary"
+      case "interest check your answers" => "http://localhost:9308/income-through-software/return/personal-income/2022/interest/check-interest"
+      case "auth login" => AuthLoginPage.url
+      case _ => fail("Invalid url input parameter")
+    }
+    driver.navigate().to(expectedUrl)
   }
 
-  And( """^the user should see the correct personal income sign out url$""") { () =>
-    val expectedHref = "/income-through-software/return/personal-income/sign-out"
-    driver.findElement(By.linkText("Sign out")).getAttribute("href") should include (expectedHref)
-  }
-
-  And( """^the user should see the correct View estimation url$""") { () =>
-    val href = driver.findElement(By.linkText("View estimation")).getAttribute("href").contains("/income-through-software/return/2022/calculate")
-    href shouldBe true
-  }
-
-  And( """^the user should see the correct client-authorisation url$""") { () =>
-    val expectedHref = "https://www.gov.uk/guidance/client-authorisation-an-overview"
-    driver.findElement(By.id("client_auth_link")).getAttribute("href") should include (expectedHref)
-  }
-
-  Then("""^user navigates to the untaxed interest page$""") { () =>
-    driver.navigate().to("http://localhost:9308/income-through-software/return/personal-income/2022/interest/untaxed-uk-interest")
-  }
-
-  Then("""^user navigates to the current page with tax year "(.*)"$""") { (taxYear: Int) =>
+  Then("""^the user navigates to the current page with tax year "(.*)"$""") { (taxYear: Int) =>
     val currentUrl = driver.getCurrentUrl
     val newUrl = currentUrl.replace("2022", s"$taxYear")
     driver.navigate().to(newUrl)
+  }
+
+  Then("""^the user cannot click the (.*) link$""") { linkName: String =>
+    val selector: By = load("Unclickable " + linkName)
+    driver.findElement(selector).getAttribute("href") shouldBe null
   }
 
   And("""^I take screenshots of the (.*), (.*)$""") { (languageDirectory: String, fileName: String) =>
@@ -92,25 +93,25 @@ class CommonStepDef extends BaseStepDef {
     jsx.executeScript(s"document.body.style.zoom = '1.0'")
   }
 
-//  And("""^I take screenshots of the (.*), (.*)$""") { (languageDirectory: String, fileName: String) =>
-//    val jsx: JavascriptExecutor = driver.asInstanceOf[JavascriptExecutor]
-//    val scrollHeight = jsx.executeScript("return (document.body || document.documentElement).scrollHeight").toString.toInt
-//    var windowHeight = jsx.executeScript("return window.innerHeight").toString.toInt
-//
-//    var screenshotCount = 1
-//
-//    def windowScroll(sHeight: Int, wHeight: Int): AnyVal = {
-//      (sHeight, wHeight) match {
-//        case (sH, wH) if sH > wH =>
-//          takeScreenShot(fileName + s" Part $screenshotCount", languageDirectory)
-//          screenshotCount += 1
-//          jsx.executeScript(s"window.scrollTo(0, $windowHeight)")
-//          windowHeight += jsx.executeScript("return window.innerHeight").toString.toInt
-//          windowScroll(sHeight, windowHeight)
-//        case _ =>
-//          takeScreenShot(fileName + s" Part $screenshotCount", languageDirectory)
-//      }
-//    }
-//    windowScroll(scrollHeight, windowHeight)
-//  }
+  //  And("""^I take screenshots of the (.*), (.*)$""") { (languageDirectory: String, fileName: String) =>
+  //    val jsx: JavascriptExecutor = driver.asInstanceOf[JavascriptExecutor]
+  //    val scrollHeight = jsx.executeScript("return (document.body || document.documentElement).scrollHeight").toString.toInt
+  //    var windowHeight = jsx.executeScript("return window.innerHeight").toString.toInt
+  //
+  //    var screenshotCount = 1
+  //
+  //    def windowScroll(sHeight: Int, wHeight: Int): AnyVal = {
+  //      (sHeight, wHeight) match {
+  //        case (sH, wH) if sH > wH =>
+  //          takeScreenShot(fileName + s" Part $screenshotCount", languageDirectory)
+  //          screenshotCount += 1
+  //          jsx.executeScript(s"window.scrollTo(0, $windowHeight)")
+  //          windowHeight += jsx.executeScript("return window.innerHeight").toString.toInt
+  //          windowScroll(sHeight, windowHeight)
+  //        case _ =>
+  //          takeScreenShot(fileName + s" Part $screenshotCount", languageDirectory)
+  //      }
+  //    }
+  //    windowScroll(scrollHeight, windowHeight)
+  //  }
 }

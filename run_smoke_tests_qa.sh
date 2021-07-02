@@ -1,9 +1,7 @@
-#!/usr/bin/env bash
-
-# Modify following sbt command accordingly to your tests
-
-ENV=${1:-local}
+#!/bin/bash
+ENV=${1:-qa}
 BROWSER=${2:-chrome}
+DRIVER=
 
 if [ "$BROWSER" = "chrome" ]; then
     DRIVER="-Dwebdriver.chrome.driver=/usr/local/bin/chromedriver"
@@ -11,4 +9,4 @@ elif [ "$BROWSER" = "firefox" ]; then
     DRIVER="-Dwebdriver.gecko.driver=/usr/local/bin/geckodriver"
 fi
 
-sbt -Dbrowser=$BROWSER -Denvironment=$ENV $DRIVER "testOnly uk.gov.hmrc.test.ui.cucumber.runner.ZapRunner"
+sbt -Dbrowser=$BROWSER -Denvironment=$ENV $DRIVER "testOnly uk.gov.hmrc.test.ui.cucumber.runner.SmokeRunner"

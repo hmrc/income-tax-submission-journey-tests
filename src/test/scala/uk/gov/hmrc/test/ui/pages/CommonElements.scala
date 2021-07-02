@@ -29,11 +29,8 @@ trait CommonElements extends BasePage with Matchers{
     "yes"                  -> By.id("value"),
     "no"                   -> By.id("value-no"),
     "save and continue"    -> By.cssSelector("#main-content > div > div > form > button"),
-    "provide updates"      -> By.cssSelector("#main-content > div > div > a"),
     "continue"             -> By.id("continue"),
-    "other amount"         -> By.id("otherAmount"),
-    "prior amount"         -> By.id("whichAmount"),
-    "other amount value"   -> By.id("amount"),
+    "back"                 -> By.cssSelector("a.govuk-back-link"),
 
     //Dividends Elements
     "dividends"                     -> By.id("dividends_link"),
@@ -46,14 +43,30 @@ trait CommonElements extends BasePage with Matchers{
     "interest"                          -> By.id("interest_link"),
     "UK untaxed interest amount earned" -> By.id("untaxedAmount"),
     "UK taxed interest amount earned"   -> By.id("taxedAmount"),
+    "UK untaxed interest updated amount earned" -> By.id("amount"),
+    "UK taxed interest updated amount earned"   -> By.id("amount"),
     "UK untaxed interest account name"  -> By.id("untaxedAccountName"),
     "UK taxed interest account name"    -> By.id("taxedAccountName"),
     "remove account"                    -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(1) > span.hmrc-add-to-a-list__remove > a"),
     "first account change"              -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(1) > span.hmrc-add-to-a-list__change > a"),
     "second account change"             -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(2) > span.hmrc-add-to-a-list__change > a"),
-
     "change uk untaxed interest accounts summary" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a"),
     "change uk taxed interest accounts summary"  -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a"),
+
+    //Employment Elements
+    "employment"                      -> By.linkText("Employment"),
+    "employment details"              -> By.linkText("Employment details"),
+    "benefits"                        -> By.linkText("Benefits"),
+    "expenses"                        -> By.linkText("Expenses"),
+    "first employer"                  -> By.cssSelector("#main-content > div > div > div:nth-child(4) > ul > li:nth-child(1) > span > a"),
+    "return to employment summary"    -> By.id("employmentSummaryBtn"),
+    "return to overview"              -> By.id("returnToOverviewPageBtn"),
+    "Unclickable employment"          -> By.cssSelector("#main-content > div > div > ol > li:nth-child(1) > ol > li:nth-child(5) > span.app-task-list__task-name"),
+    "Unclickable benefits"            -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(2) > span.hmrc-add-to-a-list__identifier.hmrc-add-to-a-list__identifier--light"),
+    "Unclickable expenses"            -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(3) > span.hmrc-add-to-a-list__identifier.hmrc-add-to-a-list__identifier--light"),
+
+    //GiftAid Elements
+    "GiftAid" -> By.id("giftAid_link")
 
   )
 }

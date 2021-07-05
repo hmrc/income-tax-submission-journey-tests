@@ -20,7 +20,8 @@ Feature: Smoke downstream Dividends Journeys to DES in QA - Income Tax Submissio
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the dividends link
     Then the user should be redirected to the "Did you get dividends from UK-based companies?" page
-    When the user clicks on the change uk dividends amount link
+    When the user selects the yes radio button
+    And the user clicks the continue button
     Then the user should be redirected to the "How much did you get in dividends from UK-based companies?" page
     When the user selects the UK dividends amount field and enters a value of 1000
     And the user clicks the continue button
@@ -51,7 +52,8 @@ Feature: Smoke downstream Dividends Journeys to DES in QA - Income Tax Submissio
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the dividends link
     Then the user should be redirected to the "Did your client get dividends from UK-based companies?" page
-    When the user clicks on the change uk dividends amount link
+    When the user selects the yes radio button
+    And the user clicks the continue button
     Then the user should be redirected to the "How much did your client get in dividends from UK-based companies?" page
     And the user selects the UK dividends amount field and enters a value of 2000
     And the user clicks the continue button

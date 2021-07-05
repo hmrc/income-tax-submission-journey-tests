@@ -23,9 +23,8 @@ Feature: Smoke downstream Interest Journeys to DES in QA - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Add an account with untaxed UK interest" page
-    When the user clicks on the first account change link
-    Then the user should be redirected to the "How much untaxed UK interest did you get?" page
-    And the user selects the UK untaxed interest updated amount earned field and enters a value of 100.01
+    When the user selects the UK untaxed interest account name field and enters a value of Tesco Bank
+    And the user selects the UK untaxed interest amount earned field and enters a value of 1000
     And the user clicks the continue button
     Then the user should be redirected to the "Accounts with untaxed UK interest" page
     When the user clicks on the second account change link
@@ -74,10 +73,9 @@ Feature: Smoke downstream Interest Journeys to DES in QA - Income Tax Submission
     Then the user should be redirected to the "Did your client get untaxed interest from the UK?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Accounts with untaxed UK interest" page
-    When the user clicks on the first account change link
-    Then the user should be redirected to the "How much untaxed UK interest did your client get?" page
-    And the user selects the UK untaxed interest updated amount earned field and enters a value of 100.01
+    Then the user should be redirected to the "Add an account with untaxed UK interest" page
+    When the user selects the UK untaxed interest account name field and enters a value of Tesco Bank
+    And the user selects the UK untaxed interest amount earned field and enters a value of 1000
     And the user clicks the continue button
     Then the user should be redirected to the "Accounts with untaxed UK interest" page
     When the user clicks on the second account change link

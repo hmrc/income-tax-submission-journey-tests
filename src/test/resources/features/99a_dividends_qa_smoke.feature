@@ -31,7 +31,7 @@ Feature: Smoke downstream Dividends Journeys to DES in QA - Income Tax Submissio
     Then the user should be redirected to the "How much did you get in dividends from trusts and open-ended investment companies based in the UK?" page
     When the user selects the UK other dividends amount field and enters a value of 500
     And the user clicks the continue button
-    Then the user should be redirected to the "Did you get dividends from UK-based companies?" page
+    Then the user should be redirected to the "Check your income from dividends" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     And the user should see the correct View estimation url

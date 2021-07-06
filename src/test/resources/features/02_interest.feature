@@ -74,7 +74,7 @@ Feature: Interest Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Which account did your client get taxed UK interest from?" page
-    When the user selects the fifth radio button [add another new account]
+    When the user selects the fifth radio button: add another new account
     And the user clicks the continue button
     When the user selects the UK taxed interest account name field and enters a value of RBS
     And the user selects the UK taxed interest amount earned field and enters a value of 500
@@ -83,7 +83,7 @@ Feature: Interest Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Which account did your client get taxed UK interest from?" page
-    When the user selects the fifth radio button [add another new account]
+    When the user selects the fifth radio button: add another new account
     And the user clicks the continue button
     When the user selects the UK taxed interest account name field and enters a value of Skipton
     And the user selects the UK taxed interest amount earned field and enters a value of 600
@@ -92,7 +92,7 @@ Feature: Interest Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Which account did your client get taxed UK interest from?" page
-    When the user selects the fifth radio button [add another new account]
+    When the user selects the fifth radio button: add another new account
     And the user clicks the continue button
     When the user selects the UK taxed interest account name field and enters a value of Goldman Sachs
     And the user selects the UK taxed interest amount earned field and enters a value of 700
@@ -300,7 +300,7 @@ Feature: Interest Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Which account did you get untaxed UK interest from?" page
-    When the user selects the first radio button [Halifax]
+    When the user selects the first radio button: Halifax
     And the user clicks the continue button
     Then the user should be redirected to the "How much untaxed UK interest did you get?" page
     And the user selects the UK untaxed interest updated amount earned field and enters a value of 100.01
@@ -312,7 +312,7 @@ Feature: Interest Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Which account did you get taxed UK interest from?" page
-    When the user selects the second radio button [Nationwide]
+    When the user selects the second radio button: Nationwide
     And the user clicks the continue button
     Then the user should be redirected to the "How much taxed UK interest did you get?" page
     And the user selects the UK untaxed interest updated amount earned field and enters a value of 100.01
@@ -345,7 +345,7 @@ Feature: Interest Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Which account did your client get untaxed UK interest from?" page
-    When the user selects the fourth radio button [add a new account]
+    When the user selects the fourth radio button: add a new account
     And the user clicks the continue button
     Then the user should be redirected to the "Add an account with untaxed UK interest" page
     When the user selects the UK untaxed interest account name field and enters a value of First Direct
@@ -358,7 +358,7 @@ Feature: Interest Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Which account did your client get taxed UK interest from?" page
-    When the user selects the fifth radio button [add another new account]
+    When the user selects the fifth radio button: add another new account
     And the user clicks the continue button
     Then the user should be redirected to the "Add an account with taxed UK interest" page
     When the user selects the UK taxed interest account name field and enters a value of Sainsburys Bank

@@ -37,7 +37,7 @@ class CommonStepDef extends BaseStepDef {
     CommonPage.clickOnRadioButton(radioButtonBoolean)
   }
 
-  When("""^the user selects the (.*) radio button [(.*)]$""") { (radioButtonBoolean: String, buttonName: String) =>
+  When("""^the user selects the (.*) radio button: (.*)$""") { (radioButtonBoolean: String, buttonName: String) =>
     CommonPage.clickOnRadioButton(radioButtonBoolean)
   }
 

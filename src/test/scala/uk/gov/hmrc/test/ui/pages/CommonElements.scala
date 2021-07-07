@@ -31,7 +31,7 @@ trait CommonElements extends BasePage with Matchers{
     "save and continue"    -> By.cssSelector("#main-content > div > div > form > button"),
     "continue"             -> By.id("continue"),
     "back"                 -> By.cssSelector("a.govuk-back-link"),
-    "remove account"       -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(1) > span.hmrc-add-to-a-list__remove > a")
+    "remove account"       -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(1) > span.hmrc-add-to-a-list__remove > a"),
 
     //Dividends Elements
     "dividends"                     -> By.id("dividends_link"),

@@ -1,10 +1,11 @@
-@MVP @ZAP @charities
+
 
 Feature: Charities Journeys - Income Tax Submission
 
   Background:
     Given the user navigates to the auth login page
 
+  @MVP @ZAP @charities
   Scenario: Minimal flow - Individual User - Charities
     When the user logs into the service with the following details
       |Redirect url       |/2022/start                                          |
@@ -32,6 +33,7 @@ Feature: Charities Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your Income Tax Return" page
 
+  @MVP @ZAP @charities
   Scenario: Maximal flow - Agent User - Charities
     When the user logs into the service with the following details
       |Redirect url       |/test-only/2022/additional-parameters?ClientNino=AA123457A&ClientMTDID=1234567890    |
@@ -67,13 +69,13 @@ Feature: Charities Journeys - Income Tax Submission
     When the user selects the Amount donated to overseas charities using Gift Aid field and enters a value of 12.99
     And the user clicks the continue button
     Then the user should be redirected to the "Name of overseas charity your client used Gift Aid to donate to" page
-    When the user selects the Name of overseas charity field and enters a value of Bear's Blue House
+    When the user selects the Name of overseas charity field and enters a value of Bear’s Blue House
     And the user clicks the continue button
     Then the user should be redirected to the "Overseas charity your client used Gift Aid to donate to" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Name of overseas charity your client used Gift Aid to donate to" page
-    When the user selects the Name of overseas charity field and enters a value of Foster's Home
+    When the user selects the Name of overseas charity field and enters a value of Foster’s Home
     And the user clicks the continue button
     Then the user should be redirected to the "Overseas charities your client used Gift Aid to donate to" page
     When the user selects the no radio button
@@ -112,13 +114,13 @@ Feature: Charities Journeys - Income Tax Submission
     When the user selects the Value of qualifying shares, securities, land or property donated to overseas charities field and enters a value of 219.05
     And the user clicks the continue button
     Then the user should be redirected to the "Name of overseas charity your client donated shares, securities, land or property to" page
-    When the user selects the Name of overseas charity your client donated shares, securities, land or property to field and enters a value of Dexter's Laboratory
+    When the user selects the Name of overseas charity your client donated shares, securities, land or property to field and enters a value of Dexter’s Laboratory
     And the user clicks the continue button
     Then the user should be redirected to the "Overseas charity your client donated shares, securities, land or property to" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Name of overseas charity your client donated shares, securities, land or property to" page
-    When the user selects the Name of overseas charity your client donated shares, securities, land or property to field and enters a value of Arnold's Block
+    When the user selects the Name of overseas charity your client donated shares, securities, land or property to field and enters a value of Arnold’s Block
     And the user clicks the continue button
     Then the user should be redirected to the "Overseas charities your client donated shares, securities, land or property to" page
     When the user selects the no radio button
@@ -127,6 +129,7 @@ Feature: Charities Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
 
+  @MVP @ZAP @charities
   Scenario: Account Removal flow - Agent User - Charities
     When the user logs into the service with the following details
       |Redirect url       |/test-only/2022/additional-parameters?ClientNino=AA123457A&ClientMTDID=1234567890    |
@@ -162,27 +165,27 @@ Feature: Charities Journeys - Income Tax Submission
     When the user selects the Amount donated to overseas charities using Gift Aid field and enters a value of 12.99
     And the user clicks the continue button
     Then the user should be redirected to the "Name of overseas charity your client used Gift Aid to donate to" page
-    When the user selects the Name of overseas charity field and enters a value of Bear's Blue House
+    When the user selects the Name of overseas charity field and enters a value of Bear’s Blue House
     And the user clicks the continue button
     Then the user should be redirected to the "Overseas charity your client used Gift Aid to donate to" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Name of overseas charity your client used Gift Aid to donate to" page
-    When the user selects the Name of overseas charity field and enters a value of Foster's Home
+    When the user selects the Name of overseas charity field and enters a value of Foster’s Home
     And the user clicks the continue button
     Then the user should be redirected to the "Overseas charities your client used Gift Aid to donate to" page
     When the user clicks on the remove account link
-    Then the user should be redirected to the "Are you sure you want to remove this account?" page
+    Then the user should be redirected to the "Are you sure you want to remove Bear’s Blue House?" page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Overseas charities your client used Gift Aid to donate to" page
     When the user clicks on the remove account link
-    Then the user should be redirected to the "Are you sure you want to remove this account?" page
+    Then the user should be redirected to the "Are you sure you want to remove Bear’s Blue House?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Overseas charities your client used Gift Aid to donate to" page
     When the user clicks on the remove account link
-    Then the user should be redirected to the "Are you sure you want to remove this account?" page
+    Then the user should be redirected to the "Are you sure you want to remove Foster’s Home?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Do you want to add any donations made after 5 April 2022 to this tax year?" page
@@ -213,33 +216,34 @@ Feature: Charities Journeys - Income Tax Submission
     When the user selects the Value of qualifying shares, securities, land or property donated to overseas charities field and enters a value of 219.05
     And the user clicks the continue button
     Then the user should be redirected to the "Name of overseas charity your client donated shares, securities, land or property to" page
-    When the user selects the Name of overseas charity your client donated shares, securities, land or property to field and enters a value of Dexter's Laboratory
+    When the user selects the Name of overseas charity your client donated shares, securities, land or property to field and enters a value of Dexter’s Laboratory
     And the user clicks the continue button
     Then the user should be redirected to the "Overseas charity your client donated shares, securities, land or property to" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Name of overseas charity your client donated shares, securities, land or property to" page
-    When the user selects the Name of overseas charity your client donated shares, securities, land or property to field and enters a value of Arnold's Block
+    When the user selects the Name of overseas charity your client donated shares, securities, land or property to field and enters a value of Arnold’s Block
     And the user clicks the continue button
     Then the user should be redirected to the "Overseas charities your client donated shares, securities, land or property to" page
     When the user clicks on the remove account link
-    Then the user should be redirected to the "Are you sure you want to remove this account?" page
+    Then the user should be redirected to the "Are you sure you want to remove Dexter’s Laboratory?" page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Overseas charities your client donated shares, securities, land or property to" page
     When the user clicks on the remove account link
-    Then the user should be redirected to the "Are you sure you want to remove this account?" page
+    Then the user should be redirected to the "Are you sure you want to remove Dexter’s Laboratory?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Overseas charities your client donated shares, securities, land or property to" page
     When the user clicks on the remove account link
-    Then the user should be redirected to the "Are you sure you want to remove this account?" page
+    Then the user should be redirected to the "Are you sure you want to remove Arnold’s Block?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s donations to charity" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
 
+    #Out of scope - To be included as part of Amend Updates for Gift Aid
   Scenario: Returning flow - Individual User, Review & change - Charities
     When the user logs into the service with the following details
       |Redirect url       |/2022/start                                           |
@@ -270,9 +274,9 @@ Feature: Charities Journeys - Income Tax Submission
     When the user selects the Amount donated to overseas charities using Gift Aid field and enters a value of 130
     And the user clicks the continue button
     Then the user should be redirected to the "Check your donations to charity" page
-    When the user clicks on the change overseas charities' names link
+    When the user clicks on the change overseas charities’ names link
     Then the user should be redirected to the "Name of overseas charity you used Gift Aid to donate to" page
-    When the user selects the Name of overseas charity field and enters a value of Courage's Shelter
+    When the user selects the Name of overseas charity field and enters a value of Courage’s Shelter
     And the user clicks the continue button
     Then the user should be redirected to the "Check your donations to charity" page
     When the user clicks on the change amount of donation to add to last tax year link
@@ -302,13 +306,14 @@ Feature: Charities Journeys - Income Tax Submission
     Then the user should be redirected to the "Check your donations to charity" page
     When the user clicks on the change overseas charities you donated shares, securities, land or property to link
     Then the user should be redirected to the "Name of overseas charity you donated shares, securities, land or property to" page
-    When the user selects the Name of overseas charity you donated shares, securities, land or property to field and enters a value of Jimmy's Cafe
+    When the user selects the Name of overseas charity you donated shares, securities, land or property to field and enters a value of Jimmy’s Cafe
     And the user clicks the continue button
     Then the user should be redirected to the "Check your donations to charity" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     And the user should see the correct View estimation url
 
+    #Out of scope - To be included as part of Amend Updates for Gift Aid
   Scenario: Returning flow - Agent User - Charities
     When the user logs into the service with the following details
       |Redirect url       |/test-only/2022/additional-parameters?ClientNino=AA123459A&ClientMTDID=1234567890    |
@@ -336,9 +341,9 @@ Feature: Charities Journeys - Income Tax Submission
     When the user selects the Amount donated to overseas charities using Gift Aid field and enters a value of 130
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s donations to charity" page
-    When the user clicks on the change overseas charities' names link
+    When the user clicks on the change overseas charities’ names link
     Then the user should be redirected to the "Name of overseas charity your client used Gift Aid to donate to" page
-    When the user selects the Name of overseas charity field and enters a value of Courage's Shelter
+    When the user selects the Name of overseas charity field and enters a value of Courage’s Shelter
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s donations to charity" page
     When the user clicks on the change amount of donation to add to last tax year link
@@ -368,7 +373,7 @@ Feature: Charities Journeys - Income Tax Submission
     Then the user should be redirected to the "Check your client’s donations to charity" page
     When the user clicks on the change overseas charities you donated shares, securities, land or property to link
     Then the user should be redirected to the "Name of overseas charity your client donated shares, securities, land or property to" page
-    When the user selects the Name of overseas charity your client donated shares, securities, land or property to field and enters a value of Jimmy's Cafe
+    When the user selects the Name of overseas charity your client donated shares, securities, land or property to field and enters a value of Jimmy’s Cafe
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s donations to charity" page
     When the user clicks the save and continue button

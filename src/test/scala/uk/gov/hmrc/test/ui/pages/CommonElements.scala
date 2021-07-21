@@ -31,6 +31,7 @@ trait CommonElements extends BasePage with Matchers{
     "save and continue"    -> By.cssSelector("#main-content > div > div > form > button"),
     "continue"             -> By.id("continue"),
     "back"                 -> By.cssSelector("a.govuk-back-link"),
+    "remove account"       -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(1) > span.hmrc-add-to-a-list__remove > a"),
 
     //Dividends Elements
     "dividends"                     -> By.id("dividends_link"),
@@ -47,7 +48,6 @@ trait CommonElements extends BasePage with Matchers{
     "UK taxed interest updated amount earned"   -> By.id("amount"),
     "UK untaxed interest account name"  -> By.id("untaxedAccountName"),
     "UK taxed interest account name"    -> By.id("taxedAccountName"),
-    "remove account"                    -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(1) > span.hmrc-add-to-a-list__remove > a"),
     "first account change"              -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(1) > span.hmrc-add-to-a-list__change > a"),
     "second account change"             -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(2) > span.hmrc-add-to-a-list__change > a"),
     "change uk untaxed interest accounts summary" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a"),
@@ -70,7 +70,27 @@ trait CommonElements extends BasePage with Matchers{
     "Unclickable expenses"            -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(3) > span.hmrc-add-to-a-list__identifier.hmrc-add-to-a-list__identifier--light"),
 
     //GiftAid Elements
-    "GiftAid" -> By.id("giftAid_link")
-
+    "GiftAid" -> By.id("giftAid_link"),
+    "Amount donated using Gift Aid" -> By.id("amount"),
+    "Amount donated as one-off payments" -> By.id("amount"),
+    "Amount donated to overseas charities using Gift Aid" -> By.id("amount"),
+    "Name of overseas charity" -> By.id("name"),
+    "Amount to add to last tax year" -> By.id("amount"),
+    "Amount to add to this tax year" -> By.id("amount"),
+    "Total value of qualifying shares or securities" -> By.id("amount"),
+    "Value of land or property" -> By.id("amount"),
+    "Value of qualifying shares, securities, land or property donated to overseas charities" -> By.id("amount"),
+    "Name of overseas charity you donated shares, securities, land or property to" -> By.id("name"),
+    "Name of overseas charity your client donated shares, securities, land or property to" -> By.id("name"),
+    "change amount donated to charity using Gift Aid" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
+    "change amount of one-off donations to charity using Gift Aid" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
+    "change amount donated to overseas charities using Gift Aid" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
+    "change overseas charities' names" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(4) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
+    "change amount of donation to add to last tax year" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(5) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
+    "change amount of donation added to this tax year" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(6) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
+    "change value of shares or securities" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(7) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
+    "change value of land or property" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(8) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
+    "change value of shares, securities, land or property" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(9) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
+    "change overseas charities you donated shares, securities, land or property to" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(10) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a")
   )
 }

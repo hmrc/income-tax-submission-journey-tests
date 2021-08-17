@@ -317,7 +317,7 @@ Feature: Charities Journeys - Income Tax Submission
     Then the user should be redirected to the "Check your donations to charity" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    And the user should see the correct View estimation url
+    And the user should see the correct View tax calculation to date url
 
     #Out of scope - To be included as part of Amend Updates for Gift Aid
   Scenario: Returning flow - Agent User - Charities
@@ -384,4 +384,4 @@ Feature: Charities Journeys - Income Tax Submission
     Then the user should be redirected to the "Check your client’s donations to charity" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    And the user should see the correct View estimation url
+    And the user should see the correct View tax calculation to date url

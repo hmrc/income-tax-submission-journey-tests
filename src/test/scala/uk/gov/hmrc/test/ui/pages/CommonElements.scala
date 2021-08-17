@@ -58,7 +58,7 @@ trait CommonElements extends BasePage with Matchers{
     "fifth" -> By.id("value-5"),
 
     //Employment Elements
-    "employment"                      -> By.linkText("Employment"),
+    "employment"                      -> By.linkText("PAYE Employment"),
     "employment details"              -> By.linkText("Employment details"),
     "benefits"                        -> By.linkText("Benefits"),
     "expenses"                        -> By.linkText("Expenses"),

@@ -54,7 +54,7 @@ class CommonStepDef extends BaseStepDef {
       case "Accessibility Statement" => ("Accessibility statement", "/accessibility-statement/income-tax-submission")
       case "sign out" => ("Sign out", "/income-through-software/return/sign-out")
       case "personal income sign out" => ("Sign out", "/income-through-software/return/personal-income/sign-out")
-      case "View estimation" => ("View estimation", "/income-through-software/return/2022/calculate")
+      case "View tax calculation to date" => ("View tax calculation to date", "/income-through-software/return/2022/calculate")
       case "Authorise you as an agent" => ("authorise you as their agent (opens in new tab)", "https://www.gov.uk/guidance/client-authorisation-an-overview")
       case "employment sign out" => ("Sign out", "/income-through-software/return/employment-income/sign-out")
       case _ => fail("Invalid url input parameter")

@@ -49,31 +49,4 @@ Feature: Util Journeys - Income Tax Submission
     Then the user should be redirected to the "There’s a problem" page
     And the user should see the correct Authorise you as an agent url
 
-  Scenario: Checking the user cannot submit against other tax years on all 3 frontends
-    When the user logs into the service with the following details
-      |Redirect url       |/2022/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |AA123459A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
-#    Check for the Income Tax Frontend
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
-    When the user navigates to the current page with tax year "2024"
-    Then the user should be redirected to the "Page not found" page
-#  Check for the Personal Income Tax Frontend
-    When the user navigates to the interest check your answers page
-    Then the user should be redirected to the "Check your UK interest" page
-    When the user navigates to the current page with tax year "2024"
-    Then the user should be redirected to the "Page not found" page
- #  Check for the Income Tax Employment Frontend
-    When the user navigates to the employment summary page
-    Then the user should be redirected to the "Employment" page
-    When the user navigates to the current page with tax year "2024"
-    Then the user should be redirected to the "Page not found" page
-
 

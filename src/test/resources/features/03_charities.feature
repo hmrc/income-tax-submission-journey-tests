@@ -54,7 +54,7 @@ Feature: Charities Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "How much did your client donate to charity by using Gift Aid?" page
-    When the user selects the Amount donated using Gift Aid field and enters a value of 500
+    When the user selects the Amount donated using Gift Aid field and enters a value of 1500
     And the user clicks the continue button
     Then the user should be redirected to the "Did your client make one-off donations?" page
     When the user selects the yes radio button
@@ -150,7 +150,7 @@ Feature: Charities Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "How much did your client donate to charity by using Gift Aid?" page
-    When the user selects the Amount donated using Gift Aid field and enters a value of 500
+    When the user selects the Amount donated using Gift Aid field and enters a value of 1500
     And the user clicks the continue button
     Then the user should be redirected to the "Did your client make one-off donations?" page
     When the user selects the yes radio button

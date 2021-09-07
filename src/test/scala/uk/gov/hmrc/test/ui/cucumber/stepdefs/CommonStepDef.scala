@@ -83,4 +83,5 @@ class CommonStepDef extends BaseStepDef {
     val selector: By = load("Unclickable " + linkName)
     driver.findElement(selector).getAttribute("href") shouldBe null
   }
+
 }

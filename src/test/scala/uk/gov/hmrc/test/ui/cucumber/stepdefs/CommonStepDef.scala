@@ -84,7 +84,4 @@ class CommonStepDef extends BaseStepDef {
     driver.findElement(selector).getAttribute("href") shouldBe null
   }
 
-  Then("""sleep""") { () =>
-    Thread.sleep(999999999)
-  }
 }

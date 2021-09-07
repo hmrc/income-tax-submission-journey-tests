@@ -259,7 +259,7 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page
     When the user clicks the continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    Then the user should be redirected to the "Employment" page
 
     Scenario: Agent user with at least two prior employments removes an employment
         When the user logs into the service with the following details

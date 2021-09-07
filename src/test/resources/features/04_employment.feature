@@ -227,7 +227,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "Employment" page
-    When the user clicks on the 1st change link
+    When the user clicks on the first change employment link
     Then the user should be redirected to the "Employment details and benefits" page
     When the user clicks on the employment details link
     Then the user should be redirected to the "Check your client’s employment details" page
@@ -258,8 +258,10 @@ Feature: Employment Journeys - Income Tax Submission
     When the user selects the Tax field and enters a value of 720.08
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
 
-    Scenario: Agent user with at least one prior employment removes an employment
+    Scenario: Agent user with at least two prior employments removes an employment
         When the user logs into the service with the following details
           |Redirect url       |/test-only/2021/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890  |
           |Credential Strength|weak                                                                               |
@@ -276,8 +278,13 @@ Feature: Employment Journeys - Income Tax Submission
         Then the user should be redirected to the "Your client’s Income Tax Return" page
         When the user clicks on the employment link
         Then the user should be redirected to the "Employment" page
-        When the user clicks on the third remove link
+        When the user clicks on the third remove employment link
         Then the user should be redirected to the "Are you sure you want to remove this employment?" page
         When the user selects the yes radio button
         And the user clicks the continue button
+        Then the user should be redirected to the "Employment" page
+        When the user selects the no radio button
+        And the user clicks the continue button
+        Then the user should be redirected to the "Your client’s Income Tax Return" page
+
 

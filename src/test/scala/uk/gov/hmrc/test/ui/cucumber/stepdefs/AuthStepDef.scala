@@ -35,6 +35,13 @@ class AuthStepDef extends BasePage with BaseStepDef {
     getEnrolmentKeyTwo.sendKeys(enrolmentKeyTwo)
     getIdentifierNameTwo.sendKeys(identifierNameTwo)
     getIdentifierValueTwo.sendKeys(identifierValueTwo)
+    if(affinityGroup.contains("Agent")) {
+      driver.findElement(By.cssSelector("#js-add-delegated-enrolment")).click()
+      getDelegatedEnrolmentKey.sendKeys(delegatedEnrolmentKey)
+      getDelegatedIdentifierName.sendKeys(delegatedIdentifierName)
+      getDelegatedIdentifierValue.sendKeys(delegatedIdentifierValue)
+      getDelegatedAuthRule.sendKeys(delegatedAuthRule)
+    }
     driver.findElement(By.cssSelector("#inputForm > div.form-field-group > p > input")).click()
   }
 }

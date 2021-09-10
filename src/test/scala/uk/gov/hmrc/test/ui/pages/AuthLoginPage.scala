@@ -55,5 +55,12 @@ object AuthLoginPage extends BrowserDriver {
 
   def getIdentifierValueTwo: WebElement = driver.findElement(By.name("enrolment[1].taxIdentifier[0].value"))
 
+  def getDelegatedEnrolmentKey: WebElement = driver.findElement(By.name("delegatedEnrolment[0].key"))
+
+  def getDelegatedIdentifierName: WebElement = driver.findElement(By.name("delegatedEnrolment[0].taxIdentifier[0].name"))
+
+  def getDelegatedIdentifierValue: WebElement = driver.findElement(By.name("delegatedEnrolment[0].taxIdentifier[0].value"))
+
+  def getDelegatedAuthRule: WebElement = driver.findElement(By.name("delegatedEnrolment[0].delegatedAuthRule"))
 
 }

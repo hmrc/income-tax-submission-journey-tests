@@ -37,6 +37,10 @@ trait BasePage extends Matchers with BrowserDriver{
   var enrolmentKeyTwo: String = ""
   var identifierNameTwo: String = ""
   var identifierValueTwo: String = ""
+  var delegatedEnrolmentKey : String = ""
+  var delegatedIdentifierName : String = ""
+  var delegatedIdentifierValue : String = ""
+  var delegatedAuthRule : String = ""
 
 
   def useDataTable(data: DataTable): Unit = {
@@ -60,6 +64,10 @@ trait BasePage extends Matchers with BrowserDriver{
         case "Enrolment Key 2" => enrolmentKeyTwo = getColumnValue(row)
         case "Identifier Name 2" => identifierNameTwo = getColumnValue(row)
         case "Identifier Value 2" => identifierValueTwo = getColumnValue(row)
+        case "Delegated Enrolment Key" => delegatedEnrolmentKey = getColumnValue(row)
+        case "Delegated Identifier Name" => delegatedIdentifierName = getColumnValue(row)
+        case "Delegated Identifier Value" => delegatedIdentifierValue = getColumnValue(row)
+        case "Delegated Auth Rule" => delegatedAuthRule = getColumnValue(row)
         case _ =>
       }
     }

@@ -23,10 +23,15 @@ import uk.gov.hmrc.test.ui.pages.CommonPage.load
 class CommonStepDef extends BaseStepDef {
 
   val serviceName = "Update and submit an Income Tax Return"
+  val viewAndChangeServiceName = "Your client’s Income Tax details"
   val govUkExtension = "GOV.UK"
 
   Then("""^the user should be redirected to the "(.*)" page$""") { (title: String) =>
     driver.getTitle should be(s"$title - $serviceName - $govUkExtension")
+  }
+
+  Then("""^the user should be redirected to the "(.*)" page on the View and Change service$""") { (title: String) =>
+    driver.getTitle should be(s"$title - $viewAndChangeServiceName - $govUkExtension")
   }
 
   When("""^the user clicks on the (.*) link$""") { linkName: String =>
@@ -67,6 +72,7 @@ class CommonStepDef extends BaseStepDef {
       case "untaxed interest" => "http://localhost:9308/income-through-software/return/personal-income/2022/interest/untaxed-uk-interest"
       case "employment summary" => "http://localhost:9317/income-through-software/return/employment-income/2022/employment-summary"
       case "interest check your answers" => "http://localhost:9308/income-through-software/return/personal-income/2022/interest/check-interest"
+      case "final tax overview" => "http://localhost:9302/income-through-software/return/2021/income-tax-return-overview"
       case "auth login" => AuthLoginPage.url
       case _ => fail("Invalid url input parameter")
     }

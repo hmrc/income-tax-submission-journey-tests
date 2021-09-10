@@ -105,6 +105,11 @@ trait CommonElements extends BasePage with Matchers{
     "change value of shares or securities" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(7) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
     "change value of land or property" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(8) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
     "change value of shares, securities, land or property" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(9) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
-    "change overseas charities you donated shares, securities, land or property to" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(10) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a")
+    "change overseas charities you donated shares, securities, land or property to" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(10) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
+
+    //Crystallisation Elements
+    "I agree - Submit Income Tax Return" -> By.cssSelector("#content > article > form > button"),
+    "Client SA UTR" -> By.id("utr"),
+    "View and Change Continue" -> By.id("continue-button")
   )
 }

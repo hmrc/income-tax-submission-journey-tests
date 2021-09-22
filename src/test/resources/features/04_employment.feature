@@ -1,4 +1,4 @@
-@MVP @ZAP @employment
+@MVl @ZAP @employment
 
 Feature: Employment Journeys - Income Tax Submission
 
@@ -122,6 +122,9 @@ Feature: Employment Journeys - Income Tax Submission
       And the user selects the Month field and enters a value of 07
       And the user selects the Year field and enters a value of 2012
       And the user clicks the continue button
+      Then the user should be redirected to the "Are you still working for your employer?" page
+      When the user selects the yes radio button
+      And the user clicks the continue button
       Then the user should be redirected to the "How much did your employer pay you?" page
       When the user selects the Pay field and enters a value of 2000.54
       And the user clicks the continue button
@@ -159,6 +162,9 @@ Feature: Employment Journeys - Income Tax Submission
     When the user selects the Day field and enters a value of 14
     And the user selects the Month field and enters a value of 07
     And the user selects the Year field and enters a value of 2012
+    And the user clicks the continue button
+    Then the user should be redirected to the "Is your client still working for their employer?" page
+    When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "How much did your client’s employer pay them?" page
     When the user selects the Pay field and enters a value of 2000.54
@@ -243,7 +249,9 @@ Feature: Employment Journeys - Income Tax Submission
     And the user selects the Year field and enters a value of 2012
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page
-    When the user clicks on the change paye reference link
+    When the user clicks on the change still working reference link
+    And the user clicks the continue button
+    When the user clicks on the change PAYE reference link
     Then the user should be redirected to the "What’s the PAYE reference of your client’s employer?" page
     When the user selects the PAYE reference field and enters a value of 777/7777
     And the user clicks the continue button

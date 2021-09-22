@@ -42,6 +42,6 @@ class AuthStepDef extends BasePage with BaseStepDef {
       getDelegatedIdentifierValue.sendKeys(delegatedIdentifierValue)
       getDelegatedAuthRule.sendKeys(delegatedAuthRule)
     }
-    driver.findElement(By.cssSelector("#inputForm > div.form-field-group > p > input")).click()
+    driver.findElement(By.cssSelector("#submit")).click()
   }
 }

@@ -122,11 +122,11 @@ Feature: Employment Journeys - Income Tax Submission
       And the user selects the Month field and enters a value of 07
       And the user selects the Year field and enters a value of 2012
       And the user clicks the continue button
-      Then the user should be redirected to the "What’s your payroll ID for this employment?" page
-      When the user selects the Payroll id field and enters a value of 123456
-      And the user clicks the continue button
       Then the user should be redirected to the "Are you still working for your employer?" page
       When the user selects the yes radio button
+      And the user clicks the continue button
+      Then the user should be redirected to the "What’s your payroll ID for this employment?" page
+      When the user selects the Payroll id field and enters a value of 123456
       And the user clicks the continue button
       Then the user should be redirected to the "How much did your employer pay you?" page
       When the user selects the Pay field and enters a value of 2000.54
@@ -166,11 +166,11 @@ Feature: Employment Journeys - Income Tax Submission
     And the user selects the Month field and enters a value of 07
     And the user selects the Year field and enters a value of 2012
     And the user clicks the continue button
-    Then the user should be redirected to the "What’s your client’s payroll ID for this employment?" page
-    When the user selects the Payroll id field and enters a value of 123456
-    And the user clicks the continue button
     Then the user should be redirected to the "Is your client still working for their employer?" page
     When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "What’s your client’s payroll ID for this employment?" page
+    When the user selects the Payroll id field and enters a value of 123456
     And the user clicks the continue button
     Then the user should be redirected to the "How much did your client’s employer pay them?" page
     When the user selects the Pay field and enters a value of 2000.54

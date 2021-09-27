@@ -5,7 +5,7 @@ Feature: Employment Journeys - Income Tax Submission
   Background:
     Given the user navigates to the auth login page
 
-  Scenario: Agent user with one employment
+  Scenario: Agent user with one employment checks their details, benefits and expenses
     When the user logs into the service with the following details
       |Redirect url       |/test-only/2022/additional-parameters?ClientNino=AA133742A&ClientMTDID=1234567890  |
       |Credential Strength|weak                                                                               |
@@ -34,7 +34,7 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks on the return to overview link
     Then the user should be redirected to the "Your client’s Income Tax Return" page
 
-  Scenario: Individual user with multiple employments
+  Scenario: Individual user with multiple employments checks their details, benefits and expenses
     When the user logs into the service with the following details
       |Redirect url       |/2022/start                                          |
       |Credential Strength|strong                                               |
@@ -125,6 +125,9 @@ Feature: Employment Journeys - Income Tax Submission
       Then the user should be redirected to the "Are you still working for your employer?" page
       When the user selects the yes radio button
       And the user clicks the continue button
+      Then the user should be redirected to the "What’s your payroll ID for this employment?" page
+      When the user selects the Payroll id field and enters a value of 123456
+      And the user clicks the continue button
       Then the user should be redirected to the "How much did your employer pay you?" page
       When the user selects the Pay field and enters a value of 2000.54
       And the user clicks the continue button
@@ -166,6 +169,9 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Is your client still working for their employer?" page
     When the user selects the no radio button
     And the user clicks the continue button
+    Then the user should be redirected to the "What’s your client’s payroll ID for this employment?" page
+    When the user selects the Payroll id field and enters a value of 123456
+    And the user clicks the continue button
     Then the user should be redirected to the "How much did your client’s employer pay them?" page
     When the user selects the Pay field and enters a value of 2000.54
     And the user clicks the continue button
@@ -193,7 +199,6 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
 
-
   Scenario: Agent user with at least one prior employment selects No to adding a new Employment
     When the user logs into the service with the following details
       |Redirect url       |/test-only/2021/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890  |
@@ -214,7 +219,6 @@ Feature: Employment Journeys - Income Tax Submission
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
-
 
   Scenario: Agent user with at least one prior employment edits an employment
     When the user logs into the service with the following details
@@ -256,6 +260,11 @@ Feature: Employment Journeys - Income Tax Submission
     When the user selects the PAYE reference field and enters a value of 777/7777
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page
+    When the user clicks on the change payroll id link
+    Then the user should be redirected to the "What’s your client’s payroll ID for this employment?" page
+    When the user selects the Payroll id field and enters a value of 234567
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your client’s employment details" page
     When the user clicks on the change pay received link
     Then the user should be redirected to the "How much did your client’s employer pay them?" page
     When the user selects the Pay field and enters a value of 9000.01
@@ -294,5 +303,3 @@ Feature: Employment Journeys - Income Tax Submission
         When the user selects the no radio button
         And the user clicks the continue button
         Then the user should be redirected to the "Your client’s Income Tax Return" page
-
-

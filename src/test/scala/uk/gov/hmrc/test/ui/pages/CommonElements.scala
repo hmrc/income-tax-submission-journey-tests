@@ -81,9 +81,10 @@ trait CommonElements extends BasePage with Matchers{
     "change PAYE reference"           -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
     "change start date"               -> By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
     "change still working reference"  -> By.cssSelector("#main-content > div > div > dl > div:nth-child(4) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
-    "change payroll id"               -> By.cssSelector("#main-content > div > div > dl > div:nth-child(5) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
-    "change pay received"             -> By.cssSelector("#main-content > div > div > dl > div:nth-child(6) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
-    "change tax taken from pay"       -> By.cssSelector("#main-content > div > div > dl > div:nth-child(7) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
+    "change cessation date"           -> By.cssSelector("#main-content > div > div > dl > div:nth-child(5) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
+    "change payroll id"               -> By.cssSelector("#main-content > div > div > dl > div:nth-child(6) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
+    "change pay received"             -> By.cssSelector("#main-content > div > div > dl > div:nth-child(7) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
+    "change tax taken from pay"       -> By.cssSelector("#main-content > div > div > dl > div:nth-child(8) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
     "third remove employment"         -> By.cssSelector("#main-content > div > div > div:nth-child(3) > ul > li:nth-child(3) > span.hmrc-add-to-a-list__remove > a"),
 
     //GiftAid Elements

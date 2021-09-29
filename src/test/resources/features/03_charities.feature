@@ -1,5 +1,3 @@
-
-
 Feature: Charities Journeys - Income Tax Submission
 
   Background:
@@ -8,14 +6,14 @@ Feature: Charities Journeys - Income Tax Submission
   @MVP @ZAP @charities
   Scenario: Minimal flow - Individual User - Charities
     When the user logs into the service with the following details
-      |Redirect url       |/2022/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |AA123456A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
+      | Redirect url        | /2022/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA123456A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -36,16 +34,16 @@ Feature: Charities Journeys - Income Tax Submission
   @MVP @ZAP @charities
   Scenario: Maximal flow - Agent User - Charities
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2022/additional-parameters?ClientNino=AA123457A&ClientMTDID=1234567890    |
-      |Credential Strength|weak                                                                                 |
-      |Confidence Level   |200                                                                                  |
-      |Affinity Group     |Agent                                                                                |
-      |Enrolment Key 1    |HMRC-MTD-IT                                                                          |
-      |Identifier Name 1  |MTDITID                                                                              |
-      |Identifier Value 1 |1234567890                                                                           |
-      |Enrolment Key 2    |HMRC-AS-AGENT                                                                        |
-      |Identifier Name 2  |AgentReferenceNumber                                                                 |
-      |Identifier Value 2 |XARN1234567                                                                          |
+      | Redirect url        | /test-only/2022/additional-parameters?ClientNino=AA123457A&ClientMTDID=1234567890 |
+      | Credential Strength | weak                                                                              |
+      | Confidence Level    | 200                                                                               |
+      | Affinity Group      | Agent                                                                             |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
+      | Identifier Name 1   | MTDITID                                                                           |
+      | Identifier Value 1  | 1234567890                                                                        |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
+      | Identifier Name 2   | AgentReferenceNumber                                                              |
+      | Identifier Value 2  | XARN1234567                                                                       |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -96,6 +94,15 @@ Feature: Charities Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Did your client donate qualifying shares or securities to charity?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your client donate land or property to charity?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Are you sure your client did not donate qualifying shares, securities, land, or property to charity?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your client donate qualifying shares or securities to charity?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "What is the total value of qualifying shares or securities donated to charity?" page
@@ -132,16 +139,16 @@ Feature: Charities Journeys - Income Tax Submission
   @MVP @ZAP @charities
   Scenario: Account Removal flow - Agent User - Charities
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2022/additional-parameters?ClientNino=AA123457A&ClientMTDID=1234567890    |
-      |Credential Strength|weak                                                                                 |
-      |Confidence Level   |200                                                                                  |
-      |Affinity Group     |Agent                                                                                |
-      |Enrolment Key 1    |HMRC-MTD-IT                                                                          |
-      |Identifier Name 1  |MTDITID                                                                              |
-      |Identifier Value 1 |1234567890                                                                           |
-      |Enrolment Key 2    |HMRC-AS-AGENT                                                                        |
-      |Identifier Name 2  |AgentReferenceNumber                                                                 |
-      |Identifier Value 2 |XARN1234567                                                                          |
+      | Redirect url        | /test-only/2022/additional-parameters?ClientNino=AA123457A&ClientMTDID=1234567890 |
+      | Credential Strength | weak                                                                              |
+      | Confidence Level    | 200                                                                               |
+      | Affinity Group      | Agent                                                                             |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
+      | Identifier Name 1   | MTDITID                                                                           |
+      | Identifier Value 1  | 1234567890                                                                        |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
+      | Identifier Name 2   | AgentReferenceNumber                                                              |
+      | Identifier Value 2  | XARN1234567                                                                       |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -252,14 +259,14 @@ Feature: Charities Journeys - Income Tax Submission
     #Out of scope - To be included as part of Amend Updates for Gift Aid
   Scenario: Returning flow - Individual User, Review & change - Charities
     When the user logs into the service with the following details
-      |Redirect url       |/2022/start                                           |
-      |Credential Strength|strong                                                |
-      |Confidence Level   |200                                                   |
-      |Affinity Group     |Individual                                            |
-      |Nino               |AA123459A                                             |
-      |Enrolment Key 1    |HMRC-MTD-IT                                           |
-      |Identifier Name 1  |MTDITID                                               |
-      |Identifier Value 1 |1234567891                                            |
+      | Redirect url        | /2022/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA123459A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567891  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -322,16 +329,16 @@ Feature: Charities Journeys - Income Tax Submission
     #Out of scope - To be included as part of Amend Updates for Gift Aid
   Scenario: Returning flow - Agent User - Charities
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2022/additional-parameters?ClientNino=AA123459A&ClientMTDID=1234567890    |
-      |Credential Strength|weak                                                                                 |
-      |Confidence Level   |200                                                                                  |
-      |Affinity Group     |Agent                                                                                |
-      |Enrolment Key 1    |HMRC-MTD-IT                                                                          |
-      |Identifier Name 1  |MTDITID                                                                              |
-      |Identifier Value 1 |1234567890                                                                           |
-      |Enrolment Key 2    |HMRC-AS-AGENT                                                                        |
-      |Identifier Name 2  |AgentReferenceNumber                                                                 |
-      |Identifier Value 2 |XARN1234567                                                                          |
+      | Redirect url        | /test-only/2022/additional-parameters?ClientNino=AA123459A&ClientMTDID=1234567890 |
+      | Credential Strength | weak                                                                              |
+      | Confidence Level    | 200                                                                               |
+      | Affinity Group      | Agent                                                                             |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
+      | Identifier Name 1   | MTDITID                                                                           |
+      | Identifier Value 1  | 1234567890                                                                        |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
+      | Identifier Name 2   | AgentReferenceNumber                                                              |
+      | Identifier Value 2  | XARN1234567                                                                       |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page

@@ -114,6 +114,9 @@ trait CommonElements extends BasePage with Matchers{
     "change value of land or property" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(8) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
     "change value of shares, securities, land or property" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(9) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
     "change overseas charities you donated shares, securities, land or property to" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(10) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
+    "Remove" -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li > span.hmrc-add-to-a-list__remove > a > span:nth-child(1)"),
+
+    "progressive disclosure" -> By.cssSelector("#main-content > div > div > form > details > summary > span"),
 
     //Crystallisation Elements
     "I agree - Submit Income Tax Return" -> By.cssSelector("#agree"),

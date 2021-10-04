@@ -16,8 +16,12 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import org.openqa.selenium.By
+import org.apache.commons.io.FileUtils
+import org.openqa.selenium.{By, OutputType, TakesScreenshot}
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
+
+import java.io.File
+import java.time.LocalDate
 
 object CommonPage extends BasePage with CommonElements {
   override val url: String = TestConfiguration.url("income-tax-submission-frontend")
@@ -40,6 +44,30 @@ object CommonPage extends BasePage with CommonElements {
   def clickOnButton(buttonTitle:String): Unit = {
     val selector: By = load(buttonTitle)
     clickOn(selector)
+  }
+
+  var screenshot = 1
+
+  def addPadding(number: Int): String = {
+    number.toString.length match{
+      case 1 => "00" + number.toString
+      case 2 => "0" + number.toString
+      case _ =>  number.toString
+    }
+  }
+
+  def takeScreenShot(fileName: String, languageDirectory: String): Unit = {
+    require(fileName != "", "Filename of screenshot cannot be empty")
+
+    val fileDirectory = LocalDate.now()
+    val scrFile = driver.asInstanceOf[TakesScreenshot].getScreenshotAs(OutputType.FILE)
+    try {
+      val destFile = new File(s"Screenshots/$fileDirectory/$languageDirectory/${addPadding(screenshot)}$fileName.png")
+      FileUtils.copyFile(scrFile, destFile)
+      screenshot +=1
+    } catch {
+      case e: RuntimeException => throw new RuntimeException("error when taking the snapshot", e)
+    }
   }
 
 }

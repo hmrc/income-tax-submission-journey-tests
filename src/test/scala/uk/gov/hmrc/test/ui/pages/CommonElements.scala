@@ -31,6 +31,9 @@ trait CommonElements extends BasePage with Matchers{
     "save and continue"    -> By.cssSelector("#main-content > div > div > form > button"),
     "continue"             -> By.id("continue"),
     "back"                 -> By.cssSelector("a.govuk-back-link"),
+    "Welsh toggle"         -> By.cssSelector("a[data-journey-click='link - click:lang-select:Cymraeg']"),
+    "Hide Message"         -> By.cssSelector("button[class='cbanner-govuk-button']"),
+    "Accept Cookies"       -> By.cssSelector("button[value='accept'][name='cookies']"),
     "remove account"       -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(1) > span.hmrc-add-to-a-list__remove > a"),
 
     //Dividends Elements
@@ -54,6 +57,7 @@ trait CommonElements extends BasePage with Matchers{
     "change uk taxed interest accounts summary"  -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a"),
     "first" -> By.id("value"),
     "second" -> By.id("value-2"),
+    "third" -> By.id("value-3"),
     "fourth" -> By.id("value-4"),
     "fifth" -> By.id("value-5"),
 

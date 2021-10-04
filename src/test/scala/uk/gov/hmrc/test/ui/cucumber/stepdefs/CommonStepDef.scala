@@ -16,9 +16,9 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import org.openqa.selenium.By
+import org.openqa.selenium.{By, JavascriptExecutor}
 import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, CommonPage}
-import uk.gov.hmrc.test.ui.pages.CommonPage.load
+import uk.gov.hmrc.test.ui.pages.CommonPage._
 
 class CommonStepDef extends BaseStepDef {
 
@@ -90,4 +90,14 @@ class CommonStepDef extends BaseStepDef {
     driver.findElement(selector).getAttribute("href") shouldBe null
   }
 
+  And("""^I take screenshots of the (.*), (.*)$""") { (languageDirectory: String, fileName: String) =>
+    val jsx: JavascriptExecutor = driver.asInstanceOf[JavascriptExecutor]
+    val scrollHeight = jsx.executeScript("return (document.body || document.documentElement).scrollHeight").toString.toFloat
+    val windowHeight = jsx.executeScript("return window.innerHeight").toString.toFloat
+
+    val zoomLevel: Float = windowHeight/scrollHeight
+    jsx.executeScript(s"document.body.style.zoom = '$zoomLevel'")
+    takeScreenShot(fileName, languageDirectory)
+    jsx.executeScript(s"document.body.style.zoom = '1.0'")
+  }
 }

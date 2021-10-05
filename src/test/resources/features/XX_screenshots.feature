@@ -69,6 +69,8 @@ Feature: Screenshot tests for welsh translations
 
 #    First time you hit the page
     Then the user should be redirected to the "Did you get dividends from UK-based trusts or open-ended investment companies?" page
+    And the user clicks on the Investment Trusts Dropdown link
+    And the user clicks on the Equalisation payments Dropdown link
     And I take screenshots of the English, DivsFromUkTrustsPage
 #    Hitting the page without choosing an option
     When the user clicks the continue button
@@ -149,6 +151,8 @@ Feature: Screenshot tests for welsh translations
 
 #    First time you hit the page
     Then the user should be redirected to the "Did your client get dividends from UK-based trusts or open-ended investment companies?" page
+    And the user clicks on the Investment Trusts Dropdown link
+    And the user clicks on the Equalisation payments Dropdown link
     And I take screenshots of the English, ClientDivsFromUkTrustsPage
 #    Hitting the page without choosing an option
     When the user clicks the continue button

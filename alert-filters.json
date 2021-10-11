@@ -1,0 +1,57 @@
+{
+  "add": [
+    {
+      "contextId": 1,
+      "reason": "This issue is related to assets-frontend which is outside scope.",
+      "url": "http://localhost:9032/assets/.*/javascripts/application.min.js",
+      "ruleId": 10003,
+      "urlIsRegex": "true",
+      "newLevel": -1
+    },
+    {
+      "contextId": 1,
+      "reason": "This issue is related to assets-frontend which is outside scope.",
+      "url": "http://localhost:9032/assets/.*/(javascripts|stylesheets)/.*.(js|css)",
+      "ruleId": 10021,
+      "urlIsRegex": "true",
+      "newLevel": -1
+    },
+    {
+      "reason": "Caused by auth-login-stub using a CDN(content delivery network) using third party to load javascript",
+      "contextId": 1,
+      "url": "http://localhost:9949/auth-login-stub/gg-sign-in.*",
+      "ruleId": 10017,
+      "urlIsRegex": "true"
+    },
+    {
+      "contextId": 1,
+      "reason": "This issue is related to assets-frontend which is outside scope.",
+      "url": "http://localhost:9310/template/assets/stylesheets/.*",
+      "ruleId": 10021,
+      "urlIsRegex": "true",
+      "newLevel": -1
+    },
+    {
+      "contextId": 1,
+      "reason": "Caused by auth-login-stub using a CDN(content delivery network) using third party to load javascript",
+      "url": "http://localhost:9949/auth-login-stub/verify-sign-in.*",
+      "ruleId": 10017,
+      "urlIsRegex": "true",
+      "newLevel": -1
+    },
+    {
+      "reason": "Caused by auth-login-stub not having Anti-CSRF tokens found in a HTML submission form",
+      "contextId": 1,
+      "url": "http://localhost:9949/auth-login-stub/gg-sign-in.*",
+      "ruleId": 10202,
+      "urlIsRegex": "true"
+    },
+    {
+      "reason": "Caused by auth-login-stub not having Anti-CSRF tokens found in a HTML submission form",
+      "contextId": 1,
+      "url": "http://localhost:9949/auth-login-stub/verify-sign-in.*",
+      "ruleId": 10202,
+      "urlIsRegex": "true"
+    }
+  ]
+}

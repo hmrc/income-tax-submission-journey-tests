@@ -48,5 +48,3 @@ Feature: Util Journeys - Income Tax Submission
     Then the user navigates to the untaxed interest page
     Then the user should be redirected to the "There’s a problem" page
     And the user should see the correct Authorise you as an agent url
-
-

@@ -31,14 +31,19 @@ trait CommonElements extends BasePage with Matchers{
     "save and continue"    -> By.cssSelector("#main-content > div > div > form > button"),
     "continue"             -> By.id("continue"),
     "back"                 -> By.cssSelector("a.govuk-back-link"),
+    "Welsh toggle"         -> By.cssSelector("a[data-journey-click='link - click:lang-select:Cymraeg']"),
+    "Hide Message"         -> By.cssSelector("button[class='cbanner-govuk-button']"),
+    "Accept Cookies"       -> By.cssSelector("button[value='accept'][name='cookies']"),
     "remove account"       -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(1) > span.hmrc-add-to-a-list__remove > a"),
 
     //Dividends Elements
-    "dividends"                     -> By.id("dividends_link"),
-    "UK dividends amount"           -> By.id("amount"),
-    "UK other dividends amount"     -> By.id("amount"),
-    "change uk dividends amount"    -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a"),
-    "change other dividends amount" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a"),
+    "dividends"                      -> By.id("dividends_link"),
+    "UK dividends amount"            -> By.id("amount"),
+    "Investment Trusts Dropdown"     -> By.cssSelector("#main-content > div > div > form > details:nth-child(3) > summary > span"),
+    "Equalisation payments Dropdown" -> By.cssSelector("#main-content > div > div > form > details:nth-child(4) > summary > span"),
+    "UK other dividends amount"      -> By.id("amount"),
+    "change uk dividends amount"     -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a"),
+    "change other dividends amount"  -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a"),
 
     //Interest Elements
     "interest"                          -> By.id("interest_link"),
@@ -54,6 +59,7 @@ trait CommonElements extends BasePage with Matchers{
     "change uk taxed interest accounts summary"  -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a"),
     "first" -> By.id("value"),
     "second" -> By.id("value-2"),
+    "third" -> By.id("value-3"),
     "fourth" -> By.id("value-4"),
     "fifth" -> By.id("value-5"),
 
@@ -110,6 +116,9 @@ trait CommonElements extends BasePage with Matchers{
     "change value of land or property" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(8) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
     "change value of shares, securities, land or property" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(9) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
     "change overseas charities you donated shares, securities, land or property to" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(10) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
+    "Remove" -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li > span.hmrc-add-to-a-list__remove > a > span:nth-child(1)"),
+
+    "progressive disclosure" -> By.cssSelector("#main-content > div > div > form > details > summary > span"),
 
     //Crystallisation Elements
     "I agree - Submit Income Tax Return" -> By.cssSelector("#agree"),

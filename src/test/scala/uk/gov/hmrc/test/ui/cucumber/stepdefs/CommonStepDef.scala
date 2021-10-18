@@ -16,9 +16,9 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import org.openqa.selenium.By
+import org.openqa.selenium.{By, JavascriptExecutor}
 import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, CommonPage}
-import uk.gov.hmrc.test.ui.pages.CommonPage.load
+import uk.gov.hmrc.test.ui.pages.CommonPage._
 
 class CommonStepDef extends BaseStepDef {
 
@@ -73,6 +73,7 @@ class CommonStepDef extends BaseStepDef {
       case "employment summary" => "http://localhost:9317/income-through-software/return/employment-income/2022/employment-summary"
       case "interest check your answers" => "http://localhost:9308/income-through-software/return/personal-income/2022/interest/check-interest"
       case "final tax overview" => "http://localhost:9302/income-through-software/return/2021/income-tax-return-overview"
+      case "overseas gift aid summary" => "http://localhost:9308/income-through-software/return/personal-income/2022/charity/overseas-charities-donated-to"
       case "auth login" => AuthLoginPage.url
       case _ => fail("Invalid url input parameter")
     }
@@ -90,4 +91,14 @@ class CommonStepDef extends BaseStepDef {
     driver.findElement(selector).getAttribute("href") shouldBe null
   }
 
+  And("""^I take screenshots of the (.*), (.*)$""") { (languageDirectory: String, fileName: String) =>
+    val jsx: JavascriptExecutor = driver.asInstanceOf[JavascriptExecutor]
+    val scrollHeight = jsx.executeScript("return (document.body || document.documentElement).scrollHeight").toString.toFloat
+    val windowHeight = jsx.executeScript("return window.innerHeight").toString.toFloat
+
+    val zoomLevel: Float = windowHeight/scrollHeight
+    jsx.executeScript(s"document.body.style.zoom = '$zoomLevel'")
+    takeScreenShot(fileName, languageDirectory)
+    jsx.executeScript(s"document.body.style.zoom = '1.0'")
+  }
 }

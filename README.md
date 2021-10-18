@@ -95,3 +95,11 @@ See the `drivers/` directory for some helpful scripts to do the installation wor
 **Note 1:** *You will need to ensure that you have a recent version of Chrome and/or Firefox installed for the later versions of the drivers to work reliably.*
 
 **Note 2** *These scripts use sudo to set the right permissions on the drivers so you will likely be prompted to enter your password.*
+
+## Running Screenshot tests
+
+- Use the @screenshot tag to first run the screenshots in English. They will output to an English folder in the Screenshots folder.
+- Then run the ./make_screenshots_welsh.sh script to turn the screenshots tests to welsh.
+- Re-run the screenshots tests and they should now output a welsh version of the screenshot into a Welsh folder in the Screenshots folder.
+- Now that you've got your screenshots you need to copy the English ones into the English folder within the welsh-screenshot-document-creator folder. And do the same for the Welsh to Welsh.
+- When you're screenshots are in their, run the ./generate-doc.sh script from within the welsh-screenshot-document-creator folder, and it should have created a Screenshots.docx for you.

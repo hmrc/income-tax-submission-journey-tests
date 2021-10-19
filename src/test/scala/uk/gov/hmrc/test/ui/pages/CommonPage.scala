@@ -42,4 +42,7 @@ object CommonPage extends BasePage with CommonElements {
     clickOn(selector)
   }
 
+  def clickBySelector(selector: String): Unit = {
+    clickOn(By.cssSelector(selector))
+  }
 }

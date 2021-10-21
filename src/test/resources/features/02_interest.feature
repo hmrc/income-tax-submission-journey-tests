@@ -229,7 +229,7 @@ Feature: Interest Journeys - Income Tax Submission
     Then the user should be redirected to the "Check your UK interest" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    And the user should see the correct Income Tax Account url
+    And the user should see the correct Income Tax Account for individuals url
 
   Scenario: Returning flow - Agent User with prior UK Untaxed & Taxed Interest, Review & change - Interest
     When the user logs into the service with the following details
@@ -280,7 +280,7 @@ Feature: Interest Journeys - Income Tax Submission
     Then the user should be redirected to the "Check your client’s UK interest" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
-    And the user should see the correct Income Tax Account url
+    And the user should see the correct Income Tax Account for agents url
 
   Scenario: Individual user with taxed/untaxed interest for a previous tax year, chooses a previous account for both
     When the user logs into the service with the following details
@@ -323,7 +323,7 @@ Feature: Interest Journeys - Income Tax Submission
     Then the user should be redirected to the "Check your UK interest" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    And the user should see the correct Income Tax Account url
+    And the user should see the correct Income Tax Account for individuals url
 
   Scenario: Agent user with taxed/untaxed interest for a previous tax year, chooses new accounts for both
     When the user logs into the service with the following details
@@ -370,4 +370,4 @@ Feature: Interest Journeys - Income Tax Submission
     Then the user should be redirected to the "Check your client’s UK interest" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
-    And the user should see the correct Income Tax Account url
+    And the user should see the correct Income Tax Account for agents url

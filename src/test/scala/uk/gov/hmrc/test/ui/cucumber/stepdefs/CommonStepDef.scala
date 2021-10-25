@@ -26,10 +26,6 @@ class CommonStepDef extends BaseStepDef {
   val viewAndChangeServiceName = "Your client’s Income Tax details"
   val govUkExtension = "GOV.UK"
 
-  Then("""^i wait$""") {
-    Thread.sleep(10000)
-  }
-
   Then("""^the user should be redirected to the "(.*)" page$""") { (title: String) =>
     driver.getTitle should be(s"$title - $serviceName - $govUkExtension")
   }

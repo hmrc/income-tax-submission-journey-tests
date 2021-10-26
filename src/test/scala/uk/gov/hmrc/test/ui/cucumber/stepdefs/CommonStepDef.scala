@@ -23,7 +23,8 @@ import uk.gov.hmrc.test.ui.pages.CommonPage.load
 class CommonStepDef extends BaseStepDef {
 
   val serviceName = "Update and submit an Income Tax Return"
-  val viewAndChangeServiceName = "Your client’s Income Tax details"
+  val testOnlyViewAndChangeServiceName = "Your client’s Income Tax details"
+  val viewAndChangeServiceName = "Business Tax account"
   val govUkExtension = "GOV.UK"
 
   Then("""^the user should be redirected to the "(.*)" page$""") { (title: String) =>
@@ -32,6 +33,10 @@ class CommonStepDef extends BaseStepDef {
 
   Then("""^the user should be redirected to the "(.*)" page on the View and Change service$""") { (title: String) =>
     driver.getTitle should be(s"$title - $viewAndChangeServiceName - $govUkExtension")
+  }
+
+  Then("""^the user should be taken to the "(.*)" test-only page on the View and Change service$""") { (title: String) =>
+    driver.getTitle should be(s"$title - $testOnlyViewAndChangeServiceName - $govUkExtension")
   }
 
   When("""^the user clicks on the (.*) link$""") { linkName: String =>

@@ -75,7 +75,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     And the user cannot click the employment link
-    
+
   Scenario: User with a single employment that has no benefits or expenses cant click the benefits/expenses link
     When the user logs into the service with the following details
       |Redirect url       |/2022/start                                          |
@@ -94,7 +94,7 @@ Feature: Employment Journeys - Income Tax Submission
     And the user cannot click the benefits link
     And the user cannot click the expenses link
 
-    Scenario: User is adding their first employment for a tax year
+  Scenario: User is adding their first employment for a tax year
       When the user logs into the service with the following details
         |Redirect url       |/2021/start                                          |
         |Credential Strength|strong                                               |
@@ -293,7 +293,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Employment" page
 
-    Scenario: Agent user with at least two prior employments removes an employment
+  Scenario: Agent user with at least two prior employments removes an employment
         When the user logs into the service with the following details
           |Redirect url       |/test-only/2021/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890  |
           |Credential Strength|weak                                                                               |
@@ -318,3 +318,388 @@ Feature: Employment Journeys - Income Tax Submission
         When the user selects the no radio button
         And the user clicks the continue button
         Then the user should be redirected to the "Your client’s Income Tax Return" page
+
+  Scenario: Individual user as a new submission, goes through the full car van fuel flow
+    When the user logs into the service with the following details
+      |Redirect url       |/2021/start                                          |
+      |Credential Strength|strong                                               |
+      |Confidence Level   |200                                                  |
+      |Affinity Group     |Individual                                           |
+      |Nino               |BB444444A                                            |
+      |Enrolment Key 1    |HMRC-MTD-IT                                          |
+      |Identifier Name 1  |MTDITID                                              |
+      |Identifier Value 1 |1234567890                                           |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "Employment" page
+    When the user clicks on the second employer change link
+    Then the user should be redirected to the "Employment details and benefits" page
+    And the user clicks on the benefits link
+    Then the user should be redirected to the "Did you receive any benefits from this company?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you receive any car, van or fuel benefits from this company?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get a company car benefit?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much was your total company car benefit?" page
+    When the user selects the amount field and enters a value of 100.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get fuel benefit for a company car?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much was your total company car fuel benefit?" page
+    When the user selects the amount field and enters a value of 200.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get a company van benefit?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much was your total company van benefit?" page
+    When the user selects the amount field and enters a value of 300.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get fuel benefit for a company van?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much was your total company van fuel benefit?" page
+    When the user selects the amount field and enters a value of 400.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get a mileage benefit for using your own car for work?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much mileage benefit did you get in total for using your own car?" page
+    When the user selects the amount field and enters a value of 500.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get accommodation or relocation benefits from this company?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+  Scenario: Agent user as a new submission, goes through the full car van fuel flow
+    When the user logs into the service with the following details
+      |Redirect url       |/test-only/2021/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890  |
+      |Credential Strength|weak                                                                               |
+      |Confidence Level   |200                                                                                |
+      |Affinity Group     |Agent                                                                              |
+      |Enrolment Key 1    |HMRC-MTD-IT                                                                        |
+      |Identifier Name 1  |MTDITID                                                                            |
+      |Identifier Value 1 |1234567890                                                                         |
+      |Enrolment Key 2    |HMRC-AS-AGENT                                                                      |
+      |Identifier Name 2  |AgentReferenceNumber                                                               |
+      |Identifier Value 2 |XARN1234567                                                                        |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "Employment" page
+    When the user clicks on the second employer change link
+    Then the user should be redirected to the "Employment details and benefits" page
+    And the user clicks on the benefits link
+    Then the user should be redirected to the "Did your client receive any benefits from this company?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your client receive any car, van or fuel benefits from this company?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your client get a company car benefit?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much was your client’s total company car benefit?" page
+    When the user selects the amount field and enters a value of 100.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your client get fuel benefit for a company car?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much was your client’s total company car fuel benefit?" page
+    When the user selects the amount field and enters a value of 200.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your client get a company van benefit?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much was your client’s total company van benefit?" page
+    When the user selects the amount field and enters a value of 300.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your client get fuel benefit for a company van?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much was your client’s total company van fuel benefit?" page
+    When the user selects the amount field and enters a value of 400.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your client get a mileage benefit for using their own car for work?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much mileage benefit did your client get in total for using their own car?" page
+    When the user selects the amount field and enters a value of 500.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your client get accommodation or relocation benefits from this company?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your client’s employment benefits" page
+
+  Scenario: Individual user as a new submission, says no to the first car van fuel question, straight to accommodation
+    When the user logs into the service with the following details
+      |Redirect url       |/2021/start                                          |
+      |Credential Strength|strong                                               |
+      |Confidence Level   |200                                                  |
+      |Affinity Group     |Individual                                           |
+      |Nino               |BB444444A                                            |
+      |Enrolment Key 1    |HMRC-MTD-IT                                          |
+      |Identifier Name 1  |MTDITID                                              |
+      |Identifier Value 1 |1234567890                                           |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "Employment" page
+    When the user clicks on the second employer change link
+    Then the user should be redirected to the "Employment details and benefits" page
+    And the user clicks on the benefits link
+    Then the user should be redirected to the "Did you receive any benefits from this company?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you receive any car, van or fuel benefits from this company?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get accommodation or relocation benefits from this company?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+  Scenario: Individual user as a new submission, says no to the car, van and mileage sections so skips the fuel sections
+    When the user logs into the service with the following details
+      |Redirect url       |/2021/start                                          |
+      |Credential Strength|strong                                               |
+      |Confidence Level   |200                                                  |
+      |Affinity Group     |Individual                                           |
+      |Nino               |BB444444A                                            |
+      |Enrolment Key 1    |HMRC-MTD-IT                                          |
+      |Identifier Name 1  |MTDITID                                              |
+      |Identifier Value 1 |1234567890                                           |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "Employment" page
+    When the user clicks on the second employer change link
+    Then the user should be redirected to the "Employment details and benefits" page
+    And the user clicks on the benefits link
+    Then the user should be redirected to the "Did you receive any benefits from this company?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you receive any car, van or fuel benefits from this company?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get a company car benefit?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get a company van benefit?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get a mileage benefit for using your own car for work?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get accommodation or relocation benefits from this company?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+  Scenario: Individual user as a new submission, says no to the fuel questions, so skips the amount questions
+    When the user logs into the service with the following details
+      |Redirect url       |/2021/start                                          |
+      |Credential Strength|strong                                               |
+      |Confidence Level   |200                                                  |
+      |Affinity Group     |Individual                                           |
+      |Nino               |BB444444A                                            |
+      |Enrolment Key 1    |HMRC-MTD-IT                                          |
+      |Identifier Name 1  |MTDITID                                              |
+      |Identifier Value 1 |1234567890                                           |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "Employment" page
+    When the user clicks on the second employer change link
+    Then the user should be redirected to the "Employment details and benefits" page
+    And the user clicks on the benefits link
+    Then the user should be redirected to the "Did you receive any benefits from this company?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you receive any car, van or fuel benefits from this company?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get a company car benefit?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much was your total company car benefit?" page
+    When the user selects the amount field and enters a value of 100.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get fuel benefit for a company car?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get a company van benefit?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much was your total company van benefit?" page
+    When the user selects the amount field and enters a value of 300.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get fuel benefit for a company van?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get a mileage benefit for using your own car for work?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get accommodation or relocation benefits from this company?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+  Scenario: Individual user has prior submission data, updates all car van fuel fields
+    When the user logs into the service with the following details
+      |Redirect url       |/2021/start                                          |
+      |Credential Strength|strong                                               |
+      |Confidence Level   |200                                                  |
+      |Affinity Group     |Individual                                           |
+      |Nino               |BB444444A                                            |
+      |Enrolment Key 1    |HMRC-MTD-IT                                          |
+      |Identifier Name 1  |MTDITID                                              |
+      |Identifier Value 1 |1234567890                                           |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "Employment" page
+    When the user clicks on the third employer change link
+    Then the user should be redirected to the "Employment details and benefits" page
+    And the user clicks on the benefits link
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change car benefit link in position 11
+    Then the user should be redirected to the "How much mileage benefit did you get in total for using your own car?" page
+    When the user selects the amount field and enters a value of 100.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change car benefit link in position 10
+    Then the user should be redirected to the "Did you get a mileage benefit for using your own car for work?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change car benefit link in position 9
+    Then the user should be redirected to the "How much was your total company van fuel benefit?" page
+    When the user selects the amount field and enters a value of 200.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change car benefit link in position 8
+    Then the user should be redirected to the "Did you get fuel benefit for a company van?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change car benefit link in position 7
+    Then the user should be redirected to the "How much was your total company van benefit?" page
+    When the user selects the amount field and enters a value of 300.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change car benefit link in position 6
+    Then the user should be redirected to the "Did you get a company van benefit?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change car benefit link in position 5
+    Then the user should be redirected to the "How much was your total company car fuel benefit?" page
+    When the user selects the amount field and enters a value of 400.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change car benefit link in position 4
+    Then the user should be redirected to the "Did you get fuel benefit for a company car?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change car benefit link in position 3
+    Then the user should be redirected to the "How much was your total company car benefit?" page
+    When the user selects the amount field and enters a value of 500.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change car benefit link in position 2
+    Then the user should be redirected to the "Did you get a company car benefit?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change car benefit link in position 1
+    Then the user should be redirected to the "Did you receive any car, van or fuel benefits from this company?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+  Scenario: Individual user has prior submission data, updates carVanFuel to no, then does the full car section flow
+    When the user logs into the service with the following details
+      |Redirect url       |/2021/start                                          |
+      |Credential Strength|strong                                               |
+      |Confidence Level   |200                                                  |
+      |Affinity Group     |Individual                                           |
+      |Nino               |BB444444A                                            |
+      |Enrolment Key 1    |HMRC-MTD-IT                                          |
+      |Identifier Name 1  |MTDITID                                              |
+      |Identifier Value 1 |1234567890                                           |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "Employment" page
+    When the user clicks on the third employer change link
+    Then the user should be redirected to the "Employment details and benefits" page
+    And the user clicks on the benefits link
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change car benefit link in position 1
+    Then the user should be redirected to the "Did you receive any car, van or fuel benefits from this company?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change car benefit link in position 1
+    Then the user should be redirected to the "Did you receive any car, van or fuel benefits from this company?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get a company car benefit?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much was your total company car benefit?" page
+    When the user selects the amount field and enters a value of 100.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get fuel benefit for a company car?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much was your total company car fuel benefit?" page
+    When the user selects the amount field and enters a value of 200.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get a company van benefit?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much was your total company van benefit?" page
+    When the user selects the amount field and enters a value of 300.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get fuel benefit for a company van?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much was your total company van fuel benefit?" page
+    When the user selects the amount field and enters a value of 400.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get a mileage benefit for using your own car for work?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much mileage benefit did you get in total for using your own car?" page
+    When the user selects the amount field and enters a value of 500.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page

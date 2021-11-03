@@ -924,7 +924,7 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page
 
-  Scenario: Individual user has prior submission data, updates accommodation to no, then does the full car section flow
+  Scenario: Individual user has prior submission data, updates accommodation to no, then does the full accommodation relocation flow
     When the user logs into the service with the following details
       |Redirect url       |/2021/start                                          |
       |Credential Strength|strong                                               |

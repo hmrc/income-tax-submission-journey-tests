@@ -1,9 +1,10 @@
+@MVP @ZAP @charities
+
 Feature: Charities Journeys - Income Tax Submission
 
   Background:
     Given the user navigates to the auth login page
 
-  @MVP @ZAP @charities
   Scenario: Minimal flow - Individual User - Charities
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
@@ -34,7 +35,6 @@ Feature: Charities Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your Income Tax Return" page
 
-  @MVP @ZAP @charities
   Scenario: Maximal flow - Agent User - Charities
     When the user logs into the service with the following details
       | Redirect url        | /test-only/2022/additional-parameters?ClientNino=AA123457A&ClientMTDID=1234567890 |
@@ -81,10 +81,10 @@ Feature: Charities Journeys - Income Tax Submission
     Then the user should be redirected to the "Overseas charities your client used Gift Aid to donate to" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Do you want to add any of your client’s donations to the last tax year?" page
+    Then the user should be redirected to the "Did you add any of your client’s donations to the 2020 to 2021 tax year?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "How much of your client’s donation do you want to add to the last tax year?" page
+    Then the user should be redirected to the "How much of your client’s donation did you add to the 2020 to 2021 tax year?" page
     When the user selects the Amount to add to last tax year field and enters a value of 117
     And the user clicks the continue button
     Then the user should be redirected to the "Do you want to add any donations made after 5 April 2022 to this tax year?" page
@@ -127,7 +127,6 @@ Feature: Charities Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
 
-  @MVP @ZAP @charities
   Scenario: Account Removal flow - Agent User - Charities
     When the user logs into the service with the following details
       | Redirect url        | /test-only/2022/additional-parameters?ClientNino=AA123457A&ClientMTDID=1234567890 |
@@ -186,10 +185,10 @@ Feature: Charities Journeys - Income Tax Submission
     Then the user should be redirected to the "Are you sure you want to remove Foster’s Home?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Do you want to add any of your client’s donations to the last tax year?" page
+    Then the user should be redirected to the "Did you add any of your client’s donations to the 2020 to 2021 tax year?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "How much of your client’s donation do you want to add to the last tax year?" page
+    Then the user should be redirected to the "How much of your client’s donation did you add to the 2020 to 2021 tax year?" page
     When the user selects the Amount to add to last tax year field and enters a value of 15
     And the user clicks the continue button
     Then the user should be redirected to the "Do you want to add any donations made after 5 April 2022 to this tax year?" page
@@ -241,7 +240,6 @@ Feature: Charities Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
 
-    #Out of scope - To be included as part of Amend Updates for Gift Aid
   Scenario: Returning flow - Individual User, Review & change - Charities
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
@@ -267,18 +265,24 @@ Feature: Charities Journeys - Income Tax Submission
     When the user selects the Amount donated as one-off payments field and enters a value of 7200.39
     And the user clicks the continue button
     Then the user should be redirected to the "Check your donations to charity" page
-    When the user clicks on the change amount donated to overseas charities using Gift Aid link
-    Then the user should be redirected to the "How much did you donate to overseas charities using Gift Aid?" page
+    When the user clicks on the change amount donated to overseas charities by using Gift Aid link
+    Then the user should be redirected to the "How much did you donate to overseas charities by using Gift Aid?" page
     When the user selects the Amount donated to overseas charities using Gift Aid field and enters a value of 130
     And the user clicks the continue button
     Then the user should be redirected to the "Check your donations to charity" page
-    When the user clicks on the change overseas charities’ names link
+    When the user clicks on the change overseas charities names link
+    Then the user should be redirected to the "Overseas charity you used Gift Aid to donate to" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
     Then the user should be redirected to the "Name of overseas charity you used Gift Aid to donate to" page
     When the user selects the Name of overseas charity field and enters a value of Courage’s Shelter
     And the user clicks the continue button
+    Then the user should be redirected to the "Overseas charities you used Gift Aid to donate to" page
+    When the user selects the no radio button
+    And the user clicks the continue button
     Then the user should be redirected to the "Check your donations to charity" page
     When the user clicks on the change amount of donation to add to last tax year link
-    Then the user should be redirected to the "How much of your donation do you want to add to the last tax year?" page
+    Then the user should be redirected to the "How much of your donation did you add to the 2020 to 2021 tax year?" page
     When the user selects the Amount to add to last tax year field and enters a value of 809.9
     And the user clicks the continue button
     Then the user should be redirected to the "Check your donations to charity" page
@@ -288,7 +292,7 @@ Feature: Charities Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your donations to charity" page
     When the user clicks on the change value of shares or securities link
-    Then the user should be redirected to the "What is the total value of shares or securities donated to charity?" page
+    Then the user should be redirected to the "What is the total value of qualifying shares or securities donated to charity?" page
     When the user selects the Total value of qualifying shares or securities field and enters a value of 6407.31
     And the user clicks the continue button
     Then the user should be redirected to the "Check your donations to charity" page
@@ -298,20 +302,24 @@ Feature: Charities Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your donations to charity" page
     When the user clicks on the change value of shares, securities, land or property link
-    Then the user should be redirected to the "What is the value of shares, securities, land or property donated to overseas charities?" page
+    Then the user should be redirected to the "What is the value of qualifying shares, securities, land or property donated to overseas charities?" page
     When the user selects the Value of qualifying shares, securities, land or property donated to overseas charities field and enters a value of 4.99
     And the user clicks the continue button
     Then the user should be redirected to the "Check your donations to charity" page
-    When the user clicks on the change overseas charities you donated shares, securities, land or property to link
+    When the user clicks on the change overseas charities shares, securities, land or property were donated to link
+    Then the user should be redirected to the "Overseas charity you donated shares, securities, land or property to" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
     Then the user should be redirected to the "Name of overseas charity you donated shares, securities, land or property to" page
     When the user selects the Name of overseas charity you donated shares, securities, land or property to field and enters a value of Jimmy’s Cafe
+    And the user clicks the continue button
+    When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Check your donations to charity" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    And the user should see the correct Income Tax Account url
+    And the user should see the correct Income Tax Account for individuals url
 
-    #Out of scope - To be included as part of Amend Updates for Gift Aid
   Scenario: Returning flow - Agent User - Charities
     When the user logs into the service with the following details
       | Redirect url        | /test-only/2022/additional-parameters?ClientNino=AA123459A&ClientMTDID=1234567890 |
@@ -334,18 +342,23 @@ Feature: Charities Journeys - Income Tax Submission
     When the user selects the Amount donated as one-off payments field and enters a value of 7200.39
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s donations to charity" page
-    When the user clicks on the change amount donated to overseas charities using Gift Aid link
-    Then the user should be redirected to the "How much did your client donate to overseas charities using Gift Aid?" page
+    When the user clicks on the change amount donated to overseas charities by using Gift Aid link
+    Then the user should be redirected to the "How much did your client donate to overseas charities by using Gift Aid?" page
     When the user selects the Amount donated to overseas charities using Gift Aid field and enters a value of 130
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s donations to charity" page
-    When the user clicks on the change overseas charities’ names link
+    When the user clicks on the change overseas charities names link
+    Then the user should be redirected to the "Overseas charity your client used Gift Aid to donate to" page
+    When the user clicks on the change charity name link
     Then the user should be redirected to the "Name of overseas charity your client used Gift Aid to donate to" page
     When the user selects the Name of overseas charity field and enters a value of Courage’s Shelter
     And the user clicks the continue button
+    Then the user should be redirected to the "Overseas charity your client used Gift Aid to donate to" page
+    When the user selects the no radio button
+    And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s donations to charity" page
     When the user clicks on the change amount of donation to add to last tax year link
-    Then the user should be redirected to the "How much of your client’s donation do you want to add to the last tax year?" page
+    Then the user should be redirected to the "How much of your client’s donation did you add to the 2020 to 2021 tax year?" page
     When the user selects the Amount to add to last tax year field and enters a value of 809.9
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s donations to charity" page
@@ -355,7 +368,7 @@ Feature: Charities Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s donations to charity" page
     When the user clicks on the change value of shares or securities link
-    Then the user should be redirected to the "What is the total value of shares or securities donated to charity?" page
+    Then the user should be redirected to the "What is the total value of qualifying shares or securities donated to charity?" page
     When the user selects the Total value of qualifying shares or securities field and enters a value of 6407.31
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s donations to charity" page
@@ -365,15 +378,20 @@ Feature: Charities Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s donations to charity" page
     When the user clicks on the change value of shares, securities, land or property link
-    Then the user should be redirected to the "What is the value of shares, securities, land or property donated to overseas charities?" page
+    Then the user should be redirected to the "What is the value of qualifying shares, securities, land or property donated to overseas charities?" page
     When the user selects the Value of qualifying shares, securities, land or property donated to overseas charities field and enters a value of 4.99
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s donations to charity" page
-    When the user clicks on the change overseas charities you donated shares, securities, land or property to link
+    When the user clicks on the change overseas charities shares, securities, land or property were donated to link
+    Then the user should be redirected to the "Overseas charity your client donated shares, securities, land or property to" page
+    When the user clicks on the change charity name link
     Then the user should be redirected to the "Name of overseas charity your client donated shares, securities, land or property to" page
     When the user selects the Name of overseas charity your client donated shares, securities, land or property to field and enters a value of Jimmy’s Cafe
     And the user clicks the continue button
+    Then the user should be redirected to the "Overseas charity your client donated shares, securities, land or property to" page
+    When the user selects the no radio button
+    And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s donations to charity" page
     When the user clicks the save and continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
-    And the user should see the correct Income Tax Account url
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    And the user should see the correct Income Tax Account for agents url

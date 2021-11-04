@@ -40,7 +40,7 @@ Feature: Smoke downstream Gift Aid Journeys to DES in QA - Income Tax Submission
     Then the user should be redirected to the "Check your donations to charity" page
 
     When the user clicks on the change link in position 5
-    Then the user should be redirected to the "How much of your donation do you want to add to the last tax year?" page
+    Then the user should be redirected to the "How much of your donation did you add to the 2020 to 2021 tax year?" page
     When the user selects the Amount to add to last tax year field and enters a value of 117
     And the user clicks the continue button
     Then the user should be redirected to the "Check your donations to charity" page
@@ -102,7 +102,7 @@ Feature: Smoke downstream Gift Aid Journeys to DES in QA - Income Tax Submission
     Then the user should be redirected to the "Check your client’s donations to charity" page
 
     When the user clicks on the change link in position 5
-    Then the user should be redirected to the "How much of your client’s donation do you want to add to the last tax year?" page
+    Then the user should be redirected to the "How much of your client’s donation did you add to the 2020 to 2021 tax year?" page
     When the user selects the Amount to add to last tax year field and enters a value of 117
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s donations to charity" page

@@ -24,7 +24,10 @@ Feature: Charities Journeys - Income Tax Submission
     Then the user should be redirected to the "Do you want to add any donations made after 5 April 2022 to this tax year?" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Did you donate qualifying shares, securities, land or property to charity?" page
+    Then the user should be redirected to the "Did you donate qualifying shares or securities to charity?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you donate land or property to charity?" page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Check your donations to charity" page
@@ -89,18 +92,6 @@ Feature: Charities Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "How much of the donations your client made after 5 April 2022 do you want to add to this tax year?" page
     When the user selects the Amount to add to this tax year field and enters a value of 0.48
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client donate qualifying shares, securities, land or property to charity?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client donate qualifying shares or securities to charity?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client donate land or property to charity?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Are you sure your client did not donate qualifying shares, securities, land, or property to charity?" page
-    When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Did your client donate qualifying shares or securities to charity?" page
     When the user selects the yes radio button
@@ -207,9 +198,6 @@ Feature: Charities Journeys - Income Tax Submission
     Then the user should be redirected to the "How much of the donations your client made after 5 April 2022 do you want to add to this tax year?" page
     When the user selects the Amount to add to this tax year field and enters a value of 0.48
     And the user clicks the continue button
-    Then the user should be redirected to the "Did your client donate qualifying shares, securities, land or property to charity?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
     Then the user should be redirected to the "Did your client donate qualifying shares or securities to charity?" page
     When the user selects the yes radio button
     And the user clicks the continue button
@@ -217,10 +205,7 @@ Feature: Charities Journeys - Income Tax Submission
     When the user selects the Total value of qualifying shares or securities field and enters a value of 1500
     And the user clicks the continue button
     Then the user should be redirected to the "Did your client donate land or property to charity?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "What is the value of land or property donated to charity?" page
-    When the user selects the Value of land or property field and enters a value of 750
+    When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Did your client donate qualifying shares, securities, land or property to overseas charities?" page
     When the user selects the yes radio button

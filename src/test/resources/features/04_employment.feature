@@ -7,16 +7,16 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Agent user with one employment checks their details, benefits and expenses
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2022/additional-parameters?ClientNino=AA133742A&ClientMTDID=1234567890  |
-      |Credential Strength|weak                                                                               |
-      |Confidence Level   |200                                                                                |
-      |Affinity Group     |Agent                                                                              |
-      |Enrolment Key 1    |HMRC-MTD-IT                                                                        |
-      |Identifier Name 1  |MTDITID                                                                            |
-      |Identifier Value 1 |1234567890                                                                         |
-      |Enrolment Key 2    |HMRC-AS-AGENT                                                                      |
-      |Identifier Name 2  |AgentReferenceNumber                                                               |
-      |Identifier Value 2 |XARN1234567                                                                        |
+      | Redirect url        | /test-only/2022/additional-parameters?ClientNino=AA133742A&ClientMTDID=1234567890 |
+      | Credential Strength | weak                                                                              |
+      | Confidence Level    | 200                                                                               |
+      | Affinity Group      | Agent                                                                             |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
+      | Identifier Name 1   | MTDITID                                                                           |
+      | Identifier Value 1  | 1234567890                                                                        |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
+      | Identifier Name 2   | AgentReferenceNumber                                                              |
+      | Identifier Value 2  | XARN1234567                                                                       |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -36,14 +36,14 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user with multiple employments checks their details, benefits and expenses
     When the user logs into the service with the following details
-      |Redirect url       |/2022/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |BB444444A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
+      | Redirect url        | /2022/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB444444A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -63,14 +63,14 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: User with no employment data cant click the employment link
     When the user logs into the service with the following details
-      |Redirect url       |/2022/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |AA637489D                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
+      | Redirect url        | /2022/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA637489D   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -78,14 +78,14 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: User with a single employment that has no benefits or expenses cant click the benefits/expenses link
     When the user logs into the service with the following details
-      |Redirect url       |/2022/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |AA123459A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
+      | Redirect url        | /2022/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA123459A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -95,59 +95,59 @@ Feature: Employment Journeys - Income Tax Submission
     And the user cannot click the expenses link
 
   Scenario: User is adding their first employment for a tax year
-      When the user logs into the service with the following details
-        |Redirect url       |/2021/start                                          |
-        |Credential Strength|strong                                               |
-        |Confidence Level   |200                                                  |
-        |Affinity Group     |Individual                                           |
-        |Nino               |AA637489D                                            |
-        |Enrolment Key 1    |HMRC-MTD-IT                                          |
-        |Identifier Name 1  |MTDITID                                              |
-        |Identifier Value 1 |1234567890                                           |
-      Then the user should be redirected to the "Update and submit an Income Tax Return" page
-      When the user clicks the continue button
-      Then the user should be redirected to the "Your Income Tax Return" page
-      When the user clicks on the employment link
-      Then the user should be redirected to the "Do you want to add an employment?" page
-      When the user selects the yes radio button
-      And the user clicks the continue button
-      Then the user should be redirected to the "What’s the name of your employer?" page
-      When the user selects the Employer name field and enters a value of Bear’s Blue House LTD
-      And the user clicks the continue button
-      Then the user should be redirected to the "What’s the PAYE reference of your employer?" page
-      When the user selects the PAYE reference field and enters a value of 123/AB456
-      And the user clicks the continue button
-      Then the user should be redirected to the "When did you start working for your employer?" page
-      When the user selects the Day field and enters a value of 14
-      And the user selects the Month field and enters a value of 07
-      And the user selects the Year field and enters a value of 2012
-      And the user clicks the continue button
-      Then the user should be redirected to the "Are you still working for your employer?" page
-      When the user selects the yes radio button
-      And the user clicks the continue button
-      Then the user should be redirected to the "What’s your payroll ID for this employment?" page
-      When the user selects the Payroll id field and enters a value of 123456
-      And the user clicks the continue button
-      Then the user should be redirected to the "How much did your employer pay you?" page
-      When the user selects the Pay field and enters a value of 2000.54
-      And the user clicks the continue button
-      Then the user should be redirected to the "How much UK tax was taken from your earnings?" page
-      When the user selects the Tax field and enters a value of 20.54
-      And the user clicks the continue button
-      Then the user should be redirected to the "Check your employment details" page
+    When the user logs into the service with the following details
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA637489D   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "Do you want to add an employment?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "What’s the name of your employer?" page
+    When the user selects the Employer name field and enters a value of Bear’s Blue House LTD
+    And the user clicks the continue button
+    Then the user should be redirected to the "What’s the PAYE reference of your employer?" page
+    When the user selects the PAYE reference field and enters a value of 123/AB456
+    And the user clicks the continue button
+    Then the user should be redirected to the "When did you start working for your employer?" page
+    When the user selects the Day field and enters a value of 14
+    And the user selects the Month field and enters a value of 07
+    And the user selects the Year field and enters a value of 2012
+    And the user clicks the continue button
+    Then the user should be redirected to the "Are you still working for your employer?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "What’s your payroll ID for this employment?" page
+    When the user selects the Payroll id field and enters a value of 123456
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much did your employer pay you?" page
+    When the user selects the Pay field and enters a value of 2000.54
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much UK tax was taken from your earnings?" page
+    When the user selects the Tax field and enters a value of 20.54
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment details" page
 
   Scenario: Agent user with at least one prior employment adds a new Employment
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2021/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890  |
-      |Credential Strength|weak                                                                               |
-      |Confidence Level   |200                                                                                |
-      |Affinity Group     |Agent                                                                              |
-      |Enrolment Key 1    |HMRC-MTD-IT                                                                        |
-      |Identifier Name 1  |MTDITID                                                                            |
-      |Identifier Value 1 |1234567890                                                                         |
-      |Enrolment Key 2    |HMRC-AS-AGENT                                                                      |
-      |Identifier Name 2  |AgentReferenceNumber                                                               |
-      |Identifier Value 2 |XARN1234567                                                                        |
+      | Redirect url        | /test-only/2021/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
+      | Credential Strength | weak                                                                              |
+      | Confidence Level    | 200                                                                               |
+      | Affinity Group      | Agent                                                                             |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
+      | Identifier Name 1   | MTDITID                                                                           |
+      | Identifier Value 1  | 1234567890                                                                        |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
+      | Identifier Name 2   | AgentReferenceNumber                                                              |
+      | Identifier Value 2  | XARN1234567                                                                       |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -187,14 +187,14 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: User doesn't want to add a new Employment
     When the user logs into the service with the following details
-      |Redirect url       |/2021/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |AA637489D                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA637489D   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -206,16 +206,16 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Agent user with at least one prior employment selects No to adding a new Employment
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2021/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890  |
-      |Credential Strength|weak                                                                               |
-      |Confidence Level   |200                                                                                |
-      |Affinity Group     |Agent                                                                              |
-      |Enrolment Key 1    |HMRC-MTD-IT                                                                        |
-      |Identifier Name 1  |MTDITID                                                                            |
-      |Identifier Value 1 |1234567890                                                                         |
-      |Enrolment Key 2    |HMRC-AS-AGENT                                                                      |
-      |Identifier Name 2  |AgentReferenceNumber                                                               |
-      |Identifier Value 2 |XARN1234567                                                                        |
+      | Redirect url        | /test-only/2021/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
+      | Credential Strength | weak                                                                              |
+      | Confidence Level    | 200                                                                               |
+      | Affinity Group      | Agent                                                                             |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
+      | Identifier Name 1   | MTDITID                                                                           |
+      | Identifier Value 1  | 1234567890                                                                        |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
+      | Identifier Name 2   | AgentReferenceNumber                                                              |
+      | Identifier Value 2  | XARN1234567                                                                       |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -227,16 +227,16 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Agent user with at least one prior employment edits an employment
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2021/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890  |
-      |Credential Strength|weak                                                                               |
-      |Confidence Level   |200                                                                                |
-      |Affinity Group     |Agent                                                                              |
-      |Enrolment Key 1    |HMRC-MTD-IT                                                                        |
-      |Identifier Name 1  |MTDITID                                                                            |
-      |Identifier Value 1 |1234567890                                                                         |
-      |Enrolment Key 2    |HMRC-AS-AGENT                                                                      |
-      |Identifier Name 2  |AgentReferenceNumber                                                               |
-      |Identifier Value 2 |XARN1234567                                                                        |
+      | Redirect url        | /test-only/2021/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
+      | Credential Strength | weak                                                                              |
+      | Confidence Level    | 200                                                                               |
+      | Affinity Group      | Agent                                                                             |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
+      | Identifier Name 1   | MTDITID                                                                           |
+      | Identifier Value 1  | 1234567890                                                                        |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
+      | Identifier Name 2   | AgentReferenceNumber                                                              |
+      | Identifier Value 2  | XARN1234567                                                                       |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -294,41 +294,42 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment" page
 
   Scenario: Agent user with at least two prior employments removes an employment
-        When the user logs into the service with the following details
-          |Redirect url       |/test-only/2021/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890  |
-          |Credential Strength|weak                                                                               |
-          |Confidence Level   |200                                                                                |
-          |Affinity Group     |Agent                                                                              |
-          |Enrolment Key 1    |HMRC-MTD-IT                                                                        |
-          |Identifier Name 1  |MTDITID                                                                            |
-          |Identifier Value 1 |1234567890                                                                         |
-          |Enrolment Key 2    |HMRC-AS-AGENT                                                                      |
-          |Identifier Name 2  |AgentReferenceNumber                                                               |
-          |Identifier Value 2 |XARN1234567                                                                        |
-        Then the user should be redirected to the "Update and submit an Income Tax Return" page
-        When the user clicks the continue button
-        Then the user should be redirected to the "Your client’s Income Tax Return" page
-        When the user clicks on the employment link
-        Then the user should be redirected to the "Employment" page
-        When the user clicks on the third remove employment link
-        Then the user should be redirected to the "Are you sure you want to remove this employment?" page
-        When the user selects the yes radio button
-        And the user clicks the continue button
-        Then the user should be redirected to the "Employment" page
-        When the user selects the no radio button
-        And the user clicks the continue button
-        Then the user should be redirected to the "Your client’s Income Tax Return" page
-
-  Scenario: Individual user as a new submission, goes through the full car van fuel flow
     When the user logs into the service with the following details
-      |Redirect url       |/2021/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |BB444444A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
+      | Redirect url        | /test-only/2021/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
+      | Credential Strength | weak                                                                              |
+      | Confidence Level    | 200                                                                               |
+      | Affinity Group      | Agent                                                                             |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
+      | Identifier Name 1   | MTDITID                                                                           |
+      | Identifier Value 1  | 1234567890                                                                        |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
+      | Identifier Name 2   | AgentReferenceNumber                                                              |
+      | Identifier Value 2  | XARN1234567                                                                       |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "Employment" page
+    When the user clicks on the third remove employment link
+    Then the user should be redirected to the "Are you sure you want to remove this employment?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Employment" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+
+  # Car/Van fuel section
+  Scenario: Individual user as a new submission, says no to the fuel questions, so skips the amount questions
+    When the user logs into the service with the following details
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB444444A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -337,6 +338,70 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the second employer change link
     Then the user should be redirected to the "Employment details and benefits" page
     And the user clicks on the benefits link
+    Then the user should be redirected to the "Did you receive any benefits from this company?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you receive any car, van or fuel benefits from this company?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get a company car benefit?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much was your total company car benefit?" page
+    When the user selects the amount field and enters a value of 100.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get fuel benefit for a company car?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get a company van benefit?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much was your total company van benefit?" page
+    When the user selects the amount field and enters a value of 300.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get fuel benefit for a company van?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get a mileage benefit for using your own car for work?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get accommodation or relocation benefits from this company?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get any travel or entertainment benefits from this company?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get any utility or general service benefits from this company?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get any medical, dental, childcare, education benefits or loans from this company?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your employer pay any of your Income Tax or incurred costs?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+  # New submission tests
+  Scenario: Individual user as a new submission, goes through the full benefits flow
+    When the user logs into the service with the following details
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB444444A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "Employment" page
+    When the user clicks on the second employer change link
+    Then the user should be redirected to the "Employment details and benefits" page
+    And the user clicks on the benefits link
+    # Vehicles, fuel and mileage section
     Then the user should be redirected to the "Did you receive any benefits from this company?" page
     When the user selects the yes radio button
     And the user clicks the continue button
@@ -373,44 +438,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "How much mileage benefit did you get in total for using your own car?" page
     When the user selects the amount field and enters a value of 500.00
     And the user clicks the continue button
-    Then the user should be redirected to the "Did you get accommodation or relocation benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get any travel or entertainment benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get any utility or general service benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get any medical, dental, childcare, education benefits or loans from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your employment benefits" page
-
-  Scenario: Individual user as a new submission, goes through the full accommodation relocation flow
-    When the user logs into the service with the following details
-      |Redirect url       |/2021/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |BB444444A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the employment link
-    Then the user should be redirected to the "Employment" page
-    When the user clicks on the second employer change link
-    Then the user should be redirected to the "Employment details and benefits" page
-    And the user clicks on the benefits link
-    Then the user should be redirected to the "Did you receive any benefits from this company?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you receive any car, van or fuel benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
+    # Accommodation and relocation
     Then the user should be redirected to the "Did you get accommodation or relocation benefits from this company?" page
     When the user selects the yes radio button
     And the user clicks the continue button
@@ -432,44 +460,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "How much did you get in total for non-qualifying relocation benefits?" page
     When the user selects the amount field and enters a value of 100.00
     And the user clicks the continue button
-    Then the user should be redirected to the "Did you get any travel or entertainment benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get any utility or general service benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get any medical, dental, childcare, education benefits or loans from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your employment benefits" page
-
-  Scenario: Individual user as a new submission, goes through the full travel and entertainment flow
-    When the user logs into the service with the following details
-      |Redirect url       |/2021/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |BB444444A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the employment link
-    Then the user should be redirected to the "Employment" page
-    When the user clicks on the second employer change link
-    Then the user should be redirected to the "Employment details and benefits" page
-    And the user clicks on the benefits link
-    Then the user should be redirected to the "Did you receive any benefits from this company?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you receive any car, van or fuel benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get accommodation or relocation benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
+    # Travel and entertainment
     Then the user should be redirected to the "Did you get any travel or entertainment benefits from this company?" page
     When the user selects the yes radio button
     And the user clicks the continue button
@@ -491,44 +482,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "How much did you get in total for entertainment?" page
     When the user selects the amount field and enters a value of 100.00
     And the user clicks the continue button
-    Then the user should be redirected to the "Did you get any utility or general service benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get any medical, dental, childcare, education benefits or loans from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your employment benefits" page
-
-  Scenario: Individual user as a new submission, goes through the full utilities flow
-    When the user logs into the service with the following details
-      |Redirect url       |/2021/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |BB444444A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the employment link
-    Then the user should be redirected to the "Employment" page
-    When the user clicks on the second employer change link
-    Then the user should be redirected to the "Employment details and benefits" page
-    And the user clicks on the benefits link
-    Then the user should be redirected to the "Did you receive any benefits from this company?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you receive any car, van or fuel benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get accommodation or relocation benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get any travel or entertainment benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
+    # Utilities and general services
     Then the user should be redirected to the "Did you get any utility or general service benefits from this company?" page
     When the user selects the yes radio button
     And the user clicks the continue button
@@ -556,271 +510,49 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "How much did you get in total for other services?" page
     When the user selects the amount field and enters a value of 400.00
     And the user clicks the continue button
+    # Medical, dental, childcare, education benefits or loans
     Then the user should be redirected to the "Did you get any medical, dental, childcare, education benefits or loans from this company?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get a medical or dental benefit?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much was your medical or dental benefit in total?" page
+    When the user selects the amount field and enters a value of 100.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get a childcare benefit?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much was your total childcare benefit?" page
+    When the user selects the amount field and enters a value of 200.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get any benefits for educational services?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much did you get in total for educational services?" page
+    When the user selects the amount field and enters a value of 300.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get any beneficial loans?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much were your beneficial loans in total?" page
+    When the user selects the amount field and enters a value of 400.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your employer pay any of your Income Tax or incurred costs?" page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page
 
-  Scenario: Agent user as a new submission, goes through the full car van fuel flow
+  Scenario: Individual user as a new submission, says no to all section questions
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2021/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890  |
-      |Credential Strength|weak                                                                               |
-      |Confidence Level   |200                                                                                |
-      |Affinity Group     |Agent                                                                              |
-      |Enrolment Key 1    |HMRC-MTD-IT                                                                        |
-      |Identifier Name 1  |MTDITID                                                                            |
-      |Identifier Value 1 |1234567890                                                                         |
-      |Enrolment Key 2    |HMRC-AS-AGENT                                                                      |
-      |Identifier Name 2  |AgentReferenceNumber                                                               |
-      |Identifier Value 2 |XARN1234567                                                                        |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the employment link
-    Then the user should be redirected to the "Employment" page
-    When the user clicks on the second employer change link
-    Then the user should be redirected to the "Employment details and benefits" page
-    And the user clicks on the benefits link
-    Then the user should be redirected to the "Did your client receive any benefits from this company?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client receive any car, van or fuel benefits from this company?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get a company car benefit?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much was your client’s total company car benefit?" page
-    When the user selects the amount field and enters a value of 100.00
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get fuel benefit for a company car?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much was your client’s total company car fuel benefit?" page
-    When the user selects the amount field and enters a value of 200.00
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get a company van benefit?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much was your client’s total company van benefit?" page
-    When the user selects the amount field and enters a value of 300.00
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get fuel benefit for a company van?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much was your client’s total company van fuel benefit?" page
-    When the user selects the amount field and enters a value of 400.00
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get a mileage benefit for using their own car for work?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much mileage benefit did your client get in total for using their own car?" page
-    When the user selects the amount field and enters a value of 500.00
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get accommodation or relocation benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get any travel or entertainment benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get any utility or general service benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get any medical, dental, childcare, education benefits or loans from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your client’s employment benefits" page
-
-  Scenario: Agent user as a new submission, goes through the full accommodation relocation flow
-    When the user logs into the service with the following details
-      |Redirect url       |/test-only/2021/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890  |
-      |Credential Strength|weak                                                                               |
-      |Confidence Level   |200                                                                                |
-      |Affinity Group     |Agent                                                                              |
-      |Enrolment Key 1    |HMRC-MTD-IT                                                                        |
-      |Identifier Name 1  |MTDITID                                                                            |
-      |Identifier Value 1 |1234567890                                                                         |
-      |Enrolment Key 2    |HMRC-AS-AGENT                                                                      |
-      |Identifier Name 2  |AgentReferenceNumber                                                               |
-      |Identifier Value 2 |XARN1234567                                                                        |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the employment link
-    Then the user should be redirected to the "Employment" page
-    When the user clicks on the second employer change link
-    Then the user should be redirected to the "Employment details and benefits" page
-    And the user clicks on the benefits link
-    Then the user should be redirected to the "Did your client receive any benefits from this company?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client receive any car, van or fuel benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get accommodation or relocation benefits from this company?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get any living accommodation benefits?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much was your client’s total living accommodation benefit?" page
-    When the user selects the amount field and enters a value of 100.00
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get any qualifying relocation benefits?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much was your client’s total qualifying relocation benefit?" page
-    When the user selects the amount field and enters a value of 100.00
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get any non-qualifying relocation benefits?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much did your client get in total for non-qualifying relocation benefits?" page
-    When the user selects the amount field and enters a value of 100.00
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get any travel or entertainment benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get any utility or general service benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get any medical, dental, childcare, education benefits or loans from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your client’s employment benefits" page
-
-  Scenario: Agent user as a new submission, goes through the full travel and entertainment flow
-    When the user logs into the service with the following details
-      |Redirect url       |/test-only/2021/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890  |
-      |Credential Strength|weak                                                                               |
-      |Confidence Level   |200                                                                                |
-      |Affinity Group     |Agent                                                                              |
-      |Enrolment Key 1    |HMRC-MTD-IT                                                                        |
-      |Identifier Name 1  |MTDITID                                                                            |
-      |Identifier Value 1 |1234567890                                                                         |
-      |Enrolment Key 2    |HMRC-AS-AGENT                                                                      |
-      |Identifier Name 2  |AgentReferenceNumber                                                               |
-      |Identifier Value 2 |XARN1234567                                                                        |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the employment link
-    Then the user should be redirected to the "Employment" page
-    When the user clicks on the second employer change link
-    Then the user should be redirected to the "Employment details and benefits" page
-    And the user clicks on the benefits link
-    Then the user should be redirected to the "Did your client receive any benefits from this company?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client receive any car, van or fuel benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get accommodation or relocation benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get any travel or entertainment benefits from this company?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get any travel and subsistence benefits?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much did your client get in total for travel and subsistence?" page
-    When the user selects the amount field and enters a value of 100.00
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get any incidental overnight costs?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much did your client get in total for incidental overnight costs?" page
-    When the user selects the amount field and enters a value of 100.00
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get any entertainment benefits?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much did your client get in total for entertainment?" page
-    When the user selects the amount field and enters a value of 100.00
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get any utility or general service benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get any medical, dental, childcare, education benefits or loans from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your client’s employment benefits" page
-
-  Scenario: Agent user as a new submission, goes through the full utilities flow
-    When the user logs into the service with the following details
-      |Redirect url       |/test-only/2021/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890  |
-      |Credential Strength|weak                                                                               |
-      |Confidence Level   |200                                                                                |
-      |Affinity Group     |Agent                                                                              |
-      |Enrolment Key 1    |HMRC-MTD-IT                                                                        |
-      |Identifier Name 1  |MTDITID                                                                            |
-      |Identifier Value 1 |1234567890                                                                         |
-      |Enrolment Key 2    |HMRC-AS-AGENT                                                                      |
-      |Identifier Name 2  |AgentReferenceNumber                                                               |
-      |Identifier Value 2 |XARN1234567                                                                        |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the employment link
-    Then the user should be redirected to the "Employment" page
-    When the user clicks on the second employer change link
-    Then the user should be redirected to the "Employment details and benefits" page
-    And the user clicks on the benefits link
-    Then the user should be redirected to the "Did your client receive any benefits from this company?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client receive any car, van or fuel benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get accommodation or relocation benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get any travel or entertainment benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get any utility or general service benefits from this company?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get a benefit for using a telephone?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much did your client get in total for telephone benefits?" page
-    When the user selects the amount field and enters a value of 100.00
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get a benefit for services provided by their employer?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much did your client get in total for services provided by their employer?" page
-    When the user selects the amount field and enters a value of 200.00
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client’s employer cover costs for any professional fees or subscriptions?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much did your client’s employer pay to cover professional fees or subscriptions?" page
-    When the user selects the amount field and enters a value of 300.00
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get any benefits for other services?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much did your client get in total for other services?" page
-    When the user selects the amount field and enters a value of 400.00
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get any medical, dental, childcare, education benefits or loans from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your client’s employment benefits" page
-
-  Scenario: Individual user as a new submission, says no to the first car van fuel question, no to accommodation, no to travel and entertainment, no to utilities and goes straight to medical section
-    When the user logs into the service with the following details
-      |Redirect url       |/2021/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |BB444444A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB444444A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -847,18 +579,21 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Did you get any medical, dental, childcare, education benefits or loans from this company?" page
     When the user selects the no radio button
     And the user clicks the continue button
+    Then the user should be redirected to the "Did your employer pay any of your Income Tax or incurred costs?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page
 
-  Scenario: Individual user as a new submission, says no to the car, van and mileage sections so skips the fuel sections
+  Scenario: Individual user as a new submission, says yes to section questions, no to everything else
     When the user logs into the service with the following details
-      |Redirect url       |/2021/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |BB444444A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB444444A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -883,44 +618,6 @@ Feature: Employment Journeys - Income Tax Submission
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Did you get accommodation or relocation benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get any travel or entertainment benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get any utility or general service benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get any medical, dental, childcare, education benefits or loans from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your employment benefits" page
-
-  Scenario: Individual user as a new submission, says no to car section and goes through the accommodation section saying no to all questions
-    When the user logs into the service with the following details
-      |Redirect url       |/2021/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |BB444444A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the employment link
-    Then the user should be redirected to the "Employment" page
-    When the user clicks on the second employer change link
-    Then the user should be redirected to the "Employment details and benefits" page
-    And the user clicks on the benefits link
-    Then the user should be redirected to the "Did you receive any benefits from this company?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you receive any car, van or fuel benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get accommodation or relocation benefits from this company?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Did you get any living accommodation benefits?" page
@@ -933,44 +630,6 @@ Feature: Employment Journeys - Income Tax Submission
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Did you get any travel or entertainment benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get any utility or general service benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get any medical, dental, childcare, education benefits or loans from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your employment benefits" page
-
-  Scenario: Individual user as a new submission, says no to car/accommodation sections and goes through the travel and entertainment section saying no to all questions
-    When the user logs into the service with the following details
-      |Redirect url       |/2021/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |BB444444A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the employment link
-    Then the user should be redirected to the "Employment" page
-    When the user clicks on the second employer change link
-    Then the user should be redirected to the "Employment details and benefits" page
-    And the user clicks on the benefits link
-    Then the user should be redirected to the "Did you receive any benefits from this company?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you receive any car, van or fuel benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get accommodation or relocation benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get any travel or entertainment benefits from this company?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Did you get any travel and subsistence benefits?" page
@@ -980,44 +639,6 @@ Feature: Employment Journeys - Income Tax Submission
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Did you get any entertainment benefits?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get any utility or general service benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get any medical, dental, childcare, education benefits or loans from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your employment benefits" page
-
-  Scenario: Individual user as a new submission, says no to car/accommodation/travel sections and goes through the utilities section saying no to all questions
-    When the user logs into the service with the following details
-      |Redirect url       |/2021/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |BB444444A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the employment link
-    Then the user should be redirected to the "Employment" page
-    When the user clicks on the second employer change link
-    Then the user should be redirected to the "Employment details and benefits" page
-    And the user clicks on the benefits link
-    Then the user should be redirected to the "Did you receive any benefits from this company?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you receive any car, van or fuel benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get accommodation or relocation benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get any travel or entertainment benefits from this company?" page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Did you get any utility or general service benefits from this company?" page
@@ -1036,79 +657,36 @@ Feature: Employment Journeys - Income Tax Submission
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Did you get any medical, dental, childcare, education benefits or loans from this company?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get a medical or dental benefit?" page
     When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get a childcare benefit?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get any benefits for educational services?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get any beneficial loans?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your employer pay any of your Income Tax or incurred costs?" page
+    When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page
 
-  Scenario: Individual user as a new submission, says no to the fuel questions, so skips the amount questions
-    When the user logs into the service with the following details
-      |Redirect url       |/2021/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |BB444444A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the employment link
-    Then the user should be redirected to the "Employment" page
-    When the user clicks on the second employer change link
-    Then the user should be redirected to the "Employment details and benefits" page
-    And the user clicks on the benefits link
-    Then the user should be redirected to the "Did you receive any benefits from this company?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you receive any car, van or fuel benefits from this company?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get a company car benefit?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much was your total company car benefit?" page
-    When the user selects the amount field and enters a value of 100.00
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get fuel benefit for a company car?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get a company van benefit?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much was your total company van benefit?" page
-    When the user selects the amount field and enters a value of 300.00
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get fuel benefit for a company van?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get a mileage benefit for using your own car for work?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get accommodation or relocation benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get any travel or entertainment benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get any utility or general service benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get any medical, dental, childcare, education benefits or loans from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your employment benefits" page
-
+  # Prior submission updates for each section
   Scenario: Individual user has prior submission data, updates all car van fuel fields
     When the user logs into the service with the following details
-      |Redirect url       |/2021/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |BB444444A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB444444A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -1187,14 +765,14 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates all accommodation fields
     When the user logs into the service with the following details
-      |Redirect url       |/2021/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |BB444444A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB444444A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -1249,14 +827,14 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates all travel and entertainment fields
     When the user logs into the service with the following details
-      |Redirect url       |/2021/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |BB444444A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB444444A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -1311,14 +889,14 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates all utilities fields
     When the user logs into the service with the following details
-      |Redirect url       |/2021/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |BB444444A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB444444A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -1383,16 +961,90 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page
 
+  Scenario: Individual user has prior submission data, updates all medical benefits fields
+    When the user logs into the service with the following details
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB444444A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "Employment" page
+    When the user clicks on the third employer change link
+    Then the user should be redirected to the "Employment details and benefits" page
+    And the user clicks on the benefits link
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change medical benefit link in position 9
+    Then the user should be redirected to the "How much were your beneficial loans in total?" page
+    When the user selects the amount field and enters a value of 110.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change medical benefit link in position 8
+    Then the user should be redirected to the "Did you get any beneficial loans?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change medical benefit link in position 7
+    Then the user should be redirected to the "How much did you get in total for educational services?" page
+    When the user selects the amount field and enters a value of 200.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change medical benefit link in position 6
+    Then the user should be redirected to the "Did you get any benefits for educational services?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change medical benefit link in position 5
+    Then the user should be redirected to the "How much was your total childcare benefit?" page
+    When the user selects the amount field and enters a value of 300.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change medical benefit link in position 4
+    Then the user should be redirected to the "Did you get a childcare benefit?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change medical benefit link in position 3
+    Then the user should be redirected to the "How much was your medical or dental benefit in total?" page
+    When the user selects the amount field and enters a value of 400.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change medical benefit link in position 2
+    Then the user should be redirected to the "Did you get a medical or dental benefit?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change medical benefit link in position 1
+    Then the user should be redirected to the "Did you get any medical, dental, childcare, education benefits or loans from this company?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
   Scenario: Individual user has prior submission data, updates carVanFuel to no, then does the full car section flow
     When the user logs into the service with the following details
-      |Redirect url       |/2021/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |BB444444A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB444444A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -1447,14 +1099,14 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates accommodation to no, then does the full accommodation relocation flow
     When the user logs into the service with the following details
-      |Redirect url       |/2021/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |BB444444A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB444444A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -1463,12 +1115,6 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the third employer change link
     Then the user should be redirected to the "Employment details and benefits" page
     And the user clicks on the benefits link
-    Then the user should be redirected to the "Check your employment benefits" page
-
-    When the user clicks on the change travel benefit link in position 1
-    Then the user should be redirected to the "Did you get any travel or entertainment benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page
 
     When the user clicks on the change accommodation benefit link in position 1
@@ -1503,14 +1149,14 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates travel and entertainment to no, then does the full travel and entertainment flow
     When the user logs into the service with the following details
-      |Redirect url       |/2021/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |BB444444A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB444444A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -1519,12 +1165,6 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the third employer change link
     Then the user should be redirected to the "Employment details and benefits" page
     And the user clicks on the benefits link
-    Then the user should be redirected to the "Check your employment benefits" page
-
-    When the user clicks on the change utilities benefit link in position 1
-    Then the user should be redirected to the "Did you get any utility or general service benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page
 
     When the user clicks on the change travel benefit link in position 1
@@ -1559,14 +1199,14 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates utilities to no, then does the full utilities flow
     When the user logs into the service with the following details
-      |Redirect url       |/2021/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |BB444444A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB444444A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -1609,6 +1249,62 @@ Feature: Employment Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "How much did you get in total for other services?" page
+    When the user selects the amount field and enters a value of 400.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+  Scenario: Individual user has prior submission data, updates medical to no, then does the full medical flow
+    When the user logs into the service with the following details
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB444444A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "Employment" page
+    When the user clicks on the third employer change link
+    Then the user should be redirected to the "Employment details and benefits" page
+    And the user clicks on the benefits link
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change medical benefit link in position 1
+    Then the user should be redirected to the "Did you get any medical, dental, childcare, education benefits or loans from this company?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change medical benefit link in position 1
+    Then the user should be redirected to the "Did you get any medical, dental, childcare, education benefits or loans from this company?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get a medical or dental benefit?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much was your medical or dental benefit in total?" page
+    When the user selects the amount field and enters a value of 110.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get a childcare benefit?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much was your total childcare benefit?" page
+    When the user selects the amount field and enters a value of 200.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get any benefits for educational services?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much did you get in total for educational services?" page
+    When the user selects the amount field and enters a value of 300.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get any beneficial loans?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much were your beneficial loans in total?" page
     When the user selects the amount field and enters a value of 400.00
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page

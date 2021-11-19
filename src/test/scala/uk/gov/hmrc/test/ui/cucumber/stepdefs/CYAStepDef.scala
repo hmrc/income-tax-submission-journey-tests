@@ -25,9 +25,16 @@ class CYAStepDef extends BaseStepDef {
   }
 
   When("""^the user clicks on the change (.*) benefit link in position (.*)$""") { (section: String, position: String) =>
-
-    val sectionMaps = Map("car" -> 5, "accommodation" -> 7, "travel" -> 9, "utilities" -> 11,
-      "medical" -> 13, "income tax" -> 15, "reimbursed" -> 17, "assets" -> 19)
+    val sectionMaps = Map(
+      "car" -> 5,
+      "accommodation" -> 7,
+      "travel" -> 9,
+      "utilities" -> 11,
+      "medical" -> 13,
+      "income tax" -> 15,
+      "reimbursed" -> 17,
+      "assets" -> 19
+    )
 
     CommonPage.clickBySelector(s"#main-content > div > div > dl:nth-child(${sectionMaps(section)}) > div:nth-child($position) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a")
   }

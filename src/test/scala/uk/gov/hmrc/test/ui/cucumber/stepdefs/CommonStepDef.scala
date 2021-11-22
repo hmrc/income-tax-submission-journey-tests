@@ -62,12 +62,12 @@ class CommonStepDef extends BaseStepDef {
   Then( """^the user should see the correct (.*) url$""") { ( url: String) =>
     val expectedUrl: (String, String) = url match {
       case "Accessibility Statement" => ("Accessibility statement", "/accessibility-statement/income-tax-submission")
-      case "sign out" => ("Sign out", "/income-through-software/return/sign-out")
-      case "personal income sign out" => ("Sign out", "/income-through-software/return/personal-income/sign-out")
+      case "sign out" => ("Sign out", "/update-and-submit-income-tax-return/sign-out")
+      case "personal income sign out" => ("Sign out", "/update-and-submit-income-tax-return/personal-income/sign-out")
       case "Income Tax Account for individuals" => ("Income Tax Account", "/report-quarterly/income-and-expenses/view")
       case "Income Tax Account for agents" => ("Income Tax Account", "/report-quarterly/income-and-expenses/view/agents/income-tax-account")
       case "Authorise you as an agent" => ("authorise you as their agent (opens in new tab)", "https://www.gov.uk/guidance/client-authorisation-an-overview")
-      case "employment sign out" => ("Sign out", "/income-through-software/return/employment-income/sign-out")
+      case "employment sign out" => ("Sign out", "/update-and-submit-income-tax-return/employment-income/sign-out")
       case _ => fail("Invalid url input parameter")
     }
     driver.findElement(By.linkText(expectedUrl._1)).getAttribute("href") should include (expectedUrl._2)
@@ -75,10 +75,10 @@ class CommonStepDef extends BaseStepDef {
 
   Then("""^the user navigates to the (.*) page$""") { (url: String) =>
     val expectedUrl: String = url match {
-      case "untaxed interest" => "http://localhost:9308/income-through-software/return/personal-income/2022/interest/untaxed-uk-interest"
-      case "employment summary" => "http://localhost:9317/income-through-software/return/employment-income/2022/employment-summary"
-      case "interest check your answers" => "http://localhost:9308/income-through-software/return/personal-income/2022/interest/check-interest"
-      case "final tax overview" => "http://localhost:9302/income-through-software/return/2021/income-tax-return-overview"
+      case "untaxed interest" => "http://localhost:9308/update-and-submit-income-tax-return/personal-income/2022/interest/untaxed-uk-interest"
+      case "employment summary" => "http://localhost:9317/update-and-submit-income-tax-return/employment-income/2022/employment-summary"
+      case "interest check your answers" => "http://localhost:9308/update-and-submit-income-tax-return/personal-income/2022/interest/check-interest"
+      case "final tax overview" => "http://localhost:9302/update-and-submit-income-tax-return/2021/income-tax-return-overview"
       case "auth login" => AuthLoginPage.url
       case _ => fail("Invalid url input parameter")
     }

@@ -62,7 +62,7 @@ trait CommonElements extends BasePage with Matchers{
     "employment details"              -> By.linkText("Employment details"),
     "benefits"                        -> By.linkText("Benefits"),
     "expenses"                        -> By.linkText("Expenses"),
-    "first employer"                  -> By.cssSelector("#main-content > div > div > div:nth-child(4) > ul > li:nth-child(1) > span > a"),
+    "first employer"                  -> By.cssSelector("#main-content > div > div > ol:nth-child(4) > li:nth-child(1) > span.app-task-list__task-name > a"),
     "second employer change"          -> By.cssSelector("#main-content > div > div > div:nth-child(3) > ul > li:nth-child(2) > span.hmrc-add-to-a-list__change > a"),
     "third employer change"          -> By.cssSelector("#main-content > div > div > div:nth-child(3) > ul > li:nth-child(3) > span.hmrc-add-to-a-list__change > a"),
     "return to employment summary"    -> By.id("employmentSummaryBtn"),

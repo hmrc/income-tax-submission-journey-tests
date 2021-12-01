@@ -31,7 +31,7 @@ class CYAStepDef extends BaseStepDef {
       "travel" -> 9,
       "utilities" -> 11,
       "medical" -> 13,
-      "income tax" -> 15,
+      "income" -> 15,
       "reimbursed" -> 17,
       "assets" -> 19
     )

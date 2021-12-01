@@ -1,4 +1,4 @@
-@smoke @employment
+@smoke
 
 Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Income Tax Submission
 

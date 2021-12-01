@@ -366,21 +366,6 @@ Feature: Employment Journeys - Income Tax Submission
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Did you get accommodation or relocation benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get any travel or entertainment benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get any utility or general service benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get any medical, dental, childcare, education benefits or loans from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your employer pay any of your Income Tax or incurred costs?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your employment benefits" page
 
   # New submission tests
   Scenario: Individual user as a new submission, goes through the full benefits flow
@@ -538,7 +523,24 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "How much were your beneficial loans in total?" page
     When the user selects the amount field and enters a value of 400.00
     And the user clicks the continue button
+    # Income Tax or Incurred Costs
     Then the user should be redirected to the "Did your employer pay any of your Income Tax or incurred costs?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your employer pay any of your Income Tax?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much of your Income Tax did your employer pay?" page
+    When the user selects the amount field and enters a value of 100.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your employer pay any of your incurred costs?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much of your incurred costs did your employer pay?" page
+    When the user selects the amount field and enters a value of 200.00
+    And the user clicks the continue button
+    # Reimbursed costs, vouchers or non-cash benefits
+    Then the user should be redirected to the "Did you get any reimbursed costs, vouchers or non-cash benefits from your employer?" page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page
@@ -580,6 +582,9 @@ Feature: Employment Journeys - Income Tax Submission
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Did your employer pay any of your Income Tax or incurred costs?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get any reimbursed costs, vouchers or non-cash benefits from your employer?" page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page
@@ -672,6 +677,15 @@ Feature: Employment Journeys - Income Tax Submission
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Did your employer pay any of your Income Tax or incurred costs?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your employer pay any of your Income Tax?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your employer pay any of your incurred costs?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get any reimbursed costs, vouchers or non-cash benefits from your employer?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page
@@ -1035,6 +1049,56 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page
 
+  Scenario: Individual user has prior submission data, updates all income benefits fields
+    When the user logs into the service with the following details
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB444444A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "Employment" page
+    When the user clicks on the third employer change link
+    Then the user should be redirected to the "Employment details and benefits" page
+    And the user clicks on the benefits link
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change income benefit link in position 5
+    Then the user should be redirected to the "How much of your incurred costs did your employer pay?" page
+    When the user selects the amount field and enters a value of 300.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change income benefit link in position 4
+    Then the user should be redirected to the "Did your employer pay any of your incurred costs?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change income benefit link in position 3
+    Then the user should be redirected to the "How much of your Income Tax did your employer pay?" page
+    When the user selects the amount field and enters a value of 400.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change income benefit link in position 2
+    Then the user should be redirected to the "Did your employer pay any of your Income Tax?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change income benefit link in position 1
+    Then the user should be redirected to the "Did your employer pay any of your Income Tax or incurred costs?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
   Scenario: Individual user has prior submission data, updates carVanFuel to no, then does the full car section flow
     When the user logs into the service with the following details
       | Redirect url        | /2021/start |
@@ -1306,5 +1370,49 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "How much were your beneficial loans in total?" page
     When the user selects the amount field and enters a value of 400.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+  Scenario: Individual user has prior submission data, updates income to no, then does the full income flow
+    When the user logs into the service with the following details
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB444444A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "Employment" page
+    When the user clicks on the third employer change link
+    Then the user should be redirected to the "Employment details and benefits" page
+    And the user clicks on the benefits link
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change income benefit link in position 1
+    Then the user should be redirected to the "Did your employer pay any of your Income Tax or incurred costs?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change income benefit link in position 1
+    Then the user should be redirected to the "Did your employer pay any of your Income Tax or incurred costs?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your employer pay any of your Income Tax?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much of your Income Tax did your employer pay?" page
+    When the user selects the amount field and enters a value of 110.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your employer pay any of your incurred costs?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much of your incurred costs did your employer pay?" page
+    When the user selects the amount field and enters a value of 200.00
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page

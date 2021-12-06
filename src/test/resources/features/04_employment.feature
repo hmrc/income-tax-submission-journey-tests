@@ -541,6 +541,40 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     # Reimbursed costs, vouchers or non-cash benefits
     Then the user should be redirected to the "Did you get any reimbursed costs, vouchers or non-cash benefits from your employer?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Were any of your non-taxable costs reimbursed by your employer?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much of your non-taxable costs were reimbursed by your employer?" page
+    When the user selects the amount field and enters a value of 100.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Were any of your taxable costs reimbursed by your employer?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much of your taxable costs were reimbursed by your employer?" page
+    When the user selects the amount field and enters a value of 200.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get vouchers or credit cards?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "What is the total value of vouchers and credit card payments?" page
+    When the user selects the amount field and enters a value of 100.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get any non-cash benefits?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much did you get in total for non-cash benefits?" page
+    When the user selects the amount field and enters a value of 200.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get any other benefits?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much did you get in total for other benefits?" page
+    When the user selects the amount field and enters a value of 100.00
+    And the user clicks the continue button
+    # Assets
+    Then the user should be redirected to the "Did you get any assets from this company?" page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page
@@ -585,6 +619,9 @@ Feature: Employment Journeys - Income Tax Submission
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Did you get any reimbursed costs, vouchers or non-cash benefits from your employer?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get any assets from this company?" page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page
@@ -686,6 +723,24 @@ Feature: Employment Journeys - Income Tax Submission
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Did you get any reimbursed costs, vouchers or non-cash benefits from your employer?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Were any of your non-taxable costs reimbursed by your employer?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Were any of your taxable costs reimbursed by your employer?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get vouchers or credit cards?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get any non-cash benefits?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get any other benefits?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get any assets from this company?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page
@@ -1099,6 +1154,92 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page
 
+  Scenario: Individual user has prior submission data, updates all reimbursed benefits fields
+    When the user logs into the service with the following details
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB444444A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "Employment" page
+    When the user clicks on the third employer change link
+    Then the user should be redirected to the "Employment details and benefits" page
+    And the user clicks on the benefits link
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change reimbursed benefit link in position 11
+    Then the user should be redirected to the "How much did you get in total for other benefits?" page
+    When the user selects the amount field and enters a value of 1300.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change reimbursed benefit link in position 10
+    Then the user should be redirected to the "Did you get any other benefits?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change reimbursed benefit link in position 9
+    Then the user should be redirected to the "How much did you get in total for non-cash benefits?" page
+    When the user selects the amount field and enters a value of 1300.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change reimbursed benefit link in position 8
+    Then the user should be redirected to the "Did you get any non-cash benefits?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change reimbursed benefit link in position 7
+    Then the user should be redirected to the "What is the total value of vouchers and credit card payments?" page
+    When the user selects the amount field and enters a value of 1300.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change reimbursed benefit link in position 6
+    Then the user should be redirected to the "Did you get vouchers or credit cards?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change reimbursed benefit link in position 5
+    Then the user should be redirected to the "How much of your taxable costs were reimbursed by your employer?" page
+    When the user selects the amount field and enters a value of 1300.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change reimbursed benefit link in position 4
+    Then the user should be redirected to the "Were any of your taxable costs reimbursed by your employer?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change reimbursed benefit link in position 3
+    Then the user should be redirected to the "How much of your non-taxable costs were reimbursed by your employer?" page
+    When the user selects the amount field and enters a value of 1300.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change reimbursed benefit link in position 2
+    Then the user should be redirected to the "Were any of your non-taxable costs reimbursed by your employer?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change reimbursed benefit link in position 1
+    Then the user should be redirected to the "Did you get any reimbursed costs, vouchers or non-cash benefits from your employer?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
   Scenario: Individual user has prior submission data, updates carVanFuel to no, then does the full car section flow
     When the user logs into the service with the following details
       | Redirect url        | /2021/start |
@@ -1414,5 +1555,67 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "How much of your incurred costs did your employer pay?" page
     When the user selects the amount field and enters a value of 200.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+  Scenario: Individual user has prior submission data, updates reimbursed to no, then does the full income flow
+    When the user logs into the service with the following details
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB444444A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "Employment" page
+    When the user clicks on the third employer change link
+    Then the user should be redirected to the "Employment details and benefits" page
+    And the user clicks on the benefits link
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change reimbursed benefit link in position 1
+    Then the user should be redirected to the "Did you get any reimbursed costs, vouchers or non-cash benefits from your employer?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change reimbursed benefit link in position 1
+    Then the user should be redirected to the "Did you get any reimbursed costs, vouchers or non-cash benefits from your employer?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Were any of your non-taxable costs reimbursed by your employer?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much of your non-taxable costs were reimbursed by your employer?" page
+    When the user selects the amount field and enters a value of 100.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Were any of your taxable costs reimbursed by your employer?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much of your taxable costs were reimbursed by your employer?" page
+    When the user selects the amount field and enters a value of 200.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get vouchers or credit cards?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "What is the total value of vouchers and credit card payments?" page
+    When the user selects the amount field and enters a value of 100.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get any non-cash benefits?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much did you get in total for non-cash benefits?" page
+    When the user selects the amount field and enters a value of 200.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get any other benefits?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much did you get in total for other benefits?" page
+    When the user selects the amount field and enters a value of 100.00
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page

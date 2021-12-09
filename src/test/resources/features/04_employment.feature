@@ -338,10 +338,10 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the second employer change link
     Then the user should be redirected to the "Employment details and benefits" page
     And the user clicks on the benefits link
-    Then the user should be redirected to the "Did you receive any benefits from this company?" page
+    Then the user should be redirected to the "Did you get any benefits from this company?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Did you receive any car, van or fuel benefits from this company?" page
+    Then the user should be redirected to the "Did you get any car, van or fuel benefits from this company?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Did you get a company car benefit?" page
@@ -387,10 +387,10 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment details and benefits" page
     And the user clicks on the benefits link
     # Vehicles, fuel and mileage section
-    Then the user should be redirected to the "Did you receive any benefits from this company?" page
+    Then the user should be redirected to the "Did you get any benefits from this company?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Did you receive any car, van or fuel benefits from this company?" page
+    Then the user should be redirected to the "Did you get any car, van or fuel benefits from this company?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Did you get a company car benefit?" page
@@ -597,10 +597,10 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the second employer change link
     Then the user should be redirected to the "Employment details and benefits" page
     And the user clicks on the benefits link
-    Then the user should be redirected to the "Did you receive any benefits from this company?" page
+    Then the user should be redirected to the "Did you get any benefits from this company?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Did you receive any car, van or fuel benefits from this company?" page
+    Then the user should be redirected to the "Did you get any car, van or fuel benefits from this company?" page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Did you get accommodation or relocation benefits from this company?" page
@@ -644,10 +644,10 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the second employer change link
     Then the user should be redirected to the "Employment details and benefits" page
     And the user clicks on the benefits link
-    Then the user should be redirected to the "Did you receive any benefits from this company?" page
+    Then the user should be redirected to the "Did you get any benefits from this company?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Did you receive any car, van or fuel benefits from this company?" page
+    Then the user should be redirected to the "Did you get any car, van or fuel benefits from this company?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Did you get a company car benefit?" page
@@ -827,7 +827,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Check your employment benefits" page
 
     When the user clicks on the change car benefit link in position 1
-    Then the user should be redirected to the "Did you receive any car, van or fuel benefits from this company?" page
+    Then the user should be redirected to the "Did you get any car, van or fuel benefits from this company?" page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page
@@ -1261,13 +1261,13 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Check your employment benefits" page
 
     When the user clicks on the change car benefit link in position 1
-    Then the user should be redirected to the "Did you receive any car, van or fuel benefits from this company?" page
+    Then the user should be redirected to the "Did you get any car, van or fuel benefits from this company?" page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page
 
     When the user clicks on the change car benefit link in position 1
-    Then the user should be redirected to the "Did you receive any car, van or fuel benefits from this company?" page
+    Then the user should be redirected to the "Did you get any car, van or fuel benefits from this company?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Did you get a company car benefit?" page

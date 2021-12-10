@@ -242,7 +242,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "Employment" page
-    When the user clicks on the first change employment link
+    When the user clicks on the second change employment link
     Then the user should be redirected to the "Employment details and benefits" page
     When the user clicks on the employment details link
     Then the user should be redirected to the "Check your client’s employment details" page
@@ -262,8 +262,6 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Is your client still working for their employer?" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Check your client’s employment details" page
-    When the user clicks on the change cessation date link
     Then the user should be redirected to the "When did your client leave their employer?" page
     When the user selects the Day field and enters a value of 24
     And the user selects the Month field and enters a value of 09

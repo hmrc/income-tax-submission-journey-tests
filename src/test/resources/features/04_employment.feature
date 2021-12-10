@@ -575,7 +575,19 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     # Assets
     Then the user should be redirected to the "Did you get any assets from this company?" page
-    When the user selects the no radio button
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your employer make any assets available for your use?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much were the assets made available for your use?" page
+    When the user selects the amount field and enters a value of 300.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your employer give you any assets to keep?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much were the assets your employer gave you to keep?" page
+    When the user selects the amount field and enters a value of 400.00
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page
 
@@ -742,6 +754,12 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Did you get any assets from this company?" page
     When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your employer make any assets available for your use?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your employer give you any assets to keep?" page
+    When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page
 
@@ -1240,6 +1258,56 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page
 
+  Scenario: Individual user has prior submission data, updates all assets benefits fields
+    When the user logs into the service with the following details
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB444444A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "Employment" page
+    When the user clicks on the third employer change link
+    Then the user should be redirected to the "Employment details and benefits" page
+    And the user clicks on the benefits link
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change assets benefit link in position 5
+    Then the user should be redirected to the "How much were the assets your employer gave you to keep?" page
+    When the user selects the amount field and enters a value of 300.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change assets benefit link in position 4
+    Then the user should be redirected to the "Did your employer give you any assets to keep?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change assets benefit link in position 3
+    Then the user should be redirected to the "How much were the assets made available for your use?" page
+    When the user selects the amount field and enters a value of 400.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change assets benefit link in position 2
+    Then the user should be redirected to the "Did your employer make any assets available for your use?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change assets benefit link in position 1
+    Then the user should be redirected to the "Did you get any assets from this company?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
   Scenario: Individual user has prior submission data, updates carVanFuel to no, then does the full car section flow
     When the user logs into the service with the following details
       | Redirect url        | /2021/start |
@@ -1558,7 +1626,7 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page
 
-  Scenario: Individual user has prior submission data, updates reimbursed to no, then does the full income flow
+  Scenario: Individual user has prior submission data, updates reimbursed to no, then does the full reimbursed flow
     When the user logs into the service with the following details
       | Redirect url        | /2021/start |
       | Credential Strength | strong      |
@@ -1617,5 +1685,49 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "How much did you get in total for other benefits?" page
     When the user selects the amount field and enters a value of 100.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+  Scenario: Individual user has prior submission data, updates assets to no, then does the full assets flow
+  When the user logs into the service with the following details
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB444444A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "Employment" page
+    When the user clicks on the third employer change link
+    Then the user should be redirected to the "Employment details and benefits" page
+    And the user clicks on the benefits link
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change assets benefit link in position 1
+    Then the user should be redirected to the "Did you get any assets from this company?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment benefits" page
+
+    When the user clicks on the change assets benefit link in position 1
+    Then the user should be redirected to the "Did you get any assets from this company?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your employer make any assets available for your use?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much were the assets made available for your use?" page
+    When the user selects the amount field and enters a value of 300.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your employer give you any assets to keep?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much were the assets your employer gave you to keep?" page
+    When the user selects the amount field and enters a value of 400.00
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page

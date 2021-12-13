@@ -92,6 +92,8 @@ trait CommonElements extends BasePage with Matchers{
     "change tax taken from pay"        -> By.cssSelector("#main-content > div > div > dl > div:nth-child(7) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
     "third remove employment"          -> By.cssSelector("#main-content > div > div > div:nth-child(3) > ul > li:nth-child(3) > span.hmrc-add-to-a-list__remove > a"),
     "change expenses section"          -> By.cssSelector("#main-content > div > div > div:nth-child(6) > ul > li > span.hmrc-add-to-a-list__change > a"),
+    "return to employment summary button"    -> By.id("#returnToEmploymentSummaryBtn"),
+    "return to employer button"              -> By.id("#returnToEmployerBtn"),
 
     //GiftAid Elements
     "GiftAid" -> By.id("giftAid_link"),

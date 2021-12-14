@@ -1729,3 +1729,338 @@ Feature: Employment Journeys - Income Tax Submission
     When the user selects the amount field and enters a value of 400.00
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page
+
+  # Employment expenses tests
+  Scenario: Agent user with single employment and as a new submission, goes through the full expenses flow
+    When the user logs into the service with the following details
+      | Redirect url        | /test-only/2021/additional-parameters?ClientNino=AA133742A&ClientMTDID=1234567890 |
+      |Credential Strength|weak                                                                                 |
+      |Confidence Level   |200                                                                                  |
+      |Affinity Group     |Agent                                                                                |
+      |Enrolment Key 1    |HMRC-MTD-IT                                                                          |
+      |Identifier Name 1  |MTDITID                                                                              |
+      |Identifier Value 1 |1234567890                                                                           |
+      |Enrolment Key 2    |HMRC-AS-AGENT                                                                        |
+      |Identifier Name 2  |AgentReferenceNumber                                                                 |
+      |Identifier Value 2 |XARN1234567                                                                          |
+
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "Employment" page
+    And the user clicks on the change link
+    Then the user should be redirected to the "Employment details and benefits" page
+    And the user clicks on the expenses link
+
+    Then the user should be redirected to the "Check your client’s employment expenses" page
+    When the user clicks on the change link in position 1
+    Then the user should be redirected to the "Do you want to claim employment expenses for your client?" page
+    When the user selects the yes radio button
+    When the user clicks the continue button
+    Then the user should be redirected to the "Employment expenses" page
+    When the user clicks the continue button
+
+    Then the user should be redirected to the "Do you want to claim your client’s business travel and overnight expenses?" page
+    When the user selects the yes radio button
+    When the user clicks the continue button
+    Then the user should be redirected to the "How much do you want to claim for your client’s business travel and overnight stays?" page
+    When the user selects the amount field and enters a value of 100.11
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Do you want to claim for uniforms, work clothes, or tools for your client?" page
+    When the user selects the yes radio button
+    When the user clicks the continue button
+    Then the user should be redirected to the "How much do you want to claim for uniforms, work clothes, or tools for your client?" page
+    When the user selects the amount field and enters a value of 200.22
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Do you want to claim for professional fees and subscriptions for your client?" page
+    When the user selects the yes radio button
+    When the user clicks the continue button
+    Then the user should be redirected to the "How much do you want to claim for professional fees and subscriptions for your client?" page
+    When the user selects the amount field and enters a value of 300.33
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Do you want to claim for buying other equipment for your client?" page
+    When the user selects the yes radio button
+    When the user clicks the continue button
+    Then the user should be redirected to the "How much do you want to claim for buying other equipment for your client?" page
+    When the user selects the amount field and enters a value of 400.44
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Check your client’s employment expenses" page
+    And the user clicks the save and continue button
+    Then the user should be redirected to the "Employment" page
+
+  Scenario: Agent user with multiple employments as a new submission, answers no to the Do you want to claim employment expenses?, straight to expenses check your answers.
+    When the user logs into the service with the following details
+      | Redirect url        | /test-only/2021/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
+      |Credential Strength|weak                                                                                 |
+      |Confidence Level   |200                                                                                  |
+      |Affinity Group     |Agent                                                                                |
+      |Enrolment Key 1    |HMRC-MTD-IT                                                                          |
+      |Identifier Name 1  |MTDITID                                                                              |
+      |Identifier Value 1 |1234567890                                                                           |
+      |Enrolment Key 2    |HMRC-AS-AGENT                                                                        |
+      |Identifier Name 2  |AgentReferenceNumber                                                                 |
+      |Identifier Value 2 |XARN1234567                                                                          |
+
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "Employment" page
+    When the user clicks on the change expenses section link
+
+    Then the user should be redirected to the "Check your client’s employment expenses" page
+    When the user clicks on the change link in position 1
+    Then the user should be redirected to the "Do you want to claim employment expenses for your client?" page
+    When the user selects the no radio button
+    When the user clicks the continue button
+    Then the user should be redirected to the "Check your client’s employment expenses" page
+    And the user clicks the save and continue button
+    Then the user should be redirected to the "Employment" page
+
+  Scenario: Individual user as a new submission single employment, goes through the full expenses flow
+    When the user logs into the service with the following details
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA133742A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "Employment" page
+    And the user clicks on the change link
+    Then the user should be redirected to the "Employment details and benefits" page
+    And the user clicks on the expenses link
+
+    Then the user should be redirected to the "Check your employment expenses" page
+    When the user clicks on the change link in position 1
+    Then the user should be redirected to the "Do you want to claim employment expenses?" page
+    When the user selects the yes radio button
+    When the user clicks the continue button
+    Then the user should be redirected to the "Employment expenses" page
+    When the user clicks the continue button
+
+    Then the user should be redirected to the "Do you want to claim business travel and overnight expenses?" page
+    When the user selects the yes radio button
+    When the user clicks the continue button
+    Then the user should be redirected to the "How much do you want to claim for business travel and overnight stays?" page
+    When the user selects the amount field and enters a value of 100.11
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Do you want to claim for uniforms, work clothes, or tools?" page
+    When the user selects the yes radio button
+    When the user clicks the continue button
+    Then the user should be redirected to the "How much do you want to claim for uniforms, work clothes, or tools?" page
+    When the user selects the amount field and enters a value of 200.22
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Do you want to claim for professional fees and subscriptions?" page
+    When the user selects the yes radio button
+    When the user clicks the continue button
+    Then the user should be redirected to the "How much do you want to claim for professional fees and subscriptions?" page
+    When the user selects the amount field and enters a value of 300.33
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Do you want to claim for buying other equipment?" page
+    When the user selects the yes radio button
+    When the user clicks the continue button
+    Then the user should be redirected to the "How much do you want to claim for buying other equipment?" page
+    When the user selects the amount field and enters a value of 400.44
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Check your employment expenses" page
+    And the user clicks the save and continue button
+    Then the user should be redirected to the "Employment" page
+
+  Scenario: Individual user as a new submission single employment, goes through the full expenses flow answering no to all expenses to skips the amounts pages
+    When the user logs into the service with the following details
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA133742A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "Employment" page
+    And the user clicks on the change link
+    Then the user should be redirected to the "Employment details and benefits" page
+    And the user clicks on the expenses link
+    Then the user should be redirected to the "Check your employment expenses" page
+    When the user clicks on the change link in position 1
+    Then the user should be redirected to the "Do you want to claim employment expenses?" page
+    When the user selects the yes radio button
+    When the user clicks the continue button
+    Then the user should be redirected to the "Employment expenses" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Do you want to claim business travel and overnight expenses?" page
+    When the user selects the no radio button
+    When the user clicks the continue button
+    Then the user should be redirected to the "Do you want to claim for uniforms, work clothes, or tools?" page
+    When the user selects the no radio button
+    When the user clicks the continue button
+    Then the user should be redirected to the "Do you want to claim for professional fees and subscriptions?" page
+    When the user selects the no radio button
+    When the user clicks the continue button
+    Then the user should be redirected to the "Do you want to claim for buying other equipment?" page
+    When the user selects the no radio button
+    When the user clicks the continue button
+    Then the user should be redirected to the "Check your employment expenses" page
+    And the user clicks the save and continue button
+    Then the user should be redirected to the "Employment" page
+
+  Scenario: Individual user as a new submission single employment selecting no to do you want to claim expenses and to skip all expenses pages
+    When the user logs into the service with the following details
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA133742A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "Employment" page
+    And the user clicks on the change link
+    Then the user should be redirected to the "Employment details and benefits" page
+    And the user clicks on the expenses link
+    Then the user should be redirected to the "Check your employment expenses" page
+    When the user clicks on the change link in position 1
+    Then the user should be redirected to the "Do you want to claim employment expenses?" page
+    When the user selects the no radio button
+    When the user clicks the continue button
+    Then the user should be redirected to the "Check your employment expenses" page
+    And the user clicks the save and continue button
+    Then the user should be redirected to the "Employment" page
+
+  Scenario: Individual user single employment has prior submission data, updates all expenses fields
+    When the user logs into the service with the following details
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA123459A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "Employment" page
+    And the user clicks on the change link
+    Then the user should be redirected to the "Employment details and benefits" page
+    And the user clicks on the expenses link
+    Then the user should be redirected to the "Check your employment expenses" page
+    When the user clicks on the change link in position 3
+    Then the user should be redirected to the "How much do you want to claim for business travel and overnight stays?" page
+    When the user selects the amount field and enters a value of 1000.11
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Check your employment expenses" page
+    When the user clicks on the change link in position 5
+    Then the user should be redirected to the "How much do you want to claim for uniforms, work clothes, or tools?" page
+    When the user selects the amount field and enters a value of 2000.22
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment expenses" page
+
+    When the user clicks on the change link in position 7
+    Then the user should be redirected to the "How much do you want to claim for professional fees and subscriptions?" page
+    When the user selects the amount field and enters a value of 3000.33
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment expenses" page
+
+    When the user clicks on the change link in position 9
+    Then the user should be redirected to the "How much do you want to claim for buying other equipment?" page
+    When the user selects the amount field and enters a value of 4000.44
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment expenses" page
+    And the user clicks the save and continue button
+    Then the user should be redirected to the "Employment" page
+
+  Scenario: Individual user single employment has full prior submission data, changes all radio buttons to no
+    When the user logs into the service with the following details
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA123459A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "Employment" page
+    And the user clicks on the change link
+    Then the user should be redirected to the "Employment details and benefits" page
+    And the user clicks on the expenses link
+    Then the user should be redirected to the "Check your employment expenses" page
+    When the user clicks on the change link in position 2
+    Then the user should be redirected to the "Do you want to claim business travel and overnight expenses?" page
+    When the user selects the no radio button
+    When the user clicks the continue button
+    Then the user should be redirected to the "Check your employment expenses" page
+
+    When the user clicks on the change link in position 3
+    Then the user should be redirected to the "Do you want to claim for uniforms, work clothes, or tools?" page
+    When the user selects the no radio button
+    When the user clicks the continue button
+    Then the user should be redirected to the "Check your employment expenses" page
+
+    When the user clicks on the change link in position 4
+    Then the user should be redirected to the "Do you want to claim for professional fees and subscriptions?" page
+    When the user selects the no radio button
+    When the user clicks the continue button
+    Then the user should be redirected to the "Check your employment expenses" page
+
+    When the user clicks on the change link in position 5
+    Then the user should be redirected to the "Do you want to claim for buying other equipment?" page
+    When the user selects the no radio button
+    When the user clicks the continue button
+    Then the user should be redirected to the "Check your employment expenses" page
+    And the user clicks the save and continue button
+    Then the user should be redirected to the "Employment" page
+
+  Scenario: Individual user single employment has prior submission data, answers no to the 'Do you want to claim employment expenses?' question.
+    When the user logs into the service with the following details
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA123459A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "Employment" page
+    And the user clicks on the change link
+    Then the user should be redirected to the "Employment details and benefits" page
+    And the user clicks on the expenses link
+    Then the user should be redirected to the "Check your employment expenses" page
+    When the user clicks on the change link in position 1
+    Then the user should be redirected to the "Do you want to claim employment expenses?" page
+    When the user selects the no radio button
+    When the user clicks the continue button
+    And the user clicks the save and continue button
+    Then the user should be redirected to the "Employment" page

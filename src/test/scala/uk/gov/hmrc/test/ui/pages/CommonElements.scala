@@ -66,8 +66,9 @@ trait CommonElements extends BasePage with Matchers{
     "first employer"                   -> By.cssSelector("#main-content > div > div > ol:nth-child(4) > li:nth-child(1) > span.app-task-list__task-name > a"),
     "second employer change"           -> By.cssSelector("#main-content > div > div > div:nth-child(3) > ul > li:nth-child(2) > span.hmrc-add-to-a-list__change > a"),
     "third employer change"            -> By.cssSelector("#main-content > div > div > div:nth-child(3) > ul > li:nth-child(3) > span.hmrc-add-to-a-list__change > a"),
-    "return to employment summary"     -> By.id("employmentSummaryBtn"),
+    "return to employment summary"     -> By.id("returnToEmploymentSummaryBtn"),
     "return to overview"               -> By.id("returnToOverviewPageBtn"),
+    "return to employer"              -> By.id("returnToEmployerBtn"),
     "Unclickable employment"           -> By.cssSelector("#main-content > div > div > ol > li:nth-child(1) > ol > li:nth-child(5) > span.app-task-list__task-name"),
     "Unclickable benefits"             -> By.cssSelector("#main-content > div > div > ol > li:nth-child(2) > span.hmrc-status-tag"),
     "Unclickable expenses"             -> By.cssSelector("#main-content > div > div > ol > li:nth-child(3) > span.hmrc-status-tag"),
@@ -92,8 +93,6 @@ trait CommonElements extends BasePage with Matchers{
     "change tax taken from pay"        -> By.cssSelector("#main-content > div > div > dl > div:nth-child(7) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
     "third remove employment"          -> By.cssSelector("#main-content > div > div > div:nth-child(3) > ul > li:nth-child(3) > span.hmrc-add-to-a-list__remove > a"),
     "change expenses section"          -> By.cssSelector("#main-content > div > div > div:nth-child(6) > ul > li > span.hmrc-add-to-a-list__change > a"),
-    "return to employment summary button"    -> By.id("returnToEmploymentSummaryBtn"),
-    "return to employer button"              -> By.id("returnToEmployerBtn"),
 
     //GiftAid Elements
     "GiftAid" -> By.id("giftAid_link"),

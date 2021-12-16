@@ -57,11 +57,11 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the employment details link
     Then the user should be redirected to the "Check your employment details" page
     When the user clicks on the return to employer link
-    Then the user should be redirected to the "Employment details and benefits" page
+    Then the user should be redirected to the "Employer information" page
     When the user clicks on the benefits link
     Then the user should be redirected to the "Check your employment benefits" page
     When the user clicks on the return to employer link
-    Then the user should be redirected to the "Employment details and benefits" page
+    Then the user should be redirected to the "Employer information" page
     When the user clicks on the return to employment summary link
     Then the user should be redirected to the "Employment" page
     When the user clicks on the expenses link

@@ -24,14 +24,17 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment" page
     When the user clicks on the employment details link
     Then the user should be redirected to the "Check your client’s employment details" page
-    When the user clicks on the back link
-    And the user clicks on the benefits link
+    When the user clicks on the return to employment summary link
+    Then the user should be redirected to the "Employment" page
+    When the user clicks on the benefits link
     Then the user should be redirected to the "Check your client’s employment benefits" page
-    When the user clicks on the back link
-    And the user clicks on the expenses link
+    When the user clicks on the return to employment summary link
+    Then the user should be redirected to the "Employment" page
+    When the user clicks on the expenses link
     Then the user should be redirected to the "Check your client’s employment expenses" page
-    When the user clicks on the back link
-    And the user clicks on the return to overview link
+    When the user clicks on the return to employment summary link
+    Then the user should be redirected to the "Employment" page
+    When the user clicks on the return to overview link
     Then the user should be redirected to the "Your client’s Income Tax Return" page
 
   Scenario: Individual user with multiple employments checks their details, benefits and expenses
@@ -53,13 +56,18 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment details and benefits" page
     When the user clicks on the employment details link
     Then the user should be redirected to the "Check your employment details" page
-    When the user clicks on the back link
-    And the user clicks on the benefits link
+    When the user clicks on the return to employer link
+    Then the user should be redirected to the "Employment details and benefits" page
+    When the user clicks on the benefits link
     Then the user should be redirected to the "Check your employment benefits" page
-    When the user clicks on the back link
-    And the user clicks on the return to employment summary link
-    And the user clicks on the expenses link
+    When the user clicks on the return to employer link
+    Then the user should be redirected to the "Employment details and benefits" page
+    When the user clicks on the return to employment summary link
+    Then the user should be redirected to the "Employment" page
+    When the user clicks on the expenses link
     Then the user should be redirected to the "Check your employment expenses" page
+    When the user clicks on the return to employment summary link
+    Then the user should be redirected to the "Employment" page
 
   Scenario: User with no employment data cant click the employment link
     When the user logs into the service with the following details

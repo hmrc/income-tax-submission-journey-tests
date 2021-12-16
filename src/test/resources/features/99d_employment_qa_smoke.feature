@@ -21,15 +21,15 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     When the user clicks on the employment link
     Then the user should be redirected to the "Employment" page
     When the user clicks on the change link
-    Then the user should be redirected to the "Employment details and benefits" page
+    Then the user should be redirected to the "Employer information" page
     When the user clicks on the employment details link
     Then the user should be redirected to the "Check your employment details" page
     When the user clicks the back button
-    Then the user should be redirected to the "Employment details and benefits" page
+    Then the user should be redirected to the "Employer information" page
     And the user clicks on the benefits link
     Then the user should be redirected to the "Check your employment benefits" page
     When the user clicks the back button
-    Then the user should be redirected to the "Employment details and benefits" page
+    Then the user should be redirected to the "Employer information" page
     And the user clicks on the expenses link
     Then the user should be redirected to the "Check your employment expenses" page
 
@@ -52,15 +52,15 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     When the user clicks on the employment link
     Then the user should be redirected to the "Employment" page
     When the user clicks on the change link
-    Then the user should be redirected to the "Employment details and benefits" page
+    Then the user should be redirected to the "Employer information" page
     When the user clicks on the employment details link
     Then the user should be redirected to the "Check your client’s employment details" page
     When the user clicks the back button
-    Then the user should be redirected to the "Employment details and benefits" page
+    Then the user should be redirected to the "Employer information" page
     And the user clicks on the benefits link
     Then the user should be redirected to the "Check your client’s employment benefits" page
     When the user clicks the back button
-    Then the user should be redirected to the "Employment details and benefits" page
+    Then the user should be redirected to the "Employer information" page
     And the user clicks on the expenses link
     Then the user should be redirected to the "Check your client’s employment expenses" page
 

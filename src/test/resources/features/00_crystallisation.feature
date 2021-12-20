@@ -22,7 +22,7 @@ Feature: Crystallisation Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks the continue button
-    Then the user should be redirected to the "Your final tax overview" page on the View and Change service
+    Then the user should be redirected to the "Your final tax overview" page
     When the user clicks the View and Change Continue button
     Then the user should be redirected to the "Declaration" page
     When the user clicks the I agree - Submit Income Tax Return button
@@ -58,7 +58,7 @@ Feature: Crystallisation Journeys - Income Tax Submission
     Then the user should be taken to the "Your client’s Income Tax" test-only page on the View and Change service
     When the user navigates to the final tax overview page
     And the user clicks the continue button
-    Then the user should be redirected to the "Your client’s final tax overview" page on the View and Change service
+    Then the user should be redirected to the "Your client’s final tax overview" page
     When the user clicks the View and Change Continue button
     Then the user should be redirected to the "Declaration" page
     When the user clicks the I agree - Submit Income Tax Return button

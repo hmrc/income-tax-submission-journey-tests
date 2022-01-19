@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 HM Revenue & Customs
+ * Copyright 2022 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,8 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, CommonPage}
 import uk.gov.hmrc.test.ui.pages.CommonPage.load
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, CommonPage}
 
 class CommonStepDef extends BaseStepDef {
 
@@ -59,7 +59,7 @@ class CommonStepDef extends BaseStepDef {
     CommonPage.enterValue(valueTextBox, value)
   }
 
-  Then( """^the user should see the correct (.*) url$""") { ( url: String) =>
+  Then("""^the user should see the correct (.*) url$""") { (url: String) =>
     val expectedUrl: (String, String) = url match {
       case "Accessibility Statement" => ("Accessibility statement", "/accessibility-statement/income-tax-submission")
       case "sign out" => ("Sign out", "/update-and-submit-income-tax-return/sign-out")
@@ -70,7 +70,7 @@ class CommonStepDef extends BaseStepDef {
       case "employment sign out" => ("Sign out", "/update-and-submit-income-tax-return/employment-income/sign-out")
       case _ => fail("Invalid url input parameter")
     }
-    driver.findElement(By.linkText(expectedUrl._1)).getAttribute("href") should include (expectedUrl._2)
+    driver.findElement(By.linkText(expectedUrl._1)).getAttribute("href") should include(expectedUrl._2)
   }
 
   Then("""^the user navigates to the (.*) page$""") { (url: String) =>

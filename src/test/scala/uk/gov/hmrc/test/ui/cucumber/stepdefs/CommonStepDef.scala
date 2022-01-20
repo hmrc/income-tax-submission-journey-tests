@@ -77,6 +77,8 @@ class CommonStepDef extends BaseStepDef {
     val expectedUrl: String = url match {
       case "untaxed interest" => "http://localhost:9308/update-and-submit-income-tax-return/personal-income/2022/interest/untaxed-uk-interest"
       case "employment summary" => "http://localhost:9317/update-and-submit-income-tax-return/employment-income/2022/employment-summary"
+// TODO: remove check employment expenses case after content iterations for employment summary page
+      case "check employment expenses" => "http://localhost:9317/update-and-submit-income-tax-return/employment-income/2021/expenses/check-employment-expenses"
       case "interest check your answers" => "http://localhost:9308/update-and-submit-income-tax-return/personal-income/2022/interest/check-interest"
       case "final tax overview" => "http://localhost:9302/update-and-submit-income-tax-return/2021/income-tax-return-overview"
       case "auth login" => AuthLoginPage.url

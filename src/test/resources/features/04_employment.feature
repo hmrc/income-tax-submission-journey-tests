@@ -58,7 +58,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Check your employment details" page
     When the user clicks on the return to employer link
     Then the user should be redirected to the "Employer information" page
-    When the user clicks on the benefits link
+    When the user clicks on the employment benefits link
     Then the user should be redirected to the "Check your employment benefits" page
     When the user clicks on the return to employer link
     Then the user should be redirected to the "Employer information" page
@@ -343,7 +343,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment" page
     When the user clicks on the second employer change link
     Then the user should be redirected to the "Employer information" page
-    And the user clicks on the benefits link
+    And the user clicks on the employment benefits link
     Then the user should be redirected to the "Did you get any benefits from this company?" page
     When the user selects the yes radio button
     And the user clicks the continue button
@@ -391,7 +391,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment" page
     When the user clicks on the second employer change link
     Then the user should be redirected to the "Employer information" page
-    And the user clicks on the benefits link
+    And the user clicks on the employment benefits link
     # Vehicles, fuel and mileage section
     Then the user should be redirected to the "Did you get any benefits from this company?" page
     When the user selects the yes radio button
@@ -614,7 +614,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment" page
     When the user clicks on the second employer change link
     Then the user should be redirected to the "Employer information" page
-    And the user clicks on the benefits link
+    And the user clicks on the employment benefits link
     Then the user should be redirected to the "Did you get any benefits from this company?" page
     When the user selects the yes radio button
     And the user clicks the continue button
@@ -661,7 +661,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment" page
     When the user clicks on the second employer change link
     Then the user should be redirected to the "Employer information" page
-    And the user clicks on the benefits link
+    And the user clicks on the employment benefits link
     Then the user should be redirected to the "Did you get any benefits from this company?" page
     When the user selects the yes radio button
     And the user clicks the continue button
@@ -787,7 +787,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment" page
     When the user clicks on the third employer change link
     Then the user should be redirected to the "Employer information" page
-    And the user clicks on the benefits link
+    And the user clicks on the employment benefits link
     Then the user should be redirected to the "Check your employment benefits" page
 
     When the user clicks on the change car benefit link in position 11
@@ -873,7 +873,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment" page
     When the user clicks on the third employer change link
     Then the user should be redirected to the "Employer information" page
-    And the user clicks on the benefits link
+    And the user clicks on the employment benefits link
     Then the user should be redirected to the "Check your employment benefits" page
 
     When the user clicks on the change accommodation benefit link in position 7
@@ -935,7 +935,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment" page
     When the user clicks on the third employer change link
     Then the user should be redirected to the "Employer information" page
-    And the user clicks on the benefits link
+    And the user clicks on the employment benefits link
     Then the user should be redirected to the "Check your employment benefits" page
 
     When the user clicks on the change travel benefit link in position 7
@@ -997,7 +997,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment" page
     When the user clicks on the third employer change link
     Then the user should be redirected to the "Employer information" page
-    And the user clicks on the benefits link
+    And the user clicks on the employment benefits link
     Then the user should be redirected to the "Check your employment benefits" page
 
     When the user clicks on the change utilities benefit link in position 9
@@ -1071,7 +1071,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment" page
     When the user clicks on the third employer change link
     Then the user should be redirected to the "Employer information" page
-    And the user clicks on the benefits link
+    And the user clicks on the employment benefits link
     Then the user should be redirected to the "Check your employment benefits" page
 
     When the user clicks on the change medical benefit link in position 9
@@ -1145,7 +1145,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment" page
     When the user clicks on the third employer change link
     Then the user should be redirected to the "Employer information" page
-    And the user clicks on the benefits link
+    And the user clicks on the employment benefits link
     Then the user should be redirected to the "Check your employment benefits" page
 
     When the user clicks on the change income benefit link in position 5
@@ -1195,7 +1195,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment" page
     When the user clicks on the third employer change link
     Then the user should be redirected to the "Employer information" page
-    And the user clicks on the benefits link
+    And the user clicks on the employment benefits link
     Then the user should be redirected to the "Check your employment benefits" page
 
     When the user clicks on the change reimbursed benefit link in position 11
@@ -1281,7 +1281,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment" page
     When the user clicks on the third employer change link
     Then the user should be redirected to the "Employer information" page
-    And the user clicks on the benefits link
+    And the user clicks on the employment benefits link
     Then the user should be redirected to the "Check your employment benefits" page
 
     When the user clicks on the change assets benefit link in position 5
@@ -1331,7 +1331,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment" page
     When the user clicks on the third employer change link
     Then the user should be redirected to the "Employer information" page
-    And the user clicks on the benefits link
+    And the user clicks on the employment benefits link
     Then the user should be redirected to the "Check your employment benefits" page
 
     When the user clicks on the change car benefit link in position 1
@@ -1393,7 +1393,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment" page
     When the user clicks on the third employer change link
     Then the user should be redirected to the "Employer information" page
-    And the user clicks on the benefits link
+    And the user clicks on the employment benefits link
     Then the user should be redirected to the "Check your employment benefits" page
 
     When the user clicks on the change accommodation benefit link in position 1
@@ -1443,7 +1443,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment" page
     When the user clicks on the third employer change link
     Then the user should be redirected to the "Employer information" page
-    And the user clicks on the benefits link
+    And the user clicks on the employment benefits link
     Then the user should be redirected to the "Check your employment benefits" page
 
     When the user clicks on the change travel benefit link in position 1
@@ -1493,7 +1493,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment" page
     When the user clicks on the third employer change link
     Then the user should be redirected to the "Employer information" page
-    And the user clicks on the benefits link
+    And the user clicks on the employment benefits link
     Then the user should be redirected to the "Check your employment benefits" page
 
     When the user clicks on the change utilities benefit link in position 1
@@ -1549,7 +1549,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment" page
     When the user clicks on the third employer change link
     Then the user should be redirected to the "Employer information" page
-    And the user clicks on the benefits link
+    And the user clicks on the employment benefits link
     Then the user should be redirected to the "Check your employment benefits" page
 
     When the user clicks on the change medical benefit link in position 1
@@ -1605,7 +1605,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment" page
     When the user clicks on the third employer change link
     Then the user should be redirected to the "Employer information" page
-    And the user clicks on the benefits link
+    And the user clicks on the employment benefits link
     Then the user should be redirected to the "Check your employment benefits" page
 
     When the user clicks on the change income benefit link in position 1
@@ -1649,7 +1649,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment" page
     When the user clicks on the third employer change link
     Then the user should be redirected to the "Employer information" page
-    And the user clicks on the benefits link
+    And the user clicks on the employment benefits link
     Then the user should be redirected to the "Check your employment benefits" page
 
     When the user clicks on the change reimbursed benefit link in position 1
@@ -1711,7 +1711,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment" page
     When the user clicks on the third employer change link
     Then the user should be redirected to the "Employer information" page
-    And the user clicks on the benefits link
+    And the user clicks on the employment benefits link
     Then the user should be redirected to the "Check your employment benefits" page
 
     When the user clicks on the change assets benefit link in position 1
@@ -1757,9 +1757,9 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "Employment" page
-    And the user clicks on the change link
-    Then the user should be redirected to the "Employer information" page
-    And the user clicks on the expenses link
+
+#    TODO: remove "then the user navigates to check employment expenses page" after content iterations for employment summary page
+    Then the user navigates to the check employment expenses page
 
     Then the user should be redirected to the "Check your client’s employment expenses" page
     When the user clicks on the change link in position 1
@@ -1845,9 +1845,9 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "Employment" page
-    And the user clicks on the change link
-    Then the user should be redirected to the "Employer information" page
-    And the user clicks on the expenses link
+
+    Then the user navigates to the check employment expenses page
+#    TODO: remove "then the user navigates to check employment expenses page" after content iterations for employment summary page
 
     Then the user should be redirected to the "Check your employment expenses" page
     When the user clicks on the change link in position 1
@@ -1904,9 +1904,10 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "Employment" page
-    And the user clicks on the change link
-    Then the user should be redirected to the "Employer information" page
-    And the user clicks on the expenses link
+
+#    TODO: remove "then the user navigates to check employment expenses page" after content iterations for employment summary page
+    Then the user navigates to the check employment expenses page
+
     Then the user should be redirected to the "Check your employment expenses" page
     When the user clicks on the change link in position 1
     Then the user should be redirected to the "Do you want to claim employment expenses?" page
@@ -1945,9 +1946,10 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "Employment" page
-    And the user clicks on the change link
-    Then the user should be redirected to the "Employer information" page
-    And the user clicks on the expenses link
+
+#    TODO: remove "then the user navigates to check employment expenses page" after content iterations for employment summary page
+    Then the user navigates to the check employment expenses page
+
     Then the user should be redirected to the "Check your employment expenses" page
     When the user clicks on the change link in position 1
     Then the user should be redirected to the "Do you want to claim employment expenses?" page
@@ -1972,9 +1974,10 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "Employment" page
-    And the user clicks on the change link
-    Then the user should be redirected to the "Employer information" page
-    And the user clicks on the expenses link
+
+#    TODO: remove "then the user navigates to check employment expenses page" after content iterations for employment summary page
+    Then the user navigates to the check employment expenses page
+
     Then the user should be redirected to the "Check your employment expenses" page
     When the user clicks on the change link in position 3
     Then the user should be redirected to the "How much do you want to claim for business travel and overnight stays?" page
@@ -2017,9 +2020,9 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "Employment" page
-    And the user clicks on the change link
-    Then the user should be redirected to the "Employer information" page
-    And the user clicks on the expenses link
+#    TODO: remove "then the user navigates to check employment expenses page" after content iterations for employment summary page
+    Then the user navigates to the check employment expenses page
+
     Then the user should be redirected to the "Check your employment expenses" page
     When the user clicks on the change link in position 2
     Then the user should be redirected to the "Do you want to claim business travel and overnight expenses?" page
@@ -2062,9 +2065,10 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "Employment" page
-    And the user clicks on the change link
-    Then the user should be redirected to the "Employer information" page
-    And the user clicks on the expenses link
+
+#    TODO: remove "then the user navigates to check employment expenses page" after content iterations for employment summary page
+    Then the user navigates to the check employment expenses page
+
     Then the user should be redirected to the "Check your employment expenses" page
     When the user clicks on the change link in position 1
     Then the user should be redirected to the "Do you want to claim employment expenses?" page

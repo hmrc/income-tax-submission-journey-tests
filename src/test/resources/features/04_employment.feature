@@ -297,7 +297,7 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page
     When the user clicks the continue button
-    Then the user should be redirected to the "Employment" page
+    Then the user should be redirected to the "Employer information" page
 
   Scenario: Agent user with at least two prior employments removes an employment
     When the user logs into the service with the following details
@@ -1695,7 +1695,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Check your employment benefits" page
 
   Scenario: Individual user has prior submission data, updates assets to no, then does the full assets flow
-  When the user logs into the service with the following details
+    When the user logs into the service with the following details
       | Redirect url        | /2021/start |
       | Credential Strength | strong      |
       | Confidence Level    | 200         |
@@ -1742,15 +1742,15 @@ Feature: Employment Journeys - Income Tax Submission
   Scenario: Agent user with single employment and as a new submission, goes through the full expenses flow
     When the user logs into the service with the following details
       | Redirect url        | /test-only/2021/additional-parameters?ClientNino=AA133742A&ClientMTDID=1234567890 |
-      |Credential Strength|weak                                                                                 |
-      |Confidence Level   |200                                                                                  |
-      |Affinity Group     |Agent                                                                                |
-      |Enrolment Key 1    |HMRC-MTD-IT                                                                          |
-      |Identifier Name 1  |MTDITID                                                                              |
-      |Identifier Value 1 |1234567890                                                                           |
-      |Enrolment Key 2    |HMRC-AS-AGENT                                                                        |
-      |Identifier Name 2  |AgentReferenceNumber                                                                 |
-      |Identifier Value 2 |XARN1234567                                                                          |
+      | Credential Strength | weak                                                                              |
+      | Confidence Level    | 200                                                                               |
+      | Affinity Group      | Agent                                                                             |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
+      | Identifier Name 1   | MTDITID                                                                           |
+      | Identifier Value 1  | 1234567890                                                                        |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
+      | Identifier Name 2   | AgentReferenceNumber                                                              |
+      | Identifier Value 2  | XARN1234567                                                                       |
 
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
@@ -1804,15 +1804,15 @@ Feature: Employment Journeys - Income Tax Submission
   Scenario: Agent user with multiple employments as a new submission, answers no to the Do you want to claim employment expenses?, straight to expenses check your answers.
     When the user logs into the service with the following details
       | Redirect url        | /test-only/2021/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
-      |Credential Strength|weak                                                                                 |
-      |Confidence Level   |200                                                                                  |
-      |Affinity Group     |Agent                                                                                |
-      |Enrolment Key 1    |HMRC-MTD-IT                                                                          |
-      |Identifier Name 1  |MTDITID                                                                              |
-      |Identifier Value 1 |1234567890                                                                           |
-      |Enrolment Key 2    |HMRC-AS-AGENT                                                                        |
-      |Identifier Name 2  |AgentReferenceNumber                                                                 |
-      |Identifier Value 2 |XARN1234567                                                                          |
+      | Credential Strength | weak                                                                              |
+      | Confidence Level    | 200                                                                               |
+      | Affinity Group      | Agent                                                                             |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
+      | Identifier Name 1   | MTDITID                                                                           |
+      | Identifier Value 1  | 1234567890                                                                        |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
+      | Identifier Name 2   | AgentReferenceNumber                                                              |
+      | Identifier Value 2  | XARN1234567                                                                       |
 
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button

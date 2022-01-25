@@ -318,8 +318,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment" page
     When the user clicks on the third remove employment link
     Then the user should be redirected to the "Are you sure you want to remove this employment?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
+    When the user clicks the Remove employer button
     Then the user should be redirected to the "Employment" page
     When the user selects the no radio button
     And the user clicks the continue button

@@ -30,7 +30,7 @@ Feature: Util Journeys - Income Tax Submission
     When the user clicks on the back link
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
-    Then the user should be redirected to the "Employment" page
+    Then the user should be redirected to the "PAYE employment" page
     And the user should see the correct Accessibility Statement url
     And the user should see the correct employment sign out url
 

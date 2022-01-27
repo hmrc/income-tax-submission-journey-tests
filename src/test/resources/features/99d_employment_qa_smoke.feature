@@ -19,8 +19,8 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
-    Then the user should be redirected to the "Employment" page
-    When the user clicks on the change link
+    Then the user should be redirected to the "PAYE employment" page
+    When the user clicks on the change employer link
     Then the user should be redirected to the "Employer information" page
     When the user clicks on the employment details link
     Then the user should be redirected to the "Check your employment details" page
@@ -48,8 +48,8 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the employment link
-    Then the user should be redirected to the "Employment" page
-    When the user clicks on the change link
+    Then the user should be redirected to the "PAYE employment" page
+    When the user clicks on the change employer link
     Then the user should be redirected to the "Employer information" page
     When the user clicks on the employment details link
     Then the user should be redirected to the "Check your client’s employment details" page

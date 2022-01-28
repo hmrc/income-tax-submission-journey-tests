@@ -102,7 +102,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
-    Then the user should be redirected to the "Do you want to add an employment?" page
+    Then the user should be redirected to the "Do you want to add an employer?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "What’s the name of your employer?" page

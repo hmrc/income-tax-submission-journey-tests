@@ -55,6 +55,15 @@ class CommonStepDef extends BaseStepDef {
     CommonPage.clickOnButton(buttonTitle)
   }
 
+  When("""^the user clicks the (.*) checkbox$""") { checkboxTitle: String =>
+    CommonPage.clickOnCheckbox(checkboxTitle)
+  }
+
+  When("""^the user clicks both the (.*) and (.*) checkboxes$""") { (checkbox1Title: String, checkbox2Title: String) =>
+    CommonPage.clickOnCheckbox(checkbox1Title)
+    CommonPage.clickOnCheckbox(checkbox2Title)
+  }
+
   When("""^the user selects the (.*) field and enters a value of (.*)$""") { (valueTextBox: String, value: String) =>
     CommonPage.enterValue(valueTextBox, value)
   }

@@ -88,7 +88,8 @@ trait CommonElements extends BasePage with Matchers{
     "Pay"                              -> By.id("amount"),
     "Tax"                              -> By.id("amount"),
     "amount"                           -> By.id("amount"),
-    "first change employment"          -> By.cssSelector("#main-content > div > div > div:nth-child(3) > ul > li:nth-child(1) > span.hmrc-add-to-a-list__change > a"),
+    "change employment"                -> By.cssSelector("#main-content > div > div > dl:nth-child(4) > div > dd.govuk-summary-list__value.govuk-\\!-width-one-third.right-align > a > span:nth-child(1)"),
+    "first change employment"          -> By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(1) > dd.govuk-summary-list__value > a"),
     "second change employment"         -> By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(2) > dd.govuk-summary-list__value > a"),
     "third change employment"          -> By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(3) > dd.govuk-summary-list__value > a"),
     "change Employer"                  -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
@@ -106,6 +107,13 @@ trait CommonElements extends BasePage with Matchers{
     "change expenses section"          -> By.cssSelector("#main-content > div > div > div:nth-child(6) > ul > li > span.hmrc-add-to-a-list__change > a"),
     "Add another employer"             -> By.linkText("Add another employer"),
     "Remove employer"                  -> By.id("remove-employer-button-id"),
+    "student loans"                    -> By.id("student-loans_link"),
+    "undergraduate repayments"         -> By.cssSelector("#studentLoans"),
+    "postgraduate repayments"          -> By.cssSelector("#studentLoans-2"),
+    "no repayments"                    -> By.cssSelector("#studentLoans-4"),
+    "change student loan repayments"   -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a > span:nth-child(1)"),
+    "undergraduate repayments amount"  -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a > span:nth-child(1)"),
+    "postgraduate repayments amount"  -> By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dd.govuk-summary-list__actions > a > span:nth-child(1)"),
 
     //GiftAid Elements
     "GiftAid" -> By.id("giftAid_link"),

@@ -5,7 +5,7 @@ Feature: Employment Journeys - Income Tax Submission
   Background:
     Given the user navigates to the auth login page
 
-  Scenario: Agent user with one employment checks their details, benefits and expenses
+  Scenario: Agent user with one employment checks their details, benefits, student loans and expenses
     When the user logs into the service with the following details
       | Redirect url        | /test-only/2022/additional-parameters?ClientNino=AA133742A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                              |
@@ -34,6 +34,12 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Check your client’s employment benefits" page
     When the user clicks on the return to employment summary link
     Then the user should be redirected to the "PAYE employment" page
+    When the user clicks on the view employer link
+    Then the user should be redirected to the "Employer information" page
+    When the user clicks on the student loans link
+    Then the user should be redirected to the "Check your client’s student loan repayment details" page
+    When the user clicks on the return to employment summary link
+    Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the view expenses link
     Then the user should be redirected to the "Check your client’s employment expenses" page
     When the user clicks on the return to employment summary link
@@ -41,7 +47,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the return to overview link
     Then the user should be redirected to the "Your client’s Income Tax Return" page
 
-  Scenario: Individual user with multiple employments checks their details, benefits and expenses
+  Scenario: Individual user with multiple employments checks their details, benefits, student loans and expenses
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
@@ -64,6 +70,10 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employer information" page
     When the user clicks on the employment benefits link
     Then the user should be redirected to the "Check your employment benefits" page
+    When the user clicks on the return to employer link
+    Then the user should be redirected to the "Employer information" page
+    When the user clicks on the student loans link
+    Then the user should be redirected to the "Check your student loan repayment details" page
     When the user clicks on the return to employer link
     Then the user should be redirected to the "Employer information" page
     When the user clicks on the return to employment summary link
@@ -1995,3 +2005,97 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks the continue button
     And the user clicks the save and continue button
     Then the user should be redirected to the "PAYE employment" page
+
+  Scenario: Individual user as a new submission, goes through the full student loans flow
+    When the user logs into the service with the following details
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB444444A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "PAYE employment" page
+    When the user clicks on the second change employment link
+    Then the user should be redirected to the "Employer information" page
+    When the user clicks on the student loans link
+    Then the user should be redirected to the "Did you repay any student loan while employed by Raf Simons Ltd Customer Edition EOY?" page
+    When the user clicks both the undergraduate repayments and postgraduate repayments checkboxes
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much undergraduate loan did you repay while employed by Raf Simons Ltd Customer Edition EOY?" page
+    When the user selects the amount field and enters a value of 117
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much postgraduate loan did you repay while employed by Raf Simons Ltd Customer Edition EOY?" page
+    When the user selects the amount field and enters a value of 9000
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your student loan repayment details" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Employer information" page
+
+  Scenario: Individual user with prior data, changes undergraduate and postgraduate repayments to no in student loans flow
+    When the user logs into the service with the following details
+      | Redirect url        | /2021/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA133742A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "PAYE employment" page
+    When the user clicks on the change employment link
+    Then the user should be redirected to the "Employer information" page
+    When the user clicks on the student loans link
+    Then the user should be redirected to the "Check your student loan repayment details" page
+    When the user clicks on the change student loan repayments link
+    Then the user should be redirected to the "Did you repay any student loan while employed by Eoy Vera Lynn Customer?" page
+    When the user clicks the no repayments checkbox
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your student loan repayment details" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Employer information" page
+
+  Scenario: Agent user with prior data, changes undergraduate and postgraduate repayments to no in student loans flow
+    When the user logs into the service with the following details
+      | Redirect url        | /test-only/2021/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
+      | Credential Strength | weak                                                                              |
+      | Confidence Level    | 200                                                                               |
+      | Affinity Group      | Agent                                                                             |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
+      | Identifier Name 1   | MTDITID                                                                           |
+      | Identifier Value 1  | 1234567890                                                                        |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
+      | Identifier Name 2   | AgentReferenceNumber                                                              |
+      | Identifier Value 2  | XARN1234567                                                                       |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "PAYE employment" page
+    When the user clicks on the first change employment link
+    Then the user should be redirected to the "Employer information" page
+    When the user clicks on the student loans link
+    Then the user should be redirected to the "Check your client’s student loan repayment details" page
+    When the user clicks on the undergraduate repayments amount link
+    Then the user should be redirected to the "How much undergraduate loan did your client repay while employed by Rick Owens Ltd Customer Edition EOY?" page
+    When the user selects the amount field and enters a value of 96000
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your client’s student loan repayment details" page
+    When the user clicks on the postgraduate repayments amount link
+    Then the user should be redirected to the "How much postgraduate loan did your client repay while employed by Rick Owens Ltd Customer Edition EOY?" page
+    When the user selects the amount field and enters a value of 17.38
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your client’s student loan repayment details" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Employer information" page
+
+

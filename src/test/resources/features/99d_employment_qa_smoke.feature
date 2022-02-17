@@ -30,6 +30,10 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     Then the user should be redirected to the "Check your employment benefits" page
     When the user clicks the back button
     Then the user should be redirected to the "Employer information" page
+    And the user clicks on the student loans link
+    Then the user should be redirected to the "Check your student loan repayment details" page
+    When the user clicks the back button
+    Then the user should be redirected to the "Employer information" page
     When the user clicks on the return to employment summary link
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the view expenses link
@@ -66,6 +70,9 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     Then the user should be redirected to the "Check your client’s employment benefits" page
     When the user clicks the back button
     Then the user should be redirected to the "Employer information" page
+    And the user clicks on the student loans link
+    Then the user should be redirected to the "Check your client’s student loan repayment details" page
+    When the user clicks the back button
     When the user clicks on the return to employment summary link
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the view expenses link

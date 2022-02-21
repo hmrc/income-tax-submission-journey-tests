@@ -318,7 +318,7 @@ Feature: Charities Journeys - Income Tax Submission
     Then the user should be redirected to the "Check your donations to charity" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    And the user should see the correct Income Tax Account for individuals url
+#    And the user should see the correct Income Tax Account for individuals url
 
   Scenario: Returning flow - Agent User - Charities
     When the user logs into the service with the following details
@@ -394,4 +394,4 @@ Feature: Charities Journeys - Income Tax Submission
     Then the user should be redirected to the "Check your client’s donations to charity" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
-    And the user should see the correct Income Tax Account for agents url
+#    And the user should see the correct Income Tax Account for agents url

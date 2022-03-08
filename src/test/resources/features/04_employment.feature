@@ -2024,13 +2024,13 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the second change employment link
     Then the user should be redirected to the "Employer information" page
     When the user clicks on the student loans link
-    Then the user should be redirected to the "Did you repay any student loan while employed by Raf Simons Ltd Customer Edition EOY?" page
+    Then the user should be redirected to the "Did you repay any student loan?" page
     When the user clicks both the undergraduate repayments and postgraduate repayments checkboxes
     And the user clicks the continue button
-    Then the user should be redirected to the "How much undergraduate loan did you repay while employed by Raf Simons Ltd Customer Edition EOY?" page
+    Then the user should be redirected to the "How much undergraduate loan did you repay?" page
     When the user selects the amount field and enters a value of 117
     And the user clicks the continue button
-    Then the user should be redirected to the "How much postgraduate loan did you repay while employed by Raf Simons Ltd Customer Edition EOY?" page
+    Then the user should be redirected to the "How much postgraduate loan did you repay?" page
     When the user selects the amount field and enters a value of 9000
     And the user clicks the continue button
     Then the user should be redirected to the "Check your student loan repayment details" page
@@ -2057,7 +2057,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the student loans link
     Then the user should be redirected to the "Check your student loan repayment details" page
     When the user clicks on the change student loan repayments link
-    Then the user should be redirected to the "Did you repay any student loan while employed by Eoy Vera Lynn Customer?" page
+    Then the user should be redirected to the "Did you repay any student loan?" page
     When the user clicks the no repayments checkbox
     And the user clicks the continue button
     Then the user should be redirected to the "Check your student loan repayment details" page
@@ -2086,12 +2086,12 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the student loans link
     Then the user should be redirected to the "Check your client’s student loan repayment details" page
     When the user clicks on the undergraduate repayments amount link
-    Then the user should be redirected to the "How much undergraduate loan did your client repay while employed by Rick Owens Ltd Customer Edition EOY?" page
+    Then the user should be redirected to the "How much undergraduate loan did your client repay?" page
     When the user selects the amount field and enters a value of 96000
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s student loan repayment details" page
     When the user clicks on the postgraduate repayments amount link
-    Then the user should be redirected to the "How much postgraduate loan did your client repay while employed by Rick Owens Ltd Customer Edition EOY?" page
+    Then the user should be redirected to the "How much postgraduate loan did your client repay?" page
     When the user selects the amount field and enters a value of 17.38
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s student loan repayment details" page

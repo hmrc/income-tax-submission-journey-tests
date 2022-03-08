@@ -172,13 +172,13 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page
     And the user clicks the continue button
-    Then the user should be redirected to the "Did you repay any student loan while employed by Bear’s Blue House LTD?" page
+    Then the user should be redirected to the "Did you repay any student loan?" page
     When the user clicks both the undergraduate repayments and postgraduate repayments checkboxes
     And the user clicks the continue button
-    Then the user should be redirected to the "How much undergraduate loan did you repay while employed by Bear’s Blue House LTD?" page
+    Then the user should be redirected to the "How much undergraduate loan did you repay?" page
     When the user selects the amount field and enters a value of 117
     And the user clicks the continue button
-    Then the user should be redirected to the "How much postgraduate loan did you repay while employed by Bear’s Blue House LTD?" page
+    Then the user should be redirected to the "How much postgraduate loan did you repay?" page
     When the user selects the amount field and enters a value of 9000
     And the user clicks the continue button
     Then the user should be redirected to the "Check your student loan repayment details" page

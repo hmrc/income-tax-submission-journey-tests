@@ -312,7 +312,7 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment benefits" page
     And the user clicks the continue button
-    Then the user should be redirected to the "Did your client repay any student loan while employed by Bear’s Blue House LTD?" page
+    Then the user should be redirected to the "Did your client repay any student loan?" page
     When the user clicks the no repayments checkbox
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s student loan repayment details" page

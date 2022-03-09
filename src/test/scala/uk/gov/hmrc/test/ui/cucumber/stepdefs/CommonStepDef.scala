@@ -88,6 +88,8 @@ class CommonStepDef extends BaseStepDef {
       case "employment summary" => "http://localhost:9317/update-and-submit-income-tax-return/employment-income/2022/employment-summary"
       case "interest check your answers" => "http://localhost:9308/update-and-submit-income-tax-return/personal-income/2022/interest/check-interest"
       case "final tax overview" => "http://localhost:9302/update-and-submit-income-tax-return/2021/income-tax-return-overview"
+      case "tax overview for individuals" => "http://localhost:9081/report-quarterly/income-and-expenses/view/tax-overview"
+      case "tax overview for agents" => "http://localhost:9081/report-quarterly/income-and-expenses/view/agents/tax-overview"
       case "auth login" => AuthLoginPage.url
       case _ => fail("Invalid url input parameter")
     }

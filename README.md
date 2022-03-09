@@ -17,8 +17,7 @@ Run the following command to start services locally:
     sm --start INCOME_TAX_SUBMISSION_ALL -r
 
 Then execute the `run_tests.sh` script:
-
-    ./run_tests.sh <environment> <browser-driver>
+./run_tests.sh <environment> <browser-driver>
 
 The `run_tests.sh` script defaults to the `local` environment with the locally installed `chrome` driver binary.  For a complete list of supported param values, see:
  - `src/test/resources/application.conf` for **environment** 

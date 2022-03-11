@@ -143,6 +143,11 @@ trait CommonElements extends BasePage with Matchers{
     //Crystallisation Elements
     "I agree - Submit Income Tax Return" -> By.cssSelector("#agree"),
     "Client SA UTR" -> By.id("utr"),
-    "View and Change Continue" -> By.id("continue-button")
+    "View and Change Continue" -> By.id("continue-button"),
+
+    //View Estimation Elements
+    "Update tax calculation" -> By.id("updateTaxCalculation"),
+    "Go to Income Tax Account" -> By.id("continue-button"),
+
   )
 }

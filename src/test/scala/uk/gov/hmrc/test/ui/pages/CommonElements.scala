@@ -148,7 +148,7 @@ trait CommonElements extends BasePage with Matchers{
     //Construction Industry Scheme Elements
     "cis deductions"            -> By.id("cis_link"),
     "first contractor"          -> By.cssSelector("tbody > tr.govuk-table__row:nth-child(1) > th > a"),
-    "second contractor"         -> By.cssSelector("tbody > tr.govuk-table__row:nth-child(1) > th > a"),
+    "second contractor"         -> By.cssSelector("tbody > tr.govuk-table__row:nth-child(2) > th > a"),
     "cis return to overview"    -> By.id("return-to-overview-button-id"),
     "first month view"          -> By.cssSelector("#main-content > div > div > dl > div > dd > a"),
     "second month view"         -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd > a"),

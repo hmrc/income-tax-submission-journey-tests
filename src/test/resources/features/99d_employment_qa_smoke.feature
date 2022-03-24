@@ -5,81 +5,6 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
   Background:
     Given the user navigates to the auth login page
 
-  Scenario: Returning flow - Individual User with prior UK employment views their details, benefits and expenses - Employment Smoke
-    When the user logs into the service with the following details
-      |Redirect url       |/2021/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |BB666555A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the employment link
-    Then the user should be redirected to the "PAYE employment" page
-    When the user clicks on the change employer link
-    Then the user should be redirected to the "Employer information" page
-    When the user clicks on the employment details link
-    Then the user should be redirected to the "Check your employment details" page
-    When the user clicks the back button
-    Then the user should be redirected to the "Employer information" page
-    And the user clicks on the employment benefits link
-    Then the user should be redirected to the "Check your employment benefits" page
-    When the user clicks the back button
-    Then the user should be redirected to the "Employer information" page
-    And the user clicks on the student loans link
-    Then the user should be redirected to the "Check your student loan repayment details" page
-    When the user clicks the back button
-    Then the user should be redirected to the "Employer information" page
-    When the user clicks on the return to employment summary link
-    Then the user should be redirected to the "PAYE employment" page
-    When the user clicks on the view expenses link
-    Then the user should be redirected to the "Check your employment expenses" page
-    When the user clicks the save and continue button
-    Then the user should be redirected to the "PAYE employment" page
-
-
-
-  Scenario: Returning flow - Agent User with prior UK employment views their clients details, benefits and expenses - Employment Smoke
-    When the user logs into the service with the following details
-      |Redirect url       |/test-only/2021/additional-parameters?ClientNino=BB666555A&ClientMTDID=1234567890  |
-      |Credential Strength|weak                                                                               |
-      |Confidence Level   |200                                                                                |
-      |Affinity Group     |Agent                                                                              |
-      |Enrolment Key 1    |HMRC-MTD-IT                                                                        |
-      |Identifier Name 1  |MTDITID                                                                            |
-      |Identifier Value 1 |1234567890                                                                         |
-      |Enrolment Key 2    |HMRC-AS-AGENT                                                                      |
-      |Identifier Name 2  |AgentReferenceNumber                                                               |
-      |Identifier Value 2 |XARN7654321                                                                        |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the employment link
-    Then the user should be redirected to the "PAYE employment" page
-    When the user clicks on the change employer link
-    Then the user should be redirected to the "Employer information" page
-    When the user clicks on the employment details link
-    Then the user should be redirected to the "Check your client’s employment details" page
-    When the user clicks the back button
-    Then the user should be redirected to the "Employer information" page
-    And the user clicks on the employment benefits link
-    Then the user should be redirected to the "Check your client’s employment benefits" page
-    When the user clicks the back button
-    Then the user should be redirected to the "Employer information" page
-    And the user clicks on the student loans link
-    Then the user should be redirected to the "Check your client’s student loan repayment details" page
-    When the user clicks the back button
-    When the user clicks on the return to employment summary link
-    Then the user should be redirected to the "PAYE employment" page
-    When the user clicks on the view expenses link
-    Then the user should be redirected to the "Check your client’s employment expenses" page
-    When the user clicks the save and continue button
-    Then the user should be redirected to the "PAYE employment" page
-
   Scenario: User is adding their first employment for a tax year
     When the user logs into the service with the following details
       | Redirect url        | /2021/start |
@@ -206,6 +131,42 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     Then the user should be redirected to the "Check your employment expenses" page
     And the user clicks the save and continue button
     Then the user should be redirected to the "PAYE employment" page
+
+  Scenario: Returning flow - Individual User with prior UK employment views their details, benefits and expenses - Employment Smoke
+    When the user logs into the service with the following details
+      |Redirect url       |/2021/start                                          |
+      |Credential Strength|strong                                               |
+      |Confidence Level   |200                                                  |
+      |Affinity Group     |Individual                                           |
+      |Nino               |AB654321C                                            |
+      |Enrolment Key 1    |HMRC-MTD-IT                                          |
+      |Identifier Name 1  |MTDITID                                              |
+      |Identifier Value 1 |1234567890                                           |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "PAYE employment" page
+    When the user clicks on the change employer link
+    Then the user should be redirected to the "Employer information" page
+    When the user clicks on the employment details link
+    Then the user should be redirected to the "Check your employment details" page
+    When the user clicks the back button
+    Then the user should be redirected to the "Employer information" page
+    And the user clicks on the employment benefits link
+    Then the user should be redirected to the "Check your employment benefits" page
+    When the user clicks the back button
+    Then the user should be redirected to the "Employer information" page
+    And the user clicks on the student loans link
+    Then the user should be redirected to the "Check your student loan repayment details" page
+    When the user clicks the back button
+    Then the user should be redirected to the "Employer information" page
+    When the user clicks on the return to employment summary link
+    Then the user should be redirected to the "PAYE employment" page
+    When the user clicks on the view expenses link
+    Then the user should be redirected to the "Check your employment expenses" page
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the remove employment link
     Then the user should be redirected to the "Are you sure you want to remove this employment?" page
     When the user clicks the Remove employer button
@@ -317,7 +278,6 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s student loan repayment details" page
     And the user clicks the continue button
-#    TODO:  change to "do you want to amend expenses for this employer?" page when available
     Then the user should be redirected to the "Do you want to claim employment expenses for your client?" page
     When the user selects the yes radio button
     And the user clicks the continue button
@@ -328,3 +288,41 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     Then the user should be redirected to the "Are you sure you want to remove this employment?" page
     When the user clicks the Remove employer button
     Then the user should be redirected to the "PAYE employment" page
+
+  Scenario: Returning flow - Agent User with prior UK employment views their clients details, benefits and expenses - Employment Smoke
+    When the user logs into the service with the following details
+      |Redirect url       |/test-only/2021/additional-parameters?ClientNino=AC123456B&ClientMTDID=1234567890  |
+      |Credential Strength|weak                                                                               |
+      |Confidence Level   |200                                                                                |
+      |Affinity Group     |Agent                                                                              |
+      |Enrolment Key 1    |HMRC-MTD-IT                                                                        |
+      |Identifier Name 1  |MTDITID                                                                            |
+      |Identifier Value 1 |1234567890                                                                         |
+      |Enrolment Key 2    |HMRC-AS-AGENT                                                                      |
+      |Identifier Name 2  |AgentReferenceNumber                                                               |
+      |Identifier Value 2 |XARN7654321                                                                        |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "PAYE employment" page
+    When the user clicks on the change employer link
+    Then the user should be redirected to the "Employer information" page
+    When the user clicks on the employment details link
+    Then the user should be redirected to the "Check your client’s employment details" page
+    When the user clicks the back button
+    Then the user should be redirected to the "Employer information" page
+    And the user clicks on the employment benefits link
+    Then the user should be redirected to the "Check your client’s employment benefits" page
+    When the user clicks the back button
+    Then the user should be redirected to the "Employer information" page
+    And the user clicks on the student loans link
+    Then the user should be redirected to the "Check your client’s student loan repayment details" page
+    When the user clicks the back button
+    When the user clicks on the return to employment summary link
+    Then the user should be redirected to the "PAYE employment" page
+    When the user clicks on the view expenses link
+    Then the user should be redirected to the "Check your client’s employment expenses" page
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "PAYE employment" page
+

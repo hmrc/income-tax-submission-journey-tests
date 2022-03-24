@@ -1,4 +1,4 @@
-@smoke
+#Tag removed until user Setup can be confirmed
 
 Feature: Smoke Estimation Journey in QA - Income Tax Submission
 

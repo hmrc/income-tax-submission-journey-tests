@@ -121,13 +121,13 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "What’s the PAYE reference of your employer?" page
     When the user selects the PAYE reference field and enters a value of 123/AB456
     And the user clicks the continue button
+    Then the user should be redirected to the "Are you still working for your employer?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
     Then the user should be redirected to the "When did you start working for your employer?" page
     When the user selects the Day field and enters a value of 14
     And the user selects the Month field and enters a value of 07
     And the user selects the Year field and enters a value of 2012
-    And the user clicks the continue button
-    Then the user should be redirected to the "Are you still working for your employer?" page
-    When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "What’s your payroll ID for this employment?" page
     When the user selects the Payroll id field and enters a value of 123456
@@ -140,7 +140,7 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment details" page
 
-  Scenario: Agent user with at least one prior employment adds a new Employment
+  Scenario: Agent user with at least one prior employment adds a new Employment and no to "Is your client still working for their employer?"
     When the user logs into the service with the following details
       | Redirect url        | /test-only/2021/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                              |
@@ -171,15 +171,59 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "What’s the PAYE reference of your client’s employer?" page
     When the user selects the PAYE reference field and enters a value of 123/AB456
     And the user clicks the continue button
-    Then the user should be redirected to the "When did your client start working for their employer?" page
-    When the user selects the Day field and enters a value of 14
-    And the user selects the Month field and enters a value of 07
-    And the user selects the Year field and enters a value of 2012
-    And the user clicks the continue button
     Then the user should be redirected to the "Is your client still working for their employer?" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "When did your client leave their employer?" page
+    Then the user should be redirected to the "Employment dates" page
+    When the user selects the Start Day field and enters a value of 24
+    And the user selects the Start Month field and enters a value of 09
+    And the user selects the Start Year field and enters a value of 2020
+    When the user selects the End Day field and enters a value of 24
+    And the user selects the End Month field and enters a value of 03
+    And the user selects the End Year field and enters a value of 2021
+    And the user clicks the continue button
+    Then the user should be redirected to the "What’s your client’s payroll ID for this employment?" page
+    When the user selects the Payroll id field and enters a value of 123456
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much did your client’s employer pay them?" page
+    When the user selects the Pay field and enters a value of 2000.54
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much UK tax was taken from your client’s earnings?" page
+    When the user selects the Tax field and enters a value of 20.54
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your client’s employment details" page
+
+  Scenario: Agent user with at least one prior employment adds a new Employment and yes to "Is your client still working for their employer?"
+    When the user logs into the service with the following details
+      | Redirect url        | /test-only/2021/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
+      | Credential Strength | weak                                                                              |
+      | Confidence Level    | 200                                                                               |
+      | Affinity Group      | Agent                                                                             |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
+      | Identifier Name 1   | MTDITID                                                                           |
+      | Identifier Value 1  | 1234567890                                                                        |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
+      | Identifier Name 2   | AgentReferenceNumber                                                              |
+      | Identifier Value 2  | XARN1234567                                                                       |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "PAYE employment" page
+    When the user clicks on the Add another employer link
+    Then the user should be redirected to the "Which employer do you want to add?" page
+    When the user selects the third radio button: select new one
+    And the user clicks the continue button
+    Then the user should be redirected to the "What’s the name of your client’s employer?" page
+    When the user selects the Employer name field and enters a value of Bear’s Blue House LTD
+    And the user clicks the continue button
+    Then the user should be redirected to the "What’s the PAYE reference of your client’s employer?" page
+    When the user selects the PAYE reference field and enters a value of 123/AB456
+    And the user clicks the continue button
+    Then the user should be redirected to the "Is your client still working for their employer?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "When did your client start working for their employer?" page
     When the user selects the Day field and enters a value of 24
     And the user selects the Month field and enters a value of 09
     And the user selects the Year field and enters a value of 2020
@@ -232,10 +276,13 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Is your client still working for their employer?" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "When did your client leave their employer?" page
-    When the user selects the Day field and enters a value of 24
-    And the user selects the Month field and enters a value of 09
-    And the user selects the Year field and enters a value of 2020
+    Then the user should be redirected to the "Employment dates" page
+    When the user selects the Start Day field and enters a value of 24
+    And the user selects the Start Month field and enters a value of 09
+    And the user selects the Start Year field and enters a value of 2020
+    When the user selects the End Day field and enters a value of 24
+    And the user selects the End Month field and enters a value of 03
+    And the user selects the End Year field and enters a value of 2021
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page
     When the user clicks on the change PAYE reference link

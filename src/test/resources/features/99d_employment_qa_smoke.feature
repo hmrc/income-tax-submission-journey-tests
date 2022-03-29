@@ -28,13 +28,13 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     Then the user should be redirected to the "What’s the PAYE reference of your employer?" page
     When the user selects the PAYE reference field and enters a value of 123/AB456
     And the user clicks the continue button
+    Then the user should be redirected to the "Are you still working for your employer?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
     Then the user should be redirected to the "When did you start working for your employer?" page
     When the user selects the Day field and enters a value of 04
     And the user selects the Month field and enters a value of 05
     And the user selects the Year field and enters a value of 2016
-    And the user clicks the continue button
-    Then the user should be redirected to the "Are you still working for your employer?" page
-    When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "What’s your payroll ID for this employment?" page
     When the user selects the Payroll id field and enters a value of 123456
@@ -199,18 +199,16 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     Then the user should be redirected to the "What’s the PAYE reference of your client’s employer?" page
     When the user selects the PAYE reference field and enters a value of 123/AB456
     And the user clicks the continue button
-    Then the user should be redirected to the "When did your client start working for their employer?" page
-    When the user selects the Day field and enters a value of 14
-    And the user selects the Month field and enters a value of 07
-    And the user selects the Year field and enters a value of 2012
-    And the user clicks the continue button
     Then the user should be redirected to the "Is your client still working for their employer?" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "When did your client leave their employer?" page
-    When the user selects the Day field and enters a value of 24
-    And the user selects the Month field and enters a value of 09
-    And the user selects the Year field and enters a value of 2020
+    Then the user should be redirected to the "Employment dates" page
+    When the user selects the Start Day field and enters a value of 01
+    And the user selects the Start Month field and enters a value of 02
+    And the user selects the Start Year field and enters a value of 2003
+    When the user selects the End Day field and enters a value of 03
+    And the user selects the End Month field and enters a value of 04
+    And the user selects the End Year field and enters a value of 2021
     And the user clicks the continue button
     Then the user should be redirected to the "What’s your client’s payroll ID for this employment?" page
     When the user selects the Payroll id field and enters a value of 123456

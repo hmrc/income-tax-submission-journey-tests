@@ -26,7 +26,7 @@ Feature: Crystallisation Journeys - Income Tax Submission
     When the user clicks the View and Change Continue button
     Then the user should be redirected to the "Declaration" page
     When the user clicks the I agree - Submit Income Tax Return button
-    Then the user should be redirected to the "We’ve received your Income Tax Return" page
+    Then the user should be redirected to the "Confirmation: We’ve received your Income Tax Return" page
 
 
   Scenario: End of Year flow - Agent User - Crystallisation
@@ -62,4 +62,4 @@ Feature: Crystallisation Journeys - Income Tax Submission
     When the user clicks the View and Change Continue button
     Then the user should be redirected to the "Declaration" page
     When the user clicks the I agree - Submit Income Tax Return button
-    Then the user should be redirected to the "We’ve received your client’s Income Tax Return" page
+    Then the user should be redirected to the "Confirmation: We’ve received your client’s Income Tax Return" page

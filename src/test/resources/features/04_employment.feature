@@ -26,18 +26,24 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employer information" page
     When the user clicks on the employment details link
     Then the user should be redirected to the "Check your client’s employment details" page
+    When the user clicks on the return to employer link
+    Then the user should be redirected to the "Employer information" page
     When the user clicks on the return to employment summary link
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the view employer link
     Then the user should be redirected to the "Employer information" page
     When the user clicks on the employment benefits link
     Then the user should be redirected to the "Check your client’s employment benefits" page
+    When the user clicks on the return to employer link
+    Then the user should be redirected to the "Employer information" page
     When the user clicks on the return to employment summary link
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the view employer link
     Then the user should be redirected to the "Employer information" page
     When the user clicks on the student loans link
     Then the user should be redirected to the "Check your client’s student loan repayment details" page
+    When the user clicks on the return to employer link
+    Then the user should be redirected to the "Employer information" page
     When the user clicks on the return to employment summary link
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the view expenses link

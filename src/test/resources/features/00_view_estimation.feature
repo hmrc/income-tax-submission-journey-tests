@@ -7,7 +7,7 @@ Feature: View Estimation Journeys - Income Tax Submission
 
   Scenario: In Year flow - Individual User - View Estimation
     When the user logs into the service with the following details
-      |Redirect url       |/2022/start                                          |
+      |Redirect url       |/2023/start                                          |
       |Credential Strength|strong                                               |
       |Confidence Level   |200                                                  |
       |Affinity Group     |Individual                                           |
@@ -28,7 +28,7 @@ Feature: View Estimation Journeys - Income Tax Submission
 
   Scenario: In Year flow - Agent User - View Estimation
     When the user logs into the service with the following details
-      |Redirect url               |/test-only/2022/additional-parameters?ClientNino=AA123459A&ClientMTDID=1234567890    |
+      |Redirect url               |/test-only/2023/additional-parameters?ClientNino=AA123459A&ClientMTDID=1234567890    |
       |Credential Strength        |weak                                                                                 |
       |Confidence Level           |200                                                                                  |
       |Affinity Group             |Agent                                                                                |

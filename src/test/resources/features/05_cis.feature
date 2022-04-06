@@ -8,7 +8,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
   #--------------------------------------Individual--------------------------------------#
   Scenario: Individual User with pre populated CIS data - Check contractor's CIS In Year Deductions
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /2023/start |
       | Credential Strength | strong      |
       | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
@@ -53,7 +53,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
   #--------------------------------------Agent--------------------------------------#
   Scenario: Agent User with pre populated CIS data - Check client's CIS In Year Deductions
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/2022/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/2023/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890 |
       | Credential Strength | strong                                                                            |
       | Confidence Level    | 200                                                                               |
       | Affinity Group      | Agent                                                                             |

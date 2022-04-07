@@ -7,7 +7,7 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
 
   Scenario: User is adding their first employment for a tax year
     When the user logs into the service with the following details
-      | Redirect url        | /2021/start |
+      | Redirect url        | /2022/start |
       | Credential Strength | strong      |
       | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
@@ -134,7 +134,7 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
 
   Scenario: Returning flow - Individual User with prior UK employment views their details, benefits and expenses - Employment Smoke
     When the user logs into the service with the following details
-      |Redirect url       |/2021/start                                          |
+      |Redirect url       |/2022/start                                          |
       |Credential Strength|strong                                               |
       |Confidence Level   |200                                                  |
       |Affinity Group     |Individual                                           |
@@ -177,7 +177,7 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
 
   Scenario: Agent user with at least one prior employment adds a new Employment
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/2021/additional-parameters?ClientNino=AC123456B&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/2022/additional-parameters?ClientNino=AC123456B&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                              |
       | Confidence Level    | 200                                                                               |
       | Affinity Group      | Agent                                                                             |
@@ -208,7 +208,7 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     And the user selects the Start Year field and enters a value of 2003
     When the user selects the End Day field and enters a value of 03
     And the user selects the End Month field and enters a value of 04
-    And the user selects the End Year field and enters a value of 2021
+    And the user selects the End Year field and enters a value of 2022
     And the user clicks the continue button
     Then the user should be redirected to the "What’s your client’s payroll ID for this employment?" page
     When the user selects the Payroll id field and enters a value of 123456
@@ -289,7 +289,7 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
 
   Scenario: Returning flow - Agent User with prior UK employment views their clients details, benefits and expenses - Employment Smoke
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2021/additional-parameters?ClientNino=AC123456B&ClientMTDID=1234567890  |
+      |Redirect url       |/test-only/2022/additional-parameters?ClientNino=AC123456B&ClientMTDID=1234567890  |
       |Credential Strength|weak                                                                               |
       |Confidence Level   |200                                                                                |
       |Affinity Group     |Agent                                                                              |

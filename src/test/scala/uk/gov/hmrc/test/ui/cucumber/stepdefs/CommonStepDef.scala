@@ -82,10 +82,10 @@ class CommonStepDef extends BaseStepDef {
 
   Then("""^the user navigates to the (.*) page$""") { (url: String) =>
     val expectedUrl: String = url match {
-      case "untaxed interest" => "http://localhost:9308/update-and-submit-income-tax-return/personal-income/2022/interest/untaxed-uk-interest"
-      case "employment summary" => "http://localhost:9317/update-and-submit-income-tax-return/employment-income/2022/employment-summary"
-      case "interest check your answers" => "http://localhost:9308/update-and-submit-income-tax-return/personal-income/2022/interest/check-interest"
-      case "final tax overview" => "http://localhost:9302/update-and-submit-income-tax-return/2021/income-tax-return-overview"
+      case "untaxed interest" => "http://localhost:9308/update-and-submit-income-tax-return/personal-income/2023/interest/untaxed-uk-interest"
+      case "employment summary" => "http://localhost:9317/update-and-submit-income-tax-return/employment-income/2023/employment-summary"
+      case "interest check your answers" => "http://localhost:9308/update-and-submit-income-tax-return/personal-income/2023/interest/check-interest"
+      case "final tax overview" => "http://localhost:9302/update-and-submit-income-tax-return/2022/income-tax-return-overview"
       case "tax overview for individuals" => "http://localhost:9081/report-quarterly/income-and-expenses/view/tax-overview"
       case "tax overview for agents" => "http://localhost:9081/report-quarterly/income-and-expenses/view/agents/tax-overview"
       case "auth login" => AuthLoginPage.url
@@ -96,7 +96,7 @@ class CommonStepDef extends BaseStepDef {
 
   Then("""^the user navigates to the current page with tax year "(.*)"$""") { (taxYear: Int) =>
     val currentUrl = driver.getCurrentUrl
-    val newUrl = currentUrl.replace("2022", s"$taxYear")
+    val newUrl = currentUrl.replace("2023", s"$taxYear")
     driver.navigate().to(newUrl)
   }
 

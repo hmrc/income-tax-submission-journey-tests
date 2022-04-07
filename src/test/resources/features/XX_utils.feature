@@ -7,7 +7,7 @@ Feature: Util Journeys - Income Tax Submission
 
   Scenario: Checking the Accessibility Statement link for all 3 frontends
     When the user logs into the service with the following details
-      |Redirect url       |/2022/start                                          |
+      |Redirect url       |/2023/start                                          |
       |Credential Strength|strong                                               |
       |Confidence Level   |200                                                  |
       |Affinity Group     |Individual                                           |
@@ -36,7 +36,7 @@ Feature: Util Journeys - Income Tax Submission
 
   Scenario: Checking the client authorisation link for agents
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2022/additional-parameters?ClientNino=AA123456A&ClientMTDID=1234567890   |
+      |Redirect url       |/test-only/2023/additional-parameters?ClientNino=AA123456A&ClientMTDID=1234567890   |
       |Credential Strength|weak                                                                                |
       |Confidence Level   |200                                                                                 |
       |Affinity Group     |Agent                                                                               |

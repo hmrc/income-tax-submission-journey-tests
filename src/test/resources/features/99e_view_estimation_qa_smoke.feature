@@ -7,7 +7,7 @@ Feature: Smoke Estimation Journey in QA - Income Tax Submission
 
   Scenario: Returning flow - Individual User - View Estimation Smoke
     When the user logs into the service with the following details
-      |Redirect url       |/2022/start                                          |
+      |Redirect url       |/2023/start                                          |
       |Credential Strength|strong                                               |
       |Confidence Level   |200                                                  |
       |Affinity Group     |Individual                                           |

@@ -7,7 +7,7 @@ Feature: Crystallisation Journeys - Income Tax Submission
 
   Scenario: End of Year flow - Individual User - Crystallisation
     When the user logs into the service with the following details
-      |Redirect url       |/2021/start                                          |
+      |Redirect url       |/2022/start                                          |
       |Credential Strength|strong                                               |
       |Confidence Level   |200                                                  |
       |Affinity Group     |Individual                                           |
@@ -31,7 +31,7 @@ Feature: Crystallisation Journeys - Income Tax Submission
 
   Scenario: End of Year flow - Agent User - Crystallisation
     When the user logs into the service with the following details
-      |Redirect url               |/test-only/2021/additional-parameters?ClientNino=AA123459A&ClientMTDID=1234567890    |
+      |Redirect url               |/test-only/2022/additional-parameters?ClientNino=AA123459A&ClientMTDID=1234567890    |
       |Credential Strength        |weak                                                                                 |
       |Confidence Level           |200                                                                                  |
       |Affinity Group             |Agent                                                                                |

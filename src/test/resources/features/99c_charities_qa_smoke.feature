@@ -7,7 +7,7 @@ Feature: Smoke downstream Gift Aid Journeys to DES in QA - Income Tax Submission
 
   Scenario: Returning flow - Individual User with prior UK Gift Aid contributions, Review & change - Gift Aid Smoke
     When the user logs into the service with the following details
-      |Redirect url       |/2022/start                                          |
+      |Redirect url       |/2023/start                                          |
       |Credential Strength|strong                                               |
       |Confidence Level   |200                                                  |
       |Affinity Group     |Individual                                           |
@@ -40,13 +40,13 @@ Feature: Smoke downstream Gift Aid Journeys to DES in QA - Income Tax Submission
     Then the user should be redirected to the "Check your donations to charity" page
 
     When the user clicks on the change link in position 5
-    Then the user should be redirected to the "How much of your donation did you add to the 2020 to 2021 tax year?" page
+    Then the user should be redirected to the "How much of your donation did you add to the 2020 to 2022 tax year?" page
     When the user selects the Amount to add to last tax year field and enters a value of 117
     And the user clicks the continue button
     Then the user should be redirected to the "Check your donations to charity" page
 
     When the user clicks on the change link in position 6
-    Then the user should be redirected to the "How much of the donations you made after 5 April 2022 do you want to add to this tax year?" page
+    Then the user should be redirected to the "How much of the donations you made after 5 April 2023 do you want to add to this tax year?" page
     When the user selects the Amount to add to this tax year field and enters a value of 0.48
     And the user clicks the continue button
     Then the user should be redirected to the "Check your donations to charity" page
@@ -68,7 +68,7 @@ Feature: Smoke downstream Gift Aid Journeys to DES in QA - Income Tax Submission
 
   Scenario: Returning flow - Agent User with prior UK Gift Aid contributions, Review & change - Gift Aid Smoke
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2022/additional-parameters?ClientNino=CC565656D&ClientMTDID=9876543211  |
+      |Redirect url       |/test-only/2023/additional-parameters?ClientNino=CC565656D&ClientMTDID=9876543211  |
       |Credential Strength|weak                                                                               |
       |Confidence Level   |200                                                                                |
       |Affinity Group     |Agent                                                                              |
@@ -102,13 +102,13 @@ Feature: Smoke downstream Gift Aid Journeys to DES in QA - Income Tax Submission
     Then the user should be redirected to the "Check your client’s donations to charity" page
 
     When the user clicks on the change link in position 5
-    Then the user should be redirected to the "How much of your client’s donation did you add to the 2020 to 2021 tax year?" page
+    Then the user should be redirected to the "How much of your client’s donation did you add to the 2020 to 2022 tax year?" page
     When the user selects the Amount to add to last tax year field and enters a value of 117
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s donations to charity" page
 
     When the user clicks on the change link in position 6
-    Then the user should be redirected to the "How much of the donations your client made after 5 April 2022 do you want to add to this tax year?" page
+    Then the user should be redirected to the "How much of the donations your client made after 5 April 2023 do you want to add to this tax year?" page
     When the user selects the Amount to add to this tax year field and enters a value of 0.48
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s donations to charity" page

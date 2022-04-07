@@ -55,7 +55,7 @@ Feature: Smoke downstream Interest Journeys to DES in QA - Income Tax Submission
 
   Scenario: Returning flow - Agent User with prior UK Untaxed & Taxed Interest, Review & change - Interest Smoke
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2022/additional-parameters?ClientNino=CC565656D&ClientMTDID=9876543211  |
+      |Redirect url       |/test-only/2023/additional-parameters?ClientNino=CC565656D&ClientMTDID=9876543211  |
       |Credential Strength|weak                                                                               |
       |Confidence Level   |200                                                                                |
       |Affinity Group     |Agent                                                                              |

@@ -7,7 +7,7 @@ Feature: Smoke downstream Dividends Journeys to DES in QA - Income Tax Submissio
 
   Scenario: Returning flow - Individual User with prior UK Dividends & Other Dividends, Review & change - Dividends Smoke
     When the user logs into the service with the following details
-      |Redirect url       |/2022/start                                          |
+      |Redirect url       |/2023/start                                          |
       |Credential Strength|strong                                               |
       |Confidence Level   |200                                                  |
       |Affinity Group     |Individual                                           |
@@ -35,7 +35,7 @@ Feature: Smoke downstream Dividends Journeys to DES in QA - Income Tax Submissio
 
   Scenario: Returning flow - Agent User with prior UK Dividends & Other Dividends, Review & Change - Dividends Smoke
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2022/additional-parameters?ClientNino=CC565656D&ClientMTDID=9876543211  |
+      |Redirect url       |/test-only/2023/additional-parameters?ClientNino=CC565656D&ClientMTDID=9876543211  |
       |Credential Strength|weak                                                                               |
       |Confidence Level   |200                                                                                |
       |Affinity Group     |Agent                                                                              |

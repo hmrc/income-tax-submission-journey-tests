@@ -77,7 +77,7 @@ trait CommonElements extends BasePage with Matchers{
     "return to employment summary"     -> By.id("returnToEmploymentSummaryBtn"),
     "return to overview"               -> By.id("returnToOverviewPageBtn"),
     "return to employer"               -> By.id("returnToEmployerBtn"),
-    "Unclickable employment"           -> By.cssSelector("#main-content > div > div > ol > li:nth-child(1) > ol > li:nth-child(5) > span.app-task-list__task-name"),
+    "Unclickable employment"           -> By.cssSelector("#main-content > div > div > ol > li:nth-child(4) > span.app-task-list__task-name"),
     "Unclickable benefits"             -> By.cssSelector("#main-content > div > div > ol > li:nth-child(2) > span.hmrc-status-tag"),
     "Unclickable expenses"             -> By.cssSelector("#main-content > div > div > ol > li:nth-child(3) > span.hmrc-status-tag"),
     "Employer name"                    -> By.id("name"),

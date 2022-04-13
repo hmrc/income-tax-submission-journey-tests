@@ -167,5 +167,8 @@ trait CommonElements extends BasePage with Matchers{
     "Update tax calculation" -> By.id("updateTaxCalculation"),
     "Go to Income Tax Account" -> By.id("continue-button"),
 
+    //Pensions Elements
+    "Payments into pensions" -> By.id("payments-into-pensions-link")
+
   )
 }

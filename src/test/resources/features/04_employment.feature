@@ -330,7 +330,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks the Remove employer button
     Then the user should be redirected to the "PAYE employment" page
 
-  # Car/Van fuel section
+#   Car/Van fuel section
   Scenario: Individual user as a new submission, says no to the fuel questions, so skips the amount questions
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
@@ -378,7 +378,7 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Did you get accommodation or relocation benefits from this company?" page
 
-  # New submission tests
+#   New submission tests
   Scenario: Individual user as a new submission, goes through the full benefits flow
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
@@ -1743,7 +1743,7 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page
 
-  # Employment expenses tests
+#   Employment expenses tests
   Scenario: Agent user with single employment and as a new submission, goes through the full expenses flow
     When the user logs into the service with the following details
       | Redirect url        | /test-only/2022/additional-parameters?ClientNino=AA133742A&ClientMTDID=1234567890 |
@@ -1820,6 +1820,8 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the change expenses link
+    Then the user should be redirected to the "Employment expenses" page
+    When the user clicks the continue button
 
     Then the user should be redirected to the "Check your client’s employment expenses" page
     When the user clicks on the change link in position 1
@@ -1963,6 +1965,8 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the change expenses link
+    Then the user should be redirected to the "Employment expenses" page
+    When the user clicks the continue button
 
     Then the user should be redirected to the "Check your employment expenses" page
     When the user clicks on the change link in position 3
@@ -2007,6 +2011,8 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the change expenses link
+    Then the user should be redirected to the "Employment expenses" page
+    When the user clicks the continue button
 
     Then the user should be redirected to the "Check your employment expenses" page
     When the user clicks on the change link in position 2
@@ -2051,7 +2057,8 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the change expenses link
-
+    Then the user should be redirected to the "Employment expenses" page
+    When the user clicks the continue button
     Then the user should be redirected to the "Check your employment expenses" page
     When the user clicks on the change link in position 1
     Then the user should be redirected to the "Do you want to claim employment expenses?" page

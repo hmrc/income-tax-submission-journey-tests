@@ -19,22 +19,24 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
-    Then the user should be redirected to the "Do you want to add an employer?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
+    Then the user should be redirected to the "PAYE employment" page
+    When the user clicks on the Add an employer link
     Then the user should be redirected to the "What’s the name of your employer?" page
     When the user selects the Employer name field and enters a value of Bear’s Blue House LTD
     And the user clicks the continue button
     Then the user should be redirected to the "What’s the PAYE reference of your employer?" page
     When the user selects the PAYE reference field and enters a value of 123/AB456
     And the user clicks the continue button
-    Then the user should be redirected to the "Are you still working for your employer?" page
+    Then the user should be redirected to the "Did you leave this employer in the tax year?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "When did you start working for your employer?" page
-    When the user selects the Day field and enters a value of 04
-    And the user selects the Month field and enters a value of 05
-    And the user selects the Year field and enters a value of 2016
+    Then the user should be redirected to the "Employment dates" page
+    When the user selects the Start Day field and enters a value of 04
+    And the user selects the Start Month field and enters a value of 05
+    And the user selects the Start Year field and enters a value of 2016
+    When the user selects the End Day field and enters a value of 24
+    And the user selects the End Month field and enters a value of 03
+    And the user selects the End Year field and enters a value of 2022
     And the user clicks the continue button
     Then the user should be redirected to the "What’s your payroll ID for this employment?" page
     When the user selects the Payroll id field and enters a value of 123456
@@ -134,14 +136,14 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
 
   Scenario: Returning flow - Individual User with prior UK employment views their details, benefits and expenses - Employment Smoke
     When the user logs into the service with the following details
-      |Redirect url       |/2022/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |AB654321C                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
+      | Redirect url        | /2022/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | AB654321C   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -164,163 +166,14 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     When the user clicks on the return to employment summary link
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the view expenses link
+    Then the user should be redirected to the "Employment expenses" page
+    When the user clicks on the continue link
     Then the user should be redirected to the "Check your employment expenses" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the remove employment link
     Then the user should be redirected to the "Are you sure you want to remove this employment?" page
     When the user clicks the Remove employer button
-    Then the user should be redirected to the "Do you want to add an employer?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
+    Then the user should be redirected to the "PAYE employment" page
+    And the user clicks the return to overview button
     Then the user should be redirected to the "Your Income Tax Return" page
-
-  Scenario: Agent user with at least one prior employment adds a new Employment
-    When the user logs into the service with the following details
-      | Redirect url        | /test-only/2022/additional-parameters?ClientNino=AC123456B&ClientMTDID=1234567890 |
-      | Credential Strength | weak                                                                              |
-      | Confidence Level    | 200                                                                               |
-      | Affinity Group      | Agent                                                                             |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
-      | Identifier Name 1   | MTDITID                                                                           |
-      | Identifier Value 1  | 1234567890                                                                        |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
-      | Identifier Name 2   | AgentReferenceNumber                                                              |
-      | Identifier Value 2  | XARN1234567                                                                       |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the employment link
-    Then the user should be redirected to the "PAYE employment" page
-    When the user clicks on the Add another employer link
-    Then the user should be redirected to the "What’s the name of your client’s employer?" page
-    When the user selects the Employer name field and enters a value of Bear’s Blue House LTD
-    And the user clicks the continue button
-    Then the user should be redirected to the "What’s the PAYE reference of your client’s employer?" page
-    When the user selects the PAYE reference field and enters a value of 123/AB456
-    And the user clicks the continue button
-    Then the user should be redirected to the "Is your client still working for their employer?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Employment dates" page
-    When the user selects the Start Day field and enters a value of 01
-    And the user selects the Start Month field and enters a value of 02
-    And the user selects the Start Year field and enters a value of 2003
-    When the user selects the End Day field and enters a value of 03
-    And the user selects the End Month field and enters a value of 04
-    And the user selects the End Year field and enters a value of 2022
-    And the user clicks the continue button
-    Then the user should be redirected to the "What’s your client’s payroll ID for this employment?" page
-    When the user selects the Payroll id field and enters a value of 123456
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much did your client’s employer pay them?" page
-    When the user selects the Pay field and enters a value of 2000.54
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much UK tax was taken from your client’s earnings?" page
-    When the user selects the Tax field and enters a value of 20.54
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your client’s employment details" page
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get any benefits from this company?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get any car, van or fuel benefits from this company?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get a company car benefit?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much was your client’s total company car benefit?" page
-    When the user selects the amount field and enters a value of 100.00
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get fuel benefit for a company car?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get a company van benefit?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much was your client’s total company van benefit?" page
-    When the user selects the amount field and enters a value of 300.00
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get fuel benefit for a company van?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get a mileage benefit for using their own car for work?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get accommodation or relocation benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get any travel or entertainment benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get any utility or general service benefits from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get any medical, dental, childcare, education benefits or loans from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client’s employer pay any of their Income Tax or incurred costs?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get any reimbursed costs, vouchers or non-cash benefits from their employer?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get any assets from this company?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your client’s employment benefits" page
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client repay any student loan?" page
-    When the user clicks the no repayments checkbox
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your client’s student loan repayment details" page
-    And the user clicks the continue button
-    Then the user should be redirected to the "Do you want to claim employment expenses for your client?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your client’s employment expenses" page
-    When the user clicks the save and continue button
-    Then the user should be redirected to the "PAYE employment" page
-    When the user clicks on the first remove employment link
-    Then the user should be redirected to the "Are you sure you want to remove this employment?" page
-    When the user clicks the Remove employer button
-    Then the user should be redirected to the "PAYE employment" page
-
-  Scenario: Returning flow - Agent User with prior UK employment views their clients details, benefits and expenses - Employment Smoke
-    When the user logs into the service with the following details
-      |Redirect url       |/test-only/2022/additional-parameters?ClientNino=AC123456B&ClientMTDID=1234567890  |
-      |Credential Strength|weak                                                                               |
-      |Confidence Level   |200                                                                                |
-      |Affinity Group     |Agent                                                                              |
-      |Enrolment Key 1    |HMRC-MTD-IT                                                                        |
-      |Identifier Name 1  |MTDITID                                                                            |
-      |Identifier Value 1 |1234567890                                                                         |
-      |Enrolment Key 2    |HMRC-AS-AGENT                                                                      |
-      |Identifier Name 2  |AgentReferenceNumber                                                               |
-      |Identifier Value 2 |XARN7654321                                                                        |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the employment link
-    Then the user should be redirected to the "PAYE employment" page
-    When the user clicks on the change employer link
-    Then the user should be redirected to the "Employer information" page
-    When the user clicks on the employment details link
-    Then the user should be redirected to the "Check your client’s employment details" page
-    When the user clicks the back button
-    Then the user should be redirected to the "Employer information" page
-    And the user clicks on the employment benefits link
-    Then the user should be redirected to the "Check your client’s employment benefits" page
-    When the user clicks the back button
-    Then the user should be redirected to the "Employer information" page
-    And the user clicks on the student loans link
-    Then the user should be redirected to the "Check your client’s student loan repayment details" page
-    When the user clicks the back button
-    When the user clicks on the return to employment summary link
-    Then the user should be redirected to the "PAYE employment" page
-    When the user clicks on the view expenses link
-    Then the user should be redirected to the "Check your client’s employment expenses" page
-    When the user clicks the save and continue button
-    Then the user should be redirected to the "PAYE employment" page
-

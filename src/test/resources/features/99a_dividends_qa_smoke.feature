@@ -7,12 +7,11 @@ Feature: Smoke downstream Dividends Journeys to DES in QA - Income Tax Submissio
 
   Scenario: Returning flow - Individual User with prior UK Dividends & Other Dividends, Review & change - Dividends Smoke
     When the user logs into the service with the following details
-      # It should work for 2023, but it seems there is a problem with the API
-      | Redirect url        | /2022/start |
+      | Redirect url        | /2023/start |
       | Credential Strength | strong      |
       | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
-      | Nino                | CC555555D   |
+      | Nino                | AA575858A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 9876543210  |

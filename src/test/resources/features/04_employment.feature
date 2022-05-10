@@ -102,6 +102,11 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addEmployment tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
     And the user cannot click the employment link
 
   Scenario: User is adding their first employment for a tax year
@@ -116,6 +121,11 @@ Feature: Employment Journeys - Income Tax Submission
       | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addEmployment tailoring option
+    And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
@@ -162,6 +172,11 @@ Feature: Employment Journeys - Income Tax Submission
       | Identifier Value 2  | XARN1234567                                                                       |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your client’s Income Tax Return" page
+    When the user clicks the addEmployment tailoring option
+    And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
@@ -2079,6 +2094,11 @@ Feature: Employment Journeys - Income Tax Submission
       | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addEmployment tailoring option
+    And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page

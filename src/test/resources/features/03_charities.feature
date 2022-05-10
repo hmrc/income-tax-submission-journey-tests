@@ -18,6 +18,11 @@ Feature: Charities Journeys - Income Tax Submission
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addGiftAid tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the GiftAid link
     Then the user should be redirected to the "Did you use Gift Aid to donate to charity?" page
     When the user selects the no radio button
@@ -49,6 +54,11 @@ Feature: Charities Journeys - Income Tax Submission
       | Identifier Value 2  | XARN1234567                                                                       |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your client’s Income Tax Return" page
+    When the user clicks the addGiftAid tailoring option
+    And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the GiftAid link
     Then the user should be redirected to the "Did your client use Gift Aid to donate to charity?" page
@@ -141,6 +151,11 @@ Feature: Charities Journeys - Income Tax Submission
       | Identifier Value 2  | XARN1234567                                                                       |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your client’s Income Tax Return" page
+    When the user clicks the addGiftAid tailoring option
+    And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the GiftAid link
     Then the user should be redirected to the "Did your client use Gift Aid to donate to charity?" page

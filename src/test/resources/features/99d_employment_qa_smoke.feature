@@ -18,6 +18,11 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addEmployment tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the Add an employer link

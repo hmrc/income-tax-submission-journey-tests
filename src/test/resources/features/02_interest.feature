@@ -18,6 +18,11 @@ Feature: Interest Journeys - Income Tax Submission
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addInterest tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the interest link
     Then the user should be redirected to the "Did you get untaxed interest from the UK?" page
     When the user selects the no radio button
@@ -44,6 +49,11 @@ Feature: Interest Journeys - Income Tax Submission
       |Identifier Value 2 |XARN1234567                                                                        |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your client’s Income Tax Return" page
+    When the user clicks the addInterest tailoring option
+    And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the interest link
     Then the user should be redirected to the "Did your client get untaxed interest from the UK?" page
@@ -118,6 +128,11 @@ Feature: Interest Journeys - Income Tax Submission
       |Identifier Value 2 |XARN1234567                                                                        |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your client’s Income Tax Return" page
+    When the user clicks the addInterest tailoring option
+    And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the interest link
     Then the user should be redirected to the "Did your client get untaxed interest from the UK?" page
@@ -295,6 +310,11 @@ Feature: Interest Journeys - Income Tax Submission
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addInterest tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the interest link
     Then the user should be redirected to the "Did you get untaxed interest from the UK?" page
     When the user selects the yes radio button
@@ -339,6 +359,11 @@ Feature: Interest Journeys - Income Tax Submission
       |Identifier Value 2 |XARN1234567                                                                        |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your client’s Income Tax Return" page
+    When the user clicks the addInterest tailoring option
+    And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the interest link
     Then the user should be redirected to the "Did your client get untaxed interest from the UK?" page

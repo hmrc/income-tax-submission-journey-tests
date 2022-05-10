@@ -20,7 +20,7 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     #When the user clicks on the pensions link
-    #TODO remove line below and uncomment line above when pension link available on overview page
+    #TODO remove line below and uncomment line above when pension link available on overview page add to tailoring jounreyMethod
     When the user navigates to the pensions summary page page
     Then the user should be redirected to the "Pensions" page
     When the user clicks on the Payments into pensions link

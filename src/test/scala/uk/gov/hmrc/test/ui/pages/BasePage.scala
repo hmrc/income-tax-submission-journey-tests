@@ -77,6 +77,10 @@ trait BasePage extends Matchers with BrowserDriver{
     driver.findElement(selector).click()
   }
 
+  def attemptToClickOn(selector: By): Unit = {
+    if (driver.findElements(selector).size() > 0)  driver.findElement(selector).click()
+  }
+
   def sendKeys(selector: By, value: String): Unit = {
     driver.findElement(selector).clear()
     driver.findElement(selector).sendKeys(value)

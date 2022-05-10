@@ -64,6 +64,11 @@ class CommonStepDef extends BaseStepDef {
     CommonPage.clickOnCheckbox(checkbox2Title)
   }
 
+
+  When("""^the user clicks the (.*) tailoring option$""")  { (checkboxTitle: String) =>
+    CommonPage.attemptToClickOnCheckbox(checkboxTitle)
+  }
+
   When("""^the user selects the (.*) field and enters a value of (.*)$""") { (valueTextBox: String, value: String) =>
     CommonPage.enterValue(valueTextBox, value)
   }

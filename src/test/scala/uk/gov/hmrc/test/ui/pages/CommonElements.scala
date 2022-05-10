@@ -34,6 +34,14 @@ trait CommonElements extends BasePage with Matchers{
     "remove account"       -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(1) > span.hmrc-add-to-a-list__remove > a"),
     "change"               -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li > span.hmrc-add-to-a-list__change > a"),
 
+    //Tailoring Elements
+    "addSections"                   -> By.id("addSectionsLink"),
+    "addDividend"                   -> By.id("dividends"),
+    "addInterest"                   -> By.id("interest"),
+    "addGiftAid"                    -> By.id("gift-aid"),
+    "addEmployment"                 -> By.id("employment"),
+    "addCisSection"                 -> By.id("cis"),
+
     //Dividends Elements
     "dividends"                     -> By.id("dividends_link"),
     "UK dividends amount"           -> By.id("amount"),
@@ -77,7 +85,7 @@ trait CommonElements extends BasePage with Matchers{
     "return to employment summary"     -> By.id("returnToEmploymentSummaryBtn"),
     "return to overview"               -> By.id("returnToOverviewPageBtn"),
     "return to employer"               -> By.id("returnToEmployerBtn"),
-    "Unclickable employment"           -> By.cssSelector("#main-content > div > div > ol > li:nth-child(4) > span.app-task-list__task-name"),
+    "Unclickable employment"           -> By.cssSelector("#main-content > div > div > ol > li:nth-child(1) > span.hmrc-status-tag"),
     "Unclickable benefits"             -> By.cssSelector("#main-content > div > div > ol > li:nth-child(2) > span.hmrc-status-tag"),
     "Unclickable expenses"             -> By.cssSelector("#main-content > div > div > ol > li:nth-child(3) > span.hmrc-status-tag"),
     "Employer name"                    -> By.id("name"),

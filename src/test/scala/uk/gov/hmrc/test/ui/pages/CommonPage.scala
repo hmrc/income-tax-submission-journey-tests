@@ -46,6 +46,10 @@ object CommonPage extends BasePage with CommonElements {
     val selector: By = load(checkboxTitle)
     clickOn(selector)
   }
+  def attemptToClickOnCheckbox(checkboxTitle:String): Unit = {
+    val selector: By = load(checkboxTitle)
+    attemptToClickOn(selector)
+  }
 
   def clickBySelector(selector: String): Unit = {
     clickOn(By.cssSelector(selector))

@@ -181,11 +181,11 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the Add another employer link
-    Then the user should be redirected to the "Which employer do you want to add?" page
+    Then the user should be redirected to the "Which period of employment do you want to add?" page
     When the user selects the first radio button: select existing one
     And the user clicks the continue button
     When the user clicks on the Add another employer link
-    Then the user should be redirected to the "Which employer do you want to add?" page
+    Then the user should be redirected to the "Which period of employment do you want to add?" page
     When the user selects the third radio button: select Add a new employer
     And the user clicks the continue button
     Then the user should be redirected to the "What’s the name of your client’s employer?" page
@@ -231,7 +231,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the Add another employer link
-    Then the user should be redirected to the "Which employer do you want to add?" page
+    Then the user should be redirected to the "Which period of employment do you want to add?" page
     When the user selects the third radio button: select new one
     And the user clicks the continue button
     Then the user should be redirected to the "What’s the name of your client’s employer?" page

@@ -50,7 +50,7 @@ Feature: Crystallisation Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks the continue button
-    Then the user should be taken to the "What is your client’s Unique Taxpayer Reference?" test-only page on the View and Change service
+    Then the user should be taken to the "What is your client’s UTR?" test-only page on the View and Change service
     When the user selects the Client SA UTR field and enters a value of 1234567890
     And the user clicks the View and Change Continue button
     Then the user should be taken to the "Confirm your client’s details" test-only page on the View and Change service

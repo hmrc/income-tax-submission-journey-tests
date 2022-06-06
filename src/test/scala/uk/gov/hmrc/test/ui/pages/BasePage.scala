@@ -17,9 +17,9 @@
 package uk.gov.hmrc.test.ui.pages
 
 import java.util
-
 import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
+import org.openqa.selenium.support.ui.Select
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
@@ -75,6 +75,11 @@ trait BasePage extends Matchers with BrowserDriver{
 
   def clickOn(selector: By): Unit = {
     driver.findElement(selector).click()
+  }
+
+  def select(selector: By, value: String): Unit = {
+    val dropdown = new Select(driver.findElement(selector))
+    dropdown.selectByVisibleText(value)
   }
 
   def attemptToClickOn(selector: By): Unit = {

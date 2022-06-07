@@ -218,6 +218,11 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "How much did you pay for building materials for your contractor?" page
+    When the user selects the amount field and enters a value of 20.05
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your CIS deductions" page
+    When the user clicks on the back link
+    Then the user should be redirected to the "How much did you pay for building materials for your contractor?" page
     When the user clicks on the back link
     Then the user should be redirected to the "Did you pay for materials for your contractor?" page
     When the user clicks on the back link
@@ -261,6 +266,11 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "Did you pay for materials for your contractor?" page
     When the user selects the yes radio button
     And the user clicks the continue button
+    Then the user should be redirected to the "How much did you pay for building materials for your contractor?" page
+    When the user selects the amount field and enters a value of 20.05
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your CIS deductions" page
+    When the user clicks on the back link
     Then the user should be redirected to the "How much did you pay for building materials for your contractor?" page
     When the user clicks on the back link
     Then the user should be redirected to the "Did you pay for materials for your contractor?" page
@@ -497,6 +507,11 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "How much did your client pay for building materials for the contractor?" page
+    When the user selects the amount field and enters a value of 20.05
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your client’s CIS deductions" page
+    When the user clicks on the back link
+    Then the user should be redirected to the "How much did your client pay for building materials for the contractor?" page
     When the user clicks on the back link
     Then the user should be redirected to the "Did your client pay for materials for their contractor?" page
     When the user clicks on the back link
@@ -542,6 +557,11 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "Did your client pay for materials for their contractor?" page
     When the user selects the yes radio button
     And the user clicks the continue button
+    Then the user should be redirected to the "How much did your client pay for building materials for the contractor?" page
+    When the user selects the amount field and enters a value of 20.05
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your client’s CIS deductions" page
+    When the user clicks on the back link
     Then the user should be redirected to the "How much did your client pay for building materials for the contractor?" page
     When the user clicks on the back link
     Then the user should be redirected to the "Did your client pay for materials for their contractor?" page

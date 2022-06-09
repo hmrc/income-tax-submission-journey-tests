@@ -53,4 +53,4 @@ Feature: View Estimation Journeys - Income Tax Submission
     Then the user should be taken to the "Your client’s Income Tax" test-only page on the View and Change service
     When the user navigates to the tax overview for agents page
     And the user clicks the Go to Income Tax Account button
-    Then the user should be redirected to the "Income Tax" page on the View and Change service
+    Then the user should be redirected to the "Your client’s Income Tax" agent page on the View and Change service

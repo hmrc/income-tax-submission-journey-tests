@@ -25,6 +25,7 @@ class CommonStepDef extends BaseStepDef {
   val serviceName = "Update and submit an Income Tax Return"
   val testOnlyViewAndChangeServiceName = "Your client’s Income Tax details"
   val viewAndChangeServiceName = "Business Tax account"
+  val viewAndChangeServiceNameAgent = "Your client’s Income Tax details"
   val govUkExtension = "GOV.UK"
 
   Then("""^the user should be redirected to the "(.*)" page$""") { (title: String) =>
@@ -33,6 +34,10 @@ class CommonStepDef extends BaseStepDef {
 
   Then("""^the user should be redirected to the "(.*)" page on the View and Change service$""") { (title: String) =>
     driver.getTitle should be(s"$title - $viewAndChangeServiceName - $govUkExtension")
+  }
+
+  Then("""^the user should be redirected to the "(.*)" agent page on the View and Change service$""") { (title: String) =>
+    driver.getTitle should be(s"$title - $viewAndChangeServiceNameAgent - $govUkExtension")
   }
 
   Then("""^the user should be taken to the "(.*)" test-only page on the View and Change service$""") { (title: String) =>

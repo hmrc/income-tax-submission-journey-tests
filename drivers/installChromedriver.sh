@@ -6,7 +6,7 @@ die () {
     echo >&2 "$@"
     exit 1
 }
-
+#Testing
 [ "$OS" == "linux64" ] || [ "$OS" == "mac64" ] || die "First argument must be one of [linux64,mac64].  \"$OS\" is not supported"
 
 CHROME_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE`

@@ -71,25 +71,6 @@ Feature: Dividends Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
 
-  Scenario: Returning flow - Individual User - Dividends
-    When the user logs into the service with the following details
-          |Redirect url       |/2023/start                                           |
-          |Credential Strength|strong                                                |
-          |Confidence Level   |200                                                   |
-          |Affinity Group     |Individual                                            |
-          |Nino               |AA000001A                                             |
-          |Enrolment Key 1    |HMRC-MTD-IT                                           |
-          |Identifier Name 1  |MTDITID                                               |
-          |Identifier Value 1 |1234567891                                            |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the dividends link
-    Then the user should be redirected to the "Check your income from dividends" page
-    When the user clicks the save and continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
-#    And the user should see the correct Income Tax Account for individuals url
-
   Scenario: Returning flow - Individual User with prior UK Dividends & Other Dividends, Review & change - Dividends
     When the user logs into the service with the following details
       |Redirect url       |/2023/start                                          |

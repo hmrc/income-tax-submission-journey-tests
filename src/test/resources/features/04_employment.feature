@@ -2178,5 +2178,3 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Check your client’s student loan repayment details" page
     And the user clicks the continue button
     Then the user should be redirected to the "Employer information" page
-
-

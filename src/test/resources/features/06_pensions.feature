@@ -19,9 +19,12 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    #When the user clicks on the pensions link
-    #TODO remove line below and uncomment line above when pension link available on overview page add to tailoring jounreyMethod
-    When the user navigates to the pensions summary page page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
     Then the user should be redirected to the "Pensions" page
     When the user clicks on the Payments into pensions link
     Then the user should be redirected to the "Relief at source (RAS) pensions" page
@@ -71,9 +74,12 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
-    #When the user clicks on the pensions link
-    #TODO remove line below and uncomment line above when pension link available on overview page
-    When the user navigates to the pensions summary page page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
     Then the user should be redirected to the "Pensions" page
     When the user clicks on the Payments into pensions link
     Then the user should be redirected to the "Relief at source (RAS) pensions" page
@@ -121,9 +127,12 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    #When the user clicks on the pensions link
-    #TODO remove line below and uncomment line above when pension link available on overview page
-    When the user navigates to the pensions summary page page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
     Then the user should be redirected to the "Pensions" page
     When the user clicks on the Payments into pensions link
     Then the user should be redirected to the "Relief at source (RAS) pensions" page
@@ -149,9 +158,12 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
-    #When the user clicks on the pensions link
-    #TODO remove line below and uncomment line above when pension link available on overview page
-    When the user navigates to the pensions summary page in year page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
     Then the user should be redirected to the "Pensions" page
     When the user clicks on the Payments into pensions link
     Then the user should be redirected to the "Check your client’s payments into pensions" page

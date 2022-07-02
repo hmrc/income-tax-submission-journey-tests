@@ -75,10 +75,10 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the addSections link
-    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    Then the user should be redirected to the "Add sections to your client’s Income Tax Return" page
     When the user clicks the addPension tailoring option
     And the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the pensions link
     Then the user should be redirected to the "Pensions" page
     When the user clicks on the Payments into pensions link
@@ -159,10 +159,10 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the addSections link
-    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    Then the user should be redirected to the "Add sections to your client’s Income Tax Return" page
     When the user clicks the addPension tailoring option
     And the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the pensions link
     Then the user should be redirected to the "Pensions" page
     When the user clicks on the Payments into pensions link

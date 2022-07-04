@@ -86,7 +86,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
     #Change CIS deductions
     When the user clicks the change cis deduction button
-    Then the user should be redirected to the "How much was taken by this contractor in CIS deductions?" page
+    Then the user should be redirected to the "How much was taken by your contractor in CIS deductions?" page
     When the user selects the amount field and enters a value of 20.02
     And the user clicks the continue button
     Then the user should be redirected to the "Check your CIS deductions" page
@@ -140,7 +140,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "How much did your contractor pay you for labour?" page
     When the user selects the amount field and enters a value of 20.02
     And the user clicks the continue button
-    Then the user should be redirected to the "How much was taken by this contractor in CIS deductions?" page
+    Then the user should be redirected to the "How much was taken by your contractor in CIS deductions?" page
     When the user selects the amount field and enters a value of 200
     And the user clicks the continue button
     Then the user should be redirected to the "Did you pay for materials for your contractor?" page
@@ -175,7 +175,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "How much did your contractor pay you for labour?" page
     When the user selects the amount field and enters a value of 20.02
     And the user clicks the continue button
-    Then the user should be redirected to the "How much was taken by this contractor in CIS deductions?" page
+    Then the user should be redirected to the "How much was taken by your contractor in CIS deductions?" page
     When the user selects the amount field and enters a value of 200
     And the user clicks the continue button
     Then the user should be redirected to the "Did you pay for materials for your contractor?" page
@@ -211,7 +211,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "How much did your contractor pay you for labour?" page
     When the user selects the amount field and enters a value of 20.02
     And the user clicks the continue button
-    Then the user should be redirected to the "How much was taken by this contractor in CIS deductions?" page
+    Then the user should be redirected to the "How much was taken by your contractor in CIS deductions?" page
     When the user selects the amount field and enters a value of 200
     And the user clicks the continue button
     Then the user should be redirected to the "Did you pay for materials for your contractor?" page
@@ -226,7 +226,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     When the user clicks on the back link
     Then the user should be redirected to the "Did you pay for materials for your contractor?" page
     When the user clicks on the back link
-    Then the user should be redirected to the "How much was taken by this contractor in CIS deductions?" page
+    Then the user should be redirected to the "How much was taken by your contractor in CIS deductions?" page
     When the user clicks on the back link
     Then the user should be redirected to the "How much did your contractor pay you for labour?" page
     When the user clicks on the back link
@@ -260,7 +260,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "How much did your contractor pay you for labour?" page
     When the user selects the amount field and enters a value of 20.02
     And the user clicks the continue button
-    Then the user should be redirected to the "How much was taken by this contractor in CIS deductions?" page
+    Then the user should be redirected to the "How much was taken by your contractor in CIS deductions?" page
     When the user selects the amount field and enters a value of 200
     And the user clicks the continue button
     Then the user should be redirected to the "Did you pay for materials for your contractor?" page
@@ -275,7 +275,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     When the user clicks on the back link
     Then the user should be redirected to the "Did you pay for materials for your contractor?" page
     When the user clicks on the back link
-    Then the user should be redirected to the "How much was taken by this contractor in CIS deductions?" page
+    Then the user should be redirected to the "How much was taken by your contractor in CIS deductions?" page
     When the user clicks on the back link
     Then the user should be redirected to the "How much did your contractor pay you for labour?" page
     When the user clicks on the back link
@@ -369,7 +369,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
     #Change CIS deductions
     When the user clicks the change cis deduction button
-    Then the user should be redirected to the "How much was taken by this contractor in CIS deductions?" page
+    Then the user should be redirected to the "How much was taken by the contractor in CIS deductions?" page
     When the user selects the amount field and enters a value of 20.02
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s CIS deductions" page
@@ -425,7 +425,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "How much did the contractor pay your client for labour?" page
     When the user selects the amount field and enters a value of 20.02
     And the user clicks the continue button
-    Then the user should be redirected to the "How much was taken by this contractor in CIS deductions?" page
+    Then the user should be redirected to the "How much was taken by the contractor in CIS deductions?" page
     When the user selects the amount field and enters a value of 200
     And the user clicks the continue button
     Then the user should be redirected to the "Did your client pay for materials for their contractor?" page
@@ -462,7 +462,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "How much did the contractor pay your client for labour?" page
     When the user selects the amount field and enters a value of 20.02
     And the user clicks the continue button
-    Then the user should be redirected to the "How much was taken by this contractor in CIS deductions?" page
+    Then the user should be redirected to the "How much was taken by the contractor in CIS deductions?" page
     When the user selects the amount field and enters a value of 200
     And the user clicks the continue button
     Then the user should be redirected to the "Did your client pay for materials for their contractor?" page
@@ -500,7 +500,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "How much did the contractor pay your client for labour?" page
     When the user selects the amount field and enters a value of 20.02
     And the user clicks the continue button
-    Then the user should be redirected to the "How much was taken by this contractor in CIS deductions?" page
+    Then the user should be redirected to the "How much was taken by the contractor in CIS deductions?" page
     When the user selects the amount field and enters a value of 200
     And the user clicks the continue button
     Then the user should be redirected to the "Did your client pay for materials for their contractor?" page
@@ -515,7 +515,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     When the user clicks on the back link
     Then the user should be redirected to the "Did your client pay for materials for their contractor?" page
     When the user clicks on the back link
-    Then the user should be redirected to the "How much was taken by this contractor in CIS deductions?" page
+    Then the user should be redirected to the "How much was taken by the contractor in CIS deductions?" page
     When the user clicks on the back link
     Then the user should be redirected to the "How much did the contractor pay your client for labour?" page
     When the user clicks on the back link
@@ -551,7 +551,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "How much did the contractor pay your client for labour?" page
     When the user selects the amount field and enters a value of 20.02
     And the user clicks the continue button
-    Then the user should be redirected to the "How much was taken by this contractor in CIS deductions?" page
+    Then the user should be redirected to the "How much was taken by the contractor in CIS deductions?" page
     When the user selects the amount field and enters a value of 200
     And the user clicks the continue button
     Then the user should be redirected to the "Did your client pay for materials for their contractor?" page
@@ -566,7 +566,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     When the user clicks on the back link
     Then the user should be redirected to the "Did your client pay for materials for their contractor?" page
     When the user clicks on the back link
-    Then the user should be redirected to the "How much was taken by this contractor in CIS deductions?" page
+    Then the user should be redirected to the "How much was taken by the contractor in CIS deductions?" page
     When the user clicks on the back link
     Then the user should be redirected to the "How much did the contractor pay your client for labour?" page
     When the user clicks on the back link

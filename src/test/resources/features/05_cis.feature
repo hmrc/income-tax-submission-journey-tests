@@ -50,7 +50,6 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     When the user clicks on the cis return to overview link
     Then the user should be redirected to the "Your Income Tax Return" page
 
-
   Scenario: Individual User make changes in CYA page for EOY
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
@@ -66,7 +65,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the cis deductions link
     Then the user should be redirected to the "CIS deductions" page
-    When the user clicks on the first contractor link
+    When the user clicks on the third contractor link
     Then the user should be redirected to the "Contractor CIS deductions" page
     When the user clicks on the first month change link
     Then the user should be redirected to the "Check your CIS deductions" page
@@ -166,7 +165,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the cis deductions link
     Then the user should be redirected to the "CIS deductions" page
-    When the user clicks the second contractor button
+    When the user clicks the third contractor button
     Then the user should be redirected to the "Contractor CIS deductions" page
     When the user clicks on the Add another CIS deduction link
     Then the user should be redirected to the "When did your contractor make CIS deductions?" page
@@ -251,7 +250,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the cis deductions link
     Then the user should be redirected to the "CIS deductions" page
-    When the user clicks the second contractor button
+    When the user clicks the third contractor button
     Then the user should be redirected to the "Contractor CIS deductions" page
     When the user clicks on the Add another CIS deduction link
     Then the user should be redirected to the "When did your contractor make CIS deductions?" page
@@ -349,7 +348,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the cis deductions link
     Then the user should be redirected to the "CIS deductions" page
-    When the user clicks on the first contractor link
+    When the user clicks on the third contractor link
     Then the user should be redirected to the "Contractor CIS deductions" page
     When the user clicks on the first month change link
     Then the user should be redirected to the "Check your client’s CIS deductions" page
@@ -453,7 +452,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the cis deductions link
     Then the user should be redirected to the "CIS deductions" page
-    When the user clicks on the second contractor link
+    When the user clicks on the third contractor link
     Then the user should be redirected to the "Contractor CIS deductions" page
     When the user clicks on the Add another CIS deduction link
     Then the user should be redirected to the "When did your client’s contractor make CIS deductions?" page
@@ -542,7 +541,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the cis deductions link
     Then the user should be redirected to the "CIS deductions" page
-    When the user clicks on the second contractor link
+    When the user clicks on the third contractor link
     Then the user should be redirected to the "Contractor CIS deductions" page
     When the user clicks on the Add another CIS deduction link
     Then the user should be redirected to the "When did your client’s contractor make CIS deductions?" page

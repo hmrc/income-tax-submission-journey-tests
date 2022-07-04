@@ -74,7 +74,7 @@ class CommonStepDef extends BaseStepDef {
   }
 
 
-  When("""^the user clicks the (.*) tailoring option$""")  { (checkboxTitle: String) =>
+  When("""^the user clicks the (.*) tailoring option$""") { (checkboxTitle: String) =>
     CommonPage.attemptToClickOnCheckbox(checkboxTitle)
   }
 
@@ -103,7 +103,7 @@ class CommonStepDef extends BaseStepDef {
       case "tax overview for individuals" => "http://localhost:9081/report-quarterly/income-and-expenses/view/tax-overview"
       case "tax overview for agents" => "http://localhost:9081/report-quarterly/income-and-expenses/view/agents/tax-overview"
       case "auth login" => AuthLoginPage.url
-        //TODO remove pension summary pages when link on overview page is created
+      //TODO remove pension summary pages when link on overview page is created
       case "pensions summary page" => "http://localhost:9321/update-and-submit-income-tax-return/pensions/2022/pensions-summary"
       case "pensions summary page in year" => "http://localhost:9321/update-and-submit-income-tax-return/pensions/2023/pensions-summary"
       case _ => fail("Invalid url input parameter")

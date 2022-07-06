@@ -42,6 +42,7 @@ trait CommonElements extends BasePage with Matchers{
     "addGiftAid"                    -> By.id("gift-aid"),
     "addEmployment"                 -> By.id("employment"),
     "addCisSection"                 -> By.id("cis"),
+    "addPension"                    -> By.id("pensions"),
 
     //Dividends Elements
     "dividends"                     -> By.id("dividends_link"),
@@ -186,10 +187,11 @@ trait CommonElements extends BasePage with Matchers{
     "Tax month ending"            -> By.id("month"),
 
     //View Estimation Elements
-    "Update tax calculation" -> By.id("updateTaxCalculation"),
+    "Update tax calculation"   -> By.id("updateTaxCalculation"),
     "Go to Income Tax Account" -> By.id("continue-button"),
 
     //Pensions Elements
+    "pensions"              -> By.id("pensions_link"),
     "Payments into pensions" -> By.id("payments-into-pensions-link")
 
   )

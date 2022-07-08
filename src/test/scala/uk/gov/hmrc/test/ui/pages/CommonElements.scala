@@ -48,8 +48,9 @@ trait CommonElements extends BasePage with Matchers{
     "dividends"                     -> By.id("dividends_link"),
     "UK dividends amount"           -> By.id("amount"),
     "UK other dividends amount"     -> By.id("amount"),
-    "change uk dividends amount"    -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a"),
-    "change other dividends amount" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a"),
+    "change dividends from the uk summary" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a"),
+    "change uk dividends amount"    -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a"),
+    "change other dividends amount" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dd.govuk-summary-list__actions > a"),
 
     //Interest Elements
     "interest"                          -> By.id("interest_link"),

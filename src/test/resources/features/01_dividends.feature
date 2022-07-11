@@ -5,37 +5,6 @@ Feature: Dividends Journeys - Income Tax Submission
   Background:
     Given the user navigates to the auth login page
 
-  Scenario: Minimal flow - Individual User - Dividends
-    When the user logs into the service with the following details
-      |Redirect url       |/2023/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |AA123456A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the addSections link
-    Then the user should be redirected to the "Add sections to your Income Tax Return" page
-    When the user clicks the addDividend tailoring option
-    And the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the dividends link
-    Then the user should be redirected to the "Did you get dividends from shares?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get dividends from UK-based companies?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get dividends from UK-based trusts or open-ended investment companies?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your income from dividends" page
-    When the user clicks the save and continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
 
   Scenario: Maximal flow - Agent User - Dividends
     When the user logs into the service with the following details
@@ -125,7 +94,9 @@ Feature: Dividends Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the dividends link
-    Then the user should be redirected to the "Did your client get dividends from shares" page
+    Then the user should be redirected to the "Check your client’s income from dividends" page
+    When the user clicks on the change dividends from the uk summary link
+    Then the user should be redirected to the "Did your client get dividends from shares?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s income from dividends" page
@@ -187,11 +158,11 @@ Feature: Dividends Journeys - Income Tax Submission
         When the user clicks on the dividends link
         Then the user should be redirected to the "Check your client’s income from dividends" page
         When the user clicks on the change dividends from the uk summary link
-        Then the user should be redirected to the "Did your client get dividends from shares" page
+        Then the user should be redirected to the "Did your client get dividends from shares?" page
         When the user selects the no radio button
         And the user clicks the continue button
         Then the user should be redirected to the "This will change information on your client’s Income Tax Return" page
         When the user clicks the confirm button
-        Then the user should be redirected to the "Check your income from dividends" page
+        Then the user should be redirected to the "Check your client’s income from dividends" page
         When the user clicks the save and continue button
         Then the user should be redirected to the "Your client’s Income Tax Return" page

@@ -184,6 +184,7 @@ trait CommonElements extends BasePage with Matchers{
     "Contractor name"             -> By.id("contractorName"),
     "Employer Reference Number"   -> By.id("employerReferenceNumber"),
     "Add another CIS deduction"   -> By.id("add-another-link"),
+    "Add a CIS deduction"         -> By.id("add-link"),
     "Tax month ending"            -> By.id("month"),
 
     //View Estimation Elements

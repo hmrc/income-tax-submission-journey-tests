@@ -16,6 +16,16 @@ Run the following command to start services locally:
     sudo mongod (If not already running)
     sm --start INCOME_TAX_SUBMISSION_ALL -r
 
+Alternatively you can use [these scripts](./service-manager); for example:
+
+``` 
+./service-manager/start.sh
+```
+
+``` 
+./service-manager/stop.sh
+```
+
 Then execute the `run_tests.sh` script:
 ./run_tests.sh <environment> <browser-driver>
 

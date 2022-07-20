@@ -167,7 +167,7 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Pensions" page
     When the user clicks on the Payments into pensions link
     Then the user should be redirected to the "Check your client’s payments into pensions" page
-    When the user clicks on the change link in position 3
+    When the user clicks on the change link in position 2
     Then the user should be redirected to the "Total payments into relief at source (RAS) pensions, plus basic rate tax relief" page
     When the user selects the amount field and enters a value of 40.00
     And the user clicks the continue button
@@ -181,7 +181,7 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s payments into pensions" page
-    When the user clicks on the change link in position 5
+    When the user clicks on the change link in position 4
     Then the user should be redirected to the "Total one-off payments into relief at source (RAS) pensions, plus basic rate tax relief" page
     When the user selects the amount field and enters a value of 30.00
     And the user clicks the continue button
@@ -189,12 +189,12 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s payments into pensions" page
-    When the user clicks on the change link in position 8
+    When the user clicks on the change link in position 7
     Then the user should be redirected to the "How much did your client pay into their retirement annuity contracts?" page
     When the user selects the amount field and enters a value of 20.00
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s payments into pensions" page
-    When the user clicks on the change link in position 10
+    When the user clicks on the change link in position 9
     Then the user should be redirected to the "How much did your client pay into their workplace pensions?" page
     When the user selects the amount field and enters a value of 10.00
     And the user clicks the continue button

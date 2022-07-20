@@ -4,7 +4,7 @@ BROWSER=${2:-chrome}
 DRIVER=
 
 if [ "$BROWSER" = "chrome" ]; then
-    DRIVER="-Dwebdriver.chrome.driver/=usr/local/bin/chromedriver"
+    DRIVER="-Dwebdriver.chrome.driver=/usr/local/bin/chromedriver"
 elif [ "$BROWSER" = "firefox" ]; then
     DRIVER="-Dwebdriver.gecko.driver=/usr/local/bin/geckodriver"
 fi

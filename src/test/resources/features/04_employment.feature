@@ -107,7 +107,11 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks the addEmployment tailoring option
     And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    And the user cannot click the employment link
+    When the user clicks on the employment link
+    Then the user should be redirected to the "PAYE employment" page
+    And the cannotUpdate element exist on the page with the text you cannot update PAYE employment information until 6 April 2023
+    When the user clicks on the return to overview link
+    Then the user should be redirected to the "Your Income Tax Return" page
 
   Scenario: User is adding their first employment for a tax year
     When the user logs into the service with the following details
@@ -157,7 +161,6 @@ Feature: Employment Journeys - Income Tax Submission
     When the user selects the Tax field and enters a value of 20.54
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment details" page
-
   Scenario: Agent user with at least one prior employment adds a new Employment and no to "Did your client leave this employer in the tax year?"
     When the user logs into the service with the following details
       | Redirect url        | /test-only/2022/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |

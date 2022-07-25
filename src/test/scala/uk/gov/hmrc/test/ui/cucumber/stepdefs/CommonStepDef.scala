@@ -117,9 +117,8 @@ class CommonStepDef extends BaseStepDef {
     driver.navigate().to(newUrl)
   }
 
-  Then("""^the user cannot click the (.*) link$""") { linkName: String =>
-    val selector: By = load("Unclickable " + linkName)
-    driver.findElement(selector).getAttribute("href") shouldBe null
+  Then("""the (.*) element exist on the page with the text (.*)$""") { (linkName: String, expectedText: String) =>
+    driver.findElement(By.id(linkName)).getText should be(expectedText)
   }
 
 }

@@ -133,9 +133,14 @@ class CommonStepDef extends BaseStepDef {
     driver.navigate().to(newUrl)
   }
 
-  Then("""^the user cannot click the (.*) link$""") { linkName: String =>
-    val selector: By = load("Unclickable " + linkName)
-    driver.findElement(selector).getAttribute("href") shouldBe null
-  }
+  Then("""^the user can click the (.*) link and it navigates to the (.*) page$""") { (linkName: String, url: String) =>
+    val selector: By = load("Clickable " + linkName)
 
+    val expectedUrl: String = url match {
+      case "employment summary" => "http://localhost:9317/update-and-submit-income-tax-return/employment-income/2023/employment-summary"
+      case _ => fail("Invalid url input parameter")
+    }
+
+    driver.findElement(selector).getAttribute("href") shouldBe expectedUrl
+  }
 }

@@ -32,16 +32,32 @@ class CommonStepDef extends BaseStepDef {
     driver.getTitle should be(s"$title - $serviceName - $govUkExtension")
   }
 
+  Then("""^the user should be redirected to V&C "(.*)" page$""") { (title: String) =>
+    driver.getTitle should be(s"$title")
+  }
+
   Then("""^the user should be redirected to the "(.*)" page on the View and Change service$""") { (title: String) =>
     driver.getTitle should be(s"$title - $viewAndChangeServiceName - $govUkExtension")
+  }
+
+  Then("""^the user should be redirected to V&C "(.*)" page on the View and Change service$""") { (title: String) =>
+    driver.getTitle should be(s"$title")
   }
 
   Then("""^the user should be redirected to the "(.*)" agent page on the View and Change service$""") { (title: String) =>
     driver.getTitle should be(s"$title - $viewAndChangeServiceNameAgent - $govUkExtension")
   }
 
+  Then("""^the user should be redirected to V&C "(.*)" agent page on the View and Change service$""") { (title: String) =>
+    driver.getTitle should be(s"$title")
+  }
+
   Then("""^the user should be taken to the "(.*)" test-only page on the View and Change service$""") { (title: String) =>
     driver.getTitle should be(s"$title - $testOnlyViewAndChangeServiceName - $govUkExtension")
+  }
+
+  Then("""^the user should be taken to V&C "(.*)" test-only page on the View and Change service$""") { (title: String) =>
+    driver.getTitle should be(s"$title")
   }
 
   When("""^the user clicks on the (.*) link$""") { linkName: String =>

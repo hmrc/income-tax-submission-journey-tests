@@ -89,7 +89,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the return to employment summary link
     Then the user should be redirected to the "PAYE employment" page
 
-  Scenario: User with no employment data cant click the employment link
+  Scenario: User with no employment data can click the employment link
     When the user logs into the service with the following details
       | Redirect url        | /2023/start |
       | Credential Strength | strong      |
@@ -107,7 +107,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks the addEmployment tailoring option
     And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    And the user cannot click the employment link
+    And the user can click the employment link and it navigates to the employment summary page
 
   Scenario: User is adding their first employment for a tax year
     When the user logs into the service with the following details

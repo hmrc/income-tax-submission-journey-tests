@@ -26,6 +26,8 @@ Alternatively you can use [these scripts](./service-manager); for example:
 ./service-manager/stop.sh
 ```
 
+We recommend that you leave your computer alone (as much as possible) while running these; also to close any high memory applications like IntelliJ.
+
 Then execute the `run_tests.sh` script:
 ./run_tests.sh <environment> <browser-driver>
 

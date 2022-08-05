@@ -12,7 +12,8 @@ echo "Waiting for ${WAIT_AFTER_STARTING_IN_SECONDS} seconds before checking all 
 sleep $WAIT_AFTER_STARTING_IN_SECONDS
 
 STATUS_OUTPUT=$(sm -s)
-echo $STATUS_OUTPUT
+echo "$STATUS_OUTPUT"
+
 
 for SERVICE in "${EXPECTED_SERVICES[@]}";
 do

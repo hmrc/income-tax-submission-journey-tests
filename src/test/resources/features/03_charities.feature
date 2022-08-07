@@ -164,7 +164,7 @@ Feature: Charities Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the GiftAid link
-    Then the user should be redirected to the "Did you make donations to charity?" page
+    Then the user should be redirected to the "Did your client make donations to charity?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Did your client use Gift Aid to donate to charity?" page

@@ -16,6 +16,31 @@ Run the following command to start services locally:
     sudo mongod (If not already running)
     sm --start INCOME_TAX_SUBMISSION_ALL -r
 
+Alternatively you can use [these scripts](./service-manager); for example:
+
+``` 
+./service-manager/start.sh
+```
+
+``` 
+./service-manager/stop.sh
+```
+
+We recommend that you leave your computer alone (as much as possible) while running these; also to close any high memory applications like IntelliJ.
+
+And for the service-under-test, you may want to increase the network call timeout, like so:
+
+``` 
+sbt -Dplay.akka.http.server.request-timeout=90s run
+```
+
+Finally, remember where the log files are:
+
+``` 
+tail -f /var/tmp/*_LOCAL/logs/stdout.txt
+```
+
+
 Then execute the `run_tests.sh` script:
 ./run_tests.sh <environment> <browser-driver>
 

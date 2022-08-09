@@ -27,6 +27,10 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks on the pensions link
     Then the user should be redirected to the "Pensions" page
     When the user clicks on the Payments into pensions link
+    #------remove when Tailor Payments into Pensions Navigation is done
+    #Then the user should be redirected to the "Did you make any payments into UK pensions" page
+    #When the user selects the yes radio button
+    #And the user clicks the continue button
     Then the user should be redirected to the "Relief at source (RAS) pensions" page
     When the user selects the yes radio button
     And the user clicks the continue button
@@ -82,6 +86,10 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks on the pensions link
     Then the user should be redirected to the "Pensions" page
     When the user clicks on the Payments into pensions link
+    #------remove when Tailor Payments into Pensions Navigation is done
+    #Then the user should be redirected to the "Did you make any payments into UK pensions" page
+    #When the user selects the yes radio button
+    #And the user clicks the continue button
     Then the user should be redirected to the "Relief at source (RAS) pensions" page
     When the user selects the yes radio button
     And the user clicks the continue button
@@ -135,6 +143,10 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks on the pensions link
     Then the user should be redirected to the "Pensions" page
     When the user clicks on the Payments into pensions link
+    #------remove when Tailor Payments into Pensions Navigation is done
+    #Then the user should be redirected to the "Did you make any payments into UK pensions" page
+    #When the user selects the yes radio button
+    #And the user clicks the continue button
     Then the user should be redirected to the "Relief at source (RAS) pensions" page
     When the user selects the no radio button
     And the user clicks the continue button
@@ -199,3 +211,30 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user selects the amount field and enters a value of 10.00
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s payments into pensions" page
+
+  Scenario: Individual user as a new submission, says no to the Payments into Pensions gateway question
+    When the user logs into the service with the following details
+      | Redirect url        | /2023/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Payments into pensions link
+    #------remove when Tailor Payments into Pensions Navigation is done
+    #Then the user should be redirected to the "Did you make any payments into UK pensions" page
+    #When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your payments into pensions" page

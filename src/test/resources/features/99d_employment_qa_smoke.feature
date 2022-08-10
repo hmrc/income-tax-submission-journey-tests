@@ -26,6 +26,7 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
 #    Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
+    Given no employment data exists
     When the user clicks on the Add an employer link
     Then the user should be redirected to the "What’s the name of your employer?" page
     When the user selects the Employer name field and enters a value of Bear’s Blue House LTD

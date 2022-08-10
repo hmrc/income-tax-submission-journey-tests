@@ -16,14 +16,15 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import java.util
 import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
 import org.openqa.selenium.support.ui.Select
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
-trait BasePage extends Matchers with BrowserDriver{
+import java.util
+
+trait BasePage extends Matchers with BrowserDriver {
   val url: String = ""
 
   var redirectUrl: String = ""
@@ -37,10 +38,10 @@ trait BasePage extends Matchers with BrowserDriver{
   var enrolmentKeyTwo: String = ""
   var identifierNameTwo: String = ""
   var identifierValueTwo: String = ""
-  var delegatedEnrolmentKey : String = ""
-  var delegatedIdentifierName : String = ""
-  var delegatedIdentifierValue : String = ""
-  var delegatedAuthRule : String = ""
+  var delegatedEnrolmentKey: String = ""
+  var delegatedIdentifierName: String = ""
+  var delegatedIdentifierValue: String = ""
+  var delegatedAuthRule: String = ""
 
 
   def useDataTable(data: DataTable): Unit = {
@@ -83,11 +84,14 @@ trait BasePage extends Matchers with BrowserDriver{
   }
 
   def attemptToClickOn(selector: By): Unit = {
-    if (driver.findElements(selector).size() > 0)  driver.findElement(selector).click()
+    if (driver.findElements(selector).size() > 0) driver.findElement(selector).click()
   }
 
   def sendKeys(selector: By, value: String): Unit = {
     driver.findElement(selector).clear()
     driver.findElement(selector).sendKeys(value)
   }
+
+  def elementExists(selector: By): Boolean =
+    !driver.findElements(selector).isEmpty
 }

@@ -32,27 +32,27 @@ object CommonPage extends BasePage with CommonElements {
     clickOn(selector)
   }
 
-  def enterValue(valueTextBox: String,value:String): Unit = {
+  def enterValue(valueTextBox: String, value: String): Unit = {
     val selector: By = load(valueTextBox)
     sendKeys(selector, value)
   }
 
-  def clickOnButton(buttonTitle:String): Unit = {
+  def clickOnButton(buttonTitle: String): Unit = {
     val selector: By = load(buttonTitle)
     clickOn(selector)
   }
 
-  def clickOnCheckbox(checkboxTitle:String): Unit = {
+  def clickOnCheckbox(checkboxTitle: String): Unit = {
     val selector: By = load(checkboxTitle)
     clickOn(selector)
   }
 
-  def clickOnDropdown(dropdownTitle:String, dropdownValue:String): Unit = {
+  def clickOnDropdown(dropdownTitle: String, dropdownValue: String): Unit = {
     val selector: By = load(dropdownTitle)
     select(selector, dropdownValue)
   }
 
-  def attemptToClickOnCheckbox(checkboxTitle:String): Unit = {
+  def attemptToClickOnCheckbox(checkboxTitle: String): Unit = {
     val selector: By = load(checkboxTitle)
     attemptToClickOn(selector)
   }

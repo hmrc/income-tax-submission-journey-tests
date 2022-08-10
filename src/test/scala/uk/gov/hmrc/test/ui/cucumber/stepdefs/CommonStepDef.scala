@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.pages.CommonPage.load
+import uk.gov.hmrc.test.ui.pages.CommonPage.{clickOn, elementExists, load}
 import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, CommonPage}
 
 class CommonStepDef extends BaseStepDef {
@@ -142,5 +142,13 @@ class CommonStepDef extends BaseStepDef {
     }
 
     driver.findElement(selector).getAttribute("href") shouldBe expectedUrl
+  }
+
+  Given("""^no employment data exists$""") { () =>
+    val selector = CommonPage.load("remove employment")
+    if (elementExists(selector)) {
+      clickOn(selector) // Click remove employment link
+      clickOn(CommonPage.load("Remove employer")) // Click remove employer button
+    }
   }
 }

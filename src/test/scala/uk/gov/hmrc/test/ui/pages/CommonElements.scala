@@ -146,6 +146,7 @@ trait CommonElements extends BasePage with Matchers{
     "Value of qualifying shares, securities, land or property donated to overseas charities" -> By.id("amount"),
     "Name of overseas charity you donated shares, securities, land or property to" -> By.id("name"),
     "Name of overseas charity your client donated shares, securities, land or property to" -> By.id("name"),
+    "change donations to charity summary" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
     "change amount donated to charity using Gift Aid" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
     "change amount of one-off donations to charity using Gift Aid" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
     "change amount donated to overseas charities by using Gift Aid" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(4) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),

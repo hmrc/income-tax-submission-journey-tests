@@ -111,7 +111,8 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE Employment" page
-    And the user clicks on the return to overview link
+    When the user clicks on the return to overview link
+    Then the user should be redirected to the "Your Income Tax Return" page
 
 #  Scenario: User with no employment clicks employment link and answers No on the PAYE Employment question - EOY Only
     When the user logs into the service with the following details

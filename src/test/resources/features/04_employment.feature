@@ -138,7 +138,7 @@ Feature: Employment Journeys - Income Tax Submission
 #    Then the user should be redirected to the "Did you get income from PAYE employment?” page
 #    When the user selects the No radio button
 #    And the user clicks the continue button
-    Then the user should be redirected to the "PAYE Employment" page
+    Then the user should be redirected to the "PAYE employment" page
 #    And the status on the "PAYE employment" page is No
     And the user clicks on the return to overview link
 
@@ -163,7 +163,7 @@ Feature: Employment Journeys - Income Tax Submission
 #   Then the user should be redirected to the "Did you get income from PAYE employment?” page
 #    When the user selects the No radio button
 #    And the user clicks the continue button
-    Then the user should be redirected to the "PAYE Employment" page
+    Then the user should be redirected to the "PAYE employment" page
 #    And the status on the "PAYE employment" page is No
     Then the user clicks on the return to overview link
 
@@ -182,13 +182,13 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
-    Then the user should be redirected to the "PAYE Employment" page
+    Then the user should be redirected to the "PAYE employment" page
 #    When the user clicks on the change link on the "PAYE employment” page
 #    Then the user should be redirected to the "Did you get income from PAYE employment?” page
 #    When the user selects the Yes radio button
 #    And the user clicks the continue button
-#    Then the user should be redirected to the "PAYE Employment" page
-    And the user clicks on the Add an employer link
+#    Then the user should be redirected to the "PAYE employment" page
+    And the user clicks on the Add another employer link
 
   Scenario: User is adding their first employment for a tax year
     When the user logs into the service with the following details

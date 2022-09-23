@@ -91,6 +91,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the return to employment summary link
     Then the user should be redirected to the "PAYE employment" page
 
+
   Scenario: User with no employment data can click the employment link
     When the user logs into the service with the following details
       | Redirect url        | /2023/start |
@@ -110,11 +111,12 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
-    Then the user should be redirected to the "PAYE Employment" page
+    Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the return to overview link
     Then the user should be redirected to the "Your Income Tax Return" page
 
-#  Scenario: User with no employment clicks employment link and answers No on the PAYE Employment question - EOY Only
+
+ Scenario: User with no employment clicks employment link and answers No on the PAYE Employment question - EOY Only
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
@@ -141,7 +143,7 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks on the return to overview link
 
 
-  #  Scenario: User with single employment clicks change link and answers No on the PAYE Employment question - EOY Only
+   Scenario: User with single employment clicks change link and answers No on the PAYE Employment question - EOY Only
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
@@ -166,7 +168,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user clicks on the return to overview link
 
 
-#  Scenario: User adds new employment and answers Yes on the PAYE Employment question - EOY Only
+ Scenario: User adds new employment and answers Yes on the PAYE Employment question - EOY Only
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |

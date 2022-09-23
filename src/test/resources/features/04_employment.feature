@@ -22,6 +22,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
+#    And the status on the "PAYE employment" page is Yes
     When the user clicks on the view employer link
     Then the user should be redirected to the "Employer information" page
     When the user clicks on the employment details link
@@ -68,6 +69,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
+#   And the  status on the "PAYE employment" page is Yes
     When the user clicks on the view first employer link
     Then the user should be redirected to the "Employer information" page
     When the user clicks on the employment details link
@@ -107,7 +109,83 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks the addEmployment tailoring option
     And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    And the user can click the employment link and it navigates to the employment summary page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "PAYE Employment" page
+    And the user clicks on the return to overview link
+
+#  Scenario: User with no employment clicks employment link and answers No on the PAYE Employment question - EOY Only
+    When the user logs into the service with the following details
+      | Redirect url        | /2022/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA637489D   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addEmployment tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+#    Then the user should be redirected to the "Did you get income from PAYE employment?” page
+#    When the user selects the No radio button
+#    And the user clicks the continue button
+    Then the user should be redirected to the "PAYE Employment" page
+#    And the status on the "PAYE employment" page is No
+    And the user clicks on the return to overview link
+
+
+  #  Scenario: User with single employment clicks change link and answers No on the PAYE Employment question - EOY Only
+    When the user logs into the service with the following details
+      | Redirect url        | /2022/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA133742A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "PAYE employment" page
+#   And the  status on the "PAYE employment" page is Yes
+#    When the user clicks on the change link on the "PAYE employment” page
+#   Then the user should be redirected to the "Did you get income from PAYE employment?” page
+#    When the user selects the No radio button
+#    And the user clicks the continue button
+    Then the user should be redirected to the "PAYE Employment" page
+#    And the status on the "PAYE employment" page is No
+    Then the user clicks on the return to overview link
+
+
+#  Scenario: User adds new employment and answers Yes on the PAYE Employment question - EOY Only
+    When the user logs into the service with the following details
+      | Redirect url        | /2022/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 200         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA133742A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "PAYE Employment" page
+#    When the user clicks on the change link on the "PAYE employment” page
+#    Then the user should be redirected to the "Did you get income from PAYE employment?” page
+#    When the user selects the Yes radio button
+#    And the user clicks the continue button
+#    Then the user should be redirected to the "PAYE Employment" page
+    And the user clicks on the Add an employer link
 
   Scenario: User is adding their first employment for a tax year
     When the user logs into the service with the following details
@@ -128,6 +206,9 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
+#    Then the user should be redirected to the "Did you get income from PAYE employment?” page
+#    When the user selects the Yes radio button
+#    And the user clicks the continue button
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the Add an employer link
     Then the user should be redirected to the "What’s the name of your employer?" page
@@ -179,6 +260,9 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the employment link
+#   Then the user should be redirected to the "Did your client get income from PAYE employment?” page
+#   When the user selects the Yes radio button
+#   And the user clicks the continue button
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the Add another employer link
     Then the user should be redirected to the "Which period of employment do you want to add?" page
@@ -229,6 +313,9 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the employment link
+#   Then the user should be redirected to the "Did your client get income from PAYE employment?” page
+#   When the user selects the Yes radio button
+#   And the user clicks the continue button
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the Add another employer link
     Then the user should be redirected to the "Which period of employment do you want to add?" page
@@ -279,6 +366,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
+#   And the  status on the "PAYE employment" page is Yes
     When the user clicks on the second change employment link
     Then the user should be redirected to the "Employer information" page
     When the user clicks on the employment details link
@@ -340,7 +428,11 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
+#   And the status on the "PAYE employment" page is Yes
     When the user clicks on the third remove employment link
+#   Then the user should be redirected to the "Did your client get income from PAYE employment?” page
+#   When the user selects the No radio button
+#   And the user clicks the continue button
     Then the user should be redirected to the "Are you sure you want to remove this employment?" page
     When the user clicks the Remove employer button
     Then the user should be redirected to the "PAYE employment" page
@@ -360,6 +452,9 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
+#   Then the user should be redirected to the "Did you get income from PAYE employment?” page
+#   When the user selects the Yes radio button
+#   And the user clicks the continue button
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the second change employment link
     Then the user should be redirected to the "Employer information" page
@@ -408,6 +503,9 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
+#   Then the user should be redirected to the "Did you get income from PAYE employment?” page
+#    When the user selects the Yes radio button
+#    And the user clicks the continue button
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the second change employment link
     Then the user should be redirected to the "Employer information" page
@@ -632,6 +730,9 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
+#    Then the user should be redirected to the "Did you get income from PAYE employment?” page
+#    When the user selects the Yes radio button
+#    And the user clicks the continue button
     When the user clicks on the second change employment link
     Then the user should be redirected to the "Employer information" page
     And the user clicks on the employment benefits link
@@ -679,6 +780,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
+#   And the status on the "PAYE employment" page is Yes
     When the user clicks on the second change employment link
     Then the user should be redirected to the "Employer information" page
     And the user clicks on the employment benefits link
@@ -1089,6 +1191,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
+#   And the status on the "PAYE employment" page is Yes
     When the user clicks on the third change employment link
     Then the user should be redirected to the "Employer information" page
     And the user clicks on the employment benefits link
@@ -1349,6 +1452,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
+#   And the status on the "PAYE employment" page is Yes
     When the user clicks on the third change employment link
     Then the user should be redirected to the "Employer information" page
     And the user clicks on the employment benefits link
@@ -2025,6 +2129,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
+#   And the status on the "PAYE employment" page is Yes
     When the user clicks on the change expenses link
     Then the user should be redirected to the "Employment expenses" page
     When the user clicks the continue button
@@ -2101,6 +2206,9 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
+#    Then the user should be redirected to the "Did you get income from PAYE employment?” page
+#    When the user selects the Yes radio button
+#    And the user clicks the continue button
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the second change employment link
     Then the user should be redirected to the "Employer information" page

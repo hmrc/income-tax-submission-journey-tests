@@ -9,7 +9,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /test-only/2023/additional-parameters?ClientNino=AA133742A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                              |
-      | Confidence Level    | 250                                                                               |
+      | Confidence Level    | 200                                                                               |
       | Affinity Group      | Agent                                                                             |
       | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
       | Identifier Name 1   | MTDITID                                                                           |
@@ -22,7 +22,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
-    ##And the status on the page is "Yes for gateway question"
+#    And the status on the "PAYE employment" page is Yes
     When the user clicks on the view employer link
     Then the user should be redirected to the "Employer information" page
     When the user clicks on the employment details link
@@ -58,7 +58,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2023/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -69,7 +69,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
-   ## And the status on the page is "Yes for gateway question"
+#   And the  status on the "PAYE employment" page is Yes
     When the user clicks on the view first employer link
     Then the user should be redirected to the "Employer information" page
     When the user clicks on the employment details link
@@ -95,7 +95,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2023/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | AA637489D   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -110,17 +110,15 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
-    Then the user should be redirected to the "PAYE employment" page
-    And the status on the page is "cannot update"
+    Then the user should be redirected to the "PAYE Employment" page
     When the user clicks on the return to overview link
     Then the user should be redirected to the "Your Income Tax Return" page
 
-
- Scenario: User with no employment clicks employment link and answers No on the PAYE Employment question - EOY Only
+#  Scenario: User with no employment clicks employment link and answers No on the PAYE Employment question - EOY Only
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | AA637489D   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -136,18 +134,18 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
 #    Then the user should be redirected to the "Did you get income from PAYE employment?” page
-#    When the user selects the no radio button
+#    When the user selects the No radio button
 #    And the user clicks the continue button
-    Then the user should be redirected to the "PAYE employment" page
-   #And the status on the page is "No for gateway question"
+    Then the user should be redirected to the "PAYE Employment" page
+#    And the status on the "PAYE employment" page is No
     And the user clicks on the return to overview link
 
 
-   Scenario: User with single employment clicks change link and answers No on the PAYE Employment question - EOY Only
+  #  Scenario: User with single employment clicks change link and answers No on the PAYE Employment question - EOY Only
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | AA133742A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -158,21 +156,21 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
-#     And the status on the page is "Yes for gateway question"
-#    When the user clicks on the PAYE employment change link
+#   And the  status on the "PAYE employment" page is Yes
+#    When the user clicks on the change link on the "PAYE employment” page
 #   Then the user should be redirected to the "Did you get income from PAYE employment?” page
-#    When the user selects the no radio button
+#    When the user selects the No radio button
 #    And the user clicks the continue button
-    Then the user should be redirected to the "PAYE employment" page
-#     And the status on the page is "No for gateway question"
+    Then the user should be redirected to the "PAYE Employment" page
+#    And the status on the "PAYE employment" page is No
     Then the user clicks on the return to overview link
 
 
- Scenario: User adds new employment and answers Yes on the PAYE Employment question - EOY Only
+#  Scenario: User adds new employment and answers Yes on the PAYE Employment question - EOY Only
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | AA133742A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -182,18 +180,19 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
-    Then the user should be redirected to the "PAYE employment" page
-#    When the user clicks on the PAYE employment change link
+    Then the user should be redirected to the "PAYE Employment" page
+#    When the user clicks on the change link on the "PAYE employment” page
 #    Then the user should be redirected to the "Did you get income from PAYE employment?” page
-#    When the user selects the yes radio button
+#    When the user selects the Yes radio button
 #    And the user clicks the continue button
-#    Then the user should be redirected to the "PAYE employment" page
+#    Then the user should be redirected to the "PAYE Employment" page
+    And the user clicks on the Add an employer link
 
   Scenario: User is adding their first employment for a tax year
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | AA637489D   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -209,7 +208,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
 #    Then the user should be redirected to the "Did you get income from PAYE employment?” page
-#    When the user selects the yes radio button
+#    When the user selects the Yes radio button
 #    And the user clicks the continue button
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the Add an employer link
@@ -245,7 +244,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /test-only/2022/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                              |
-      | Confidence Level    | 250                                                                               |
+      | Confidence Level    | 200                                                                               |
       | Affinity Group      | Agent                                                                             |
       | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
       | Identifier Name 1   | MTDITID                                                                           |
@@ -262,8 +261,10 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the employment link
+#   Then the user should be redirected to the "Did your client get income from PAYE employment?” page
+#   When the user selects the Yes radio button
+#   And the user clicks the continue button
     Then the user should be redirected to the "PAYE employment" page
-#    And the status on the page is "Yes for gateway question"
     When the user clicks on the Add another employer link
     Then the user should be redirected to the "Which period of employment do you want to add?" page
     When the user selects the first radio button: select existing one
@@ -301,7 +302,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /test-only/2022/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                              |
-      | Confidence Level    | 250                                                                               |
+      | Confidence Level    | 200                                                                               |
       | Affinity Group      | Agent                                                                             |
       | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
       | Identifier Name 1   | MTDITID                                                                           |
@@ -313,8 +314,10 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the employment link
+#   Then the user should be redirected to the "Did your client get income from PAYE employment?” page
+#   When the user selects the Yes radio button
+#   And the user clicks the continue button
     Then the user should be redirected to the "PAYE employment" page
- #   And the status on the page is "Yes for gateway question"
     When the user clicks on the Add another employer link
     Then the user should be redirected to the "Which period of employment do you want to add?" page
     When the user selects the third radio button: select new one
@@ -351,7 +354,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /test-only/2022/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                              |
-      | Confidence Level    | 250                                                                               |
+      | Confidence Level    | 200                                                                               |
       | Affinity Group      | Agent                                                                             |
       | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
       | Identifier Name 1   | MTDITID                                                                           |
@@ -364,7 +367,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
-#    And the status on the page is "Yes for gateway question"
+#   And the  status on the "PAYE employment" page is Yes
     When the user clicks on the second change employment link
     Then the user should be redirected to the "Employer information" page
     When the user clicks on the employment details link
@@ -413,7 +416,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /test-only/2022/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                              |
-      | Confidence Level    | 250                                                                               |
+      | Confidence Level    | 200                                                                               |
       | Affinity Group      | Agent                                                                             |
       | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
       | Identifier Name 1   | MTDITID                                                                           |
@@ -426,8 +429,11 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
-#    And the status on the page is "Yes for gateway question"
+#   And the status on the "PAYE employment" page is Yes
     When the user clicks on the third remove employment link
+#   Then the user should be redirected to the "Did your client get income from PAYE employment?” page
+#   When the user selects the No radio button
+#   And the user clicks the continue button
     Then the user should be redirected to the "Are you sure you want to remove this employment?" page
     When the user clicks the Remove employer button
     Then the user should be redirected to the "PAYE employment" page
@@ -437,7 +443,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -448,7 +454,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
 #   Then the user should be redirected to the "Did you get income from PAYE employment?” page
-#   When the user selects the yes radio button
+#   When the user selects the Yes radio button
 #   And the user clicks the continue button
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the second change employment link
@@ -488,7 +494,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -499,7 +505,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
 #   Then the user should be redirected to the "Did you get income from PAYE employment?” page
-#    When the user selects the yes radio button
+#    When the user selects the Yes radio button
 #    And the user clicks the continue button
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the second change employment link
@@ -714,7 +720,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -726,7 +732,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
 #    Then the user should be redirected to the "Did you get income from PAYE employment?” page
-#    When the user selects the yes radio button
+#    When the user selects the Yes radio button
 #    And the user clicks the continue button
     When the user clicks on the second change employment link
     Then the user should be redirected to the "Employer information" page
@@ -764,7 +770,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -774,11 +780,8 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
-    #    Then the user should be redirected to the "Did you get income from PAYE employment?” page
-#    When the user selects the yes radio button
-#    And the user clicks the continue button
     Then the user should be redirected to the "PAYE employment" page
-#    And the status on the page is "Yes for gateway question"
+#   And the status on the "PAYE employment" page is Yes
     When the user clicks on the second change employment link
     Then the user should be redirected to the "Employer information" page
     And the user clicks on the employment benefits link
@@ -894,7 +897,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -980,7 +983,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -1042,7 +1045,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -1104,7 +1107,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -1115,7 +1118,6 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
-#    And the status on the page is "Yes for gateway question"
     When the user clicks on the third change employment link
     Then the user should be redirected to the "Employer information" page
     And the user clicks on the employment benefits link
@@ -1179,7 +1181,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -1190,7 +1192,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
-#    And the status on the page is "Yes for gateway question"
+#   And the status on the "PAYE employment" page is Yes
     When the user clicks on the third change employment link
     Then the user should be redirected to the "Employer information" page
     And the user clicks on the employment benefits link
@@ -1254,7 +1256,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -1304,7 +1306,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -1390,7 +1392,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -1440,7 +1442,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -1451,7 +1453,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
-#    And the status on the page is "Yes for gateway question"
+#   And the status on the "PAYE employment" page is Yes
     When the user clicks on the third change employment link
     Then the user should be redirected to the "Employer information" page
     And the user clicks on the employment benefits link
@@ -1503,7 +1505,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -1553,7 +1555,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -1603,7 +1605,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -1659,7 +1661,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -1715,7 +1717,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -1759,7 +1761,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -1821,7 +1823,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -1866,7 +1868,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /test-only/2022/additional-parameters?ClientNino=AA133742A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                              |
-      | Confidence Level    | 250                                                                               |
+      | Confidence Level    | 200                                                                               |
       | Affinity Group      | Agent                                                                             |
       | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
       | Identifier Name 1   | MTDITID                                                                           |
@@ -1923,7 +1925,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /test-only/2022/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                              |
-      | Confidence Level    | 250                                                                               |
+      | Confidence Level    | 200                                                                               |
       | Affinity Group      | Agent                                                                             |
       | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
       | Identifier Name 1   | MTDITID                                                                           |
@@ -1954,7 +1956,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | AA133742A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -2009,7 +2011,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | AA133742A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -2047,7 +2049,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | AA133742A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -2071,7 +2073,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | AA123459A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -2117,7 +2119,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | AA123459A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -2128,7 +2130,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
-#    And the status on the page is "Yes for gateway question"
+#   And the status on the "PAYE employment" page is Yes
     When the user clicks on the change expenses link
     Then the user should be redirected to the "Employment expenses" page
     When the user clicks the continue button
@@ -2164,7 +2166,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | AA123459A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -2190,7 +2192,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -2206,16 +2208,16 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
 #    Then the user should be redirected to the "Did you get income from PAYE employment?” page
-#    When the user selects the yes radio button
+#    When the user selects the Yes radio button
 #    And the user clicks the continue button
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the second change employment link
     Then the user should be redirected to the "Employer information" page
     When the user clicks on the student loans link
-    Then the user should be redirected to the "Did you repay any student loans?" page
-    When the user clicks both the student loan repayments and postgraduate loan repayments checkboxes
+    Then the user should be redirected to the "Did you repay any student loan?" page
+    When the user clicks both the undergraduate repayments and postgraduate repayments checkboxes
     And the user clicks the continue button
-    Then the user should be redirected to the "How much student loan did you repay?" page
+    Then the user should be redirected to the "How much undergraduate loan did you repay?" page
     When the user selects the amount field and enters a value of 117
     And the user clicks the continue button
     Then the user should be redirected to the "How much postgraduate loan did you repay?" page
@@ -2229,7 +2231,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 250         |
+      | Confidence Level    | 200         |
       | Affinity Group      | Individual  |
       | Nino                | AA133742A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -2245,7 +2247,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the student loans link
     Then the user should be redirected to the "Check your student loan repayment details" page
     When the user clicks on the change student loan repayments link
-    Then the user should be redirected to the "Did you repay any student loans?" page
+    Then the user should be redirected to the "Did you repay any student loan?" page
     When the user clicks the no repayments checkbox
     And the user clicks the continue button
     Then the user should be redirected to the "Check your student loan repayment details" page
@@ -2256,7 +2258,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /test-only/2022/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                              |
-      | Confidence Level    | 250                                                                               |
+      | Confidence Level    | 200                                                                               |
       | Affinity Group      | Agent                                                                             |
       | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
       | Identifier Name 1   | MTDITID                                                                           |
@@ -2273,12 +2275,12 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employer information" page
     When the user clicks on the student loans link
     Then the user should be redirected to the "Check your client’s student loan repayment details" page
-    When the user clicks on the student loans amount change link
-    Then the user should be redirected to the "How much student loan did your client repay?" page
+    When the user clicks on the undergraduate repayments amount link
+    Then the user should be redirected to the "How much undergraduate loan did your client repay?" page
     When the user selects the amount field and enters a value of 96000
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s student loan repayment details" page
-    When the user clicks on the postgraduate loans amount change link
+    When the user clicks on the postgraduate repayments amount link
     Then the user should be redirected to the "How much postgraduate loan did your client repay?" page
     When the user selects the amount field and enters a value of 17.38
     And the user clicks the continue button

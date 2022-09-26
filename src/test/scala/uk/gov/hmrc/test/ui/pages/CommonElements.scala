@@ -126,7 +126,11 @@ trait CommonElements extends BasePage with Matchers{
     "no repayments"                    -> By.cssSelector("#studentLoans-4"),
     "change student loan repayments"   -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a > span:nth-child(1)"),
     "undergraduate repayments amount"  -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a > span:nth-child(1)"),
-    "postgraduate repayments amount"  -> By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dd.govuk-summary-list__actions > a > span:nth-child(1)"),
+    "postgraduate repayments amount"   -> By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dd.govuk-summary-list__actions > a > span:nth-child(1)"),
+    "cannot update"                    -> By.cssSelector("#main-content > div > div > div.govuk-inset-text"),
+    "PAYE employment change"           -> By.cssSelector("??????????"),
+    "Yes for gateway question"         -> By.cssSelector("??????????"),
+    "No for gateway question"          -> By.cssSelector("??????????"),
 
     //GiftAid Elements
     "GiftAid" -> By.id("giftAid_link"),

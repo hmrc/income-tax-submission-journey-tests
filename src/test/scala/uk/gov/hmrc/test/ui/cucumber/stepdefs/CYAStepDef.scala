@@ -44,4 +44,9 @@ class CYAStepDef extends BaseStepDef {
     CommonPage.elementExists(selector)
   }
 
+  Then("""^the status on the page is "(.*)"$""") { (status: String) =>
+    val selector = CommonPage.load(status)
+    CommonPage.elementExists(selector)
+  }
+
 }

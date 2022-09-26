@@ -22,7 +22,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
-#    And the status on the "PAYE employment" page is Yes
+    ##And the status on the page is "Yes for gateway question"
     When the user clicks on the view employer link
     Then the user should be redirected to the "Employer information" page
     When the user clicks on the employment details link
@@ -69,7 +69,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
-#   And the  status on the "PAYE employment" page is Yes
+   ## And the status on the page is "Yes for gateway question"
     When the user clicks on the view first employer link
     Then the user should be redirected to the "Employer information" page
     When the user clicks on the employment details link
@@ -91,7 +91,6 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the return to employment summary link
     Then the user should be redirected to the "PAYE employment" page
 
-
   Scenario: User with no employment data can click the employment link
     When the user logs into the service with the following details
       | Redirect url        | /2023/start |
@@ -112,6 +111,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
+    And the status on the page is "cannot update"
     When the user clicks on the return to overview link
     Then the user should be redirected to the "Your Income Tax Return" page
 
@@ -136,10 +136,10 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
 #    Then the user should be redirected to the "Did you get income from PAYE employment?” page
-#    When the user selects the No radio button
+#    When the user selects the no radio button
 #    And the user clicks the continue button
     Then the user should be redirected to the "PAYE employment" page
-#    And the status on the "PAYE employment" page is No
+   #And the status on the page is "No for gateway question"
     And the user clicks on the return to overview link
 
 
@@ -158,13 +158,13 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
-#   And the  status on the "PAYE employment" page is Yes
-#    When the user clicks on the change link on the "PAYE employment” page
+#     And the status on the page is "Yes for gateway question"
+#    When the user clicks on the PAYE employment change link
 #   Then the user should be redirected to the "Did you get income from PAYE employment?” page
-#    When the user selects the No radio button
+#    When the user selects the no radio button
 #    And the user clicks the continue button
     Then the user should be redirected to the "PAYE employment" page
-#    And the status on the "PAYE employment" page is No
+#     And the status on the page is "No for gateway question"
     Then the user clicks on the return to overview link
 
 
@@ -183,12 +183,11 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
-#    When the user clicks on the change link on the "PAYE employment” page
+#    When the user clicks on the PAYE employment change link
 #    Then the user should be redirected to the "Did you get income from PAYE employment?” page
-#    When the user selects the Yes radio button
+#    When the user selects the yes radio button
 #    And the user clicks the continue button
 #    Then the user should be redirected to the "PAYE employment" page
-    And the user clicks on the Add another employer link
 
   Scenario: User is adding their first employment for a tax year
     When the user logs into the service with the following details
@@ -210,7 +209,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
 #    Then the user should be redirected to the "Did you get income from PAYE employment?” page
-#    When the user selects the Yes radio button
+#    When the user selects the yes radio button
 #    And the user clicks the continue button
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the Add an employer link
@@ -263,10 +262,8 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the employment link
-#   Then the user should be redirected to the "Did your client get income from PAYE employment?” page
-#   When the user selects the Yes radio button
-#   And the user clicks the continue button
     Then the user should be redirected to the "PAYE employment" page
+#    And the status on the page is "Yes for gateway question"
     When the user clicks on the Add another employer link
     Then the user should be redirected to the "Which period of employment do you want to add?" page
     When the user selects the first radio button: select existing one
@@ -316,10 +313,8 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the employment link
-#   Then the user should be redirected to the "Did your client get income from PAYE employment?” page
-#   When the user selects the Yes radio button
-#   And the user clicks the continue button
     Then the user should be redirected to the "PAYE employment" page
+ #   And the status on the page is "Yes for gateway question"
     When the user clicks on the Add another employer link
     Then the user should be redirected to the "Which period of employment do you want to add?" page
     When the user selects the third radio button: select new one
@@ -369,7 +364,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
-#   And the  status on the "PAYE employment" page is Yes
+#    And the status on the page is "Yes for gateway question"
     When the user clicks on the second change employment link
     Then the user should be redirected to the "Employer information" page
     When the user clicks on the employment details link
@@ -431,11 +426,8 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
-#   And the status on the "PAYE employment" page is Yes
+#    And the status on the page is "Yes for gateway question"
     When the user clicks on the third remove employment link
-#   Then the user should be redirected to the "Did your client get income from PAYE employment?” page
-#   When the user selects the No radio button
-#   And the user clicks the continue button
     Then the user should be redirected to the "Are you sure you want to remove this employment?" page
     When the user clicks the Remove employer button
     Then the user should be redirected to the "PAYE employment" page
@@ -456,7 +448,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
 #   Then the user should be redirected to the "Did you get income from PAYE employment?” page
-#   When the user selects the Yes radio button
+#   When the user selects the yes radio button
 #   And the user clicks the continue button
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the second change employment link
@@ -507,7 +499,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
 #   Then the user should be redirected to the "Did you get income from PAYE employment?” page
-#    When the user selects the Yes radio button
+#    When the user selects the yes radio button
 #    And the user clicks the continue button
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the second change employment link
@@ -734,7 +726,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
 #    Then the user should be redirected to the "Did you get income from PAYE employment?” page
-#    When the user selects the Yes radio button
+#    When the user selects the yes radio button
 #    And the user clicks the continue button
     When the user clicks on the second change employment link
     Then the user should be redirected to the "Employer information" page
@@ -782,8 +774,11 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
+    #    Then the user should be redirected to the "Did you get income from PAYE employment?” page
+#    When the user selects the yes radio button
+#    And the user clicks the continue button
     Then the user should be redirected to the "PAYE employment" page
-#   And the status on the "PAYE employment" page is Yes
+#    And the status on the page is "Yes for gateway question"
     When the user clicks on the second change employment link
     Then the user should be redirected to the "Employer information" page
     And the user clicks on the employment benefits link
@@ -1120,6 +1115,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
+#    And the status on the page is "Yes for gateway question"
     When the user clicks on the third change employment link
     Then the user should be redirected to the "Employer information" page
     And the user clicks on the employment benefits link
@@ -1194,7 +1190,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
-#   And the status on the "PAYE employment" page is Yes
+#    And the status on the page is "Yes for gateway question"
     When the user clicks on the third change employment link
     Then the user should be redirected to the "Employer information" page
     And the user clicks on the employment benefits link
@@ -1455,7 +1451,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
-#   And the status on the "PAYE employment" page is Yes
+#    And the status on the page is "Yes for gateway question"
     When the user clicks on the third change employment link
     Then the user should be redirected to the "Employer information" page
     And the user clicks on the employment benefits link
@@ -2132,7 +2128,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
-#   And the status on the "PAYE employment" page is Yes
+#    And the status on the page is "Yes for gateway question"
     When the user clicks on the change expenses link
     Then the user should be redirected to the "Employment expenses" page
     When the user clicks the continue button
@@ -2210,7 +2206,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
 #    Then the user should be redirected to the "Did you get income from PAYE employment?” page
-#    When the user selects the Yes radio button
+#    When the user selects the yes radio button
 #    And the user clicks the continue button
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the second change employment link

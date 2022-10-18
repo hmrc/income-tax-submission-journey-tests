@@ -182,6 +182,9 @@ trait CommonElements extends BasePage with Matchers{
     "Add a CIS deduction"         -> By.id("add-link"),
     "Tax month ending"            -> By.id("month"),
 
+    //State Benefits Elements
+    "State benefits" -> By.id("stateBenefits_link"),
+
     //View Estimation Elements
     "Update tax calculation"   -> By.id("updateTaxCalculation"),
     "Go to Income Tax Account" -> By.id("continue-button"),

@@ -24,7 +24,7 @@ Feature: View Estimation Journeys - Income Tax Submission
     When the user clicks the Update tax calculation button
     When the user navigates to the tax overview for individuals page
     When the user clicks the Go to Income Tax Account button
-    Then the user should be redirected to V&C "Manage your Income Tax updates" page on the View and Change service
+    Then the user should be redirected to V&C "Income Tax - Manage your Income Tax updates - GOV.UK" page on the View and Change service
 
   Scenario: In Year flow - Agent User - View Estimation
     When the user logs into the service with the following details
@@ -45,12 +45,12 @@ Feature: View Estimation Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks the Update tax calculation button
-    Then the user should be taken to V&C "Manage your client’s Income Tax updates" test-only page on the View and Change service
+    Then the user should be taken to V&C "What is your client’s UTR? - Manage your client’s Income Tax updates - GOV.UK" test-only page on the View and Change service
     When the user selects the Client SA UTR field and enters a value of 1234567890
     And the user clicks the View and Change Continue button
-    Then the user should be taken to V&C "Manage your client’s Income Tax updates" test-only page on the View and Change service
+    Then the user should be taken to V&C "Confirm your client’s details - Manage your client’s Income Tax updates - GOV.UK" test-only page on the View and Change service
     When the user clicks the View and Change Continue button
-    Then the user should be taken to V&C "Manage your client’s Income Tax updates" test-only page on the View and Change service
+    Then the user should be taken to V&C "Your client’s Income Tax - Manage your client’s Income Tax updates - GOV.UK" test-only page on the View and Change service
     When the user navigates to the tax overview for agents page
     And the user clicks the Go to Income Tax Account button
-    Then the user should be redirected to V&C "Manage your client’s Income Tax updates" agent page on the View and Change service
+    Then the user should be redirected to V&C "Your client’s Income Tax - Manage your client’s Income Tax updates - GOV.UK" agent page on the View and Change service

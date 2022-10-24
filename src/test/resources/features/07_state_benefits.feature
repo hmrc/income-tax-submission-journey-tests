@@ -45,7 +45,15 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user selects the claim Start Month field and enters a value of 01
     And the user selects the claim Start Year field and enters a value of 2022
     And the user clicks the continue button
-    Then the user should be redirected to the "When did you start getting Jobseeker’s Allowance?" page
+    Then the user should be redirected to the "Did this claim end in the tax year ending 5 April 2022?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "When did this claim end?" page
+    When the user selects the claim End Day field and enters a value of 02
+    And the user selects the claim End Month field and enters a value of 02
+    And the user selects the claim End Year field and enters a value of 2022
+    And the user clicks the continue button
+    Then the user should be redirected to the "When did this claim end?" page
 
   #--------------------------------------Agent--------------------------------------#
   Scenario: Agent User with pre populated State benefits data - Check client's State benefits In Year Deductions
@@ -91,4 +99,12 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user selects the claim Start Month field and enters a value of 01
     And the user selects the claim Start Year field and enters a value of 2022
     And the user clicks the continue button
-    Then the user should be redirected to the "When did your client start getting Jobseeker’s Allowance?" page
+    Then the user should be redirected to the "Did this claim end in the tax year ending 5 April 2022?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "When did this claim end?" page
+    When the user selects the claim End Day field and enters a value of 02
+    And the user selects the claim End Month field and enters a value of 02
+    And the user selects the claim End Year field and enters a value of 2022
+    And the user clicks the continue button
+    Then the user should be redirected to the "When did this claim end?" page

@@ -185,6 +185,10 @@ trait CommonElements extends BasePage with Matchers{
     //State Benefits Elements
     "State benefits" -> By.id("stateBenefits_link"),
     "Jobseeker’s Allowance" -> By.id("jobSeekersAllowance_link"),
+    "Add missing claim" -> By.id("add-missing-claim-button-id"),
+    "claim Start Day" -> By.id("value-for-day"),
+    "claim Start Month" -> By.id("value-for-month"),
+    "claim Start Year" -> By.id("value-for-year"),
 
     //View Estimation Elements
     "Update tax calculation"   -> By.id("updateTaxCalculation"),

@@ -39,6 +39,13 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "State benefits" page
     When the user clicks on the Jobseeker’s Allowance link
     Then the user should be redirected to the "Jobseeker’s Allowance" page
+    When the user clicks the Add missing claim button
+    Then the user should be redirected to the "When did you start getting Jobseeker’s Allowance?" page
+    When the user selects the claim Start Day field and enters a value of 01
+    And the user selects the claim Start Month field and enters a value of 01
+    And the user selects the claim Start Year field and enters a value of 2022
+    And the user clicks the continue button
+    Then the user should be redirected to the "When did you start getting Jobseeker’s Allowance?" page
 
   #--------------------------------------Agent--------------------------------------#
   Scenario: Agent User with pre populated State benefits data - Check client's State benefits In Year Deductions
@@ -78,3 +85,10 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "State benefits" page
     When the user clicks on the Jobseeker’s Allowance link
     Then the user should be redirected to the "Jobseeker’s Allowance" page
+    When the user clicks the Add missing claim button
+    Then the user should be redirected to the "When did your client start getting Jobseeker’s Allowance?" page
+    When the user selects the claim Start Day field and enters a value of 01
+    And the user selects the claim Start Month field and enters a value of 01
+    And the user selects the claim Start Year field and enters a value of 2022
+    And the user clicks the continue button
+    Then the user should be redirected to the "When did your client start getting Jobseeker’s Allowance?" page

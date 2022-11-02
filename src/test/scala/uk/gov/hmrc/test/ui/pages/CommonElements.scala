@@ -123,12 +123,12 @@ trait CommonElements extends BasePage with Matchers{
     "Add another employer"             -> By.linkText("Add another employer"),
     "Remove employer"                  -> By.id("remove-employer-button-id"),
     "student loans"                    -> By.id("student-loans_link"),
-    "undergraduate repayments"         -> By.cssSelector("#studentLoans"),
-    "postgraduate repayments"          -> By.cssSelector("#studentLoans-2"),
+    "student loan repayments"         -> By.cssSelector("#studentLoans"),
+    "postgraduate loan repayments"          -> By.cssSelector("#studentLoans-2"),
     "no repayments"                    -> By.cssSelector("#studentLoans-4"),
     "change student loan repayments"   -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a > span:nth-child(1)"),
-    "undergraduate repayments amount"  -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a > span:nth-child(1)"),
-    "postgraduate repayments amount"  -> By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dd.govuk-summary-list__actions > a > span:nth-child(1)"),
+    "student loans amount change"  -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a > span:nth-child(1)"),
+    "postgraduate loans amount change"  -> By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dd.govuk-summary-list__actions > a > span:nth-child(1)"),
 
     //GiftAid Elements
     "GiftAid" -> By.id("giftAid_link"),

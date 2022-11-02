@@ -2105,10 +2105,10 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the second change employment link
     Then the user should be redirected to the "Employer information" page
     When the user clicks on the student loans link
-    Then the user should be redirected to the "Did you repay any student loan?" page
-    When the user clicks both the undergraduate repayments and postgraduate repayments checkboxes
+    Then the user should be redirected to the "Did you repay any student loans?" page
+    When the user clicks both the student loan repayments and postgraduate loan repayments checkboxes
     And the user clicks the continue button
-    Then the user should be redirected to the "How much undergraduate loan did you repay?" page
+    Then the user should be redirected to the "How much student loan did you repay?" page
     When the user selects the amount field and enters a value of 117
     And the user clicks the continue button
     Then the user should be redirected to the "How much postgraduate loan did you repay?" page
@@ -2138,7 +2138,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the student loans link
     Then the user should be redirected to the "Check your student loan repayment details" page
     When the user clicks on the change student loan repayments link
-    Then the user should be redirected to the "Did you repay any student loan?" page
+    Then the user should be redirected to the "Did you repay any student loans?" page
     When the user clicks the no repayments checkbox
     And the user clicks the continue button
     Then the user should be redirected to the "Check your student loan repayment details" page
@@ -2166,12 +2166,12 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employer information" page
     When the user clicks on the student loans link
     Then the user should be redirected to the "Check your client’s student loan repayment details" page
-    When the user clicks on the undergraduate repayments amount link
-    Then the user should be redirected to the "How much undergraduate loan did your client repay?" page
+    When the user clicks on the student loans amount change link
+    Then the user should be redirected to the "How much student loan did your client repay?" page
     When the user selects the amount field and enters a value of 96000
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s student loan repayment details" page
-    When the user clicks on the postgraduate repayments amount link
+    When the user clicks on the postgraduate loans amount change link
     Then the user should be redirected to the "How much postgraduate loan did your client repay?" page
     When the user selects the amount field and enters a value of 17.38
     And the user clicks the continue button

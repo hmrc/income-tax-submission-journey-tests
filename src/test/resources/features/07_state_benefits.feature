@@ -53,7 +53,10 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user selects the claim End Month field and enters a value of 02
     And the user selects the claim End Year field and enters a value of 2022
     And the user clicks the continue button
-    Then the user should be redirected to the "When did this claim end?" page
+    Then the user should be redirected to the "How much Jobseeker’s Allowance did you get between 1 January 2022 and 2 February 2022?" page
+    When the user selects the amount field and enters a value of 110.02
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much Jobseeker’s Allowance did you get between 1 January 2022 and 2 February 2022?" page
 
   #--------------------------------------Agent--------------------------------------#
   Scenario: Agent User with pre populated State benefits data - Check client's State benefits In Year Deductions
@@ -107,4 +110,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user selects the claim End Month field and enters a value of 02
     And the user selects the claim End Year field and enters a value of 2022
     And the user clicks the continue button
-    Then the user should be redirected to the "When did this claim end?" page
+    Then the user should be redirected to the "How much Jobseeker’s Allowance did your client get between 1 January 2022 and 2 February 2022?" page
+    When the user selects the amount field and enters a value of 110.02
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much Jobseeker’s Allowance did your client get between 1 January 2022 and 2 February 2022?" page

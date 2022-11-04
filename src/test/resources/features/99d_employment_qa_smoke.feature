@@ -27,6 +27,7 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
     Given no employment data exists
+    And no expenses data exists
     When the user clicks on the Add an employer link
     Then the user should be redirected to the "What’s the name of your employer?" page
     When the user selects the Employer name field and enters a value of Bear’s Blue House LTD
@@ -172,7 +173,7 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     Then the user should be redirected to the "Employer information" page
     When the user clicks on the return to employment summary link
     Then the user should be redirected to the "PAYE employment" page
-    When the user clicks on the view expenses link
+    When the user clicks on the change expenses link
     Then the user should be redirected to the "Employment expenses" page
     When the user clicks on the continue link
     Then the user should be redirected to the "Check your employment expenses" page
@@ -181,6 +182,10 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     When the user clicks on the remove employment link
     Then the user should be redirected to the "Are you sure you want to remove this employment?" page
     When the user clicks the Remove employer button
+    Then the user should be redirected to the "PAYE employment" page
+    When the user clicks on the remove expenses link
+    Then the user should be redirected to the "Are you sure you want to remove your expenses?" page
+    When the user clicks the Remove expenses button
     Then the user should be redirected to the "PAYE employment" page
     And the user clicks the return to overview button
     Then the user should be redirected to the "Your Income Tax Return" page

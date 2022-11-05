@@ -146,9 +146,16 @@ class CommonStepDef extends BaseStepDef {
 
   Given("""^no employment data exists$""") { () =>
     val selector = CommonPage.load("remove employment")
-    if (elementExists(selector)) {
+    while (elementExists(selector)) {
       clickOn(selector) // Click remove employment link
       clickOn(CommonPage.load("Remove employer")) // Click remove employer button
+    }
+  }
+
+  Given("""^no expenses data exists$""") { () =>
+    if (elementExists(CommonPage.load("remove expenses"))) {
+      CommonPage.clickOnLink("remove expenses")
+      CommonPage.clickOnButton("Remove expenses")
     }
   }
 }

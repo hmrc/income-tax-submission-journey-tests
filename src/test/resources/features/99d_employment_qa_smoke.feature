@@ -107,10 +107,10 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page
     And the user clicks the continue button
-    Then the user should be redirected to the "Did you repay any student loan?" page
+    Then the user should be redirected to the "Did you repay any student loans?" page
     When the user clicks both the student loan repayments and postgraduate loan repayments checkboxes
     And the user clicks the continue button
-    Then the user should be redirected to the "How much undergraduate loan did you repay?" page
+    Then the user should be redirected to the "How much student loan did you repay?" page
     When the user selects the amount field and enters a value of 117
     And the user clicks the continue button
     Then the user should be redirected to the "How much postgraduate loan did you repay?" page

@@ -64,7 +64,9 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
     When the user clicks on the remove claim link
-    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    Then the user should be redirected to the "Are you sure you want to remove this Jobseeker’s Allowance claim?" page
+    When the user clicks the Remove claim button
+    Then the user should be redirected to the "Jobseeker’s Allowance" page
 
   #--------------------------------------Agent--------------------------------------#
   Scenario: Agent User with pre populated State benefits data - Check client's State benefits In Year Deductions
@@ -129,4 +131,6 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
     When the user clicks on the remove claim link
-    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    Then the user should be redirected to the "Are you sure you want to remove this Jobseeker’s Allowance claim?" page
+    When the user clicks the Remove claim button
+    Then the user should be redirected to the "Jobseeker’s Allowance" page

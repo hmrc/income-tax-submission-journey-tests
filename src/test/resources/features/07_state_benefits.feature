@@ -59,7 +59,10 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "Did you have any tax taken off your Jobseeker’s Allowance between 1 January 2022 and 2 February 2022?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Did you have any tax taken off your Jobseeker’s Allowance between 1 January 2022 and 2 February 2022?" page
+    Then the user should be redirected to the "How much tax was taken off your Jobseeker’s Allowance between 1 January 2022 and 2 February 2022?" page
+    When the user selects the amount field and enters a value of 120.02
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much tax was taken off your Jobseeker’s Allowance between 1 January 2022 and 2 February 2022?" page
 
   #--------------------------------------Agent--------------------------------------#
   Scenario: Agent User with pre populated State benefits data - Check client's State benefits In Year Deductions
@@ -119,4 +122,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "Did your client have any tax taken off their Jobseeker’s Allowance between 1 January 2022 and 2 February 2022?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Did your client have any tax taken off their Jobseeker’s Allowance between 1 January 2022 and 2 February 2022?" page
+    Then the user should be redirected to the "How much tax was taken off your client’s Jobseeker’s Allowance between 1 January 2022 and 2 February 2022?" page
+    When the user selects the amount field and enters a value of 120.02
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much tax was taken off your client’s Jobseeker’s Allowance between 1 January 2022 and 2 February 2022?" page

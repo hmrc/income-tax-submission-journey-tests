@@ -195,6 +195,7 @@ trait CommonElements extends BasePage with Matchers{
     "claim End Month" -> By.id("value-for-month"),
     "claim End Year" -> By.id("value-for-year"),
     "remove claim" -> By.id("remove-link"),
+    "Remove claim" -> By.id("remove-claim-button-id"),
 
     //View Estimation Elements
     "Update tax calculation"   -> By.id("updateTaxCalculation"),

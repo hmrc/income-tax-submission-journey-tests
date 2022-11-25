@@ -10,7 +10,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2023/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 200         |
+      | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
       | Nino                | AC160000B   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -26,7 +26,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 200         |
+      | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
       | Nino                | AC160000B   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -73,7 +73,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /test-only/2023/additional-parameters?ClientNino=AC160000B&ClientMTDID=1234567890 |
       | Credential Strength | strong                                                                            |
-      | Confidence Level    | 200                                                                               |
+      | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
       | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
       | Identifier Name 1   | MTDITID                                                                           |
@@ -91,7 +91,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /test-only/2022/additional-parameters?ClientNino=AC160000B&ClientMTDID=1234567890 |
       | Credential Strength | strong                                                                            |
-      | Confidence Level    | 200                                                                               |
+      | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
       | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
       | Identifier Name 1   | MTDITID                                                                           |

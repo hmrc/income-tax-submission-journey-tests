@@ -9,7 +9,7 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 200         |
+      | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
       | Nino                | AB654311C   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -146,7 +146,7 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 200         |
+      | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
       | Nino                | AB654311C   |
       | Enrolment Key 1     | HMRC-MTD-IT |

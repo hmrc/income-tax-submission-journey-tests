@@ -8,7 +8,7 @@ Feature: Pensions Journeys in QA - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2023/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 200         |
+      | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
       | Nino                | AA000001A   |
       | Enrolment Key 1     | HMRC-MTD-IT |

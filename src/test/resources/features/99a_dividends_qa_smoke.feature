@@ -9,7 +9,7 @@ Feature: Smoke downstream Dividends Journeys to DES in QA - Income Tax Submissio
     When the user logs into the service with the following details
       | Redirect url        | /2023/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 200         |
+      | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
       | Nino                | AA575858A   |
       | Enrolment Key 1     | HMRC-MTD-IT |

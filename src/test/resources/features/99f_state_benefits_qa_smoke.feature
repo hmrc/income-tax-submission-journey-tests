@@ -9,7 +9,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 200         |
+      | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
       | Nino                | AC160000B   |
       | Enrolment Key 1     | HMRC-MTD-IT |

@@ -9,7 +9,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /test-only/2023/additional-parameters?ClientNino=AA133742A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                              |
-      | Confidence Level    | 200                                                                               |
+      | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
       | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
       | Identifier Name 1   | MTDITID                                                                           |
@@ -57,7 +57,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2023/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 200         |
+      | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -93,7 +93,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2023/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 200         |
+      | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
       | Nino                | AA637489D   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -113,7 +113,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 200         |
+      | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
       | Nino                | AA637489D   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -162,7 +162,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /test-only/2022/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                              |
-      | Confidence Level    | 200                                                                               |
+      | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
       | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
       | Identifier Name 1   | MTDITID                                                                           |
@@ -217,7 +217,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /test-only/2022/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                              |
-      | Confidence Level    | 200                                                                               |
+      | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
       | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
       | Identifier Name 1   | MTDITID                                                                           |
@@ -266,7 +266,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /test-only/2022/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                              |
-      | Confidence Level    | 200                                                                               |
+      | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
       | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
       | Identifier Name 1   | MTDITID                                                                           |
@@ -327,7 +327,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /test-only/2022/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                              |
-      | Confidence Level    | 200                                                                               |
+      | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
       | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
       | Identifier Name 1   | MTDITID                                                                           |
@@ -350,7 +350,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 200         |
+      | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -398,7 +398,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 200         |
+      | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -621,7 +621,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 200         |
+      | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -668,7 +668,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 200         |
+      | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
@@ -794,7 +794,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user logs into the service with the following details
       | Redirect url        | /2022/start |
       | Credential Strength | strong      |
-      | Confidence Level    | 200         |
+      | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
       | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |

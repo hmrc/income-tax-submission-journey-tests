@@ -9,7 +9,7 @@ Feature: Crystallisation Journeys - Income Tax Submission
     When the user logs into the service with the following details
       |Redirect url       |/2022/start                                          |
       |Credential Strength|strong                                               |
-      |Confidence Level   |200                                                  |
+      |Confidence Level   |250                                                  |
       |Affinity Group     |Individual                                           |
       |Nino               |AA000000A                                            |
       |Enrolment Key 1    |HMRC-MTD-IT                                          |
@@ -32,7 +32,7 @@ Feature: Crystallisation Journeys - Income Tax Submission
     When the user logs into the service with the following details
       |Redirect url               |/test-only/2022/additional-parameters?ClientNino=AA123459A&ClientMTDID=1234567890    |
       |Credential Strength        |weak                                                                                 |
-      |Confidence Level           |200                                                                                  |
+      |Confidence Level           |250                                                                                  |
       |Affinity Group             |Agent                                                                                |
       |Enrolment Key 1            |HMRC-AS-AGENT                                                                        |
       |Identifier Name 1          |AgentReferenceNumber                                                                 |

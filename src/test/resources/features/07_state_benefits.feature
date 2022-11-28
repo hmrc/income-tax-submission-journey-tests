@@ -68,6 +68,26 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user clicks the Remove claim button
     Then the user should be redirected to the "Jobseeker’s Allowance" page
 
+  Scenario: Individual User edits Jobseeker’s Allowance in session data EOY
+    When the user logs into the service with the following details
+      | Redirect url        | /2022/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AC160000B   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the State benefits link
+    Then the user should be redirected to the "State benefits" page
+    When the user clicks on the Jobseeker’s Allowance link
+    Then the user should be redirected to the "Jobseeker’s Allowance" page
+    When the user clicks on the first view link
+    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+
   #--------------------------------------Agent--------------------------------------#
   Scenario: Agent User with pre populated State benefits data - Check client's State benefits In Year Deductions
     When the user logs into the service with the following details
@@ -134,3 +154,25 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "Are you sure you want to remove this Jobseeker’s Allowance claim?" page
     When the user clicks the Remove claim button
     Then the user should be redirected to the "Jobseeker’s Allowance" page
+
+  Scenario: Agent User edits  Jobseeker’s Allowance in session data EOY
+    When the user logs into the service with the following details
+      | Redirect url        | /test-only/2022/additional-parameters?ClientNino=AC160000B&ClientMTDID=1234567890 |
+      | Credential Strength | strong                                                                            |
+      | Confidence Level    | 250                                                                               |
+      | Affinity Group      | Agent                                                                             |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
+      | Identifier Name 1   | MTDITID                                                                           |
+      | Identifier Value 1  | 1234567890                                                                        |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
+      | Identifier Name 2   | AgentReferenceNumber                                                              |
+      | Identifier Value 2  | XARN1234567                                                                       |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the State benefits link
+    Then the user should be redirected to the "State benefits" page
+    When the user clicks on the Jobseeker’s Allowance link
+    Then the user should be redirected to the "Jobseeker’s Allowance" page
+    When the user clicks on the first view link
+    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page

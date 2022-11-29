@@ -196,6 +196,7 @@ trait CommonElements extends BasePage with Matchers{
     "claim End Year" -> By.id("value-for-year"),
     "remove claim" -> By.id("remove-link"),
     "Remove claim" -> By.id("remove-claim-button-id"),
+    "first view" -> By.cssSelector("div.govuk-summary-list__row:nth-child(1) > div:nth-child(1) > dd:nth-child(3) > a:nth-child(1)"),
 
     //View Estimation Elements
     "Update tax calculation"   -> By.id("updateTaxCalculation"),

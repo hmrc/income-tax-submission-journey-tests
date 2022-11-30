@@ -67,6 +67,8 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "Are you sure you want to remove this Jobseeker’s Allowance claim?" page
     When the user clicks the Remove claim button
     Then the user should be redirected to the "Jobseeker’s Allowance" page
+    When the user clicks on the second view link
+    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
 
   Scenario: Individual User edits Jobseeker’s Allowance in session data EOY
     When the user logs into the service with the following details
@@ -154,6 +156,8 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "Are you sure you want to remove this Jobseeker’s Allowance claim?" page
     When the user clicks the Remove claim button
     Then the user should be redirected to the "Jobseeker’s Allowance" page
+    When the user clicks on the second view link
+    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
 
   Scenario: Agent User edits  Jobseeker’s Allowance in session data EOY
     When the user logs into the service with the following details

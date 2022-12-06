@@ -136,6 +136,8 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user selects the amount field and enters a value of 200.23
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    And the user clicks the state benefit save and continue button
+    Then the user should be redirected to the "Jobseeker’s Allowance" page
 
   #--------------------------------------Agent--------------------------------------#
   Scenario: Agent User with pre populated State benefits data - Check client's State benefits In Year Deductions
@@ -274,3 +276,5 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user selects the amount field and enters a value of 200.23
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    And the user clicks the state benefit save and continue button
+    Then the user should be redirected to the "Jobseeker’s Allowance" page

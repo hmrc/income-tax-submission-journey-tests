@@ -11,7 +11,7 @@ Feature: State Benefits Journeys - Income Tax Submission
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AC160000B   |
+      | Nino                | PW911433A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
@@ -54,5 +54,3 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "Are you sure you want to remove this Jobseeker’s Allowance claim?" page
     When the user clicks the Remove claim button
     Then the user should be redirected to the "Jobseeker’s Allowance" page
-    When the user clicks on the second view link
-    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page

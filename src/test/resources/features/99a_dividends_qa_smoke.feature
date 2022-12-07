@@ -1,5 +1,5 @@
 @smoke
-
+@ignore
 Feature: Smoke downstream Dividends Journeys to DES in QA - Income Tax Submission
 
   Background:
@@ -11,7 +11,7 @@ Feature: Smoke downstream Dividends Journeys to DES in QA - Income Tax Submissio
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AA575858A   |
+      | Nino                | PW911433A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 9876543210  |

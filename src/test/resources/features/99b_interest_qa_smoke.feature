@@ -1,5 +1,5 @@
 @smoke
-
+@ignore
 Feature: Smoke downstream Interest Journeys to DES in QA - Income Tax Submission
 
   Background:
@@ -7,14 +7,14 @@ Feature: Smoke downstream Interest Journeys to DES in QA - Income Tax Submission
 
   Scenario: Returning flow - Individual User with prior UK Untaxed & Taxed Interest, Review & change - Interest Smoke
     When the user logs into the service with the following details
-      |Redirect url       |/2022/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |250                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |CC555555D                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |9876543210                                           |
+      | Redirect url        | /2022/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | PW911433A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 9876543210  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page

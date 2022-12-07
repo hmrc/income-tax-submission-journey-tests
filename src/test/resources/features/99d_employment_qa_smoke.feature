@@ -11,7 +11,7 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AB654311C   |
+      | Nino                | PW911433A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
@@ -148,7 +148,7 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AB654311C   |
+      | Nino                | PW911433A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |

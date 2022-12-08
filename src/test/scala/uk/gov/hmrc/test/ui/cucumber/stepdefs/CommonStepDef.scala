@@ -158,4 +158,17 @@ class CommonStepDef extends BaseStepDef {
       CommonPage.clickOnButton("Remove expenses")
     }
   }
+
+  Given("""^no cis deductions data exists$""") { () =>
+    val contractor = CommonPage.load("first contractor")
+    while (elementExists(contractor)) {
+      clickOn(contractor) // Click on the contractor to navigate to deductions page
+      val removeLink = CommonPage.load("first month remove")
+      while (elementExists(removeLink)) {
+        clickOn(removeLink) // Click remove link for the first month
+        clickOn(CommonPage.load("Remove period")) // Click remove period button
+      }
+      clickOn(CommonPage.load("cis deductions")) //Navigate to cis deductions page
+    }
+  }
 }

@@ -172,6 +172,7 @@ trait CommonElements extends BasePage with Matchers{
     "return to cis summary"       -> By.id("return-to-summary-button-id"),
     "return to contractor"        -> By.id("return-to-contractor-button-id"),
     "first month change"          -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd:nth-child(2) > a"),
+    "first month remove"          -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd:nth-child(3) > a"),
     "change end of tax month"     -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd:nth-child(3) > a"),
     "change labour"               -> By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dd:nth-child(3) > a"),
     "change cis deduction"        -> By.cssSelector("#main-content > div > div > dl > div:nth-child(4) > dd:nth-child(3) > a"),
@@ -183,6 +184,9 @@ trait CommonElements extends BasePage with Matchers{
     "Add another CIS deduction"   -> By.id("add-another-link"),
     "Add a CIS deduction"         -> By.id("add-link"),
     "Tax month ending"            -> By.id("month"),
+    "Add a contractor"            -> By.id("add-contractor"),
+    "CIS save and continue"       -> By.id("save-and-continue-button-id"),
+    "Remove period"               -> By.id("remove-period-button-id"),
 
     //State Benefits Elements
     "State benefits" -> By.id("stateBenefits_link"),

@@ -22,6 +22,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "State benefits" page
     When the user clicks on the Jobseeker’s Allowance link
     Then the user should be redirected to the "Jobseeker’s Allowance" page
+    Given no claims exist
     When the user clicks the Add missing claim button
     Then the user should be redirected to the "When did you start getting Jobseeker’s Allowance?" page
     When the user selects the claim day field and enters a value of 01

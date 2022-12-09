@@ -1,5 +1,5 @@
 @smoke
-@ignore
+
 Feature: Smoke downstream Dividends Journeys to DES in QA - Income Tax Submission
 
   Background:

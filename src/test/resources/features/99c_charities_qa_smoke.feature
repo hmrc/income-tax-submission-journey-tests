@@ -1,5 +1,5 @@
 @smoke
-@ignore
+
 Feature: Smoke downstream Gift Aid Journeys to DES in QA - Income Tax Submission
 
   Background:

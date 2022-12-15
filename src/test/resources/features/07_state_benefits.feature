@@ -20,7 +20,9 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the State benefits link
-    Then the user should be redirected to the "Your Income Tax Return" page
+    Then the user should be redirected to the "State benefits" page
+    When the user clicks on the Jobseeker’s Allowance link
+    Then the user should be redirected to the "Jobseeker’s Allowance" page
 
   Scenario: Individual User adds Jobseeker’s Allowance in session data EOY
     When the user logs into the service with the following details
@@ -158,7 +160,9 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the State benefits link
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    Then the user should be redirected to the "State benefits" page
+    When the user clicks on the Jobseeker’s Allowance link
+    Then the user should be redirected to the "Jobseeker’s Allowance" page
 
   Scenario: Agent User adds  Jobseeker’s Allowance in session data EOY
     When the user logs into the service with the following details

@@ -200,6 +200,7 @@ trait CommonElements extends BasePage with Matchers{
     "Restore claim" -> By.id("restore-claim-button-id"),
     "first view" -> By.cssSelector("div.govuk-summary-list__row:nth-child(1) > div:nth-child(1) > dd:nth-child(3) > a:nth-child(1)"),
     "second view" -> By.cssSelector("div.govuk-summary-list__row:nth-child(2) > div:nth-child(1) > dd:nth-child(3) > a:nth-child(1)"),
+    "first view in year" -> By.cssSelector("div.govuk-summary-list__row:nth-child(1) > dd:nth-child(2) > a:nth-child(1)"),
     "state benefit change start date" -> By.cssSelector("div.govuk-summary-list__row:nth-child(1) > dd:nth-child(3) > a:nth-child(1) > span:nth-child(1)"),
     "state benefit change end date question" -> By.cssSelector("div.govuk-summary-list__row:nth-child(2) > dd:nth-child(3) > a:nth-child(1) > span:nth-child(1)"),
     "state benefit change end date" -> By.cssSelector("div.govuk-summary-list__row:nth-child(3) > dd:nth-child(3) > a:nth-child(1) > span:nth-child(1)"),

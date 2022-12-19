@@ -69,13 +69,22 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user selects the amount field and enters a value of 120.02
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    When the user clicks the state benefit save and continue button
+    Then the user should be redirected to the "Jobseeker’s Allowance" page
+    When the user clicks on the state benefit back link
+    Then the user should be redirected to the "Jobseeker’s Allowance" page
+    When the user clicks on the first view link
     When the user clicks on the remove claim link
     Then the user should be redirected to the "Are you sure you want to remove this Jobseeker’s Allowance claim?" page
     When the user clicks the Remove claim button
     Then the user should be redirected to the "Jobseeker’s Allowance" page
+    When the user clicks on the state benefit back link
+    Then the user should be redirected to the "Jobseeker’s Allowance" page
     When the user clicks on the second view link
     Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
     When the user clicks the Restore claim button
+    Then the user should be redirected to the "Jobseeker’s Allowance" page
+    When the user clicks on the state benefit back link
     Then the user should be redirected to the "Jobseeker’s Allowance" page
     When the user clicks the continue button
     Then the user should be redirected to the "Have you completed this section?" page
@@ -184,7 +193,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Jobseeker’s Allowance" page
 
-  Scenario: Agent User adds  Jobseeker’s Allowance in session data EOY
+  Scenario: Agent User adds Jobseeker’s Allowance in session data EOY
     When the user logs into the service with the following details
       | Redirect url        | /test-only/2022/additional-parameters?ClientNino=AC160000B&ClientMTDID=1234567890 |
       | Credential Strength | strong                                                                            |
@@ -227,13 +236,22 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user selects the amount field and enters a value of 120.02
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    When the user clicks the state benefit save and continue button
+    Then the user should be redirected to the "Jobseeker’s Allowance" page
+    When the user clicks on the state benefit back link
+    Then the user should be redirected to the "Jobseeker’s Allowance" page
+    When the user clicks on the first view link
     When the user clicks on the remove claim link
     Then the user should be redirected to the "Are you sure you want to remove this Jobseeker’s Allowance claim?" page
     When the user clicks the Remove claim button
     Then the user should be redirected to the "Jobseeker’s Allowance" page
+    When the user clicks on the state benefit back link
+    Then the user should be redirected to the "Jobseeker’s Allowance" page
     When the user clicks on the second view link
     Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
     When the user clicks the Restore claim button
+    Then the user should be redirected to the "Jobseeker’s Allowance" page
+    When the user clicks on the state benefit back link
     Then the user should be redirected to the "Jobseeker’s Allowance" page
     When the user clicks the continue button
     Then the user should be redirected to the "Have you completed this section?" page
@@ -248,7 +266,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "State benefits" page
 
-  Scenario: Agent User edits  Jobseeker’s Allowance in session data EOY
+  Scenario: Agent User edits Jobseeker’s Allowance in session data EOY
     When the user logs into the service with the following details
       | Redirect url        | /test-only/2022/additional-parameters?ClientNino=AC160000B&ClientMTDID=1234567890 |
       | Credential Strength | strong                                                                            |

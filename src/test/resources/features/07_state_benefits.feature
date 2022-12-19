@@ -77,6 +77,18 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
     When the user clicks the Restore claim button
     Then the user should be redirected to the "Jobseeker’s Allowance" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Have you completed this section?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "State benefits" page
+    When the user clicks on the Jobseeker’s Allowance link
+    Then the user should be redirected to the "Jobseeker’s Allowance" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Have you completed this section?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "State benefits" page
 
   Scenario: Individual User edits Jobseeker’s Allowance in session data EOY
     When the user logs into the service with the following details
@@ -223,6 +235,18 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
     When the user clicks the Restore claim button
     Then the user should be redirected to the "Jobseeker’s Allowance" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Have you completed this section?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "State benefits" page
+    When the user clicks on the Jobseeker’s Allowance link
+    Then the user should be redirected to the "Jobseeker’s Allowance" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Have you completed this section?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "State benefits" page
 
   Scenario: Agent User edits  Jobseeker’s Allowance in session data EOY
     When the user logs into the service with the following details

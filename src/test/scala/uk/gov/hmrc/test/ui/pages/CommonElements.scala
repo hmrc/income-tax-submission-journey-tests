@@ -208,6 +208,7 @@ trait CommonElements extends BasePage with Matchers{
     "state benefit change tax taken question" -> By.cssSelector("div.govuk-summary-list__row:nth-child(5) > dd:nth-child(3) > a:nth-child(1) > span:nth-child(1)"),
     "state benefit save and continue" -> By.id("save-and-continue-button-id"),
     "state benefit back" -> By.id("back-link"),
+    "Employment and Support Allowance" -> By.id("employmentSupportAllowance_link"),
 
     //View Estimation Elements
     "Update tax calculation"   -> By.id("updateTaxCalculation"),

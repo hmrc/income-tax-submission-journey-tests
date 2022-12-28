@@ -24,7 +24,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user clicks on the Jobseeker’s Allowance link
     Then the user should be redirected to the "Jobseeker’s Allowance" page
     When the user clicks on the first view in year link
-    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks the continue button
     Then the user should be redirected to the "Jobseeker’s Allowance" page
 
@@ -68,7 +68,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "How much tax was taken off your Jobseeker’s Allowance between 1 January 2022 and 2 February 2022?" page
     When the user selects the amount field and enters a value of 120.02
     And the user clicks the continue button
-    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks the state benefit save and continue button
     Then the user should be redirected to the "Jobseeker’s Allowance" page
     When the user clicks on the state benefit back link
@@ -81,7 +81,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user clicks on the state benefit back link
     Then the user should be redirected to the "Jobseeker’s Allowance" page
     When the user clicks on the second view link
-    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks the Restore claim button
     Then the user should be redirected to the "Jobseeker’s Allowance" page
     When the user clicks on the state benefit back link
@@ -117,19 +117,19 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user clicks on the Jobseeker’s Allowance link
     Then the user should be redirected to the "Jobseeker’s Allowance" page
     When the user clicks on the first view link
-    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change start date link
     Then the user should be redirected to the "When did you start getting Jobseeker’s Allowance?" page
     When the user selects the claim day field and enters a value of 04
     And the user selects the claim month field and enters a value of 08
     And the user selects the claim year field and enters a value of 2021
     And the user clicks the continue button
-    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change end date question link
     Then the user should be redirected to the "Did this claim end in the tax year ending 5 April 2022?" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change end date question link
     Then the user should be redirected to the "Did this claim end in the tax year ending 5 April 2022?" page
     When the user selects the yes radio button
@@ -139,24 +139,24 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user selects the claim month field and enters a value of 02
     And the user selects the claim year field and enters a value of 2022
     And the user clicks the continue button
-    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change end date link
     Then the user should be redirected to the "When did this claim end?" page
     When the user selects the claim day field and enters a value of 04
     And the user selects the claim month field and enters a value of 02
     And the user selects the claim year field and enters a value of 2022
     And the user clicks the continue button
-    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change amount link
     Then the user should be redirected to the "How much Jobseeker’s Allowance did you get between 4 August 2021 and 4 February 2022?" page
     When the user selects the amount field and enters a value of 110.02
     And the user clicks the continue button
-    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change tax taken question link
     Then the user should be redirected to the "Did you have any tax taken off your Jobseeker’s Allowance between 4 August 2021 and 4 February 2022?" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change tax taken question link
     Then the user should be redirected to the "Did you have any tax taken off your Jobseeker’s Allowance between 4 August 2021 and 4 February 2022?" page
     When the user selects the yes radio button
@@ -164,7 +164,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "How much tax was taken off your Jobseeker’s Allowance between 4 August 2021 and 4 February 2022?" page
     When the user selects the amount field and enters a value of 200.23
     And the user clicks the continue button
-    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     And the user clicks the state benefit save and continue button
     Then the user should be redirected to the "Jobseeker’s Allowance" page
 
@@ -189,7 +189,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user clicks on the Jobseeker’s Allowance link
     Then the user should be redirected to the "Jobseeker’s Allowance" page
     When the user clicks on the first view in year link
-    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks the continue button
     Then the user should be redirected to the "Jobseeker’s Allowance" page
 
@@ -235,7 +235,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "How much tax was taken off your client’s Jobseeker’s Allowance between 1 January 2022 and 2 February 2022?" page
     When the user selects the amount field and enters a value of 120.02
     And the user clicks the continue button
-    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks the state benefit save and continue button
     Then the user should be redirected to the "Jobseeker’s Allowance" page
     When the user clicks on the state benefit back link
@@ -248,7 +248,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user clicks on the state benefit back link
     Then the user should be redirected to the "Jobseeker’s Allowance" page
     When the user clicks on the second view link
-    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks the Restore claim button
     Then the user should be redirected to the "Jobseeker’s Allowance" page
     When the user clicks on the state benefit back link
@@ -286,19 +286,19 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user clicks on the Jobseeker’s Allowance link
     Then the user should be redirected to the "Jobseeker’s Allowance" page
     When the user clicks on the first view link
-    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change start date link
     Then the user should be redirected to the "When did your client start getting Jobseeker’s Allowance?" page
     When the user selects the claim day field and enters a value of 04
     And the user selects the claim month field and enters a value of 08
     And the user selects the claim year field and enters a value of 2021
     And the user clicks the continue button
-    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change end date question link
     Then the user should be redirected to the "Did this claim end in the tax year ending 5 April 2022?" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change end date question link
     Then the user should be redirected to the "Did this claim end in the tax year ending 5 April 2022?" page
     When the user selects the yes radio button
@@ -308,24 +308,24 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user selects the claim month field and enters a value of 02
     And the user selects the claim year field and enters a value of 2022
     And the user clicks the continue button
-    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change end date link
     Then the user should be redirected to the "When did this claim end?" page
     When the user selects the claim day field and enters a value of 04
     And the user selects the claim month field and enters a value of 02
     And the user selects the claim year field and enters a value of 2022
     And the user clicks the continue button
-    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change amount link
     Then the user should be redirected to the "How much Jobseeker’s Allowance did your client get between 4 August 2021 and 4 February 2022?" page
     When the user selects the amount field and enters a value of 110.02
     And the user clicks the continue button
-    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change tax taken question link
     Then the user should be redirected to the "Did your client have any tax taken off their Jobseeker’s Allowance between 4 August 2021 and 4 February 2022?" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change tax taken question link
     Then the user should be redirected to the "Did your client have any tax taken off their Jobseeker’s Allowance between 4 August 2021 and 4 February 2022?" page
     When the user selects the yes radio button
@@ -333,6 +333,6 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "How much tax was taken off your client’s Jobseeker’s Allowance between 4 August 2021 and 4 February 2022?" page
     When the user selects the amount field and enters a value of 200.23
     And the user clicks the continue button
-    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     And the user clicks the state benefit save and continue button
     Then the user should be redirected to the "Jobseeker’s Allowance" page

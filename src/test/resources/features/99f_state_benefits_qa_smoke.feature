@@ -46,11 +46,11 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "How much tax was taken off your Jobseeker’s Allowance between 1 January 2022 and 2 February 2022?" page
     When the user selects the amount field and enters a value of 120.02
     And the user clicks the continue button
-    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks the state benefit save and continue button
     Then the user should be redirected to the "Jobseeker’s Allowance" page
     When the user clicks on the first view link
-    Then the user should be redirected to the "Review Jobseeker’s allowance claim" page
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the remove claim link
     Then the user should be redirected to the "Are you sure you want to remove this Jobseeker’s Allowance claim?" page
     When the user clicks the Remove claim button

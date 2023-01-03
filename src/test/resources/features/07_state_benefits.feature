@@ -88,16 +88,6 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user clicks on the state benefit back link
     Then the user should be redirected to the "Jobseeker’s Allowance" page
     When the user clicks the continue button
-    Then the user should be redirected to the "Have you completed this section?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "State benefits" page
-    When the user clicks on the Jobseeker’s Allowance link
-    Then the user should be redirected to the "Jobseeker’s Allowance" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Have you completed this section?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
     Then the user should be redirected to the "State benefits" page
 
   Scenario: Individual User edits Jobseeker’s Allowance in session data EOY
@@ -255,16 +245,6 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user clicks on the state benefit back link
     Then the user should be redirected to the "Jobseeker’s Allowance" page
     When the user clicks the continue button
-    Then the user should be redirected to the "Have you completed this section?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "State benefits" page
-    When the user clicks on the Jobseeker’s Allowance link
-    Then the user should be redirected to the "Jobseeker’s Allowance" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Have you completed this section?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
     Then the user should be redirected to the "State benefits" page
 
   Scenario: Agent User edits Jobseeker’s Allowance in session data EOY
@@ -421,16 +401,6 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user clicks on the state benefit back link
     Then the user should be redirected to the "Employment and Support Allowance" page
     When the user clicks the continue button
-    Then the user should be redirected to the "Have you completed this section?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "State benefits" page
-    When the user clicks on the Employment and Support Allowance link
-    Then the user should be redirected to the "Employment and Support Allowance" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Have you completed this section?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
     Then the user should be redirected to the "State benefits" page
 
   Scenario: Individual User edits Employment and Support Allowance in session data EOY
@@ -588,16 +558,6 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user clicks on the state benefit back link
     Then the user should be redirected to the "Employment and Support Allowance" page
     When the user clicks the continue button
-    Then the user should be redirected to the "Have you completed this section?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "State benefits" page
-    When the user clicks on the Employment and Support Allowance link
-    Then the user should be redirected to the "Employment and Support Allowance" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Have you completed this section?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
     Then the user should be redirected to the "State benefits" page
 
   Scenario: Agent User edits Employment and Support Allowance in session data EOY

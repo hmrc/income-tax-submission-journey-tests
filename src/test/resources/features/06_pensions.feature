@@ -1,5 +1,5 @@
 @MVP @ZAP @pensions
-@ignore
+
 Feature: Pensions Journeys - Income Tax Submission
 
   Background:

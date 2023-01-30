@@ -23,7 +23,7 @@ Feature: Interest Journeys - Income Tax Submission
     When the user clicks the addInterest tailoring option
     And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the UK Interest link
+    When the user clicks on the interest link
     Then the user should be redirected to the "Did you get any interest from the UK?" page
     When the user selects the yes radio button
     And the user clicks the continue button
@@ -58,7 +58,7 @@ Feature: Interest Journeys - Income Tax Submission
     When the user clicks the addInterest tailoring option
     And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the UK Interest link
+    When the user clicks on the interest link
     Then the user should be redirected to the "Did your client get any interest from the UK?" page
     When the user selects the yes radio button
     And the user clicks the continue button
@@ -140,7 +140,7 @@ Feature: Interest Journeys - Income Tax Submission
     When the user clicks the addInterest tailoring option
     And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the UK Interest link
+    When the user clicks on the interest link
     Then the user should be redirected to the "Did your client get any interest from the UK?" page
     When the user selects the yes radio button
     And the user clicks the continue button
@@ -219,7 +219,7 @@ Feature: Interest Journeys - Income Tax Submission
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the UK Interest link
+    When the user clicks on the interest link
     Then the user should be redirected to the "Check your UK interest" page
     When the user clicks on the change uk untaxed interest accounts summary link
     Then the user should be redirected to the "Accounts with untaxed UK interest" page
@@ -270,7 +270,7 @@ Feature: Interest Journeys - Income Tax Submission
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the UK Interest link
+    When the user clicks on the interest link
     Then the user should be redirected to the "Check your client’s UK interest" page
     When the user clicks on the change uk untaxed interest accounts summary link
     Then the user should be redirected to the "Accounts with untaxed UK interest" page
@@ -324,7 +324,7 @@ Feature: Interest Journeys - Income Tax Submission
     When the user clicks the addInterest tailoring option
     And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the UK Interest link
+    When the user clicks on the interest link
     Then the user should be redirected to the "Did you get any interest from the UK?" page
     When the user selects the yes radio button
     And the user clicks the continue button
@@ -377,7 +377,7 @@ Feature: Interest Journeys - Income Tax Submission
     When the user clicks the addInterest tailoring option
     And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the UK Interest link
+    When the user clicks on the interest link
     Then the user should be redirected to the "Did your client get any interest from the UK?" page
     When the user selects the yes radio button
     And the user clicks the continue button
@@ -430,7 +430,7 @@ Feature: Interest Journeys - Income Tax Submission
     When the user clicks the addInterest tailoring option
     And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the UK Interest link
+    When the user clicks on the interest link
     Then the user should be redirected to the "Did you get any interest from the UK?" page
     When the user selects the no radio button
     And the user clicks the continue button
@@ -454,7 +454,7 @@ Feature: Interest Journeys - Income Tax Submission
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the UK Interest link
+    When the user clicks on the interest link
     Then the user should be redirected to the "Check your client’s UK interest" page
     When the user clicks on the change interest from the uk summary link
     Then the user should be redirected to the "Did your client get any interest from the UK?" page

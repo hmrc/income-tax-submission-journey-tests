@@ -67,7 +67,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "How much tax was taken off your Jobseeker’s Allowance between 1 January 2022 and 2 February 2022?" page
-    When the user selects the amount field and enters a value of 120.02
+    When the user selects the amount field and enters a value of 100.02
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks the state benefit save and continue button
@@ -153,7 +153,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "How much tax was taken off your Jobseeker’s Allowance between 4 August 2021 and 4 February 2022?" page
-    When the user selects the amount field and enters a value of 200.23
+    When the user selects the amount field and enters a value of 100.23
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     And the user clicks the state benefit save and continue button
@@ -224,7 +224,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "How much tax was taken off your client’s Jobseeker’s Allowance between 1 January 2022 and 2 February 2022?" page
-    When the user selects the amount field and enters a value of 120.02
+    When the user selects the amount field and enters a value of 100.02
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks the state benefit save and continue button
@@ -312,7 +312,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "How much tax was taken off your client’s Jobseeker’s Allowance between 4 August 2021 and 4 February 2022?" page
-    When the user selects the amount field and enters a value of 200.23
+    When the user selects the amount field and enters a value of 100.23
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     And the user clicks the state benefit save and continue button
@@ -380,7 +380,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "How much tax was taken off your Employment and Support Allowance between 1 January 2022 and 2 February 2022?" page
-    When the user selects the amount field and enters a value of 120.02
+    When the user selects the amount field and enters a value of 100.02
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     When the user clicks the state benefit save and continue button
@@ -466,7 +466,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "How much tax was taken off your Employment and Support Allowance between 2 January 2022 and 4 February 2022?" page
-    When the user selects the amount field and enters a value of 200.23
+    When the user selects the amount field and enters a value of 100.23
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     And the user clicks the state benefit save and continue button
@@ -537,7 +537,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "How much tax was taken off your client’s Employment and Support Allowance between 1 January 2022 and 2 February 2022?" page
-    When the user selects the amount field and enters a value of 120.02
+    When the user selects the amount field and enters a value of 100.02
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     When the user clicks the state benefit save and continue button
@@ -625,7 +625,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "How much tax was taken off your client’s Employment and Support Allowance between 2 January 2022 and 4 February 2022?" page
-    When the user selects the amount field and enters a value of 200.23
+    When the user selects the amount field and enters a value of 100.23
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     And the user clicks the state benefit save and continue button

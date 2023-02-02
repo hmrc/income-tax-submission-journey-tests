@@ -34,6 +34,7 @@ trait CommonElements extends BasePage with Matchers{
     "back"                 -> By.cssSelector("a.govuk-back-link"),
     "remove account"       -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(1) > span.hmrc-add-to-a-list__remove > a"),
     "change"               -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li > span.hmrc-add-to-a-list__change > a"),
+    "return to overview"   -> By.id("returnToOverviewPageBtn"),
 
     //Tailoring Elements
     "addSections"                   -> By.id("addSectionsLink"),
@@ -53,7 +54,9 @@ trait CommonElements extends BasePage with Matchers{
     "change other dividends amount" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dd.govuk-summary-list__actions > a"),
 
     //Interest Elements
-    "interest"                          -> By.id("interest_link"),
+    "Interest from savings and securities"  -> By.id("interest_link"),
+    "UK Interest"  -> By.cssSelector("#main-content > div > div > ol > li:nth-child(1) > span.app-task-list__task-name > a"),
+    "Interest from gilt-edged or accrued income securities"  -> By.cssSelector("#main-content > div > div > ol > li:nth-child(2) > span.app-task-list__task-name > a"),
     "UK untaxed interest amount earned" -> By.id("untaxedAmount"),
     "UK taxed interest amount earned"   -> By.id("taxedAmount"),
     "UK untaxed interest updated amount earned" -> By.id("amount"),
@@ -84,7 +87,6 @@ trait CommonElements extends BasePage with Matchers{
     "view first employer"              -> By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(1) > dd > a"),
     "change employer"                  -> By.cssSelector("#main-content > div > div > dl:nth-child(4) > div > dd.govuk-summary-list__actions.govuk-\\!-width-full > ul > li:nth-child(1) > a"),
     "return to employment summary"     -> By.id("returnToEmploymentSummaryBtn"),
-    "return to overview"               -> By.id("returnToOverviewPageBtn"),
     "return to employer"               -> By.id("returnToEmployerBtn"),
     "Clickable employment"             -> By.id("employment_link"),
     "Employer name"                    -> By.id("name"),

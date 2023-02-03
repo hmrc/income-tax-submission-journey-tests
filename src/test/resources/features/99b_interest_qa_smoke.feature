@@ -18,7 +18,7 @@ Feature: Smoke downstream Interest Journeys to DES in QA - Income Tax Submission
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the interest link
+    When the user clicks on the UK Interest link
     Then the user should be redirected to the "Check your UK interest" page
     When the user clicks on the change uk untaxed interest accounts summary link
     Then the user should be redirected to the "Accounts with untaxed UK interest" page

@@ -1,6 +1,6 @@
 @additional_info
 
-Feature: Interest Journeys - Income Tax Submission
+Feature: Additional Information Journeys (Interest Securities) - Income Tax Submission
 
   Background:
     Given the user navigates to the auth login page

@@ -39,4 +39,9 @@ class CYAStepDef extends BaseStepDef {
     CommonPage.clickBySelector(s"#main-content > div > div > dl:nth-of-type(${sectionMaps(section)}) > div:nth-child($position) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a")
   }
 
+  Then("""^the status on the page is "(.*)"$""") { (status: String) =>
+    val selector = CommonPage.load(status)
+    CommonPage.elementExists(selector)
+  }
+
 }

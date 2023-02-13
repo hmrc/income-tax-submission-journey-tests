@@ -81,7 +81,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "Jobseeker’s Allowance" page
     When the user clicks on the state benefit back link
     Then the user should be redirected to the "Jobseeker’s Allowance" page
-    When the user clicks on the second view link
+    When the user clicks on the first ignored view link
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks the Restore claim button
     Then the user should be redirected to the "Jobseeker’s Allowance" page
@@ -238,7 +238,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "Jobseeker’s Allowance" page
     When the user clicks on the state benefit back link
     Then the user should be redirected to the "Jobseeker’s Allowance" page
-    When the user clicks on the second view link
+    When the user clicks on the first ignored view link
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks the Restore claim button
     Then the user should be redirected to the "Jobseeker’s Allowance" page
@@ -394,7 +394,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment and Support Allowance" page
     When the user clicks on the state benefit back link
     Then the user should be redirected to the "Employment and Support Allowance" page
-    When the user clicks on the second view link
+    When the user clicks on the first ignored view link
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     When the user clicks the Restore claim button
     Then the user should be redirected to the "Employment and Support Allowance" page
@@ -551,7 +551,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment and Support Allowance" page
     When the user clicks on the state benefit back link
     Then the user should be redirected to the "Employment and Support Allowance" page
-    When the user clicks on the second view link
+    When the user clicks on the first ignored view link
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     When the user clicks the Restore claim button
     Then the user should be redirected to the "Employment and Support Allowance" page

@@ -52,7 +52,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user selects the claim month field and enters a value of 01
     And the user selects the claim year field and enters a value of 2022
     And the user clicks the continue button
-    Then the user should be redirected to the "Did this claim end in the tax year ending 5 April 2022?" page
+    Then the user should be redirected to the "Did this claim end between 1 January 2022 and 5 April 2022?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "When did this claim end?" page
@@ -117,12 +117,12 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change end date question link
-    Then the user should be redirected to the "Did this claim end in the tax year ending 5 April 2022?" page
+    Then the user should be redirected to the "Did this claim end between 4 August 2021 and 5 April 2022?" page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change end date question link
-    Then the user should be redirected to the "Did this claim end in the tax year ending 5 April 2022?" page
+    Then the user should be redirected to the "Did this claim end between 4 August 2021 and 5 April 2022?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "When did this claim end?" page
@@ -209,7 +209,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user selects the claim month field and enters a value of 01
     And the user selects the claim year field and enters a value of 2022
     And the user clicks the continue button
-    Then the user should be redirected to the "Did this claim end in the tax year ending 5 April 2022?" page
+    Then the user should be redirected to the "Did this claim end between 1 January 2022 and 5 April 2022?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "When did this claim end?" page
@@ -276,12 +276,12 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change end date question link
-    Then the user should be redirected to the "Did this claim end in the tax year ending 5 April 2022?" page
+    Then the user should be redirected to the "Did this claim end between 4 August 2021 and 5 April 2022?" page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change end date question link
-    Then the user should be redirected to the "Did this claim end in the tax year ending 5 April 2022?" page
+    Then the user should be redirected to the "Did this claim end between 4 August 2021 and 5 April 2022?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "When did this claim end?" page
@@ -365,7 +365,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user selects the claim month field and enters a value of 01
     And the user selects the claim year field and enters a value of 2022
     And the user clicks the continue button
-    Then the user should be redirected to the "Did this claim end in the tax year ending 5 April 2022?" page
+    Then the user should be redirected to the "Did this claim end between 1 January 2022 and 5 April 2022?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "When did this claim end?" page
@@ -430,12 +430,12 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     When the user clicks on the state benefit change end date question link
-    Then the user should be redirected to the "Did this claim end in the tax year ending 5 April 2022?" page
+    Then the user should be redirected to the "Did this claim end between 2 January 2022 and 5 April 2022?" page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     When the user clicks on the state benefit change end date question link
-    Then the user should be redirected to the "Did this claim end in the tax year ending 5 April 2022?" page
+    Then the user should be redirected to the "Did this claim end between 2 January 2022 and 5 April 2022?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "When did this claim end?" page
@@ -522,7 +522,7 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user selects the claim month field and enters a value of 01
     And the user selects the claim year field and enters a value of 2022
     And the user clicks the continue button
-    Then the user should be redirected to the "Did this claim end in the tax year ending 5 April 2022?" page
+    Then the user should be redirected to the "Did this claim end between 1 January 2022 and 5 April 2022?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "When did this claim end?" page
@@ -589,12 +589,12 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     When the user clicks on the state benefit change end date question link
-    Then the user should be redirected to the "Did this claim end in the tax year ending 5 April 2022?" page
+    Then the user should be redirected to the "Did this claim end between 2 January 2022 and 5 April 2022?" page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     When the user clicks on the state benefit change end date question link
-    Then the user should be redirected to the "Did this claim end in the tax year ending 5 April 2022?" page
+    Then the user should be redirected to the "Did this claim end between 2 January 2022 and 5 April 2022?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "When did this claim end?" page

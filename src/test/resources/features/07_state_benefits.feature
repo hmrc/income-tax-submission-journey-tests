@@ -60,11 +60,11 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user selects the claim month field and enters a value of 02
     And the user selects the claim year field and enters a value of 2022
     And the user clicks the continue button
-    Then the user should be redirected to the "How much Jobseeker’s Allowance did you get between 1 January 2022 and 2 February 2022?" page
-    When the user selects the amount field and enters a value of 110.02
-    And the user clicks the continue button
     Then the user should be redirected to the "Did you have any tax taken off your Jobseeker’s Allowance between 1 January 2022 and 2 February 2022?" page
     When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much Jobseeker’s Allowance did you get between 1 January 2022 and 2 February 2022?" page
+    When the user selects the amount field and enters a value of 110.02
     And the user clicks the continue button
     Then the user should be redirected to the "How much tax was taken off your Jobseeker’s Allowance between 1 January 2022 and 2 February 2022?" page
     When the user selects the amount field and enters a value of 100.02
@@ -217,11 +217,11 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user selects the claim month field and enters a value of 02
     And the user selects the claim year field and enters a value of 2022
     And the user clicks the continue button
-    Then the user should be redirected to the "How much Jobseeker’s Allowance did your client get between 1 January 2022 and 2 February 2022?" page
-    When the user selects the amount field and enters a value of 110.02
-    And the user clicks the continue button
     Then the user should be redirected to the "Did your client have any tax taken off their Jobseeker’s Allowance between 1 January 2022 and 2 February 2022?" page
     When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much Jobseeker’s Allowance did your client get between 1 January 2022 and 2 February 2022?" page
+    When the user selects the amount field and enters a value of 110.02
     And the user clicks the continue button
     Then the user should be redirected to the "How much tax was taken off your client’s Jobseeker’s Allowance between 1 January 2022 and 2 February 2022?" page
     When the user selects the amount field and enters a value of 100.02
@@ -373,11 +373,11 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user selects the claim month field and enters a value of 02
     And the user selects the claim year field and enters a value of 2022
     And the user clicks the continue button
-    Then the user should be redirected to the "How much Employment and Support Allowance did you get between 1 January 2022 and 2 February 2022?" page
-    When the user selects the amount field and enters a value of 110.02
-    And the user clicks the continue button
     Then the user should be redirected to the "Did you have any tax taken off your Employment and Support Allowance between 1 January 2022 and 2 February 2022?" page
     When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much Employment and Support Allowance did you get between 1 January 2022 and 2 February 2022?" page
+    When the user selects the amount field and enters a value of 110.02
     And the user clicks the continue button
     Then the user should be redirected to the "How much tax was taken off your Employment and Support Allowance between 1 January 2022 and 2 February 2022?" page
     When the user selects the amount field and enters a value of 100.02
@@ -530,11 +530,11 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user selects the claim month field and enters a value of 02
     And the user selects the claim year field and enters a value of 2022
     And the user clicks the continue button
-    Then the user should be redirected to the "How much Employment and Support Allowance did your client get between 1 January 2022 and 2 February 2022?" page
-    When the user selects the amount field and enters a value of 110.02
-    And the user clicks the continue button
     Then the user should be redirected to the "Did your client have any tax taken off their Employment and Support Allowance between 1 January 2022 and 2 February 2022?" page
     When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much Employment and Support Allowance did your client get between 1 January 2022 and 2 February 2022?" page
+    When the user selects the amount field and enters a value of 110.02
     And the user clicks the continue button
     Then the user should be redirected to the "How much tax was taken off your client’s Employment and Support Allowance between 1 January 2022 and 2 February 2022?" page
     When the user selects the amount field and enters a value of 100.02

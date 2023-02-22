@@ -159,6 +159,54 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user clicks the state benefit save and continue button
     Then the user should be redirected to the "Jobseeker’s Allowance" page
 
+  Scenario: Individual User checks flow is correct for EOY
+    When the user logs into the service with the following details
+      | Redirect url        | /2022/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AC160000B   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the State benefits link
+    Then the user should be redirected to the "State benefits" page
+    When the user clicks on the Jobseeker’s Allowance link
+    Then the user should be redirected to the "Jobseeker’s Allowance" page
+    When the user clicks the Add missing claim button
+    Then the user should be redirected to the "When did you start getting Jobseeker’s Allowance?" page
+    When the user selects the claim day field and enters a value of 01
+    And the user selects the claim month field and enters a value of 01
+    And the user selects the claim year field and enters a value of 2022
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did this claim end between 1 January 2022 and 5 April 2022?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "When did this claim end?" page
+    When the user selects the claim day field and enters a value of 02
+    And the user selects the claim month field and enters a value of 02
+    And the user selects the claim year field and enters a value of 2022
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you have any tax taken off your Jobseeker’s Allowance between 1 January 2022 and 2 February 2022?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much Jobseeker’s Allowance did you get between 1 January 2022 and 2 February 2022?" page
+    When the user selects the amount field and enters a value of 110.02
+    And the user clicks the continue button
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
+    When the user clicks on the state benefit back link
+    And the user clicks on the state benefit back link
+    Then the user should be redirected to the "Did you have any tax taken off your Jobseeker’s Allowance between 1 January 2022 and 2 February 2022?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much tax was taken off your Jobseeker’s Allowance between 1 January 2022 and 2 February 2022?" page
+    When the user selects the amount field and enters a value of 100.02
+    And the user clicks the continue button
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
+
   #--------------------------------------Agent--------------------------------------#
   Scenario: Agent User with pre populated State benefits data - Check client's State benefits In Year Deductions
     When the user logs into the service with the following details

@@ -138,14 +138,14 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user selects the claim year field and enters a value of 2022
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
-    When the user clicks on the state benefit change amount link
-    Then the user should be redirected to the "How much Jobseeker’s Allowance did you get between 4 August 2021 and 4 February 2022?" page
-    When the user selects the amount field and enters a value of 510.02
-    And the user clicks the continue button
-    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change tax taken question link
     Then the user should be redirected to the "Did you have any tax taken off your Jobseeker’s Allowance between 4 August 2021 and 4 February 2022?" page
     When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
+    When the user clicks on the state benefit change amount link
+    Then the user should be redirected to the "How much Jobseeker’s Allowance did you get between 4 August 2021 and 4 February 2022?" page
+    When the user selects the amount field and enters a value of 510.02
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change tax taken question link
@@ -345,14 +345,14 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user selects the claim year field and enters a value of 2022
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
-    When the user clicks on the state benefit change amount link
-    Then the user should be redirected to the "How much Jobseeker’s Allowance did your client get between 4 August 2021 and 4 February 2022?" page
-    When the user selects the amount field and enters a value of 510.02
-    And the user clicks the continue button
-    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change tax taken question link
     Then the user should be redirected to the "Did your client have any tax taken off their Jobseeker’s Allowance between 4 August 2021 and 4 February 2022?" page
     When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
+    When the user clicks on the state benefit change amount link
+    Then the user should be redirected to the "How much Jobseeker’s Allowance did your client get between 4 August 2021 and 4 February 2022?" page
+    When the user selects the amount field and enters a value of 510.02
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change tax taken question link
@@ -499,14 +499,14 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user selects the claim year field and enters a value of 2022
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
-    When the user clicks on the state benefit change amount link
-    Then the user should be redirected to the "How much Employment and Support Allowance did you get between 2 January 2022 and 4 February 2022?" page
-    When the user selects the amount field and enters a value of 5100.02
-    And the user clicks the continue button
-    Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     When the user clicks on the state benefit change tax taken question link
     Then the user should be redirected to the "Did you have any tax taken off your Employment and Support Allowance between 2 January 2022 and 4 February 2022?" page
     When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Review Employment and Support Allowance claim" page
+    When the user clicks on the state benefit change amount link
+    Then the user should be redirected to the "How much Employment and Support Allowance did you get between 2 January 2022 and 4 February 2022?" page
+    When the user selects the amount field and enters a value of 5100.02
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     When the user clicks on the state benefit change tax taken question link
@@ -658,14 +658,14 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user selects the claim year field and enters a value of 2022
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
-    When the user clicks on the state benefit change amount link
-    Then the user should be redirected to the "How much Employment and Support Allowance did your client get between 2 January 2022 and 4 February 2022?" page
-    When the user selects the amount field and enters a value of 5100.02
-    And the user clicks the continue button
-    Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     When the user clicks on the state benefit change tax taken question link
     Then the user should be redirected to the "Did your client have any tax taken off their Employment and Support Allowance between 2 January 2022 and 4 February 2022?" page
     When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Review Employment and Support Allowance claim" page
+    When the user clicks on the state benefit change amount link
+    Then the user should be redirected to the "How much Employment and Support Allowance did your client get between 2 January 2022 and 4 February 2022?" page
+    When the user selects the amount field and enters a value of 5100.02
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     When the user clicks on the state benefit change tax taken question link

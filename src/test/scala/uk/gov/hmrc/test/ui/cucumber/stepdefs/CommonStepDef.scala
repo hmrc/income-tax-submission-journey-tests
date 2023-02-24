@@ -29,7 +29,7 @@ class CommonStepDef extends BaseStepDef {
   val govUkExtension = "GOV.UK"
 
   Then("""^the user should be redirected to the "(.*)" page$""") { (title: String) =>
-    driver.getTitle should be(s"$title - $serviceName - $govUkExtension")
+    driver.getTitle.replace("\u00A0", " ") should be(s"$title - $serviceName - $govUkExtension")
   }
 
   Then("""^the user should be redirected to V&C "(.*)" page$""") { (title: String) =>

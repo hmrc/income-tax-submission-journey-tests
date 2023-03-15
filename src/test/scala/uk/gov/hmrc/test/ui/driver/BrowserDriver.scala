@@ -30,7 +30,6 @@ trait BrowserDriver extends LazyLogging {
       val options = new ChromeOptions
       options.addArguments("--remote-allow-origins=*")
       SingletonDriver.getInstance(Some(options))
-    case "firefox" => SingletonDriver.getInstance()
-    case _ => throw new RuntimeException("Browser unknown or not set!")
+    case _ => SingletonDriver.getInstance()
   }
 }

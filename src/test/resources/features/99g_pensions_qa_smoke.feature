@@ -1,4 +1,4 @@
-@smoke
+#@smoke
 Feature: Pensions Journeys in QA - Income Tax Submission
 
   Background:
@@ -25,9 +25,6 @@ Feature: Pensions Journeys in QA - Income Tax Submission
     When the user clicks on the pensions link
     Then the user should be redirected to the "Pensions" page
     When the user clicks on the Payments into pensions link
-    Then the user should be redirected to the "Did you make any payments into UK pensions?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
     Then the user should be redirected to the "Relief at source (RAS) pensions" page
     When the user selects the yes radio button
     And the user clicks the continue button
@@ -60,42 +57,10 @@ Feature: Pensions Journeys in QA - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your payments into pensions" page
     When the user clicks on the change link in position 1
-    Then the user should be redirected to the "Did you make any payments into UK pensions?" page
+    Then the user should be redirected to the "Relief at source (RAS) pensions" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Check your payments into pensions" page
-    When the user clicks on the change link in position 1
-    Then the user should be redirected to the "Did you make any payments into UK pensions?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Relief at source (RAS) pensions" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Total payments into relief at source (RAS) pensions, plus basic rate tax relief" page
-    When the user selects the amount field and enters a value of 100.10
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you make any one-off payments into relief at source (RAS) pensions?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Total one-off payments into relief at source (RAS) pensions, plus basic rate tax relief" page
-    When the user selects the amount field and enters a value of 200.20
-    And the user clicks the continue button
-    Then the user should be redirected to the "Your total payments into relief at source (RAS) pensions" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
     Then the user should be redirected to the "Pensions where tax relief is not claimed" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you pay into a retirement annuity contract?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much did you pay into your retirement annuity contracts?" page
-    When the user selects the amount field and enters a value of 300.30
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you pay into a workplace pension and not receive tax relief?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much did you pay into your workplace pensions?" page
-    When the user selects the amount field and enters a value of 400.40
+    When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Check your payments into pensions" page

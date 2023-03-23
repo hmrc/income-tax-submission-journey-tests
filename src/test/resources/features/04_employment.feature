@@ -133,7 +133,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "What’s the name of your employer?" page
     When the user selects the Employer name field and enters a value of Bear’s Blue House LTD
     And the user clicks the continue button
-    Then the user should be redirected to the "What’s the PAYE reference of your employer?" page
+    Then the user should be redirected to the "What is Bear’s Blue House LTD’s employer PAYE reference? (optional)" page
     When the user selects the PAYE reference field and enters a value of 123/AB456
     And the user clicks the continue button
     Then the user should be redirected to the "Did you leave this employer in the tax year?" page
@@ -191,7 +191,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "What’s the name of your client’s employer?" page
     When the user selects the Employer name field and enters a value of Bear’s Blue House LTD
     And the user clicks the continue button
-    Then the user should be redirected to the "What’s the PAYE reference of your client’s employer?" page
+    Then the user should be redirected to the "What is Bear’s Blue House LTD’s employer PAYE reference? (optional)" page
     When the user selects the PAYE reference field and enters a value of 123/AB456
     And the user clicks the continue button
     Then the user should be redirected to the "Did your client leave this employer in the tax year?" page
@@ -237,7 +237,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "What’s the name of your client’s employer?" page
     When the user selects the Employer name field and enters a value of Bear’s Blue House LTD
     And the user clicks the continue button
-    Then the user should be redirected to the "What’s the PAYE reference of your client’s employer?" page
+    Then the user should be redirected to the "What is Bear’s Blue House LTD’s employer PAYE reference? (optional)" page
     When the user selects the PAYE reference field and enters a value of 123/AB456
     And the user clicks the continue button
     Then the user should be redirected to the "Did your client leave this employer in the tax year?" page
@@ -301,7 +301,7 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page
     When the user clicks on the change PAYE reference link
-    Then the user should be redirected to the "What’s the PAYE reference of your client’s employer?" page
+    Then the user should be redirected to the "What is Mishima Zaibatsu’s employer PAYE reference? (optional)" page
     When the user selects the PAYE reference field and enters a value of 777/7777
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page

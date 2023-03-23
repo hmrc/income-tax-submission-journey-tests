@@ -32,7 +32,7 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     Then the user should be redirected to the "What’s the name of your employer?" page
     When the user selects the Employer name field and enters a value of Bear’s Blue House LTD
     And the user clicks the continue button
-    Then the user should be redirected to the "What’s the PAYE reference of your employer?" page
+    Then the user should be redirected to the "What is Bear’s Blue House LTD’s employer PAYE reference? (optional)" page
     When the user selects the PAYE reference field and enters a value of 123/AB456
     And the user clicks the continue button
     Then the user should be redirected to the "Did you leave this employer in the tax year?" page

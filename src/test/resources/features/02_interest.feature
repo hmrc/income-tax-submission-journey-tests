@@ -159,17 +159,17 @@ Feature: Interest Journeys - Income Tax Submission
     And the user selects the UK untaxed interest amount earned field and enters a value of 1000
     And the user clicks the continue button
     Then the user should be redirected to the "Accounts with untaxed UK interest" page
-    When the user clicks on the remove account link
+    When the user clicks on the remove interest link
     Then the user should be redirected to the "Are you sure you want to remove this account?" page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Accounts with untaxed UK interest" page
-    When the user clicks on the remove account link
+    When the user clicks on the remove interest link
     Then the user should be redirected to the "Are you sure you want to remove this account?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Accounts with untaxed UK interest" page
-    When the user clicks on the remove account link
+    When the user clicks on the remove interest link
     Then the user should be redirected to the "Are you sure you want to remove this account?" page
     When the user selects the yes radio button
     And the user clicks the continue button
@@ -188,17 +188,17 @@ Feature: Interest Journeys - Income Tax Submission
     And the user selects the UK taxed interest amount earned field and enters a value of 500
     And the user clicks the continue button
     Then the user should be redirected to the "Accounts with taxed UK interest" page
-    When the user clicks on the remove account link
+    When the user clicks on the remove interest link
     Then the user should be redirected to the "Are you sure you want to remove this account?" page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Accounts with taxed UK interest" page
-    When the user clicks on the remove account link
+    When the user clicks on the remove interest link
     Then the user should be redirected to the "Are you sure you want to remove this account?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Accounts with taxed UK interest" page
-    When the user clicks on the remove account link
+    When the user clicks on the remove interest link
     Then the user should be redirected to the "Are you sure you want to remove this account?" page
     When the user selects the yes radio button
     And the user clicks the continue button

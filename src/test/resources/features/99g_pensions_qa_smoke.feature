@@ -1,4 +1,4 @@
-#@smoke
+@smoke
 Feature: Pensions Journeys in QA - Income Tax Submission
 
   Background:
@@ -60,6 +60,8 @@ Feature: Pensions Journeys in QA - Income Tax Submission
     Then the user should be redirected to the "Relief at source (RAS) pensions" page
     When the user selects the no radio button
     And the user clicks the continue button
+    Then the user should be redirected to the "Check your payments into pensions" page
+    When the user clicks on the change link in position 2
     Then the user should be redirected to the "Pensions where tax relief is not claimed" page
     When the user selects the no radio button
     And the user clicks the continue button

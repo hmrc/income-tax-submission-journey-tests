@@ -197,21 +197,22 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Did your client leave this employer in the tax year?" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "When did your client start working for their employer?" page
+    Then the user should be redirected to the "When did your client start working at Bear’s Blue House LTD?" page
     When the user selects the Day field and enters a value of 14
     And the user selects the Month field and enters a value of 07
     And the user selects the Year field and enters a value of 2012
     And the user clicks the continue button
-    Then the user should be redirected to the "What’s your client’s payroll ID for this employment?" page
-    When the user selects the Payroll id field and enters a value of 123456
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much did your client’s employer pay them?" page
-    When the user selects the Pay field and enters a value of 2000.54
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much UK tax was taken from your client’s earnings?" page
-    When the user selects the Tax field and enters a value of 20.54
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your client’s employment details" page
+    Then the user should be redirected to the "Did your client leave this employer in the tax year?" page
+# TODO: replace these lines when all the income-tax-employment-frontend tickets for the new journey are complete
+#    When the user selects the Payroll id field and enters a value of 123456
+#    And the user clicks the continue button
+#    Then the user should be redirected to the "How much did your client’s employer pay them?" page
+#    When the user selects the Pay field and enters a value of 2000.54
+#    And the user clicks the continue button
+#    Then the user should be redirected to the "How much UK tax was taken from your client’s earnings?" page
+#    When the user selects the Tax field and enters a value of 20.54
+#    And the user clicks the continue button
+#    Then the user should be redirected to the "Check your client’s employment details" page
 
   Scenario: Agent user with at least one prior employment adds a new Employment and yes to "Did your client leave this employer in the tax year?"
     When the user logs into the service with the following details
@@ -289,7 +290,7 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page
     When the user clicks on the change start date link
-    Then the user should be redirected to the "When did your client start working for their employer?" page
+    Then the user should be redirected to the "When did your client start working at Mishima Zaibatsu?" page
     When the user selects the Day field and enters a value of 14
     And the user selects the Month field and enters a value of 07
     And the user selects the Year field and enters a value of 2012

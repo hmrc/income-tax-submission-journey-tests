@@ -147,7 +147,7 @@ Feature: Employment Journeys - Income Tax Submission
     And the user selects the End Month field and enters a value of 03
     And the user selects the End Year field and enters a value of 2022
     And the user clicks the continue button
-    Then the user should be redirected to the "What’s your payroll ID for this employment?" page
+    Then the user should be redirected to the "What’s your payroll ID for Bear’s Blue House LTD? (optional)" page
     When the user selects the Payroll id field and enters a value of 123456
     And the user clicks the continue button
     Then the user should be redirected to the "How much did your employer pay you?" page
@@ -252,7 +252,7 @@ Feature: Employment Journeys - Income Tax Submission
     And the user selects the End Month field and enters a value of 03
     And the user selects the End Year field and enters a value of 2022
     And the user clicks the continue button
-    Then the user should be redirected to the "What’s your client’s payroll ID for this employment?" page
+    Then the user should be redirected to the "What’s your client’s payroll ID for Bear’s Blue House LTD? (optional)" page
     When the user selects the Payroll id field and enters a value of 123456
     And the user clicks the continue button
     Then the user should be redirected to the "How much did your client’s employer pay them?" page
@@ -307,7 +307,7 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page
     When the user clicks on the change payroll id link
-    Then the user should be redirected to the "What’s your client’s payroll ID for this employment?" page
+    Then the user should be redirected to the "What’s your client’s payroll ID for Mishima Zaibatsu? (optional)" page
     When the user selects the Payroll id field and enters a value of 234567
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page

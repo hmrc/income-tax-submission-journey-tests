@@ -46,7 +46,7 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     And the user selects the End Month field and enters a value of 03
     And the user selects the End Year field and enters a value of 2022
     And the user clicks the continue button
-    Then the user should be redirected to the "What’s your payroll ID for this employment?" page
+    Then the user should be redirected to the "What’s your payroll ID for Bear’s Blue House LTD? (optional)" page
     When the user selects the Payroll id field and enters a value of 123456
     And the user clicks the continue button
     Then the user should be redirected to the "How much did your employer pay you?" page

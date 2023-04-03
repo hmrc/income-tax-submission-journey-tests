@@ -221,7 +221,20 @@ trait CommonElements extends BasePage with Matchers{
 
     //Pensions Elements
     "pensions"              -> By.id("pensions_link"),
-    "Payments into pensions" -> By.id("payments-into-pensions-link")
+    "Payments into pensions" -> By.id("payments-into-pensions-link"),
+    "Unauthorised payments from pensions" ->  By.id("unauthorised-payments-from-pensions-link"),
+    "Yes, unauthorised payments that resulted in a surcharge" ->  By.id("unauthorisedPayments"),
+    "Yes, unauthorised payments that did not result in a surcharge" ->  By.id("unauthorisedPayments-2"),
+    "No" ->  By.id("unauthorisedPayments-4"),
+    "amount in pounds"      -> By.id("amount-2"),
+    "PSTR"      -> By.id("taxReferenceId"),
+    "yes on"                  -> By.id("value-yes"),
+    "Add another Pensions Scheme Tax Reference"  -> By.id("add-another-pension-link"),
+    "Change PSTR"  -> By.cssSelector("#pensionIncomeSummaryList > dl > div:nth-child(1) > dd.hmrc-add-to-a-list__change > a"),
+    "Remove PSTR"  -> By.cssSelector("#pensionIncomeSummaryList > dl > div:nth-child(1) > dd.hmrc-add-to-a-list__remove > a"),
+    "Remove Reference" -> By.id("remove-pension-button-id")
 
   )
 }
+
+

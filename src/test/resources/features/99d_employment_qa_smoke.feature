@@ -25,6 +25,9 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
 #    And the user clicks the continue button
 #    Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
+    Then the user should be redirected to the "Did you get income from PAYE employment?” page
+    When the user selects the yes radio button
+    And the user clicks the continue button
     Then the user should be redirected to the "PAYE employment" page
     Given no employment data exists
     And no expenses data exists
@@ -157,6 +160,7 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
+    And the status on the page is "Yes for gateway question"
     When the user clicks on the change employer link
     Then the user should be redirected to the "Employer information" page
     When the user clicks on the employment details link

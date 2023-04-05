@@ -91,7 +91,6 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the return to employment summary link
     Then the user should be redirected to the "PAYE employment" page
 
-
   Scenario: User with no employment data can click the employment link - In Year
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
@@ -142,7 +141,6 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the confirm button
     Then the user should be redirected to the "PAYE employment" page
 
-
   Scenario: User with single employment clicks change link and answers No on the PAYE Employment question - EOY Only
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start |
@@ -168,7 +166,6 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "PAYE employment" page
     And the status on the page is "No for gateway question"
     Then the user clicks on the return to overview link
-
 
   Scenario: User adds new employment and answers Yes on the PAYE Employment question - EOY Only
     When the user logs into the service with the following details
@@ -218,27 +215,29 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "What’s the name of your employer?" page
     When the user selects the Employer name field and enters a value of Bear’s Blue House LTD
     And the user clicks the continue button
-    Then the user should be redirected to the "What is Bear’s Blue House LTD’s employer PAYE reference? (optional)" page
-    When the user selects the PAYE reference field and enters a value of 123/AB456
+    Then the user should be redirected to the "When did you start working at Bear’s Blue House LTD?" page
+    When the user selects the Day field and enters a value of 24
+    And the user selects the Month field and enters a value of 09
+    And the user selects the Year field and enters a value of 2021
     And the user clicks the continue button
-    Then the user should be redirected to the "Did you leave this employer in the tax year?" page
+    Then the user should be redirected to the "Did you leave between 6 April 2022 and 5 April 2023?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Employment dates" page
-    When the user selects the Start Day field and enters a value of 24
-    And the user selects the Start Month field and enters a value of 09
-    And the user selects the Start Year field and enters a value of 2022
-    When the user selects the End Day field and enters a value of 24
-    And the user selects the End Month field and enters a value of 03
-    And the user selects the End Year field and enters a value of 2023
+    Then  the user should be redirected to the "When did you leave Bear’s Blue House LTD?" page
+    When the user selects the Day field and enters a value of 24
+    And the user selects the Month field and enters a value of 03
+    And the user selects the Year field and enters a value of 2023
+    And the user clicks the continue button
+    Then the user should be redirected to the "What is Bear’s Blue House LTD’s employer PAYE reference? (optional)" page
+    When the user selects the PAYE reference field and enters a value of 123/AB456
     And the user clicks the continue button
     Then the user should be redirected to the "What’s your payroll ID for Bear’s Blue House LTD? (optional)" page
     When the user selects the Payroll id field and enters a value of 123456
     And the user clicks the continue button
-    Then the user should be redirected to the "How much did your employer pay you?" page
+    Then the user should be redirected to the "How much did Bear’s Blue House LTD pay you?" page
     When the user selects the Pay field and enters a value of 2000.54
     And the user clicks the continue button
-    Then the user should be redirected to the "How much UK tax was taken from your earnings?" page
+    Then the user should be redirected to the "How much UK tax was taken from your Bear’s Blue House LTD earnings?" page
     When the user selects the Tax field and enters a value of 20.54
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment details" page
@@ -277,28 +276,27 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "What’s the name of your client’s employer?" page
     When the user selects the Employer name field and enters a value of Bear’s Blue House LTD
     And the user clicks the continue button
-    Then the user should be redirected to the "What is Bear’s Blue House LTD’s employer PAYE reference? (optional)" page
-    When the user selects the PAYE reference field and enters a value of 123/AB456
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did your client leave this employer in the tax year?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
     Then the user should be redirected to the "When did your client start working at Bear’s Blue House LTD?" page
     When the user selects the Day field and enters a value of 14
     And the user selects the Month field and enters a value of 07
     And the user selects the Year field and enters a value of 2012
     And the user clicks the continue button
-    Then the user should be redirected to the "Did your client leave this employer in the tax year?" page
-# TODO: replace these lines when all the income-tax-employment-frontend tickets for the new journey are complete
-#    When the user selects the Payroll id field and enters a value of 123456
-#    And the user clicks the continue button
-#    Then the user should be redirected to the "How much did your client’s employer pay them?" page
-#    When the user selects the Pay field and enters a value of 2000.54
-#    And the user clicks the continue button
-#    Then the user should be redirected to the "How much UK tax was taken from your client’s earnings?" page
-#    When the user selects the Tax field and enters a value of 20.54
-#    And the user clicks the continue button
-#    Then the user should be redirected to the "Check your client’s employment details" page
+    Then the user should be redirected to the "Did your client leave between 6 April 2022 and 5 April 2023?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "What is Bear’s Blue House LTD’s employer PAYE reference? (optional)" page
+    When the user selects the PAYE reference field and enters a value of 123/AB456
+    And the user clicks the continue button
+    Then the user should be redirected to the "What’s your client’s payroll ID for Bear’s Blue House LTD? (optional)" page
+    When the user selects the Payroll id field and enters a value of 123456
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much did Bear’s Blue House LTD pay your client?" page
+    When the user selects the Pay field and enters a value of 2000.54
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much UK tax was taken from your client’s Bear’s Blue House LTD earnings?" page
+    When the user selects the Tax field and enters a value of 20.54
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your client’s employment details" page
 
   Scenario: Agent user with at least one prior employment adds a new Employment and yes to "Did your client leave this employer in the tax year?"
     When the user logs into the service with the following details
@@ -325,27 +323,29 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "What’s the name of your client’s employer?" page
     When the user selects the Employer name field and enters a value of Bear’s Blue House LTD
     And the user clicks the continue button
-    Then the user should be redirected to the "What is Bear’s Blue House LTD’s employer PAYE reference? (optional)" page
-    When the user selects the PAYE reference field and enters a value of 123/AB456
+    Then the user should be redirected to the "When did your client start working at Bear’s Blue House LTD?" page
+    When the user selects the Day field and enters a value of 24
+    And the user selects the Month field and enters a value of 09
+    And the user selects the Year field and enters a value of 2020
     And the user clicks the continue button
-    Then the user should be redirected to the "Did your client leave this employer in the tax year?" page
+    Then the user should be redirected to the "Did your client leave between 6 April 2022 and 5 April 2023?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Employment dates" page
-    When the user selects the Start Day field and enters a value of 24
-    And the user selects the Start Month field and enters a value of 09
-    And the user selects the Start Year field and enters a value of 2022
-    When the user selects the End Day field and enters a value of 24
-    And the user selects the End Month field and enters a value of 03
-    And the user selects the End Year field and enters a value of 2023
+    Then  the user should be redirected to the "When did your client leave Bear’s Blue House LTD?" page
+    When the user selects the Day field and enters a value of 24
+    And the user selects the Month field and enters a value of 03
+    And the user selects the Year field and enters a value of 2023
+    And the user clicks the continue button
+    Then the user should be redirected to the "What is Bear’s Blue House LTD’s employer PAYE reference? (optional)" page
+    When the user selects the PAYE reference field and enters a value of 123/AB456
     And the user clicks the continue button
     Then the user should be redirected to the "What’s your client’s payroll ID for Bear’s Blue House LTD? (optional)" page
     When the user selects the Payroll id field and enters a value of 123456
     And the user clicks the continue button
-    Then the user should be redirected to the "How much did your client’s employer pay them?" page
+    Then the user should be redirected to the "How much did Bear’s Blue House LTD pay your client?" page
     When the user selects the Pay field and enters a value of 2000.54
     And the user clicks the continue button
-    Then the user should be redirected to the "How much UK tax was taken from your client’s earnings?" page
+    Then the user should be redirected to the "How much UK tax was taken from your client’s Bear’s Blue House LTD earnings?" page
     When the user selects the Tax field and enters a value of 20.54
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page
@@ -385,7 +385,7 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page
     When the user clicks on the change still working reference link
-    Then the user should be redirected to the "Did your client leave this employer in the tax year?" page
+    Then the user should be redirected to the "Did your client leave between 6 April 2022 and 5 April 2023?" page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page
@@ -400,12 +400,12 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page
     When the user clicks on the change pay received link
-    Then the user should be redirected to the "How much did your client’s employer pay them?" page
+    Then the user should be redirected to the "How much did Mishima Zaibatsu pay your client?" page
     When the user selects the Pay field and enters a value of 9000.01
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page
     When the user clicks on the change tax taken from pay link
-    Then the user should be redirected to the "How much UK tax was taken from your client’s earnings?" page
+    Then the user should be redirected to the "How much UK tax was taken from your client’s Mishima Zaibatsu earnings?" page
     When the user selects the Tax field and enters a value of 720.08
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page

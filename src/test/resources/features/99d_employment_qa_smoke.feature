@@ -24,10 +24,12 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
 #    When the user clicks the addEmployment tailoring option
 #    And the user clicks the continue button
 #    Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the employment link
-    Then the user should be redirected to the "Did you get income from PAYE employment?” page
-    When the user selects the yes radio button
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addEmployment tailoring option
     And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
     Given no employment data exists
     And no expenses data exists
@@ -42,20 +44,25 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Employment dates" page
-    When the user selects the Start Day field and enters a value of 04
-    And the user selects the Start Month field and enters a value of 05
-    And the user selects the Start Year field and enters a value of 2016
-    When the user selects the End Day field and enters a value of 24
-    And the user selects the End Month field and enters a value of 03
-    And the user selects the End Year field and enters a value of 2022
+    When the user selects the Day field and enters a value of 04
+    And the user selects the Month field and enters a value of 05
+    And the user selects the Year field and enters a value of 2016
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you leave between 6 April 2021 and 5 April 2022?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then  the user should be redirected to the "When did you leave Bear’s Blue House LTD?" page
+    When the user selects the Day field and enters a value of 24
+    And the user selects the Month field and enters a value of 03
+    And the user selects the Year field and enters a value of 2022
     And the user clicks the continue button
     Then the user should be redirected to the "What’s your payroll ID for Bear’s Blue House LTD? (optional)" page
     When the user selects the Payroll id field and enters a value of 123456
     And the user clicks the continue button
-    Then the user should be redirected to the "How much did your employer pay you?" page
+    Then the user should be redirected to the "How much did Bear’s Blue House LTD pay you?" page
     When the user selects the Pay field and enters a value of 2,500
     And the user clicks the continue button
-    Then the user should be redirected to the "How much UK tax was taken from your earnings?" page
+    Then the user should be redirected to the "How much UK tax was taken from your Bear’s Blue House LTD earnings?" page
     When the user selects the Tax field and enters a value of 36.01
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment details" page

@@ -8,7 +8,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
   #--------------------------------------Individual--------------------------------------#
   Scenario: Individual User with pre populated CIS data - Check contractor's CIS In Year Deductions
     When the user logs into the service with the following details
-      | Redirect url        | /2023/start |
+      | Redirect url        | /InYear/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -52,7 +52,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Individual User make changes in CYA page for EOY
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -116,7 +116,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Individual User adds CIS in session data EOY
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -152,7 +152,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Individual User adds another CIS deductions data EOY
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -169,7 +169,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "Contractor CIS deductions" page
     When the user clicks on the Add another CIS deduction link
     Then the user should be redirected to the "When did your contractor make CIS deductions?" page
-    When the user clicks the Tax month ending dropdown and selects 5 October 2021
+    When the user clicks the Tax month ending dropdown and selects 5 October 2022
     And the user clicks the continue button
     Then the user should be redirected to the "How much did your contractor pay you for labour?" page
     When the user selects the amount field and enters a value of 20.02
@@ -187,7 +187,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Individual User - Check back links for adding new contractor EOY
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -237,7 +237,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Individual User - Check back links for adding new CIS deductions for existing contractor EOY
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -254,7 +254,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "Contractor CIS deductions" page
     When the user clicks on the Add another CIS deduction link
     Then the user should be redirected to the "When did your contractor make CIS deductions?" page
-    When the user clicks the Tax month ending dropdown and selects 5 October 2021
+    When the user clicks the Tax month ending dropdown and selects 5 October 2022
     And the user clicks the continue button
     Then the user should be redirected to the "How much did your contractor pay you for labour?" page
     When the user selects the amount field and enters a value of 20.02
@@ -286,7 +286,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Individual user adds new CIS deductions data to a contractor with no existing CIS history EOY
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -303,7 +303,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "Contractor CIS deductions" page
     When the user clicks on the Add a CIS deduction link
     Then the user should be redirected to the "When did this contractor make CIS deductions?" page
-    When the user clicks the Tax month ending dropdown and selects 5 May 2021
+    When the user clicks the Tax month ending dropdown and selects 5 May 2022
     And the user clicks the continue button
     Then the user should be redirected to the "How much did this contractor pay you for labour?" page
     When the user selects the amount field and enters a value of 20.02
@@ -367,7 +367,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
   #--------------------------------------Agent--------------------------------------#
   Scenario: Agent User with pre populated CIS data - Check client's CIS In Year Deductions
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/2023/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890 |
       | Credential Strength | strong                                                                            |
       | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
@@ -413,7 +413,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Agent User make changes in CYA page for EOY
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/2022/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890 |
       | Credential Strength | strong                                                                            |
       | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
@@ -479,7 +479,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Agent User adds CIS in session data EOY
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/2022/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890 |
       | Credential Strength | strong                                                                            |
       | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
@@ -517,7 +517,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Agent User adds another CIS deductions data EOY
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/2022/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890 |
       | Credential Strength | strong                                                                            |
       | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
@@ -536,7 +536,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "Contractor CIS deductions" page
     When the user clicks on the Add another CIS deduction link
     Then the user should be redirected to the "When did your client’s contractor make CIS deductions?" page
-    When the user clicks the Tax month ending dropdown and selects 5 October 2021
+    When the user clicks the Tax month ending dropdown and selects 5 October 2022
     And the user clicks the continue button
     Then the user should be redirected to the "How much did the contractor pay your client for labour?" page
     When the user selects the amount field and enters a value of 20.02
@@ -554,7 +554,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Agent User - Check back links for adding new contractor EOY
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/2022/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890 |
       | Credential Strength | strong                                                                            |
       | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
@@ -606,7 +606,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Agent User - Check back links for adding new CIS deductions for existing contractor EOY
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/2022/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890 |
       | Credential Strength | strong                                                                            |
       | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
@@ -625,7 +625,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "Contractor CIS deductions" page
     When the user clicks on the Add another CIS deduction link
     Then the user should be redirected to the "When did your client’s contractor make CIS deductions?" page
-    When the user clicks the Tax month ending dropdown and selects 5 October 2021
+    When the user clicks the Tax month ending dropdown and selects 5 October 2022
     And the user clicks the continue button
     Then the user should be redirected to the "How much did the contractor pay your client for labour?" page
     When the user selects the amount field and enters a value of 20.02
@@ -657,7 +657,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Agent user adds new CIS deductions data to a contractor with no existing CIS history EOY
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/2022/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890 |
       | Credential Strength | strong                                                                            |
       | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
@@ -676,7 +676,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "Contractor CIS deductions" page
     When the user clicks on the Add a CIS deduction link
     Then the user should be redirected to the "When did this contractor make CIS deductions?" page
-    When the user clicks the Tax month ending dropdown and selects 5 October 2021
+    When the user clicks the Tax month ending dropdown and selects 5 October 2022
     And the user clicks the continue button
     Then the user should be redirected to the "How much did this contractor pay your client for labour?" page
     When the user selects the amount field and enters a value of 20.02

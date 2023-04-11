@@ -7,7 +7,7 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
 
   Scenario: User is adding their first employment for a tax year
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -147,7 +147,7 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
 
   Scenario: Returning flow - Individual User with prior UK employment views their details, benefits and expenses - Employment Smoke
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |

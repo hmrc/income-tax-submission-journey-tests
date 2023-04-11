@@ -7,7 +7,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Agent user with one employment checks their details, benefits, student loans and expenses
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/2023/additional-parameters?ClientNino=AA133742A&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA133742A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                              |
       | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
@@ -56,7 +56,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user with multiple employments checks their details, benefits, student loans and expenses
     When the user logs into the service with the following details
-      | Redirect url        | /2023/start |
+      | Redirect url        | /InYear/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -94,7 +94,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: User with no employment data can click the employment link - In Year
     When the user logs into the service with the following details
-      | Redirect url        | /2023/start |
+      | Redirect url        | /InYear/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -118,7 +118,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: User with no employment clicks employment link and answers No on the PAYE Employment question - EOY Only
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -145,7 +145,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: User with single employment clicks change link and answers No on the PAYE Employment question - EOY Only
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -172,7 +172,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: User adds new employment and answers Yes on the PAYE Employment question - EOY Only
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -193,7 +193,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: User is adding their first employment for a tax year
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -227,10 +227,10 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment dates" page
     When the user selects the Start Day field and enters a value of 24
     And the user selects the Start Month field and enters a value of 09
-    And the user selects the Start Year field and enters a value of 2021
+    And the user selects the Start Year field and enters a value of 2022
     When the user selects the End Day field and enters a value of 24
     And the user selects the End Month field and enters a value of 03
-    And the user selects the End Year field and enters a value of 2022
+    And the user selects the End Year field and enters a value of 2023
     And the user clicks the continue button
     Then the user should be redirected to the "What’s your payroll ID for Bear’s Blue House LTD? (optional)" page
     When the user selects the Payroll id field and enters a value of 123456
@@ -245,7 +245,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Agent user with at least one prior employment adds a new Employment and no to "Did your client leave this employer in the tax year?"
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/2022/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                              |
       | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
@@ -302,7 +302,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Agent user with at least one prior employment adds a new Employment and yes to "Did your client leave this employer in the tax year?"
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/2022/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                              |
       | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
@@ -334,10 +334,10 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employment dates" page
     When the user selects the Start Day field and enters a value of 24
     And the user selects the Start Month field and enters a value of 09
-    And the user selects the Start Year field and enters a value of 2021
+    And the user selects the Start Year field and enters a value of 2022
     When the user selects the End Day field and enters a value of 24
     And the user selects the End Month field and enters a value of 03
-    And the user selects the End Year field and enters a value of 2022
+    And the user selects the End Year field and enters a value of 2023
     And the user clicks the continue button
     Then the user should be redirected to the "What’s your client’s payroll ID for Bear’s Blue House LTD? (optional)" page
     When the user selects the Payroll id field and enters a value of 123456
@@ -352,7 +352,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Agent user with at least one prior employment edits an employment
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/2022/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                              |
       | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
@@ -414,7 +414,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Agent user with at least two prior employments removes an employment
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/2022/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                              |
       | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
@@ -438,7 +438,7 @@ Feature: Employment Journeys - Income Tax Submission
 #   Car/Van fuel section
   Scenario: Individual user, says no to the fuel questions, so skips the amount questions
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -487,7 +487,7 @@ Feature: Employment Journeys - Income Tax Submission
 #   New submission tests
   Scenario: Individual user goes through the full benefits flow
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -711,7 +711,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user as a new submission, says no to all section questions
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -759,7 +759,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user says yes to section questions, no to everything else
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -887,7 +887,7 @@ Feature: Employment Journeys - Income Tax Submission
   # Prior submission updates for each section
   Scenario: Individual user has prior submission data, updates all car van fuel fields
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -973,7 +973,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates all accommodation fields
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1035,7 +1035,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates all travel and entertainment fields
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1097,7 +1097,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates all utilities fields
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1172,7 +1172,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates all medical benefits fields
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1247,7 +1247,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates all income benefits fields
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1297,7 +1297,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates all reimbursed benefits fields
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1383,7 +1383,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates all assets benefits fields
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1433,7 +1433,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates carVanFuel to no, then does the full car section flow
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1496,7 +1496,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates accommodation to no, then does the full accommodation relocation flow
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1546,7 +1546,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates travel and entertainment to no, then does the full travel and entertainment flow
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1596,7 +1596,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates utilities to no, then does the full utilities flow
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1652,7 +1652,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates medical to no, then does the full medical flow
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1708,7 +1708,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates income to no, then does the full income flow
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1752,7 +1752,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates reimbursed to no, then does the full reimbursed flow
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1814,7 +1814,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates assets to no, then does the full assets flow
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1859,7 +1859,7 @@ Feature: Employment Journeys - Income Tax Submission
 #   Employment expenses tests
   Scenario: Agent user with single employment and as a new submission, goes through the full expenses flow
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/2022/additional-parameters?ClientNino=AA133742A&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA133742A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                              |
       | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
@@ -1916,7 +1916,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Agent user with multiple employments as a new submission, answers no to the Do you want to claim employment expenses?, straight to expenses check your answers.
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/2022/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                              |
       | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
@@ -1947,7 +1947,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user as a new submission single employment, goes through the full expenses flow
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -2002,7 +2002,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user as a new submission single employment, goes through the full expenses flow answering no to all expenses to skips the amounts pages
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -2040,7 +2040,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user as a new submission single employment selecting no to do you want to claim expenses and to skip all expenses pages
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -2065,7 +2065,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user single employment has prior submission data, updates all expenses fields
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -2111,7 +2111,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user single employment has full prior submission data, changes all radio buttons to no
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -2159,7 +2159,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user single employment has prior submission data, answers no to the 'Do you want to claim employment expenses?' question.
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -2186,7 +2186,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user goes through the full student loans flow
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -2224,7 +2224,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user with prior data, changes undergraduate and postgraduate repayments to no in student loans flow
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -2252,7 +2252,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Agent user with prior data, changes undergraduate and postgraduate repayments to no in student loans flow
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/2022/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                              |
       | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |

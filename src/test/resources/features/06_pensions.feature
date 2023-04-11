@@ -8,7 +8,7 @@ Feature: Pensions Journeys - Income Tax Submission
     # Payments Into Pensions tests
   Scenario: Individual user as a new submission, goes through full payments into pensions flow
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -101,7 +101,7 @@ Feature: Pensions Journeys - Income Tax Submission
 
   Scenario: Agent user as a new submission, goes through full payments into pensions flow
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/2022/additional-parameters?ClientNino=AA000001A&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000001A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                              |
       | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
@@ -156,7 +156,7 @@ Feature: Pensions Journeys - Income Tax Submission
 
   Scenario: Individual user as a new submission, minimal flow - selects no for all
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -185,7 +185,7 @@ Feature: Pensions Journeys - Income Tax Submission
 
   Scenario: Agent user has prior submission, updates all payments into pensions amount fields
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/2023/additional-parameters?ClientNino=AA370343B&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA370343B&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                              |
       | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
@@ -236,7 +236,7 @@ Feature: Pensions Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission, says yes on payments into pensions gateway page
     When the user logs into the service with the following details
-      | Redirect url        | /2023/start |
+      | Redirect url        | /InYear/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -268,7 +268,7 @@ Feature: Pensions Journeys - Income Tax Submission
 
   Scenario: Individual journey flow - Full Unauthorised pensions journey
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -328,7 +328,7 @@ Feature: Pensions Journeys - Income Tax Submission
 
   Scenario: Agent journey flow - Full Unauthorised pensions journey
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/2022/additional-parameters?ClientNino=AA000001A&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000001A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                              |
       | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
@@ -391,7 +391,7 @@ Feature: Pensions Journeys - Income Tax Submission
 
   Scenario: Individual journey flow - Yes, unauthorised payments that resulted in a surcharge
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -441,7 +441,7 @@ Feature: Pensions Journeys - Income Tax Submission
 
   Scenario: Individual journey flow - Yes, unauthorised payments that did not result in a surcharge
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -491,7 +491,7 @@ Feature: Pensions Journeys - Income Tax Submission
 
   Scenario: Individual journey flow - Change, Remove, add another pstr links
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -560,7 +560,7 @@ Feature: Pensions Journeys - Income Tax Submission
    # Todo -Add the rest of the CYA change links once redirect service is completed
   Scenario: View prior submission, Unauthorised pensions payments journey
     When the user logs into the service with the following details
-      | Redirect url        | /2023/start |
+      | Redirect url        | /InYear/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -588,7 +588,7 @@ Feature: Pensions Journeys - Income Tax Submission
   @ignore
   Scenario: Individual journey flow submission without a PSTR - Unauthorised pensions journey
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -637,7 +637,7 @@ Feature: Pensions Journeys - Income Tax Submission
   @ignore
   Scenario: User selects No on first question page - Unauthorised pensions journey
   When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |

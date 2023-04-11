@@ -20,11 +20,12 @@ import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
 import org.openqa.selenium.support.ui.Select
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.conf.TaxYearHelper
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
 import java.util
 
-trait BasePage extends Matchers with BrowserDriver {
+trait BasePage extends Matchers with BrowserDriver with TaxYearHelper {
   val url: String = ""
 
   var redirectUrl: String = ""
@@ -43,6 +44,14 @@ trait BasePage extends Matchers with BrowserDriver {
   var delegatedIdentifierValue: String = ""
   var delegatedAuthRule: String = ""
 
+  def replaceTaxYear(url : String): String ={
+    url match {
+      case x if url.contains("EOY") => url.replace("EOY",taxYearEOY.toString)
+      case x if url.contains("InYear") => url.replace("InYear",taxYear.toString)
+      case _ => "invalid url passed, should be EOY or InYear"
+    }
+  }
+
 
   def useDataTable(data: DataTable): Unit = {
     var firstColumn: String = ""
@@ -54,7 +63,7 @@ trait BasePage extends Matchers with BrowserDriver {
     for (row <- 0 to tableContent.toArray().length) {
       firstColumn = data.row(row).get(0)
       firstColumn match {
-        case "Redirect url" => redirectUrl = getColumnValue(row)
+        case "Redirect url" => redirectUrl = replaceTaxYear(getColumnValue(row))
         case "Credential Strength" => credentialStrength = getColumnValue(row)
         case "Confidence Level" => confidenceLevel = getColumnValue(row)
         case "Affinity Group" => affinityGroup = getColumnValue(row)

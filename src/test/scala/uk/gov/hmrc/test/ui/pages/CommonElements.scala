@@ -55,7 +55,7 @@ trait CommonElements extends BasePage with Matchers{
 
     //Interest Elements
     "Interest from savings and securities"  -> By.id("interest_link"),
-    "UK Interest"  -> By.cssSelector("#main-content > div > div > ol > li:nth-child(1) > span.app-task-list__task-name > a"),
+    "UK Interest"  -> By.id("interest_link"),
     "Interest from gilt-edged or accrued income securities"  -> By.cssSelector("#main-content > div > div > ol > li:nth-child(2) > span.app-task-list__task-name > a"),
     "UK untaxed interest amount earned" -> By.id("untaxedAmount"),
     "UK taxed interest amount earned"   -> By.id("taxedAmount"),
@@ -124,7 +124,7 @@ trait CommonElements extends BasePage with Matchers{
     "remove expenses"                  -> By.cssSelector("#main-content > div > div > dl > div > dd > ul > li:nth-child(2) > a"),
     "Remove expenses"                  -> By.cssSelector("#remove-expenses-button-id"),
     "change expenses section"          -> By.cssSelector("#main-content > div > div > div:nth-child(6) > ul > li > span.hmrc-add-to-a-list__change > a"),
-    "Add an employer"                  -> By.cssSelector("[href='/update-and-submit-income-tax-return/employment-income/2022/employment-summary/add-employment']"),
+    "Add an employer"                  -> By.xpath("//a[contains(text(),'Add an employer')]"),
     "Add another employer"             -> By.linkText("Add another employer"),
     "Remove employer"                  -> By.id("remove-employer-button-id"),
     "student loans"                    -> By.id("student-loans_link"),
@@ -135,7 +135,7 @@ trait CommonElements extends BasePage with Matchers{
     "student loans amount change" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a > span:nth-child(1)"),
     "postgraduate loans amount change" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dd.govuk-summary-list__actions > a > span:nth-child(1)"),
     "cannot update" -> By.cssSelector("#main-content > div > div > div.govuk-inset-text"),
-    "PAYE employment change" -> By.cssSelector("[href='/update-and-submit-income-tax-return/employment-income/2022/income-from-employment']"),
+    "PAYE employment change" -> By.cssSelector("#main-content > div > div > dl:nth-child(3) > div > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a > span:nth-child(1)"),
     "Yes for gateway question" -> By.xpath("//dd[contains(text(),'Yes')]"),
     "No for gateway question" -> By.xpath("//dd[contains(text(),'No')]"),
     "Employment remove confirm" -> By.id("remove-employer-button-id"),

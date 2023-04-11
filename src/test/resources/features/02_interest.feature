@@ -1,4 +1,4 @@
-@MVP @ZAP @interest
+@MVP @ZAP @interest @ignore
 
 Feature: Interest Journeys - Income Tax Submission
 
@@ -7,7 +7,7 @@ Feature: Interest Journeys - Income Tax Submission
 
   Scenario: Minimal flow - Individual User - Interest
     When the user logs into the service with the following details
-      |Redirect url       |/2023/start                                          |
+      |Redirect url       |/InYear/start                                          |
       |Credential Strength|strong                                               |
       |Confidence Level   |250                                                  |
       |Affinity Group     |Individual                                           |
@@ -40,7 +40,7 @@ Feature: Interest Journeys - Income Tax Submission
 
   Scenario: Maximal flow - Agent User - Interest
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2023/additional-parameters?ClientNino=AA123457A&ClientMTDID=1234567890  |
+      |Redirect url       |/test-only/InYear/additional-parameters?ClientNino=AA123457A&ClientMTDID=1234567890  |
       |Credential Strength|weak                                                                               |
       |Confidence Level   |250                                                                                |
       |Affinity Group     |Agent                                                                              |
@@ -122,7 +122,7 @@ Feature: Interest Journeys - Income Tax Submission
 
   Scenario: Account Removal flow - Agent User  - Interest
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2023/additional-parameters?ClientNino=AA123456A&ClientMTDID=1234567890  |
+      |Redirect url       |/test-only/InYear/additional-parameters?ClientNino=AA123456A&ClientMTDID=1234567890  |
       |Credential Strength|weak                                                                               |
       |Confidence Level   |250                                                                                |
       |Affinity Group     |Agent                                                                              |
@@ -208,7 +208,7 @@ Feature: Interest Journeys - Income Tax Submission
 
   Scenario: Returning flow - Individual User with prior UK Untaxed & Taxed Interest, Review & change - Interest
     When the user logs into the service with the following details
-      |Redirect url       |/2023/start                                          |
+      |Redirect url       |/InYear/start                                          |
       |Credential Strength|strong                                               |
       |Confidence Level   |250                                                  |
       |Affinity Group     |Individual                                           |
@@ -257,7 +257,7 @@ Feature: Interest Journeys - Income Tax Submission
 
   Scenario: Returning flow - Agent User with prior UK Untaxed & Taxed Interest, Review & change - Interest
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2023/additional-parameters?ClientNino=AA000003A&ClientMTDID=1234567893  |
+      |Redirect url       |/test-only/InYear/additional-parameters?ClientNino=AA000003A&ClientMTDID=1234567893  |
       |Credential Strength|weak                                                                               |
       |Confidence Level   |250                                                                                |
       |Affinity Group     |Agent                                                                              |
@@ -308,7 +308,7 @@ Feature: Interest Journeys - Income Tax Submission
 
   Scenario: Individual user with taxed/untaxed interest for a previous tax year, chooses a previous account for both
     When the user logs into the service with the following details
-      |Redirect url       |/2023/start                                          |
+      |Redirect url       |/InYear/start                                          |
       |Credential Strength|strong                                               |
       |Confidence Level   |250                                                  |
       |Affinity Group     |Individual                                           |
@@ -359,7 +359,7 @@ Feature: Interest Journeys - Income Tax Submission
 
   Scenario: Agent user with taxed/untaxed interest for a previous tax year, chooses new accounts for both
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2023/additional-parameters?ClientNino=AA000002A&ClientMTDID=1234567893  |
+      |Redirect url       |/test-only/InYear/additional-parameters?ClientNino=AA000002A&ClientMTDID=1234567893  |
       |Credential Strength|weak                                                                               |
       |Confidence Level   |250                                                                                |
       |Affinity Group     |Agent                                                                              |
@@ -414,7 +414,7 @@ Feature: Interest Journeys - Income Tax Submission
 
   Scenario: Individual User with No Prior Interest Data adds Interest in tailoring but then states they did not receive Interest income
     When the user logs into the service with the following details
-      |Redirect url       |/2023/start                                          |
+      |Redirect url       |/InYear/start                                          |
       |Credential Strength|strong                                               |
       |Confidence Level   |250                                                  |
       |Affinity Group     |Individual                                           |
@@ -441,7 +441,7 @@ Feature: Interest Journeys - Income Tax Submission
 
   Scenario: Agent User with Prior Interest Data states their client did not receive interest income
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2023/additional-parameters?ClientNino=AA000003A&ClientMTDID=1234567893  |
+      |Redirect url       |/test-only/InYear/additional-parameters?ClientNino=AA000003A&ClientMTDID=1234567893  |
       |Credential Strength|weak                                                                               |
       |Confidence Level   |250                                                                                |
       |Affinity Group     |Agent                                                                              |

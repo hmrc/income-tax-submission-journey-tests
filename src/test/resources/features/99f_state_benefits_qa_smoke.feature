@@ -8,7 +8,7 @@ Feature: State Benefits Journeys - Income Tax Submission
   #-------------------------------Job Seeker's Allowance---------------------------------#
   Scenario: Individual User adds Jobseeker’s Allowance in session data EOY
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -62,7 +62,7 @@ Feature: State Benefits Journeys - Income Tax Submission
   #-----------------------------Employment Support Allowance-----------------------------#
   Scenario: Individual User adds Employment and Support Allowance in session data EOY
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |

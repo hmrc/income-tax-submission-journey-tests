@@ -8,7 +8,7 @@ Feature: Dividends Journeys - Income Tax Submission
 
   Scenario: Maximal flow - Agent User - Dividends
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2023/additional-parameters?ClientNino=AA123457A&ClientMTDID=1234567890    |
+      |Redirect url       |/test-only/InYear/additional-parameters?ClientNino=AA123457A&ClientMTDID=1234567890    |
       |Credential Strength|weak                                                                                 |
       |Confidence Level   |250                                                                                  |
       |Affinity Group     |Agent                                                                                |
@@ -48,7 +48,7 @@ Feature: Dividends Journeys - Income Tax Submission
 
   Scenario: Returning flow - Individual User with prior UK Dividends & Other Dividends, Review & change - Dividends
     When the user logs into the service with the following details
-      |Redirect url       |/2023/start                                          |
+      |Redirect url       |/InYear/start                                          |
       |Credential Strength|strong                                               |
       |Confidence Level   |250                                                  |
       |Affinity Group     |Individual                                           |
@@ -77,7 +77,7 @@ Feature: Dividends Journeys - Income Tax Submission
 
   Scenario: Returning flow - Agent User with prior UK Dividends & Other Dividends, Review & Change - Dividends
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/2023/additional-parameters?ClientNino=AA000003A&ClientMTDID=1234567893  |
+      |Redirect url       |/test-only/InYear/additional-parameters?ClientNino=AA000003A&ClientMTDID=1234567893  |
       |Credential Strength|weak                                                                               |
       |Confidence Level   |250                                                                                |
       |Affinity Group     |Agent                                                                              |
@@ -113,7 +113,7 @@ Feature: Dividends Journeys - Income Tax Submission
 
     Scenario: Individual User with No Prior Dividend Data adds Dividend in tailoring but then states they did not receive Dividend income
         When the user logs into the service with the following details
-          |Redirect url       |/2023/start                                          |
+          |Redirect url       |/InYear/start                                          |
           |Credential Strength|strong                                               |
           |Confidence Level   |250                                                  |
           |Affinity Group     |Individual                                           |
@@ -139,7 +139,7 @@ Feature: Dividends Journeys - Income Tax Submission
 
     Scenario: Agent User with Prior Dividend Data states their client did not receive dividend income
         When the user logs into the service with the following details
-          |Redirect url       |/test-only/2023/additional-parameters?ClientNino=AA000003A&ClientMTDID=1234567893  |
+          |Redirect url       |/test-only/InYear/additional-parameters?ClientNino=AA000003A&ClientMTDID=1234567893  |
           |Credential Strength|weak                                                                               |
           |Confidence Level   |250                                                                                |
           |Affinity Group     |Agent                                                                              |

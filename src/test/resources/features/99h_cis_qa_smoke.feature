@@ -7,7 +7,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Individual User adds and removes CIS deductions in session data EOY
     When the user logs into the service with the following details
-      | Redirect url        | /2022/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |

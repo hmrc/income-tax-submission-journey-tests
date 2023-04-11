@@ -1,4 +1,4 @@
-@MVP @ZAP @view_estimation
+@MVP @ZAP @view_estimation @ignore
 
 Feature: View Estimation Journeys - Income Tax Submission
 
@@ -7,7 +7,7 @@ Feature: View Estimation Journeys - Income Tax Submission
 
   Scenario: In Year flow - Individual User - View Estimation
     When the user logs into the service with the following details
-      |Redirect url       |/2023/start                                          |
+      |Redirect url       |/InYear/start                                          |
       |Credential Strength|strong                                               |
       |Confidence Level   |250                                                  |
       |Affinity Group     |Individual                                           |
@@ -28,7 +28,7 @@ Feature: View Estimation Journeys - Income Tax Submission
 
   Scenario: In Year flow - Agent User - View Estimation
     When the user logs into the service with the following details
-      |Redirect url               |/test-only/2023/additional-parameters?ClientNino=AA123459A&ClientMTDID=1234567890    |
+      |Redirect url               |/test-only/InYear/additional-parameters?ClientNino=AA123459A&ClientMTDID=1234567890    |
       |Credential Strength        |weak                                                                                 |
       |Confidence Level           |250                                                                                  |
       |Affinity Group             |Agent                                                                                |

@@ -6,7 +6,7 @@ Feature: Additional Information Journeys (Interest Securities) - Income Tax Subm
 
   Scenario: Individual User maximal flow - Interest from gilt-edged or accrued income securities
     When the user logs into the service with the following details
-      |Redirect url       |/2022/start                                          |
+      |Redirect url       |/EOY/start                                          |
       |Credential Strength|strong                                               |
       |Confidence Level   |250                                                  |
       |Affinity Group     |Individual                                           |
@@ -41,7 +41,7 @@ Feature: Additional Information Journeys (Interest Securities) - Income Tax Subm
 
   Scenario: Individual User says no on "gateway question page" - Interest from gilt-edged or accrued income securities
     When the user logs into the service with the following details
-      |Redirect url       |/2022/start                                          |
+      |Redirect url       |/EOY/start                                          |
       |Credential Strength|strong                                               |
       |Confidence Level   |250                                                  |
       |Affinity Group     |Individual                                           |

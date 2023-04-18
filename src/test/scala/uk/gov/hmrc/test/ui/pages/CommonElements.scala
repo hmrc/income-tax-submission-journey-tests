@@ -88,7 +88,7 @@ trait CommonElements extends BasePage with Matchers{
     "add expenses"                     -> By.id("add-expenses"),
     "change expenses"                  -> By.cssSelector("#main-content > div > div > dl:nth-child(10) > div > dd > ul > li:nth-child(1) > a"),
     "view first employer"              -> By.cssSelector("#main-content > div > div > dl:nth-of-type(1) > div:nth-child(1) > dd > a"),
-    "change employer"                  -> By.cssSelector("#main-content > div > div > dl:nth-child(5) > div > dd > ul > li:nth-child(1) > a"),
+    "change employer"                  -> By.cssSelector("#main-content > div > div > dl:nth-child(6) > div > dd > ul > li:nth-child(1) > a"),
     "return to employment summary"     -> By.id("returnToEmploymentSummaryBtn"),
     "return to employer"               -> By.id("returnToEmployerBtn"),
     "Clickable employment"             -> By.id("employment_link"),
@@ -241,7 +241,6 @@ trait CommonElements extends BasePage with Matchers{
     "Remove PSTR"  -> By.cssSelector("#pensionIncomeSummaryList > dl > div:nth-child(1) > dd.hmrc-add-to-a-list__remove > a"),
     "Remove Reference" -> By.id("remove-pension-button-id"),
 
-
   //Gains Elements
     "Gains from policies and contracts" -> By.id("gains_link"),
     "Life Insurance"                    -> By.cssSelector("[value='lifeInsurance']"),
@@ -254,7 +253,5 @@ trait CommonElements extends BasePage with Matchers{
     "Policy remove"                     -> By.id("policy-remove"),
     "Updated Tag"                       -> By.xpath("//*[contains(text(),'Updated')]/../../span/a[@id='gains_link']"),
     "Add a policy"                       -> By.id("continue")
-
-
   )
 }

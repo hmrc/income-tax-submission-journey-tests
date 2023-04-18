@@ -26,25 +26,27 @@ Feature: State Benefits Journeys - Income Tax Submission
     Given no claims exist
     When the user clicks the Add missing claim button
     Then the user should be redirected to the "When did you start getting Jobseeker’s Allowance?" page
+
+    #TODO : update the year of the start date here instead.So we only update the years in the rest of places?
     When the user selects the claim day field and enters a value of 01
     And the user selects the claim month field and enters a value of 01
     And the user selects the claim year field and enters a value of 2022
     And the user clicks the continue button
-    Then the user should be redirected to the "Did this claim end between 1 January 2022 and 5 April 2022?" page
+    Then the user should be redirected to the "Did this claim end between 6 April 2022 and 5 April 2023?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "When did this claim end?" page
     When the user selects the claim day field and enters a value of 02
-    And the user selects the claim month field and enters a value of 02
+    And the user selects the claim month field and enters a value of 09
     And the user selects the claim year field and enters a value of 2022
     And the user clicks the continue button
-    Then the user should be redirected to the "Did you have any tax taken off your Jobseeker’s Allowance between 1 January 2022 and 2 February 2022?" page
+    Then the user should be redirected to the "Did you have any tax taken off your Jobseeker’s Allowance between 6 April 2022 and 2 September 2022?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "How much Jobseeker’s Allowance did you get between 1 January 2022 and 2 February 2022?" page
+    Then the user should be redirected to the "How much Jobseeker’s Allowance did you get between 6 April 2022 and 2 September 2022?" page
     When the user selects the amount field and enters a value of 110.02
     And the user clicks the continue button
-    Then the user should be redirected to the "How much tax was taken off your Jobseeker’s Allowance between 1 January 2022 and 2 February 2022?" page
+    Then the user should be redirected to the "How much tax was taken off your Jobseeker’s Allowance between 6 April 2022 and 2 September 2022?" page
     When the user selects the amount field and enters a value of 100.02
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
@@ -81,24 +83,24 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user clicks the Add missing claim button
     Then the user should be redirected to the "When did you start getting Employment and Support Allowance?" page
     When the user selects the claim day field and enters a value of 01
-    And the user selects the claim month field and enters a value of 01
+    And the user selects the claim month field and enters a value of 07
     And the user selects the claim year field and enters a value of 2022
     And the user clicks the continue button
-    Then the user should be redirected to the "Did this claim end between 1 January 2022 and 5 April 2022?" page
+    Then the user should be redirected to the "Did this claim end between 1 July 2022 and 5 April 2023?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "When did this claim end?" page
     When the user selects the claim day field and enters a value of 02
-    And the user selects the claim month field and enters a value of 02
+    And the user selects the claim month field and enters a value of 10
     And the user selects the claim year field and enters a value of 2022
     And the user clicks the continue button
-    Then the user should be redirected to the "Did you have any tax taken off your Employment and Support Allowance between 1 January 2022 and 2 February 2022?" page
+    Then the user should be redirected to the "Did you have any tax taken off your Employment and Support Allowance between 1 July 2022 and 2 October 2022?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "How much Employment and Support Allowance did you get between 1 January 2022 and 2 February 2022?" page
+    Then the user should be redirected to the "How much Employment and Support Allowance did you get between 1 July 2022 and 2 October 2022?" page
     When the user selects the amount field and enters a value of 110.02
     And the user clicks the continue button
-    Then the user should be redirected to the "How much tax was taken off your Employment and Support Allowance between 1 January 2022 and 2 February 2022?" page
+    Then the user should be redirected to the "How much tax was taken off your Employment and Support Allowance between 1 July 2022 and 2 October 2022?" page
     When the user selects the amount field and enters a value of 100.02
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page

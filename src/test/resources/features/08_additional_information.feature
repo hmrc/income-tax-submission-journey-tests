@@ -29,7 +29,7 @@ Feature: Additional Information Journeys (Interest Securities) - Income Tax Subm
     Then the user should be redirected to the "Interest from gilt-edged or accrued income securities" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Total Interest" page
+    Then the user should be redirected to the "Total interest" page
     When the user selects the amount field and enters a value of 400.40
     And the user clicks the continue button
     Then the user should be redirected to the "Was tax taken off your interest?" page

@@ -389,6 +389,16 @@ Feature: Employment Journeys - Income Tax Submission
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page
+    When the user clicks on the change still working reference link
+    Then the user should be redirected to the "Did your client leave between 6 April 2022 and 5 April 2023?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then  the user should be redirected to the "When did your client leave Mishima Zaibatsu?" page
+    When the user selects the Day field and enters a value of 24
+    And the user selects the Month field and enters a value of 03
+    And the user selects the Year field and enters a value of 2023
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your client’s employment details" page
     When the user clicks on the change PAYE reference link
     Then the user should be redirected to the "What is Mishima Zaibatsu’s employer PAYE reference? (optional)" page
     When the user selects the PAYE reference field and enters a value of 777/7777

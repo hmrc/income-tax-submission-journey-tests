@@ -35,6 +35,7 @@ trait CommonElements extends BasePage with Matchers{
     "remove account"       -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(1) > span.hmrc-add-to-a-list__remove > a"),
     "change"               -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li > span.hmrc-add-to-a-list__change > a"),
     "return to overview"   -> By.id("returnToOverviewPageBtn"),
+    "remove"               -> By.id("remove"),
 
     //Tailoring Elements
     "addSections"                   -> By.id("addSectionsLink"),
@@ -44,6 +45,7 @@ trait CommonElements extends BasePage with Matchers{
     "addEmployment"                 -> By.id("employment"),
     "addCisSection"                 -> By.id("cis"),
     "addPension"                    -> By.id("pensions"),
+    "addGains"                      -> By.id("gains"),
 
     //Dividends Elements
     "dividends"                     -> By.id("dividends_link"),
@@ -237,9 +239,22 @@ trait CommonElements extends BasePage with Matchers{
     "Add another Pensions Scheme Tax Reference"  -> By.id("add-another-pension-link"),
     "Change PSTR"  -> By.cssSelector("#pensionIncomeSummaryList > dl > div:nth-child(1) > dd.hmrc-add-to-a-list__change > a"),
     "Remove PSTR"  -> By.cssSelector("#pensionIncomeSummaryList > dl > div:nth-child(1) > dd.hmrc-add-to-a-list__remove > a"),
-    "Remove Reference" -> By.id("remove-pension-button-id")
+    "Remove Reference" -> By.id("remove-pension-button-id"),
+
+
+  //Gains Elements
+    "Gains from policies and contracts" -> By.id("gains_link"),
+    "Life Insurance"                    -> By.cssSelector("[value='lifeInsurance']"),
+    "Full or part surrender"            -> By.cssSelector("[value='Full or part surrender']"),
+    "Other"                             -> By.id("other-text"),
+    "Sale or assignment of a policy"    -> By.id("policy-event-3"),
+    "What caused this gain?"            -> By.id("other-text-input"),
+    "Policy number"                     -> By.id("value"),
+    "Gains Year"                              -> By.id("year"),
+    "Policy remove"                     -> By.id("policy-remove"),
+    "Updated Tag"                       -> By.xpath("//*[contains(text(),'Updated')]/../../span/a[@id='gains_link']"),
+    "Add a policy"                       -> By.id("continue")
+
 
   )
 }
-
-

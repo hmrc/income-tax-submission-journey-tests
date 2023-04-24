@@ -1,4 +1,5 @@
-@smoke
+#remove ignore tag once pensions in QA is resolved
+@smoke @ignore
 Feature: Pensions Journeys in QA - Income Tax Submission
 
   Background:

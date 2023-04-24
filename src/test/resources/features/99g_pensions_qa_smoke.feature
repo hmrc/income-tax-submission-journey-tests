@@ -6,7 +6,7 @@ Feature: Pensions Journeys in QA - Income Tax Submission
 
   Scenario: Individual user as a new submission, goes through full payments into pensions flow
     When the user logs into the service with the following details
-      | Redirect url        | /InYear/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |

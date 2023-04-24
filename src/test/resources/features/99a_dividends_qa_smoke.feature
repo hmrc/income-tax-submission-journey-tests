@@ -7,7 +7,7 @@ Feature: Smoke downstream Dividends Journeys to DES in QA - Income Tax Submissio
 
   Scenario: Returning flow - Individual User with prior UK Dividends & Other Dividends, Review & change - Dividends Smoke
     When the user logs into the service with the following details
-      | Redirect url        | /InYear/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |

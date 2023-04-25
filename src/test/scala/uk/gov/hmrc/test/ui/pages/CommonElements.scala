@@ -36,6 +36,8 @@ trait CommonElements extends BasePage with Matchers{
     "change"               -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li > span.hmrc-add-to-a-list__change > a"),
     "return to overview"   -> By.id("returnToOverviewPageBtn"),
     "remove"               -> By.id("remove"),
+    "Yes for gateway question" -> By.xpath("//dd[contains(text(),'Yes')]"),
+    "No for gateway question" -> By.xpath("//dd[contains(text(),'No')]"),
 
     //Tailoring Elements
     "addSections"                   -> By.id("addSectionsLink"),
@@ -138,8 +140,6 @@ trait CommonElements extends BasePage with Matchers{
     "postgraduate loans amount change" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dd.govuk-summary-list__actions > a > span:nth-child(1)"),
     "cannot update" -> By.cssSelector("#main-content > div > div > div.govuk-inset-text"),
     "PAYE employment change" -> By.cssSelector("#main-content > div > div > dl:nth-child(3) > div > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a > span:nth-child(1)"),
-    "Yes for gateway question" -> By.xpath("//dd[contains(text(),'Yes')]"),
-    "No for gateway question" -> By.xpath("//dd[contains(text(),'No')]"),
     "Employment remove confirm" -> By.id("remove-employer-button-id"),
 
     //GiftAid Elements
@@ -199,6 +199,10 @@ trait CommonElements extends BasePage with Matchers{
     "Add a contractor"            -> By.id("add-contractor"),
     "CIS save and continue"       -> By.id("save-and-continue-button-id"),
     "Remove period"               -> By.id("remove-period-button-id"),
+    "CIS deductions change"  -> By.xpath("//dt[contains(text,'')]/../dd[2]/a/span[1]"),
+    "CIS You cannot update text"  -> By.cssSelector("#main-content > div > div > div.govuk-inset-text"),
+    "Updated for Cis"                -> By.xpath("//*[contains(text(),'Updated')]/../../span/a[@id='cis_link']"),
+    "Cannot Update for Cis"                -> By.xpath("//*[contains(text(),'Cannot update')]/../../span/a[@id='cis_link']"),
 
     //State Benefits Elements
     "State benefits" -> By.id("stateBenefits_link"),
@@ -249,7 +253,7 @@ trait CommonElements extends BasePage with Matchers{
     "Sale or assignment of a policy"    -> By.id("policy-event-3"),
     "What caused this gain?"            -> By.id("other-text-input"),
     "Policy number"                     -> By.id("value"),
-    "Gains Year"                              -> By.id("year"),
+    "Gains Year"                        -> By.id("year"),
     "Policy remove"                     -> By.id("policy-remove"),
     "Updated Tag"                       -> By.xpath("//*[contains(text(),'Updated')]/../../span/a[@id='gains_link']"),
     "Add a policy"                      -> By.id("continue"),

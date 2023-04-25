@@ -183,4 +183,10 @@ class CommonStepDef extends BaseStepDef {
       clickOn(CommonPage.load("Remove claim"))
     }
   }
+
+  Then("""^the (.*) is displayed$""") { (valueElement: String) =>
+    val selector = CommonPage.load(valueElement)
+    elementExists(selector)
+  }
+
 }

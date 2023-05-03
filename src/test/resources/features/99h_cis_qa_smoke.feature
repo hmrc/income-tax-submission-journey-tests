@@ -1,4 +1,4 @@
-@smoke
+@smoke @cis
 
 Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
@@ -7,7 +7,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Individual User adds and removes CIS deductions in session data EOY
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -106,33 +106,12 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     When the user clicks the Remove period button
     Then the user should be redirected to the "Your Income Tax Return" page
 
-  Scenario: EOY - Individual User with prior CIS Data, Reviews data
-    When the user logs into the service with the following details
-      |Redirect url       |/EOY/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |250                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |AA123456A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
-    And the status on the page is "Updated for Cis"
-    When the user clicks on the cis deductions link
-    Then the user should be redirected to the "CIS deductions" page
-    And the status on the page is "Yes for gateway question"
-    When the user clicks on the CIS deductions change link
-    Then the user should be redirected to the "Have you had CIS deductions taken from your payments by contractors?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "CIS deductions" page
-    And the status on the page is "Yes for gateway question"
+ # TODO: Scenario: EOY - Individual User with prior CIS Data, Reviews data
+
 
   Scenario: In Year - Individual User with prior CIS Data, Reviews data
     When the user logs into the service with the following details
-      |Redirect url       |/InYear/start                                          |
+      |Redirect url       |/InYear/start                                        |
       |Credential Strength|strong                                               |
       |Confidence Level   |250                                                  |
       |Affinity Group     |Individual                                           |

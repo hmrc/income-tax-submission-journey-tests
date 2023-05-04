@@ -1,4 +1,4 @@
-@smoke @WIP @ignore
+@smoke @employment
 
 Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Income Tax Submission
 
@@ -7,29 +7,26 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
 
   Scenario: User is adding their first employment for a tax year
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | PW911433A   |
+      | Nino                | AC343651A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-#    ToDo - Add to journey once Tailoring is released in QA
-#    When the user clicks on the addSections link
-#    Then the user should be redirected to the "Add sections to your Income Tax Return" page
-#    When the user clicks the addEmployment tailoring option
-#    And the user clicks the continue button
-#    Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the addSections link
     Then the user should be redirected to the "Add sections to your Income Tax Return" page
     When the user clicks the addEmployment tailoring option
     And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
+    Then the user should be redirected to the "Did you get income from PAYE employment?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
     Then the user should be redirected to the "PAYE employment" page
     Given no employment data exists
     And no expenses data exists
@@ -37,24 +34,21 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
     Then the user should be redirected to the "What’s the name of your employer?" page
     When the user selects the Employer name field and enters a value of Bear’s Blue House LTD
     And the user clicks the continue button
-    Then the user should be redirected to the "What is Bear’s Blue House LTD’s employer PAYE reference? (optional)" page
-    When the user selects the PAYE reference field and enters a value of 123/AB456
+    Then the user should be redirected to the "When did you start working at Bear’s Blue House LTD?" page
+    When the user selects the Day field and enters a value of 24
+    And the user selects the Month field and enters a value of 09
+    And the user selects the Year field and enters a value of 2021
     And the user clicks the continue button
-    Then the user should be redirected to the "Did you leave this employer in the tax year?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Employment dates" page
-    When the user selects the Day field and enters a value of 04
-    And the user selects the Month field and enters a value of 05
-    And the user selects the Year field and enters a value of 2016
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you leave between 6 April 2021 and 5 April 2022?" page
+    Then the user should be redirected to the "Did you leave between 6 April 2022 and 5 April 2023?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then  the user should be redirected to the "When did you leave Bear’s Blue House LTD?" page
     When the user selects the Day field and enters a value of 24
     And the user selects the Month field and enters a value of 03
-    And the user selects the Year field and enters a value of 2022
+    And the user selects the Year field and enters a value of 2023
+    And the user clicks the continue button
+    Then the user should be redirected to the "What is Bear’s Blue House LTD’s employer PAYE reference? (optional)" page
+    When the user selects the PAYE reference field and enters a value of 123/AB456
     And the user clicks the continue button
     Then the user should be redirected to the "What’s your payroll ID for Bear’s Blue House LTD? (optional)" page
     When the user selects the Payroll id field and enters a value of 123456
@@ -154,11 +148,11 @@ Feature: Smoke tests for end of year Employment Journeys to DES/IF in QA - Incom
 
   Scenario: Returning flow - Individual User with prior UK employment views their details, benefits and expenses - Employment Smoke
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | PW911433A   |
+      | Nino                | AC343651A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |

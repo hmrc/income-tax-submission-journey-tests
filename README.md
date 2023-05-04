@@ -100,6 +100,13 @@ For example, to execute ZAP tests locally using a Chrome browser
 ./run_zap_test.sh local chrome
 ```
 
+#### Taking screenshots of a journey
+
+Execute `run_tests_screenshots.sh` to take screenshots of a journey.
+Before running it, add the @screenshots tag to the feature or scenario you want to take screenshots of.
+Images are saved as `target/screenshots/{last-segment-of-url-path-and-query-string}.png`.
+To avoid files for the same URL getting overwritten it's probably best to tag one scenario at a time.
+
 ### Running tests using BrowserStack
 If you would like to run your tests via BrowserStack from your local development environment please refer to the [webdriver-factory](https://github.com/hmrc/webdriver-factory/blob/master/README.md/#user-content-running-tests-using-browser-stack) project.
 

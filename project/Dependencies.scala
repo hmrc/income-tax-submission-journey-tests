@@ -10,6 +10,7 @@ object Dependencies {
     "io.cucumber"                %  "cucumber-junit"          % "7.11.1"  % Test,
     "junit"                      %  "junit"                   % "4.13.2"  % Test,
     "com.novocode"               %  "junit-interface"         % "0.11"    % Test,
-    "com.typesafe"               %  "config"                  % "1.4.2"   % Test
+    "com.typesafe"               %  "config"                  % "1.4.2"   % Test,
+    "commons-io"                 %  "commons-io"              % "2.11.0"  % Test
   )
 }

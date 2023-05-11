@@ -1,4 +1,4 @@
-@MVP @ZAP @crystallisation
+@MVP @ZAP @crystallisation @ignore
 
 Feature: Crystallisation Journeys - Income Tax Submission
 

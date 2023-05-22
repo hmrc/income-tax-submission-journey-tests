@@ -103,4 +103,7 @@ trait BasePage extends Matchers with BrowserDriver with TaxYearHelper {
 
   def elementExists(selector: By): Boolean =
     !driver.findElements(selector).isEmpty
+
+  def navigateBack(): Unit =
+    driver.navigate().back()
 }

@@ -197,8 +197,8 @@ Feature: State Benefits Journeys - Income Tax Submission
     When the user selects the amount field and enters a value of 110.02
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
-    When the user clicks on the state benefit back link
-    And the user clicks on the state benefit back link
+    When the user goes back to the previous page in their browser's history
+    And the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "Did you have any tax taken off your Jobseeker’s Allowance between 1 January 2023 and 2 February 2023?" page
     When the user selects the yes radio button
     And the user clicks the continue button

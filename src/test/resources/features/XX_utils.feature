@@ -27,7 +27,7 @@ Feature: Util Journeys - Income Tax Submission
     And the user should see the correct Accessibility Statement url
     And the user should see the correct personal income sign out url
  #  Check for the Income Tax Employment Frontend
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
@@ -48,5 +48,3 @@ Feature: Util Journeys - Income Tax Submission
     Then the user navigates to the untaxed interest page
     Then the user should be redirected to the "There’s a problem" page
     And the user should see the correct Authorise you as an agent url
-
-

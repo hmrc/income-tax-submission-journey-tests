@@ -60,6 +60,10 @@ class CommonStepDef extends BaseStepDef {
     driver.getTitle should be(s"$title")
   }
 
+  When("""^the user goes back to the previous page in their browser's history$""") { () =>
+    CommonPage.navigateBack()
+  }
+
   When("""^the user clicks on the (.*) link$""") { linkName: String =>
     CommonPage.clickOnLink(linkName)
   }
@@ -89,13 +93,16 @@ class CommonStepDef extends BaseStepDef {
     CommonPage.clickOnCheckbox(checkbox2Title)
   }
 
-
   When("""^the user clicks the (.*) tailoring option$""") { (checkboxTitle: String) =>
     CommonPage.attemptToClickOnCheckbox(checkboxTitle)
   }
 
   When("""^the user selects the (.*) field and enters a value of (.*)$""") { (valueTextBox: String, value: String) =>
     CommonPage.enterValue(valueTextBox, value)
+  }
+
+  Then("""^the user should see the (.*) field with the value of (.*)$""") { (valueTextBox: String, expectedValue: String) =>
+    CommonPage.checkValue(valueTextBox, expectedValue) shouldEqual(true)
   }
 
   Then("""^the user should see the correct (.*) url$""") { (url: String) =>

@@ -37,6 +37,9 @@ object CommonPage extends BasePage with CommonElements {
     sendKeys(selector, value)
   }
 
+  def checkValue(valueTextBox: String, expectedValue: String): Boolean =
+    driver.findElement(load(valueTextBox)).getAttribute("value") == expectedValue
+
   def clickOnButton(buttonTitle: String): Unit = {
     val selector: By = load(buttonTitle)
     clickOn(selector)

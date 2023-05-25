@@ -9,13 +9,13 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
   Scenario: Individual User with pre populated CIS data - Check contractor's CIS In Year Deductions
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
-      | Credential Strength | strong      |
-      | Confidence Level    | 250         |
-      | Affinity Group      | Individual  |
-      | Nino                | AC150000B   |
-      | Enrolment Key 1     | HMRC-MTD-IT |
-      | Identifier Name 1   | MTDITID     |
-      | Identifier Value 1  | 1234567890  |
+      | Credential Strength | strong        |
+      | Confidence Level    | 250           |
+      | Affinity Group      | Individual    |
+      | Nino                | AC150000B     |
+      | Enrolment Key 1     | HMRC-MTD-IT   |
+      | Identifier Name 1   | MTDITID       |
+      | Identifier Value 1  | 1234567890    |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -53,7 +53,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Individual User make changes in CYA page for EOY
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -118,7 +118,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Individual User adds CIS in session data EOY
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -155,7 +155,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Individual User adds another CIS deductions data EOY
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -191,7 +191,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Individual User - Check back links for adding new contractor EOY
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -242,7 +242,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Individual User - Check back links for adding new CIS deductions for existing contractor EOY
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -292,7 +292,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Individual user adds new CIS deductions data to a contractor with no existing CIS history EOY
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -375,15 +375,15 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
   Scenario: Agent User with pre populated CIS data - Check client's CIS In Year Deductions
     When the user logs into the service with the following details
       | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890 |
-      | Credential Strength | strong                                                                            |
-      | Confidence Level    | 250                                                                               |
-      | Affinity Group      | Agent                                                                             |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
-      | Identifier Name 1   | MTDITID                                                                           |
-      | Identifier Value 1  | 1234567890                                                                        |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
-      | Identifier Name 2   | AgentReferenceNumber                                                              |
-      | Identifier Value 2  | XARN1234567                                                                       |
+      | Credential Strength | strong                                                                              |
+      | Confidence Level    | 250                                                                                 |
+      | Affinity Group      | Agent                                                                               |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                         |
+      | Identifier Name 1   | MTDITID                                                                             |
+      | Identifier Value 1  | 1234567890                                                                          |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                       |
+      | Identifier Name 2   | AgentReferenceNumber                                                                |
+      | Identifier Value 2  | XARN1234567                                                                         |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -421,7 +421,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Agent User make changes in CYA page for EOY
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890  |
       | Credential Strength | strong                                                                            |
       | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
@@ -488,7 +488,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Agent User adds CIS in session data EOY
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890  |
       | Credential Strength | strong                                                                            |
       | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
@@ -527,7 +527,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Agent User adds another CIS deductions data EOY
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890  |
       | Credential Strength | strong                                                                            |
       | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
@@ -565,7 +565,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Agent User - Check back links for adding new contractor EOY
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890  |
       | Credential Strength | strong                                                                            |
       | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
@@ -618,7 +618,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Agent User - Check back links for adding new CIS deductions for existing contractor EOY
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890  |
       | Credential Strength | strong                                                                            |
       | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
@@ -670,7 +670,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Agent user adds new CIS deductions data to a contractor with no existing CIS history EOY
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890  |
       | Credential Strength | strong                                                                            |
       | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
@@ -752,7 +752,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Individual User - A user with no cis data answers yes on gateway question page and changes to no to remove data
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -822,13 +822,13 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
   Scenario: In Year - user cannot update cis if there is prior data
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
-      | Credential Strength | strong      |
-      | Confidence Level    | 250         |
-      | Affinity Group      | Individual  |
-      | Nino                | AC150000B   |
-      | Enrolment Key 1     | HMRC-MTD-IT |
-      | Identifier Name 1   | MTDITID     |
-      | Identifier Value 1  | 1234567890  |
+      | Credential Strength | strong        |
+      | Confidence Level    | 250           |
+      | Affinity Group      | Individual    |
+      | Nino                | AC150000B     |
+      | Enrolment Key 1     | HMRC-MTD-IT   |
+      | Identifier Name 1   | MTDITID       |
+      | Identifier Value 1  | 1234567890    |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -839,13 +839,13 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
   Scenario: In Year - user cannot update cis if there is no prior data
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
-      | Credential Strength | strong      |
-      | Confidence Level    | 250         |
-      | Affinity Group      | Individual  |
-      | Nino                | AC152222B   |
-      | Enrolment Key 1     | HMRC-MTD-IT |
-      | Identifier Name 1   | MTDITID     |
-      | Identifier Value 1  | 1234567890  |
+      | Credential Strength | strong        |
+      | Confidence Level    | 250           |
+      | Affinity Group      | Individual    |
+      | Nino                | AC152222B     |
+      | Enrolment Key 1     | HMRC-MTD-IT   |
+      | Identifier Name 1   | MTDITID       |
+      | Identifier Value 1  | 1234567890    |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -857,3 +857,31 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     When the user clicks on the cis deductions link
     Then the user should be redirected to the "CIS deductions" page
     And the CIS You cannot update text is displayed
+
+  @cis @error
+  Scenario: Individual User adds new Contractor Details - Back button Error
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AC150000B   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the cis deductions link
+    Then the user should be redirected to the "CIS deductions" page
+    And the status on the page is "Yes for gateway question"
+    When the user clicks the Add another contractor button
+    Then the user should be redirected to the "Contractor details" page
+    When the user selects the Contractor name field and enters a value of Boots Ltd
+    And the user selects the Employer Reference Number field and enters a value of 123/AB4567
+    When the user clicks the continue button
+    Then the user should be redirected to the "When did your contractor make CIS deductions?" page
+    And the user goes back to the previous page in their browser's history
+    Then the user should be redirected to the "Contractor details" page
+    And the user should see the Contractor name field with the value of Boots Ltd
+    And the user should see the Employer Reference Number field with the value of 123/AB4567

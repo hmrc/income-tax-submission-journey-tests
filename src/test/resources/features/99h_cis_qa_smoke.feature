@@ -115,7 +115,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
       |Credential Strength|strong                                               |
       |Confidence Level   |250                                                  |
       |Affinity Group     |Individual                                           |
-      |Nino               |AA123456A                                            |
+      |Nino               |PW911433A                                            |
       |Enrolment Key 1    |HMRC-MTD-IT                                          |
       |Identifier Name 1  |MTDITID                                              |
       |Identifier Value 1 |1234567890                                           |

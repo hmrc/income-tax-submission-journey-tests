@@ -5,7 +5,6 @@ Feature: Dividends Journeys - Income Tax Submission
   Background:
     Given the user navigates to the auth login page
 
-
   Scenario: Maximal flow - Agent User - Dividends
     When the user logs into the service with the following details
       |Redirect url       |/test-only/InYear/additional-parameters?ClientNino=AA123457A&ClientMTDID=1234567890    |
@@ -30,7 +29,7 @@ Feature: Dividends Journeys - Income Tax Submission
     Then the user should be redirected to the "Did your client get dividends from shares?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-  Then the user should be redirected to the "Did your client get dividends from UK-based companies?" page
+    Then the user should be redirected to the "Did your client get dividends from UK-based companies?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "How much did your client get in dividends from UK-based companies?" page
@@ -48,7 +47,7 @@ Feature: Dividends Journeys - Income Tax Submission
 
   Scenario: Returning flow - Individual User with prior UK Dividends & Other Dividends, Review & change - Dividends
     When the user logs into the service with the following details
-      |Redirect url       |/InYear/start                                          |
+      |Redirect url       |/InYear/start                                        |
       |Credential Strength|strong                                               |
       |Confidence Level   |250                                                  |
       |Affinity Group     |Individual                                           |
@@ -58,6 +57,11 @@ Feature: Dividends Journeys - Income Tax Submission
       |Identifier Value 1 |1234567892                                           |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addDividends tailoring option
+    And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the dividends link
     Then the user should be redirected to the "Check your income from dividends" page
@@ -73,7 +77,6 @@ Feature: Dividends Journeys - Income Tax Submission
     Then the user should be redirected to the "Check your income from dividends" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-#    And the user should see the correct Income Tax Account for individuals url
 
   Scenario: Returning flow - Agent User with prior UK Dividends & Other Dividends, Review & Change - Dividends
     When the user logs into the service with the following details
@@ -109,7 +112,6 @@ Feature: Dividends Journeys - Income Tax Submission
     Then the user should be redirected to the "Check your client’s income from dividends" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
-#   And the user should see the correct Income Tax Account for agents url
 
     Scenario: Individual User with No Prior Dividend Data adds Dividend in tailoring but then states they did not receive Dividend income
         When the user logs into the service with the following details

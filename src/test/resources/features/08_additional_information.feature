@@ -821,3 +821,160 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     Then the user should be redirected to the "Your policies" page
     When the user clicks the return to overview button
     Then the user should be redirected to the "Your Income Tax Return" page
+
+    ######################################### Stock Dividends ##############################################################
+  Scenario: Maximal flow - Agent User - Stock Dividends
+    When the user logs into the service with the following details
+      |Redirect url       |/test-only/InYear/additional-parameters?ClientNino=AA123457A&ClientMTDID=1234567890    |
+      |Credential Strength|weak                                                                                 |
+      |Confidence Level   |250                                                                                  |
+      |Affinity Group     |Agent                                                                                |
+      |Enrolment Key 1    |HMRC-MTD-IT                                                                          |
+      |Identifier Name 1  |MTDITID                                                                              |
+      |Identifier Value 1 |1234567890                                                                           |
+      |Enrolment Key 2    |HMRC-AS-AGENT                                                                        |
+      |Identifier Name 2  |AgentReferenceNumber                                                                 |
+      |Identifier Value 2 |XARN1234567                                                                          |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your client’s Income Tax Return" page
+    When the user clicks the addDividend tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the dividends link
+    Then the user should be redirected to the "Did your client get dividends from shares?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your client get dividends from UK-based companies?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much did your client get in dividends from UK-based companies?" page
+    When the user selects the UK dividends amount field and enters a value of 1000
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your client get dividends from UK-based trusts or open-ended investment companies?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much did your client get in dividends from trusts and open-ended investment companies based in the UK?" page
+    When the user selects the UK other dividends amount field and enters a value of 500
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your client get stock dividends?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much did your client get?" page
+    When the user selects the amount field and enters a value of 100
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your client get free or redeemable shares?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much did your client get in free or redeemable shares?" page
+    When the user selects the amount field and enters a value of 100
+    And the user clicks the continue button
+    Then the user should be redirected to the "Close company loans written off" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much did the close company write off or release from your client's loan?" page
+    When the user selects the amount field and enters a value of 100
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your client's dividends" page
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+
+    @ignore
+  Scenario: Maximal flow - User with no prior data - answers No on Stock Dividends page
+    When the user logs into the service with the following details
+      |Redirect url       |/InYear/start                                        |
+      |Credential Strength|strong                                               |
+      |Confidence Level   |250                                                  |
+      |Affinity Group     |Individual                                           |
+      |Nino               |AA123458A                                            |
+      |Enrolment Key 1    |HMRC-MTD-IT                                          |
+      |Identifier Name 1  |MTDITID                                              |
+      |Identifier Value 1 |1234567890                                           |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addDividend tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the dividends link
+    Then the user should be redirected to the "Did you get dividends from shares?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get dividends from UK-based companies?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much did you get in dividends from UK-based companies?" page
+    When the user selects the UK dividends amount field and enters a value of 1000
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get dividends from UK-based trusts or open-ended investment companies?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much did you get in dividends from trusts and open-ended investment companies based in the UK?" page
+    When the user selects the UK other dividends amount field and enters a value of 500
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get stock dividends?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get free or redeemable shares?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Close company loans written off" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your dividends" page
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+
+  Scenario: Maximal flow - User with no prior data - answers Yes on Stock Dividends page but no for all following questions
+    When the user logs into the service with the following details
+      |Redirect url       |/InYear/start                                        |
+      |Credential Strength|strong                                               |
+      |Confidence Level   |250                                                  |
+      |Affinity Group     |Individual                                           |
+      |Nino               |AA123458A                                            |
+      |Enrolment Key 1    |HMRC-MTD-IT                                          |
+      |Identifier Name 1  |MTDITID                                              |
+      |Identifier Value 1 |1234567890                                           |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addDividend tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the dividends link
+    Then the user should be redirected to the "Did you get dividends from shares?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get dividends from UK-based companies?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much did you get in dividends from UK-based companies?" page
+    When the user selects the UK dividends amount field and enters a value of 1000
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get dividends from UK-based trusts or open-ended investment companies?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much did you get in dividends from trusts and open-ended investment companies based in the UK?" page
+    When the user selects the UK other dividends amount field and enters a value of 500
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get stock dividends?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much did you get?" page
+    When the user selects the amount field and enters a value of 100
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you get free or redeemable shares?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Close company loans written off" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your dividends" page
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Your Income Tax Return" page

@@ -58,11 +58,6 @@ Feature: Dividends Journeys - Income Tax Submission
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the addSections link
-    Then the user should be redirected to the "Add sections to your Income Tax Return" page
-    When the user clicks the addDividends tailoring option
-    And the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the dividends link
     Then the user should be redirected to the "Check your income from dividends" page
     When the user clicks on the change uk dividends amount link

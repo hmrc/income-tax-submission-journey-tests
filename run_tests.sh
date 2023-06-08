@@ -1,6 +1,7 @@
 #!/bin/bash
 ENV=${1:-local}
-BROWSER=${2:-chrome}
+BROWSER=${2:-firefox}
+# default to firefox as chrome's autofill hides bugs to do with incorrectly empty fields, see eg: SASS-4898 and SASS-4966
 DRIVER=
 
 if [ "$BROWSER" = "chrome" ]; then
@@ -10,4 +11,3 @@ elif [ "$BROWSER" = "firefox" ]; then
 fi
 
 sbt -Dbrowser=$BROWSER -Denvironment=$ENV $DRIVER "testOnly uk.gov.hmrc.test.ui.cucumber.runner.Runner"
-

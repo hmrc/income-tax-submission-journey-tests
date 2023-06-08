@@ -225,19 +225,19 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     When the user selects the amount field and enters a value of 20.05
     And the user clicks the continue button
     Then the user should be redirected to the "Check your CIS deductions" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "How much did you pay for building materials for your contractor?" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "Did you pay for materials for your contractor?" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "How much was taken by your contractor in CIS deductions?" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "How much did your contractor pay you for labour?" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "When did your contractor make CIS deductions?" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "Contractor details" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "CIS deductions" page
 
   Scenario: Individual User - Check back links for adding new CIS deductions for existing contractor EOY
@@ -275,19 +275,19 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     When the user selects the amount field and enters a value of 20.05
     And the user clicks the continue button
     Then the user should be redirected to the "Check your CIS deductions" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "How much did you pay for building materials for your contractor?" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "Did you pay for materials for your contractor?" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "How much was taken by your contractor in CIS deductions?" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "How much did your contractor pay you for labour?" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "When did your contractor make CIS deductions?" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "Contractor CIS deductions" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "CIS deductions" page
 
   Scenario: Individual user adds new CIS deductions data to a contractor with no existing CIS history EOY
@@ -601,19 +601,19 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     When the user selects the amount field and enters a value of 20.05
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s CIS deductions" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "How much did your client pay for building materials for the contractor?" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "Did your client pay for materials for their contractor?" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "How much was taken by the contractor in CIS deductions?" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "How much did the contractor pay your client for labour?" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "When did your client’s contractor make CIS deductions?" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "Contractor details" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "CIS deductions" page
 
   Scenario: Agent User - Check back links for adding new CIS deductions for existing contractor EOY
@@ -653,19 +653,19 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     When the user selects the amount field and enters a value of 20.05
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s CIS deductions" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "How much did your client pay for building materials for the contractor?" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "Did your client pay for materials for their contractor?" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "How much was taken by the contractor in CIS deductions?" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "How much did the contractor pay your client for labour?" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "When did your client’s contractor make CIS deductions?" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "Contractor CIS deductions" page
-    When the user clicks on the back link
+    When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "CIS deductions" page
 
   Scenario: Agent user adds new CIS deductions data to a contractor with no existing CIS history EOY

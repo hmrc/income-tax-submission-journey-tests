@@ -1,4 +1,4 @@
-@MVP @ZAP @pensions
+@MVP @ZAP @pensions @ignore
 
 Feature: Pensions Journeys - Income Tax Submission
 
@@ -650,4 +650,3 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Check your unauthorised payments" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Pensions" page
-

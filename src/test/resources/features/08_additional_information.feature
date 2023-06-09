@@ -881,7 +881,6 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
 
-    @ignore
   Scenario: Maximal flow - User with no prior data - answers No on Stock Dividends page
     When the user logs into the service with the following details
       |Redirect url       |/InYear/start                                        |

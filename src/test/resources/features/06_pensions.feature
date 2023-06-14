@@ -1,4 +1,4 @@
-@MVP @ZAP @pensions @ignore
+@MVP @ZAP @pensions
 
 Feature: Pensions Journeys - Income Tax Submission
 

@@ -1,4 +1,5 @@
-@MVP @ZAP @dividends
+@MVP @ZAP @dividends @ignore
+  # Remove ignore tag when stock dividends feature is set to false - when feature switch is set to true these scenarios will be covered in Additional info feature
 
 Feature: Dividends Journeys - Income Tax Submission
 

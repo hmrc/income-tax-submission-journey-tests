@@ -249,6 +249,15 @@ trait CommonElements extends BasePage with Matchers{
     "Change PSTR"  -> By.cssSelector("#pensionIncomeSummaryList > dl > div:nth-child(1) > dd.hmrc-add-to-a-list__change > a"),
     "Remove PSTR"  -> By.cssSelector("#pensionIncomeSummaryList > dl > div:nth-child(1) > dd.hmrc-add-to-a-list__remove > a"),
     "Remove Reference" -> By.id("remove-pension-button-id"),
+    "Overseas pensions"      -> By.id("overseas-pensions-summary-link"),
+    "Income from overseas pensions" -> By.id("income-from-overseas-pensions-link"),
+    "Country"               -> By.id("countryId"),
+    "Country List"          -> By.id("countryId__listbox"),
+    "amount before tax"     -> By.id("amount-1"),
+    "tax paid"              -> By.id("amount-2"),
+    "amount in pounds"      -> By.id("amount-2"),
+    "pensions scheme save and continue"      -> By.id("continue"),
+    "add another pension scheme" -> By.id("add-another-pension-link"),
 
   //Gains Elements
     "Gains from policies and contracts" -> By.id("gains_link"),

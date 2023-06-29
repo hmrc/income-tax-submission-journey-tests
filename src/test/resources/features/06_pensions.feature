@@ -195,13 +195,6 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
 
-    Then the user should be redirected to the "Total one-off payments into relief at source (RAS) pensions, plus basic rate tax relief" page
-    When the user selects the amount field and enters a value of 40.00
-    And the user clicks the continue button
-
-    Then the user should be redirected to the "Your client’s total payments into relief at source (RAS) pensions" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s payments into pensions" page
 
     When the user clicks on the change link in position 5

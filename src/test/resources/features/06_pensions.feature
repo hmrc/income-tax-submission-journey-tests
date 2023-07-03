@@ -750,7 +750,6 @@ Feature: Pensions Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check income from overseas pensions" page
 
-
   Scenario: income from overseas pension - user has prior data
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |

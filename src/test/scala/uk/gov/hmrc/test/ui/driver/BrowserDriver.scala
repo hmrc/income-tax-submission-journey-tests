@@ -61,11 +61,9 @@ trait BrowserDriver extends LazyLogging {
         val options = new ChromeOptions
         if (shouldScreenshot) {
           val listener = new ScreenshotListener()
-          options.addArguments("--remote-allow-origins=*", "headless")
           new EventFiringDecorator(listener).decorate(SingletonDriver.getInstance(Some(options)))
         }
         else {
-          options.addArguments("--remote-allow-origins=*")
           SingletonDriver.getInstance(Some(options))
         }
       case _ => SingletonDriver.getInstance()

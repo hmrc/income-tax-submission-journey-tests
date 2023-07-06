@@ -259,6 +259,14 @@ trait CommonElements extends BasePage with Matchers {
     "amount in pounds" -> By.id("amount-2"),
     "pensions scheme save and continue" -> By.id("continue"),
     "add another pension scheme" -> By.id("add-another-pension-link"),
+    "Name of pension scheme" -> By.id("providerName"),
+    "Pension Scheme Tax Reference" -> By.id("schemeReference"),
+    "Pension provider address" -> By.id("providerAddress"),
+    "Remove pension scheme" -> By.cssSelector("#pensionTransferSummaryList > dl > div > dd.hmrc-add-to-a-list__remove > a > span:nth-child(1)"),
+    "Remove Scheme" -> By.id("remove-pension-button-id"),
+    "Add a scheme" -> By.id("AddAScheme"),
+    "Change scheme" -> By.cssSelector("#pensionTransferSummaryList > dl > div > dd.hmrc-add-to-a-list__change > a > span:nth-child(1)"),
+    "Overseas transfer charges" -> By.id("overseas-transfer-charges-link"),
 
     //Gains Elements
     "Gains from policies and contracts" -> By.id("gains_link"),

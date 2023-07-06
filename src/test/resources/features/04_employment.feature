@@ -2293,3 +2293,49 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Check your client’s student loan repayment details" page
     And the user clicks the continue button
     Then the user should be redirected to the "Employer information" page
+
+
+  Scenario: Individual user navigates to taxable lumpSum page and enter details
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA123459A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "PAYE employment" page
+    When the user clicks on the first change employment link
+    When the user clicks on the Taxable lump sums and certain income link
+  #  Then the user should be redirected to the "Taxable lump sums" page
+  #  When the user clicks the continue button
+  #  Then the user should be redirected to the "Employer Information" page
+
+
+  Scenario: Agent user navigates goes through taxable lumpSum flow and enter details
+    When the user logs into the service with the following details
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA123459A&ClientMTDID=1234567890  |
+      | Credential Strength | weak                                                                              |
+      | Confidence Level    | 250                                                                               |
+      | Affinity Group      | Agent                                                                             |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
+      | Identifier Name 1   | MTDITID                                                                           |
+      | Identifier Value 1  | 1234567890                                                                        |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
+      | Identifier Name 2   | AgentReferenceNumber                                                              |
+      | Identifier Value 2  | XARN1234567                                                                       |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "PAYE employment" page
+    When the user clicks on the first change employment link
+    Then the user clicks on the Taxable lump sums and certain income link
+  #  Then the user should be redirected to the "Taxable lump sums" page
+  #  When the user clicks the continue button
+  #  Then the user should be redirected to the "Employer Information" page

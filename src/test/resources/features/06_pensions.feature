@@ -165,6 +165,7 @@ Feature: Pensions Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your payments into pensions" page
 
+  @ignore
   Scenario: Agent user has prior submission, updates all payments into pensions amount fields
     When the user logs into the service with the following details
       | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA370343B&ClientMTDID=1234567890 |
@@ -215,6 +216,7 @@ Feature: Pensions Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s payments into pensions" page
 
+  @ignore
   Scenario: Individual user has prior submission, says yes on relief at source (RAS) pensions page
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |

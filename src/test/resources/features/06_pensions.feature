@@ -1,4 +1,4 @@
-@MVP @ZAP @pensions @ignore
+@MVP @ZAP @pensions
 
 Feature: Pensions Journeys - Income Tax Submission
 
@@ -195,13 +195,6 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
 
-    Then the user should be redirected to the "Total one-off payments into relief at source (RAS) pensions, plus basic rate tax relief" page
-    When the user selects the amount field and enters a value of 40.00
-    And the user clicks the continue button
-
-    Then the user should be redirected to the "Your client’s total payments into relief at source (RAS) pensions" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s payments into pensions" page
 
     When the user clicks on the change link in position 5
@@ -650,3 +643,420 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Check your unauthorised payments" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Pensions" page
+
+
+      #-------------- Overseas Pensions - Income from overseas Pensions tests ----------#
+
+  Scenario: Individual user as a new submission, goes through full income from overseas pension
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Overseas pensions link
+    Then the user should be redirected to the "Overseas pensions" page
+    When the user clicks on the Income from overseas pensions link
+    Then the user should be redirected to the "Did you get payments from an overseas pension scheme?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "What country is the pension scheme registered in?" page
+    When the user selects the Country field and enters a value of Togo
+    And the user clicks the Country List button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Pension payments" page
+    When the user selects the amount before tax field and enters a value of 300.30
+    And the user selects the tax paid field and enters a value of 200.30
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you have Special Withholding Tax (SWT) deducted from your pension?" page
+    When the user selects the yes radio button
+    When the user selects the amount in pounds field and enters a value of 100.20
+    And the user clicks the continue button
+    Then the user should be redirected to the "Are you claiming Foreign Tax Credit Relief (FTCR)?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your taxable amount" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Pension scheme summary" page
+    And the user clicks the pensions scheme save and continue button
+    Then the user should be redirected to the "Overseas pension income" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check income from overseas pensions" page
+
+
+  Scenario: Agent user as a new submission, goes through full income from overseas pension
+    When the user logs into the service with the following details
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000001A&ClientMTDID=1234567890 |
+      | Credential Strength | weak                                                                              |
+      | Confidence Level    | 250                                                                               |
+      | Affinity Group      | Agent                                                                             |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
+      | Identifier Name 1   | MTDITID                                                                           |
+      | Identifier Value 1  | 1234567890                                                                        |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
+      | Identifier Name 2   | AgentReferenceNumber                                                              |
+      | Identifier Value 2  | XARN1234567                                                                       |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your client’s Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Overseas pensions link
+    Then the user should be redirected to the "Overseas pensions" page
+    When the user clicks on the Income from overseas pensions link
+
+    Then the user should be redirected to the "Did your client get payments from an overseas pension scheme?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "What country is the pension scheme registered in?" page
+    When the user selects the Country field and enters a value of Togo
+    And the user clicks the Country List button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Pension payments" page
+    When the user selects the amount before tax field and enters a value of 300.30
+    And the user selects the tax paid field and enters a value of 200.30
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your client have Special Withholding Tax (SWT) deducted from their pension?" page
+    When the user selects the yes radio button
+    When the user selects the amount in pounds field and enters a value of 100.20
+    And the user clicks the continue button
+    Then the user should be redirected to the "Is your client claiming Foreign Tax Credit Relief (FTCR)?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your client’s taxable amount" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Pension scheme summary" page
+    And the user clicks the pensions scheme save and continue button
+    Then the user should be redirected to the "Overseas pension income" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check income from overseas pensions" page
+
+  Scenario: income from overseas pension - user has prior data
+    When the user logs into the service with the following details
+      | Redirect url        | /InYear/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA370343B   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Overseas pensions link
+    Then the user should be redirected to the "Overseas pensions" page
+    When the user clicks on the Income from overseas pensions link
+    Then the user should be redirected to the "Check income from overseas pensions" page
+
+
+      #-------------- Overseas Pensions - Overseas transfer charges ----------#
+
+  Scenario: Individual user as a new submission, Selects YES on - Did a UK pension scheme pay the transfer charge to HMRC
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Overseas pensions link
+    Then the user should be redirected to the "Overseas pensions" page
+    When the user clicks on the Overseas transfer charges link
+    Then the user should be redirected to the "Did you transfer pension savings into an overseas pension scheme?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did the amount result in an overseas transfer charge?" page
+    When the user selects the yes radio button
+    When the user selects the amount in pounds field and enters a value of 100.20
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did your pension schemes pay tax on the amount that resulted in a transfer charge?" page
+    When the user selects the yes radio button
+    When the user selects the amount in pounds field and enters a value of 100.20
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did a UK pension scheme pay the transfer charge to HMRC?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Pension scheme paying the transfer charge" page
+    And the user selects the Name of pension scheme field and enters a value of TEST
+    And the user selects the Pension Scheme Tax Reference field and enters a value of 12345678RQ
+    And the user selects the Pension provider address field and enters a value of AB1 2DE
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Pension schemes paying transfer charges - summary" page
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Check transfers into overseas pensions" page
+
+
+  Scenario: Individual user as a new submission, Selects NO on - Did a UK pension scheme pay the transfer charge to HMRC
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Overseas pensions link
+    Then the user should be redirected to the "Overseas pensions" page
+    When the user clicks on the Overseas transfer charges link
+    Then the user should be redirected to the "Did you transfer pension savings into an overseas pension scheme?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did the amount result in an overseas transfer charge?" page
+    When the user selects the yes radio button
+    When the user selects the amount in pounds field and enters a value of 100.20
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did your pension schemes pay tax on the amount that resulted in a transfer charge?" page
+    When the user selects the yes radio button
+    When the user selects the amount in pounds field and enters a value of 100.20
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did a UK pension scheme pay the transfer charge to HMRC?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Pension scheme paying the transfer charge" page
+    And the user selects the Name of pension scheme field and enters a value of TEST
+    And the user selects the Pension Scheme Tax Reference field and enters a value of 123456
+    And the user selects the Pension provider address field and enters a value of AB1 2DE
+    When the user selects the Country field and enters a value of Togo
+    And the user clicks the Country List button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Pension schemes paying transfer charges - summary" page
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Check transfers into overseas pensions" page
+
+
+  Scenario: Agent user as a new submission, goes through transfer overseas from pension
+    When the user logs into the service with the following details
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000001A&ClientMTDID=1234567890 |
+      | Credential Strength | weak                                                                              |
+      | Confidence Level    | 250                                                                               |
+      | Affinity Group      | Agent                                                                             |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
+      | Identifier Name 1   | MTDITID                                                                           |
+      | Identifier Value 1  | 1234567890                                                                        |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
+      | Identifier Name 2   | AgentReferenceNumber                                                              |
+      | Identifier Value 2  | XARN1234567                                                                       |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your client’s Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Overseas pensions link
+    Then the user should be redirected to the "Overseas pensions" page
+    When the user clicks on the Overseas transfer charges link
+
+    Then the user should be redirected to the "Did your client transfer pension savings into an overseas pension scheme?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did the amount result in an overseas transfer charge?" page
+    When the user selects the yes radio button
+    When the user selects the amount in pounds field and enters a value of 100.20
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did your client’s pension schemes pay tax on the amount that resulted in a transfer charge?" page
+    When the user selects the yes radio button
+    When the user selects the amount in pounds field and enters a value of 100.20
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did a UK pension scheme pay the transfer charge to HMRC?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Pension scheme paying the transfer charge" page
+    And the user selects the Name of pension scheme field and enters a value of TEST
+    And the user selects the Pension Scheme Tax Reference field and enters a value of 12345678RQ
+    And the user selects the Pension provider address field and enters a value of AB1 2DE
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Pension schemes paying transfer charges - summary" page
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Check transfers into overseas pensions" page
+
+
+   Scenario: Overseas transfer charges (InYear) - user has prior data
+    When the user logs into the service with the following details
+      | Redirect url        | /InYear/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA370343B   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Overseas pensions link
+    Then the user should be redirected to the "Overseas pensions" page
+     When the user clicks on the Overseas transfer charges link
+     Then the user should be redirected to the "Check transfers into overseas pensions" page
+
+
+  Scenario: Individual user  Selects NO on first question page
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Overseas pensions link
+    Then the user should be redirected to the "Overseas pensions" page
+    When the user clicks on the Overseas transfer charges link
+
+    Then the user should be redirected to the "Did you transfer pension savings into an overseas pension scheme?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Check transfers into overseas pensions" page
+
+  Scenario: Check change links (EOY) - add, remove and change pension scheme
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA370343B   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+
+    When the user clicks on the Overseas pensions link
+    Then the user should be redirected to the "Overseas pensions" page
+    When the user clicks on the Overseas transfer charges link
+
+    Then the user should be redirected to the "Check transfers into overseas pensions" page
+
+    When the user clicks on the change link in position 4
+
+    # step to validate  Remove Pension scheme
+    When the user clicks on the Remove pension scheme link
+    Then the user should be redirected to the "Are you sure you want to remove overseas providerName 1 qualifying scheme?" page
+    And the user clicks the Remove Scheme button
+
+    Then the user should be redirected to the "Pension schemes paying transfer charges - summary" page
+
+    And the user clicks the Add a scheme button
+
+    Then the user should be redirected to the "Did a UK pension scheme pay the transfer charge to HMRC?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Pension scheme paying the transfer charge" page
+    And the user selects the Name of pension scheme field and enters a value of TEST
+    And the user selects the Pension Scheme Tax Reference field and enters a value of 12345678RQ
+    And the user selects the Pension provider address field and enters a value of AB1 2DE
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Pension schemes paying transfer charges - summary" page
+
+    # step to validate  change Pension scheme
+    When the user clicks on the Change scheme link
+    Then the user should be redirected to the "Did a UK pension scheme pay the transfer charge to HMRC?" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Pension scheme paying the transfer charge" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Pension schemes paying transfer charges - summary" page
+
+    # step to validate add another pension scheme link
+    When the user clicks on the Add another Pensions Scheme Tax Reference link
+    Then the user should be redirected to the "Did a UK pension scheme pay the transfer charge to HMRC?" page

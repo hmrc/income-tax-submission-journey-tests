@@ -165,7 +165,7 @@ Feature: Pensions Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your payments into pensions" page
 
-  @ignore
+
   Scenario: Agent user has prior submission, updates all payments into pensions amount fields
     When the user logs into the service with the following details
       | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA370343B&ClientMTDID=1234567890 |
@@ -216,7 +216,7 @@ Feature: Pensions Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s payments into pensions" page
 
-  @ignore
+
   Scenario: Individual user has prior submission, says yes on relief at source (RAS) pensions page
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
@@ -945,7 +945,7 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Check transfers into overseas pensions" page
 
 
-   Scenario: Overseas transfer charges (InYear) - user has prior data
+  Scenario: Overseas transfer charges (InYear) - user has prior data
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
       | Credential Strength | strong      |
@@ -1062,6 +1062,214 @@ Feature: Pensions Journeys - Income Tax Submission
     # step to validate add another pension scheme link
     When the user clicks on the Add another Pensions Scheme Tax Reference link
     Then the user should be redirected to the "Did a UK pension scheme pay the transfer charge to HMRC?" page
+
+
+  #-------------- Pension Lifetime allowance ----------#
+
+  Scenario: Individual flow - Pension lifetime allowance
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Pension lifetime allowance link
+
+    Then the user should be redirected to the "Have you gone above your lifetime allowance?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did you take the amount above your lifetime allowance as a lump sum?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Your pension lump sum" page
+    When the user selects the amount before tax field and enters a value of 300.30
+    And the user selects the tax paid field and enters a value of 200.30
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did you take the amount above your lifetime allowance another way?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Your pension taken in another way" page
+    When the user selects the amount before tax field and enters a value of 400.30
+    And the user selects the tax paid field and enters a value of 100.30
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Tell us the pension scheme that paid or agreed to pay the tax" page
+    And the user selects the PSTR field and enters a value of 12345678RW
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Pension schemes that paid or agreed to pay lifetime allowance tax" page
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Check your lifetime allowance" page
+
+
+  Scenario: Agent journey flow - Pension Lifetime allowance
+    When the user logs into the service with the following details
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000001A&ClientMTDID=1234567890 |
+      | Credential Strength | weak                                                                              |
+      | Confidence Level    | 250                                                                               |
+      | Affinity Group      | Agent                                                                             |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
+      | Identifier Name 1   | MTDITID                                                                           |
+      | Identifier Value 1  | 1234567890                                                                        |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
+      | Identifier Name 2   | AgentReferenceNumber                                                              |
+      | Identifier Value 2  | XARN1234567                                                                       |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your client’s Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Pension lifetime allowance link
+
+    Then the user should be redirected to the "Has your client gone above their lifetime allowance?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did your client take the amount above their lifetime allowance as a lump sum?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Your client’s pensions lump sum" page
+    When the user selects the amount before tax field and enters a value of 300.30
+    And the user selects the tax paid field and enters a value of 200.30
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did your client take the amount above their lifetime allowance another way?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Your client’s pension taken in another way" page
+    When the user selects the amount before tax field and enters a value of 400.30
+    And the user selects the tax paid field and enters a value of 100.30
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Tell us the pension scheme that paid or agreed to pay the tax" page
+    And the user selects the PSTR field and enters a value of 12345678RW
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Pension schemes that paid or agreed to pay lifetime allowance tax" page
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Check your client’s lifetime allowance" page
+
+
+  Scenario: Individual user answers No to first Pension lifetime allowance question page
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Pension lifetime allowance link
+
+    Then the user should be redirected to the "Have you gone above your lifetime allowance?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Check your lifetime allowance" page
+
+
+  Scenario: Individual user with Prior Data - Pension lifetime allowance
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA370343B   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Pension lifetime allowance link
+    Then the user should be redirected to the "Check your lifetime allowance" page
+
+
+  Scenario: Check pension scheme change links  - Pension lifetime allowance
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA370343B   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Pension lifetime allowance link
+    Then the user should be redirected to the "Check your lifetime allowance" page
+
+    When the user clicks on the change link in position 4
+
+    Then the user should be redirected to the "Pension schemes that paid or agreed to pay lifetime allowance tax" page
+    When the user clicks on the Adding another Pensions Scheme Tax Reference link
+
+    Then the user should be redirected to the "Tell us the pension scheme that paid or agreed to pay the tax" page
+    And the user selects the PSTR field and enters a value of 12345678RW
+    And the user clicks the continue button
+
+    When the user clicks on the change scheme link in position 1
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Pension schemes that paid or agreed to pay lifetime allowance tax" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your lifetime allowance" page
+
+
 
 
 

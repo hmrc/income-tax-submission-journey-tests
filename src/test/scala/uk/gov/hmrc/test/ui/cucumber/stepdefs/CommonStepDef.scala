@@ -196,4 +196,8 @@ class CommonStepDef extends BaseStepDef {
     elementExists(selector)
   }
 
+  When("""^the user clicks on the change scheme link in position (.*)$""") { position: String =>
+    CommonPage.clickBySelector(s"#main-content > div > div > div.govuk-form-group > dl > div:nth-child($position) > dd.hmrc-add-to-a-list__change > a > span:nth-child(1)")
+  }
+
 }

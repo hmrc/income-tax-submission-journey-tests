@@ -269,6 +269,8 @@ trait CommonElements extends BasePage with Matchers {
     "Add a scheme" -> By.id("AddAScheme"),
     "Change scheme" -> By.cssSelector("#pensionTransferSummaryList > dl > div > dd.hmrc-add-to-a-list__change > a > span:nth-child(1)"),
     "Overseas transfer charges" -> By.id("overseas-transfer-charges-link"),
+    "Pension lifetime allowance" -> By.id("pension-lifetime-allowance-link"),
+    "Adding another Pensions Scheme Tax Reference" -> By.id("add-another-link"),
 
     //Gains Elements
     "Gains from policies and contracts" -> By.id("gains_link"),

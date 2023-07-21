@@ -148,7 +148,11 @@ trait CommonElements extends BasePage with Matchers {
     "PAYE employment change" -> By.cssSelector("#main-content > div > div > dl:nth-child(3) > div > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a > span:nth-child(1)"),
     "Employment remove confirm" -> By.id("remove-employer-button-id"),
     "Taxable lump sums and certain income" -> By.id("taxable-lump-sums-and-certain-income_link"),
-     "Taxable lump sum page" -> By.cssSelector("#page-heading"),
+     "Taxable lump sum page" -> By.id("page-heading"),
+     "Taxable lump sum button" -> By.id("AddALumpSum"),
+     "Taxable lump sum amount page" -> By.id("page-heading"),
+     "Taxable lumps su amount" -> By.id("amount"),
+     "Taxable lump sum continue button" -> By.id("continue"),
 
     //GiftAid Elements
     "GiftAid"                                             -> By.id("giftAid_link"),

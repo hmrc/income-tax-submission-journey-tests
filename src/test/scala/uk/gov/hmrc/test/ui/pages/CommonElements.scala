@@ -271,6 +271,11 @@ trait CommonElements extends BasePage with Matchers {
     "Overseas transfer charges" -> By.id("overseas-transfer-charges-link"),
     "Pension lifetime allowance" -> By.id("pension-lifetime-allowance-link"),
     "Adding another Pensions Scheme Tax Reference" -> By.id("add-another-link"),
+    "Pension annual allowance" -> By.id("pension-annual-allowance-link"),
+    "Money purchase annual allowance" -> By.id("reducedAnnualAllowanceType"),
+    "Tapered annual allowance" -> By.id("reducedAnnualAllowanceType-2"),
+    "Remove allowance scheme"  -> By.cssSelector("div > dl > div:nth-child(1) > dd.hmrc-add-to-a-list__remove > a"),
+    "Change allowance scheme" -> By.cssSelector("div > dl > div:nth-child(1) > dd.hmrc-add-to-a-list__change > a"),
 
     //Gains Elements
     "Gains from policies and contracts" -> By.id("gains_link"),

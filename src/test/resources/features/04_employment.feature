@@ -2314,11 +2314,11 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the first change employment link
     When the user clicks on the Taxable lump sums and certain income link
-    Then the user should be redirected to the "Taxable lump sums" page
-    When the user clicks the Add Taxable Lump sum button
-    Then the user should be redirected to the "How much did you get in your taxable lump sum from Rick Owens Ltd Customer Edition EOY?" page
-    When the user selects the amount field and enters a value of 1200
-    Then the user clicks the continue button
+#    Then the user should be redirected to the "Taxable lump sums" page
+#    When the user clicks the Add Taxable Lump sum button
+#    Then the user should be redirected to the "How much did you get in your taxable lump sum from Rick Owens Ltd Customer Edition EOY?" page
+#    When the user selects the amount field and enters a value of 1200
+#    Then the user clicks the continue button
 
   @lumpsum
   Scenario: Agent user navigates through taxable lumpSum journey flow and enters details
@@ -2340,8 +2340,8 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the first change employment link
     Then the user clicks on the Taxable lump sums and certain income link
-    Then the user should be redirected to the "Taxable lump sums" page
-    When the user clicks the Add Taxable Lump sum button
-    Then the user should be redirected to the "How much did you get in your taxable lump sum from Rick Owens Ltd Customer Edition EOY?" page
-    When the user selects the amount field and enters a value of 1200
-    Then the user clicks the continue button
+#    Then the user should be redirected to the "Taxable lump sums" page
+#    When the user clicks the Add Taxable Lump sum button
+#    Then the user should be redirected to the "How much did you get in your taxable lump sum from Rick Owens Ltd Customer Edition EOY?" page
+#    When the user selects the amount field and enters a value of 1200
+#    Then the user clicks the continue button

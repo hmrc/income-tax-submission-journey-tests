@@ -37,7 +37,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "When did your contractor make CIS deductions?" page
     When the user clicks the continue button
-    Then the user should be redirected to the "How much did your contractor pay you for labour?" page
+    Then the user should be redirected to the "Amount paid before tax by this contractor" page
     When the user selects the amount field and enters a value of 20.02
     And the user clicks the continue button
     Then the user should be redirected to the "How much was taken by your contractor in CIS deductions?" page

@@ -639,7 +639,7 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Pensions" page
     When the user clicks on the Unauthorised payments from pensions link
     Then the user should be redirected to the "Unauthorised payments" page
-    When the user clicks the No checkbox
+    When the user clicks the No unauthorised payments checkbox
     And the user clicks the continue button
     Then the user should be redirected to the "Check your unauthorised payments" page
     When the user clicks the save and continue button

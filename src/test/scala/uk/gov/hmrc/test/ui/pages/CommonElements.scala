@@ -28,6 +28,9 @@ trait CommonElements extends BasePage with Matchers {
     //Common Elements
     "yes"                       -> By.id("value"),
     "no"                        -> By.id("value-no"),
+    "Yes"                       -> By.xpath("//*[contains(text(),'Yes')]"),
+    "No"                        -> By.xpath("//*[contains(text(),'No')]"),
+    "Continue"                  -> By.xpath("//*[contains(text(),'Continue')]"),
     "save and continue"         -> By.cssSelector("#main-content > div > div > form > button"),
     "continue"                  -> By.id("continue"),
     "confirm"                   -> By.xpath("//*[contains(text(),'Confirm')]"),
@@ -244,7 +247,7 @@ trait CommonElements extends BasePage with Matchers {
     "Unauthorised payments from pensions" -> By.id("unauthorised-payments-from-pensions-link"),
     "Yes, unauthorised payments that resulted in a surcharge" -> By.id("unauthorisedPayments"),
     "Yes, unauthorised payments that did not result in a surcharge" -> By.id("unauthorisedPayments-2"),
-    "No" -> By.id("unauthorisedPayments-4"),
+    "No unauthorised payments" -> By.id("unauthorisedPayments-4"),
     "amount in pounds" -> By.id("amount-2"),
     "PSTR" -> By.id("taxReferenceId"),
     "yes on" -> By.id("value-yes"),
@@ -290,6 +293,19 @@ trait CommonElements extends BasePage with Matchers {
     "Updated Tag"                       -> By.xpath("//*[contains(text(),'Updated')]/../../span/a[@id='gains_link']"),
     "Add a policy"                      -> By.id("continue"),
     "Excluded for Gains"                -> By.xpath("//*[contains(text(),'Excluded')]/../../span/a[@id='gains_link']"),
-    "Voided ISA"                        -> By.cssSelector("[value='voidedIsa']")
+    "Voided ISA"                        -> By.cssSelector("[value='voidedIsa']"),
+
+    //About You
+    "About you"                                           -> By.cssSelector("[value='About you']"),
+    "I was not resident in the UK"                        -> By.cssSelector("[value='WasNot']"),
+    "I was a dual resident in the UK and another country" -> By.cssSelector("[value='Was']"),
+    "No, I did not donate to charity"                     -> By.cssSelector("[value='DidNotDonateToCharity']"),
+    "My income"                                           -> By.cssSelector("[value='MyIncome']"),
+    "Tax avoidance"                                       -> By.cssSelector("[value='TaxAvoidance']"),
+    "No, I was not in any tax avoidance schemes"          -> By.cssSelector("[value='NoTaxAvoidance']"),
+    "My partner’s income"                                 -> By.cssSelector("[value='MyPartnersIncome']"),
+    "I do not have a partner"                             -> By.cssSelector("[value='NoPartner']"),
+    "Donations using Gift Aid"                            -> By.cssSelector("[value='DonationsUsingGiftAid']"),
+    "yes, but permanent home is abroad"                   -> By.id(("value_1"))
   )
 }

@@ -2295,13 +2295,15 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Employer information" page
 
 
+# ----------- Payment into LUMP SUM Tests Individual and Agent --------------
+@lumpsum
   Scenario: Individual user navigates through taxable lumpSum journey flow and enters details
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AA123459A   |
+      | Nino                | BB444444A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
@@ -2312,14 +2314,16 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the first change employment link
     When the user clicks on the Taxable lump sums and certain income link
-#  Then the user should be redirected to the "Taxable lump sums" page
-#  When the user clicks the continue button
-    Then the user should be redirected to the "Check your employment details" page
+#    Then the user should be redirected to the "Taxable lump sums" page
+#    When the user clicks the Add Taxable Lump sum button
+#    Then the user should be redirected to the "How much did you get in your taxable lump sum from Rick Owens Ltd Customer Edition EOY?" page
+#    When the user selects the amount field and enters a value of 1200
+#    Then the user clicks the continue button
 
-
+  @lumpsum
   Scenario: Agent user navigates through taxable lumpSum journey flow and enters details
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA123459A&ClientMTDID=1234567890  |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890  |
       | Credential Strength | weak                                                                              |
       | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
@@ -2336,6 +2340,8 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "PAYE employment" page
     When the user clicks on the first change employment link
     Then the user clicks on the Taxable lump sums and certain income link
-#  Then the user should be redirected to the "Taxable lump sums" page
-#  When the user clicks the continue button
-    Then the user should be redirected to the "Check your client’s employment details" page
+#    Then the user should be redirected to the "Taxable lump sums" page
+#    When the user clicks the Add Taxable Lump sum button
+#    Then the user should be redirected to the "How much did you get in your taxable lump sum from Rick Owens Ltd Customer Edition EOY?" page
+#    When the user selects the amount field and enters a value of 1200
+#    Then the user clicks the continue button

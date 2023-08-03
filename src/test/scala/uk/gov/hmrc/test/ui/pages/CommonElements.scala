@@ -52,6 +52,7 @@ trait CommonElements extends BasePage with Matchers {
     "addCisSection" -> By.id("cis"),
     "addPension"    -> By.id("pensions"),
     "addGains"      -> By.id("gains"),
+    "addProperty"   -> By.id("property"),
 
     //Dividends Elements
     "dividends"                                                  -> By.id("dividends_link"),
@@ -310,6 +311,11 @@ trait CommonElements extends BasePage with Matchers {
     "My partner’s income"                                 -> By.cssSelector("[value='MyPartnersIncome']"),
     "I do not have a partner"                             -> By.cssSelector("[value='NoPartner']"),
     "Donations using Gift Aid"                            -> By.cssSelector("[value='DonationsUsingGiftAid']"),
-    "yes, but permanent home is abroad"                   -> By.id(("value_1"))
+    "yes, but permanent home is abroad"                   -> By.id("value_1"),
+
+    // Property UK
+    "Property"                 -> By.id("property_link"),
+    "About your UK Properties" -> By.cssSelector("#main-content > div > div > h1"),
+    "UK Properties About" -> By.id("about_link")
   )
 }

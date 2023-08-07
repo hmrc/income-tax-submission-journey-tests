@@ -136,6 +136,7 @@ class CommonStepDef extends BaseStepDef {
       case "pensions summary page in year" => "http://localhost:9321/update-and-submit-income-tax-return/pensions/2024/pensions-summary"
       //TODO remove URl when tailor you return is hooked with submission frontend
       case "UK residence status" => "http://localhost:10006/update-and-submit-income-tax-return/tailor-return/2023/about-you/uk-residence-status"
+      case "About your work" => "http://localhost:10006/update-and-submit-income-tax-return/tailor-return/2023/work-and-benefits/about-your-work"
       case _ => fail("Invalid url input parameter")
 
     }

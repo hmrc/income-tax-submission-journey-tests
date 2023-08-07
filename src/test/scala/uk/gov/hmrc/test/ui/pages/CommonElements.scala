@@ -311,6 +311,17 @@ trait CommonElements extends BasePage with Matchers {
     "My partner’s income"                                 -> By.cssSelector("[value='MyPartnersIncome']"),
     "I do not have a partner"                             -> By.cssSelector("[value='NoPartner']"),
     "Donations using Gift Aid"                            -> By.cssSelector("[value='DonationsUsingGiftAid']"),
+    "yes, but permanent home is abroad"                   -> By.id(("value_1")),
+
+    //About Your Work
+    "Employed"                                         -> By.cssSelector("[value='Employed']"),
+    "Jobseeker's Allowance"                            -> By.cssSelector("[value='JobseekersAllowance']"),
+    "Member of Parliament"                             -> By.cssSelector("[value='MemberOfParliament']"),
+    "None of the above"                                -> By.cssSelector("[value='NoneOfTheAbove']"),
+    "No, I did not get either of these state benefits" -> By.cssSelector("[value='DidNotGetStateBenefits']"),
+    "Contribution-based"                               -> By.cssSelector("[value='ContributionBasedEmploymentAndSupportAllowance']"),
+    "Partnership"                                      -> By.cssSelector("[value='Partnership']"),
+    "Hidden message"                                   -> By.cssSelector("[class='govuk-body govuk-!-padding-2']")
     "yes, but permanent home is abroad"                   -> By.id("value_1"),
 
     // Property UK

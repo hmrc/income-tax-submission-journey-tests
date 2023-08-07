@@ -82,6 +82,7 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the Continue button
    # Then the user should be redirected to the "Add sections to your Tax Return" tailor your return page
+
   @ignore
   Scenario: Agent User answers yes for all questions - Income from work and taxable state benefits - Tailor your return
     When the user logs into the service with the following details

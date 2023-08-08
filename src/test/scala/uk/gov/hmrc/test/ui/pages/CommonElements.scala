@@ -321,7 +321,7 @@ trait CommonElements extends BasePage with Matchers {
     "No, I did not get either of these state benefits" -> By.cssSelector("[value='DidNotGetStateBenefits']"),
     "Contribution-based"                               -> By.cssSelector("[value='ContributionBasedEmploymentAndSupportAllowance']"),
     "Partnership"                                      -> By.cssSelector("[value='Partnership']"),
-    "Hidden message"                                   -> By.cssSelector("[class='govuk-body govuk-!-padding-2']")
+    "Hidden message"                                   -> By.cssSelector("[class='govuk-body govuk-!-padding-2']"),
     "yes, but permanent home is abroad"                   -> By.id("value_1"),
 
     // Property UK

@@ -61,7 +61,7 @@ class CommonStepDef extends BaseStepDef {
     driver.getTitle should be(s"$title - $testOnlyViewAndChangeServiceName - $govUkExtension")
   }
 
-  Then("""^the user should be taken to V&C "(.*)" test-only page on the View and Change service$""") { (title: String) =>
+  Then("""^the user should be taken to V&C "(.*C)" test-only page on the View and Change service$""") { (title: String) =>
     driver.getTitle should be(s"$title")
   }
 

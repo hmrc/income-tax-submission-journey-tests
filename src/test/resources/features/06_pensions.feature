@@ -1450,6 +1450,35 @@ Feature: Pensions Journeys - Income Tax Submission
 
 
 
+     #-------------- Overseas Pensions - Short Service Refunds ----------#
+
+  Scenario: Individual user as a new submission, goes through short service refunds
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Overseas pensions link
+    Then the user should be redirected to the "Overseas pensions" page
+    When the user clicks on the Short service refunds link
+
+
+
+
 
 
 

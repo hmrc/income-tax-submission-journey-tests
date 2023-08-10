@@ -241,6 +241,9 @@ trait CommonElements extends BasePage with Matchers {
     "state benefit save and continue"         -> By.id("save-and-continue-button-id"),
     "state benefit back"                      -> By.id("back-link"),
     "Employment and Support Allowance"        -> By.id("employmentSupportAllowance_link"),
+    "The date you started getting Jobseeker’s Allowance must include a day" -> By.id("value-for-error"),
+    "The date you started getting Jobseeker’s Allowance must include a month"   -> By.id("emptyMonth-error"),
+    "The date you started getting Jobseeker’s Allowance must include a year" -> By.id("emptyYear-error"),
 
     //View Estimation Elements
     "Update tax calculation"   -> By.id("updateTaxCalculation"),

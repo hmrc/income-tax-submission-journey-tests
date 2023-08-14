@@ -284,6 +284,7 @@ trait CommonElements extends BasePage with Matchers {
     "Tapered annual allowance" -> By.id("reducedAnnualAllowanceType-2"),
     "Remove allowance scheme"  -> By.cssSelector("div > dl > div:nth-child(1) > dd.hmrc-add-to-a-list__remove > a"),
     "Change allowance scheme" -> By.cssSelector("div > dl > div:nth-child(1) > dd.hmrc-add-to-a-list__change > a"),
+    "Short service refunds" -> By.id("short-service-refunds-link"),
 
     //Gains Elements
     "Gains from policies and contracts" -> By.id("gains_link"),

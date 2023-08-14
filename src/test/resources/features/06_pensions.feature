@@ -1449,6 +1449,191 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Pension schemes that paid or agreed to pay the annual allowance tax" page
 
 
+  #-------------- Overseas Pensions - Short Service Refunds ----------#
+
+  Scenario: Individual user as a new submission - short service refunds, selects YES to UK pension scheme pay tax
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Overseas pensions link
+    Then the user should be redirected to the "Overseas pensions" page
+    When the user clicks on the Short service refunds link
+
+    Then the user should be redirected to the "Taxable short service refunds" page
+    When the user selects the yes radio button
+    When the user selects the amount in pounds field and enters a value of 100.20
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Non-UK tax on short service refunds" page
+    When the user selects the yes radio button
+    When the user selects the amount in pounds field and enters a value of 10.20
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did a UK pension scheme pay tax on the short service refunds?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Pension scheme paying tax on the short service refund" page
+    And the user selects the Name of pension scheme field and enters a value of TEST
+    And the user selects the Pension Scheme Tax Reference field and enters a value of 12345678RQ
+    And the user selects the Pension provider address field and enters a value of AB1 2DE
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Short service refund summary" page
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Check short service refunds" page
+
+
+  Scenario: Individual user as a new submission - short service refunds, selects NO to UK pension scheme pay tax
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Overseas pensions link
+    Then the user should be redirected to the "Overseas pensions" page
+    When the user clicks on the Short service refunds link
+
+    Then the user should be redirected to the "Taxable short service refunds" page
+    When the user selects the yes radio button
+    When the user selects the amount in pounds field and enters a value of 100.20
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Non-UK tax on short service refunds" page
+    When the user selects the yes radio button
+    When the user selects the amount in pounds field and enters a value of 10.20
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did a UK pension scheme pay tax on the short service refunds?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Pension scheme paying tax on the short service refund" page
+    And the user selects the Name of pension scheme field and enters a value of TEST
+    And the user selects the Pension Scheme Tax Reference field and enters a value of 123456
+    And the user selects the Pension provider address field and enters a value of AB1 2DE
+    When the user selects the Country field and enters a value of Togo
+    And the user clicks the Country List button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Short service refund summary" page
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Check short service refunds" page
+
+
+  Scenario: Verify Change, remove and add another pension scheme links
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Overseas pensions link
+    Then the user should be redirected to the "Overseas pensions" page
+    When the user clicks on the Short service refunds link
+
+    Then the user should be redirected to the "Taxable short service refunds" page
+    When the user selects the yes radio button
+    When the user selects the amount in pounds field and enters a value of 100.20
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Non-UK tax on short service refunds" page
+    When the user selects the yes radio button
+    When the user selects the amount in pounds field and enters a value of 10.20
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did a UK pension scheme pay tax on the short service refunds?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Pension scheme paying tax on the short service refund" page
+    And the user selects the Name of pension scheme field and enters a value of TEST
+    And the user selects the Pension Scheme Tax Reference field and enters a value of 123456
+    And the user selects the Pension provider address field and enters a value of AB1 2DE
+    When the user selects the Country field and enters a value of Togo
+    And the user clicks the Country List button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Short service refund summary" page
+
+    # step to validate change Pension scheme
+    When the user clicks on the Change scheme link
+    Then the user should be redirected to the "Did a UK pension scheme pay tax on the short service refunds?" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Pension scheme paying tax on the short service refund" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Short service refund summary" page
+
+    # step to validate add another pension scheme link
+    When the user clicks on the Add another Pensions Scheme Tax Reference link
+    Then the user should be redirected to the "Did a UK pension scheme pay tax on the short service refunds?" page
+
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Pension scheme paying tax on the short service refund" page
+    And the user selects the Name of pension scheme field and enters a value of TEST
+    And the user selects the Pension Scheme Tax Reference field and enters a value of 12345678RQ
+    And the user selects the Pension provider address field and enters a value of AB1 2DE
+    And the user clicks the continue button
+    Then the user should be redirected to the "Short service refund summary" page
+
+    # step to validate  Remove Pension scheme Link
+    When the user clicks on the Remove pension scheme link
+    Then the user should be redirected to the "Are you sure you want to remove TEST?" page
+    And the user clicks the Remove Scheme button
+    Then the user should be redirected to the "Short service refund summary" page
+
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check short service refunds" page
+
+
+
+
 
 
 

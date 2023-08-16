@@ -319,6 +319,7 @@ trait CommonElements extends BasePage with Matchers {
 
     //About Your Work
     "Employed"                                         -> By.cssSelector("[value='Employed']"),
+    "Self-employed"                                    -> By.cssSelector("[value='SelfEmployed']"),
     "Jobseeker's Allowance"                            -> By.cssSelector("[value='JobseekersAllowance']"),
     "Member of Parliament"                             -> By.cssSelector("[value='MemberOfParliament']"),
     "None of the above"                                -> By.cssSelector("[value='NoneOfTheAbove']"),
@@ -326,7 +327,8 @@ trait CommonElements extends BasePage with Matchers {
     "Contribution-based"                               -> By.cssSelector("[value='ContributionBasedEmploymentAndSupportAllowance']"),
     "Partnership"                                      -> By.cssSelector("[value='Partnership']"),
     "Hidden message"                                   -> By.cssSelector("[class='govuk-body govuk-!-padding-2']"),
-    "yes, but permanent home is abroad"                   -> By.id("value_1"),
+    "yes, but permanent home is abroad"                -> By.id("value_1"),
+    "checkboxes"                                       ->By.cssSelector("[class='govuk-checkboxes__input']"),
 
     // Property UK
     "Property"                 -> By.id("property_link"),

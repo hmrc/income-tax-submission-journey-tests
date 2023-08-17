@@ -221,7 +221,8 @@ trait CommonElements extends BasePage with Matchers {
     "Cannot Update for Cis"      -> By.xpath("//*[contains(text(),'Cannot update')]/../../span/a[@id='cis_link']"),
 
     //State Benefits Elements
-    "State benefits"                          -> By.id("stateBenefits_link"),
+   // "State benefits"                          -> By.id("stateBenefits_link"),
+    "State benefits"                          -> By.cssSelector("#stateBenefits_link"),
     "Jobseeker’s Allowance"                   -> By.id("jobSeekersAllowance_link"),
     "Add missing claim"                       -> By.id("add-missing-claim-button-id"),
     "claim day"                               -> By.id("value-for-day"),

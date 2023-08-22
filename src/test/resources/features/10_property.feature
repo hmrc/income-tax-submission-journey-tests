@@ -27,6 +27,30 @@ Feature: Property Journeys - Income Tax Submission
    Then the user should be redirected to the "About your UK Properties" page
    And the user clicks on the UK Properties About link
 
+ # --------- Navigating to the UK Properties pages : Between 1000 and 85000 ----------------
+  Then the user should be redirected to the "UK Property details" page
+  When the user clicks the continue button
+  Then the user should be redirected to the "How much total income did you get from your UK properties?" page
+  When the user selects the first property radio button: Under 1000
+  And the user clicks the property continue button
+  Then the user should be redirected to the "About your UK Properties" page
+  And the user clicks on the UK Properties About link
+  Then the user should be redirected to the "UK Property details" page
+  When the user clicks the continue button
+  Then the user should be redirected to the "How much total income did you get from your UK properties?" page
+  When the user selects the second property radio button: Between 1000 and 85000
+  And the user clicks the property continue button
+  Then the user should be redirected to the "About your UK Properties" page
+
+
+ #  Then the user should be redirected to the "UK Property" page
+ #  And the Select which type of property you have is displayed
+ #  When the user selects the first radio button: Property Rentals
+ #  Then the user should be redirected to the "About your UK Properties" page
+ #  And the user should see the correct Property Rentals About url
+ #  When the user clicks on the UK Properties About link
+ #  Then the user should be redirected to the "Check Your Answers" page
+
 
   Scenario: Agent user adds UK Property details
     When the user logs into the service with the following details
@@ -51,3 +75,20 @@ Feature: Property Journeys - Income Tax Submission
     When the user clicks on the Property link
     Then the user should be redirected to the "About your UK Properties" page
     And the user clicks on the UK Properties About link
+
+ # -------------           --------------------------------
+    Then the user should be redirected to the "UK Property details" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "How much total income did your client get from all of their properties?" page
+    When the user selects the first property radio button: Under 1000
+    And the user clicks the property continue button
+    Then the user should be redirected to the "About your UK Properties" page
+    And the user clicks on the UK Properties About link
+    Then the user should be redirected to the "UK Property details" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "How much total income did your client get from all of their properties?" page
+    When the user selects the second property radio button: Between 1000 and 85000
+    And the user clicks the property continue button
+    Then the user should be redirected to the "About your UK Properties" page
+
+ # -----------------              ------------------------------

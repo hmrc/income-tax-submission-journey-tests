@@ -316,7 +316,7 @@ trait CommonElements extends BasePage with Matchers {
     "My partner’s income"                                 -> By.cssSelector("[value='MyPartnersIncome']"),
     "I do not have a partner"                             -> By.cssSelector("[value='NoPartner']"),
     "Donations using Gift Aid"                            -> By.cssSelector("[value='DonationsUsingGiftAid']"),
-    "yes, but permanent home is abroad"                   -> By.id(("value_1")),
+    "yes, but permanent home is abroad"                   -> By.id("value_1"),
 
     //About Your Work
     "Employed"                                         -> By.cssSelector("[value='Employed']"),
@@ -341,5 +341,25 @@ trait CommonElements extends BasePage with Matchers {
     "first property" -> By.id("value_0"),
     "second property" -> By.id("value_1"),
     "How much total income did your client get from all of their properties?" -> By.cssSelector("#main-content > div > div > form > div > fieldset > legend > h1"),
+
+    // Property, Pensions And Investments
+    "UK Property"                                                          -> By.cssSelector("[value='UkProperty']"),
+    "Non UK Property"                                                      -> By.cssSelector("[value='NonukProperty']"),
+    "No income from property"                                              -> By.cssSelector("[value='NoRentalIncome']"),
+    "State Pension"                                                        -> By.cssSelector("[value='StatePension']"),
+    "Non UK pensions"                                                      -> By.cssSelector("[value='NonUkPensions']"),
+    "No income from pensions"                                              -> By.cssSelector("[value='NoIncomePensions']"),
+    "No UK insurance gains"                                                -> By.cssSelector("[value='NoGains']"),
+    "Interest from UK banks and building societies"                        -> By.cssSelector("[value='InterestFromUkBanksAndBuildingSocieties']"),
+    "Interest from UK trust funds or bonds"                                -> By.cssSelector("[value='InterestFromUkTrustFundsOrBonds']"),
+    "No income from UK interest"                                           -> By.cssSelector("[value='NoInterestIncome']"),
+    "Cash dividends from UK stocks and shares"                             -> By.cssSelector("[value='CashDividendsFromUkStocksAndShares']"),
+    "Free or redeemable shares"                                            -> By.cssSelector("[value='FreeOrRedeemableShares']"),
+    "No UK dividends, shares or loans"                                     -> By.cssSelector("[value='NoUkDividendsSharesLoans']"),
+    "Non-UK interest"                                                      -> By.cssSelector("[value='NonukInterest']"),
+    "Non-UK dividends while living in the UK"                              -> By.cssSelector("[value='NonukDividendsWhileLivingInTheUk]"),
+    "No non-UK interest, dividends or income from insurance policies"      -> By.cssSelector("[value='NoNonUkInterestDividendsInsurance']"),
+    "Life Annuity"                                                         -> By.cssSelector("[value='LifeAnnuity']"),
+    "No UK insurance gains"                                                -> By.cssSelector("[value='NoGains']")
   )
 }

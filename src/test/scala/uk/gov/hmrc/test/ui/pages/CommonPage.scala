@@ -29,7 +29,18 @@ object CommonPage extends BasePage with CommonElements {
 
   def clickOnRadioButton(radioButtonBoolean: String): Unit = {
     val selector: By = load(radioButtonBoolean)
-    clickOn(selector)
+    if(!driver.findElement(selector).isSelected)
+      {
+        clickOn(selector)
+      }
+  }
+
+  def deselectRadioButton(checkboxes: String): Unit = {
+    val selector: By = load(checkboxes)
+    if (driver.findElement(selector).isSelected)
+      {
+        clickOn(selector)
+      }
   }
 
   def enterValue(valueTextBox: String, value: String): Unit = {

@@ -334,7 +334,7 @@ trait CommonElements extends BasePage with Matchers {
     // Property UK
     "Property"                 -> By.id("property_link"),
     "About your UK Properties" -> By.cssSelector("#main-content > div > div > h1"),
-    "UK Properties About" -> By.id("about_link"),
+    "UK Properties About" -> By.id("about_uk_properties_link"),
     "UK Property details" -> By.cssSelector("#main-content > div > div > h1"),
     "property continue" -> By.cssSelector("#main-content > div > div > form > button"),
     "How much total income did you get from your UK properties?" -> By.cssSelector("#main-content > div > div > form > div > fieldset > legend > h1"),

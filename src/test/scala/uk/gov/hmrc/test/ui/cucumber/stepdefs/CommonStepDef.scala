@@ -111,7 +111,7 @@ class CommonStepDef extends BaseStepDef {
   }
 
   Then("""^the user should see the (.*) field with the value of (.*)$""") { (valueTextBox: String, expectedValue: String) =>
-    CommonPage.checkValue(valueTextBox, expectedValue) shouldEqual(true)
+    CommonPage.checkValue(valueTextBox, expectedValue) shouldEqual (true)
   }
 
   Then("""^the user should see the correct (.*) url$""") { (url: String) =>
@@ -142,6 +142,7 @@ class CommonStepDef extends BaseStepDef {
       case "UK residence status" => "http://localhost:10006/update-and-submit-income-tax-return/tailor-return/2023/about-you/uk-residence-status"
       case "About your work" => "http://localhost:10006/update-and-submit-income-tax-return/tailor-return/2023/work-and-benefits/about-your-work"
       case "Rental income" => "http://localhost:10006/update-and-submit-income-tax-return/tailor-return/2023/property-pensions-investments/rental-income"
+      case "Capital gains" => "http://localhost:10006/update-and-submit-income-tax-return/tailor-return/2023/capital-gains-trusts-estates/capital-gains"
       case _ => fail("Invalid url input parameter")
 
     }

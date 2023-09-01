@@ -360,6 +360,12 @@ trait CommonElements extends BasePage with Matchers {
     "Non-UK dividends while living in the UK"                              -> By.cssSelector("[value='NonukDividendsWhileLivingInTheUk]"),
     "No non-UK interest, dividends or income from insurance policies"      -> By.cssSelector("[value='NoNonUkInterestDividendsInsurance']"),
     "Life Annuity"                                                         -> By.cssSelector("[value='LifeAnnuity']"),
-    "No UK insurance gains"                                                -> By.cssSelector("[value='NoGains']")
+    "No UK insurance gains"                                                -> By.cssSelector("[value='NoGains']"),
+  
+   // Capital gains
+  "Trusts"                            -> By.cssSelector("[value='Trusts']"),
+  "Settlements"                       -> By.cssSelector("[value='Settlements']"),
+  "Estates of people who have died"   -> By.cssSelector("[value='Estates']"),
+  "No income from trusts"             -> By.cssSelector("value='NoIncome'")
   )
 }

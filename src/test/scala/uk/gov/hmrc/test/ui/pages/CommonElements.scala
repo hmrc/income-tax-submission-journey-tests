@@ -289,6 +289,13 @@ trait CommonElements extends BasePage with Matchers {
     "Remove allowance scheme"  -> By.cssSelector("div > dl > div:nth-child(1) > dd.hmrc-add-to-a-list__remove > a"),
     "Change allowance scheme" -> By.cssSelector("div > dl > div:nth-child(1) > dd.hmrc-add-to-a-list__change > a"),
     "Short service refunds" -> By.id("short-service-refunds-link"),
+    "Income from pensions" -> By.id("income-from-pensions-link"),
+    "State pension" -> By.id("state-pensions-link"),
+    "pension day" -> By.id("day"),
+    "pension month" -> By.id("month"),
+    "pension year" -> By.id("year"),
+    "Other UK Pensions" -> By.id("other-uk-pensions-link"),
+    "Pension Identification" -> By.id("pensionId"),
 
     //Gains Elements
     "Gains from policies and contracts" -> By.id("gains_link"),

@@ -24,8 +24,9 @@ Feature: Property Journeys - Income Tax Submission
    And the user clicks the continue button
    Then the user should be redirected to the "Your Income Tax Return" page
    When the user clicks on the Property link
+#   Then the user should be redirected to the "Property landing" page
    Then the user should be redirected to the "About your UK Properties" page
-   And the user clicks on the UK Properties About link
+   And the user clicks on the About your UK Properties About link
 
  # --------- Navigating to the UK Properties pages : Between 1000 and 85000 SASS-5334----------------
   Then the user should be redirected to the "UK Property details" page
@@ -34,15 +35,21 @@ Feature: Property Journeys - Income Tax Submission
   When the user selects the second property radio button: Between 1000 and 85000
   And the user clicks the property continue button
 
+ #--------- SASS-5401- Property Rentals -------------------
+  Then the user should be redirected to the "Select UK property" page
+  When the user clicks the Property Rentals checkbox
+  And the user clicks the UK Property continue button
+  Then the user should be redirected to the "Check Your Answers" page
+  When the user clicks the Check Your Answers continue button
 
-
- #  Then the user should be redirected to the "UK Property" page
- #  And the Select which type of property you have is displayed
- #  When the user selects the first radio button: Property Rentals
- #  Then the user should be redirected to the "About your UK Properties" page
- #  And the user should see the correct Property Rentals About url
- #  When the user clicks on the UK Properties About link
- #  Then the user should be redirected to the "Check Your Answers" page
+ #--------- SASS-5418- Property Rentals About journey -------------------
+ Then the user should be redirected to the "About your UK Properties" page
+ When the user clicks on the Property rentals about link
+ Then the user should be redirected to the "Property rentals" page
+ And the user clicks the continue button
+ Then the user should be redirected to the "Expenses less than £1,000" page
+ And the user selects the Property rentals Yes radio button
+ And the user clicks the continue button
 
 
   Scenario: Agent user adds UK Property details
@@ -66,8 +73,9 @@ Feature: Property Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the Property link
+#    Then the user should be redirected to the "Property landing" page
     Then the user should be redirected to the "About your UK Properties" page
-    And the user clicks on the UK Properties About link
+    And the user clicks on the About your UK Properties About link
 
  # --------- Navigating to the UK Properties pages : Between 1000 and 85000 SASS-5334----------------
     Then the user should be redirected to the "UK Property details" page
@@ -76,4 +84,18 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the second property radio button: Between 1000 and 85000
     And the user clicks the property continue button
 
- # -----------------              ------------------------------
+  # ----------------- SASS-5401 - Property Rentals  ------------------------------
+    Then the user should be redirected to the "Select UK property" page
+    When the user clicks the Property Rentals checkbox
+    And the user clicks the UK Property continue button
+    Then the user should be redirected to the "Check Your Answers" page
+    When the user clicks the Check Your Answers continue button
+
+  #--------- SASS-5418- Property Rentals About journey -------------------
+    Then the user should be redirected to the "About your UK Properties" page
+    When the user clicks on the Property rentals about link
+    Then the user should be redirected to the "Property rentals" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Expenses less than £1,000" page
+    And the user selects the Property rentals Yes radio button
+    And the user clicks the continue button

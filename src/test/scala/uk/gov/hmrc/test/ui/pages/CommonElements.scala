@@ -340,14 +340,25 @@ trait CommonElements extends BasePage with Matchers {
 
     // Property UK
     "Property"                 -> By.id("property_link"),
+   // "Property Landing" -> By.cssSelector("#main-content > div > div > h1"),
     "About your UK Properties" -> By.cssSelector("#main-content > div > div > h1"),
-    "UK Properties About" -> By.id("about_uk_properties_link"),
+    "About your UK Properties About" -> By.id("about_uk_properties_link"),
     "UK Property details" -> By.cssSelector("#main-content > div > div > h1"),
     "property continue" -> By.cssSelector("#main-content > div > div > form > button"),
     "How much total income did you get from your UK properties?" -> By.cssSelector("#main-content > div > div > form > div > fieldset > legend > h1"),
     "first property" -> By.id("value_0"),
     "second property" -> By.id("value_1"),
     "How much total income did your client get from all of their properties?" -> By.cssSelector("#main-content > div > div > form > div > fieldset > legend > h1"),
+    "UK property" -> By.cssSelector("#main-content > div > div > form > h1"),
+    "Property Rentals" -> By.id("value_0"),
+    "UK Property continue" -> By.cssSelector("#main-content > div > div > form > button"),
+    "Check Your Answers" -> By.cssSelector("#main-content > div > div > h1"),
+    "Check Your Answers continue" -> By.cssSelector("#main-content > div > div > a"),
+    "Property rentals about" -> By.id("about_rentals_link"),
+    "Property rentals" -> By.cssSelector("#main-content > div > div > h1"),//#main-content > div > div > h1
+    "Expenses less than £1,000" -> By.cssSelector("#main-content > div > div > h1"),//#main-content > div > div > h1
+     "Property rentals Yes" -> By.id("value"),
+    "Property rentals No"-> By.id("value-no"),
 
     // Property, Pensions And Investments
     "UK Property"                                                          -> By.cssSelector("[value='UkProperty']"),

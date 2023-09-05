@@ -1632,6 +1632,127 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Check short service refunds" page
 
 
+     #-------------- Income from Pensions - State Pensions ----------#
+
+  Scenario: Individual journey - Income from pension, state pensions
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+
+    When the user clicks on the Income from pensions link
+    Then the user should be redirected to the "Income from pensions" page
+    When the user clicks on the State pension link
+
+    Then the user should be redirected to the "Do you get regular State Pension payments?" page
+    When the user selects the yes radio button
+    When the user selects the amount in pounds field and enters a value of 100.20
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "When did you start getting State Pension payments?" page
+    When the user selects the pension day field and enters a value of 01
+    And the user selects the pension month field and enters a value of 01
+    And the user selects the pension year field and enters a value of 2023
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did you get a State Pension lump sum?" page
+    When the user selects the yes radio button
+    When the user selects the amount in pounds field and enters a value of 100.20
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did you pay tax on the State Pension lump sum?" page
+    When the user selects the yes radio button
+    When the user selects the amount in pounds field and enters a value of 100.20
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "When did you get your State Pension lump sum?" page
+    When the user selects the pension day field and enters a value of 01
+    And the user selects the pension month field and enters a value of 01
+    And the user selects the pension year field and enters a value of 2023
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Do you want to add State Pension to your Income Tax calculation?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Check your State Pension" page
+
+
+
+     #-------------- Income from Pensions - Other UK Pensions ----------#
+
+  Scenario: Individual journey - Income from pension for other UK Pensions
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+
+    When the user clicks on the Income from pensions link
+    Then the user should be redirected to the "Income from pensions" page
+    When the user clicks on the Other UK Pensions link
+
+    Then the user should be redirected to the "Do you get UK pension scheme payments?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Pension scheme details" page
+    And the user selects the Name of pension scheme field and enters a value of TEST
+    And the user selects the Pension Scheme Tax Reference field and enters a value of 123/AB456
+    And the user selects the Pension Identification field and enters a value of 455
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "How much pension did you get paid?" page
+    When the user selects the amount before tax field and enters a value of 400.30
+    And the user selects the tax paid field and enters a value of 100.30
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "When did you start getting payments from this scheme?" page
+    When the user selects the pension day field and enters a value of 01
+    And the user selects the pension month field and enters a value of 01
+    And the user selects the pension year field and enters a value of 2023
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Check pension scheme details" page
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "UK pension income" page
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Check UK Pension Income" page
+
+
+
+
 
 
 

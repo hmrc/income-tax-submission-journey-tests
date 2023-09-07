@@ -340,7 +340,6 @@ trait CommonElements extends BasePage with Matchers {
 
     // Property UK
     "Property"                 -> By.id("property_link"),
-   // "Property Landing" -> By.cssSelector("#main-content > div > div > h1"),
     "About your UK Properties" -> By.cssSelector("#main-content > div > div > h1"),
     "About your UK Properties About" -> By.id("about_uk_properties_link"),
     "UK Property details" -> By.cssSelector("#main-content > div > div > h1"),
@@ -355,10 +354,22 @@ trait CommonElements extends BasePage with Matchers {
     "Check Your Answers" -> By.cssSelector("#main-content > div > div > h1"),
     "Check Your Answers continue" -> By.cssSelector("#main-content > div > div > a"),
     "Property rentals about" -> By.id("about_rentals_link"),
-    "Property rentals" -> By.cssSelector("#main-content > div > div > h1"),//#main-content > div > div > h1
-    "Expenses less than £1,000" -> By.cssSelector("#main-content > div > div > h1"),//#main-content > div > div > h1
+    "Property rentals" -> By.cssSelector("#main-content > div > div > h1"),
+    "Expenses less than £1,000" -> By.cssSelector("#main-content > div > div > h1"),
      "Property rentals Yes" -> By.id("value"),
     "Property rentals No"-> By.id("value-no"),
+    "Do you want to claim property income allowance?" -> By.cssSelector("#main-content > div > div > form > div > fieldset > legend > h1"),
+    "Yes, claim property income allowance" -> By.id("value"),
+    "No, claim expenses" -> By.id("value-no"),
+    "Continue" -> By.cssSelector("#main-content > div > div > form > button"),
+    "Check Your Answers"-> By.cssSelector("#main-content > div > div > h1"),
+    "Are your total expenses less than £1,000?" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dt"),
+    "Would you like to claim property income allowance?" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dt"),
+   // "Yes" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__value"),
+    //"Yes" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__value"),
+
+
+
 
     // Property, Pensions And Investments
     "UK Property"                                                          -> By.cssSelector("[value='UkProperty']"),

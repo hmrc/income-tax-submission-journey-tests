@@ -1,5 +1,6 @@
-@capital_gains @ignore
+@capital_gains @Tailoring @ignore
 
+  #TODO remove ignore tag when TYR II capital gains Journey navigation is complete
 Feature: Capital Gains, Trusts And Estates Tailor Your Return - Income Tax Submission
 
   Background:

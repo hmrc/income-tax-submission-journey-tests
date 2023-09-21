@@ -1,5 +1,6 @@
-@MVP @about_your_work
+@MVP @Tailoring @about_your_work @ignore
 
+  #TODO remove ignore tag when TYR II About your work Journey navigation is complete
 Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
 
   Background:

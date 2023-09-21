@@ -1,5 +1,6 @@
-@MVP @property_pensions_investments
+@MVP @Tailoring @property_pensions_investments @ignore
 
+  #TODO remove ignore tag when TYR II Property,Pensions and investments Journey navigation is complete
 Feature: Income from Property, Pensions And Investments Tailor Your Return - Income Tax Submission
 
   Background:

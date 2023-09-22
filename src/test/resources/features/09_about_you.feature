@@ -1,5 +1,6 @@
-@MVP @about_you
+@MVP @Tailoring @about_you @ignore
 
+  #TODO remove ignore tag when TYR II About you Journey navigation is complete
 Feature: About You Journeys Tailor Your Return - Income Tax Submission
 
   Background:

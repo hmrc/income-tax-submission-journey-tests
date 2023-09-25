@@ -359,14 +359,38 @@ trait CommonElements extends BasePage with Matchers {
      "Property rentals Yes" -> By.id("value"),
     "Property rentals No"-> By.id("value-no"),
     "Do you want to claim property income allowance?" -> By.cssSelector("#main-content > div > div > form > div > fieldset > legend > h1"),
+    "Does your client want to claim property income allowance?" -> By.cssSelector("#main-content > div > div > form > div > fieldset > legend"),
     "Yes, claim property income allowance" -> By.id("value"),
     "No, claim expenses" -> By.id("value-no"),
     "Continue" -> By.cssSelector("#main-content > div > div > form > button"),
     "Check Your Answers"-> By.cssSelector("#main-content > div > div > h1"),
     "Are your total expenses less than £1,000?" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dt"),
     "Would you like to claim property income allowance?" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dt"),
-   // "Yes" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__value"),
-    //"Yes" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__value"),
+    "Change" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a"),
+    "Income" -> By.id("about_income_link"),
+    "Property Income" -> By.cssSelector("#main-content > div > div > h1"),
+    "Non-UK resident landlord" -> By.cssSelector("#main-content > div > div > h1"),
+    "Yes" -> By.id("value"),
+    "No" -> By.id("value-no"),
+    "Deducting Tax from non-UK landlords" -> By.cssSelector("#main-content > div > div > form > h2"),
+    "Tax deducted Yes" -> By.id("taxDeductedYesNo"),
+    "Tax deducted No" -> By.id("taxDeductedNo"),
+    "Tax Deducted Amount" -> By.id("taxDeducted"),
+    "Income from Property Rentals" -> By.cssSelector("#main-content > div > div > form > h2"),
+    "How much total income did you recieve from from all of your property rentals?" -> By.cssSelector("#main-content > div > div > form > h3"),
+    "Property rental amount" -> By.id("incomeReceived"),
+    "Premiums for the grant of a lease" -> By.cssSelector("#main-content > div > div > h1"),
+    "Have you calculated the figure yourself" -> By.cssSelector("#main-content > div > div > form > div > fieldset > legend > h1"),
+    "How much did you receive for the grant lease" -> By.cssSelector("#main-content > div > div > form > div > h1 > label"),
+    "grant lease amount" -> By.id("value"),
+    "How many complete 12 month periods were in the term of the lease?" -> By.cssSelector("#main-content > div > div > form > div > h1 > label"),
+    "month period" -> By.id("value"),
+    "Premiums for grant of a lease" -> By.cssSelector("#main-content > div > div > h1"),
+
+
+
+
+
 
 
 

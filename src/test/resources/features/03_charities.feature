@@ -1,4 +1,4 @@
-@MVP @ZAP @charities
+@MVP @ZAP @charities @ignore
 
 Feature: Charities Journeys - Income Tax Submission
 

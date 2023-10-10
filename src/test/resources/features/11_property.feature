@@ -318,8 +318,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Non-UK resident landlord" page
     When the user selects the Yes radio button
     And the user clicks the continue button
-#    Then the user should be redirected to the "Deducting Tax from non-UK landlords" page
-    Then the user should be redirected to the "Did you have tax deducted?" page
+    Then the user should be redirected to the "Deducting tax from non-UK landlords" page
     And the user selects the Tax deducted Yes radio button
     And the user selects the Tax Deducted Amount field and enters a value of 340.55
     When the user clicks the continue button

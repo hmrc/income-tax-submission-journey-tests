@@ -272,7 +272,7 @@ Feature: Property Journeys - Income Tax Submission
     And the user clicks the Continue button
     Then the user should be redirected to the "Check Your Answers" page
 
-
+@test
   Scenario: Individual user adds UK Property - Property rentals - Income
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -323,25 +323,24 @@ Feature: Property Journeys - Income Tax Submission
     And the user selects the Tax Deducted Amount field and enters a value of 340.55
     When the user clicks the continue button
     Then the user should be redirected to the "Income from Property Rentals" page
-##    And the user should see the How much total income did you recieve from from all of your property rentals? field with the value of (.*)
     When the user selects the Property rental amount field and enters a value of 340.55
     And the user clicks the continue button
-#    Then the user should be redirected to the "Premiums for the grant of a lease" page
-#    When the user selects the Yes radio button
-#    And the user clicks the continue button
-#    Then the user should be redirected to the "Have you calculated the figure yourself" page
-#    When the user selects the No radio button
-#    And the user clicks the continue button
-#    Then the user should be redirected to the "Premiums for the grant of a lease" page
-#    When the user selects the Yes radio button
-#    And the user clicks the continue button
-#    Then the user should be redirected to the "Have you calculated the figure yourself" page
-#    When the user selects the No radio button
-#    And the user clicks the continue button
-#    Then the user should be redirected to the "How much did you receive for the grant lease" page
-#    And the user selects the grant lease amount field and enters a value of 1000
-#    And the user clicks the continue button
-#    Then the user should be redirected to the "How many complete 12 month periods were in the term of the lease?" page
-#    And the user selects the month period field and enters a value of 2
-#    When the user clicks the continue button
-#    Then the user should be redirected to the "Premiums for grant of a lease" page
+    Then the user should be redirected to the "Premiums for the grant of a lease" page
+    When the user selects the Yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Have you calculated the figure yourself" page
+    When the user selects the No radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Premiums for the grant of a lease" page
+    When the user selects the Yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Have you calculated the figure yourself" page
+    When the user selects the No radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much did you receive for the grant lease" page
+    And the user selects the grant lease amount field and enters a value of 1000
+    And the user clicks the continue button
+    Then the user should be redirected to the "How many complete 12 month periods were in the term of the lease?" page
+    And the user selects the month period field and enters a value of 2
+    When the user clicks the continue button
+    Then the user should be redirected to the "Premiums for grant of a lease" page

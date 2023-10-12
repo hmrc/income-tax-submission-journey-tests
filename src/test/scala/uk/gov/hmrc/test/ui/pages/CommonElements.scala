@@ -386,6 +386,9 @@ trait CommonElements extends BasePage with Matchers {
     "How many complete 12 month periods were in the term of the lease?" -> By.cssSelector("#main-content > div > div > form > div > h1 > label"),
     "month period" -> By.id("value"),
     "Premiums for grant of a lease" -> By.cssSelector("#main-content > div > div > h1"),
+    "Reverse premiums received" -> By.cssSelector("#main-content > div > div > h1"),
+    "Yes" -> By.id("reversePremiumsReceived"),
+    "No" -> By.id("reversePremiumsReceived-no"),
 
 
 

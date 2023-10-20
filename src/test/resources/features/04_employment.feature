@@ -350,6 +350,7 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page
 
+@test
   Scenario: Agent user with at least one prior employment edits an employment
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
@@ -419,7 +420,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user selects the Tax field and enters a value of 720.08
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page
-    When the user clicks the continue button
+    When the user clicks the Save and continue button
     Then the user should be redirected to the "Employer information" page
 
   Scenario: Agent user with at least two prior employments removes an employment

@@ -157,6 +157,7 @@ trait CommonElements extends BasePage with Matchers {
      "Taxable lump sum amount page" -> By.id("page-heading"),
      "Taxable lumps su amount" -> By.id("amount"),
      "Taxable lump sum continue button" -> By.id("continue"),
+     "Save and continue" -> By.id("saveAndContinueBtn"),
 
     //GiftAid Elements
     "GiftAid"                                             -> By.id("giftAid_link"),

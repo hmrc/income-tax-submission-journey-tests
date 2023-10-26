@@ -18,13 +18,12 @@ Feature: Property Journeys - Income Tax Submission
    Then the user should be redirected to the "Update and submit an Income Tax Return" page
    When the user clicks the continue button
    Then the user should be redirected to the "Your Income Tax Return" page
-   When the user clicks on the addSections link
-   Then the user should be redirected to the "Add sections to your Income Tax Return" page
-   When the user clicks the addProperty tailoring option
-   And the user clicks the continue button
+#   When the user clicks on the addSections link
+#   Then the user should be redirected to the "Add sections to your Income Tax Return" page
+#   When the user clicks the addProperty tailoring option
+#   And the user clicks the continue button
    Then the user should be redirected to the "Your Income Tax Return" page
    When the user clicks on the Property link
-#   Then the user should be redirected to the "Property landing" page
    Then the user should be redirected to the "About your UK Properties" page
    And the user clicks on the About your UK Properties About link
 
@@ -318,7 +317,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Non-UK resident landlord" page
     When the user selects the Yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Deducting tax from non-UK landlords" page
+    Then the user should be redirected to the "Deducting Tax from non-UK landlords" page
     And the user selects the Tax deducted Yes radio button
     And the user selects the Tax Deducted Amount field and enters a value of 340.55
     When the user clicks the continue button
@@ -345,12 +344,14 @@ Feature: Property Journeys - Income Tax Submission
     Then the user selects the premium recieved amount field and enters a value of 1200
     When the user clicks the continue button
     Then the user should be redirected to the "Other income from property" page
-    When the user selects the amount other income field and enters a value of 3590.78
+    When the user selects the Other income amount field and enters a value of 1350.78
     Then the user clicks the continue button
+    And the user should be redirected to the "Check Your Answers" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "About your UK Properties" page
 
 
-@test
-  Scenario: Individual user adds UK Property - Property rentals - Premiums recieved, Have you calculated the figure yourself?
+  Scenario: Individual user adds UK Property - Property rentals - Premiums received, Have you calculated the figure yourself?
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
@@ -395,7 +396,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Non-UK resident landlord" page
     When the user selects the Yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Deducting tax from non-UK landlords" page
+    Then the user should be redirected to the "Deducting Tax from non-UK landlords" page
     And the user selects the Tax deducted Yes radio button
     And the user selects the Tax Deducted Amount field and enters a value of 340.55
     When the user clicks the continue button
@@ -414,5 +415,8 @@ Feature: Property Journeys - Income Tax Submission
     Then the user selects the premium recieved amount field and enters a value of 1200
     When the user clicks the continue button
     Then the user should be redirected to the "Other income from property" page
-    When the user selects the amount other income field and enters a value of 3590.78
+    When the user selects the Other income amount field and enters a value of 3590.78
     Then the user clicks the continue button
+    And the user should be redirected to the "Check Your Answers" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "About your UK Properties" page

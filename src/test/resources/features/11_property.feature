@@ -1,4 +1,4 @@
-@MVP @property @ignore
+@MVP @property
 
 Feature: Property Journeys - Income Tax Submission
 
@@ -17,11 +17,6 @@ Feature: Property Journeys - Income Tax Submission
      | Identifier Value 1  | 1234567890  |
    Then the user should be redirected to the "Update and submit an Income Tax Return" page
    When the user clicks the continue button
-   Then the user should be redirected to the "Your Income Tax Return" page
-#   When the user clicks on the addSections link
-#   Then the user should be redirected to the "Add sections to your Income Tax Return" page
-#   When the user clicks the addProperty tailoring option
-#   And the user clicks the continue button
    Then the user should be redirected to the "Your Income Tax Return" page
    When the user clicks on the Property link
    Then the user should be redirected to the "About your UK Properties" page
@@ -72,7 +67,6 @@ Feature: Property Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the Property link
-#    Then the user should be redirected to the "Property landing" page
     Then the user should be redirected to the "About your UK Properties" page
     And the user clicks on the About your UK Properties About link
 

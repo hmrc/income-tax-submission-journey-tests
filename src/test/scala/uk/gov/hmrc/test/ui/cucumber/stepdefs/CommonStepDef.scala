@@ -28,6 +28,7 @@ class CommonStepDef extends BaseStepDef {
   val viewAndChangeServiceName = "Business Tax account"
   val viewAndChangeServiceNameAgent = "Your client’s Income Tax details"
   val govUkExtension = "GOV.UK"
+  val selfEmployment = "income-tax-self-employment-frontend"
 
   Then("""^the user should be redirected to the "(.*)" page$""") { (title: String) =>
     driver.getTitle.replace("\u00A0", " ") should be(s"$title - $serviceName - $govUkExtension")
@@ -213,6 +214,10 @@ class CommonStepDef extends BaseStepDef {
 
   When("""^the user clicks on the change scheme link in position (.*)$""") { position: String =>
     CommonPage.clickBySelector(s"div > dl > div:nth-child($position) > dd.hmrc-add-to-a-list__change > a")
+  }
+
+  Then("""^the user should be redirected to the "(.*)" page under self employment$""") { (title: String) =>
+    driver.getTitle.replace("\u00A0", " ") should be(s"$title - $selfEmployment - $govUkExtension")
   }
 
 }

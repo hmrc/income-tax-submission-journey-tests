@@ -53,6 +53,7 @@ trait CommonElements extends BasePage with Matchers {
     "addPension"    -> By.id("pensions"),
     "addGains"      -> By.id("gains"),
     "addProperty"   -> By.id("property"),
+    "addSelfEmployment" -> By.id("self-employment"),
 
     //Dividends Elements
     "dividends"                                                  -> By.id("dividends_link"),
@@ -428,10 +429,16 @@ trait CommonElements extends BasePage with Matchers {
     "Life Annuity"                                                         -> By.cssSelector("[value='LifeAnnuity']"),
     "No UK insurance gains"                                                -> By.cssSelector("[value='NoGains']"),
   
-   // Capital gains
-  "Trusts"                            -> By.cssSelector("[value='Trusts']"),
-  "Settlements"                       -> By.cssSelector("[value='Settlements']"),
-  "Estates of people who have died"   -> By.cssSelector("[value='Estates']"),
-  "No income from trusts"             -> By.cssSelector("value='NoIncome'")
+    // Capital gains
+    "Trusts"                            -> By.cssSelector("[value='Trusts']"),
+    "Settlements"                       -> By.cssSelector("[value='Settlements']"),
+    "Estates of people who have died"   -> By.cssSelector("[value='Estates']"),
+    "No income from trusts"             -> By.cssSelector("value='NoIncome'"),
+
+    //Self Employment
+    "Self Employment" ->By.id("selfEmployment_link"),
+    "Review self-employments" -> By.cssSelector("#main-content > div > div > div.task-list > ul > li > span > a"),
+    "View Self Employment" -> By.cssSelector("#main-content > div > div > dl > div > dd.govuk-summary-list__actions > a"),
+    "Self Employment Save and continue" -> By.id("continue")
   )
 }

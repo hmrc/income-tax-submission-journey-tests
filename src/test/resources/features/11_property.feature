@@ -1,4 +1,4 @@
-@MVP @property @ignore
+@MVP @property
 
 Feature: Property Journeys - Income Tax Submission
 

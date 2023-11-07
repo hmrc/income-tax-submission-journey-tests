@@ -315,17 +315,20 @@ trait CommonElements extends BasePage with Matchers {
     "Voided ISA"                        -> By.cssSelector("[value='voidedIsa']"),
 
     //About You
-    "About you"                                           -> By.cssSelector("[value='About you']"),
-    "I was not resident in the UK"                        -> By.cssSelector("[value='WasNot']"),
-    "I was a dual resident in the UK and another country" -> By.cssSelector("[value='Was']"),
-    "No, I did not donate to charity"                     -> By.cssSelector("[value='DidNotDonateToCharity']"),
-    "My income"                                           -> By.cssSelector("[value='MyIncome']"),
-    "Tax avoidance"                                       -> By.cssSelector("[value='TaxAvoidance']"),
-    "No, I was not in any tax avoidance schemes"          -> By.cssSelector("[value='NoTaxAvoidance']"),
+    "About you"                                                   -> By.id("task-list__task-link--aboutYou"),
+    "I was not resident in the UK"                                -> By.cssSelector("[value='WasNot']"),
+    "I was a dual resident in the UK and another country"         -> By.cssSelector("[value='Was']"),
+    "No, my client did not donate to charity"                     -> By.id("CharitableDonations-5"),
+    "My income"                                                   -> By.cssSelector("[value='selfIncome']"),
+    "Tax avoidance"                                               -> By.cssSelector("[value='taxAvoidance']"),
+    "No, my client was not in any tax avoidance schemes"          -> By.id("TaxAvoidance-4"),
     "My partner’s income"                                 -> By.cssSelector("[value='MyPartnersIncome']"),
     "I do not have a partner"                             -> By.cssSelector("[value='NoPartner']"),
-    "Donations using Gift Aid"                            -> By.cssSelector("[value='DonationsUsingGiftAid']"),
-    "yes, but permanent home is abroad"                   -> By.id("value_1"),
+    "Donations using Gift Aid"                            -> By.id("CharitableDonations"),
+    "yes, but permanent home is abroad"                   -> By.cssSelector("[value='domiciled']"),
+    "Not a resident"                                      -> By.cssSelector("[value='nonUK']"),
+    "My client was not resident in the UK"                -> By.cssSelector("[value='nonResident']"),
+    "No residency"                                        -> By.cssSelector("[value='nonUK']"),
 
     //About Your Work
     "Employed"                                         -> By.cssSelector("[value='Employed']"),
@@ -364,7 +367,6 @@ trait CommonElements extends BasePage with Matchers {
     "Does your client want to claim property income allowance?" -> By.cssSelector("#main-content > div > div > form > div > fieldset > legend"),
     "Yes, claim property income allowance" -> By.id("value"),
     "No, claim expenses" -> By.id("value-no"),
-    "Continue" -> By.cssSelector("#main-content > div > div > form > button"),
     "Check Your Answers"-> By.cssSelector("#main-content > div > div > h1"),
     "Are your total expenses less than £1,000?" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dt"),
     "Would you like to claim property income allowance?" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dt"),
@@ -400,14 +402,6 @@ trait CommonElements extends BasePage with Matchers {
     "Other income amount" -> By.id("amount"),
     "Check Your Answers" -> By.cssSelector("#main-content > div > div > h1"),
     "Adjusments" -> By.id("adjustments_link"),
-
-
-
-
-
-
-
-
 
     // Property, Pensions And Investments
     "UK Property"                                                          -> By.cssSelector("[value='UkProperty']"),

@@ -23,7 +23,6 @@ import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, CommonPage}
 class CommonStepDef extends BaseStepDef {
 
   val serviceName = "Update and submit an Income Tax Return"
-  val tailorServiceName = "income-tax-tailor-return-frontend"
   val testOnlyViewAndChangeServiceName = "Your client’s Income Tax details"
   val viewAndChangeServiceName = "Business Tax account"
   val viewAndChangeServiceNameAgent = "Your client’s Income Tax details"
@@ -32,10 +31,6 @@ class CommonStepDef extends BaseStepDef {
 
   Then("""^the user should be redirected to the "(.*)" page$""") { (title: String) =>
     driver.getTitle.replace("\u00A0", " ") should be(s"$title - $serviceName - $govUkExtension")
-  }
-
-  Then("""^the user should be redirected to the "(.*)" tailor your return page$""") { (title: String) =>
-    driver.getTitle.replace("\u00A0", " ") should be(s"$title - $tailorServiceName - $govUkExtension")
   }
 
   Then("""^the user should be redirected to V&C "(.*)" page$""") { (title: String) =>
@@ -140,7 +135,8 @@ class CommonStepDef extends BaseStepDef {
       case "pensions summary page" => "http://localhost:9321/update-and-submit-income-tax-return/pensions/2023/pensions-summary"
       case "pensions summary page in year" => "http://localhost:9321/update-and-submit-income-tax-return/pensions/2024/pensions-summary"
       //TODO remove URl when tailor you return is hooked with submission frontend
-      case "UK residence status" => "http://localhost:10006/update-and-submit-income-tax-return/tailor-return/2023/about-you/uk-residence-status"
+      case "Tailor return start" => "http://localhost:10007/update-and-submit-income-tax-return/tailored-return/2023/start"
+      case "QA Tailor return start" => "https://www.qa.tax.service.gov.uk/update-and-submit-income-tax-return/tailored-return/2023/start"
       case "About your work" => "http://localhost:10006/update-and-submit-income-tax-return/tailor-return/2023/work-and-benefits/about-your-work"
       case "Rental income" => "http://localhost:10006/update-and-submit-income-tax-return/tailor-return/2023/property-pensions-investments/rental-income"
       case "Capital gains" => "http://localhost:10006/update-and-submit-income-tax-return/tailor-return/2023/capital-gains-trusts-estates/capital-gains"
@@ -219,5 +215,4 @@ class CommonStepDef extends BaseStepDef {
   Then("""^the user should be redirected to the "(.*)" page under self employment$""") { (title: String) =>
     driver.getTitle.replace("\u00A0", " ") should be(s"$title - $selfEmployment - $govUkExtension")
   }
-
 }

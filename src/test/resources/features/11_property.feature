@@ -419,3 +419,25 @@ Feature: Property Journeys - Income Tax Submission
     And the user should be redirected to the "Check Your Answers" page
     When the user clicks the continue button
     Then the user should be redirected to the "About your UK Properties" page
+    When the user clicks on the AdjustmentsLink link
+    Then the user should be redirected to the "Adjustments" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "How much was your private use adjustment?" page
+    And the user selects the Private use adjustment Amount field and enters a value of 698.56
+    When the user clicks the continue button
+    Then the user should be redirected to the "Balancing Charge" page
+    And the user selects the BalancingChargeYes radio button
+    Then the user selects the How much is the balancing charge? Amount field and enters a value of 1200
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much Property Income Allowance (PIA) do you want to claim?" page
+    And the user selects the Enter your share of PIA for this property Amount field and enters a value of 1000
+    When the user clicks the continue button
+    Then the user should be redirected to the "Business premises renovation allowance balancing charge" page
+    When the user clicks the Yes,How much is the renovation allowance balancing charge? button
+    And the user selects the How much is the renovation allowance balancing charge? amount field and enters a value of 254.90
+    When the user clicks the continue button
+    Then the user should be redirected to the "Residential finance costs" page
+    When the user selects the How much were your residential finance costs? Amount field and enters a value of 1200
+    And the user clicks the continue button
+    Then the user should be redirected to the "Unused residential costs brought forward" page
+    And the user selects the How much unused residential costs do you want to bring forward? Amount field and enters a value of 1200

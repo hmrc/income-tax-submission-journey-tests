@@ -69,7 +69,6 @@ trait CommonElements extends BasePage with Matchers {
 
     //Interest Elements
     "Interest from savings and securities"                  -> By.id("interest_link"),
-    "Interest"                                              -> By.id("interest_link"),
     "UK Interest"                                           -> By.xpath("//*[contains(text(),'UK Interest')]"),
     "Interest from gilt-edged or accrued income securities" -> By.cssSelector("#main-content > div > div > ol > li:nth-child(2) > span.app-task-list__task-name > a"),
     "UK untaxed interest amount earned"           -> By.id("untaxedAmount"),

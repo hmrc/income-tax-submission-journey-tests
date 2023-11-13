@@ -23,7 +23,7 @@ Feature: Interest Journeys - Income Tax Submission
     When the user clicks the addInterest tailoring option
     And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the Interest link
+    When the user clicks on the Interest from savings and securities link
     Then the user should be redirected to the "Interest from savings and securities" page
     When the user clicks on the UK Interest link
     Then the user should be redirected to the "Did you get any interest from the UK?" page
@@ -40,7 +40,6 @@ Feature: Interest Journeys - Income Tax Submission
     Then the user should be redirected to the "Interest from savings and securities" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-
 
   Scenario: Maximal flow - Agent User - Interest
     When the user logs into the service with the following details
@@ -62,7 +61,7 @@ Feature: Interest Journeys - Income Tax Submission
     When the user clicks the addInterest tailoring option
     And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the Interest link
+    When the user clicks on the Interest from savings and securities link
     Then the user should be redirected to the "Interest from savings and securities" page
     When the user clicks on the UK Interest link
     Then the user should be redirected to the "Did your client get any interest from the UK?" page
@@ -126,7 +125,6 @@ Feature: Interest Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Interest from savings and securities" page
 
-  @ignore
   Scenario: Account Removal flow - Agent User  - Interest
     When the user logs into the service with the following details
       | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA123456A&ClientMTDID=1234567890 |
@@ -147,6 +145,8 @@ Feature: Interest Journeys - Income Tax Submission
     When the user clicks the addInterest tailoring option
     And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the Interest from savings and securities link
+    Then the user should be redirected to the "Interest from savings and securities" page
     When the user clicks on the UK Interest link
     Then the user should be redirected to the "Did your client get any interest from the UK?" page
     When the user selects the yes radio button
@@ -211,9 +211,10 @@ Feature: Interest Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s UK interest" page
     When the user clicks the save and continue button
+    Then the user should be redirected to the "Interest from savings and securities" page
+    And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
-
-  @ignore
+@ignore
   Scenario: Returning flow - Individual User with prior UK Untaxed & Taxed Interest, Review & change - Interest
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
@@ -227,6 +228,8 @@ Feature: Interest Journeys - Income Tax Submission
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the Interest from savings and securities link
+    Then the user should be redirected to the "Interest from savings and securities" page
     When the user clicks on the UK Interest link
     Then the user should be redirected to the "Check your UK interest" page
     When the user clicks on the change uk untaxed interest accounts summary link
@@ -441,7 +444,7 @@ Feature: Interest Journeys - Income Tax Submission
     When the user clicks the addInterest tailoring option
     And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the Interest link
+    When the user clicks on the Interest from savings and securities link
     Then the user should be redirected to the "Interest from savings and securities" page
     When the user clicks on the UK Interest link
     Then the user should be redirected to the "Did you get any interest from the UK?" page

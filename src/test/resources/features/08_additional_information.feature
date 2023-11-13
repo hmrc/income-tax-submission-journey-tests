@@ -818,10 +818,10 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
 
 
     ######################################### Stock Dividends ##############################################################
-  @ignore
+  @dividends
   Scenario: Maximal flow - Agent User - Stock Dividends
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/InYear/additional-parameters?ClientNino=AA123457A&ClientMTDID=1234567890    |
+      |Redirect url       |/test-only/EOY/additional-parameters?ClientNino=AA123457A&ClientMTDID=1234567890    |
       |Credential Strength|weak                                                                                 |
       |Confidence Level   |250                                                                                  |
       |Affinity Group     |Agent                                                                                |
@@ -877,10 +877,10 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
 
-  @ignore
+  @dividends
   Scenario: Maximal flow - User with no prior data - answers No on Stock Dividends page
     When the user logs into the service with the following details
-      |Redirect url       |/InYear/start                                        |
+      |Redirect url       |/EOY/start                                        |
       |Credential Strength|strong                                               |
       |Confidence Level   |250                                                  |
       |Affinity Group     |Individual                                           |
@@ -925,10 +925,10 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your Income Tax Return" page
 
-  @ignore
+  @dividends
   Scenario: Maximal flow - User with no prior data - answers Yes on Stock Dividends page but no for all following questions
     When the user logs into the service with the following details
-      |Redirect url       |/InYear/start                                        |
+      |Redirect url       |/EOY/start                                        |
       |Credential Strength|strong                                               |
       |Confidence Level   |250                                                  |
       |Affinity Group     |Individual                                           |

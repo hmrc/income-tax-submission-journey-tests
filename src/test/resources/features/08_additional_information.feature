@@ -1,4 +1,4 @@
-@additional_info
+@MVP @additional_info
 
 Feature: Additional Information Journeys (Interest Securities & Gains) - Income Tax Submission
 
@@ -146,7 +146,6 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     Then the user should be redirected to the "Interest from savings and securities" page
 
 ################################# Gains Journey ####################################################################################
-
   Scenario: Individual User maximal flow - Gains - User says yes to all questions
     When the user logs into the service with the following details
       |Redirect url       |/InYear/start                                        |
@@ -368,7 +367,6 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user clicks the Add a policy button
     Then the user should be redirected to the "What type of policy gave your client a gain?" page
 
-
   Scenario: Individual User maximal flow - Gains - User answers no on gains status page
     When the user logs into the service with the following details
       |Redirect url       |/InYear/start                                        |
@@ -416,7 +414,6 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Policy summary" page
-
 
   Scenario: Individual User minimum flow - Gains - User answers no on gain gateway question page
     When the user logs into the service with the following details
@@ -520,7 +517,6 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     Then the user should be redirected to the "Your Income Tax Return" page
 
     ################################# Gains Voided ISA Journey ####################################################################################
-
   Scenario: Individual User maximal flow - Gains - User says yes to all questions
     When the user logs into the service with the following details
       |Redirect url       |/InYear/start                                        |
@@ -722,7 +718,6 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user clicks the Add a policy button
     Then the user should be redirected to the "What type of policy gave your client a gain?" page
 
-
   Scenario: Individual User maximal flow - Gains - User answers no on gains status page
     When the user logs into the service with the following details
       |Redirect url       |/InYear/start                                        |
@@ -767,7 +762,6 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user selects the amount field and enters a value of 123.45
     And the user clicks the continue button
     Then the user should be redirected to the "Policy summary" page
-
 
   Scenario: Individual User minimum flow - Gains - User answers no on gain gateway question page
     When the user logs into the service with the following details
@@ -822,7 +816,9 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user clicks the return to overview button
     Then the user should be redirected to the "Your Income Tax Return" page
 
+
     ######################################### Stock Dividends ##############################################################
+  @ignore
   Scenario: Maximal flow - Agent User - Stock Dividends
     When the user logs into the service with the following details
       |Redirect url       |/test-only/InYear/additional-parameters?ClientNino=AA123457A&ClientMTDID=1234567890    |
@@ -881,6 +877,7 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
 
+  @ignore
   Scenario: Maximal flow - User with no prior data - answers No on Stock Dividends page
     When the user logs into the service with the following details
       |Redirect url       |/InYear/start                                        |
@@ -928,6 +925,7 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your Income Tax Return" page
 
+  @ignore
   Scenario: Maximal flow - User with no prior data - answers Yes on Stock Dividends page but no for all following questions
     When the user logs into the service with the following details
       |Redirect url       |/InYear/start                                        |

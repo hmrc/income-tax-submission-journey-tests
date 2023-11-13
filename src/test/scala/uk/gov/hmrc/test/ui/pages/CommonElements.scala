@@ -400,7 +400,26 @@ trait CommonElements extends BasePage with Matchers {
     "Other income from property" -> By.cssSelector("#main-content > div > div > form > h1"),
     "Other income amount" -> By.id("amount"),
     "Check Your Answers" -> By.cssSelector("#main-content > div > div > h1"),
-    "Adjusments" -> By.id("adjustments_link"),
+    "AdjustmentsLink" -> By.id("adjustments_link"),
+    "Adjustments" -> By.cssSelector("#main-content > div > div > h1"),
+    "How much was your private use adjustment?" -> By.cssSelector("#main-content > div > div > form > h1"),
+    "Private use adjustment Amount"-> By.id("privateUseAdjustmentAmount"),
+    "Balancing charge" -> By.cssSelector("#main-content > div > div > form > h1"),
+    "BalancingChargeYes" -> By.id("balancingCharge"),
+    "BalancingChargeNo" -> By.id("balancingCharge-no"),
+    "How much is the balancing charge? Amount" -> By.id("balancingChargeAmount"),
+    "How much Property Income Allowance (PIA) do you want to claim?" -> By.cssSelector("#main-content > div > div > h1"),
+    "Enter your share of PIA for this property Amount" -> By.id("propertyIncomeAllowance"),
+    "Business premises renovation allowance balancing charge" -> By.cssSelector("#main-content > div > div > h1"),
+    "Yes,How much is the renovation allowance balancing charge?" -> By.id("renovationAllowanceBalancingCharge"),
+    "How much is the renovation allowance balancing charge? amount" -> By.id("renovationAllowanceBalancingChargeAmount"),
+    "No,How much is the balancing charge?" -> By.id("renovationAllowanceBalancingCharge-no"),
+    "Residential finance costs" -> By.cssSelector("#main-content > div > div > h1"),
+    "How much were your residential finance costs? Amount" -> By.id("residentialFinanceCost"),
+    "Unused residential costs brought forward" -> By.cssSelector("#main-content > div > div > h1"),
+    "How much unused residential costs do you want to bring forward? Amount" -> By.id("unusedResidentialFinanceCost"),
+
+
 
     // Property, Pensions And Investments
     "UK Property"                                                          -> By.cssSelector("[value='UkProperty']"),

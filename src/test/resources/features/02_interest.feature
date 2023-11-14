@@ -1,4 +1,4 @@
-@MVP @ZAP @interest @ignore
+@MVP @ZAP @interest
 
 Feature: Interest Journeys - Income Tax Submission
 

@@ -441,3 +441,5 @@ Feature: Property Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Unused residential costs brought forward" page
     And the user selects the How much unused residential costs do you want to bring forward? Amount field and enters a value of 1200
+    When the user clicks the continue button
+    Then the user should be redirected to the "Check Your Answers" page

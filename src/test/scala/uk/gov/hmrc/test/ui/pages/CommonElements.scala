@@ -418,7 +418,7 @@ trait CommonElements extends BasePage with Matchers {
     "How much were your residential finance costs? Amount" -> By.id("residentialFinanceCost"),
     "Unused residential costs brought forward" -> By.cssSelector("#main-content > div > div > h1"),
     "How much unused residential costs do you want to bring forward? Amount" -> By.id("unusedResidentialFinanceCost"),
-
+    "Check Your Answers" -> By.cssSelector("#main-content > div > div > h1"),
 
 
     // Property, Pensions And Investments

@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.pages.CommonPage.{checkValue, clickOn, elementExists, load}
+import uk.gov.hmrc.test.ui.pages.CommonPage.{clickOn, elementExists, load}
 import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, CommonPage}
 
 class CommonStepDef extends BaseStepDef {

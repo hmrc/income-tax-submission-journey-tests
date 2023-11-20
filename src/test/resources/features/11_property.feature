@@ -5,51 +5,50 @@ Feature: Property Journeys - Income Tax Submission
   Background:
     Given the user navigates to the auth login page
 
- Scenario: Individual user adds UK Property details
-   When the user logs into the service with the following details
-     | Redirect url        | /EOY/start  |
-     | Credential Strength | strong      |
-     | Confidence Level    | 250         |
-     | Affinity Group      | Individual  |
-     | Nino                | AA123456A   |
-     | Enrolment Key 1     | HMRC-MTD-IT |
-     | Identifier Name 1   | MTDITID     |
-     | Identifier Value 1  | 1234567890  |
-   Then the user should be redirected to the "Update and submit an Income Tax Return" page
-   When the user clicks the continue button
-   Then the user should be redirected to the "Your Income Tax Return" page
-   When the user clicks on the addSections link
-   Then the user should be redirected to the "Add sections to your Income Tax Return" page
-   When the user clicks the addProperty tailoring option
-   And the user clicks the continue button
-   Then the user should be redirected to the "Your Income Tax Return" page
-   When the user clicks on the Property link
-   Then the user should be redirected to the "About your UK Properties" page
-   And the user clicks on the About your UK Properties About link
+  Scenario: Individual user adds UK Property details
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA123456A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addProperty tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the Property link
+    Then the user should be redirected to the "About your UK Properties" page
+    And the user clicks on the About your UK Properties About link
 
  # --------- Navigating to the UK Properties pages : Between 1000 and 85000 SASS-5334----------------
-  Then the user should be redirected to the "UK Property details" page
-  When the user clicks the continue button
-  Then the user should be redirected to the "How much total income did you get from your UK properties?" page
-  When the user selects the second property radio button: Between 1000 and 85000
-  And the user clicks the property continue button
+    Then the user should be redirected to the "UK Property details" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "How much total income did you get from your UK properties?" page
+    When the user selects the second property radio button: Between 1000 and 85000
+    And the user clicks the property continue button
 
  #--------- SASS-5401- Property Rentals -------------------
-  Then the user should be redirected to the "Select UK property" page
-  When the user clicks the Property Rentals checkbox
-  And the user clicks the UK Property continue button
-  Then the user should be redirected to the "Check Your Answers" page
-  When the user clicks the Check Your Answers continue button
+    Then the user should be redirected to the "Select UK property" page
+    When the user clicks the Property Rentals checkbox
+    And the user clicks the UK Property continue button
+    Then the user should be redirected to the "Check Your Answers" page
+    When the user clicks the Check Your Answers continue button
 
  #--------- SASS-5418- Property Rentals About journey -------------------
- Then the user should be redirected to the "About your UK Properties" page
- When the user clicks on the Property rentals about link
- Then the user should be redirected to the "Property rentals" page
- And the user clicks the continue button
- Then the user should be redirected to the "Expenses less than £1,000" page
- And the user selects the Property rentals Yes radio button
- And the user clicks the continue button
-
+    Then the user should be redirected to the "About your UK Properties" page
+    When the user clicks on the Property rentals about link
+    Then the user should be redirected to the "Property rentals" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Expenses less than £1,000" page
+    And the user selects the Property rentals Yes radio button
+    And the user clicks the continue button
 
   Scenario: Agent user adds UK Property details
     When the user logs into the service with the following details
@@ -98,7 +97,6 @@ Feature: Property Journeys - Income Tax Submission
     And the user selects the Property rentals Yes radio button
     And the user clicks the continue button
 
-
   Scenario: Individual user adds UK Property - Property rentals and claims Property Income Allowance
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -139,7 +137,6 @@ Feature: Property Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "About your UK Properties" page
 
-
   Scenario: Individual user adds UK Property - Property rentals and claims Expenses
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -179,7 +176,6 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Check Your Answers" page
     When the user clicks the continue button
     Then the user should be redirected to the "About your UK Properties" page
-
 
   Scenario: Individual user change answers ON Property rentals CYA - claims Property Income Allowance
     When the user logs into the service with the following details
@@ -223,7 +219,6 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the Yes, claim property income allowance radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Check Your Answers" page
-
 
   Scenario: Agent user adds UK Property details
     When the user logs into the service with the following details
@@ -269,7 +264,6 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the Yes, claim property income allowance radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Check Your Answers" page
-
 
   Scenario: Individual user adds UK Property - Property rentals - Income
     When the user logs into the service with the following details
@@ -348,7 +342,6 @@ Feature: Property Journeys - Income Tax Submission
     And the user should be redirected to the "Check Your Answers" page
     When the user clicks the continue button
     Then the user should be redirected to the "About your UK Properties" page
-
 
   Scenario: Individual user adds UK Property - Property rentals - Premiums received, Have you calculated the figure yourself?
     When the user logs into the service with the following details
@@ -443,3 +436,57 @@ Feature: Property Journeys - Income Tax Submission
     And the user selects the How much unused residential costs do you want to bring forward? Amount field and enters a value of 1200
     When the user clicks the continue button
     Then the user should be redirected to the "Check Your Answers" page
+
+  Scenario: Individual user adds UK Property - Property rentals - Claim Expenses
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA123456A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the Property link
+    Then the user should be redirected to the "About your UK Properties" page
+    And the user clicks on the About your UK Properties About link
+    Then the user should be redirected to the "UK Property details" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "How much total income did you get from your UK properties?" page
+    When the user selects the second property radio button: Between 1000 and 85000
+    And the user clicks the property continue button
+    Then the user should be redirected to the "Select UK property" page
+    When the user clicks the Property Rentals checkbox
+    And the user clicks the UK Property continue button
+    Then the user should be redirected to the "Check Your Answers" page
+    When the user clicks the Check Your Answers continue button
+    Then the user should be redirected to the "About your UK Properties" page
+    When the user clicks on the Property rentals about link
+    Then the user should be redirected to the "Property rentals" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Expenses less than £1,000" page
+    And the user selects the Property rentals Yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Do you want to claim property income allowance?" page
+    Then the user selects the No, claim expenses radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Check Your Answers" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "About your UK Properties" page
+    And the user clicks on the Expenses link
+
+    ## User changes from Expenses to Claim PIA - Income link should appear
+    When the user clicks on the Property rentals about link
+    Then the user should be redirected to the "Property rentals" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Expenses less than £1,000" page
+    And the user selects the Property rentals Yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Do you want to claim property income allowance?" page
+    When the user selects the Yes, claim property income allowance radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Check Your Answers" page
+    When the user clicks the continue button

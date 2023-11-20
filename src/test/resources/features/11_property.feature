@@ -445,7 +445,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Check Your Answers" page
 
 
-@test
+
   Scenario: Individual user adds UK Property - Property rentals - Claim Expenses
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |

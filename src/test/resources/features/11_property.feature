@@ -476,17 +476,35 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Check Your Answers" page
     When the user clicks the continue button
     Then the user should be redirected to the "About your UK Properties" page
-    And the user clicks on the Expenses link
-
-    ## User changes from Expenses to Claim PIA - Income link should appear
-    When the user clicks on the Property rentals about link
-    Then the user should be redirected to the "Property rentals" page
+    When the user clicks on the Income link
+    Then the user should be redirected to the "Property income" page
     And the user clicks the continue button
-    Then the user should be redirected to the "Expenses less than £1,000" page
-    And the user selects the Property rentals Yes radio button
+    Then the user should be redirected to the "Non-UK resident landlord" page
+    When the user selects the Yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Do you want to claim property income allowance?" page
-    When the user selects the Yes, claim property income allowance radio button
-    And the user clicks the Continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Deducting Tax from non-UK landlords" page
+    And the user selects the Tax deducted Yes radio button
+    And the user selects the Tax Deducted Amount field and enters a value of 13400.50
     When the user clicks the continue button
+    Then the user should be redirected to the "Income from Property Rentals" page
+    When the user selects the Property rental amount field and enters a value of 24000.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Premiums for the grant of a lease" page
+    When the user selects the Yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Have you calculated the figure yourself?" page
+    When the user selects the Yes,calculated radio button
+    And the user selects the Yes,calculated amount field and enters a value of 7000
+    And the user clicks the continue button
+    Then the user should be redirected to the "Reverse premiums received" page
+    And the user selects the Yes,premiums recieved radio button
+    Then the user selects the premium recieved amount field and enters a value of 1200
+    When the user clicks the continue button
+    Then the user should be redirected to the "Other income from property" page
+    When the user selects the Other income amount field and enters a value of 3590.78
+    Then the user clicks the continue button
+    And the user should be redirected to the "Check Your Answers" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "About your UK Properties" page
+    And the user clicks on the ExpensesLink link
+    Then the user should be redirected to the "Expenses" page

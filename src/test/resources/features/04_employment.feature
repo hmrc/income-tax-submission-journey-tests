@@ -2346,3 +2346,92 @@ Feature: Employment Journeys - Income Tax Submission
 #    Then the user should be redirected to the "How much did you get in your taxable lump sum from Rick Owens Ltd Customer Edition EOY?" page
 #    When the user selects the amount field and enters a value of 1200
 #    Then the user clicks the continue button
+
+#Journey1
+  Scenario: Individual user changes Off-payroll working (IR35) value
+    When the user logs into the service with the following details
+      | Redirect url        | /InYear/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB444444A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "PAYE employment" page
+    And the status on the page is "Yes for gateway question"
+    When the user clicks on the view first employer link
+    Then the user should be redirected to the "Employer information" page
+    When the user clicks on the employment details link
+    Then the user should be redirected to the "Check your employment details" page
+    When the user clicks on the change link
+    Then the user should be redirected to the "Off-payroll working (IR35)" page
+    When the user selects the (.*) radio button
+    Then the user clicks the (.*) button
+    Then the user should be redirected to the "Check your employment details" page
+
+#    Given that I am a user on the "Check your employment details" page
+#    When I click "Change" for 'Pay received'
+#    Then I should be routed to "How much did ABC Digital Ltd pay you?" page
+    #Journey2
+  Scenario: Individual user with multiple employments checks their details, benefits, student loans and expenses
+    When the user logs into the service with the following details
+      | Redirect url        | /InYear/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB444444A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "PAYE employment" page
+    And the status on the page is "Yes for gateway question"
+    When the user clicks on the view first employer link
+    Then the user should be redirected to the "Employer information" page
+    When the user clicks on the employment details link
+    Then the user should be redirected to the "Check your employment details" page
+    When the user clicks on the (.*) link
+    Then the user should be redirected to the "How much did ABC Digital Ltd pay you?" page
+    When the user selects the (.*) field and enters a value of (.*)
+    And the user clicks the continue button
+    Then the user should be redirected to the "Do you want to change your employment details?-pay received" page
+    When the user clicks the cancel button
+    Then the user should be redirected to the "Check your employment details" page
+
+
+
+#    Given that I am a user on the "Check your employment details" page
+#    When I click "Change" for 'UK tax taken from pay'
+#    Then I should be routed to "How much UK tax was taken from your earnings?" page
+#Journey3
+  Scenario: Individual user with multiple employments checks their details, benefits, student loans and expenses
+    When the user logs into the service with the following details
+      | Redirect url        | /InYear/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB444444A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "PAYE employment" page
+    And the status on the page is "Yes for gateway question"
+    When the user clicks on the view first employer link
+    Then the user should be redirected to the "Employer information" page
+    When the user clicks on the employment details link
+    Then the user should be redirected to the "Check your employment details" page
+    When the user clicks on the (.*) link
+    Then the user should be redirected to the "How much UK tax was taken from your earnings?" page
+

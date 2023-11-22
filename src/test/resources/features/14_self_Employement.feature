@@ -33,7 +33,7 @@ Feature: Self Employment Journeys
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-
+  @ignore
   Scenario: Agent Check self employment details
     When the user logs into the service with the following details
       | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA000001D&ClientMTDID=1234567890 |

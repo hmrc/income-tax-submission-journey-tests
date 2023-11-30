@@ -421,6 +421,29 @@ trait CommonElements extends BasePage with Matchers {
     "Check Your Answers" -> By.cssSelector("#main-content > div > div > h1"),
     "ExpensesLink" -> By.id("expenses_link"),
     "Expenses" -> By.cssSelector("#main-content > div > div > h1"),
+    "Consolidated expenses" -> By.cssSelector("#main-content > div > div > h1"),
+    "Yes,consolidated expenses" -> By.id("consolidatedExpenses"),
+    "No,consolidated expenses" -> By.id("consolidatedExpenses-no"),
+    "consolidated expenses amount" -> By.id("consolidatedExpensesAmount"),
+    "Check Your Answers" -> By.cssSelector("#main-content > div > div > h1"),
+    "Rents, rates and insurance" -> By.cssSelector("#main-content > div > div > form > h1"),
+    "Rents, rates and insurance amount" -> By.id("RentsRatesAndInsurance"),
+    "Property repairs and maintenance" -> By.cssSelector("#main-content > div > div > form > h1"),
+    "Property repairs and maintenance amount" -> By.id("RepairsAndMaintenanceCosts"),
+    "Loan interest or other financial costs" -> By.cssSelector("#main-content > div > div > h1"),
+    "Loan interest or other financial costs amount" -> By.id("loanInterestOrOtherFinancialCost"),
+    "Legal, management or other professional fees" -> By.cssSelector("#main-content > div > div > h1"),
+    "Legal, management or other professional fees amount" -> By.id("otherProfessionalFees"),
+    "Costs of services provided, including wages" -> By.cssSelector("#main-content > div > div > h1"),
+    "Costs of services provided, including wages amount" -> By.id("costsOfServicesProvided"),
+    "Property business travel costs" -> By.cssSelector("#main-content > div > div > h1"),
+    "Property business travel costs amount" -> By.id("propertyBusinessTravelCosts"),
+    "Other allowable property expenses" -> By.cssSelector("#main-content > div > div > h1"),
+    "Other allowable property expenses amount" -> By.id("otherAllowablePropertyExpenses"),
+
+
+
+
 
 
     // Property, Pensions And Investments

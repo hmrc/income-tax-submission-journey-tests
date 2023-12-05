@@ -444,11 +444,6 @@ trait CommonElements extends BasePage with Matchers {
     "Other allowable property expenses" -> By.cssSelector("#main-content > div > div > h1"),
     "Other allowable property expenses amount" -> By.id("otherAllowablePropertyExpenses"),
 
-
-
-
-
-
     // Property, Pensions And Investments
     "UK Property"                                                          -> By.cssSelector("input#RentalIncome"),
     "Non UK Property"                                                      -> By.cssSelector("[value='NonukProperty']"),

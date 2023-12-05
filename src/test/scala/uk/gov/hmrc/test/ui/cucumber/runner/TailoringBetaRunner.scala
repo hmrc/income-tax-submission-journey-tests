@@ -24,7 +24,7 @@ import org.junit.runner.RunWith
   features = Array("src/test/resources/features"),
   glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
   plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json"),
-  tags = "@about_you_private_beta and not @ignore"
+  tags = "@TYR_private_beta and not @ignore"
 )
 class TailoringBetaRunner {
 }

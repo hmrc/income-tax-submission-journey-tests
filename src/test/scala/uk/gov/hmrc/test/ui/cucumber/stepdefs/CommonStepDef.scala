@@ -137,11 +137,8 @@ class CommonStepDef extends BaseStepDef {
       //TODO remove URl when tailor you return is hooked with submission frontend
       case "Tailor return start" => "http://localhost:10007/update-and-submit-income-tax-return/tailored-return/2023/start"
       case "QA Tailor return start" => "https://www.qa.tax.service.gov.uk/update-and-submit-income-tax-return/tailored-return/2023/start"
-      case "About your work" => "http://localhost:10006/update-and-submit-income-tax-return/tailor-return/2023/work-and-benefits/about-your-work"
-      case "Rental income" => "http://localhost:10007/update-and-submit-income-tax-return/tailored-return/2023/property-pensions-investments/rental-income"
-      case "Capital gains" => "http://localhost:10006/update-and-submit-income-tax-return/tailor-return/2023/capital-gains-trusts-estates/capital-gains"
+      case "Payments into pensions" => "http://localhost:10007/update-and-submit-income-tax-return/tailored-return/2023/payments-pensions"
       case _ => fail("Invalid url input parameter")
-
     }
     driver.navigate().to(expectedUrl)
   }

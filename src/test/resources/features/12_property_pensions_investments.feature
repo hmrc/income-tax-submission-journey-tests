@@ -1,11 +1,10 @@
-@MVP @Tailoring @property_pensions_investments
+@TYR @property_pensions_investments
 
-  #TODO remove ignore tag when TYR II Property,Pensions and investments Journey navigation is complete
 Feature: Income from Property, Pensions And Investments Tailor Your Return - Income Tax Submission
 
   Background:
     Given the user navigates to the auth login page
-@Propert1
+
   Scenario: Individual User maximal flow - Income from Property, Pensions And Investments - Tailor your return
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
@@ -37,7 +36,6 @@ Feature: Income from Property, Pensions And Investments Tailor Your Return - Inc
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
 
-  @Propert1
   Scenario: Agent User maximal flow - Income from Property, Pensions And Investments - Tailor your return
     When the user logs into the service with the following details
       | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA123459A&ClientMTDID=1234567890 |

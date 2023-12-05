@@ -315,6 +315,7 @@ trait CommonElements extends BasePage with Matchers {
 
     //About You
     "About you"                                                   -> By.id("task-list__task-link--aboutYou"),
+    "About you tag"                                                   -> By.cssSelector("#task-list__task--aboutYou__tag"),
     "I was not resident in the UK"                                -> By.cssSelector("[value='WasNot']"),
     "I was a dual resident in the UK and another country"         -> By.cssSelector("[value='Was']"),
     "No, my client did not donate to charity"                     -> By.id("CharitableDonations-5"),
@@ -329,14 +330,16 @@ trait CommonElements extends BasePage with Matchers {
     "My client was not resident in the UK"                -> By.cssSelector("[value='nonResident']"),
     "No residency"                                        -> By.cssSelector("[value='nonUK']"),
 
-    //About Your Work
-    "Employed"                                         -> By.cssSelector("[value='Employed']"),
-    "Self-employed"                                    -> By.cssSelector("[value='SelfEmployed']"),
-    "Jobseeker's Allowance"                            -> By.cssSelector("[value='JobseekersAllowance']"),
+    //Income from work and taxable state benefits
+    "Income from work and taxable state benefits"      -> By.id("task-list__task-link--incomeFromWork"),
+    "Income from work and taxable state benefits tag"  -> By.cssSelector("#task-list__task--incomeFromWork__tag"),
+    "Employed"                                         -> By.cssSelector("[value='employed']"),
+    "Self-employed"                                    -> By.cssSelector("[value='selfEmployed']"),
+    "Jobseeker's Allowance"                            -> By.id("JobseekersAllowance"),
     "Member of Parliament"                             -> By.cssSelector("[value='MemberOfParliament']"),
-    "None of the above"                                -> By.cssSelector("[value='NoneOfTheAbove']"),
-    "No, I did not get either of these state benefits" -> By.cssSelector("[value='DidNotGetStateBenefits']"),
-    "Contribution-based"                               -> By.cssSelector("[value='ContributionBasedEmploymentAndSupportAllowance']"),
+    "None of the above"                                -> By.id("AboutYourWork-4"),
+    "No, I did not get either of these state benefits" -> By.id("JobseekersAllowance-4"),
+    "Contribution-based"                               -> By.id("JobseekersAllowance-2"),
     "Partnership"                                      -> By.cssSelector("[value='Partnership']"),
     "Hidden message"                                   -> By.cssSelector("[class='govuk-body govuk-!-padding-2']"),
     "yes, but permanent home is abroad"                -> By.id("value_1"),

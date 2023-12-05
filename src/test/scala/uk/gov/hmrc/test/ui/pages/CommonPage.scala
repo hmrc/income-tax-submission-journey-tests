@@ -19,6 +19,8 @@ package uk.gov.hmrc.test.ui.pages
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 
+import scala.jdk.CollectionConverters.CollectionHasAsScala
+
 object CommonPage extends BasePage with CommonElements {
   override val url: String = TestConfiguration.url("income-tax-submission-frontend")
 
@@ -73,5 +75,10 @@ object CommonPage extends BasePage with CommonElements {
 
   def clickBySelector(selector: String): Unit = {
     clickOn(By.cssSelector(selector))
+  }
+
+  def containsText(selector: By, textToContain: String): Boolean = {
+    val elements = driver.findElements(selector)
+    elements.asScala.exists(_.getText.contains(textToContain))
   }
 }

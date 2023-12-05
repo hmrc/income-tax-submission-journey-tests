@@ -444,11 +444,6 @@ trait CommonElements extends BasePage with Matchers {
     "Other allowable property expenses" -> By.cssSelector("#main-content > div > div > h1"),
     "Other allowable property expenses amount" -> By.id("otherAllowablePropertyExpenses"),
 
-
-
-
-
-
     // Property, Pensions And Investments
     "UK Property"                                                          -> By.cssSelector("[value='UkProperty']"),
     "Non UK Property"                                                      -> By.cssSelector("[value='NonukProperty']"),
@@ -468,6 +463,9 @@ trait CommonElements extends BasePage with Matchers {
     "No non-UK interest, dividends or income from insurance policies"      -> By.cssSelector("[value='NoNonUkInterestDividendsInsurance']"),
     "Life Annuity"                                                         -> By.cssSelector("[value='LifeAnnuity']"),
     "No UK insurance gains"                                                -> By.cssSelector("[value='NoGains']"),
+
+    //Payments into Pensions
+    "Payments into UK pensions"                                            -> By.id("PaymentsIntoPensions"),
   
     // Capital gains
     "Trusts"                            -> By.cssSelector("[value='Trusts']"),

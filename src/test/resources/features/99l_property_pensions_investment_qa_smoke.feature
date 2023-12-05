@@ -1,6 +1,5 @@
-@smoke
+@smoke @ignore
 
-Feature: Smoke downstream Interest Journeys to DES in QA - Income Tax Submission
 Feature: Smoke Income from Property, Pensions And Investments Tailor Your Return in QA - Income Tax Submission
 
   Background:

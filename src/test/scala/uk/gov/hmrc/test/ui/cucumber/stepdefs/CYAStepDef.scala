@@ -44,9 +44,4 @@ class CYAStepDef extends BaseStepDef {
     CommonPage.elementExists(selector)
   }
 
-  Then("""^the "(.*)" on the page displays "(.*)"$""") { (tag: String, status: String) =>
-    val selector = CommonPage.load(tag)
-    val result = CommonPage.containsText(selector, status)
-    assert(result, s"The value for '$tag' does not display '$status'")
-  }
 }

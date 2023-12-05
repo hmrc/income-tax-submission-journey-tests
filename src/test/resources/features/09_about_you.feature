@@ -1,4 +1,4 @@
-@TYR @about_you
+@about_you
 
 Feature: About You Journeys Tailor Your Return - Income Tax Submission
 
@@ -92,7 +92,7 @@ Feature: About You Journeys Tailor Your Return - Income Tax Submission
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your client’s Tax Return" page
 
-  @about_you_private_beta @TYR_private_beta
+  @about_you_private_beta
   Scenario: Individual User Private Beta Journey Flow - About you - Tailor your return
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -119,7 +119,7 @@ Feature: About You Journeys Tailor Your Return - Income Tax Submission
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
 
-  @about_you_private_beta @TYR_private_beta
+  @about_you_private_beta
   Scenario: Agent User Private Beta Answers No For All Questions - About you - Tailor your return
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA123459A&ClientMTDID=1234567890 |

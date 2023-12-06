@@ -138,6 +138,7 @@ class CommonStepDef extends BaseStepDef {
       case "Tailor return start" => "http://localhost:10007/update-and-submit-income-tax-return/tailored-return/2023/start"
       case "QA Tailor return start" => "https://www.qa.tax.service.gov.uk/update-and-submit-income-tax-return/tailored-return/2023/start"
       case "Payments into pensions" => "http://localhost:10007/update-and-submit-income-tax-return/tailored-return/2023/payments-pensions"
+      case "Rental income" => "http://localhost:10007/update-and-submit-income-tax-return/tailored-return/2023/property-pensions-investments/rental-income"
       case _ => fail("Invalid url input parameter")
     }
     driver.navigate().to(expectedUrl)

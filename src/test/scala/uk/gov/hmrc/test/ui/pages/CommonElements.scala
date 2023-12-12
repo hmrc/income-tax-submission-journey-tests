@@ -477,6 +477,9 @@ trait CommonElements extends BasePage with Matchers {
     "Self Employment" ->By.id("selfEmployment_link"),
     "Review self-employments" -> By.cssSelector("#main-content > div > div > div.task-list > ul > li > span > a"),
     "View Self Employment" -> By.cssSelector("#main-content > div > div > dl > div > dd.govuk-summary-list__actions > a"),
-    "Self Employment Save and continue" -> By.id("continue")
+    "Self Employment Save and continue" -> By.xpath("//a[contains(text(),'Save and continue')]"),
+    "Yes, I’ve completed this section" -> By.id("value_0"),
+    "No, I’ll come back to it later" -> By.id("value_1"),
+    "Self-employment abroad" -> By.cssSelector("#main-content > div > div > div.task-list > dl:nth-child(4) > div:nth-child(1) > dt > span > a")
   )
 }

@@ -13,6 +13,7 @@ FRONT_END_DB_NAME="income-tax-self-employment-frontend"
 STATE_COLLECTION="journey-state"
 ANSWERS_COLLECTION="journey-answers"
 MONGODB_CONTAINER="mongodb"
+USER_ANSWERS_COLLECTION="user-answers"
 
 # Function to drop a MongoDB collection
 drop_collection() {
@@ -30,7 +31,7 @@ drop_collection() {
 
 # Dropping collections based on machine type
 if [ "$MACHINE" = "pipeline" ]; then
-    mongo $FRONT_END_DB_NAME --eval "db['user-answers'].drop()"
+    mongo $FRONT_END_DB_NAME --eval "db['$USER_ANSWERS_COLLECTION'].drop()"
     mongo $DB_NAME --eval "db['$ANSWERS_COLLECTION'].drop()"
     mongo $DB_NAME --eval "db['$STATE_COLLECTION'].drop()"
 elif [ "$MACHINE" != "pipeline" ]; then

@@ -42,6 +42,7 @@ trait CommonElements extends BasePage with Matchers {
     "Yes for gateway question"  -> By.xpath("//dd[contains(text(),'Yes')]"),
     "No for gateway question"   -> By.xpath("//dd[contains(text(),'No')]"),
     "amount"                    -> By.id("amount"),
+    "cancel"                    -> By.xpath("//*[contains(text(),'Cancel')]"),
 
     //Tailoring Elements
     "addSections"   -> By.id("addSectionsLink"),

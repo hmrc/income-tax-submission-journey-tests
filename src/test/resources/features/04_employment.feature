@@ -2347,7 +2347,8 @@ Feature: Employment Journeys - Income Tax Submission
 #    When the user selects the amount field and enters a value of 1200
 #    Then the user clicks the continue button
 
-#Journey1
+# Remove ignore when OPW is available in April 2024
+  @ignore
   Scenario: Individual user changes Off-payroll working (IR35) value
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
@@ -2377,10 +2378,9 @@ Feature: Employment Journeys - Income Tax Submission
 #    Given that I am a user on the "Check your employment details" page
 #    When I click "Change" for 'Pay received'
 #    Then I should be routed to "How much did ABC Digital Ltd pay you?" page
-    #Journey2
-  Scenario: Individual user with multiple employments checks their details, benefits, student loans and expenses
+  Scenario: Individual user  when select change Pay received and select Confirm on warning page
     When the user logs into the service with the following details
-      | Redirect url        | /InYear/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -2394,27 +2394,81 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
     And the status on the page is "Yes for gateway question"
-    When the user clicks on the view first employer link
+    When the user clicks on the first change employment link
     Then the user should be redirected to the "Employer information" page
     When the user clicks on the employment details link
     Then the user should be redirected to the "Check your employment details" page
-    When the user clicks on the (.*) link
-    Then the user should be redirected to the "How much did ABC Digital Ltd pay you?" page
-    When the user selects the (.*) field and enters a value of (.*)
+    When the user clicks on the change pay received link
+    Then the user should be redirected to the "Do you want to change your employment details?" page
+    When the user clicks the confirm button
+    Then the user should be redirected to the "How much did Rick Owens Ltd Customer Edition EOY pay you?" page
+    When the user selects the Pay field and enters a value of 9000.01
     And the user clicks the continue button
-    Then the user should be redirected to the "Do you want to change your employment details?-pay received" page
+    Then the user should be redirected to the "Check your employment details" page
+
+ # for cancel button in  warning page of Pay received
+  Scenario: Individual user when selected cancel button in  warning page of Pay received
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB444444A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "PAYE employment" page
+    And the status on the page is "Yes for gateway question"
+    When the user clicks on the first change employment link
+    Then the user should be redirected to the "Employer information" page
+    When the user clicks on the employment details link
+    Then the user should be redirected to the "Check your employment details" page
+    When the user clicks on the change pay received link
+    Then the user should be redirected to the "Do you want to change your employment details?" page
     When the user clicks the cancel button
     Then the user should be redirected to the "Check your employment details" page
 
 
+  Scenario: Agent user when select change Pay received and select Confirm on warning page
+    When the user logs into the service with the following details
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA133742A&ClientMTDID=1234567890 |
+      | Credential Strength | weak                                                                              |
+      | Confidence Level    | 250                                                                               |
+      | Affinity Group      | Agent                                                                             |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
+      | Identifier Name 1   | MTDITID                                                                           |
+      | Identifier Value 1  | 1234567890                                                                        |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
+      | Identifier Name 2   | AgentReferenceNumber                                                              |
+      | Identifier Value 2  | XARN1234567                                                                       |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "PAYE employment" page
+    And the status on the page is "Yes for gateway question"
+    When the user clicks on the first change employment link
+    Then the user should be redirected to the "Employer information" page
+    When the user clicks on the employment details link
+    Then the user should be redirected to the "Check your client’s employment details" page
+    When the user clicks on the change pay received link
+    Then the user should be redirected to the "Do you want to change your client’s employment details?" page
+    When the user clicks the confirm button
+    Then the user should be redirected to the "How much did Eoy Vera Lynn Customer pay your client?" page
+    When the user selects the Pay field and enters a value of 900.01
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your client’s employment details" page
 
 #    Given that I am a user on the "Check your employment details" page
 #    When I click "Change" for 'UK tax taken from pay'
 #    Then I should be routed to "How much UK tax was taken from your earnings?" page
-#Journey3
-  Scenario: Individual user with multiple employments checks their details, benefits, student loans and expenses
+  Scenario: Individual user  when select change UK tax taken from pay and select Confirm on warning page
     When the user logs into the service with the following details
-      | Redirect url        | /InYear/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -2428,10 +2482,71 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
     And the status on the page is "Yes for gateway question"
-    When the user clicks on the view first employer link
+    When the user clicks on the first change employment link
     Then the user should be redirected to the "Employer information" page
     When the user clicks on the employment details link
     Then the user should be redirected to the "Check your employment details" page
-    When the user clicks on the (.*) link
-    Then the user should be redirected to the "How much UK tax was taken from your earnings?" page
+    When the user clicks on the change tax taken from pay link
+    Then the user should be redirected to the "Do you want to change your employment details?" page
+    When the user clicks the confirm button
+    Then the user should be redirected to the "How much UK tax was taken from your Rick Owens Ltd Customer Edition EOY earnings?" page
+    When the user selects the Tax field and enters a value of 720.08
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your employment details" page
 
+
+  Scenario: Individual user with UK tax taken from pay and select cancel button in warning page
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB444444A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "PAYE employment" page
+    And the status on the page is "Yes for gateway question"
+    When the user clicks on the first change employment link
+    Then the user should be redirected to the "Employer information" page
+    When the user clicks on the employment details link
+    Then the user should be redirected to the "Check your employment details" page
+    When the user clicks on the change tax taken from pay link
+    Then the user should be redirected to the "Do you want to change your employment details?" page
+    When the user clicks the cancel button
+    Then the user should be redirected to the "Check your employment details" page
+
+
+  Scenario: Agent user when select change UK tax taken from pay and select Confirm on warning page
+    When the user logs into the service with the following details
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA133742A&ClientMTDID=1234567890 |
+      | Credential Strength | weak                                                                              |
+      | Confidence Level    | 250                                                                               |
+      | Affinity Group      | Agent                                                                             |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
+      | Identifier Name 1   | MTDITID                                                                           |
+      | Identifier Value 1  | 1234567890                                                                        |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
+      | Identifier Name 2   | AgentReferenceNumber                                                              |
+      | Identifier Value 2  | XARN1234567                                                                       |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "PAYE employment" page
+    And the status on the page is "Yes for gateway question"
+    When the user clicks on the first change employment link
+    Then the user should be redirected to the "Employer information" page
+    When the user clicks on the employment details link
+    Then the user should be redirected to the "Check your client’s employment details" page
+    When the user clicks on the change tax taken from pay link
+    Then the user should be redirected to the "Do you want to change your client’s employment details?" page
+    When the user clicks the confirm button
+    Then the user should be redirected to the "How much UK tax was taken from your client’s Eoy Vera Lynn Customer earnings?" page
+    When the user selects the Tax field and enters a value of 720.08
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your client’s employment details" page

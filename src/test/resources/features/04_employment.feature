@@ -2436,6 +2436,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks the cancel button
     Then the user should be redirected to the "Check your employment details" page
 
+
   Scenario: Agent user when select change Pay received and select Confirm on warning page
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA133742A&ClientMTDID=1234567890 |
@@ -2497,6 +2498,7 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment details" page
 
+
   Scenario: Individual user with UK tax taken from pay and select cancel button in warning page
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start |
@@ -2521,6 +2523,7 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Do you want to change your employment details?" page
     When the user clicks the cancel button
     Then the user should be redirected to the "Check your employment details" page
+
 
   Scenario: Agent user when select change UK tax taken from pay and select Confirm on warning page
     When the user logs into the service with the following details

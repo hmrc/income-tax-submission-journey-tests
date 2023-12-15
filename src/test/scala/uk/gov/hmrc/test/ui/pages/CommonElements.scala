@@ -502,6 +502,7 @@ trait CommonElements extends BasePage with Matchers {
     "Self Employment Save and continue" -> By.xpath("//a[contains(text(),'Save and continue')]"),
     "Yes, I’ve completed this section" -> By.id("value_0"),
     "No, I’ll come back to it later" -> By.id("value_1"),
-    "Self-employment abroad" -> By.cssSelector("#main-content > div > div > div.task-list > dl:nth-child(4) > div:nth-child(1) > dt > span > a")
+    "Self-employment abroad" -> By.cssSelector("#main-content > div > div > div.task-list > dl:nth-child(4) > div:nth-child(1) > dt > span > a"),
+    "Self-employment Income" -> By.cssSelector("#main-content > div > div > div.task-list > dl:nth-child(4) > div:nth-child(2) > dt > span > a")
   )
 }

@@ -611,3 +611,164 @@ Feature: Property Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Other allowable property expenses" page
     And the user selects the Other allowable property expenses amount field and enters a value of 200
+
+  Scenario: Individual user adds UK Property - Property rentals - Claim Allowances - Cash basis accounting method and claim capital allowances for a car
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AC180000B   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addProperty tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the Property link
+    Then the user should be redirected to the "About your UK Properties" page
+    And the user clicks on the About your UK Properties About link
+    Then the user should be redirected to the "UK Property details" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "How much total income did you get from your UK properties?" page
+    When the user selects the second property radio button: Between 1000 and 85000
+    And the user clicks the property continue button
+    Then the user should be redirected to the "Select UK property" page
+    When the user clicks the Property Rentals checkbox
+    And the user clicks the UK Property continue button
+    Then the user should be redirected to the "Check Your Answers" page
+    When the user clicks the Check Your Answers continue button
+    Then the user should be redirected to the "About your UK Properties" page
+    When the user clicks on the Property rentals about link
+    Then the user should be redirected to the "Property rentals" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Expenses less than £1,000" page
+    And the user selects the Property rentals Yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Do you want to claim property income allowance?" page
+    Then the user selects the No, claim expenses radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Check Your Answers" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "About your UK Properties" page
+    When the user clicks on the Income link
+    Then the user should be redirected to the "Property income" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Non-UK resident landlord" page
+    When the user selects the Yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Deducting Tax from non-UK landlords" page
+    And the user selects the Tax deducted Yes radio button
+    And the user selects the Tax Deducted Amount field and enters a value of 13400.50
+    When the user clicks the continue button
+    Then the user should be redirected to the "Income from Property Rentals" page
+    When the user selects the Property rental amount field and enters a value of 24000.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Premiums for the grant of a lease" page
+    When the user selects the Yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Have you calculated the figure yourself?" page
+    When the user selects the Yes,calculated radio button
+    And the user selects the Yes,calculated amount field and enters a value of 7000
+    And the user clicks the continue button
+    Then the user should be redirected to the "Reverse premiums received" page
+    And the user selects the Yes,premiums recieved radio button
+    Then the user selects the premium recieved amount field and enters a value of 1200
+    When the user clicks the continue button
+    Then the user should be redirected to the "Other income from property" page
+    When the user selects the Other income amount field and enters a value of 3590.78
+    Then the user clicks the continue button
+    And the user should be redirected to the "Check Your Answers" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "About your UK Properties" page
+    When the user clicks on the Allowanceslink link
+    Then the user should be redirected to the "Allowances" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Capital allowances for a car" page
+    And the user selects the Yes,capital allowances for a car radio button
+    Then the user selects the Capital allowances for a car amount field and enters a value of 1290
+    When the user clicks the continue button
+    Then the user should be redirected to the "Check Your Answers" page
+
+  Scenario: Individual user adds UK Property - Property rentals - Claim Allowances - Traditional accounting method and claim allowances
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AC180000A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addProperty tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the Property link
+    Then the user should be redirected to the "About your UK Properties" page
+    And the user clicks on the About your UK Properties About link
+    Then the user should be redirected to the "UK Property details" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "How much total income did you get from your UK properties?" page
+    When the user selects the second property radio button: Between 1000 and 85000
+    And the user clicks the property continue button
+    Then the user should be redirected to the "Select UK property" page
+    When the user clicks the Property Rentals checkbox
+    And the user clicks the UK Property continue button
+    Then the user should be redirected to the "Check Your Answers" page
+    When the user clicks the Check Your Answers continue button
+    Then the user should be redirected to the "About your UK Properties" page
+    When the user clicks on the Property rentals about link
+    Then the user should be redirected to the "Property rentals" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Expenses less than £1,000" page
+    And the user selects the Property rentals Yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Do you want to claim property income allowance?" page
+    Then the user selects the No, claim expenses radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Check Your Answers" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "About your UK Properties" page
+    When the user clicks on the Income link
+    Then the user should be redirected to the "Property income" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Non-UK resident landlord" page
+    When the user selects the Yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Deducting Tax from non-UK landlords" page
+    And the user selects the Tax deducted Yes radio button
+    And the user selects the Tax Deducted Amount field and enters a value of 13400.50
+    When the user clicks the continue button
+    Then the user should be redirected to the "Income from Property Rentals" page
+    When the user selects the Property rental amount field and enters a value of 24000.00
+    And the user clicks the continue button
+    Then the user should be redirected to the "Premiums for the grant of a lease" page
+    When the user selects the Yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Have you calculated the figure yourself?" page
+    When the user selects the Yes,calculated radio button
+    And the user selects the Yes,calculated amount field and enters a value of 7000
+    And the user clicks the continue button
+    Then the user should be redirected to the "Reverse premiums received" page
+    And the user selects the Yes,premiums recieved radio button
+    Then the user selects the premium recieved amount field and enters a value of 1200
+    When the user clicks the continue button
+    Then the user should be redirected to the "Other income from property" page
+    When the user selects the Other income amount field and enters a value of 3590.78
+    Then the user clicks the continue button
+    And the user should be redirected to the "Check Your Answers" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "About your UK Properties" page
+    When the user clicks on the Allowanceslink link
+    Then the user should be redirected to the "Allowances" page
+    When the user clicks the continue button

@@ -1,4 +1,4 @@
-@MVP @ZAP @SelfEmployment
+@SelfEmployment
 
 Feature: Self Employment Journeys
 
@@ -78,7 +78,7 @@ Feature: Self Employment Journeys
     Then the user should be redirected to the "Self-employment" page under self employment
 
 #-------------- Self Employment Abroad  ----------#
-  @ignore
+
   Scenario: Individual - Self employment abroad
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -112,7 +112,7 @@ Feature: Self Employment Journeys
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-  @ignore
+
   Scenario: Agent - Self Employment Abroad
     When the user logs into the service with the following details
       | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA000001D&ClientMTDID=1234567890 |

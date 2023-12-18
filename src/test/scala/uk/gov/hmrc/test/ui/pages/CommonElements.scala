@@ -132,6 +132,7 @@ trait CommonElements extends BasePage with Matchers {
     "change payroll id" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(6) > dd.govuk-summary-list__actions > a > span:nth-child(1)"),
     "change pay received" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(7) > dd.govuk-summary-list__actions > a > span:nth-child(1)"),
     "change tax taken from pay" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(8) > dd.govuk-summary-list__actions > a > span:nth-child(1)"),
+    "change off payroll" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(9) > dd.govuk-summary-list__actions > a > span:nth-child(1)"),
     "Employments list item" -> By.cssSelector("#employer-h2"),
     "Expenses list item" -> By.cssSelector("#expense-h2"),
     "remove employment" -> By.cssSelector("#main-content > div > div > dl:nth-child(6) > div > dd > ul > li:nth-child(2) > a"),

@@ -3,9 +3,7 @@
 # Default values for parameters
 ENV=${1:-local}
 BROWSER=${2:-chrome}
-
-# Default value should be pipeline
-MACHINE=${3:-pipeline}
+MACHINE=${3:-pipeline} # Default value should be pipeline
 
 # Database configuration
 DB_NAME="income-tax-self-employment"
@@ -15,7 +13,12 @@ ANSWERS_COLLECTION="journey-answers"
 MONGODB_CONTAINER="mongodb"
 USER_ANSWERS_COLLECTION="user-answers"
 
-# Function to drop a MongoDB collection
+# Test API endpoint to clear data
+URL="http://localhost:10901/update-and-submit-income-tax-return/self-employment/test-clear-all-data"
+HEADER="Csrf-Token: nocheck" # You can add additional headers if required
+
+
+# Function to drop a MongoDB collection on your local machine
 drop_collection() {
     local db_name=$1
     local collection_name=$2
@@ -29,14 +32,28 @@ drop_collection() {
     fi
 }
 
-# Dropping collections based on machine type
+# Dropping collections based on if test is ran on the pipeline remote machine or not
 if [ "$MACHINE" = "pipeline" ]; then
-    mongo $FRONT_END_DB_NAME --eval "db['$USER_ANSWERS_COLLECTION'].drop()"
-    mongo $DB_NAME --eval "db['$ANSWERS_COLLECTION'].drop()"
-    mongo $DB_NAME --eval "db['$STATE_COLLECTION'].drop()"
+
+    # Use curl to send the request to test API endpoint
+    RESPONSE_BODY=$(curl -s -X POST "$URL" -H "$HEADER")
+    RESPONSE_CODE=$?
+    echo "Response from API: $RESPONSE_BODY"
+
+    # Check the HTTP status code
+    if [ "$RESPONSE_CODE" -eq 204 ]; then
+        echo "Success"
+
+    else
+        echo "Error: HTTP status $RESPONSE_CODE"
+        # this will retry up to 5 times with a 30 seconds delay, timeout for each request is 30 seconds
+        curl --retry 5 --retry-delay 10 --max-time 30 -X POST "$URL" -H "$HEADER" -d "$DATA"
+    fi
+
 elif [ "$MACHINE" != "pipeline" ]; then
     drop_collection $DB_NAME $STATE_COLLECTION $MONGODB_CONTAINER
     drop_collection $DB_NAME $ANSWERS_COLLECTION $MONGODB_CONTAINER
+    drop_collection $FRONT_END_DB_NAME $USER_ANSWERS_COLLECTION $MONGODB_CONTAINER
 fi
 
 # Setting up the driver based on browser selection
@@ -47,10 +64,7 @@ case $BROWSER in
     firefox)
         DRIVER="-Dwebdriver.gecko.driver=/usr/local/bin/geckodriver"
         ;;
-    *)
-        echo "Unsupported browser: $BROWSER"
-        exit 1
-        ;;
+
 esac
 
 # Running tests

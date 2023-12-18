@@ -54,6 +54,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the return to overview link
     Then the user should be redirected to the "Your client’s Income Tax Return" page
 
+
   Scenario: Individual user with multiple employments checks their details, benefits, student loans and expenses
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
@@ -411,11 +412,15 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page
     When the user clicks on the change pay received link
+    Then the user should be redirected to the "Do you want to change your client’s employment details?" page
+    When the user clicks the confirm button
     Then the user should be redirected to the "How much did Mishima Zaibatsu pay your client?" page
     When the user selects the Pay field and enters a value of 9000.01
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page
     When the user clicks on the change tax taken from pay link
+    Then the user should be redirected to the "Do you want to change your client’s employment details?" page
+    When the user clicks the confirm button
     Then the user should be redirected to the "How much UK tax was taken from your client’s Mishima Zaibatsu earnings?" page
     When the user selects the Tax field and enters a value of 720.08
     And the user clicks the continue button
@@ -2365,14 +2370,13 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the employment link
     Then the user should be redirected to the "PAYE employment" page
     And the status on the page is "Yes for gateway question"
-    When the user clicks on the view first employer link
+    When the user clicks on the first change employment link
     Then the user should be redirected to the "Employer information" page
     When the user clicks on the employment details link
     Then the user should be redirected to the "Check your employment details" page
-    When the user clicks on the change link
+    When the user clicks on the change off payroll link
     Then the user should be redirected to the "Off-payroll working (IR35)" page
-    When the user selects the (.*) radio button
-    Then the user clicks the (.*) button
+    When the user selects the Yes radio button
     Then the user should be redirected to the "Check your employment details" page
 
 #    Given that I am a user on the "Check your employment details" page
@@ -2431,7 +2435,6 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Do you want to change your employment details?" page
     When the user clicks the cancel button
     Then the user should be redirected to the "Check your employment details" page
-
 
   Scenario: Agent user when select change Pay received and select Confirm on warning page
     When the user logs into the service with the following details
@@ -2494,7 +2497,6 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment details" page
 
-
   Scenario: Individual user with UK tax taken from pay and select cancel button in warning page
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start |
@@ -2519,7 +2521,6 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Do you want to change your employment details?" page
     When the user clicks the cancel button
     Then the user should be redirected to the "Check your employment details" page
-
 
   Scenario: Agent user when select change UK tax taken from pay and select Confirm on warning page
     When the user logs into the service with the following details

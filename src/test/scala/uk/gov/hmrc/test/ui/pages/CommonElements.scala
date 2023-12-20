@@ -499,10 +499,18 @@ trait CommonElements extends BasePage with Matchers {
     "Self Employment" ->By.id("selfEmployment_link"),
     "Review self-employments" -> By.cssSelector("#main-content > div > div > div.task-list > ul > li > span > a"),
     "View Self Employment" -> By.cssSelector("#main-content > div > div > dl > div > dd.govuk-summary-list__actions > a"),
-    "Self Employment Save and continue" -> By.xpath("//a[contains(text(),'Save and continue')]"),
+    "Self Employment Save and continue" -> By.xpath("//*[contains(text(),'Save and continue')]"),
     "Yes, I’ve completed this section" -> By.id("value_0"),
     "No, I’ll come back to it later" -> By.id("value_1"),
     "Self-employment abroad" -> By.cssSelector("#main-content > div > div > div.task-list > dl:nth-child(4) > div:nth-child(1) > dt > span > a"),
-    "Self-employment Income" -> By.cssSelector("#main-content > div > div > div.task-list > dl:nth-child(4) > div:nth-child(2) > dt > span > a")
+    "Self-employment Income" -> By.cssSelector("#main-content > div > div > div.task-list > dl:nth-child(4) > div:nth-child(2) > dt > span > a"),
+    "Amount-field" -> By.id("value"),
+    "Use the trading allowance" -> By.id("value_0"),
+    "Declare expenses" -> By.id("value_1"),
+    "first radio button" -> By.id("value_0"),
+    "second radio button" -> By.id("value_1"),
+    "Do you want to use trading allowance or declare expense" -> By.xpath("//a[substring(@href, string-length(@href) - string-length('income/change-trading-allowance') + 1) = 'income/change-trading-allowance']")
+
+
   )
 }

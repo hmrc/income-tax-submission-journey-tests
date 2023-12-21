@@ -445,6 +445,8 @@ trait CommonElements extends BasePage with Matchers {
     "Other allowable property expenses amount" -> By.id("otherAllowablePropertyExpenses"),
 
     // Property, Pensions And Investments
+    "Income from property, pensions and investments tag"                   -> By.id("task-list__task--incomeFromProperty__tag"),
+    "Income from property, pensions and investments"                       -> By.id("task-list__task-link--incomeFromProperty"),
     "UK Property"                                                          -> By.cssSelector("input#RentalIncome"),
     "Non UK Property"                                                      -> By.cssSelector("[value='NonukProperty']"),
     "No income from property"                                              -> By.cssSelector("[value='NoRentalIncome']"),
@@ -466,6 +468,8 @@ trait CommonElements extends BasePage with Matchers {
 
     //Payments into Pensions
     "Payments into UK pensions"                                            -> By.id("PaymentsIntoPensions"),
+    "Payments into UK pensions task list"                                  -> By.id("task-list__task-link--pensions"),
+    "Payments into pensions tag"                                           -> By.id("task-list__task--pensions__tag"),
   
     // Capital gains
     "Trusts"                            -> By.cssSelector("[value='Trusts']"),

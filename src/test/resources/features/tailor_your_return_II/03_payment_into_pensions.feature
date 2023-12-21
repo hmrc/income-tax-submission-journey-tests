@@ -24,3 +24,5 @@ Feature: About You Journeys Tailor Your Return - Income Tax Submission
     When the user selects the Payments into UK pensions radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
+    ##---- clear Test data ----##
+    When the user navigates to the Test only clear data page for EOY

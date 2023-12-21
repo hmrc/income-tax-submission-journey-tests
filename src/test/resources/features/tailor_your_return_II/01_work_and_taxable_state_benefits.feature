@@ -47,6 +47,8 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
     Then the "Income from work and taxable state benefits tag" on the page displays "COMPLETED"
+    ##---- clear Test data ----##
+    When the user navigates to the Test only clear data page for InYear
 
   Scenario: Agent User selects employed only on "what did you do for work" page  - Income from work and taxable state benefits - Tailor your return
     When the user logs into the service with the following details
@@ -91,6 +93,8 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your client’s Tax Return" page
     Then the "Income from work and taxable state benefits tag" on the page displays "COMPLETED"
+    ##---- clear Test data ----##
+    When the user navigates to the Test only clear data page for InYear
 
   Scenario: Individual user without employed or self-employed - Income from work and taxable state benefits - Tailor your return
     When the user logs into the service with the following details
@@ -130,6 +134,8 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
     Then the "Income from work and taxable state benefits tag" on the page displays "COMPLETED"
+    ##---- clear Test data ----##
+    When the user navigates to the Test only clear data page for InYear
 
   Scenario: Individual User maximal flow user selects self employed only - Income from work and taxable state benefits - Tailor your return
     When the user logs into the service with the following details
@@ -172,3 +178,5 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
     Then the "Income from work and taxable state benefits tag" on the page displays "COMPLETED"
+    ##---- clear Test data ----##
+    When the user navigates to the Test only clear data page for InYear

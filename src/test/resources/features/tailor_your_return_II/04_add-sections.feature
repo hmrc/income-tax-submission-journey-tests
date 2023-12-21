@@ -4,7 +4,6 @@ Feature: Add sections Journeys Tailor Your Return - Income Tax Submission
 
   Background:
     Given the user navigates to the auth login page
-
   Scenario: Individual user clicks on continue on add sections page without completing any section - Tailor your return
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
@@ -27,6 +26,8 @@ Feature: Add sections Journeys Tailor Your Return - Income Tax Submission
     Then the user should be redirected to the "Your Tax Return is not ready to fill in yet" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
+    ##---- clear Test data ----##
+    When the user navigates to the Test only clear data page for InYear
 
   Scenario: Agent User completes all sections on add sections page - Tailor your return
     When the user logs into the service with the following details
@@ -100,3 +101,5 @@ Feature: Add sections Journeys Tailor Your Return - Income Tax Submission
   When the user selects the Payments into UK pensions radio button
   And the user clicks the Continue button
   Then the user should be redirected to the "Add sections to your client’s Tax Return" page
+    ##---- clear Test data ----##
+    When the user navigates to the Test only clear data page for InYear

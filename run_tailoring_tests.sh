@@ -1,7 +1,7 @@
 #!/bin/bash
 ENV=${1:-local}
 BROWSER=${2:-chrome}
-PRIVATEBETA=${3:-false}
+PRIVATEBETA=${3:-true}
 # default to firefox as chrome's autofill hides bugs to do with incorrectly empty fields, see eg: SASS-4898 and SASS-4966
 DRIVER=
 

@@ -42,6 +42,7 @@ trait CommonElements extends BasePage with Matchers {
     "Yes for gateway question"  -> By.xpath("//dd[contains(text(),'Yes')]"),
     "No for gateway question"   -> By.xpath("//dd[contains(text(),'No')]"),
     "amount"                    -> By.id("amount"),
+    "cancel"                    -> By.xpath("//*[contains(text(),'Cancel')]"),
 
     //Tailoring Elements
     "addSections"   -> By.id("addSectionsLink"),
@@ -131,6 +132,7 @@ trait CommonElements extends BasePage with Matchers {
     "change payroll id" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(6) > dd.govuk-summary-list__actions > a > span:nth-child(1)"),
     "change pay received" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(7) > dd.govuk-summary-list__actions > a > span:nth-child(1)"),
     "change tax taken from pay" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(8) > dd.govuk-summary-list__actions > a > span:nth-child(1)"),
+    "change off payroll" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(9) > dd.govuk-summary-list__actions > a > span:nth-child(1)"),
     "Employments list item" -> By.cssSelector("#employer-h2"),
     "Expenses list item" -> By.cssSelector("#expense-h2"),
     "remove employment" -> By.cssSelector("#main-content > div > div > dl:nth-child(6) > div > dd > ul > li:nth-child(2) > a"),
@@ -152,12 +154,12 @@ trait CommonElements extends BasePage with Matchers {
     "PAYE employment change" -> By.cssSelector("#main-content > div > div > dl:nth-child(3) > div > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a > span:nth-child(1)"),
     "Employment remove confirm" -> By.id("remove-employer-button-id"),
     "Taxable lump sums and certain income" -> By.id("taxable-lump-sums-and-certain-income_link"),
-     "Taxable lump sum page" -> By.id("page-heading"),
-     "Taxable lump sum button" -> By.id("AddALumpSum"),
-     "Taxable lump sum amount page" -> By.id("page-heading"),
-     "Taxable lumps su amount" -> By.id("amount"),
-     "Taxable lump sum continue button" -> By.id("continue"),
-     "Save and continue" -> By.id("saveAndContinueBtn"),
+    "Taxable lump sum page" -> By.id("page-heading"),
+    "Taxable lump sum button" -> By.id("AddALumpSum"),
+    "Taxable lump sum amount page" -> By.id("page-heading"),
+    "Taxable lumps su amount" -> By.id("amount"),
+    "Taxable lump sum continue button" -> By.id("continue"),
+    "Save and continue" -> By.id("saveAndContinueBtn"),
 
     //GiftAid Elements
     "GiftAid"                                             -> By.id("giftAid_link"),
@@ -222,7 +224,7 @@ trait CommonElements extends BasePage with Matchers {
     "Cannot Update for Cis"      -> By.xpath("//*[contains(text(),'Cannot update')]/../../span/a[@id='cis_link']"),
 
     //State Benefits Elements
-   // "State benefits"                          -> By.id("stateBenefits_link"),
+    // "State benefits"                          -> By.id("stateBenefits_link"),
     "State benefits"                          -> By.cssSelector("#stateBenefits_link"),
     "Jobseeker’s Allowance"                   -> By.id("jobSeekersAllowance_link"),
     "Add missing claim"                       -> By.id("add-missing-claim-button-id"),
@@ -492,7 +494,7 @@ trait CommonElements extends BasePage with Matchers {
     "Payments into UK pensions"                                            -> By.id("PaymentsIntoPensions"),
     "Payments into UK pensions task list"                                  -> By.id("task-list__task-link--pensions"),
     "Payments into pensions tag"                                           -> By.id("task-list__task--pensions__tag"),
-  
+
     // Capital gains
     "Trusts"                            -> By.cssSelector("[value='Trusts']"),
     "Settlements"                       -> By.cssSelector("[value='Settlements']"),
@@ -515,6 +517,6 @@ trait CommonElements extends BasePage with Matchers {
     "second radio button" -> By.id("value_1"),
     "Do you want to use trading allowance or declare expense" -> By.xpath("//a[substring(@href, string-length(@href) - string-length('income/change-trading-allowance') + 1) = 'income/change-trading-allowance']")
 
-
   )
 }
+

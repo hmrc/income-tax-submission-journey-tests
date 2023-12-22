@@ -35,6 +35,8 @@ Feature: Income from Property, Pensions And Investments Tailor Your Return - Inc
     When the user selects the Cash dividends from UK stocks and shares radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
+    ##---- clear Test data ----##
+    When the user navigates to the Test only clear data page for InYear
 
   Scenario: Agent User maximal flow - Income from Property, Pensions And Investments - Tailor your return
     When the user logs into the service with the following details
@@ -68,3 +70,5 @@ Feature: Income from Property, Pensions And Investments Tailor Your Return - Inc
     When the user selects the Cash dividends from UK stocks and shares radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your client’s Tax Return" page
+    ##---- clear Test data ----##
+    When the user navigates to the Test only clear data page for InYear

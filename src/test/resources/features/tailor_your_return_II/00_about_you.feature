@@ -14,7 +14,7 @@ Feature: About You Journeys Tailor Your Return - Income Tax Submission
       | Nino                | AA123456A     |
       | Enrolment Key 1     | HMRC-MTD-IT   |
       | Identifier Name 1   | MTDITID       |
-      | Identifier Value 1  | 1234567890    |
+      | Identifier Value 1  | 1204567890    |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     Then the user navigates to the Tailor return start page
     When the user clicks the Continue button
@@ -48,6 +48,8 @@ Feature: About You Journeys Tailor Your Return - Income Tax Submission
     When the user selects the Tax avoidance radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
+    ##---- clear Test data ----##
+    When the user navigates to the Test only clear data page for InYear
 
   Scenario: Agent User Maximum Flow Answers No For All Questions - About you - Tailor your return
     When the user logs into the service with the following details
@@ -91,6 +93,8 @@ Feature: About You Journeys Tailor Your Return - Income Tax Submission
     When the user selects the No, my client was not in any tax avoidance schemes radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your client’s Tax Return" page
+    ##---- clear Test data ----##
+    When the user navigates to the Test only clear data page for InYear
 
   @about_you_private_beta @TYR_private_beta
   Scenario: Individual User Private Beta Journey Flow - About you - Tailor your return
@@ -102,7 +106,7 @@ Feature: About You Journeys Tailor Your Return - Income Tax Submission
       | Nino                | AA123456A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
-      | Identifier Value 1  | 1234567890  |
+      | Identifier Value 1  | 1234569990  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     Then the user navigates to the Tailor return start page
     When the user clicks the Continue button
@@ -118,6 +122,8 @@ Feature: About You Journeys Tailor Your Return - Income Tax Submission
     When the user selects the Yes radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
+    ##---- clear Test data ----##
+    When the user navigates to the Test only clear data page for EOY
 
   @about_you_private_beta @TYR_private_beta
   Scenario: Agent User Private Beta Answers No For All Questions - About you - Tailor your return
@@ -131,7 +137,7 @@ Feature: About You Journeys Tailor Your Return - Income Tax Submission
       | Identifier Value 1  | 1234567890                                                                       |
       | Enrolment Key 2     | HMRC-AS-AGENT                                                                    |
       | Identifier Name 2   | AgentReferenceNumber                                                             |
-      | Identifier Value 2  | 1234567890                                                                       |
+      | Identifier Value 2  | 1234568890                                                                       |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     Then the user navigates to the Tailor return start page
     When the user clicks the Continue button
@@ -150,6 +156,8 @@ Feature: About You Journeys Tailor Your Return - Income Tax Submission
     When the user selects the no radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your client’s Tax Return" page
+    ##---- clear Test data ----##
+    When the user navigates to the Test only clear data page for EOY
 
   @payment_into_pensions
   Scenario: Individual User Private Beta Journey Flow - About you - Tailor your return
@@ -161,7 +169,7 @@ Feature: About You Journeys Tailor Your Return - Income Tax Submission
       | Nino                | AA123456A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
-      | Identifier Value 1  | 1234567890  |
+      | Identifier Value 1  | 1234566690  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     Then the user navigates to the Tailor return start page
     When the user clicks the Continue button
@@ -171,3 +179,5 @@ Feature: About You Journeys Tailor Your Return - Income Tax Submission
     When the user selects the Payments into UK pensions radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
+    ##---- clear Test data ----##
+    When the user navigates to the Test only clear data page for EOY

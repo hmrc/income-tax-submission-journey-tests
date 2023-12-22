@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.pages.CommonPage.{clickOn, elementExists, load}
+import uk.gov.hmrc.test.ui.pages.CommonPage.{clickOn, elementExists, load, replaceTaxYear}
 import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, CommonPage}
 
 class CommonStepDef extends BaseStepDef {
@@ -139,6 +139,15 @@ class CommonStepDef extends BaseStepDef {
       case "QA Tailor return start" => "https://www.qa.tax.service.gov.uk/update-and-submit-income-tax-return/tailored-return/2023/start"
       case "Payments into pensions" => "http://localhost:10007/update-and-submit-income-tax-return/tailored-return/2023/payments-pensions"
       case "Rental income" => "http://localhost:10007/update-and-submit-income-tax-return/tailored-return/2023/property-pensions-investments/rental-income"
+      case _ => fail("Invalid url input parameter")
+    }
+    driver.navigate().to(expectedUrl)
+  }
+
+  Then("""^the user navigates to the (.*) page for (.*)$""") { (url: String, taxYear: String) =>
+    val expectedTaxYear = replaceTaxYear(taxYear)
+    val expectedUrl: String = url match {
+      case "Test only clear data" => s"http://localhost:10007/update-and-submit-income-tax-return/tailored-return/test-only/$expectedTaxYear/clear-data"
       case _ => fail("Invalid url input parameter")
     }
     driver.navigate().to(expectedUrl)

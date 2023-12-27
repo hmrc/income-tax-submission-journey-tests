@@ -1,4 +1,4 @@
-@TYR @property_pensions_investments
+@TYR_private_beta @property_pensions_investments
 
 Feature: Income from Property, Pensions And Investments Tailor Your Return - Income Tax Submission
 
@@ -18,7 +18,36 @@ Feature: Income from Property, Pensions And Investments Tailor Your Return - Inc
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    Then the user navigates to the Rental income page
+    ##- complete about you section --##
+    Then the user navigates to the Tailor return start page
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Add sections to your Tax Return" page
+    When the user clicks on the About you link
+    Then the user should be redirected to the "UK residence status" page
+    When the user selects the yes, but permanent home is abroad radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Charitable donations" page
+    When the user selects the Donations using Gift Aid radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Were you a foster carer or shared lives carer?" page
+    When the user selects the No radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Add sections to your Tax Return" page
+    ##---- Income from work and taxable state benefits steps ----##
+    When the user clicks on the Income from work and taxable state benefits link
+    Then the user should be redirected to the "What did you do for work?" page
+    And the user selects the Employed radio button
+    And the user selects the Self-employed radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Construction Industry Scheme (CIS)" page
+    When the user selects the yes radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Jobseeker’s Allowance and Employment and Support Allowance" page
+    When the user selects the Jobseeker's Allowance radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Add sections to your Tax Return" page
+    ##---- Rental income steps ----##
+    When the user clicks on the Income from property, pensions and investments link
     Then the user should be redirected to the "Rental income from property" page
     When the user selects the UK Property radio button
     And the user clicks the Continue button
@@ -53,7 +82,35 @@ Feature: Income from Property, Pensions And Investments Tailor Your Return - Inc
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
-    Then the user navigates to the Rental income page
+    Then the user navigates to the Tailor return start page
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Add sections to your client’s Tax Return" page
+    ##---- About you steps have to be completed in order for Income from work and taxable state benefits link to be active ----##
+    When the user clicks on the About you link
+    Then the user should be redirected to the "UK residence status" page
+    When the user selects the Not a resident radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Your client’s residence status" page
+    When the user selects the My client was not resident in the UK radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Charitable donations" page
+    When the user selects the No, my client did not donate to charity radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Was your client a foster carer or shared lives carer?" page
+    When the user selects the no radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Add sections to your client’s Tax Return" page
+    ##---- Income from work and taxable state benefits steps ----##
+    When the user clicks on the Income from work and taxable state benefits link
+    Then the user should be redirected to the "What did your client do for work?" page
+    And the user selects the Employed radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Jobseeker’s Allowance and Employment and Support Allowance" page
+    When the user selects the Contribution-based radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Add sections to your client’s Tax Return" page
+    ##---- Income from property, pensions and investments ----##
+    When the user clicks on the Income from property, pensions and investments link
     Then the user should be redirected to the "Rental income from property" page
     When the user selects the UK Property radio button
     And the user clicks the Continue button

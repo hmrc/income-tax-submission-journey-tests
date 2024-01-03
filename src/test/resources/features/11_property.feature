@@ -697,8 +697,8 @@ Feature: Property Journeys - Income Tax Submission
 
   Scenario: Individual user adds UK Property - Property rentals - Claim Allowances - Cash basis accounting method and claim capital allowances for a car
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start  |
-      | Credential Strength | strong      |
+      | Redirect url        | /InYear/start  |
+      | Credential Strength | strong         |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
       | Nino                | AC180000B   |
@@ -780,14 +780,14 @@ Feature: Property Journeys - Income Tax Submission
 
   Scenario: Individual user adds UK Property - Property rentals - Claim Allowances - Traditional accounting method and claim allowances
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start  |
-      | Credential Strength | strong      |
-      | Confidence Level    | 250         |
-      | Affinity Group      | Individual  |
-      | Nino                | AC180000A   |
-      | Enrolment Key 1     | HMRC-MTD-IT |
-      | Identifier Name 1   | MTDITID     |
-      | Identifier Value 1  | 1234567890  |
+      | Redirect url        | /InYear/start  |
+      | Credential Strength | strong         |
+      | Confidence Level    | 250            |
+      | Affinity Group      | Individual     |
+      | Nino                | AC180000A      |
+      | Enrolment Key 1     | HMRC-MTD-IT    |
+      | Identifier Name 1   | MTDITID        |
+      | Identifier Value 1  | 1234567890     |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page

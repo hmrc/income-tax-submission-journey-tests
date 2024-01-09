@@ -515,7 +515,11 @@ trait CommonElements extends BasePage with Matchers {
     "Declare expenses" -> By.id("value_1"),
     "first radio button" -> By.id("value_0"),
     "second radio button" -> By.id("value_1"),
-    "Do you want to use trading allowance or declare expense" -> By.xpath("//a[substring(@href, string-length(@href) - string-length('income/change-trading-allowance') + 1) = 'income/change-trading-allowance']")
+    "Do you want to use trading allowance or declare expense" -> By.xpath("//a[substring(@href, string-length(@href) - string-length('income/change-trading-allowance') + 1) = 'income/change-trading-allowance']"),
+    "Self-employment Expenses categories" -> By.cssSelector("#main-content > div > div > div.task-list > dl:nth-child(4) > div:nth-child(3) > dt > span > a"),
+    "first option" -> By.id("value_0"),
+    "second option" -> By.id("value_1"),
+    "third option" -> By.id("value_2")
 
   )
 }

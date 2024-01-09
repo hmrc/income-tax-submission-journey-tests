@@ -458,15 +458,21 @@ trait CommonElements extends BasePage with Matchers {
     "Capital allowances for a car amount" -> By.id("capitalAllowancesForACarAmount"),
     "Check Your Answers" -> By.cssSelector("#main-content > div > div > h1"),
     "Annual investment allowance" -> By.cssSelector("#main-content > div > div > h1"),
-    "Annual investment allowance amount" -> By.id("annualInvestmentAllowance"),
+    "Annual investment allowance amount" -> By.id("annualInvestmentAllowanceAmount"),
     "Electric charge-point allowance" -> By.cssSelector("#main-content > div > div > form > h1"),
-    "Yes,electric charge point allowance" -> By.id("electricChargePointAllowance"),
-    "No,electric charge point allowance" -> By.id("electricChargePointAllowance-no"),
-    "Electric charge-point allowance amount" -> By.id("allowance"),
+    "Yes,electric charge point allowance" -> By.id("electricChargePointAllowanceYesNo"),
+    "No,electric charge point allowance" -> By.id("electricChargePointAllowanceYesNo-no"),
+    "Electric charge-point allowance amount" -> By.id("electricChargePointAllowanceAmount"),
     "Zero-emission car allowance" -> By.cssSelector("#main-content > div > div > h1"),
-    "Zero-emission car allowance amount" -> By.id("amount"),
+    "Zero-emission car allowance amount" -> By.id("zeroEmissionCarAllowanceAmount"),
     "Zero-emission goods vehicle allowance" -> By.cssSelector(" #main-content > div > div > h1"),
-    "Zero-emission goods vehicle allowance amount" -> By.id("value"),
+    "Zero-emission goods vehicle allowance amount" -> By.id("zeroEmissionGoodsVehicleAllowanceAmount"),
+    "Business premises renovation allowance" -> By.cssSelector("#main-content > div > div > h1"),
+    "Business premises renovation allowance amount" -> By.id("businessPremisesRenovationAmount"),
+    "Replacement of domestic goods" -> By.cssSelector("#main-content > div > div > h1"),
+    "Replacement of domestic goods amount" -> By.id("replacementOfDomesticGoodsAmount"),
+    "Other capital allowances" -> By.cssSelector("#main-content > div > div > h1"),
+    "Other capital allowances amount" -> By.id("otherCapitalAllowanceAmount"),
 
     // Property, Pensions And Investments
     "Income from property, pensions and investments tag"                   -> By.id("task-list__task--incomeFromProperty__tag"),
@@ -519,4 +525,3 @@ trait CommonElements extends BasePage with Matchers {
 
   )
 }
-

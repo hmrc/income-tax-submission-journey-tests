@@ -20,6 +20,9 @@ Feature: Income from Property, Pensions And Investments Tailor Your Return - Inc
     Then the user should be redirected to the "Your Income Tax Return" page
     ##- complete about you section --##
     Then the user navigates to the Tailor return start page
+    ##---- clear Test data ----##
+    When the user navigates to the Test only clear data page for InYear
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
     When the user clicks on the About you link
@@ -66,6 +69,7 @@ Feature: Income from Property, Pensions And Investments Tailor Your Return - Inc
     Then the user should be redirected to the "Add sections to your Tax Return" page
     ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for InYear
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
 
   Scenario: Agent User maximal flow - Income from Property, Pensions And Investments - Tailor your return
     When the user logs into the service with the following details
@@ -83,6 +87,9 @@ Feature: Income from Property, Pensions And Investments Tailor Your Return - Inc
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     Then the user navigates to the Tailor return start page
+    ##---- clear Test data ----##
+    When the user navigates to the Test only clear data page for InYear
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your client’s Tax Return" page
     ##---- About you steps have to be completed in order for Income from work and taxable state benefits link to be active ----##
@@ -129,3 +136,4 @@ Feature: Income from Property, Pensions And Investments Tailor Your Return - Inc
     Then the user should be redirected to the "Add sections to your client’s Tax Return" page
     ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for InYear
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page

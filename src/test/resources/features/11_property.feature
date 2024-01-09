@@ -694,17 +694,19 @@ Feature: Property Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Other allowable property expenses" page
     And the user selects the Other allowable property expenses amount field and enters a value of 200
+    When the user clicks the continue button
+    Then the user should be redirected to the "Check Your Answers" page
 
   Scenario: Individual user adds UK Property - Property rentals - Claim Allowances - Cash basis accounting method and claim capital allowances for a car
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start  |
       | Credential Strength | strong         |
-      | Confidence Level    | 250         |
-      | Affinity Group      | Individual  |
-      | Nino                | AC180000B   |
-      | Enrolment Key 1     | HMRC-MTD-IT |
-      | Identifier Name 1   | MTDITID     |
-      | Identifier Value 1  | 1234567890  |
+      | Confidence Level    | 250            |
+      | Affinity Group      | Individual     |
+      | Nino                | AC180000B      |
+      | Enrolment Key 1     | HMRC-MTD-IT    |
+      | Identifier Name 1   | MTDITID        |
+      | Identifier Value 1  | 1234567890     |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -855,3 +857,25 @@ Feature: Property Journeys - Income Tax Submission
     When the user clicks on the Allowanceslink link
     Then the user should be redirected to the "Allowances" page
     When the user clicks the continue button
+    Then the user should be redirected to the "Annual investment allowance" page
+    When the user selects the Annual investment allowance amount field and enters a value of 1200
+    And the user clicks the continue button
+    Then the user should be redirected to the "Electric charge-point allowance" page
+    When the user selects the Yes,electric charge point allowance radio button
+    And the user selects the Electric charge-point allowance amount field and enters a value of 100
+    And the user clicks the continue button
+    Then the user should be redirected to the "Zero-emission car allowance" page
+    When the user selects the Zero-emission car allowance amount field and enters a value of 1200
+    And the user clicks the continue button
+    Then the user should be redirected to the "Zero-emission goods vehicle allowance" page
+    When the user selects the Zero-emission goods vehicle allowance amount field and enters a value of 12.90
+    And the user clicks the continue button
+    Then the user should be redirected to the "Business premises renovation allowance" page
+    When the user selects the Business premises renovation allowance amount field and enters a value of 12.90
+    And the user clicks the continue button
+    Then the user should be redirected to the "Replacement of domestic goods" page
+    When the user selects the Replacement of domestic goods amount field and enters a value of 1011.90
+    And the user clicks the continue button
+    Then the user should be redirected to the "Other capital allowances" page
+    When the user selects the Other capital allowances amount field and enters a value of 1011.90
+    And the user clicks the continue button

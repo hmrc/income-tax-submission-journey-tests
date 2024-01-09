@@ -4,6 +4,7 @@ Feature: Add sections Journeys Tailor Your Return - Income Tax Submission
 
   Background:
     Given the user navigates to the auth login page
+
   Scenario: Individual user clicks on continue on add sections page without completing any section - Tailor your return
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
@@ -16,6 +17,9 @@ Feature: Add sections Journeys Tailor Your Return - Income Tax Submission
       | Identifier Value 1  | 1234567000    |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     Then the user navigates to the Tailor return start page
+     ##---- clear Test data ----##
+    When the user navigates to the Test only clear data page for InYear
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
     Then the "About you tag" on the page displays "NOT STARTED"
@@ -28,6 +32,7 @@ Feature: Add sections Journeys Tailor Your Return - Income Tax Submission
     Then the user should be redirected to the "Add sections to your Tax Return" page
     ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for InYear
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
 
   Scenario: Agent User completes all sections on add sections page - Tailor your return
     When the user logs into the service with the following details
@@ -43,6 +48,9 @@ Feature: Add sections Journeys Tailor Your Return - Income Tax Submission
       | Identifier Value 2  | XARN1234566                                                                         |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     Then the user navigates to the Tailor return start page
+     ##---- clear Test data ----##
+    When the user navigates to the Test only clear data page for InYear
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your client’s Tax Return" page
     Then the "About you tag" on the page displays "NOT STARTED"
@@ -95,11 +103,12 @@ Feature: Add sections Journeys Tailor Your Return - Income Tax Submission
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your client’s Tax Return" page
   ##---- Payments into UK pensions steps ----##
-  Then the "Payments into pensions tag" on the page displays "NOT STARTED"
-  When the user clicks on the Payments into UK pensions task list link
-  Then the user should be redirected to the "Payments into pensions" page
-  When the user selects the Payments into UK pensions radio button
-  And the user clicks the Continue button
-  Then the user should be redirected to the "Add sections to your client’s Tax Return" page
+    Then the "Payments into pensions tag" on the page displays "NOT STARTED"
+    When the user clicks on the Payments into UK pensions task list link
+    Then the user should be redirected to the "Payments into pensions" page
+    When the user selects the Payments into UK pensions radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Add sections to your client’s Tax Return" page
     ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for InYear
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page

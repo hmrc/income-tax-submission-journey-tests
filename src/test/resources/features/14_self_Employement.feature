@@ -389,7 +389,7 @@ Feature: Self Employment Journeys
 
   #-------------- Self Employment Expenses  ----------#
 
-  Scenario: Individual - Self employment ExpenseS Tailoring journey
+  Scenario: Individual - Self employment Expenses Tailoring journey
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |

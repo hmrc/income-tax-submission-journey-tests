@@ -519,7 +519,8 @@ trait CommonElements extends BasePage with Matchers {
     "Self-employment Expenses categories" -> By.cssSelector("#main-content > div > div > div.task-list > dl:nth-child(4) > div:nth-child(3) > dt > span > a"),
     "first option" -> By.id("value_0"),
     "second option" -> By.id("value_1"),
-    "third option" -> By.id("value_2")
+    "third option" -> By.id("value_2"),
+    "Office supplies" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/office-supplies/amount') + 1) = 'expenses/office-supplies/amount']")
 
   )
 }

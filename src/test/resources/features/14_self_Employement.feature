@@ -389,7 +389,7 @@ Feature: Self Employment Journeys
 
   #-------------- Self Employment Expenses  ----------#
 
-  Scenario: Individual - Self employment Expense Tailoring journey
+  Scenario: Individual - Self employment ExpenseS Tailoring journey
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
@@ -475,15 +475,15 @@ Feature: Self Employment Journeys
     When the user clicks the third option checkbox
     And the user clicks the Continue button
 
-    Then the user should be redirected to the "Disallowable interest on bank and other business loans" page under self employment
+    Then the user should be redirected to the "Is any of your interest on bank and other business loans disallowable?" page under self employment
     When the user selects the first radio button radio button
     And the user clicks the Continue button
 
-    Then the user should be redirected to the "Disallowable bank, credit card and other financial charges" page under self employment
+    Then the user should be redirected to the "Are any of your bank, credit card and other financial charges disallowable?" page under self employment
     When the user selects the first radio button radio button
     And the user clicks the Continue button
 
-    Then the user should be redirected to the "Disallowable irrecoverable debts" page under self employment
+    Then the user should be redirected to the "Are any of your irrecoverable debts disallowable?" page under self employment
     When the user selects the first radio button radio button
     And the user clicks the Continue button
 

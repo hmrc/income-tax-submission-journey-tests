@@ -387,3 +387,122 @@ Feature: Self Employment Journeys
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
+  #-------------- Self Employment Expenses  ----------#
+
+  Scenario: Individual - Self employment Expenses Tailoring journey
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001D   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addSelfEmployment tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the Self Employment link
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+    When the user clicks on the Self-employment Expenses categories link
+    Then the user should be redirected to the "How will you report your expenses?" page under self employment
+    When the user selects the second radio button radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Office supplies" page under self employment
+    When the user selects the second radio button radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Were you a taxi, minicab or road haulage industry driver?" page under self employment
+    When the user selects the first radio button radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Goods to sell or use" page under self employment
+    When the user selects the second radio button radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Repairs and maintenance" page under self employment
+    When the user selects the second radio button radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Did you work from home?" page under self employment
+    When the user selects the first radio button radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Did you work from your own business premises?" page under self employment
+    When the user selects the second radio button radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Travel and accommodation for work" page under self employment
+    When the user selects the second radio button radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Advertising or marketing" page under self employment
+    When the user selects the second radio button radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Entertainment costs" page under self employment
+    When the user selects the first radio button radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Staff, construction industry and professional services expenses" page under self employment
+    When the user clicks the first option checkbox
+    When the user clicks the second option checkbox
+    When the user clicks the third option checkbox
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Disallowable staff costs" page under self employment
+    When the user selects the first radio button radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Disallowable construction industry subcontractors costs" page under self employment
+    When the user selects the first radio button radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Disallowable professional fees" page under self employment
+    When the user selects the first radio button radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Financial expenses" page under self employment
+    When the user clicks the first option checkbox
+    When the user clicks the second option checkbox
+    When the user clicks the third option checkbox
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Is any of your interest on bank and other business loans disallowable?" page under self employment
+    When the user selects the first radio button radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Are any of your bank, credit card and other financial charges disallowable?" page under self employment
+    When the user selects the first radio button radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Are any of your irrecoverable debts disallowable?" page under self employment
+    When the user selects the first radio button radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Depreciation and loss or profit on the sale of assets" page under self employment
+    When the user selects the first radio button radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Other expenses" page under self employment
+    When the user selects the second radio button radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Check your expenses categories" page under self employment
+
+    And the user clicks the Self Employment Save and continue button
+
+    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+
+

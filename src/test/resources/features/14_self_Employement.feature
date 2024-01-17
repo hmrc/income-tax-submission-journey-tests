@@ -504,5 +504,256 @@ Feature: Self Employment Journeys
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
+    #-------------- Self Employment Expenses - Questions page from task list  ----------#
+
+  Scenario: Individual - Self employment Expenses - Questions page from task list
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001D   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addSelfEmployment tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the Self Employment link
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+    #-------------- Self Employment Expenses - Office Supplies   ----------#
+
+    When the user clicks on the Office supplies link
+
+    Then the user should be redirected to the "How much did you spend on office supplies?" page under self employment
+    And the user selects the Amount-field field and enters a value of 3000.89
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "How much of the £3,000.89 you spent on office supplies is disallowable?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1000.89
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Check your office supplies expenses" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+    #-------------- Self Employment Expenses - Goods to sell   ----------#
+    When the user clicks on the Goods to sell or use link
+
+    Then the user should be redirected to the "How much did you spend on goods to sell or use?" page under self employment
+    And the user selects the Amount-field field and enters a value of 7,677.00
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "How much of the £7,677.00 you spent on goods to sell or use is disallowable?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1000.89
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Check your goods to sell or use expenses" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+    #-------------- Self Employment Expenses - Repairs and Maintenance   ----------#
+    When the user clicks on the Repairs and maintenance link
+
+    Then the user should be redirected to the "How much did you spend on repairs and maintenance?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1,677.57
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "How much of the £1,677.57 you spent on repairs and maintenance is disallowable?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1000.89
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Check your repairs and maintenance costs" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+    #-------------- Self Employment Expenses - Advertising or Marketing   ---------- #
+    When the user clicks on the Advertising or marketing link
+
+    Then the user should be redirected to the "How much did you spend on advertising or marketing?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1,677.57
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "How much of the £1,677.57 you spent on advertising or marketing is disallowable?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1000.89
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Check your advertising or marketing expenses" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+    #-------------- Self Employment Expenses - Entertainment cost   ---------- #
+    When the user clicks on the Entertainment costs link
+
+    Then the user should be redirected to the "How much did you spend on entertainment?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1,677.57
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Check your entertainment expenses" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+    #-------------- Self Employment Expenses - Staff  cost   ---------- #
+    When the user clicks on the Staff costs link
+
+    Then the user should be redirected to the "How much did you spend on staff costs?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1,677.57
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "How much of the £1,677.57 you spent on staff costs is disallowable?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1000.89
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Check your staff costs" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+    #-------------- Self Employment Expenses - construction industry contractors   ---------- #
+    When the user clicks on the Construction industry subcontractors link
+
+    Then the user should be redirected to the "How much did you spend on construction industry expenses?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1,677.57
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "How much of the £1,677.57 you spent on construction industry expenses is disallowable?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1000.89
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Check your construction industry subcontractors expenses" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+    #-------------- Self Employment Expenses - Professional fees   ---------- #
+
+    When the user clicks on the Professional fess link
+
+    Then the user should be redirected to the "How much did you spend on professional fees?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1,677.57
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "How much of the £1,677.57 you spent on professional fees is disallowable?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1000.89
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Check your professional fees" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+    #-------------- Self Employment Expenses - Interest paid on bank and other business loans   ---------- #
+    When the user clicks on the Interest paid on bank and other business loans link
+
+    Then the user should be redirected to the "How much did you spend on interest on bank and other business loans?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1,677.57
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "How much of the £1,677.57 you spent on interest on bank and other business loans is disallowable?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1000.89
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Check your interest paid on loans expenses" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+    #-------------- Self Employment Expenses - Bank, credit card and other financial charges   ---------- #
+    When the user clicks on the Bank, credit card and other financial charges link
+
+    Then the user should be redirected to the "How much did you spend on bank, credit card and other financial charges?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1,677.57
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "How much of the £1,677.57 you spent on bank, credit card and other financial charges is disallowable?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1000.89
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Check your financial charges expenses" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+    #-------------- Self Employment Expenses - Irrecoverable debts   ---------- #
+    When the user clicks on the Irrecoverable debt link
+
+    Then the user should be redirected to the "What is the value of the irrecoverable debts you’ve written off?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1,677.57
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "How much of the £1,677.57 you’re claiming in irrecoverable debts is disallowable?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1000.89
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Check you irrecoverable debts" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+    #-------------- Self Employment Expenses - depreciation costs  ---------- #
+    When the user clicks on the Depreciation costs link
+
+    Then the user should be redirected to the "How much are you claiming in depreciation costs?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1,677.57
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Check your depreciation costs" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+     #-------------- Self Employment Expenses - other expenses  ---------- #
+    When the user clicks on the Other expenses link
+
+    Then the user should be redirected to the "How much did you spend on other expenses?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1,677.57
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "How much of the £1,677.57 you spent on other expenses is disallowable?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1000.89
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Check your other expenses" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
 
 

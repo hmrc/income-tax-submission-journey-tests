@@ -146,6 +146,7 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     Then the user should be redirected to the "Interest from savings and securities" page
 
 ################################# Gains Journey ####################################################################################
+  @gains
   Scenario: Individual User maximal flow - Gains - User says yes to all questions
     When the user logs into the service with the following details
       |Redirect url       |/InYear/start                                        |
@@ -252,121 +253,7 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your policies" page
 
-  Scenario: Agent User maximal flow - Gains - User says yes to all questions and removes policy
-    When the user logs into the service with the following details
-      |Redirect url       |/test-only/InYear/additional-parameters?ClientNino=AA123458A&ClientMTDID=1234567893  |
-      |Credential Strength|weak                                                                               |
-      |Confidence Level   |250                                                                                |
-      |Affinity Group     |Agent                                                                              |
-      |Enrolment Key 1    |HMRC-MTD-IT                                                                        |
-      |Identifier Name 1  |MTDITID                                                                            |
-      |Identifier Value 1 |1234567893                                                                         |
-      |Enrolment Key 2    |HMRC-AS-AGENT                                                                      |
-      |Identifier Name 2  |AgentReferenceNumber                                                               |
-      |Identifier Value 2 |XARN1234567                                                                        |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the addSections link
-    Then the user should be redirected to the "Add sections to your client’s Income Tax Return" page
-    When the user clicks the addGains tailoring option
-    And the user clicks the continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the Gains from policies and contracts link
-    Then the user should be redirected to the "Gains from life insurance policies and contracts" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "What type of policy gave your client a gain?" page
-    When the user selects the Life Insurance radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Policy number" page
-    When the user selects the Policy number field and enters a value of LA/2881/07
-    And the user clicks the continue button
-    Then the user should be redirected to the "Chargeable event gain" page
-    When the user selects the amount field and enters a value of 123.45
-    And the user clicks the continue button
-    Then the user should be redirected to the "Policy event" page
-    When the user selects the Other radio button
-    And the user selects the What caused this gain? field and enters a value of Inheritance
-    And the user clicks the continue button
-    Then the user should be redirected to the "Has your client had a gain from this policy in an earlier tax year?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Years since your client's last gain" page
-    When the user selects the Gains Year field and enters a value of 99
-    And the user clicks the continue button
-    Then the user should be redirected to the "Policy held" page
-    When the user selects the Gains Year field and enters a value of 99
-    And the user clicks the continue button
-    Then the user should be redirected to the "Was your client's gain treated as tax paid?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Is your client entitled to Deficiency relief?" page
-    When the user selects the yes radio button
-    And the user selects the amount field and enters a value of 193
-    And the user clicks the continue button
-    Then the user should be redirected to the "Policy summary" page
-
-    When the user clicks on the change link in position 1
-    Then the user should be redirected to the "What type of policy gave your client a gain?" page
-    And the user clicks the continue button
-    Then the user should be redirected to the "Policy summary" page
-
-    When the user clicks on the change link in position 2
-    Then the user should be redirected to the "Policy number" page
-    And the user clicks the continue button
-    Then the user should be redirected to the "Policy summary" page
-
-    When the user clicks on the change link in position 3
-    Then the user should be redirected to the "Chargeable event gain" page
-    And the user clicks the continue button
-    Then the user should be redirected to the "Policy summary" page
-
-    When the user clicks on the change link in position 4
-    Then the user should be redirected to the "Policy event" page
-    And the user clicks the continue button
-    Then the user should be redirected to the "Policy summary" page
-
-    When the user clicks on the change link in position 5
-    Then the user should be redirected to the "Has your client had a gain from this policy in an earlier tax year?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Years since your client's last gain" page
-    When the user selects the Gains Year field and enters a value of 99
-    And the user clicks the continue button
-    Then the user should be redirected to the "Policy summary" page
-
-    When the user clicks on the change link in position 6
-    Then the user should be redirected to the "Years since your client's last gain" page
-    And the user clicks the continue button
-    Then the user should be redirected to the "Policy summary" page
-
-    When the user clicks on the change link in position 7
-    Then the user should be redirected to the "Policy held" page
-    And the user clicks the continue button
-    Then the user should be redirected to the "Policy summary" page
-
-    When the user clicks on the change link in position 8
-    Then the user should be redirected to the "Was your client's gain treated as tax paid?" page
-    And the user clicks the continue button
-    Then the user should be redirected to the "Policy summary" page
-
-    When the user clicks on the change link in position 9
-    Then the user should be redirected to the "Is your client entitled to Deficiency relief?" page
-    When the user selects the yes radio button
-    And the user selects the amount field and enters a value of 193
-    And the user clicks the continue button
-    Then the user should be redirected to the "Policy summary" page
-    When the user clicks the save and continue button
-    Then the user should be redirected to the "Your client's policies" page
-    When the user clicks the Policy remove button
-    Then the user should be redirected to the "Are you sure you want to remove this policy?" page
-    When the user clicks the remove button
-    Then the user should be redirected to the "Your client's policies" page
-
-    When the user clicks the Add a policy button
-    Then the user should be redirected to the "What type of policy gave your client a gain?" page
-
+  @gains
   Scenario: Individual User maximal flow - Gains - User answers no on gains status page
     When the user logs into the service with the following details
       |Redirect url       |/InYear/start                                        |
@@ -415,6 +302,7 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     And the user clicks the continue button
     Then the user should be redirected to the "Policy summary" page
 
+  @gains
   Scenario: Individual User minimum flow - Gains - User answers no on gain gateway question page
     When the user logs into the service with the following details
       |Redirect url       |/InYear/start                                          |
@@ -440,7 +328,9 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     Then the user should be redirected to the "Check your gains from life insurance policies and contracts" page
     When the user clicks the return to overview button
     Then the user should be redirected to the "Your Income Tax Return" page
+    Then the "Gains status" on the page displays "EXCLUDED"
 
+  @gains
   Scenario: Individual User maximum flow - Gains - User answers no on Deficiency relief page
     When the user logs into the service with the following details
       |Redirect url       |/InYear/start                                          |
@@ -492,6 +382,7 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     And the user clicks the continue button
     Then the user should be redirected to the "Policy summary" page
 
+  @gains
   Scenario: Returning flow - Individual User with prior Gains Data, Reviews data
     When the user logs into the service with the following details
       |Redirect url       |/InYear/start                                          |
@@ -513,10 +404,15 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     And the status on the page is "Updated Tag"
     When the user clicks on the Gains from policies and contracts link
     Then the user should be redirected to the "Your policies" page
+    When the user clicks on the Add another gain from a different policy link
+    Then the user should be redirected to the "What type of policy gave you a gain?" page
+    When the user clicks on the back link
+    Then the user should be redirected to the "Your policies" page
     When the user clicks the return to overview button
     Then the user should be redirected to the "Your Income Tax Return" page
 
     ################################# Gains Voided ISA Journey ####################################################################################
+  @gains
   Scenario: Individual User maximal flow - Gains - User says yes to all questions
     When the user logs into the service with the following details
       |Redirect url       |/InYear/start                                        |
@@ -613,111 +509,7 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your policies" page
 
-  Scenario: Agent User maximal flow - Gains - User says yes to all questions and removes policy
-    When the user logs into the service with the following details
-      |Redirect url       |/test-only/InYear/additional-parameters?ClientNino=AA123458A&ClientMTDID=1234567893  |
-      |Credential Strength|weak                                                                               |
-      |Confidence Level   |250                                                                                |
-      |Affinity Group     |Agent                                                                              |
-      |Enrolment Key 1    |HMRC-MTD-IT                                                                        |
-      |Identifier Name 1  |MTDITID                                                                            |
-      |Identifier Value 1 |1234567893                                                                         |
-      |Enrolment Key 2    |HMRC-AS-AGENT                                                                      |
-      |Identifier Name 2  |AgentReferenceNumber                                                               |
-      |Identifier Value 2 |XARN1234567                                                                        |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the addSections link
-    Then the user should be redirected to the "Add sections to your client’s Income Tax Return" page
-    When the user clicks the addGains tailoring option
-    And the user clicks the continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the Gains from policies and contracts link
-    Then the user should be redirected to the "Gains from life insurance policies and contracts" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "What type of policy gave your client a gain?" page
-    When the user selects the Voided ISA radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Policy number" page
-    When the user selects the Policy number field and enters a value of LA/2881/07
-    And the user clicks the continue button
-    Then the user should be redirected to the "Chargeable event gain" page
-    When the user selects the amount field and enters a value of 123.45
-    And the user clicks the continue button
-    Then the user should be redirected to the "Policy event" page
-    When the user selects the Other radio button
-    And the user selects the What caused this gain? field and enters a value of Inheritance
-    And the user clicks the continue button
-    Then the user should be redirected to the "Has your client had a gain from this policy in an earlier tax year?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Years since your client's last gain" page
-    When the user selects the Gains Year field and enters a value of 99
-    And the user clicks the continue button
-    Then the user should be redirected to the "Policy held" page
-    When the user selects the Gains Year field and enters a value of 99
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much tax did your client pay on their gain?" page
-    When the user selects the amount field and enters a value of 123.45
-    And the user clicks the continue button
-    Then the user should be redirected to the "Policy summary" page
-
-    When the user clicks on the change link in position 1
-    Then the user should be redirected to the "What type of policy gave your client a gain?" page
-    And the user clicks the continue button
-    Then the user should be redirected to the "Policy summary" page
-
-    When the user clicks on the change link in position 2
-    Then the user should be redirected to the "Policy number" page
-    And the user clicks the continue button
-    Then the user should be redirected to the "Policy summary" page
-
-    When the user clicks on the change link in position 3
-    Then the user should be redirected to the "Chargeable event gain" page
-    And the user clicks the continue button
-    Then the user should be redirected to the "Policy summary" page
-
-    When the user clicks on the change link in position 4
-    Then the user should be redirected to the "Policy event" page
-    And the user clicks the continue button
-    Then the user should be redirected to the "Policy summary" page
-
-    When the user clicks on the change link in position 5
-    Then the user should be redirected to the "Has your client had a gain from this policy in an earlier tax year?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Years since your client's last gain" page
-    When the user selects the Gains Year field and enters a value of 99
-    And the user clicks the continue button
-    Then the user should be redirected to the "Policy summary" page
-
-    When the user clicks on the change link in position 6
-    Then the user should be redirected to the "Years since your client's last gain" page
-    And the user clicks the continue button
-    Then the user should be redirected to the "Policy summary" page
-
-    When the user clicks on the change link in position 7
-    Then the user should be redirected to the "Policy held" page
-    And the user clicks the continue button
-    Then the user should be redirected to the "Policy summary" page
-
-    When the user clicks on the change link in position 8
-    Then the user should be redirected to the "How much tax did your client pay on their gain?" page
-    And the user clicks the continue button
-    Then the user should be redirected to the "Policy summary" page
-
-    When the user clicks the save and continue button
-    Then the user should be redirected to the "Your client's policies" page
-    When the user clicks the Policy remove button
-    Then the user should be redirected to the "Are you sure you want to remove this policy?" page
-    When the user clicks the remove button
-    Then the user should be redirected to the "Your client's policies" page
-
-    When the user clicks the Add a policy button
-    Then the user should be redirected to the "What type of policy gave your client a gain?" page
-
+  @gains
   Scenario: Individual User maximal flow - Gains - User answers no on gains status page
     When the user logs into the service with the following details
       |Redirect url       |/InYear/start                                        |
@@ -763,35 +555,7 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     And the user clicks the continue button
     Then the user should be redirected to the "Policy summary" page
 
-  Scenario: Individual User minimum flow - Gains - User answers no on gain gateway question page
-    When the user logs into the service with the following details
-      |Redirect url       |/InYear/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |250                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |AA012345A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the addSections link
-    Then the user should be redirected to the "Add sections to your Income Tax Return" page
-    When the user clicks the addGains tailoring option
-    And the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the Gains from policies and contracts link
-    Then the user should be redirected to the "Gains from life insurance policies and contracts" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your gains from life insurance policies and contracts" page
-    When the user clicks the return to overview button
-    Then the user should be redirected to the "Your Income Tax Return" page
-    And the status on the page is "Excluded for Gains"
-    When the user clicks on the Gains from policies and contracts link
-    Then the user should be redirected to the "Check your gains from life insurance policies and contracts" page
-
+    @gains
   Scenario: Returning flow - Individual User with prior Gains Data, Reviews data
     When the user logs into the service with the following details
       |Redirect url       |/InYear/start                                          |
@@ -815,7 +579,6 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     Then the user should be redirected to the "Your policies" page
     When the user clicks the return to overview button
     Then the user should be redirected to the "Your Income Tax Return" page
-
 
     ######################################### Stock Dividends ##############################################################
   @dividends

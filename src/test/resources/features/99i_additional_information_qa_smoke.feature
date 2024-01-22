@@ -172,6 +172,11 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     Then the user should be redirected to the "Policy summary" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your policies" page
+    When the user clicks the Policy remove button
+    Then the user should be redirected to the "Are you sure you want to remove this policy?" page
+    When the user clicks the remove button
+    Then the user should be redirected to the "Policy summary" page
+
 
 
   Scenario: Individual User minimum flow - Gains - User answers no on gain gateway question page
@@ -209,7 +214,7 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
       |Credential Strength|strong                                               |
       |Confidence Level   |250                                                  |
       |Affinity Group     |Individual                                           |
-      |Nino               |AA123456A                                            |
+      |Nino               |AA123499A                                            |
       |Enrolment Key 1    |HMRC-MTD-IT                                          |
       |Identifier Name 1  |MTDITID                                              |
       |Identifier Value 1 |1234567890                                           |
@@ -456,6 +461,9 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     Then the user should be redirected to the "Check your gains from life insurance policies and contracts" page
     When the user clicks the return to overview button
     Then the user should be redirected to the "Your Income Tax Return" page
+    And the status on the page is "Excluded for Gains"
+    When the user clicks on the Gains from policies and contracts link
+    Then the user should be redirected to the "Check your gains from life insurance policies and contracts" page
 
   Scenario: Returning flow - Individual User with prior Gains Data, Reviews data
     When the user logs into the service with the following details

@@ -526,7 +526,19 @@ trait CommonElements extends BasePage with Matchers {
     "first option" -> By.id("value_0"),
     "second option" -> By.id("value_1"),
     "third option" -> By.id("value_2"),
-    "Office supplies" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/office-supplies/amount') + 1) = 'expenses/office-supplies/amount']")
+    "Office supplies" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/office-supplies/amount') + 1) = 'expenses/office-supplies/amount']"),
+    "Goods to sell or use" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/goods-sell-use/amount') + 1) = 'expenses/goods-sell-use/amount']"),
+    "Repairs and maintenance" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/repairs-maintenance/amount') + 1) = 'expenses/repairs-maintenance/amount']"),
+    "Advertising or marketing" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/advertising-marketing/amount') + 1) = 'expenses/advertising-marketing/amount']"),
+    "Entertainment costs" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/entertainment/disallowable-amount') + 1) = 'expenses/entertainment/disallowable-amount']"),
+    "Staff costs" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/staff/amount') + 1) = 'expenses/staff/amount']"),
+    "Construction industry subcontractors" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/construction-industry/amount') + 1) = 'expenses/construction-industry/amount']"),
+    "Professional fess" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/professional-fees/amount') + 1) = 'expenses/professional-fees/amount']"),
+    "Interest paid on bank and other business loans" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/interest-bank-interest-loans/amount') + 1) = 'expenses/interest-bank-business-loans/amount']"),
+    "Bank, credit card and other financial charges" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/bank-credit-card-financial-charges/amount') + 1) = 'expenses/bank-credit-card-financial-charges/amount']"),
+    "Irrecoverable debt" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/irrecoverable-debts/amount') + 1) = 'expenses/irrecoverable-debts/amount']"),
+    "Depreciation costs" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/depreciation/disallowable-amount') + 1) = 'expenses/depreciation/disallowable-amount']"),
+    "Other expenses" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/other-expenses/amount') + 1) = 'expenses/other-expenses/amount']")
 
   )
 }

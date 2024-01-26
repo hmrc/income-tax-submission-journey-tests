@@ -419,9 +419,9 @@ Feature: Self Employment Journeys
     When the user selects the second radio button radio button
     And the user clicks the Continue button
 
-    Then the user should be redirected to the "Were you a taxi, minicab or road haulage industry driver?" page under self employment
-    When the user selects the first radio button radio button
-    And the user clicks the Continue button
+    #Then the user should be redirected to the "Were you a taxi, minicab or road haulage industry driver?" page under self employment
+    #When the user selects the first radio button radio button
+    #And the user clicks the Continue button
 
     Then the user should be redirected to the "Goods to sell or use" page under self employment
     When the user selects the second radio button radio button
@@ -548,6 +548,10 @@ Feature: Self Employment Journeys
 
     #-------------- Self Employment Expenses - Goods to sell   ----------#
     When the user clicks on the Goods to sell or use link
+
+    Then the user should be redirected to the "Were you a taxi, minicab or road haulage industry driver?" page under self employment
+    When the user selects the first radio button radio button
+    And the user clicks the Continue button
 
     Then the user should be redirected to the "How much did you spend on goods to sell or use?" page under self employment
     And the user selects the Amount-field field and enters a value of 7,677.00

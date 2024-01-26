@@ -527,7 +527,7 @@ trait CommonElements extends BasePage with Matchers {
     "second option" -> By.id("value_1"),
     "third option" -> By.id("value_2"),
     "Office supplies" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/office-supplies/amount') + 1) = 'expenses/office-supplies/amount']"),
-    "Goods to sell or use" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/goods-sell-use/amount') + 1) = 'expenses/goods-sell-use/amount']"),
+    "Goods to sell or use" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/goods-sell-use/taxi-minicab-road-haulage-industry-driver') + 1) = 'expenses/goods-sell-use/taxi-minicab-road-haulage-industry-driver']"),
     "Repairs and maintenance" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/repairs-maintenance/amount') + 1) = 'expenses/repairs-maintenance/amount']"),
     "Advertising or marketing" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/advertising-marketing/amount') + 1) = 'expenses/advertising-marketing/amount']"),
     "Entertainment costs" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/entertainment/disallowable-amount') + 1) = 'expenses/entertainment/disallowable-amount']"),

@@ -419,10 +419,6 @@ Feature: Self Employment Journeys
     When the user selects the second radio button radio button
     And the user clicks the Continue button
 
-    #Then the user should be redirected to the "Were you a taxi, minicab or road haulage industry driver?" page under self employment
-    #When the user selects the first radio button radio button
-    #And the user clicks the Continue button
-
     Then the user should be redirected to the "Goods to sell or use" page under self employment
     When the user selects the second radio button radio button
     And the user clicks the Continue button
@@ -504,7 +500,7 @@ Feature: Self Employment Journeys
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-    #-------------- Self Employment Expenses - Questions page from task list  ----------#
+  #-------------- Self Employment Expenses - Questions page from task list  ----------#
 
   Scenario: Individual - Self employment Expenses - Questions page from task list
     When the user logs into the service with the following details

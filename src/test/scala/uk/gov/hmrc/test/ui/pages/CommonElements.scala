@@ -299,6 +299,14 @@ trait CommonElements extends BasePage with Matchers {
     "pension year" -> By.id("year"),
     "Other UK Pensions" -> By.id("other-uk-pensions-link"),
     "Pension Identification" -> By.id("pensionId"),
+    "Payment into overseas pensions" -> By.id("payments-into-overseas-pensions-link"),
+    "Customer reference number" -> By.id("pensionsCustomerReferenceNumberId"),
+    "Migrant member relief" -> By.id("mmrValue") ,
+    "Double taxation relief" -> By.id("dtrValue") ,
+    "Transitional corresponding relief" -> By.id("tcrValue") ,
+    "None of these" -> By.id("noTaxRelief") ,
+    "SF74 reference" -> By.id("sf74ReferenceId"),
+    "QOPS Number" -> By.id("qopsReferenceId"),
 
     //Gains Elements
     "Gains from policies and contracts" -> By.id("gains_link"),

@@ -539,7 +539,7 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Pensions" page
 
-   # Todo -Add the rest of the CYA change links once redirect service is completed
+
   Scenario: View prior submission, Unauthorised pensions payments journey
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
@@ -1115,9 +1115,8 @@ Feature: Pensions Journeys - Income Tax Submission
 
     Then the user should be redirected to the "Check your annual allowance" page
 
-    # Todo - enable when SASS-6824 is merged
-    #When the user clicks the save and continue button
-    #Then the user should be redirected to the "Pensions" page
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Pensions" page
 
 
   Scenario: User answers no to first question - Pension Annual allowance
@@ -1148,9 +1147,8 @@ Feature: Pensions Journeys - Income Tax Submission
 
     Then the user should be redirected to the "Check your annual allowance" page
 
-    # Todo - enable when SASS-6824 is merged
-    #When the user clicks the save and continue button
-    #Then the user should be redirected to the "Pensions" page
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Pensions" page
 
 
   Scenario: Agent journey flow - Pension Annual allowance
@@ -1206,9 +1204,8 @@ Feature: Pensions Journeys - Income Tax Submission
 
     Then the user should be redirected to the "Check your client’s annual allowance" page
 
-    # Todo - enable when SASS-6824 is merged
-    #When the user clicks the save and continue button
-    #Then the user should be redirected to the "Pensions" page
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Pensions" page
 
 
   Scenario: Individual with prior data - Pension Annual allowance
@@ -1555,6 +1552,428 @@ Feature: Pensions Journeys - Income Tax Submission
     And the user clicks the continue button
 
     Then the user should be redirected to the "Check UK Pension Income" page
+
+
+   #-------------- Overseas pension - Payment into overseas pension ----------#
+
+
+  Scenario: Individual user as a new submission - Payment into overseas pension (No customer Reference)
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Overseas pensions link
+    Then the user should be redirected to the "Overseas pensions" page
+    When the user clicks on the Payment into overseas pensions link
+
+    Then the user should be redirected to the "Payments into overseas pension schemes" page
+    When the user selects the yes radio button
+    When the user selects the amount in pounds field and enters a value of 100.20
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did your employers pay into your overseas pension schemes?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did you pay tax on the amount your employer paid?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Check payments into overseas pensions" page
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Overseas pensions" page
+
+  Scenario: Payment into overseas pensions (InYear) - user has prior data
+    When the user logs into the service with the following details
+      | Redirect url        | /InYear/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA370343B   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Overseas pensions link
+    Then the user should be redirected to the "Overseas pensions" page
+
+    When the user clicks on the Payment into overseas pensions link
+
+    Then the user should be redirected to the "Check payments into overseas pensions" page
+
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Overseas pensions" page
+
+  Scenario: Individual user as a new submission - Payment into overseas pension (Migrant member relief - add QOPS)
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Overseas pensions link
+    Then the user should be redirected to the "Overseas pensions" page
+    When the user clicks on the Payment into overseas pensions link
+
+    Then the user should be redirected to the "Payments into overseas pension schemes" page
+    When the user selects the yes radio button
+    When the user selects the amount in pounds field and enters a value of 100.20
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did your employers pay into your overseas pension schemes?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did you pay tax on the amount your employer paid?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "What’s your customer reference number?" page
+    And the user selects the Customer reference number field and enters a value of PENSIONINCOME245
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Untaxed employer payments" page
+    When the user selects the amount field and enters a value of 100.10
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "What tax relief did you get on payments into overseas pensions?" page
+    When the user selects the Migrant member relief radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Qualifying overseas pension scheme (QOPS) reference number (optional)" page
+    When the user selects the QOPS Number field and enters a value of 123456
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Pension scheme details" page
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Schemes with untaxed employer payments" page
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Check payments into overseas pensions" page
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Overseas pensions" page
+
+  Scenario: Individual user as a new submission - Payment into overseas pension (Migrant member relief - NO QOPS)
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Overseas pensions link
+    Then the user should be redirected to the "Overseas pensions" page
+    When the user clicks on the Payment into overseas pensions link
+
+    Then the user should be redirected to the "Payments into overseas pension schemes" page
+    When the user selects the yes radio button
+    When the user selects the amount in pounds field and enters a value of 100.20
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did your employers pay into your overseas pension schemes?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did you pay tax on the amount your employer paid?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "What’s your customer reference number?" page
+    And the user selects the Customer reference number field and enters a value of PENSIONINCOME245
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Untaxed employer payments" page
+    When the user selects the amount field and enters a value of 100.10
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "What tax relief did you get on payments into overseas pensions?" page
+    When the user selects the Migrant member relief radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Qualifying overseas pension scheme (QOPS) reference number (optional)" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Pension scheme details" page
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Schemes with untaxed employer payments" page
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Check payments into overseas pensions" page
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Overseas pensions" page
+
+  Scenario: Individual user as a new submission - Payment into overseas pension (Double taxation relief)
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Overseas pensions link
+    Then the user should be redirected to the "Overseas pensions" page
+    When the user clicks on the Payment into overseas pensions link
+
+    Then the user should be redirected to the "Payments into overseas pension schemes" page
+    When the user selects the yes radio button
+    When the user selects the amount in pounds field and enters a value of 100.20
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did your employers pay into your overseas pension schemes?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did you pay tax on the amount your employer paid?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "What’s your customer reference number?" page
+    And the user selects the Customer reference number field and enters a value of PENSIONINCOME245
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Untaxed employer payments" page
+    When the user selects the amount field and enters a value of 100.10
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "What tax relief did you get on payments into overseas pensions?" page
+    When the user selects the Double taxation relief radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Double taxation agreement details" page
+    When the user selects the Country field and enters a value of Ghana
+    And the user clicks the Country List button
+    When the user selects the amount in pounds field and enters a value of 100.20
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Pension scheme details" page
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Schemes with untaxed employer payments" page
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Check payments into overseas pensions" page
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Overseas pensions" page
+
+  Scenario: Individual user as a new submission - Payment into overseas pension (Transitional corresponding relief)
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Overseas pensions link
+    Then the user should be redirected to the "Overseas pensions" page
+    When the user clicks on the Payment into overseas pensions link
+
+    Then the user should be redirected to the "Payments into overseas pension schemes" page
+    When the user selects the yes radio button
+    When the user selects the amount in pounds field and enters a value of 100.20
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did your employers pay into your overseas pension schemes?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did you pay tax on the amount your employer paid?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "What’s your customer reference number?" page
+    And the user selects the Customer reference number field and enters a value of PENSIONINCOME245
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Untaxed employer payments" page
+    When the user selects the amount field and enters a value of 100.10
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "What tax relief did you get on payments into overseas pensions?" page
+    When the user selects the Transitional corresponding relief radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "SF74 reference" page
+    When the user selects the SF74 reference field and enters a value of 123456
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Pension scheme details" page
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Schemes with untaxed employer payments" page
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Check payments into overseas pensions" page
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Overseas pensions" page
+
+
+  Scenario: Individual user as a new submission - Payment into overseas pension (None of these)
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Overseas pensions link
+    Then the user should be redirected to the "Overseas pensions" page
+    When the user clicks on the Payment into overseas pensions link
+
+    Then the user should be redirected to the "Payments into overseas pension schemes" page
+    When the user selects the yes radio button
+    When the user selects the amount in pounds field and enters a value of 100.20
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did your employers pay into your overseas pension schemes?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Did you pay tax on the amount your employer paid?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "What’s your customer reference number?" page
+    And the user selects the Customer reference number field and enters a value of PENSIONINCOME245
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Untaxed employer payments" page
+    When the user selects the amount field and enters a value of 100.10
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "What tax relief did you get on payments into overseas pensions?" page
+    When the user selects the None of these radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Pension scheme details" page
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Schemes with untaxed employer payments" page
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Check payments into overseas pensions" page
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Overseas pensions" page
+
+
+  Scenario: Payment into overseas pensions (InYear) - user selects NO on first question
+    When the user logs into the service with the following details
+      | Redirect url        | /InYear/start |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Overseas pensions link
+    Then the user should be redirected to the "Overseas pensions" page
+
+    When the user clicks on the Payment into overseas pensions link
+
+    Then the user should be redirected to the "Payments into overseas pension schemes" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Check payments into overseas pensions" page
+
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Overseas pensions" page
 
 
 

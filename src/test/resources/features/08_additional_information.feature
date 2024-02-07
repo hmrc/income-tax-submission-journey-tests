@@ -412,7 +412,7 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     Then the user should be redirected to the "Your Income Tax Return" page
 
     ################################# Gains Voided ISA Journey ####################################################################################
-  @gains1
+  @gains
   Scenario: Individual User maximal flow - Gains - User says yes to all questions
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |

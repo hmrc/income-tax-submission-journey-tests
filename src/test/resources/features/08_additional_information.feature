@@ -173,7 +173,7 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user selects the Life Insurance radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Policy number" page
-    When the user selects the Policy number field and enters a value of LA/2881/07
+    When the user selects the Policy number field and enters a value of P-89879-123
     And the user clicks the continue button
     Then the user should be redirected to the "Chargeable event gain" page
     When the user selects the amount field and enters a value of 123.45
@@ -280,7 +280,7 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user selects the Life Insurance radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Policy number" page
-    When the user selects the Policy number field and enters a value of LA/2881/07
+    When the user selects the Policy number field and enters a value of P-89879-123
     And the user clicks the continue button
     Then the user should be redirected to the "Chargeable event gain" page
     When the user selects the amount field and enters a value of 123.45
@@ -357,7 +357,7 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user selects the Life Insurance radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Policy number" page
-    When the user selects the Policy number field and enters a value of LA/2881/07
+    When the user selects the Policy number field and enters a value of P-89879-123
     And the user clicks the continue button
     Then the user should be redirected to the "Chargeable event gain" page
     When the user selects the amount field and enters a value of 123.45
@@ -412,7 +412,7 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     Then the user should be redirected to the "Your Income Tax Return" page
 
     ################################# Gains Voided ISA Journey ####################################################################################
-  @gains
+  @gains1
   Scenario: Individual User maximal flow - Gains - User says yes to all questions
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
@@ -439,7 +439,7 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user selects the Voided ISA radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Policy number" page
-    When the user selects the Policy number field and enters a value of LA/2881/07
+    When the user selects the Policy number field and enters a value of P-89879-123
     And the user clicks the continue button
     Then the user should be redirected to the "Chargeable event gain" page
     When the user selects the amount field and enters a value of 123.45
@@ -536,7 +536,7 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user selects the Voided ISA radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Policy number" page
-    When the user selects the Policy number field and enters a value of LA/2881/07
+    When the user selects the Policy number field and enters a value of P-89879-123
     And the user clicks the continue button
     Then the user should be redirected to the "Chargeable event gain" page
     When the user selects the amount field and enters a value of 123.45

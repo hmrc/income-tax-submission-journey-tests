@@ -1,4 +1,3 @@
-
 Feature: Additional Information Journeys (Interest Securities & Gains) - Income Tax Submission
 
   Background:
@@ -6,14 +5,14 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
 
   Scenario: Individual User maximal flow - Interest from gilt-edged or accrued income securities
     When the user logs into the service with the following details
-      |Redirect url       |/EOY/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |250                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |PW911133A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | PW911133A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -41,14 +40,14 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
 
   Scenario: Individual User says no on "gateway question page" - Interest from gilt-edged or accrued income securities
     When the user logs into the service with the following details
-      |Redirect url       |/EOY/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |250                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |PW911133A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | PW911133A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -69,14 +68,14 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
 
   Scenario: Individual User maximal flow - Gains - User says yes to all questions
     When the user logs into the service with the following details
-      |Redirect url       |/InYear/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |250                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |PW911433A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
+      | Redirect url        | /InYear/start |
+      | Credential Strength | strong        |
+      | Confidence Level    | 250           |
+      | Affinity Group      | Individual    |
+      | Nino                | PW911433A     |
+      | Enrolment Key 1     | HMRC-MTD-IT   |
+      | Identifier Name 1   | MTDITID       |
+      | Identifier Value 1  | 1234567890    |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -93,7 +92,7 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user selects the Life Insurance radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Policy number" page
-    When the user selects the Policy number field and enters a value of LA/2881/07
+    When the user selects the Policy number field and enters a value of P-89879-123
     And the user clicks the continue button
     Then the user should be redirected to the "Chargeable event gain" page
     When the user selects the amount field and enters a value of 123.45
@@ -178,17 +177,16 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     Then the user should be redirected to the "Policy summary" page
 
 
-
   Scenario: Individual User minimum flow - Gains - User answers no on gain gateway question page
     When the user logs into the service with the following details
-      |Redirect url       |/InYear/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |250                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |PW911433A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
+      | Redirect url        | /InYear/start |
+      | Credential Strength | strong        |
+      | Confidence Level    | 250           |
+      | Affinity Group      | Individual    |
+      | Nino                | PW911433A     |
+      | Enrolment Key 1     | HMRC-MTD-IT   |
+      | Identifier Name 1   | MTDITID       |
+      | Identifier Value 1  | 1234567890    |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -210,14 +208,14 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
 
   Scenario: Returning flow - Individual User with prior Gains Data, Reviews data
     When the user logs into the service with the following details
-      |Redirect url       |/EOY/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |250                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |AA123499A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA123499A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -236,14 +234,14 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
 
   Scenario: Individual User maximal flow - Gains - User says yes to all questions
     When the user logs into the service with the following details
-      |Redirect url       |/InYear/start                                        |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |250                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |PW911433A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
+      | Redirect url        | /InYear/start |
+      | Credential Strength | strong        |
+      | Confidence Level    | 250           |
+      | Affinity Group      | Individual    |
+      | Nino                | PW911433A     |
+      | Enrolment Key 1     | HMRC-MTD-IT   |
+      | Identifier Name 1   | MTDITID       |
+      | Identifier Value 1  | 1234567890    |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -260,7 +258,7 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user selects the Voided ISA radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Policy number" page
-    When the user selects the Policy number field and enters a value of LA/2881/07
+    When the user selects the Policy number field and enters a value of P-89879-123
     And the user clicks the continue button
     Then the user should be redirected to the "Chargeable event gain" page
     When the user selects the amount field and enters a value of 123.45
@@ -332,16 +330,16 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
 
   Scenario: Agent User maximal flow - Gains - User says yes to all questions and removes policy
     When the user logs into the service with the following details
-      |Redirect url       |/test-only/InYear/additional-parameters?ClientNino=AA123458A&ClientMTDID=1234567893  |
-      |Credential Strength|weak                                                                               |
-      |Confidence Level   |250                                                                                |
-      |Affinity Group     |Agent                                                                              |
-      |Enrolment Key 1    |HMRC-MTD-IT                                                                        |
-      |Identifier Name 1  |MTDITID                                                                            |
-      |Identifier Value 1 |1234567893                                                                         |
-      |Enrolment Key 2    |HMRC-AS-AGENT                                                                      |
-      |Identifier Name 2  |AgentReferenceNumber                                                               |
-      |Identifier Value 2 |XARN1234567                                                                        |
+      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA123458A&ClientMTDID=1234567893 |
+      | Credential Strength | weak                                                                                |
+      | Confidence Level    | 250                                                                                 |
+      | Affinity Group      | Agent                                                                               |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                         |
+      | Identifier Name 1   | MTDITID                                                                             |
+      | Identifier Value 1  | 1234567893                                                                          |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                       |
+      | Identifier Name 2   | AgentReferenceNumber                                                                |
+      | Identifier Value 2  | XARN1234567                                                                         |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -358,7 +356,7 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user selects the Voided ISA radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Policy number" page
-    When the user selects the Policy number field and enters a value of LA/2881/07
+    When the user selects the Policy number field and enters a value of P-89879-123
     And the user clicks the continue button
     Then the user should be redirected to the "Chargeable event gain" page
     When the user selects the amount field and enters a value of 123.45
@@ -438,14 +436,14 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
 
   Scenario: Individual User minimum flow - Gains - User answers no on gain gateway question page
     When the user logs into the service with the following details
-      |Redirect url       |/InYear/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |250                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |PW911433A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
+      | Redirect url        | /InYear/start |
+      | Credential Strength | strong        |
+      | Confidence Level    | 250           |
+      | Affinity Group      | Individual    |
+      | Nino                | PW911433A     |
+      | Enrolment Key 1     | HMRC-MTD-IT   |
+      | Identifier Name 1   | MTDITID       |
+      | Identifier Value 1  | 1234567890    |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -467,14 +465,14 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
 
   Scenario: Returning flow - Individual User with prior Gains Data, Reviews data
     When the user logs into the service with the following details
-      |Redirect url       |/InYear/start                                          |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |250                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |AA123456A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
+      | Redirect url        | /InYear/start |
+      | Credential Strength | strong        |
+      | Confidence Level    | 250           |
+      | Affinity Group      | Individual    |
+      | Nino                | AA123456A     |
+      | Enrolment Key 1     | HMRC-MTD-IT   |
+      | Identifier Name 1   | MTDITID       |
+      | Identifier Value 1  | 1234567890    |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -493,14 +491,14 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
 
   Scenario: Maximal flow - User with no prior data - Dividends
     When the user logs into the service with the following details
-      |Redirect url       |/InYear/start                                        |
-      |Credential Strength|strong                                               |
-      |Confidence Level   |250                                                  |
-      |Affinity Group     |Individual                                           |
-      |Nino               |PW911133A                                            |
-      |Enrolment Key 1    |HMRC-MTD-IT                                          |
-      |Identifier Name 1  |MTDITID                                              |
-      |Identifier Value 1 |1234567890                                           |
+      | Redirect url        | /InYear/start |
+      | Credential Strength | strong        |
+      | Confidence Level    | 250           |
+      | Affinity Group      | Individual    |
+      | Nino                | PW911133A     |
+      | Enrolment Key 1     | HMRC-MTD-IT   |
+      | Identifier Name 1   | MTDITID       |
+      | Identifier Value 1  | 1234567890    |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page

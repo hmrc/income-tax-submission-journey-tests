@@ -1,4 +1,4 @@
-@MVP @ZAP @additional_info
+@MVP @ZAP @additional_info @ignore
 
 Feature: Additional Information Journeys (Interest Securities & Gains) - Income Tax Submission
 

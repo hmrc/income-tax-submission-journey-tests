@@ -566,8 +566,7 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Unauthorised payments" page
 
 
-  # Todo - Remove ignore tag comment once bug SASS-4685 is fixed
-  @ignore
+
   Scenario: Individual journey flow submission without a PSTR - Unauthorised pensions journey
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start |
@@ -615,8 +614,6 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Pensions" page
 
 
-  # Todo -Remove ignore tag once bug SASS-4685 is fixed
-  @ignore
   Scenario: User selects No on first question page - Unauthorised pensions journey
   When the user logs into the service with the following details
       | Redirect url        | /EOY/start |
@@ -696,7 +693,6 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Overseas pension income" page
     And the user clicks the continue button
     Then the user should be redirected to the "Check income from overseas pensions" page
-
 
   Scenario: Agent user as a new submission, goes through full income from overseas pension
     When the user logs into the service with the following details
@@ -1552,6 +1548,39 @@ Feature: Pensions Journeys - Income Tax Submission
     And the user clicks the continue button
 
     Then the user should be redirected to the "Check UK Pension Income" page
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Income from pensions" page
+
+
+  Scenario: Agent journey with prior data- Income from pension for other UK Pensions
+    When the user logs into the service with the following details
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA370343B&ClientMTDID=1234567890 |
+      | Credential Strength | weak                                                                              |
+      | Confidence Level    | 250                                                                               |
+      | Affinity Group      | Agent                                                                             |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
+      | Identifier Name 1   | MTDITID                                                                           |
+      | Identifier Value 1  | 1234567890                                                                        |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
+      | Identifier Name 2   | AgentReferenceNumber                                                              |
+      | Identifier Value 2  | XARN1234567                                                                       |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your client’s Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+
+    When the user clicks on the Income from pensions link
+    Then the user should be redirected to the "Income from pensions" page
+    When the user clicks on the Other UK Pensions link
+    Then the user should be redirected to the "Check UK Pension Income" page
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Income from pensions" page
 
 
    #-------------- Overseas pension - Payment into overseas pension ----------#

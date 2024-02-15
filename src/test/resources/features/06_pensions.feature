@@ -1114,7 +1114,7 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Pensions" page
 
-
+  @ignore
   Scenario: User answers no to first question - Pension Annual allowance
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |

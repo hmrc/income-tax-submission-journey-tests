@@ -80,6 +80,9 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Check your payments into pensions" page
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Pensions" page
+
 
   Scenario: Agent user as a new submission, goes through full payments into pensions flow
     When the user logs into the service with the following details
@@ -135,6 +138,9 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user selects the amount field and enters a value of 400.40
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s payments into pensions" page
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Pensions" page
+
 
   Scenario: Individual user as a new submission, minimal flow - selects no for all
     When the user logs into the service with the following details
@@ -164,6 +170,8 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Check your payments into pensions" page
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Pensions" page
 
 
   Scenario: Agent user has prior submission, updates all payments into pensions amount fields
@@ -215,6 +223,8 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user selects the amount field and enters a value of 10.00
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s payments into pensions" page
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Pensions" page
 
 
   Scenario: Individual user has prior submission, says yes on relief at source (RAS) pensions page
@@ -244,6 +254,8 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Check your payments into pensions" page
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Pensions" page
 
 
   #--------------------------Unauthorised payments from pensions tests---------------------------------#

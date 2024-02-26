@@ -879,3 +879,149 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Other capital allowances" page
     When the user selects the Other capital allowances amount field and enters a value of 1011.90
     And the user clicks the continue button
+
+  Scenario: Individual user adds UK Property - Property rentals - Claim Expenses - Structures and Buildings Allowance
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start     |
+      | Credential Strength | strong         |
+      | Confidence Level    | 250            |
+      | Affinity Group      | Individual     |
+      | Nino                | AC180000A      |
+      | Enrolment Key 1     | HMRC-MTD-IT    |
+      | Identifier Name 1   | MTDITID        |
+      | Identifier Value 1  | 1234567890     |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addProperty tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the Property link
+    Then the user should be redirected to the "About your UK Properties" page
+    And the user clicks on the About your UK Properties About link
+    Then the user should be redirected to the "UK Property details" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "How much total income did you get from your UK properties?" page
+    When the user selects the second property radio button: Between 1000 and 85000
+    And the user clicks the property continue button
+    Then the user should be redirected to the "Select UK property" page
+    When the user clicks the Property Rentals checkbox
+    And the user clicks the UK Property continue button
+    Then the user should be redirected to the "Check Your Answers" page
+    When the user clicks the Check Your Answers continue button
+    Then the user should be redirected to the "About your UK Properties" page
+    When the user clicks on the Property rentals about link
+    Then the user should be redirected to the "Property rentals" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Expenses less than £1,000" page
+    And the user selects the Property rentals Yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Do you want to claim property income allowance?" page
+    Then the user selects the No, claim expenses radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Check Your Answers" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "About your UK Properties" page
+    When the user clicks on the Structures and Buildings AllowanceLink link
+    Then the user should be redirected to the "Do you want to claim structures and buildings allowance?" page
+    Then the user selects the Yes, claimStructureBuildingAllowance radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Structures Buildings Allowance" page
+    And the user clicks the Add Claim button
+    Then the user should be redirected to the "Qualifying date" page
+    And the user selects the sba Day field and enters a value of 21
+    And the user selects the sba Month field and enters a value of 09
+    And the user selects the sba Year field and enters a value of 2021
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Qualifying amount" page
+    When the user selects the Qualifying Amount field and enters a value of 1000
+    And the user clicks the Continue button
+    Then the user should be redirected to the "How much is your structures and buildings allowance claim?" page
+    And the user selects the How much is your structures and buildings allowance claim? amount field and enters a value of 16590
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Where is the new structure or building located?" page
+    And the user selects the Building name field and enters a value of Crest House, London
+    And the user selects the Building number field and enters a value of 123B
+    And the user selects the Postcode field and enters a value of SW1A 1AA
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Check Your Answers" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your structures and buildings allowance claims" page
+    And the user selects the No,anotherClaim radio button
+    And the user clicks the continue button
+    Then  the user should be redirected to the "About your UK Properties" page
+
+  Scenario: Individual user adds UK Property - Property rentals - Claim Expenses - Enhanced Structures and Buildings Allowance
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start     |
+      | Credential Strength | strong         |
+      | Confidence Level    | 250            |
+      | Affinity Group      | Individual     |
+      | Nino                | AC180000A      |
+      | Enrolment Key 1     | HMRC-MTD-IT    |
+      | Identifier Name 1   | MTDITID        |
+      | Identifier Value 1  | 1234567890     |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addProperty tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the Property link
+    Then the user should be redirected to the "About your UK Properties" page
+    And the user clicks on the About your UK Properties About link
+    Then the user should be redirected to the "UK Property details" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "How much total income did you get from your UK properties?" page
+    When the user selects the second property radio button: Between 1000 and 85000
+    And the user clicks the property continue button
+    Then the user should be redirected to the "Select UK property" page
+    When the user clicks the Property Rentals checkbox
+    And the user clicks the UK Property continue button
+    Then the user should be redirected to the "Check Your Answers" page
+    When the user clicks the Check Your Answers continue button
+    Then the user should be redirected to the "About your UK Properties" page
+    When the user clicks on the Property rentals about link
+    Then the user should be redirected to the "Property rentals" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Expenses less than £1,000" page
+    And the user selects the Property rentals Yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Do you want to claim property income allowance?" page
+    Then the user selects the No, claim expenses radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Check Your Answers" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "About your UK Properties" page
+    When the user clicks on the Enhanced Structures and Buildings AllowanceLink link
+    Then the user should be redirected to the "Do you want to claim enhanced structures and buildings allowance?" page
+    Then the user selects the Yes, claim radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Enhanced structures and buildings allowance claims" page
+    And the user clicks the Add Claim button
+    Then the user should be redirected to the "Qualifying date" page
+    And the user selects the esba Day field and enters a value of 11
+    And the user selects the esba Month field and enters a value of 12
+    And the user selects the esba Year field and enters a value of 2019
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Qualifying amount" page
+    When the user selects the Qualifying amt field and enters a value of 12350.89
+    And the user clicks the Continue button
+    Then the user should be redirected to the "How much is your enhanced structures and buildings allowance claim?" page
+    And the user selects the How much is your enhanced structures and buildings allowance claim? amount field and enters a value of 1650
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Where is the new enhanced structure or building located?" page
+    And the user selects the Building name field and enters a value of MBNX fan mill, Shropshore
+    And the user selects the Building number field and enters a value of 11
+    And the user selects the Postcode field and enters a value of SA1 1AA
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Check Your Answers" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your enhanced structures and buildings allowance claims" page
+    And the user selects the No,anotherClaim radio button
+    And the user clicks the continue button
+    Then  the user should be redirected to the "About your UK Properties" page

@@ -65,14 +65,14 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     Then the user should be redirected to the "Check your interest from gilt-edged or accrued income securities" page
 
     ################################# Gains Journey ####################################################################################
-
+  @GainsSmoke
   Scenario: Individual User maximal flow - Gains - User says yes to all questions
     When the user logs into the service with the following details
-      | Redirect url        | /InYear/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong        |
       | Confidence Level    | 250           |
       | Affinity Group      | Individual    |
-      | Nino                | PW911433A     |
+      | Nino                | AA000555A     |
       | Enrolment Key 1     | HMRC-MTD-IT   |
       | Identifier Name 1   | MTDITID       |
       | Identifier Value 1  | 1234567890    |
@@ -174,16 +174,16 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user clicks the Policy remove button
     Then the user should be redirected to the "Are you sure you want to remove this policy?" page
     When the user clicks the remove button
-    Then the user should be redirected to the "Policy summary" page
+    Then the user should be redirected to the "Your policies" page
 
-
+  @GainsSmoke
   Scenario: Individual User minimum flow - Gains - User answers no on gain gateway question page
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
       | Credential Strength | strong        |
       | Confidence Level    | 250           |
       | Affinity Group      | Individual    |
-      | Nino                | PW911433A     |
+      | Nino                | PW911421A     |
       | Enrolment Key 1     | HMRC-MTD-IT   |
       | Identifier Name 1   | MTDITID       |
       | Identifier Value 1  | 1234567890    |
@@ -204,15 +204,16 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     Then the user should be redirected to the "Your Income Tax Return" page
     And the status on the page is "Excluded for Gains"
     When the user clicks on the Gains from policies and contracts link
-    Then the user should be redirected to the "Check your gains from life insurance policies and contracts" page
+    Then the user should be redirected to the "Gains from life insurance policies and contracts" page
 
+  @GainsSmoke
   Scenario: Returning flow - Individual User with prior Gains Data, Reviews data
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AA123499A   |
+      | Nino                | PW911422A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
@@ -231,14 +232,14 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     Then the user should be redirected to the "Your Income Tax Return" page
 
     ################################# Gains Voided ISA Journey ####################################################################################
-
+  @GainsSmoke
   Scenario: Individual User maximal flow - Gains - User says yes to all questions
     When the user logs into the service with the following details
-      | Redirect url        | /InYear/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong        |
       | Confidence Level    | 250           |
       | Affinity Group      | Individual    |
-      | Nino                | PW911433A     |
+      | Nino                | PW911423A     |
       | Enrolment Key 1     | HMRC-MTD-IT   |
       | Identifier Name 1   | MTDITID       |
       | Identifier Value 1  | 1234567890    |
@@ -328,9 +329,15 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your policies" page
 
+  When the user clicks the Policy remove button
+  Then the user should be redirected to the "Are you sure you want to remove this policy?" page
+  When the user clicks the remove button
+  Then the user should be redirected to the "Your policies" page
+
+  @GainsSmoke
   Scenario: Agent User maximal flow - Gains - User says yes to all questions and removes policy
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA123458A&ClientMTDID=1234567893 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=PW911424A&ClientMTDID=1234567893 |
       | Credential Strength | weak                                                                                |
       | Confidence Level    | 250                                                                                 |
       | Affinity Group      | Agent                                                                               |
@@ -433,14 +440,14 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user clicks the Add a policy button
     Then the user should be redirected to the "What type of policy gave your client a gain?" page
 
-
+  @GainsSmoke
   Scenario: Individual User minimum flow - Gains - User answers no on gain gateway question page
     When the user logs into the service with the following details
-      | Redirect url        | /InYear/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong        |
       | Confidence Level    | 250           |
       | Affinity Group      | Individual    |
-      | Nino                | PW911433A     |
+      | Nino                | PW911425A     |
       | Enrolment Key 1     | HMRC-MTD-IT   |
       | Identifier Name 1   | MTDITID       |
       | Identifier Value 1  | 1234567890    |
@@ -460,16 +467,15 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user clicks the return to overview button
     Then the user should be redirected to the "Your Income Tax Return" page
     And the status on the page is "Excluded for Gains"
-    When the user clicks on the Gains from policies and contracts link
-    Then the user should be redirected to the "Check your gains from life insurance policies and contracts" page
 
+  @GainsSmoke
   Scenario: Returning flow - Individual User with prior Gains Data, Reviews data
     When the user logs into the service with the following details
-      | Redirect url        | /InYear/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong        |
       | Confidence Level    | 250           |
       | Affinity Group      | Individual    |
-      | Nino                | AA123456A     |
+      | Nino                | AA010203A     |
       | Enrolment Key 1     | HMRC-MTD-IT   |
       | Identifier Name 1   | MTDITID       |
       | Identifier Value 1  | 1234567890    |
@@ -491,7 +497,7 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
 
   Scenario: Maximal flow - User with no prior data - Dividends
     When the user logs into the service with the following details
-      | Redirect url        | /InYear/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong        |
       | Confidence Level    | 250           |
       | Affinity Group      | Individual    |
@@ -551,7 +557,7 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | PW911433A   |
+      | Nino                | AA911433A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 9876543210  |

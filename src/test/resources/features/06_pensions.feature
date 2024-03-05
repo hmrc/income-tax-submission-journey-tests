@@ -1297,14 +1297,15 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user selects the amount in pounds field and enters a value of 10.20
     And the user clicks the continue button
 
-    Then the user should be redirected to the "Did a UK pension scheme pay tax on the short service refunds?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
+    Then the user should be redirected to the "Short service refund summary" page
+    And the user clicks the Add a scheme button
 
     Then the user should be redirected to the "Pension scheme paying tax on the short service refund" page
     And the user selects the Name of pension scheme field and enters a value of TEST
-    And the user selects the Pension Scheme Tax Reference field and enters a value of 12345678RQ
+    And the user selects the Pension Scheme Tax Reference field and enters a value of 123456
     And the user selects the Pension provider address field and enters a value of AB1 2DE
+    When the user selects the Country field and enters a value of Togo
+    And the user clicks the Country List button
     And the user clicks the continue button
 
     Then the user should be redirected to the "Short service refund summary" page
@@ -1347,9 +1348,8 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user selects the amount in pounds field and enters a value of 10.20
     And the user clicks the continue button
 
-    Then the user should be redirected to the "Did a UK pension scheme pay tax on the short service refunds?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
+    Then the user should be redirected to the "Short service refund summary" page
+    And the user clicks the Add a scheme button
 
     Then the user should be redirected to the "Pension scheme paying tax on the short service refund" page
     And the user selects the Name of pension scheme field and enters a value of TEST
@@ -1399,9 +1399,8 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user selects the amount in pounds field and enters a value of 10.20
     And the user clicks the continue button
 
-    Then the user should be redirected to the "Did a UK pension scheme pay tax on the short service refunds?" page
-    When the user selects the no radio button
-    And the user clicks the continue button
+    Then the user should be redirected to the "Short service refund summary" page
+    And the user clicks the Add a scheme button
 
     Then the user should be redirected to the "Pension scheme paying tax on the short service refund" page
     And the user selects the Name of pension scheme field and enters a value of TEST
@@ -1415,24 +1414,20 @@ Feature: Pensions Journeys - Income Tax Submission
 
     # step to validate change Pension scheme
     When the user clicks on the Change scheme link
-    Then the user should be redirected to the "Did a UK pension scheme pay tax on the short service refunds?" page
-    And the user clicks the continue button
     Then the user should be redirected to the "Pension scheme paying tax on the short service refund" page
     And the user clicks the continue button
     Then the user should be redirected to the "Short service refund summary" page
 
     # step to validate add another pension scheme link
     When the user clicks on the Add another Pensions Scheme Tax Reference link
-    Then the user should be redirected to the "Did a UK pension scheme pay tax on the short service refunds?" page
 
-    When the user selects the yes radio button
-    And the user clicks the continue button
     Then the user should be redirected to the "Pension scheme paying tax on the short service refund" page
     And the user selects the Name of pension scheme field and enters a value of TEST
-    And the user selects the Pension Scheme Tax Reference field and enters a value of 12345678RQ
+    And the user selects the Pension Scheme Tax Reference field and enters a value of 123456
     And the user selects the Pension provider address field and enters a value of AB1 2DE
+    When the user selects the Country field and enters a value of Togo
+    And the user clicks the Country List button
     And the user clicks the continue button
-    Then the user should be redirected to the "Short service refund summary" page
 
     # step to validate  Remove Pension scheme Link
     When the user clicks on the Remove pension scheme link

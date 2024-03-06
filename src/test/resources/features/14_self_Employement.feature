@@ -546,7 +546,7 @@ Feature: Self Employment Journeys
     When the user clicks on the Goods to sell or use link
 
     Then the user should be redirected to the "Were you a taxi, minicab or road haulage industry driver?" page under self employment
-    When the user selects the first radio button radio button
+    When the user selects the yes radio button
     And the user clicks the Continue button
 
     Then the user should be redirected to the "How much did you spend on goods to sell or use?" page under self employment

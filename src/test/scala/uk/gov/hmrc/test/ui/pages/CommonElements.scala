@@ -307,6 +307,7 @@ trait CommonElements extends BasePage with Matchers {
     "None of these" -> By.id("noTaxRelief") ,
     "SF74 reference" -> By.id("sf74ReferenceId"),
     "QOPS Number" -> By.id("qopsReferenceId"),
+    "QOPS Reference" -> By.id("schemeReference"),
 
     //Gains Elements
     "Gains from policies and contracts"                               -> By.id("gains_link"),

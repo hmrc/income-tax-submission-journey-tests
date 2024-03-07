@@ -428,7 +428,7 @@ Feature: Self Employment Journeys
     And the user clicks the Continue button
 
     Then the user should be redirected to the "Did you work from home?" page under self employment
-    When the user selects the first radio button radio button
+    When the user selects the yes radio button
     And the user clicks the Continue button
 
     Then the user should be redirected to the "Did you work from your own business premises?" page under self employment
@@ -444,7 +444,7 @@ Feature: Self Employment Journeys
     And the user clicks the Continue button
 
     Then the user should be redirected to the "Entertainment costs" page under self employment
-    When the user selects the first radio button radio button
+    When the user selects the yes radio button
     And the user clicks the Continue button
 
     Then the user should be redirected to the "Staff, construction industry and professional services expenses" page under self employment
@@ -454,15 +454,15 @@ Feature: Self Employment Journeys
     And the user clicks the Continue button
 
     Then the user should be redirected to the "Disallowable staff costs" page under self employment
-    When the user selects the first radio button radio button
+    When the user selects the yes radio button
     And the user clicks the Continue button
 
     Then the user should be redirected to the "Disallowable construction industry subcontractors costs" page under self employment
-    When the user selects the first radio button radio button
+    When the user selects the yes radio button
     And the user clicks the Continue button
 
     Then the user should be redirected to the "Disallowable professional fees" page under self employment
-    When the user selects the first radio button radio button
+    When the user selects the yes radio button
     And the user clicks the Continue button
 
     Then the user should be redirected to the "Financial expenses" page under self employment
@@ -472,19 +472,19 @@ Feature: Self Employment Journeys
     And the user clicks the Continue button
 
     Then the user should be redirected to the "Is any of your interest on bank and other business loans disallowable?" page under self employment
-    When the user selects the first radio button radio button
+    When the user selects the yes radio button
     And the user clicks the Continue button
 
     Then the user should be redirected to the "Are any of your bank, credit card and other financial charges disallowable?" page under self employment
-    When the user selects the first radio button radio button
+    When the user selects the yes radio button
     And the user clicks the Continue button
 
     Then the user should be redirected to the "Are any of your irrecoverable debts disallowable?" page under self employment
-    When the user selects the first radio button radio button
+    When the user selects the yes radio button
     And the user clicks the Continue button
 
     Then the user should be redirected to the "Depreciation and loss or profit on the sale of assets" page under self employment
-    When the user selects the first radio button radio button
+    When the user selects the yes radio button
     And the user clicks the Continue button
 
     Then the user should be redirected to the "Other expenses" page under self employment

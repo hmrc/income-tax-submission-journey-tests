@@ -1304,7 +1304,7 @@ Feature: Pensions Journeys - Income Tax Submission
     And the user selects the Name of pension scheme field and enters a value of TEST
     When the user selects the QOPS Reference field and enters a value of 123456
     And the user selects the Pension provider address field and enters a value of AB1 2DE
-    When the user selects the Country field and enters a value of Togo
+    When the user selects the Country field and enters a value of ESTONIA
     And the user clicks the Country List button
     And the user clicks the continue button
 
@@ -1355,7 +1355,7 @@ Feature: Pensions Journeys - Income Tax Submission
     And the user selects the Name of pension scheme field and enters a value of TEST
     When the user selects the QOPS Reference field and enters a value of 123456
     And the user selects the Pension provider address field and enters a value of AB1 2DE
-    When the user selects the Country field and enters a value of Togo
+    When the user selects the Country field and enters a value of ESTONIA
     And the user clicks the Country List button
     And the user clicks the continue button
 
@@ -1374,7 +1374,7 @@ Feature: Pensions Journeys - Income Tax Submission
     And the user selects the Name of pension scheme field and enters a value of TEST
     When the user selects the QOPS Reference field and enters a value of 123456
     And the user selects the Pension provider address field and enters a value of AB1 2DE
-    When the user selects the Country field and enters a value of Togo
+    When the user selects the Country field and enters a value of ESTONIA
     And the user clicks the Country List button
     And the user clicks the continue button
 

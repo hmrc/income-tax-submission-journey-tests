@@ -1442,10 +1442,6 @@ Feature: Pensions Journeys - Income Tax Submission
     And the user selects the pension year field and enters a value of 2023
     And the user clicks the continue button
 
-    Then the user should be redirected to the "Do you want to add State Pension to your Income Tax calculation?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-
     Then the user should be redirected to the "Check your State Pension" page
 
 

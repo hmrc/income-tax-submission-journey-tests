@@ -588,7 +588,15 @@ trait CommonElements extends BasePage with Matchers {
     "Bank, credit card and other financial charges" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/bank-credit-card-financial-charges/amount') + 1) = 'expenses/bank-credit-card-financial-charges/amount']"),
     "Irrecoverable debt" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/irrecoverable-debts/amount') + 1) = 'expenses/irrecoverable-debts/amount']"),
     "Depreciation costs" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/depreciation/disallowable-amount') + 1) = 'expenses/depreciation/disallowable-amount']"),
-    "Other expenses" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/other-expenses/amount') + 1) = 'expenses/other-expenses/amount']")
+    "Other expenses" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/other-expenses/amount') + 1) = 'expenses/other-expenses/amount']"),
+    "Workplace running costs (including working from home)" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/workplace-running-costs/working-from-home/more-than-25-hours') + 1) = 'expenses/workplace-running-costs/working-from-home/more-than-25-hours']"),
+    "25 - 50 hours" -> By.id("value25To50"),
+    "51 - 100 hours" -> By.id("value51To100"),
+    "101 hours or more" -> By.id("value101Plus"),
+    "Actual costs" -> By.id("value_1"),
+    "1 person" -> By.id("onePerson"),
+    "2 people" -> By.id("twoPeople"),
+    "3 or more people" -> By.id("threePeople")
 
   )
 }

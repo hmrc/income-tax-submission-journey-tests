@@ -755,5 +755,67 @@ Feature: Self Employment Journeys
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
+    #-------------- Self Employment Expenses - Work Place Running Cost (including working from home) ---------- #
+
+    When the user clicks on the Workplace running costs (including working from home) link
+
+    Then the user should be redirected to the "Did you work from home for more than 25 hours a month?" page under self employment
+    When the user selects the yes radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "How much did you work from home?" page under self employment
+    And the user selects the 25 - 50 hours field and enters a value of 5
+    And the user selects the 51 - 100 hours field and enters a value of 5
+    And the user selects the 101 hours or more field and enters a value of 2
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Your flat rate for working from home is £192" page under self employment
+    When the user selects the Actual costs radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Working-from-home expenses" page under self employment
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Your working-from-home expenses" page under self employment
+    And the user selects the Amount-field field and enters a value of 1000.89
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Did you live at your business premises?" page under self employment
+    When the user selects the yes radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Business premises expenses" page under self employment
+    And the user selects the Amount-field field and enters a value of 1000.89
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "How much of the £1,000.89 you spent on business premises expenses is disallowable?" page under self employment
+    And the user selects the Amount-field field and enters a value of 900.89
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "How many months did someone live at your business premises?" page under self employment
+    And the user selects the 1 person field and enters a value of 5
+    And the user selects the 2 people field and enters a value of 5
+    And the user selects the 3 or more people field and enters a value of 2
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Your personal use amount for living at your business premises is £5,550" page under self employment
+    When the user selects the Actual costs radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "How much are you claiming as your personal use amount?" page under self employment
+    And the user selects the Amount-field field and enters a value of 600.67
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Check your workplace running costs" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+
+
+
+
 
 

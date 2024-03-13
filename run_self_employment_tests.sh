@@ -3,7 +3,7 @@
 # Default values for parameters
 ENV=${1:-local}
 BROWSER=${2:-chrome}
-MACHINE=${3:-pipeline1} # Default value should be pipeline
+MACHINE=${3:-pipeline} # Default value should be pipeline
 
 # Database configuration
 DB_NAME="income-tax-self-employment"

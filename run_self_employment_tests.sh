@@ -51,9 +51,10 @@ if [ "$MACHINE" = "pipeline" ]; then
     fi
 
 elif [ "$MACHINE" != "pipeline" ]; then
-    drop_collection $DB_NAME $STATE_COLLECTION $MONGODB_CONTAINER
-    drop_collection $DB_NAME $ANSWERS_COLLECTION $MONGODB_CONTAINER
-    drop_collection $FRONT_END_DB_NAME $USER_ANSWERS_COLLECTION $MONGODB_CONTAINER
+        drop_collection $DB_NAME $STATE_COLLECTION $MONGODB_CONTAINER
+        drop_collection $DB_NAME $ANSWERS_COLLECTION $MONGODB_CONTAINER
+        drop_collection $FRONT_END_DB_NAME $USER_ANSWERS_COLLECTION $MONGODB_CONTAINER
+    fi
 
 # Running tests
 sbt clean -Dbrowser="${BROWSER}" -Denvironment="${ENV}" "testOnly uk.gov.hmrc.test.ui.cucumber.runner.SelfEmploymentRunner" testReport

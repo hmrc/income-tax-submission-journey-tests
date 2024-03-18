@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.AuthLoginPage._
 import uk.gov.hmrc.test.ui.pages.{BasePage, CommonPage}
 
-class AuthStepDef extends BasePage with BaseStepDef {
+class AuthStepDef extends BasePage with Steps {
 
   Given("""^the user logs into the service with the following details$""") { arg: DataTable =>
     useDataTable(arg)

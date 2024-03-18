@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.CommonPage.{clickOn, elementExists, load, replaceTaxYear}
 import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, CommonPage}
 
-class CommonStepDef extends BaseStepDef {
+class CommonStepDef extends Steps{
 
   val serviceName = "Update and submit an Income Tax Return"
   val testOnlyViewAndChangeServiceName = "Your client’s Income Tax details"

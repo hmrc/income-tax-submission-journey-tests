@@ -2,17 +2,9 @@
 ENV=${1:-local}
 BROWSER=${2:-chrome}
 PRIVATEBETA=${3:-false}
-# default to firefox as chrome's autofill hides bugs to do with incorrectly empty fields, see eg: SASS-4898 and SASS-4966
-DRIVER=
-
-if [ "$BROWSER" = "chrome" ]; then
-    DRIVER="-Dwebdriver.chrome.driver=/usr/local/bin/chromedriver"
-elif [ "$BROWSER" = "firefox" ]; then
-    DRIVER="-Dwebdriver.gecko.driver=/usr/local/bin/geckodriver"
-fi
 
 if [ "$PRIVATEBETA" = "true" ]; then
-    sbt -Dbrowser=$BROWSER -Denvironment=$ENV $DRIVER "testOnly uk.gov.hmrc.test.ui.cucumber.runner.TailoringBetaRunner"
+    sbt clean -Dbrowser="${BROWSER}" -Denvironment="${ENV}" "testOnly uk.gov.hmrc.test.ui.cucumber.runner.TailoringBetaRunner" testReport
 elif [ "$PRIVATEBETA" = "false" ]; then
-    sbt -Dbrowser=$BROWSER -Denvironment=$ENV $DRIVER "testOnly uk.gov.hmrc.test.ui.cucumber.runner.TailoringRunner"
+    sbt clean -Dbrowser="${BROWSER}" -Denvironment="${ENV}" "testOnly uk.gov.hmrc.test.ui.cucumber.runner.TailoringRunner" testReport
 fi

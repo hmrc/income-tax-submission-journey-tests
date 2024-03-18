@@ -16,7 +16,7 @@ cd "$(dirname "$0")" # Always run from script location
 
 export ZAP_FAIL_ON_SEVERITY=Low # Allowed values: High, Medium, Low, Informational
 export ZAP_FORWARD_ENABLE="true"
-ZAP_FORWARD_PORTS=$(sm -s | grep -E 'PASS|BOOT' | awk '{ print $12}' | tr "\n" " ")
+ZAP_FORWARD_PORTS=$(sm2 -s | grep -E 'PASS|BOOT' | awk '{ print $12}' | tr "\n" " ")
 export ZAP_FORWARD_PORTS
 
 if [[ -f alert-filters.json ]]; then
@@ -40,13 +40,7 @@ TEST_FAILED=false
 ENV=${1:-local}
 BROWSER=${2:-chrome}
 
-if [ "$BROWSER" = "chrome" ]; then
-    DRIVER="-Dwebdriver.chrome.driver=/usr/local/bin/chromedriver"
-elif [ "$BROWSER" = "firefox" ]; then
-    DRIVER="-Dwebdriver.gecko.driver=/usr/local/bin/geckodriver"
-fi
-
-sbt -Dbrowser=$BROWSER -Denvironment=$ENV $DRIVER -Dzap.proxy=true "testOnly uk.gov.hmrc.test.ui.cucumber.runner.ZapRunner" || TEST_FAILED=true
+sbt clean -Dbrowser="${BROWSER}" -Denvironment="${ENV}" -Dzap.proxy=true "testOnly uk.gov.hmrc.test.ui.cucumber.runner.ZapRunner"|| TEST_FAILED=true testReport
 
 (
     cd dast-config-manager

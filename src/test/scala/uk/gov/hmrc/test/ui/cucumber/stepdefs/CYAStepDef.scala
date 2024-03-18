@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import uk.gov.hmrc.test.ui.pages.CommonPage
 
-class CYAStepDef extends BaseStepDef {
+class CYAStepDef extends Steps {
 
   When("""^the user clicks on the change link in position (.*)$""") { position: String =>
     CommonPage.clickBySelector(s"#main-content > div > div > dl > div:nth-child($position) > dd.govuk-summary-list__actions > a > span:nth-child(1)")

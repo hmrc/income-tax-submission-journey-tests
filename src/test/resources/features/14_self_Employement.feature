@@ -866,20 +866,20 @@ Feature: Self Employment Journeys
    #-----------Self Employment Expenses -  Balancing allowance journey ----- #
     When the user clicks on the Balancing allowance link
 
-    #Then the user should be redirected to the "Balancing Allowance" page under self employment
-    #When the user selects the yes radio button
-    #And the user clicks the Continue button
+    Then the user should be redirected to the "Does your client have a balancing allowance to report?" page under self employment
+    When the user selects the yes radio button
+    And the user clicks the Continue button
 
-    #Then the user should be redirected to the "How much is the total of your client’s balancing allowances?" page under self employment
-    #And the user selects the Amount-field field and enters a value of 900.67
-    #And the user clicks the Continue button
+    Then the user should be redirected to the "How much is the total of your client’s balancing allowances?" page under self employment
+    And the user selects the Amount-field field and enters a value of 900.67
+    And the user clicks the Continue button
 
-    #Then the user should be redirected to the "Check your client’s answers" page under self employment
-    #And the user clicks the Self Employment Save and continue button
-    #Then the user should be redirected to the "Have you completed this section?" page under self employment
-    #When the user selects the Yes, I’ve completed this section radio button
-    #When the user clicks the Continue button
-    #Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Check your client’s answers" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
 
 
 

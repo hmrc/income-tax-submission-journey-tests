@@ -813,6 +813,75 @@ Feature: Self Employment Journeys
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
+  #-------------- Self Employment Expenses -  Allowances for vehicles, equipment and building  tailoring journey -----#
+
+  Scenario: Agent - Self employment - Allowances for vehicles, equipment and building journey
+    When the user logs into the service with the following details
+      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA000001D&ClientMTDID=1234567890 |
+      | Credential Strength | weak                                                                                |
+      | Confidence Level    | 250                                                                                 |
+      | Affinity Group      | Agent                                                                               |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                         |
+      | Identifier Name 1   | MTDITID                                                                             |
+      | Identifier Value 1  | 1234567890                                                                          |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                       |
+      | Identifier Name 2   | AgentReferenceNumber                                                                |
+      | Identifier Value 2  | XARN1234567                                                                         |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your client’s Income Tax Return" page
+    When the user clicks the addSelfEmployment tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the Self Employment link
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+    When the user clicks on the Allowances for vehicles, equipment and buildings link
+
+    Then the user should be redirected to the "Allowances for vehicles, equipment and buildings" page under self employment
+    When the user selects the yes radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Choose which allowances your client wants to claim" page under self employment
+    When the user clicks the Zero-emission car allowance checkbox
+    When the user clicks the Zero-emission goods vehicle allowance checkbox
+    When the user clicks the Electric vehicle charge-point allowance checkbox
+    When the user clicks the Structures and buildings allowance checkbox
+    When the user clicks the Freeport structures and buildings allowance checkbox
+    When the user clicks the Annual investment allowance (business equipment) checkbox
+    When the user clicks the Writing down allowance checkbox
+    When the user clicks the Balancing allowance (allowance on sales) checkbox
+    When the user clicks the Balancing charge checkbox
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Check your client’s answers" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+   #-----------Self Employment Expenses -  Balancing allowance journey ----- #
+    When the user clicks on the Balancing allowance link
+
+    Then the user should be redirected to the "Does your client have a balancing allowance to report?" page under self employment
+    When the user selects the yes radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "How much is the total of your client’s balancing allowances?" page under self employment
+    And the user selects the Amount-field field and enters a value of 900.67
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Check your client’s answers" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+
 
 
 

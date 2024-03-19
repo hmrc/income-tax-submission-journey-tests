@@ -596,7 +596,22 @@ trait CommonElements extends BasePage with Matchers {
     "Actual costs" -> By.id("value_1"),
     "1 person" -> By.id("onePerson"),
     "2 people" -> By.id("twoPeople"),
-    "3 or more people" -> By.id("threePeople")
+    "3 or more people" -> By.id("threePeople"),
+    "Allowances for vehicles, equipment and buildings" -> By.xpath("//a[text()=' Allowances for vehicles, equipment and buildings ']"),
+    "Zero-emission car allowance" -> By.xpath("//input[@value='zeroEmissionCar']"),
+    "Zero-emission goods vehicle allowance" -> By.xpath("//input[@value='zeroEmissionGoodsVehicle']"),
+    "Electric vehicle charge-point allowance" -> By.xpath("//input[@value='electricVehicleChargepoint']"),
+    "Structures and buildings allowance" -> By.xpath("//input[@value='structuresAndBuildings']"),
+    "Freeport structures and buildings allowance" -> By.xpath("//input[@value='specialTaxSitesStructuresAndBuildings']"),
+    "Annual investment allowance (business equipment)" -> By.xpath("//input[@value='annualInvestment']"),
+    "Writing down allowance" -> By.xpath("//input[@value='writingDown']"),
+    "Balancing allowance (allowance on sales)" -> By.xpath("//input[@value='balancing']"),
+    "Balancing charge" -> By.xpath("//input[@value='balancingCharge']"),
+    "Balancing allowance" -> By.xpath("//a[text()=' Balancing allowance ']")
+
+
+
+
 
   )
 }

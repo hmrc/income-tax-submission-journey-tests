@@ -6,10 +6,23 @@ UI test suite for the `<Income Tax Submission Service>` using WebDriver and `<Cu
 ## Running the tests
 
 Prior to executing the tests ensure you have:
- - Docker - to run a Chrome or Firefox browser inside a container 
- - Appropriate [drivers installed](#install-driver-binary) - to run tests against locally installed Browser
+ - Docker - to run a Chrome or Firefox browser inside a container
  - Installed [MongoDB](https://docs.mongodb.com/manual/installation/) 
  - Installed/configured [service manager](https://github.com/hmrc/service-manager).  
+ - 
+To run a Chrome or Firefox browser locally:
+ - Installed/configured [Local Selenium grid](https://github.com/hmrc/local-selenium-grid).
+
+Ensure that local selenium grid is started, and in a new terminal by running:
+
+`./start.sh`
+
+To run a Chrome or Firefox browser inside a container:
+- Installed/configured [docker Selenium grid](https://github.com/hmrc/docker-selenium-grid).
+
+Ensure that docker selenium grid is started, and in a new terminal by running:
+
+`./start.sh`
 
 Run the following command to start services locally:
 
@@ -44,9 +57,9 @@ tail -f /var/tmp/*_LOCAL/logs/stdout.txt
 Then execute the `run_tests.sh` script:
 ./run_tests.sh <environment> <browser-driver>
 
-The `run_tests.sh` script defaults to the `local` environment with the locally installed `chrome` driver binary.  For a complete list of supported param values, see:
+The `run_tests.sh` script defaults to the `local` environment with local-selenium-grid/docker-selenium-grid running.  For a complete list of supported param values, see:
  - `src/test/resources/application.conf` for **environment** 
- - [webdriver-factory](https://github.com/hmrc/webdriver-factory#2-instantiating-a-browser-with-default-options) for **browser-driver**
+ - [ui-test-runner](https://github.com/hmrc/ui-test-runner) for **browser-driver**
 
 ## Running tests against a containerised browser - on a developer machine
 
@@ -71,7 +84,7 @@ To run the tests against an environment set the corresponding `host` environment
 
 For example, to execute the `run_tests.sh` script against QA  environment using Chrome remote-webdriver
 
-    ./run_tests.sh qa remote-chrome
+    ./run_tests.sh qa chrome
 
 ## Running ZAP tests
 

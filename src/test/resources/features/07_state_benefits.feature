@@ -10,13 +10,13 @@ Feature: State Benefits Journeys - Income Tax Submission
   Scenario: Individual User with pre populated State Benefits data - In Year Deductions
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
-      | Credential Strength | strong      |
-      | Confidence Level    | 250         |
-      | Affinity Group      | Individual  |
-      | Nino                | AC160000B   |
-      | Enrolment Key 1     | HMRC-MTD-IT |
-      | Identifier Name 1   | MTDITID     |
-      | Identifier Value 1  | 1234567890  |
+      | Credential Strength | strong        |
+      | Confidence Level    | 250           |
+      | Affinity Group      | Individual    |
+      | Nino                | AC160000B     |
+      | Enrolment Key 1     | HMRC-MTD-IT   |
+      | Identifier Name 1   | MTDITID       |
+      | Identifier Value 1  | 1234567890    |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -31,7 +31,7 @@ Feature: State Benefits Journeys - Income Tax Submission
 
   Scenario: Individual User adds Jobseeker’s Allowance in session data EOY
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -92,7 +92,7 @@ Feature: State Benefits Journeys - Income Tax Submission
 
   Scenario: Individual User edits Jobseeker’s Allowance in session data EOY
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -161,7 +161,7 @@ Feature: State Benefits Journeys - Income Tax Submission
 
   Scenario: Individual User checks flow is correct for EOY
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -211,15 +211,15 @@ Feature: State Benefits Journeys - Income Tax Submission
   Scenario: Agent User with pre populated State benefits data - Check client's State benefits In Year Deductions
     When the user logs into the service with the following details
       | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AC160000B&ClientMTDID=1234567890 |
-      | Credential Strength | strong                                                                            |
-      | Confidence Level    | 250                                                                               |
-      | Affinity Group      | Agent                                                                             |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
-      | Identifier Name 1   | MTDITID                                                                           |
-      | Identifier Value 1  | 1234567890                                                                        |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
-      | Identifier Name 2   | AgentReferenceNumber                                                              |
-      | Identifier Value 2  | XARN1234567                                                                       |
+      | Credential Strength | strong                                                                              |
+      | Confidence Level    | 250                                                                                 |
+      | Affinity Group      | Agent                                                                               |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                         |
+      | Identifier Name 1   | MTDITID                                                                             |
+      | Identifier Value 1  | 1234567890                                                                          |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                       |
+      | Identifier Name 2   | AgentReferenceNumber                                                                |
+      | Identifier Value 2  | XARN1234567                                                                         |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -235,15 +235,15 @@ Feature: State Benefits Journeys - Income Tax Submission
   Scenario: Agent User adds Jobseeker’s Allowance in session data EOY
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AC160000B&ClientMTDID=1234567890 |
-      | Credential Strength | strong                                                                            |
-      | Confidence Level    | 250                                                                               |
-      | Affinity Group      | Agent                                                                             |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
-      | Identifier Name 1   | MTDITID                                                                           |
-      | Identifier Value 1  | 1234567890                                                                        |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
-      | Identifier Name 2   | AgentReferenceNumber                                                              |
-      | Identifier Value 2  | XARN1234567                                                                       |
+      | Credential Strength | strong                                                                           |
+      | Confidence Level    | 250                                                                              |
+      | Affinity Group      | Agent                                                                            |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                      |
+      | Identifier Name 1   | MTDITID                                                                          |
+      | Identifier Value 1  | 1234567890                                                                       |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                    |
+      | Identifier Name 2   | AgentReferenceNumber                                                             |
+      | Identifier Value 2  | XARN1234567                                                                      |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -298,15 +298,15 @@ Feature: State Benefits Journeys - Income Tax Submission
   Scenario: Agent User edits Jobseeker’s Allowance in session data EOY
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AC160000B&ClientMTDID=1234567890 |
-      | Credential Strength | strong                                                                            |
-      | Confidence Level    | 250                                                                               |
-      | Affinity Group      | Agent                                                                             |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
-      | Identifier Name 1   | MTDITID                                                                           |
-      | Identifier Value 1  | 1234567890                                                                        |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
-      | Identifier Name 2   | AgentReferenceNumber                                                              |
-      | Identifier Value 2  | XARN1234567                                                                       |
+      | Credential Strength | strong                                                                           |
+      | Confidence Level    | 250                                                                              |
+      | Affinity Group      | Agent                                                                            |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                      |
+      | Identifier Name 1   | MTDITID                                                                          |
+      | Identifier Value 1  | 1234567890                                                                       |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                    |
+      | Identifier Name 2   | AgentReferenceNumber                                                             |
+      | Identifier Value 2  | XARN1234567                                                                      |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -371,13 +371,13 @@ Feature: State Benefits Journeys - Income Tax Submission
   Scenario: Individual User with pre populated State Benefits data - In Year Deductions
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
-      | Credential Strength | strong      |
-      | Confidence Level    | 250         |
-      | Affinity Group      | Individual  |
-      | Nino                | AC160000B   |
-      | Enrolment Key 1     | HMRC-MTD-IT |
-      | Identifier Name 1   | MTDITID     |
-      | Identifier Value 1  | 1234567890  |
+      | Credential Strength | strong        |
+      | Confidence Level    | 250           |
+      | Affinity Group      | Individual    |
+      | Nino                | AC160000B     |
+      | Enrolment Key 1     | HMRC-MTD-IT   |
+      | Identifier Name 1   | MTDITID       |
+      | Identifier Value 1  | 1234567890    |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -392,7 +392,7 @@ Feature: State Benefits Journeys - Income Tax Submission
 
   Scenario: Individual User adds Employment and Support Allowance in session data EOY
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -453,7 +453,7 @@ Feature: State Benefits Journeys - Income Tax Submission
 
   Scenario: Individual User edits Employment and Support Allowance in session data EOY
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -524,15 +524,15 @@ Feature: State Benefits Journeys - Income Tax Submission
   Scenario: Agent User with pre populated State benefits data - Check client's State benefits In Year Deductions
     When the user logs into the service with the following details
       | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AC160000B&ClientMTDID=1234567890 |
-      | Credential Strength | strong                                                                            |
-      | Confidence Level    | 250                                                                               |
-      | Affinity Group      | Agent                                                                             |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
-      | Identifier Name 1   | MTDITID                                                                           |
-      | Identifier Value 1  | 1234567890                                                                        |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
-      | Identifier Name 2   | AgentReferenceNumber                                                              |
-      | Identifier Value 2  | XARN1234567                                                                       |
+      | Credential Strength | strong                                                                              |
+      | Confidence Level    | 250                                                                                 |
+      | Affinity Group      | Agent                                                                               |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                         |
+      | Identifier Name 1   | MTDITID                                                                             |
+      | Identifier Value 1  | 1234567890                                                                          |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                       |
+      | Identifier Name 2   | AgentReferenceNumber                                                                |
+      | Identifier Value 2  | XARN1234567                                                                         |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -548,15 +548,15 @@ Feature: State Benefits Journeys - Income Tax Submission
   Scenario: Agent User adds Employment and Support Allowance in session data EOY
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AC160000B&ClientMTDID=1234567890 |
-      | Credential Strength | strong                                                                            |
-      | Confidence Level    | 250                                                                               |
-      | Affinity Group      | Agent                                                                             |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
-      | Identifier Name 1   | MTDITID                                                                           |
-      | Identifier Value 1  | 1234567890                                                                        |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
-      | Identifier Name 2   | AgentReferenceNumber                                                              |
-      | Identifier Value 2  | XARN1234567                                                                       |
+      | Credential Strength | strong                                                                           |
+      | Confidence Level    | 250                                                                              |
+      | Affinity Group      | Agent                                                                            |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                      |
+      | Identifier Name 1   | MTDITID                                                                          |
+      | Identifier Value 1  | 1234567890                                                                       |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                    |
+      | Identifier Name 2   | AgentReferenceNumber                                                             |
+      | Identifier Value 2  | XARN1234567                                                                      |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -611,15 +611,15 @@ Feature: State Benefits Journeys - Income Tax Submission
   Scenario: Agent User edits Employment and Support Allowance in session data EOY
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AC160000B&ClientMTDID=1234567890 |
-      | Credential Strength | strong                                                                            |
-      | Confidence Level    | 250                                                                               |
-      | Affinity Group      | Agent                                                                             |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
-      | Identifier Name 1   | MTDITID                                                                           |
-      | Identifier Value 1  | 1234567890                                                                        |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
-      | Identifier Name 2   | AgentReferenceNumber                                                              |
-      | Identifier Value 2  | XARN1234567                                                                       |
+      | Credential Strength | strong                                                                           |
+      | Confidence Level    | 250                                                                              |
+      | Affinity Group      | Agent                                                                            |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                      |
+      | Identifier Name 1   | MTDITID                                                                          |
+      | Identifier Value 1  | 1234567890                                                                       |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                    |
+      | Identifier Name 2   | AgentReferenceNumber                                                             |
+      | Identifier Value 2  | XARN1234567                                                                      |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -678,4 +678,3 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     And the user clicks the state benefit save and continue button
     Then the user should be redirected to the "Employment and Support Allowance" page
-

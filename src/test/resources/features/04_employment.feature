@@ -8,15 +8,15 @@ Feature: Employment Journeys - Income Tax Submission
   Scenario: Agent user with one employment checks their details, benefits, student loans and expenses
     When the user logs into the service with the following details
       | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA133742A&ClientMTDID=1234567890 |
-      | Credential Strength | weak                                                                              |
-      | Confidence Level    | 250                                                                               |
-      | Affinity Group      | Agent                                                                             |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
-      | Identifier Name 1   | MTDITID                                                                           |
-      | Identifier Value 1  | 1234567890                                                                        |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
-      | Identifier Name 2   | AgentReferenceNumber                                                              |
-      | Identifier Value 2  | XARN1234567                                                                       |
+      | Credential Strength | weak                                                                                |
+      | Confidence Level    | 250                                                                                 |
+      | Affinity Group      | Agent                                                                               |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                         |
+      | Identifier Name 1   | MTDITID                                                                             |
+      | Identifier Value 1  | 1234567890                                                                          |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                       |
+      | Identifier Name 2   | AgentReferenceNumber                                                                |
+      | Identifier Value 2  | XARN1234567                                                                         |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -58,13 +58,13 @@ Feature: Employment Journeys - Income Tax Submission
   Scenario: Individual user with multiple employments checks their details, benefits, student loans and expenses
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
-      | Credential Strength | strong      |
-      | Confidence Level    | 250         |
-      | Affinity Group      | Individual  |
-      | Nino                | BB444444A   |
-      | Enrolment Key 1     | HMRC-MTD-IT |
-      | Identifier Name 1   | MTDITID     |
-      | Identifier Value 1  | 1234567890  |
+      | Credential Strength | strong        |
+      | Confidence Level    | 250           |
+      | Affinity Group      | Individual    |
+      | Nino                | BB444444A     |
+      | Enrolment Key 1     | HMRC-MTD-IT   |
+      | Identifier Name 1   | MTDITID       |
+      | Identifier Value 1  | 1234567890    |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -95,13 +95,13 @@ Feature: Employment Journeys - Income Tax Submission
   Scenario: User with no employment data can click the employment link - In Year
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
-      | Credential Strength | strong      |
-      | Confidence Level    | 250         |
-      | Affinity Group      | Individual  |
-      | Nino                | AA637489D   |
-      | Enrolment Key 1     | HMRC-MTD-IT |
-      | Identifier Name 1   | MTDITID     |
-      | Identifier Value 1  | 1234567890  |
+      | Credential Strength | strong        |
+      | Confidence Level    | 250           |
+      | Affinity Group      | Individual    |
+      | Nino                | AA637489D     |
+      | Enrolment Key 1     | HMRC-MTD-IT   |
+      | Identifier Name 1   | MTDITID       |
+      | Identifier Value 1  | 1234567890    |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -118,7 +118,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: User with no employment clicks employment link and answers No on the PAYE Employment question - EOY Only
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -144,7 +144,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: User with single employment clicks change link and answers No on the PAYE Employment question - EOY Only
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -170,7 +170,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: User adds new employment and answers Yes on the PAYE Employment question - EOY Only
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -191,7 +191,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: User is adding their first employment for a tax year
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -246,15 +246,15 @@ Feature: Employment Journeys - Income Tax Submission
   Scenario: Agent user with at least one prior employment adds a new Employment and no to "Did your client leave this employer in the tax year?"
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
-      | Credential Strength | weak                                                                              |
-      | Confidence Level    | 250                                                                               |
-      | Affinity Group      | Agent                                                                             |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
-      | Identifier Name 1   | MTDITID                                                                           |
-      | Identifier Value 1  | 1234567890                                                                        |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
-      | Identifier Name 2   | AgentReferenceNumber                                                              |
-      | Identifier Value 2  | XARN1234567                                                                       |
+      | Credential Strength | weak                                                                             |
+      | Confidence Level    | 250                                                                              |
+      | Affinity Group      | Agent                                                                            |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                      |
+      | Identifier Name 1   | MTDITID                                                                          |
+      | Identifier Value 1  | 1234567890                                                                       |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                    |
+      | Identifier Name 2   | AgentReferenceNumber                                                             |
+      | Identifier Value 2  | XARN1234567                                                                      |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -302,15 +302,15 @@ Feature: Employment Journeys - Income Tax Submission
   Scenario: Agent user with at least one prior employment adds a new Employment and yes to "Did your client leave this employer in the tax year?"
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
-      | Credential Strength | weak                                                                              |
-      | Confidence Level    | 250                                                                               |
-      | Affinity Group      | Agent                                                                             |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
-      | Identifier Name 1   | MTDITID                                                                           |
-      | Identifier Value 1  | 1234567890                                                                        |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
-      | Identifier Name 2   | AgentReferenceNumber                                                              |
-      | Identifier Value 2  | XARN1234567                                                                       |
+      | Credential Strength | weak                                                                             |
+      | Confidence Level    | 250                                                                              |
+      | Affinity Group      | Agent                                                                            |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                      |
+      | Identifier Name 1   | MTDITID                                                                          |
+      | Identifier Value 1  | 1234567890                                                                       |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                    |
+      | Identifier Name 2   | AgentReferenceNumber                                                             |
+      | Identifier Value 2  | XARN1234567                                                                      |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -351,19 +351,18 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page
 
-
   Scenario: Agent user with at least one prior employment edits an employment
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
-      | Credential Strength | weak                                                                              |
-      | Confidence Level    | 250                                                                               |
-      | Affinity Group      | Agent                                                                             |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
-      | Identifier Name 1   | MTDITID                                                                           |
-      | Identifier Value 1  | 1234567890                                                                        |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
-      | Identifier Name 2   | AgentReferenceNumber                                                              |
-      | Identifier Value 2  | XARN1234567                                                                       |
+      | Credential Strength | weak                                                                             |
+      | Confidence Level    | 250                                                                              |
+      | Affinity Group      | Agent                                                                            |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                      |
+      | Identifier Name 1   | MTDITID                                                                          |
+      | Identifier Value 1  | 1234567890                                                                       |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                    |
+      | Identifier Name 2   | AgentReferenceNumber                                                             |
+      | Identifier Value 2  | XARN1234567                                                                      |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -431,15 +430,15 @@ Feature: Employment Journeys - Income Tax Submission
   Scenario: Agent user with at least two prior employments removes an employment
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
-      | Credential Strength | weak                                                                              |
-      | Confidence Level    | 250                                                                               |
-      | Affinity Group      | Agent                                                                             |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
-      | Identifier Name 1   | MTDITID                                                                           |
-      | Identifier Value 1  | 1234567890                                                                        |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
-      | Identifier Name 2   | AgentReferenceNumber                                                              |
-      | Identifier Value 2  | XARN1234567                                                                       |
+      | Credential Strength | weak                                                                             |
+      | Confidence Level    | 250                                                                              |
+      | Affinity Group      | Agent                                                                            |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                      |
+      | Identifier Name 1   | MTDITID                                                                          |
+      | Identifier Value 1  | 1234567890                                                                       |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                    |
+      | Identifier Name 2   | AgentReferenceNumber                                                             |
+      | Identifier Value 2  | XARN1234567                                                                      |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -454,7 +453,7 @@ Feature: Employment Journeys - Income Tax Submission
 #   Car/Van fuel section
   Scenario: Individual user, says no to the fuel questions, so skips the amount questions
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -503,7 +502,7 @@ Feature: Employment Journeys - Income Tax Submission
 #   New submission tests
   Scenario: Individual user goes through the full benefits flow
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -727,7 +726,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user as a new submission, says no to all section questions
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -775,7 +774,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user says yes to section questions, no to everything else
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -903,7 +902,7 @@ Feature: Employment Journeys - Income Tax Submission
   # Prior submission updates for each section
   Scenario: Individual user has prior submission data, updates all car van fuel fields
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -989,7 +988,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates all accommodation fields
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1051,7 +1050,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates all travel and entertainment fields
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1113,7 +1112,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates all utilities fields
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1188,7 +1187,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates all medical benefits fields
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1263,7 +1262,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates all income benefits fields
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1313,7 +1312,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates all reimbursed benefits fields
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1399,7 +1398,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates all assets benefits fields
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1449,7 +1448,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates carVanFuel to no, then does the full car section flow
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1512,7 +1511,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates accommodation to no, then does the full accommodation relocation flow
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1562,7 +1561,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates travel and entertainment to no, then does the full travel and entertainment flow
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1612,7 +1611,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates utilities to no, then does the full utilities flow
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1668,7 +1667,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates medical to no, then does the full medical flow
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1724,7 +1723,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates income to no, then does the full income flow
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1768,7 +1767,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates reimbursed to no, then does the full reimbursed flow
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1830,7 +1829,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user has prior submission data, updates assets to no, then does the full assets flow
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -1876,15 +1875,15 @@ Feature: Employment Journeys - Income Tax Submission
   Scenario: Agent user with single employment and as a new submission, goes through the full expenses flow
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA133742A&ClientMTDID=1234567890 |
-      | Credential Strength | weak                                                                              |
-      | Confidence Level    | 250                                                                               |
-      | Affinity Group      | Agent                                                                             |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
-      | Identifier Name 1   | MTDITID                                                                           |
-      | Identifier Value 1  | 1234567890                                                                        |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
-      | Identifier Name 2   | AgentReferenceNumber                                                              |
-      | Identifier Value 2  | XARN1234567                                                                       |
+      | Credential Strength | weak                                                                             |
+      | Confidence Level    | 250                                                                              |
+      | Affinity Group      | Agent                                                                            |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                      |
+      | Identifier Name 1   | MTDITID                                                                          |
+      | Identifier Value 1  | 1234567890                                                                       |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                    |
+      | Identifier Name 2   | AgentReferenceNumber                                                             |
+      | Identifier Value 2  | XARN1234567                                                                      |
 
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
@@ -1933,15 +1932,15 @@ Feature: Employment Journeys - Income Tax Submission
   Scenario: Agent user with multiple employments as a new submission, answers no to the Do you want to claim employment expenses?, straight to expenses check your answers.
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
-      | Credential Strength | weak                                                                              |
-      | Confidence Level    | 250                                                                               |
-      | Affinity Group      | Agent                                                                             |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
-      | Identifier Name 1   | MTDITID                                                                           |
-      | Identifier Value 1  | 1234567890                                                                        |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
-      | Identifier Name 2   | AgentReferenceNumber                                                              |
-      | Identifier Value 2  | XARN1234567                                                                       |
+      | Credential Strength | weak                                                                             |
+      | Confidence Level    | 250                                                                              |
+      | Affinity Group      | Agent                                                                            |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                      |
+      | Identifier Name 1   | MTDITID                                                                          |
+      | Identifier Value 1  | 1234567890                                                                       |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                    |
+      | Identifier Name 2   | AgentReferenceNumber                                                             |
+      | Identifier Value 2  | XARN1234567                                                                      |
 
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
@@ -1963,7 +1962,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user as a new submission single employment, goes through the full expenses flow
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -2018,7 +2017,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user as a new submission single employment, goes through the full expenses flow answering no to all expenses to skips the amounts pages
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -2056,7 +2055,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user as a new submission single employment selecting no to do you want to claim expenses and to skip all expenses pages
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -2081,7 +2080,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user single employment has prior submission data, updates all expenses fields
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -2127,7 +2126,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user single employment has full prior submission data, changes all radio buttons to no
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -2175,7 +2174,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user single employment has prior submission data, answers no to the 'Do you want to claim employment expenses?' question.
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -2202,7 +2201,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user goes through the full student loans flow
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -2240,7 +2239,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user with prior data, changes undergraduate and postgraduate repayments to no in student loans flow
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -2265,44 +2264,9 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Employer information" page
 
-
-  Scenario: Agent user with prior data, changes undergraduate and postgraduate repayments to no in student loans flow
-    When the user logs into the service with the following details
-      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
-      | Credential Strength | weak                                                                              |
-      | Confidence Level    | 250                                                                               |
-      | Affinity Group      | Agent                                                                             |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
-      | Identifier Name 1   | MTDITID                                                                           |
-      | Identifier Value 1  | 1234567890                                                                        |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
-      | Identifier Name 2   | AgentReferenceNumber                                                              |
-      | Identifier Value 2  | XARN1234567                                                                       |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the employment link
-    Then the user should be redirected to the "PAYE employment" page
-    When the user clicks on the first change employment link
-    Then the user should be redirected to the "Employer information" page
-    When the user clicks on the student loans link
-    Then the user should be redirected to the "Check your client’s student loan repayment details" page
-    When the user clicks on the student loans amount change link
-    Then the user should be redirected to the "How much student loan did your client repay?" page
-    When the user selects the amount field and enters a value of 96000
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your client’s student loan repayment details" page
-    When the user clicks on the postgraduate loans amount change link
-    Then the user should be redirected to the "How much postgraduate loan did your client repay?" page
-    When the user selects the amount field and enters a value of 17.38
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your client’s student loan repayment details" page
-    And the user clicks the continue button
-    Then the user should be redirected to the "Employer information" page
-
-
 # ----------- Payment into LUMP SUM Tests Individual and Agent --------------
-  @lumpsum
+  # Remove ignore when lump sum is added
+  @lumpsum @ignore
   Scenario: Individual user navigates through taxable lumpSum journey flow and enters details
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -2326,44 +2290,20 @@ Feature: Employment Journeys - Income Tax Submission
 #    When the user selects the amount field and enters a value of 1200
 #    Then the user clicks the continue button
 
-  @lumpsum
-  Scenario: Agent user navigates through taxable lumpSum journey flow and enters details
-    When the user logs into the service with the following details
-      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890  |
-      | Credential Strength | weak                                                                              |
-      | Confidence Level    | 250                                                                               |
-      | Affinity Group      | Agent                                                                             |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
-      | Identifier Name 1   | MTDITID                                                                           |
-      | Identifier Value 1  | 1234567890                                                                        |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
-      | Identifier Name 2   | AgentReferenceNumber                                                              |
-      | Identifier Value 2  | XARN1234567                                                                       |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the employment link
-    Then the user should be redirected to the "PAYE employment" page
-    When the user clicks on the first change employment link
-#    Then the user clicks on the Taxable lump sums and certain income link
-#    Then the user should be redirected to the "Taxable lump sums" page
-#    When the user clicks the Add Taxable Lump sum button
-#    Then the user should be redirected to the "How much did you get in your taxable lump sum from Rick Owens Ltd Customer Edition EOY?" page
-#    When the user selects the amount field and enters a value of 1200
-#    Then the user clicks the continue button
+
 
 # Remove ignore when OPW is available in April 2024
   @ignore
   Scenario: Individual user changes Off-payroll working (IR35) value
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
-      | Credential Strength | strong      |
-      | Confidence Level    | 250         |
-      | Affinity Group      | Individual  |
-      | Nino                | BB444444A   |
-      | Enrolment Key 1     | HMRC-MTD-IT |
-      | Identifier Name 1   | MTDITID     |
-      | Identifier Value 1  | 1234567890  |
+      | Credential Strength | strong        |
+      | Confidence Level    | 250           |
+      | Affinity Group      | Individual    |
+      | Nino                | BB444444A     |
+      | Enrolment Key 1     | HMRC-MTD-IT   |
+      | Identifier Name 1   | MTDITID       |
+      | Identifier Value 1  | 1234567890    |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -2379,41 +2319,9 @@ Feature: Employment Journeys - Income Tax Submission
     When the user selects the Yes radio button
     Then the user should be redirected to the "Check your employment details" page
 
-#    Given that I am a user on the "Check your employment details" page
-#    When I click "Change" for 'Pay received'
-#    Then I should be routed to "How much did ABC Digital Ltd pay you?" page
-  Scenario: Individual user  when select change Pay received and select Confirm on warning page
-    When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
-      | Credential Strength | strong      |
-      | Confidence Level    | 250         |
-      | Affinity Group      | Individual  |
-      | Nino                | BB444444A   |
-      | Enrolment Key 1     | HMRC-MTD-IT |
-      | Identifier Name 1   | MTDITID     |
-      | Identifier Value 1  | 1234567890  |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the employment link
-    Then the user should be redirected to the "PAYE employment" page
-    And the status on the page is "Yes for gateway question"
-    When the user clicks on the first change employment link
-    Then the user should be redirected to the "Employer information" page
-    When the user clicks on the employment details link
-    Then the user should be redirected to the "Check your employment details" page
-    When the user clicks on the change pay received link
-    Then the user should be redirected to the "Do you want to change your employment details?" page
-    When the user clicks the confirm button
-    Then the user should be redirected to the "How much did Rick Owens Ltd Customer Edition EOY pay you?" page
-    When the user selects the Pay field and enters a value of 9000.01
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your employment details" page
-
- # for cancel button in  warning page of Pay received
   Scenario: Individual user when selected cancel button in  warning page of Pay received
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -2439,15 +2347,15 @@ Feature: Employment Journeys - Income Tax Submission
   Scenario: Agent user when select change Pay received and select Confirm on warning page
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA133742A&ClientMTDID=1234567890 |
-      | Credential Strength | weak                                                                              |
-      | Confidence Level    | 250                                                                               |
-      | Affinity Group      | Agent                                                                             |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
-      | Identifier Name 1   | MTDITID                                                                           |
-      | Identifier Value 1  | 1234567890                                                                        |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
-      | Identifier Name 2   | AgentReferenceNumber                                                              |
-      | Identifier Value 2  | XARN1234567                                                                       |
+      | Credential Strength | weak                                                                             |
+      | Confidence Level    | 250                                                                              |
+      | Affinity Group      | Agent                                                                            |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                      |
+      | Identifier Name 1   | MTDITID                                                                          |
+      | Identifier Value 1  | 1234567890                                                                       |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                    |
+      | Identifier Name 2   | AgentReferenceNumber                                                             |
+      | Identifier Value 2  | XARN1234567                                                                      |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -2466,12 +2374,10 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page
 
-#    Given that I am a user on the "Check your employment details" page
-#    When I click "Change" for 'UK tax taken from pay'
-#    Then I should be routed to "How much UK tax was taken from your earnings?" page
+
   Scenario: Individual user  when select change UK tax taken from pay and select Confirm on warning page
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -2499,7 +2405,7 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual user with UK tax taken from pay and select cancel button in warning page
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -2521,33 +2427,3 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Do you want to change your employment details?" page
     When the user clicks the cancel button
     Then the user should be redirected to the "Check your employment details" page
-
-  Scenario: Agent user when select change UK tax taken from pay and select Confirm on warning page
-    When the user logs into the service with the following details
-      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA133742A&ClientMTDID=1234567890 |
-      | Credential Strength | weak                                                                              |
-      | Confidence Level    | 250                                                                               |
-      | Affinity Group      | Agent                                                                             |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
-      | Identifier Name 1   | MTDITID                                                                           |
-      | Identifier Value 1  | 1234567890                                                                        |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
-      | Identifier Name 2   | AgentReferenceNumber                                                              |
-      | Identifier Value 2  | XARN1234567                                                                       |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the employment link
-    Then the user should be redirected to the "PAYE employment" page
-    And the status on the page is "Yes for gateway question"
-    When the user clicks on the first change employment link
-    Then the user should be redirected to the "Employer information" page
-    When the user clicks on the employment details link
-    Then the user should be redirected to the "Check your client’s employment details" page
-    When the user clicks on the change tax taken from pay link
-    Then the user should be redirected to the "Do you want to change your client’s employment details?" page
-    When the user clicks the confirm button
-    Then the user should be redirected to the "How much UK tax was taken from your client’s Eoy Vera Lynn Customer earnings?" page
-    When the user selects the Tax field and enters a value of 720.08
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your client’s employment details" page

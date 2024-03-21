@@ -267,58 +267,6 @@ Feature: Interest Journeys - Income Tax Submission
 #    And the user should see the correct Income Tax Account for individuals url
 
   @ignore
-  Scenario: Returning flow - Agent User with prior UK Untaxed & Taxed Interest, Review & change - Interest
-    When the user logs into the service with the following details
-      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA000003A&ClientMTDID=1234567893 |
-      | Credential Strength | weak                                                                                |
-      | Confidence Level    | 250                                                                                 |
-      | Affinity Group      | Agent                                                                               |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                         |
-      | Identifier Name 1   | MTDITID                                                                             |
-      | Identifier Value 1  | 1234567893                                                                          |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                       |
-      | Identifier Name 2   | AgentReferenceNumber                                                                |
-      | Identifier Value 2  | XARN1234567                                                                         |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the UK Interest link
-    Then the user should be redirected to the "Check your client’s UK interest" page
-    When the user clicks on the change uk untaxed interest accounts summary link
-    Then the user should be redirected to the "Accounts with untaxed UK interest" page
-    When the user clicks on the first account change link
-    Then the user should be redirected to the "How much untaxed UK interest did your client get?" page
-    And the user selects the UK untaxed interest updated amount earned field and enters a value of 100.01
-    And the user clicks the continue button
-    Then the user should be redirected to the "Accounts with untaxed UK interest" page
-    When the user clicks on the second account change link
-    Then the user should be redirected to the "How much untaxed UK interest did your client get?" page
-    And the user selects the UK untaxed interest updated amount earned field and enters a value of 100.01
-    And the user clicks the continue button
-    Then the user should be redirected to the "Accounts with untaxed UK interest" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your client’s UK interest" page
-    When the user clicks on the change uk taxed interest accounts summary link
-    Then the user should be redirected to the "Accounts with taxed UK interest" page
-    When the user clicks on the first account change link
-    Then the user should be redirected to the "How much taxed UK interest did your client get?" page
-    And the user selects the UK taxed interest updated amount earned field and enters a value of 100.01
-    And the user clicks the continue button
-    Then the user should be redirected to the "Accounts with taxed UK interest" page
-    When the user clicks on the second account change link
-    Then the user should be redirected to the "How much taxed UK interest did your client get?" page
-    And the user selects the UK taxed interest updated amount earned field and enters a value of 6000
-    And the user clicks the continue button
-    Then the user should be redirected to the "Accounts with taxed UK interest" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your client’s UK interest" page
-    When the user clicks the save and continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
-#    And the user should see the correct Income Tax Account for agents url
-
-  @ignore
   Scenario: Individual user with taxed/untaxed interest for a previous tax year, chooses a previous account for both
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |

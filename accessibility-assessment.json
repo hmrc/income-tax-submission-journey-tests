@@ -10,11 +10,11 @@
     },
     {
       "path": "/2024/",
-      "reason": "Test-only endpoints do not need accessibility testing as they are used purely for testing purposes."
+      "reason": "Exclude all URL's until error type filter is created for AXE."
     },
     {
       "path": "/2023/",
-      "reason": "Test-only endpoints do not need accessibility testing as they are used purely for testing purposes."
+      "reason": "Exclude all URL's until error type filter is created for AXE."
     }
   ]
 }

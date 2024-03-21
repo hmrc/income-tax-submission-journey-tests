@@ -7,6 +7,14 @@
     {
       "path": "/test-only/",
       "reason": "Test-only endpoints do not need accessibility testing as they are used purely for testing purposes."
+    },
+    {
+      "path": "/2024/",
+      "reason": "Exclude all URL's until error type filter is created for AXE."
+    },
+    {
+      "path": "/2023/",
+      "reason": "Exclude all URL's until error type filter is created for AXE."
     }
   ]
 }

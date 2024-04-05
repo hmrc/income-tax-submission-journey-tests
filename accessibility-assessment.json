@@ -5,6 +5,10 @@
       "reason": "Stubbed auth endpoints are owned by a different team."
     },
     {
+      "path": "/overseas-pensions/payments-into-overseas-pensions/payments-into-schemes",
+      "reason": "known error which is accepted as a GDS problem"
+    },
+    {
       "path": "/test-only/",
       "reason": "Test-only endpoints do not need accessibility testing as they are used purely for testing purposes."
     }

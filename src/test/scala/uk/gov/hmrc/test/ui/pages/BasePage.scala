@@ -48,6 +48,7 @@ trait BasePage extends Matchers with BrowserDriver with TaxYearHelper {
     url match {
       case x if url.contains("EOY") => url.replace("EOY",taxYearEOY.toString)
       case x if url.contains("InYear") => url.replace("InYear",taxYear.toString)
+      case x if url.contains("TaxYearMinusTwo") => url.replace("TaxYearMinusTwo",taxYearMinusTwo.toString)
       case _ => "invalid url passed, should be EOY or InYear"
     }
   }

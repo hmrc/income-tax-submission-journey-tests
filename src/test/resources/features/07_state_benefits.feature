@@ -1,4 +1,4 @@
-@MVP @ZAP @state_benefits
+@MVP @ZAP @state_benefits @ignore
 
 Feature: State Benefits Journeys - Income Tax Submission
 

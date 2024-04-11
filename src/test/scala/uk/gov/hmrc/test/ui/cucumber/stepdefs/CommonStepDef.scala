@@ -17,10 +17,11 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.conf.TaxYearHelper
 import uk.gov.hmrc.test.ui.pages.CommonPage.{clickOn, elementExists, load, replaceTaxYear}
 import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, CommonPage}
 
-class CommonStepDef extends Steps{
+class CommonStepDef extends Steps with TaxYearHelper{
 
   val serviceName = "Update and submit an Income Tax Return"
   val testOnlyViewAndChangeServiceName = "Your client’s Income Tax details"
@@ -135,21 +136,21 @@ class CommonStepDef extends Steps{
 
   Then("""^the user navigates to the (.*) page$""") { (url: String) =>
     val expectedUrl: String = url match {
-      case "untaxed interest" => "http://localhost:9308/update-and-submit-income-tax-return/personal-income/2024/interest/untaxed-uk-interest"
-      case "employment summary" => "http://localhost:9317/update-and-submit-income-tax-return/employment-income/2024/employment-summary"
-      case "interest check your answers" => "http://localhost:9308/update-and-submit-income-tax-return/personal-income/2024/interest/check-interest"
-      case "final tax overview" => "http://localhost:9302/update-and-submit-income-tax-return/2023/income-tax-return-overview"
+      case "untaxed interest" => s"http://localhost:9308/update-and-submit-income-tax-return/personal-income/$taxYear/interest/untaxed-uk-interest"
+      case "employment summary" => s"http://localhost:9317/update-and-submit-income-tax-return/employment-income/$taxYear/employment-summary"
+      case "interest check your answers" => s"http://localhost:9308/update-and-submit-income-tax-return/personal-income/$taxYear/interest/check-interest"
+      case "final tax overview" => s"http://localhost:9302/update-and-submit-income-tax-return/$taxYearEOY/income-tax-return-overview"
       case "tax overview for individuals" => "http://localhost:9081/report-quarterly/income-and-expenses/view/tax-overview"
       case "tax overview for agents" => "http://localhost:9081/report-quarterly/income-and-expenses/view/agents/tax-overview"
       case "auth login" => AuthLoginPage.url
       //TODO remove pension summary pages when link on overview page is created
-      case "pensions summary page" => "http://localhost:9321/update-and-submit-income-tax-return/pensions/2023/pensions-summary"
-      case "pensions summary page in year" => "http://localhost:9321/update-and-submit-income-tax-return/pensions/2024/pensions-summary"
+      case "pensions summary page" => s"http://localhost:9321/update-and-submit-income-tax-return/pensions/$taxYearEOY/pensions-summary"
+      case "pensions summary page in year" => s"http://localhost:9321/update-and-submit-income-tax-return/pensions/$taxYear/pensions-summary"
       //TODO remove URl when tailor you return is hooked with submission frontend
-      case "Tailor return start" => "http://localhost:10007/update-and-submit-income-tax-return/tailored-return/2023/start"
-      case "QA Tailor return start" => "https://www.qa.tax.service.gov.uk/update-and-submit-income-tax-return/tailored-return/2023/start"
-      case "Payments into pensions" => "http://localhost:10007/update-and-submit-income-tax-return/tailored-return/2023/payments-pensions"
-      case "Rental income" => "http://localhost:10007/update-and-submit-income-tax-return/tailored-return/2023/property-pensions-investments/rental-income"
+      case "Tailor return start" => s"http://localhost:10007/update-and-submit-income-tax-return/tailored-return/$taxYearEOY/start"
+      case "QA Tailor return start" => s"https://www.qa.tax.service.gov.uk/update-and-submit-income-tax-return/tailored-return/$taxYearEOY/start"
+      case "Payments into pensions" => s"http://localhost:10007/update-and-submit-income-tax-return/tailored-return/$taxYearEOY/payments-pensions"
+      case "Rental income" => s"http://localhost:10007/update-and-submit-income-tax-return/tailored-return/$taxYearEOY/property-pensions-investments/rental-income"
       case _ => fail("Invalid url input parameter")
     }
     driver.navigate().to(expectedUrl)

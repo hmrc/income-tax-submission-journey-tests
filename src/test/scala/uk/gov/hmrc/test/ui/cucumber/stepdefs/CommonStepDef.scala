@@ -33,6 +33,17 @@ class CommonStepDef extends Steps{
     driver.getTitle.replace("\u00A0", " ") should be(s"$title - $serviceName - $govUkExtension")
   }
 
+  Then("""^the user is redirected to the "(.*)" "(.*)" "(.*)" page$""") { (title: String, taxYear : String,titleCont: String) =>
+    val expectedTaxYear = replaceTaxYear(taxYear)
+    driver.getTitle.replace("\u00A0", " ") should be(s"$title $expectedTaxYear $titleCont - $serviceName - $govUkExtension")
+  }
+
+  Then("""^the user is then redirected to the "(.*)" "(.*)" "(.*)" "(.*)" page$""") { (title: String, taxYearPrevious: String, taxYear: String,  titleCont: String) =>
+    val expectedTaxYear = replaceTaxYear(taxYear)
+    val taxYearMinusTwo = replaceTaxYear(taxYearPrevious)
+    driver.getTitle.replace("\u00A0", " ") should be(s"$title $taxYearMinusTwo to $expectedTaxYear $titleCont - $serviceName - $govUkExtension")
+  }
+
   Then("""^the user should be redirected to V&C "(.*)" page$""") { (title: String) =>
     driver.getTitle should be(s"$title")
   }

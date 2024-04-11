@@ -30,7 +30,7 @@ Feature: Charities Journeys - Income Tax Submission
     Then the user should be redirected to the "Did you use Gift Aid to donate to charity?" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Do you want to add any donations made after 5 April 2024 to this tax year?" page
+    Then the user is redirected to the "Do you want to add any donations made after 5 April" "InYear" "to this tax year?" page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Did you donate qualifying shares or securities to charity?" page
@@ -97,16 +97,16 @@ Feature: Charities Journeys - Income Tax Submission
     Then the user should be redirected to the "Overseas charities your client used Gift Aid to donate to" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Did you add any of your client’s donations to the 2022 to 2023 tax year?" page
+    Then the user is then redirected to the "Did you add any of your client’s donations to the" "TaxYearMinusTwo" "EOY" "tax year?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "How much of your client’s donation did you add to the 2022 to 2023 tax year?" page
+    Then the user is then redirected to the "How much of your client’s donation did you add to the" "TaxYearMinusTwo" "EOY" "tax year?" page
     When the user selects the Amount to add to last tax year field and enters a value of 117
     And the user clicks the continue button
-    Then the user should be redirected to the "Do you want to add any donations made after 5 April 2024 to this tax year?" page
+    Then the user is redirected to the "Do you want to add any donations made after 5 April" "InYear" "to this tax year?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "How much of the donations your client made after 5 April 2024 do you want to add to this tax year?" page
+    Then the user is redirected to the "How much of the donations your client made after 5 April" "InYear" "do you want to add to this tax year?" page
     When the user selects the Amount to add to this tax year field and enters a value of 0.48
     And the user clicks the continue button
     Then the user should be redirected to the "Did your client donate qualifying shares or securities to charity?" page
@@ -209,16 +209,16 @@ Feature: Charities Journeys - Income Tax Submission
     Then the user should be redirected to the "Are you sure you want to remove Foster’s Home?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Did you add any of your client’s donations to the 2022 to 2023 tax year?" page
+    Then the user is then redirected to the "Did you add any of your client’s donations to the" "TaxYearMinusTwo" "EOY" "tax year?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "How much of your client’s donation did you add to the 2022 to 2023 tax year?" page
+    Then the user is then redirected to the "How much of your client’s donation did you add to the" "TaxYearMinusTwo" "EOY" "tax year?" page
     When the user selects the Amount to add to last tax year field and enters a value of 15
     And the user clicks the continue button
-    Then the user should be redirected to the "Do you want to add any donations made after 5 April 2024 to this tax year?" page
+    Then the user is redirected to the "Do you want to add any donations made after 5 April" "InYear" "to this tax year?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "How much of the donations your client made after 5 April 2024 do you want to add to this tax year?" page
+    Then the user is redirected to the "How much of the donations your client made after 5 April" "InYear" "do you want to add to this tax year?" page
     When the user selects the Amount to add to this tax year field and enters a value of 0.48
     And the user clicks the continue button
     Then the user should be redirected to the "Did your client donate qualifying shares or securities to charity?" page
@@ -277,6 +277,11 @@ Feature: Charities Journeys - Income Tax Submission
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addGiftAid tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the GiftAid link
     Then the user should be redirected to the "Check your donations to charity" page
     When the user clicks on the change amount donated to charity using Gift Aid link
@@ -306,12 +311,12 @@ Feature: Charities Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your donations to charity" page
     When the user clicks on the change amount of donation to add to last tax year link
-    Then the user should be redirected to the "How much of your donation did you add to the 2022 to 2023 tax year?" page
+    Then the user is then redirected to the "How much of your donation did you add to the" "TaxYearMinusTwo" "EOY" "tax year?" page
     When the user selects the Amount to add to last tax year field and enters a value of 809.9
     And the user clicks the continue button
     Then the user should be redirected to the "Check your donations to charity" page
     When the user clicks on the change amount of donation added to this tax year link
-    Then the user should be redirected to the "How much of the donations you made after 5 April 2024 do you want to add to this tax year?" page
+    Then the user is redirected to the "How much of the donations you made after 5 April" "InYear" "do you want to add to this tax year?" page
     When the user selects the Amount to add to this tax year field and enters a value of 13
     And the user clicks the continue button
     Then the user should be redirected to the "Check your donations to charity" page
@@ -359,6 +364,11 @@ Feature: Charities Journeys - Income Tax Submission
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your client’s Income Tax Return" page
+    When the user clicks the addGiftAid tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the GiftAid link
     Then the user should be redirected to the "Check your client’s donations to charity" page
     When the user clicks on the change amount of one-off donations to charity using Gift Aid link
@@ -382,12 +392,12 @@ Feature: Charities Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s donations to charity" page
     When the user clicks on the change amount of donation to add to last tax year link
-    Then the user should be redirected to the "How much of your client’s donation did you add to the 2022 to 2023 tax year?" page
+    Then the user is then redirected to the "How much of your client’s donation did you add to the" "TaxYearMinusTwo" "EOY" "tax year?" page
     When the user selects the Amount to add to last tax year field and enters a value of 809.9
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s donations to charity" page
     When the user clicks on the change amount of donation added to this tax year link
-    Then the user should be redirected to the "How much of the donations your client made after 5 April 2024 do you want to add to this tax year?" page
+    Then the user is redirected to the "How much of the donations your client made after 5 April" "InYear" "do you want to add to this tax year?" page
     When the user selects the Amount to add to this tax year field and enters a value of 13
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s donations to charity" page
@@ -460,6 +470,11 @@ Feature: Charities Journeys - Income Tax Submission
       |Identifier Value 2 |XARN1234567                                                                        |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your client’s Income Tax Return" page
+    When the user clicks the addGiftAid tailoring option
+    And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the GiftAid link
     Then the user should be redirected to the "Check your client’s donations to charity" page

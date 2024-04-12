@@ -234,7 +234,7 @@ trait CommonElements extends BasePage with Matchers {
     "remove claim"                            -> By.id("remove-link-id"),
     "Remove claim"                            -> By.id("remove-claim-button-id"),
     "Restore claim"                           -> By.id("restore-claim-button-id"),
-    "first view"                              -> By.cssSelector("#benefits-summary-list-id > div:nth-child(1) > dd:nth-child(3) > a:nth-child(1)"),
+    "first view"                              -> By.cssSelector("#benefits-summary-list-id > div:nth-child(1) > dd.govuk-summary-list__actions > a > span:nth-child(1)"),
     "first ignored view"                      -> By.cssSelector("#ignored-benefits-summary-list-id > div:nth-child(1) > dd:nth-child(3) > a:nth-child(1)"),
     "first view in year"                      -> By.cssSelector("div.govuk-summary-list__row:nth-child(1) > dd:nth-child(2) > a:nth-child(1)"),
     "state benefit change start date"         -> By.cssSelector("div.govuk-summary-list__row:nth-child(1) > dd:nth-child(3) > a:nth-child(1) > span:nth-child(1)"),

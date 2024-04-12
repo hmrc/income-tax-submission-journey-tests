@@ -35,7 +35,7 @@ Feature: Self Employment Journeys
     Then the user should be redirected to the "Self-employment" page under self employment
 
     When the user clicks the Continue button
-    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
@@ -72,7 +72,7 @@ Feature: Self Employment Journeys
     Then the user should be redirected to the "Self-employment" page under self employment
 
     When the user clicks the Continue button
-    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
@@ -107,7 +107,7 @@ Feature: Self Employment Journeys
     Then the user should be redirected to the "Check your details" page under self employment
     And the user clicks the Self Employment Save and continue button
 
-    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
@@ -142,7 +142,7 @@ Feature: Self Employment Journeys
     Then the user should be redirected to the "Check your client’s details" page under self employment
     And the user clicks the Self Employment Save and continue button
 
-    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
@@ -224,7 +224,7 @@ Feature: Self Employment Journeys
 
     And the user clicks the Self Employment Save and continue button
 
-    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
@@ -294,7 +294,7 @@ Feature: Self Employment Journeys
    Then the user should be redirected to the "Check your client’s income" page under self employment
     And the user clicks the Self Employment Save and continue button
 
-    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
@@ -328,7 +328,7 @@ Feature: Self Employment Journeys
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks the Continue button
-    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
@@ -342,7 +342,7 @@ Feature: Self Employment Journeys
     And the user clicks the Continue button
     Then the user should be redirected to the "Check your details" page under self employment
     And the user clicks the Self Employment Save and continue button
-    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
@@ -382,7 +382,7 @@ Feature: Self Employment Journeys
 
     Then the user should be redirected to the "Check your income" page under self employment
     And the user clicks the Self Employment Save and continue button
-    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
@@ -495,7 +495,7 @@ Feature: Self Employment Journeys
 
     And the user clicks the Self Employment Save and continue button
 
-    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
@@ -537,7 +537,7 @@ Feature: Self Employment Journeys
 
     Then the user should be redirected to the "Check your office supplies expenses" page under self employment
     And the user clicks the Self Employment Save and continue button
-    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
@@ -559,7 +559,7 @@ Feature: Self Employment Journeys
 
     Then the user should be redirected to the "Check your goods to sell or use expenses" page under self employment
     And the user clicks the Self Employment Save and continue button
-    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
@@ -577,7 +577,7 @@ Feature: Self Employment Journeys
 
     Then the user should be redirected to the "Check your repairs and maintenance costs" page under self employment
     And the user clicks the Self Employment Save and continue button
-    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
@@ -595,7 +595,7 @@ Feature: Self Employment Journeys
 
     Then the user should be redirected to the "Check your advertising or marketing expenses" page under self employment
     And the user clicks the Self Employment Save and continue button
-    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
@@ -609,7 +609,7 @@ Feature: Self Employment Journeys
 
     Then the user should be redirected to the "Check your entertainment expenses" page under self employment
     And the user clicks the Self Employment Save and continue button
-    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
@@ -627,7 +627,7 @@ Feature: Self Employment Journeys
 
     Then the user should be redirected to the "Check your staff costs" page under self employment
     And the user clicks the Self Employment Save and continue button
-    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
@@ -645,7 +645,7 @@ Feature: Self Employment Journeys
 
     Then the user should be redirected to the "Check your construction industry subcontractors expenses" page under self employment
     And the user clicks the Self Employment Save and continue button
-    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
@@ -664,7 +664,7 @@ Feature: Self Employment Journeys
 
     Then the user should be redirected to the "Check your professional fees" page under self employment
     And the user clicks the Self Employment Save and continue button
-    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
@@ -682,7 +682,7 @@ Feature: Self Employment Journeys
 
     Then the user should be redirected to the "Check your interest paid on loans expenses" page under self employment
     And the user clicks the Self Employment Save and continue button
-    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
@@ -700,7 +700,7 @@ Feature: Self Employment Journeys
 
     Then the user should be redirected to the "Check your financial charges expenses" page under self employment
     And the user clicks the Self Employment Save and continue button
-    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
@@ -718,7 +718,7 @@ Feature: Self Employment Journeys
 
     Then the user should be redirected to the "Check you irrecoverable debts" page under self employment
     And the user clicks the Self Employment Save and continue button
-    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
@@ -732,7 +732,7 @@ Feature: Self Employment Journeys
 
     Then the user should be redirected to the "Check your depreciation costs" page under self employment
     And the user clicks the Self Employment Save and continue button
-    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
@@ -750,7 +750,7 @@ Feature: Self Employment Journeys
 
     Then the user should be redirected to the "Check your other expenses" page under self employment
     And the user clicks the Self Employment Save and continue button
-    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
@@ -808,7 +808,7 @@ Feature: Self Employment Journeys
 
     Then the user should be redirected to the "Check your workplace running costs" page under self employment
     And the user clicks the Self Employment Save and continue button
-    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
@@ -858,7 +858,7 @@ Feature: Self Employment Journeys
 
     Then the user should be redirected to the "Check your client’s answers" page under self employment
     And the user clicks the Self Employment Save and continue button
-    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
@@ -876,7 +876,7 @@ Feature: Self Employment Journeys
 
     Then the user should be redirected to the "Check your client’s answers" page under self employment
     And the user clicks the Self Employment Save and continue button
-    Then the user should be redirected to the "Have you completed this section?" page under self employment
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment

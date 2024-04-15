@@ -607,7 +607,10 @@ trait CommonElements extends BasePage with Matchers {
     "Writing down allowance" -> By.xpath("//input[@value='writingDown']"),
     "Balancing allowance (allowance on sales)" -> By.xpath("//input[@value='balancing']"),
     "Balancing charge" -> By.xpath("//input[@value='balancingCharge']"),
-    "Balancing allowance" -> By.xpath("//a[text()=' Balancing allowance ']")
+    "Balancing allowance" -> By.xpath("//a[text()=' Balancing allowance ']"),
+    "Zero-emission cars" -> By.xpath("//a[text()=' Zero-emission cars ']"),
+    "10 percent" -> By.id("10%"),
+    "full cost" -> By.id("fullCost")
 
 
 

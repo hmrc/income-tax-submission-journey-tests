@@ -863,7 +863,7 @@ Feature: Self Employment Journeys
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-   #-----------Self Employment Expenses -  Balancing allowance journey ----- #
+   #-----------Allowances for vehicles, equipment and building -  Balancing allowance journey ----- #
     When the user clicks on the Balancing allowance link
 
     Then the user should be redirected to the "Does your client have a balancing allowance to report?" page under self employment
@@ -875,6 +875,62 @@ Feature: Self Employment Journeys
     And the user clicks the Continue button
 
     Then the user should be redirected to the "Check your client’s answers" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+    #-----------Allowances for vehicles, equipment and building -  Zero-Emission cars journey ----- #
+
+  Scenario: Individual - Self employment Expenses - Questions page from task list
+    When the user logs into the service with the following details
+      | Redirect url        | /InYear/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001D   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addSelfEmployment tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the Self Employment link
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+    When the user clicks on the Zero-emission cars link
+
+    Then the user should be redirected to the "Zero-emission cars" page under self employment
+    When the user selects the yes radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Zero-emission car allowance" page under self employment
+    When the user selects the yes radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "What was the total cost of the car, in pounds?" page under self employment
+    And the user selects the Amount-field field and enters a value of 700
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Did you only use the car for your self-employment?" page under self employment
+    When the user selects the no radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "How much did you use the car outside your self-employment?" page under self employment
+    When the user selects the 10 percent radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "How much of your car’s cost do you want to claim under the 100% allowance?" page under self employment
+    When the user selects the full cost radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Check your answers" page under self employment
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button

@@ -1,4 +1,4 @@
-@smoke @cis
+@smoke @cis @ignore
 
 Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 

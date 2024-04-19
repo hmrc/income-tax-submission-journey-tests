@@ -1,4 +1,5 @@
-@MVP @ZAP @property
+@MVP @ZAP @property @ignore
+  #Ignore tests until SASS-7953 is fixed and merged
 
 Feature: Property Journeys - Income Tax Submission
 

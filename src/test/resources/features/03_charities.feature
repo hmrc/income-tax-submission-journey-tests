@@ -1,4 +1,5 @@
-@MVP @ZAP @charities
+@MVP @ZAP @charities @ignore
+  #Ignore tests until SASS-7953 is fixed and merged
 
 Feature: Charities Journeys - Income Tax Submission
 

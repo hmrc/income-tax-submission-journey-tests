@@ -1,5 +1,5 @@
-@MVP @ZAP @property @ignore
-  #Ignore tests until SASS-7953 is fixed and merged
+@MVP @ZAP @property
+
 
 Feature: Property Journeys - Income Tax Submission
 
@@ -380,7 +380,6 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Expenses less than £1,000" page
     And the user selects the Property rentals Yes radio button
     And the user clicks the continue button
-    # --- Update Agent test for Income & Allowances ---
     Then the user should be redirected to the "Does your client want to claim property income allowance?" page
     When the user selects the No, claim expenses radio button
     And the user clicks the Continue button

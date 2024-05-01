@@ -319,7 +319,7 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the Property rental amount field and enters a value of 340.55
     And the user clicks the continue button
     Then the user should be redirected to the "Premiums for the grant of a lease" page
-    When the user selects the Yes radio button
+    When the user selects the Yes, premiums for a grant of lease radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Have you calculated the figure yourself?" page
     When the user selects the No,calculated radio button
@@ -331,7 +331,7 @@ Feature: Property Journeys - Income Tax Submission
     And the user selects the month period field and enters a value of 2
     When the user clicks the continue button
     Then the user should be redirected to the "Premiums for a grant of a lease" page
-    When the user clicks the No, premiums for a grant of lease button
+    When the user clicks the No, premiums for the grant of lease button
     And the user selects the Amount, premiums for a grant of lease field and enters a value of 9000
     And the user clicks the continue button
     Then the user should be redirected to the "Reverse premiums received" page
@@ -400,7 +400,7 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the Property rental amount field and enters a value of 340.55
     And the user clicks the continue button
     Then the user should be redirected to the "Premiums for the grant of a lease" page
-    When the user selects the Yes radio button
+    When the user selects the Yes, premiums for a grant of lease radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Did your client calculate the figure themselves?" page
     When the user selects the No,calculated radio button
@@ -412,7 +412,7 @@ Feature: Property Journeys - Income Tax Submission
     And the user selects the month period field and enters a value of 21
     When the user clicks the continue button
     Then the user should be redirected to the "Premiums for a grant of a lease" page
-    When the user clicks the No, premiums for a grant of lease button
+    When the user clicks the No, premiums for the grant of lease button
     And the user selects the Amount, premiums for a grant of lease field and enters a value of 12500
     And the user clicks the continue button
     Then the user should be redirected to the "Reverse premiums received" page
@@ -479,7 +479,7 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the Property rental amount field and enters a value of 340.55
     And the user clicks the continue button
     Then the user should be redirected to the "Premiums for the grant of a lease" page
-    When the user selects the Yes radio button
+    When the user selects the Yes, premiums for a grant of lease radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Have you calculated the figure yourself?" page
     When the user selects the Yes,calculated radio button
@@ -574,7 +574,7 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the Property rental amount field and enters a value of 24000.00
     And the user clicks the continue button
     Then the user should be redirected to the "Premiums for the grant of a lease" page
-    When the user selects the Yes radio button
+    When the user selects the Yes, premiums for a grant of lease radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Have you calculated the figure yourself?" page
     When the user selects the Yes,calculated radio button
@@ -652,7 +652,7 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the Property rental amount field and enters a value of 24000.00
     And the user clicks the continue button
     Then the user should be redirected to the "Premiums for the grant of a lease" page
-    When the user selects the Yes radio button
+    When the user selects the Yes, premiums for a grant of lease radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Have you calculated the figure yourself?" page
     When the user selects the Yes,calculated radio button
@@ -755,7 +755,7 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the Property rental amount field and enters a value of 24000.00
     And the user clicks the continue button
     Then the user should be redirected to the "Premiums for the grant of a lease" page
-    When the user selects the Yes radio button
+    When the user selects the Yes, premiums for a grant of lease radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Have you calculated the figure yourself?" page
     When the user selects the Yes,calculated radio button
@@ -838,7 +838,7 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the Property rental amount field and enters a value of 24000.00
     And the user clicks the continue button
     Then the user should be redirected to the "Premiums for the grant of a lease" page
-    When the user selects the Yes radio button
+    When the user selects the Yes, premiums for a grant of lease radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Have you calculated the figure yourself?" page
     When the user selects the Yes,calculated radio button

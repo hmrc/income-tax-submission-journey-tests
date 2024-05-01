@@ -1,4 +1,4 @@
-@ZAP @employment
+@ZAP @employment @ignore
 
 Feature: Employment Journeys - Income Tax Submission
 

@@ -22,10 +22,10 @@ Feature: Add sections Journeys Tailor Your Return - Income Tax Submission
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
-    Then the "About you tag" on the page displays "NOT STARTED"
-    Then the "Income from work and taxable state benefits tag" on the page displays "CANNOT START YET"
-    Then the "Income from property, pensions and investments tag" on the page displays "CANNOT START YET"
-    Then the "Payments into pensions tag" on the page displays "NOT STARTED"
+    Then the "About you tag" on the page displays "Not started"
+    Then the "Income from work and taxable state benefits tag" on the page displays "Cannot start yet"
+    Then the "Income from property, pensions and investments tag" on the page displays "Cannot start yet"
+    Then the "Payments into pensions tag" on the page displays "Not started"
     And the user clicks the Continue button
     Then the user should be redirected to the "Your Tax Return is not ready to fill in yet" page
     When the user clicks the Continue button
@@ -53,8 +53,8 @@ Feature: Add sections Journeys Tailor Your Return - Income Tax Submission
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your client’s Tax Return" page
-    Then the "About you tag" on the page displays "NOT STARTED"
-    Then the "Income from work and taxable state benefits tag" on the page displays "CANNOT START YET"
+    Then the "About you tag" on the page displays "Not started"
+    Then the "Income from work and taxable state benefits tag" on the page displays "Cannot start yet"
     ##---- About you steps have to be completed in order for Income from work and taxable state benefits link to be active ----##
     When the user clicks on the About you link
     Then the user should be redirected to the "UK residence status" page
@@ -70,10 +70,10 @@ Feature: Add sections Journeys Tailor Your Return - Income Tax Submission
     When the user selects the no radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your client’s Tax Return" page
-    Then the "About you tag" on the page displays "COMPLETED"
-    Then the "Income from work and taxable state benefits tag" on the page displays "NOT STARTED"
+    Then the "About you tag" on the page displays "Completed"
+    Then the "Income from work and taxable state benefits tag" on the page displays "Not started"
     ##---- Income from work and taxable state benefits steps ----##
-    Then the "Income from work and taxable state benefits tag" on the page displays "NOT STARTED"
+    Then the "Income from work and taxable state benefits tag" on the page displays "Not started"
     When the user clicks on the Income from work and taxable state benefits link
     Then the user should be redirected to the "What did your client do for work?" page
     And the user selects the Employed radio button
@@ -82,8 +82,8 @@ Feature: Add sections Journeys Tailor Your Return - Income Tax Submission
     When the user selects the Contribution-based radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your client’s Tax Return" page
-    Then the "Income from work and taxable state benefits tag" on the page displays "COMPLETED"
-    Then the "Income from property, pensions and investments tag" on the page displays "NOT STARTED"
+    Then the "Income from work and taxable state benefits tag" on the page displays "Completed"
+    Then the "Income from property, pensions and investments tag" on the page displays "Not started"
    ##---- Income from property, pensions and investments steps ----##
     When the user clicks on the Income from property, pensions and investments link
     Then the user should be redirected to the "Rental income from property" page
@@ -103,7 +103,7 @@ Feature: Add sections Journeys Tailor Your Return - Income Tax Submission
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your client’s Tax Return" page
   ##---- Payments into UK pensions steps ----##
-    Then the "Payments into pensions tag" on the page displays "NOT STARTED"
+    Then the "Payments into pensions tag" on the page displays "Not started"
     When the user clicks on the Payments into UK pensions task list link
     Then the user should be redirected to the "Payments into pensions" page
     When the user selects the Payments into UK pensions radio button

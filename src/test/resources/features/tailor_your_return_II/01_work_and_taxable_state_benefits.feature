@@ -22,7 +22,7 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
-      ##---- About you steps have to be completed in order for Income from work and taxable state benefits link to be active ----##
+      ##---- About you steps have to be Completed in order for Income from work and taxable state benefits link to be active ----##
     When the user clicks on the About you link
     Then the user should be redirected to the "UK residence status" page
     When the user selects the yes, but permanent home is abroad radio button
@@ -34,9 +34,9 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
     When the user selects the No radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
-    Then the "About you tag" on the page displays "COMPLETED"
+    Then the "About you tag" on the page displays "Completed"
     ##---- Income from work and taxable state benefits steps ----##
-    Then the "Income from work and taxable state benefits tag" on the page displays "NOT STARTED"
+    Then the "Income from work and taxable state benefits tag" on the page displays "Not started"
     When the user clicks on the Income from work and taxable state benefits link
     Then the user should be redirected to the "What did you do for work?" page
     And the user selects the Employed radio button
@@ -49,7 +49,7 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
     When the user selects the Jobseeker's Allowance radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
-    Then the "Income from work and taxable state benefits tag" on the page displays "COMPLETED"
+    Then the "Income from work and taxable state benefits tag" on the page displays "Completed"
     ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for InYear
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
@@ -73,7 +73,7 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your client’s Tax Return" page
-    ##---- About you steps have to be completed in order for Income from work and taxable state benefits link to be active ----##
+    ##---- About you steps have to be Completed in order for Income from work and taxable state benefits link to be active ----##
     When the user clicks on the About you link
     Then the user should be redirected to the "UK residence status" page
     When the user selects the Not a resident radio button
@@ -88,9 +88,9 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
     When the user selects the no radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your client’s Tax Return" page
-    Then the "About you tag" on the page displays "COMPLETED"
+    Then the "About you tag" on the page displays "Completed"
     ##---- Income from work and taxable state benefits steps ----##
-    Then the "Income from work and taxable state benefits tag" on the page displays "NOT STARTED"
+    Then the "Income from work and taxable state benefits tag" on the page displays "Not started"
     When the user clicks on the Income from work and taxable state benefits link
     Then the user should be redirected to the "What did your client do for work?" page
     And the user selects the Employed radio button
@@ -99,7 +99,7 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
     When the user selects the Contribution-based radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your client’s Tax Return" page
-    Then the "Income from work and taxable state benefits tag" on the page displays "COMPLETED"
+    Then the "Income from work and taxable state benefits tag" on the page displays "Completed"
     ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for InYear
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
@@ -121,7 +121,7 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
-    ##---- About you steps have to be completed in order for Income from work and taxable state benefits link to be active ----##
+    ##---- About you steps have to be Completed in order for Income from work and taxable state benefits link to be active ----##
     When the user clicks on the About you link
     Then the user should be redirected to the "UK residence status" page
     When the user selects the yes, but permanent home is abroad radio button
@@ -133,9 +133,9 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
     When the user selects the No radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
-    Then the "About you tag" on the page displays "COMPLETED"
+    Then the "About you tag" on the page displays "Completed"
     ##---- Income from work and taxable state benefits steps ----##
-    Then the "Income from work and taxable state benefits tag" on the page displays "NOT STARTED"
+    Then the "Income from work and taxable state benefits tag" on the page displays "Not started"
     When the user clicks on the Income from work and taxable state benefits link
     Then the user should be redirected to the "What did you do for work?" page
     When the user selects the None of the above radio button
@@ -144,7 +144,7 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
     When the user selects the No, I did not get either of these state benefits radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
-    Then the "Income from work and taxable state benefits tag" on the page displays "COMPLETED"
+    Then the "Income from work and taxable state benefits tag" on the page displays "Completed"
     ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for InYear
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
@@ -166,7 +166,7 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
-     ##---- About you steps have to be completed in order for Income from work and taxable state benefits link to be active ----##
+     ##---- About you steps have to be Completed in order for Income from work and taxable state benefits link to be active ----##
     When the user clicks on the About you link
     Then the user should be redirected to the "UK residence status" page
     When the user selects the yes, but permanent home is abroad radio button
@@ -178,9 +178,9 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
     When the user selects the No radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
-    Then the "About you tag" on the page displays "COMPLETED"
+    Then the "About you tag" on the page displays "Completed"
     ##---- Income from work and taxable state benefits steps ----##
-    Then the "Income from work and taxable state benefits tag" on the page displays "NOT STARTED"
+    Then the "Income from work and taxable state benefits tag" on the page displays "Not started"
     When the user clicks on the Income from work and taxable state benefits link
     Then the user should be redirected to the "What did you do for work?" page
     And the user selects the Self-employed radio button
@@ -192,7 +192,7 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
     When the user selects the Jobseeker's Allowance radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
-    Then the "Income from work and taxable state benefits tag" on the page displays "COMPLETED"
+    Then the "Income from work and taxable state benefits tag" on the page displays "Completed"
     ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for InYear
     Then the user should be redirected to the "Update and submit an Income Tax Return" page

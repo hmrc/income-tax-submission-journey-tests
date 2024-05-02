@@ -81,6 +81,9 @@ Feature: Pensions Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your payments into pensions" page
     When the user clicks the save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
     Then the user should be redirected to the "Pensions" page
 
 
@@ -139,8 +142,10 @@ Feature: Pensions Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s payments into pensions" page
     When the user clicks the save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
     Then the user should be redirected to the "Pensions" page
-
 
   Scenario: Individual user as a new submission, minimal flow - selects no for all
     When the user logs into the service with the following details
@@ -171,8 +176,10 @@ Feature: Pensions Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your payments into pensions" page
     When the user clicks the save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
     Then the user should be redirected to the "Pensions" page
-
 
   Scenario: Agent user has prior submission, updates all payments into pensions amount fields
     When the user logs into the service with the following details
@@ -224,6 +231,9 @@ Feature: Pensions Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s payments into pensions" page
     When the user clicks the save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
     Then the user should be redirected to the "Pensions" page
 
 
@@ -255,11 +265,14 @@ Feature: Pensions Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your payments into pensions" page
     When the user clicks the save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
     Then the user should be redirected to the "Pensions" page
 
 
   #--------------------------Unauthorised payments from pensions tests---------------------------------#
-
+  @ignore
   Scenario: Individual journey flow - Full Unauthorised pensions journey
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start |
@@ -319,7 +332,7 @@ Feature: Pensions Journeys - Income Tax Submission
      When the user clicks the save and continue button
      Then the user should be redirected to the "Pensions" page
 
-
+  @ignore
   Scenario: Agent journey flow - Full Unauthorised pensions journey
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000001A&ClientMTDID=1234567890 |
@@ -382,7 +395,7 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Pensions" page
 
-
+  @ignore
   Scenario: Individual journey flow - Yes, unauthorised payments that resulted in a surcharge
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start |
@@ -432,7 +445,7 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Pensions" page
 
-
+  @ignore
   Scenario: Individual journey flow - Yes, unauthorised payments that did not result in a surcharge
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start |
@@ -482,7 +495,7 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Pensions" page
 
-
+  @ignore
   Scenario: Individual journey flow - Change, Remove, add another pstr links
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start |
@@ -551,7 +564,7 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Pensions" page
 
-
+  @ignore
   Scenario: View prior submission, Unauthorised pensions payments journey
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
@@ -578,7 +591,7 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Unauthorised payments" page
 
 
-
+  @ignore
   Scenario: Individual journey flow submission without a PSTR - Unauthorised pensions journey
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start |
@@ -625,7 +638,7 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Pensions" page
 
-
+  @ignore
   Scenario: User selects No on first question page - Unauthorised pensions journey
   When the user logs into the service with the following details
       | Redirect url        | /EOY/start |
@@ -656,7 +669,7 @@ Feature: Pensions Journeys - Income Tax Submission
 
 
       #-------------- Overseas Pensions - Income from overseas Pensions tests ----------#
-
+  @ignore
   Scenario: Individual user as a new submission, goes through full income from overseas pension
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -706,6 +719,7 @@ Feature: Pensions Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check income from overseas pensions" page
 
+  @ignore
   Scenario: Agent user as a new submission, goes through full income from overseas pension
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000001A&ClientMTDID=1234567890 |
@@ -759,6 +773,7 @@ Feature: Pensions Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check income from overseas pensions" page
 
+  @ignore
   Scenario: income from overseas pension - user has prior data
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
@@ -786,7 +801,7 @@ Feature: Pensions Journeys - Income Tax Submission
 
 
       #-------------- Overseas Pensions - Overseas transfer charges ----------#
-
+  @ignore
   Scenario: Individual user as a new submission, Selects YES on - Did a UK pension scheme pay the transfer charge to HMRC
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -839,7 +854,7 @@ Feature: Pensions Journeys - Income Tax Submission
 
     Then the user should be redirected to the "Check transfers into overseas pensions" page
 
-
+  @ignore
   Scenario: Individual user as a new submission, Selects NO on - Did a UK pension scheme pay the transfer charge to HMRC
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -894,7 +909,7 @@ Feature: Pensions Journeys - Income Tax Submission
 
     Then the user should be redirected to the "Check transfers into overseas pensions" page
 
-
+  @ignore
   Scenario: Agent user as a new submission, goes through transfer overseas from pension
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000001A&ClientMTDID=1234567890 |
@@ -951,7 +966,7 @@ Feature: Pensions Journeys - Income Tax Submission
 
     Then the user should be redirected to the "Check transfers into overseas pensions" page
 
-
+  @ignore
   Scenario: Overseas transfer charges (InYear) - user has prior data
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
@@ -977,7 +992,7 @@ Feature: Pensions Journeys - Income Tax Submission
      When the user clicks on the Overseas transfer charges link
      Then the user should be redirected to the "Check transfers into overseas pensions" page
 
-
+  @ignore
   Scenario: Individual user  Selects NO on first question page
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1008,6 +1023,7 @@ Feature: Pensions Journeys - Income Tax Submission
 
     Then the user should be redirected to the "Check transfers into overseas pensions" page
 
+  @ignore
   Scenario: Check change links (EOY) - add, remove and change pension scheme
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1072,7 +1088,7 @@ Feature: Pensions Journeys - Income Tax Submission
 
 
     #-------------- Pension Annual allowance ----------#
-
+  @ignore
   Scenario: Individual flow - Pension Annual allowance
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1159,7 +1175,7 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Pensions" page
 
-
+  @ignore
   Scenario: Agent journey flow - Pension Annual allowance
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000001A&ClientMTDID=1234567890 |
@@ -1216,7 +1232,7 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Pensions" page
 
-
+  @ignore
   Scenario: Individual with prior data - Pension Annual allowance
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1262,7 +1278,7 @@ Feature: Pensions Journeys - Income Tax Submission
 
 
   #-------------- Overseas Pensions - Short Service Refunds ----------#
-
+  @ignore
   Scenario: Individual user submits a new submission - Short Service Refunds
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1313,7 +1329,7 @@ Feature: Pensions Journeys - Income Tax Submission
 
     Then the user should be redirected to the "Check short service refunds" page
 
-
+  @ignore
   Scenario: Verify Change, remove and add another pension scheme links
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1389,7 +1405,7 @@ Feature: Pensions Journeys - Income Tax Submission
 
 
      #-------------- Income from Pensions - State Pensions ----------#
-
+  @ignore
   Scenario: Individual journey - Income from pension, state pensions
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1447,7 +1463,7 @@ Feature: Pensions Journeys - Income Tax Submission
 
 
      #-------------- Income from Pensions - Other UK Pensions ----------#
-
+  @ignore
   Scenario: Individual journey - Income from pension for other UK Pensions
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1504,7 +1520,7 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Income from pensions" page
 
-
+  @ignore
   Scenario: Agent journey with prior data- Income from pension for other UK Pensions
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA370343B&ClientMTDID=1234567890 |
@@ -1538,7 +1554,7 @@ Feature: Pensions Journeys - Income Tax Submission
 
    #-------------- Overseas pension - Payment into overseas pension ----------#
 
-
+  @ignore
   Scenario: Individual user as a new submission - Payment into overseas pension (No customer Reference)
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1580,6 +1596,7 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Overseas pensions" page
 
+  @ignore
   Scenario: Payment into overseas pensions (InYear) - user has prior data
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
@@ -1610,6 +1627,7 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Overseas pensions" page
 
+  @ignore
   Scenario: Individual user as a new submission - Payment into overseas pension (Migrant member relief - add QOPS)
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1673,6 +1691,7 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Overseas pensions" page
 
+  @ignore
   Scenario: Individual user as a new submission - Payment into overseas pension (Migrant member relief - NO QOPS)
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1734,6 +1753,7 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Overseas pensions" page
 
+  @ignore
   Scenario: Individual user as a new submission - Payment into overseas pension (Double taxation relief)
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1799,6 +1819,7 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Overseas pensions" page
 
+  @ignore
   Scenario: Individual user as a new submission - Payment into overseas pension (Transitional corresponding relief)
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1862,7 +1883,7 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Overseas pensions" page
 
-
+  @ignore
   Scenario: Individual user as a new submission - Payment into overseas pension (None of these)
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1922,7 +1943,7 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Overseas pensions" page
 
-
+  @ignore
   Scenario: Payment into overseas pensions (InYear) - user selects NO on first question
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |

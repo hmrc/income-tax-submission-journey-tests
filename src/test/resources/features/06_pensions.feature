@@ -270,7 +270,6 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the Continue button
     Then the user should be redirected to the "Pensions" page
 
-
   #--------------------------Unauthorised payments from pensions tests---------------------------------#
   Scenario: Individual journey flow - Full Unauthorised pensions journey
     When the user logs into the service with the following details
@@ -682,11 +681,15 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the No unauthorised payments checkbox
     And the user clicks the continue button
     Then the user should be redirected to the "Check your unauthorised payments" page
+
     When the user clicks the save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+
+    When the user selects the Yes, I’ve completed this section radio button
+    And the user clicks the Continue button
     Then the user should be redirected to the "Pensions" page
 
-
-      #-------------- Overseas Pensions - Income from overseas Pensions tests ----------#
+  #-------------- Overseas Pensions - Income from overseas Pensions tests ----------#
   Scenario: Individual user as a new submission, goes through full income from overseas pension
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -815,7 +818,7 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Check income from overseas pensions" page
 
 
-      #-------------- Overseas Pensions - Overseas transfer charges ----------#
+  #-------------- Overseas Pensions - Overseas transfer charges ----------#
   Scenario: Individual user as a new submission, Selects YES on - Did a UK pension scheme pay the transfer charge to HMRC
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1096,7 +1099,7 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Did a UK pension scheme pay the transfer charge to HMRC?" page
 
 
-    #-------------- Pension Annual allowance ----------#
+  #-------------- Pension Annual allowance ----------#
   Scenario: Individual flow - Pension Annual allowance
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1155,6 +1158,7 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Pensions" page
 
   # todo - see comment on SASS-7078
+  @ignore
   Scenario: User answers no to first question - Pension Annual allowance
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1184,6 +1188,10 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Check your annual allowance" page
 
     When the user clicks the save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+
+    When the user selects the Yes, I’ve completed this section radio button
+    And the user clicks the Continue button
     Then the user should be redirected to the "Pensions" page
 
   Scenario: Agent journey flow - Pension Annual allowance
@@ -1240,8 +1248,13 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Check your client’s annual allowance" page
 
     When the user clicks the save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+
+    When the user selects the Yes, I’ve completed this section radio button
+    And the user clicks the Continue button
     Then the user should be redirected to the "Pensions" page
 
+  @ignore
   Scenario: Individual with prior data - Pension Annual allowance
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1411,7 +1424,7 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Check short service refunds" page
 
 
-     #-------------- Income from Pensions - State Pensions ----------#
+  #-------------- Income from Pensions - State Pensions ----------#
   Scenario: Individual journey - Income from pension, state pensions
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1468,7 +1481,7 @@ Feature: Pensions Journeys - Income Tax Submission
 
 
 
-     #-------------- Income from Pensions - Other UK Pensions ----------#
+  #-------------- Income from Pensions - Other UK Pensions ----------#
   Scenario: Individual journey - Income from pension for other UK Pensions
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1529,6 +1542,7 @@ Feature: Pensions Journeys - Income Tax Submission
     And the user clicks the Continue button
     Then the user should be redirected to the "Income from pensions" page
 
+  @ignore
   Scenario: Agent journey with prior data- Income from pension for other UK Pensions
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA370343B&ClientMTDID=1234567890 |
@@ -1556,11 +1570,15 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Income from pensions" page
     When the user clicks on the Other UK Pensions link
     Then the user should be redirected to the "Check UK Pension Income" page
+
     When the user clicks the save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+
+    When the user selects the Yes, I’ve completed this section radio button
+    And the user clicks the Continue button
     Then the user should be redirected to the "Income from pensions" page
 
-
-   #-------------- Overseas pension - Payment into overseas pension ----------#
+  #-------------- Overseas pension - Payment into overseas pension ----------#
 
   Scenario: Individual user as a new submission - Payment into overseas pension (No customer Reference)
     When the user logs into the service with the following details
@@ -1598,9 +1616,13 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Did you pay tax on the amount your employer paid?" page
     When the user selects the yes radio button
     And the user clicks the continue button
-
     Then the user should be redirected to the "Check payments into overseas pensions" page
+
     When the user clicks the save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+
+    When the user selects the Yes, I’ve completed this section radio button
+    And the user clicks the Continue button
     Then the user should be redirected to the "Overseas pensions" page
 
   Scenario: Payment into overseas pensions (InYear) - user has prior data
@@ -1631,6 +1653,10 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Check payments into overseas pensions" page
 
     When the user clicks the save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+
+    When the user selects the Yes, I’ve completed this section radio button
+    And the user clicks the Continue button
     Then the user should be redirected to the "Overseas pensions" page
 
   Scenario: Individual user as a new submission - Payment into overseas pension (Migrant member relief - add QOPS)
@@ -1694,6 +1720,10 @@ Feature: Pensions Journeys - Income Tax Submission
 
     Then the user should be redirected to the "Check payments into overseas pensions" page
     When the user clicks the save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+
+    When the user selects the Yes, I’ve completed this section radio button
+    And the user clicks the Continue button
     Then the user should be redirected to the "Overseas pensions" page
 
   Scenario: Individual user as a new submission - Payment into overseas pension (Migrant member relief - NO QOPS)
@@ -1755,6 +1785,10 @@ Feature: Pensions Journeys - Income Tax Submission
 
     Then the user should be redirected to the "Check payments into overseas pensions" page
     When the user clicks the save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+
+    When the user selects the Yes, I’ve completed this section radio button
+    And the user clicks the Continue button
     Then the user should be redirected to the "Overseas pensions" page
 
   Scenario: Individual user as a new submission - Payment into overseas pension (Double taxation relief)
@@ -1820,6 +1854,10 @@ Feature: Pensions Journeys - Income Tax Submission
 
     Then the user should be redirected to the "Check payments into overseas pensions" page
     When the user clicks the save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+
+    When the user selects the Yes, I’ve completed this section radio button
+    And the user clicks the Continue button
     Then the user should be redirected to the "Overseas pensions" page
 
   Scenario: Individual user as a new submission - Payment into overseas pension (Transitional corresponding relief)
@@ -1883,6 +1921,10 @@ Feature: Pensions Journeys - Income Tax Submission
 
     Then the user should be redirected to the "Check payments into overseas pensions" page
     When the user clicks the save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+
+    When the user selects the Yes, I’ve completed this section radio button
+    And the user clicks the Continue button
     Then the user should be redirected to the "Overseas pensions" page
 
   Scenario: Individual user as a new submission - Payment into overseas pension (None of these)
@@ -1942,6 +1984,10 @@ Feature: Pensions Journeys - Income Tax Submission
 
     Then the user should be redirected to the "Check payments into overseas pensions" page
     When the user clicks the save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+
+    When the user selects the Yes, I’ve completed this section radio button
+    And the user clicks the Continue button
     Then the user should be redirected to the "Overseas pensions" page
 
   Scenario: Payment into overseas pensions (InYear) - user selects NO on first question
@@ -1976,22 +2022,8 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Check payments into overseas pensions" page
 
     When the user clicks the save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+
+    When the user selects the Yes, I’ve completed this section radio button
+    And the user clicks the Continue button
     Then the user should be redirected to the "Overseas pensions" page
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

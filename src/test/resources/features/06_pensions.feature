@@ -5,10 +5,10 @@ Feature: Pensions Journeys - Income Tax Submission
   Background:
     Given the user navigates to the auth login page
 
-    # Payments Into Pensions tests
+  # Payments Into Pensions tests
   Scenario: Individual user as a new submission, goes through full payments into pensions flow
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -83,22 +83,22 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Have you finished this section?" page for pensions
     When the user selects the Yes, I’ve completed this section radio button
-    When the user clicks the Continue button
+    And the user clicks the Continue button
     Then the user should be redirected to the "Pensions" page
 
 
   Scenario: Agent user as a new submission, goes through full payments into pensions flow
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000001A&ClientMTDID=1234567890 |
-      | Credential Strength | weak                                                                              |
-      | Confidence Level    | 250                                                                               |
-      | Affinity Group      | Agent                                                                             |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
-      | Identifier Name 1   | MTDITID                                                                           |
-      | Identifier Value 1  | 1234567890                                                                        |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
-      | Identifier Name 2   | AgentReferenceNumber                                                              |
-      | Identifier Value 2  | XARN1234567                                                                       |
+      | Credential Strength | weak                                                                             |
+      | Confidence Level    | 250                                                                              |
+      | Affinity Group      | Agent                                                                            |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                      |
+      | Identifier Name 1   | MTDITID                                                                          |
+      | Identifier Value 1  | 1234567890                                                                       |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                    |
+      | Identifier Name 2   | AgentReferenceNumber                                                             |
+      | Identifier Value 2  | XARN1234567                                                                      |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -149,7 +149,7 @@ Feature: Pensions Journeys - Income Tax Submission
 
   Scenario: Individual user as a new submission, minimal flow - selects no for all
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -184,15 +184,15 @@ Feature: Pensions Journeys - Income Tax Submission
   Scenario: Agent user has prior submission, updates all payments into pensions amount fields
     When the user logs into the service with the following details
       | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA370343B&ClientMTDID=1234567890 |
-      | Credential Strength | weak                                                                              |
-      | Confidence Level    | 250                                                                               |
-      | Affinity Group      | Agent                                                                             |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
-      | Identifier Name 1   | MTDITID                                                                           |
-      | Identifier Value 1  | 1234567890                                                                        |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
-      | Identifier Name 2   | AgentReferenceNumber                                                              |
-      | Identifier Value 2  | XARN1234567                                                                       |
+      | Credential Strength | weak                                                                                |
+      | Confidence Level    | 250                                                                                 |
+      | Affinity Group      | Agent                                                                               |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                         |
+      | Identifier Name 1   | MTDITID                                                                             |
+      | Identifier Value 1  | 1234567890                                                                          |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                       |
+      | Identifier Name 2   | AgentReferenceNumber                                                                |
+      | Identifier Value 2  | XARN1234567                                                                         |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -240,13 +240,13 @@ Feature: Pensions Journeys - Income Tax Submission
   Scenario: Individual user has prior submission, says yes on relief at source (RAS) pensions page
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
-      | Credential Strength | strong      |
-      | Confidence Level    | 250         |
-      | Affinity Group      | Individual  |
-      | Nino                | AA370343B   |
-      | Enrolment Key 1     | HMRC-MTD-IT |
-      | Identifier Name 1   | MTDITID     |
-      | Identifier Value 1  | 1234567890  |
+      | Credential Strength | strong        |
+      | Confidence Level    | 250           |
+      | Affinity Group      | Individual    |
+      | Nino                | AA370343B     |
+      | Enrolment Key 1     | HMRC-MTD-IT   |
+      | Identifier Name 1   | MTDITID       |
+      | Identifier Value 1  | 1234567890    |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -272,10 +272,9 @@ Feature: Pensions Journeys - Income Tax Submission
 
 
   #--------------------------Unauthorised payments from pensions tests---------------------------------#
-  @ignore
   Scenario: Individual journey flow - Full Unauthorised pensions journey
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -301,50 +300,54 @@ Feature: Pensions Journeys - Income Tax Submission
     And the user clicks the continue button
 
     Then the user should be redirected to the "Amount that resulted in a surcharge" page
-     When the user selects the amount field and enters a value of 200.20
-     And the user clicks the continue button
+    When the user selects the amount field and enters a value of 200.20
+    And the user clicks the continue button
 
-     Then the user should be redirected to the "Did you pay non-UK tax on the amount that resulted in a surcharge?" page
-     When the user selects the yes radio button
-     When the user selects the amount in pounds field and enters a value of 100.20
-     And the user clicks the continue button
+    Then the user should be redirected to the "Did you pay non-UK tax on the amount that resulted in a surcharge?" page
+    When the user selects the yes radio button
+    When the user selects the amount in pounds field and enters a value of 100.20
+    And the user clicks the continue button
 
-     Then the user should be redirected to the "Amount that did not result in a surcharge" page
-     When the user selects the amount field and enters a value of 200.20
-     And the user clicks the continue button
+    Then the user should be redirected to the "Amount that did not result in a surcharge" page
+    When the user selects the amount field and enters a value of 200.20
+    And the user clicks the continue button
 
-     Then the user should be redirected to the "Did you pay non-UK tax on the amount that did not result in a surcharge?" page
-     When the user selects the yes radio button
-     When the user selects the amount in pounds field and enters a value of 110.20
-     And the user clicks the continue button
+    Then the user should be redirected to the "Did you pay non-UK tax on the amount that did not result in a surcharge?" page
+    When the user selects the yes radio button
+    When the user selects the amount in pounds field and enters a value of 110.20
+    And the user clicks the continue button
 
-     Then the user should be redirected to the "Were any of the unauthorised payments from a UK pension scheme?" page
-     When the user selects the yes on radio button
-     And the user clicks the continue button
+    Then the user should be redirected to the "Were any of the unauthorised payments from a UK pension scheme?" page
+    When the user selects the yes on radio button
+    And the user clicks the continue button
 
-     Then the user should be redirected to the "Pension Scheme Tax Reference (PSTR)" page
-     And the user selects the PSTR field and enters a value of 12345678RA
-     And the user clicks the continue button
+    Then the user should be redirected to the "Pension Scheme Tax Reference (PSTR)" page
+    And the user selects the PSTR field and enters a value of 12345678RA
+    And the user clicks the continue button
 
-     Then the user should be redirected to the "Unauthorised payments from UK pensions schemes" page
-     And the user clicks the continue button
-     Then the user should be redirected to the "Check your unauthorised payments" page
-     When the user clicks the save and continue button
-     Then the user should be redirected to the "Pensions" page
+    Then the user should be redirected to the "Unauthorised payments from UK pensions schemes" page
+    And the user clicks the continue button
 
-  @ignore
+    Then the user should be redirected to the "Check your unauthorised payments" page
+    When the user clicks the save and continue button
+
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Pensions" page
+
   Scenario: Agent journey flow - Full Unauthorised pensions journey
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000001A&ClientMTDID=1234567890 |
-      | Credential Strength | weak                                                                              |
-      | Confidence Level    | 250                                                                               |
-      | Affinity Group      | Agent                                                                             |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
-      | Identifier Name 1   | MTDITID                                                                           |
-      | Identifier Value 1  | 1234567890                                                                        |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
-      | Identifier Name 2   | AgentReferenceNumber                                                              |
-      | Identifier Value 2  | XARN1234567                                                                       |
+      | Credential Strength | weak                                                                             |
+      | Confidence Level    | 250                                                                              |
+      | Affinity Group      | Agent                                                                            |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                      |
+      | Identifier Name 1   | MTDITID                                                                          |
+      | Identifier Value 1  | 1234567890                                                                       |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                    |
+      | Identifier Name 2   | AgentReferenceNumber                                                             |
+      | Identifier Value 2  | XARN1234567                                                                      |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -393,12 +396,15 @@ Feature: Pensions Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s unauthorised payments" page
     When the user clicks the save and continue button
+
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
     Then the user should be redirected to the "Pensions" page
 
-  @ignore
   Scenario: Individual journey flow - Yes, unauthorised payments that resulted in a surcharge
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -443,12 +449,15 @@ Feature: Pensions Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your unauthorised payments" page
     When the user clicks the save and continue button
+
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
     Then the user should be redirected to the "Pensions" page
 
-  @ignore
   Scenario: Individual journey flow - Yes, unauthorised payments that did not result in a surcharge
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -493,12 +502,15 @@ Feature: Pensions Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your unauthorised payments" page
     When the user clicks the save and continue button
+
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
     Then the user should be redirected to the "Pensions" page
 
-  @ignore
   Scenario: Individual journey flow - Change, Remove, add another pstr links
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -562,19 +574,22 @@ Feature: Pensions Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your unauthorised payments" page
     When the user clicks the save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
     Then the user should be redirected to the "Pensions" page
 
-  @ignore
   Scenario: View prior submission, Unauthorised pensions payments journey
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
-      | Credential Strength | strong      |
-      | Confidence Level    | 250         |
-      | Affinity Group      | Individual  |
-      | Nino                | AA370343B   |
-      | Enrolment Key 1     | HMRC-MTD-IT |
-      | Identifier Name 1   | MTDITID     |
-      | Identifier Value 1  | 1234567890  |
+      | Credential Strength | strong        |
+      | Confidence Level    | 250           |
+      | Affinity Group      | Individual    |
+      | Nino                | AA370343B     |
+      | Enrolment Key 1     | HMRC-MTD-IT   |
+      | Identifier Name 1   | MTDITID       |
+      | Identifier Value 1  | 1234567890    |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -591,10 +606,9 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Unauthorised payments" page
 
 
-  @ignore
   Scenario: Individual journey flow submission without a PSTR - Unauthorised pensions journey
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -635,13 +649,17 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Check your unauthorised payments" page
+
     When the user clicks the save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+
+    When the user selects the Yes, I’ve completed this section radio button
+    And the user clicks the Continue button
     Then the user should be redirected to the "Pensions" page
 
-  @ignore
   Scenario: User selects No on first question page - Unauthorised pensions journey
-  When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
@@ -669,7 +687,6 @@ Feature: Pensions Journeys - Income Tax Submission
 
 
       #-------------- Overseas Pensions - Income from overseas Pensions tests ----------#
-  @ignore
   Scenario: Individual user as a new submission, goes through full income from overseas pension
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -719,19 +736,18 @@ Feature: Pensions Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check income from overseas pensions" page
 
-  @ignore
   Scenario: Agent user as a new submission, goes through full income from overseas pension
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000001A&ClientMTDID=1234567890 |
-      | Credential Strength | weak                                                                              |
-      | Confidence Level    | 250                                                                               |
-      | Affinity Group      | Agent                                                                             |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
-      | Identifier Name 1   | MTDITID                                                                           |
-      | Identifier Value 1  | 1234567890                                                                        |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
-      | Identifier Name 2   | AgentReferenceNumber                                                              |
-      | Identifier Value 2  | XARN1234567                                                                       |
+      | Credential Strength | weak                                                                             |
+      | Confidence Level    | 250                                                                              |
+      | Affinity Group      | Agent                                                                            |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                      |
+      | Identifier Name 1   | MTDITID                                                                          |
+      | Identifier Value 1  | 1234567890                                                                       |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                    |
+      | Identifier Name 2   | AgentReferenceNumber                                                             |
+      | Identifier Value 2  | XARN1234567                                                                      |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -773,17 +789,16 @@ Feature: Pensions Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check income from overseas pensions" page
 
-  @ignore
   Scenario: income from overseas pension - user has prior data
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
-      | Credential Strength | strong      |
-      | Confidence Level    | 250         |
-      | Affinity Group      | Individual  |
-      | Nino                | AA370343B   |
-      | Enrolment Key 1     | HMRC-MTD-IT |
-      | Identifier Name 1   | MTDITID     |
-      | Identifier Value 1  | 1234567890  |
+      | Credential Strength | strong        |
+      | Confidence Level    | 250           |
+      | Affinity Group      | Individual    |
+      | Nino                | AA370343B     |
+      | Enrolment Key 1     | HMRC-MTD-IT   |
+      | Identifier Name 1   | MTDITID       |
+      | Identifier Value 1  | 1234567890    |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -801,7 +816,6 @@ Feature: Pensions Journeys - Income Tax Submission
 
 
       #-------------- Overseas Pensions - Overseas transfer charges ----------#
-  @ignore
   Scenario: Individual user as a new submission, Selects YES on - Did a UK pension scheme pay the transfer charge to HMRC
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -854,7 +868,6 @@ Feature: Pensions Journeys - Income Tax Submission
 
     Then the user should be redirected to the "Check transfers into overseas pensions" page
 
-  @ignore
   Scenario: Individual user as a new submission, Selects NO on - Did a UK pension scheme pay the transfer charge to HMRC
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -909,19 +922,18 @@ Feature: Pensions Journeys - Income Tax Submission
 
     Then the user should be redirected to the "Check transfers into overseas pensions" page
 
-  @ignore
   Scenario: Agent user as a new submission, goes through transfer overseas from pension
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000001A&ClientMTDID=1234567890 |
-      | Credential Strength | weak                                                                              |
-      | Confidence Level    | 250                                                                               |
-      | Affinity Group      | Agent                                                                             |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
-      | Identifier Name 1   | MTDITID                                                                           |
-      | Identifier Value 1  | 1234567890                                                                        |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
-      | Identifier Name 2   | AgentReferenceNumber                                                              |
-      | Identifier Value 2  | XARN1234567                                                                       |
+      | Credential Strength | weak                                                                             |
+      | Confidence Level    | 250                                                                              |
+      | Affinity Group      | Agent                                                                            |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                      |
+      | Identifier Name 1   | MTDITID                                                                          |
+      | Identifier Value 1  | 1234567890                                                                       |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                    |
+      | Identifier Name 2   | AgentReferenceNumber                                                             |
+      | Identifier Value 2  | XARN1234567                                                                      |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -966,17 +978,16 @@ Feature: Pensions Journeys - Income Tax Submission
 
     Then the user should be redirected to the "Check transfers into overseas pensions" page
 
-  @ignore
   Scenario: Overseas transfer charges (InYear) - user has prior data
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
-      | Credential Strength | strong      |
-      | Confidence Level    | 250         |
-      | Affinity Group      | Individual  |
-      | Nino                | AA370343B   |
-      | Enrolment Key 1     | HMRC-MTD-IT |
-      | Identifier Name 1   | MTDITID     |
-      | Identifier Value 1  | 1234567890  |
+      | Credential Strength | strong        |
+      | Confidence Level    | 250           |
+      | Affinity Group      | Individual    |
+      | Nino                | AA370343B     |
+      | Enrolment Key 1     | HMRC-MTD-IT   |
+      | Identifier Name 1   | MTDITID       |
+      | Identifier Value 1  | 1234567890    |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -989,10 +1000,9 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Pensions" page
     When the user clicks on the Overseas pensions link
     Then the user should be redirected to the "Overseas pensions" page
-     When the user clicks on the Overseas transfer charges link
-     Then the user should be redirected to the "Check transfers into overseas pensions" page
+    When the user clicks on the Overseas transfer charges link
+    Then the user should be redirected to the "Check transfers into overseas pensions" page
 
-  @ignore
   Scenario: Individual user  Selects NO on first question page
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1023,7 +1033,6 @@ Feature: Pensions Journeys - Income Tax Submission
 
     Then the user should be redirected to the "Check transfers into overseas pensions" page
 
-  @ignore
   Scenario: Check change links (EOY) - add, remove and change pension scheme
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1088,7 +1097,6 @@ Feature: Pensions Journeys - Income Tax Submission
 
 
     #-------------- Pension Annual allowance ----------#
-  @ignore
   Scenario: Individual flow - Pension Annual allowance
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1140,10 +1148,13 @@ Feature: Pensions Journeys - Income Tax Submission
     Then the user should be redirected to the "Check your annual allowance" page
 
     When the user clicks the save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
     Then the user should be redirected to the "Pensions" page
 
   # todo - see comment on SASS-7078
-  @ignore
   Scenario: User answers no to first question - Pension Annual allowance
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1175,19 +1186,18 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Pensions" page
 
-  @ignore
   Scenario: Agent journey flow - Pension Annual allowance
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000001A&ClientMTDID=1234567890 |
-      | Credential Strength | weak                                                                              |
-      | Confidence Level    | 250                                                                               |
-      | Affinity Group      | Agent                                                                             |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
-      | Identifier Name 1   | MTDITID                                                                           |
-      | Identifier Value 1  | 1234567890                                                                        |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
-      | Identifier Name 2   | AgentReferenceNumber                                                              |
-      | Identifier Value 2  | XARN1234567                                                                       |
+      | Credential Strength | weak                                                                             |
+      | Confidence Level    | 250                                                                              |
+      | Affinity Group      | Agent                                                                            |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                      |
+      | Identifier Name 1   | MTDITID                                                                          |
+      | Identifier Value 1  | 1234567890                                                                       |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                    |
+      | Identifier Name 2   | AgentReferenceNumber                                                             |
+      | Identifier Value 2  | XARN1234567                                                                      |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -1232,7 +1242,6 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Pensions" page
 
-  @ignore
   Scenario: Individual with prior data - Pension Annual allowance
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1278,7 +1287,6 @@ Feature: Pensions Journeys - Income Tax Submission
 
 
   #-------------- Overseas Pensions - Short Service Refunds ----------#
-  @ignore
   Scenario: Individual user submits a new submission - Short Service Refunds
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1329,7 +1337,6 @@ Feature: Pensions Journeys - Income Tax Submission
 
     Then the user should be redirected to the "Check short service refunds" page
 
-  @ignore
   Scenario: Verify Change, remove and add another pension scheme links
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1405,7 +1412,6 @@ Feature: Pensions Journeys - Income Tax Submission
 
 
      #-------------- Income from Pensions - State Pensions ----------#
-  @ignore
   Scenario: Individual journey - Income from pension, state pensions
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1463,7 +1469,6 @@ Feature: Pensions Journeys - Income Tax Submission
 
 
      #-------------- Income from Pensions - Other UK Pensions ----------#
-  @ignore
   Scenario: Individual journey - Income from pension for other UK Pensions
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1515,24 +1520,27 @@ Feature: Pensions Journeys - Income Tax Submission
 
     Then the user should be redirected to the "UK pension income" page
     And the user clicks the continue button
-
     Then the user should be redirected to the "Check UK Pension Income" page
+
     When the user clicks the save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+
+    When the user selects the Yes, I’ve completed this section radio button
+    And the user clicks the Continue button
     Then the user should be redirected to the "Income from pensions" page
 
-  @ignore
   Scenario: Agent journey with prior data- Income from pension for other UK Pensions
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA370343B&ClientMTDID=1234567890 |
-      | Credential Strength | weak                                                                              |
-      | Confidence Level    | 250                                                                               |
-      | Affinity Group      | Agent                                                                             |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
-      | Identifier Name 1   | MTDITID                                                                           |
-      | Identifier Value 1  | 1234567890                                                                        |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
-      | Identifier Name 2   | AgentReferenceNumber                                                              |
-      | Identifier Value 2  | XARN1234567                                                                       |
+      | Credential Strength | weak                                                                             |
+      | Confidence Level    | 250                                                                              |
+      | Affinity Group      | Agent                                                                            |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                      |
+      | Identifier Name 1   | MTDITID                                                                          |
+      | Identifier Value 1  | 1234567890                                                                       |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                    |
+      | Identifier Name 2   | AgentReferenceNumber                                                             |
+      | Identifier Value 2  | XARN1234567                                                                      |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -1554,7 +1562,6 @@ Feature: Pensions Journeys - Income Tax Submission
 
    #-------------- Overseas pension - Payment into overseas pension ----------#
 
-  @ignore
   Scenario: Individual user as a new submission - Payment into overseas pension (No customer Reference)
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1596,17 +1603,16 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Overseas pensions" page
 
-  @ignore
   Scenario: Payment into overseas pensions (InYear) - user has prior data
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
-      | Credential Strength | strong      |
-      | Confidence Level    | 250         |
-      | Affinity Group      | Individual  |
-      | Nino                | AA370343B   |
-      | Enrolment Key 1     | HMRC-MTD-IT |
-      | Identifier Name 1   | MTDITID     |
-      | Identifier Value 1  | 1234567890  |
+      | Credential Strength | strong        |
+      | Confidence Level    | 250           |
+      | Affinity Group      | Individual    |
+      | Nino                | AA370343B     |
+      | Enrolment Key 1     | HMRC-MTD-IT   |
+      | Identifier Name 1   | MTDITID       |
+      | Identifier Value 1  | 1234567890    |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -1627,7 +1633,6 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Overseas pensions" page
 
-  @ignore
   Scenario: Individual user as a new submission - Payment into overseas pension (Migrant member relief - add QOPS)
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1691,7 +1696,6 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Overseas pensions" page
 
-  @ignore
   Scenario: Individual user as a new submission - Payment into overseas pension (Migrant member relief - NO QOPS)
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1753,7 +1757,6 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Overseas pensions" page
 
-  @ignore
   Scenario: Individual user as a new submission - Payment into overseas pension (Double taxation relief)
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1819,7 +1822,6 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Overseas pensions" page
 
-  @ignore
   Scenario: Individual user as a new submission - Payment into overseas pension (Transitional corresponding relief)
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1883,7 +1885,6 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Overseas pensions" page
 
-  @ignore
   Scenario: Individual user as a new submission - Payment into overseas pension (None of these)
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -1943,17 +1944,16 @@ Feature: Pensions Journeys - Income Tax Submission
     When the user clicks the save and continue button
     Then the user should be redirected to the "Overseas pensions" page
 
-  @ignore
   Scenario: Payment into overseas pensions (InYear) - user selects NO on first question
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
-      | Credential Strength | strong      |
-      | Confidence Level    | 250         |
-      | Affinity Group      | Individual  |
-      | Nino                | AA000001A   |
-      | Enrolment Key 1     | HMRC-MTD-IT |
-      | Identifier Name 1   | MTDITID     |
-      | Identifier Value 1  | 1234567890  |
+      | Credential Strength | strong        |
+      | Confidence Level    | 250           |
+      | Affinity Group      | Individual    |
+      | Nino                | AA000001A     |
+      | Enrolment Key 1     | HMRC-MTD-IT   |
+      | Identifier Name 1   | MTDITID       |
+      | Identifier Value 1  | 1234567890    |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page

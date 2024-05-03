@@ -29,6 +29,7 @@ class CommonStepDef extends Steps with TaxYearHelper{
   val viewAndChangeServiceNameAgent = "Your client’s Income Tax details"
   val govUkExtension = "GOV.UK"
   val selfEmployment = "income-tax-self-employment-frontend"
+  val pensions = "Update and submit an Income Tax Return - site.govuk - Update and submit an Income Tax Return"
 
   Then("""^the user should be redirected to the "(.*)" page$""") { (title: String) =>
     driver.getTitle.replace("\u00A0", " ") should be(s"$title - $serviceName - $govUkExtension")
@@ -234,4 +235,9 @@ class CommonStepDef extends Steps with TaxYearHelper{
   Then("""^the user should be redirected to the "(.*)" page under self employment$""") { (title: String) =>
     driver.getTitle.replace("\u00A0", " ") should be(s"$title - $selfEmployment - $govUkExtension")
   }
+
+  Then("""^the user should be redirected to the "(.*)" page for pensions$""") { (title: String) =>
+    driver.getTitle.replace("\u00A0", " ") should be(s"$title - $pensions - $govUkExtension")
+  }
+
 }

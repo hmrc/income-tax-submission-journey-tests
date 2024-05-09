@@ -1,6 +1,8 @@
 @ZAP @pensions
 
 Feature: Pensions Journeys - 05D Short Service refunds - Income Tax Submission
+  Background:
+    Given the user navigates to the auth login page
 
   Scenario: Individual user submits a new submission - Short Service Refunds
   When the user logs into the service with the following details

@@ -1,6 +1,8 @@
 @ZAP @pensions
 
 Feature: Pensions Journeys - 05B Overseas Pensions - Income from Overseas Pensions - Income Tax Submission
+  Background:
+    Given the user navigates to the auth login page
 
   Scenario: Individual user as a new submission, goes through full income from overseas pension
     When the user logs into the service with the following details

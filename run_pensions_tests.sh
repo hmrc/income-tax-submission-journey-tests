@@ -3,7 +3,7 @@
 # Default values for parameters
 ENV=${1:-local}
 BROWSER=${2:-chrome}
-MACHINE=${3:-pipeline1} # Default value should be pipeline for test to run in the pipeline
+MACHINE=${3:-pipeline} # Default value should be pipeline for test to run in the pipeline
 MONGODB_CONTAINER=${4:-mongodb}
 
 # Database configuration

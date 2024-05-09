@@ -4,13 +4,13 @@
 ENV=${1:-local}
 BROWSER=${2:-chrome}
 MACHINE=${3:-pipeline1} # Default value should be pipeline for test to run in the pipeline
+MONGODB_CONTAINER=${4:-mongodb}
 
 # Database configuration
 DB_NAME="income-tax-pensions"
 FRONT_END_DB_NAME="income-tax-self-pensions-frontend"
 STATE_COLLECTION="journey-state"
 ANSWERS_COLLECTION="journey-answers"
-MONGODB_CONTAINER="mongodb"
 USER_ANSWERS_COLLECTION="user-answers"
 
 # Test API endpoint to clear data

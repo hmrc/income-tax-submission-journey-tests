@@ -1,6 +1,8 @@
 @ZAP @pensions
 
 Feature: Pensions Journeys - 05A Overseas Pensions - Payments into Overseas Pensions - Income Tax Submission
+  Background:
+    Given the user navigates to the auth login page
 
   Scenario: Individual user as a new submission - Payment into overseas pension (No customer Reference)
   When the user logs into the service with the following details

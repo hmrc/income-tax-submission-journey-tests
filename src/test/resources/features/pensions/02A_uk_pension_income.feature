@@ -1,6 +1,9 @@
 @ZAP @pensions
 
 Feature: Pensions Journeys - 02A Income from Pensions - UK Pension Income - Income Tax Submission
+  Background:
+    Given the user navigates to the auth login page
+
   Scenario: Individual journey - Income from pension for other UK Pensions
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |

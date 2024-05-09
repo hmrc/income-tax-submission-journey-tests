@@ -1,6 +1,8 @@
 @ZAP @pensions
 
 Feature: Pensions Journeys - 03 Pension Annual Allowance - Income Tax Submission
+  Background:
+    Given the user navigates to the auth login page
 
   Scenario: Individual flow - Pension Annual allowance
     When the user logs into the service with the following details

@@ -1,6 +1,8 @@
 @ZAP @pensions
 
 Feature: Pensions Journeys - 02B Income from Pensions - State Pension - Income Tax Submission
+  Background:
+    Given the user navigates to the auth login page
 
   Scenario: Individual journey - Income from pension, state pensions
     When the user logs into the service with the following details

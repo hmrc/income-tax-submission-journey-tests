@@ -1,6 +1,8 @@
 @ZAP @pensions
 
 Feature: Pensions Journeys - 05C Overseas Pensions - Overseas transfer charges - Income Tax Submission
+  Background:
+    Given the user navigates to the auth login page
 
   Scenario: Individual user as a new submission, Selects YES on - Did a UK pension scheme pay the transfer charge to HMRC
   When the user logs into the service with the following details

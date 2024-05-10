@@ -55,7 +55,7 @@ Feature: Employment Journeys - Income Tax Submission
 #    When the user clicks on the return to overview link
 #    Then the user should be redirected to the "Your client’s Income Tax Return" pages
 
-
+@test
   Scenario: Individual user with multiple employments checks their details, benefits, student loans and expenses
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
@@ -1110,7 +1110,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment benefits" page
-@test
+
   Scenario: Individual user has prior submission data, updates all utilities fields
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |

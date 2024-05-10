@@ -289,7 +289,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "Contractor CIS deductions" page
     When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "CIS deductions" page
-
+@test
   Scenario: Individual user adds new CIS deductions data to a contractor with no existing CIS history EOY
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -306,11 +306,11 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     When the user clicks on the cis deductions link
     Then the user should be redirected to the "CIS deductions" page
     And the status on the page is "Yes for gateway question"
-    When the user clicks the first contractor button
+    When the user clicks the third contractor button
     Then the user should be redirected to the "Contractor CIS deductions" page
     When the user clicks on the Add another CIS deduction link
     Then the user should be redirected to the "When did your contractor make CIS deductions?" page
-    When the user clicks the Tax month ending dropdown and selects 5 August 2023
+    When the user clicks the Tax month ending dropdown and selects 5 January 2024
     And the user clicks the continue button
     Then the user should be redirected to the "Amount paid before tax by this contractor" page
     When the user selects the amount field and enters a value of 2000.02
@@ -547,7 +547,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "Contractor CIS deductions" page
     When the user clicks on the Add another CIS deduction link
     Then the user should be redirected to the "When did your client’s contractor make CIS deductions?" page
-    When the user clicks the Tax month ending dropdown and selects 5 October 2023
+    When the user clicks the Tax month ending dropdown and selects 5 December 2023
     And the user clicks the continue button
     Then the user should be redirected to the "How much did the contractor pay your client for labour?" page
     When the user selects the amount field and enters a value of 20.02
@@ -686,7 +686,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     When the user clicks on the cis deductions link
     Then the user should be redirected to the "CIS deductions" page
     And the status on the page is "Yes for gateway question"
-    When the user clicks on the first contractor link
+    When the user clicks on the third contractor link
     Then the user should be redirected to the "Contractor CIS deductions" page
     When the user clicks on the Add another CIS deduction link
     Then the user should be redirected to the "When did your client’s contractor make CIS deductions?" page

@@ -14,7 +14,7 @@ MONGODB_CONTAINER="mongodb"
 USER_ANSWERS_COLLECTION="user-answers"
 
 # Test API endpoint to clear data
-URL="http://localhost:10901/update-and-submit-income-tax-return/self-employment/test-clear-all-data"
+URL="http://localhost:10901/update-and-submit-income-tax-return/self-employment/test-only/test-clear-all-data"
 HEADER="Csrf-Token: nocheck" # You can add additional headers if required
 
 

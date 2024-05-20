@@ -214,14 +214,14 @@ Feature: Interest Journeys - Income Tax Submission
     Then the user should be redirected to the "Interest from savings and securities" page
     And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
-@ignore
+
   Scenario: Returning flow - Individual User with prior UK Untaxed & Taxed Interest, Review & change - Interest
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
       | Credential Strength | strong        |
       | Confidence Level    | 250           |
       | Affinity Group      | Individual    |
-      | Nino                | AA000003A     |
+      | Nino                | AA123459A     |
       | Enrolment Key 1     | HMRC-MTD-IT   |
       | Identifier Name 1   | MTDITID       |
       | Identifier Value 1  | 1234567890    |
@@ -263,13 +263,14 @@ Feature: Interest Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your UK interest" page
     When the user clicks the save and continue button
+    Then the user should be redirected to the "Interest from savings and securities" page
+    When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-#    And the user should see the correct Income Tax Account for individuals url
 
-  @ignore
+
   Scenario: Individual user with taxed/untaxed interest for a previous tax year, chooses a previous account for both
     When the user logs into the service with the following details
-      | Redirect url        | /InYear/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong        |
       | Confidence Level    | 250           |
       | Affinity Group      | Individual    |
@@ -285,11 +286,11 @@ Feature: Interest Journeys - Income Tax Submission
     When the user clicks the addInterest tailoring option
     And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the Interest from savings and securities link
+    Then the user should be redirected to the "Interest from savings and securities" page
     When the user clicks on the UK Interest link
-    Then the user should be redirected to the "Did you get any interest from the UK?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Did you get untaxed interest from the UK?" page
+    Then the user should be redirected to the "Check your UK interest" page
+    When the user clicks on the change uk untaxed interest accounts summary link
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Which account did you get untaxed UK interest from?" page
@@ -301,7 +302,9 @@ Feature: Interest Journeys - Income Tax Submission
     Then the user should be redirected to the "Accounts with untaxed UK interest" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Did you get taxed interest from the UK?" page
+    Then the user should be redirected to the "Check your UK interest" page
+    When the user clicks on the change uk taxed interest accounts summary link
+    Then the user should be redirected to the "Accounts with taxed UK interest" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Which account did you get taxed UK interest from?" page
@@ -315,13 +318,13 @@ Feature: Interest Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your UK interest" page
     When the user clicks the save and continue button
+    Then the user should be redirected to the "Interest from savings and securities" page
+    When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-#    And the user should see the correct Income Tax Account for individuals url
 
-  @ignore
   Scenario: Agent user with taxed/untaxed interest for a previous tax year, chooses new accounts for both
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA000002A&ClientMTDID=1234567893 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000002A&ClientMTDID=1234567893 |
       | Credential Strength | weak                                                                                |
       | Confidence Level    | 250                                                                                 |
       | Affinity Group      | Agent                                                                               |
@@ -339,28 +342,30 @@ Feature: Interest Journeys - Income Tax Submission
     When the user clicks the addInterest tailoring option
     And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the Interest from savings and securities link
+    Then the user should be redirected to the "Interest from savings and securities" page
     When the user clicks on the UK Interest link
-    Then the user should be redirected to the "Did your client get any interest from the UK?" page
+    Then the user should be redirected to the "Check your client’s UK interest" page
+    When the user clicks on the change uk taxed interest accounts summary link
+    Then the user should be redirected to the "Accounts with taxed UK interest" page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get untaxed interest from the UK?" page
-    When the user selects the yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Which account did your client get untaxed UK interest from?" page
     When the user selects the fourth radio button: add a new account
     And the user clicks the continue button
-    Then the user should be redirected to the "Add an account with untaxed UK interest" page
-    When the user selects the UK untaxed interest account name field and enters a value of First Direct
-    And the user selects the UK untaxed interest amount earned field and enters a value of 1000
+    Then the user should be redirected to the "Add an account with taxed UK interest" page
+    When the user selects the UK taxed interest account name field and enters a value of First Direct
+    And the user selects the UK taxed interest amount earned field and enters a value of 1000
     And the user clicks the continue button
-    Then the user should be redirected to the "Accounts with untaxed UK interest" page
+    Then the user should be redirected to the "Accounts with taxed UK interest" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get taxed interest from the UK?" page
+    Then the user should be redirected to the "Check your client’s UK interest" page
+    When the user clicks on the change uk taxed interest accounts summary link
+    Then the user should be redirected to the "Accounts with taxed UK interest" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Which account did your client get taxed UK interest from?" page
-    When the user selects the fifth radio button: add a new account
+    When the user selects the fourth radio button: add a new account
     And the user clicks the continue button
     Then the user should be redirected to the "Add an account with taxed UK interest" page
     When the user selects the UK taxed interest account name field and enters a value of Sainsburys Bank
@@ -371,8 +376,9 @@ Feature: Interest Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s UK interest" page
     When the user clicks the save and continue button
+    Then the user should be redirected to the "Interest from savings and securities" page
+    When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
-#    And the user should see the correct Income Tax Account for agents url
 
   Scenario: Individual User with No Prior Interest Data adds Interest in tailoring but then states they did not receive Interest income
     When the user logs into the service with the following details
@@ -404,10 +410,9 @@ Feature: Interest Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
 
-  @ignore
   Scenario: Agent User with Prior Interest Data states their client did not receive interest income
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA000003A&ClientMTDID=1234567893 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000002A&ClientMTDID=1234567893 |
       | Credential Strength | weak                                                                                |
       | Confidence Level    | 250                                                                                 |
       | Affinity Group      | Agent                                                                               |
@@ -420,6 +425,8 @@ Feature: Interest Journeys - Income Tax Submission
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the Interest from savings and securities link
+    Then the user should be redirected to the "Interest from savings and securities" page
     When the user clicks on the UK Interest link
     Then the user should be redirected to the "Check your client’s UK interest" page
     When the user clicks on the change interest from the uk summary link
@@ -430,4 +437,4 @@ Feature: Interest Journeys - Income Tax Submission
     When the user clicks the confirm button
     Then the user should be redirected to the "Check your client’s UK interest" page
     When the user clicks the save and continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    Then the user should be redirected to the "Interest from savings and securities" page

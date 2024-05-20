@@ -1,5 +1,4 @@
-@MVP @ZAP @additional_info @ignore
-  #Ignore tests until SASS-7953 is fixed and merged
+@MVP @ZAP @additional_info
 
 Feature: Additional Information Journeys (Interest Securities & Gains) - Income Tax Submission
 

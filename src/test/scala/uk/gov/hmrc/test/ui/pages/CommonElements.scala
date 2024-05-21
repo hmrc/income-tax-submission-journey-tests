@@ -327,8 +327,8 @@ trait CommonElements extends BasePage with Matchers {
     "Gains status"                                                    -> By.xpath("//*[@id='gains_link']/parent::span/parent::li/span[2]/strong"),
 
     //About You
-    "About you"                                                   -> By.id("task-list__task-link--aboutYou"),
-    "About you tag"                                                   -> By.cssSelector("#task-list__task--aboutYou__tag"),
+    "About you"                                                   -> By.cssSelector("#main-content > div > div > ul > li:nth-child(1) > div.govuk-task-list__name-and-hint > a"),
+    "About you tag"                                               -> By.cssSelector("#task-list-1-status"),
     "I was not resident in the UK"                                -> By.cssSelector("[value='WasNot']"),
     "I was a dual resident in the UK and another country"         -> By.cssSelector("[value='Was']"),
     "No, my client did not donate to charity"                     -> By.id("CharitableDonations-5"),
@@ -344,8 +344,8 @@ trait CommonElements extends BasePage with Matchers {
     "No residency"                                        -> By.cssSelector("[value='nonUK']"),
 
     //Income from work and taxable state benefits
-    "Income from work and taxable state benefits"      -> By.id("task-list__task-link--incomeFromWork"),
-    "Income from work and taxable state benefits tag"  -> By.cssSelector("#task-list__task--incomeFromWork__tag"),
+    "Income from work and taxable state benefits"      -> By.cssSelector("#main-content > div > div > ul > li:nth-child(2) > div.govuk-task-list__name-and-hint > a"),
+    "Income from work and taxable state benefits tag"  -> By.cssSelector("#task-list-2-status"),
     "Employed"                                         -> By.cssSelector("[value='employed']"),
     "Self-employed"                                    -> By.cssSelector("[value='selfEmployed']"),
     "Jobseeker's Allowance"                            -> By.id("JobseekersAllowance"),
@@ -527,8 +527,8 @@ trait CommonElements extends BasePage with Matchers {
 
 
     // Property, Pensions And Investments
-    "Income from property, pensions and investments tag"                   -> By.id("task-list__task--incomeFromProperty__tag"),
-    "Income from property, pensions and investments"                       -> By.id("task-list__task-link--incomeFromProperty"),
+    "Income from property, pensions and investments tag"                   -> By.cssSelector("#task-list-3-status"),
+    "Income from property, pensions and investments"                       -> By.cssSelector("#main-content > div > div > ul > li:nth-child(3) > div.govuk-task-list__name-and-hint > a"),
     "UK Property"                                                          -> By.cssSelector("input#RentalIncome"),
     "Non UK Property"                                                      -> By.cssSelector("[value='NonukProperty']"),
     "No income from property"                                              -> By.cssSelector("[value='NoRentalIncome']"),
@@ -550,8 +550,8 @@ trait CommonElements extends BasePage with Matchers {
 
     //Payments into Pensions
     "Payments into UK pensions"                                            -> By.id("PaymentsIntoPensions"),
-    "Payments into UK pensions task list"                                  -> By.id("task-list__task-link--pensions"),
-    "Payments into pensions tag"                                           -> By.id("task-list__task--pensions__tag"),
+    "Payments into UK pensions task list"                                  -> By.cssSelector("#main-content > div > div > ul > li:nth-child(4) > div.govuk-task-list__name-and-hint > a"),
+    "Payments into pensions tag"                                           -> By.cssSelector("#task-list-4-status"),
 
     // Capital gains
     "Trusts"                            -> By.cssSelector("[value='Trusts']"),

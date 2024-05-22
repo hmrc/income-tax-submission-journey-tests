@@ -223,6 +223,14 @@ class CommonStepDef extends Steps with TaxYearHelper{
     }
   }
 
+  Given("""the existing data in service (.*) is cleared for nino (.*)$""") { (serviceName: String, nino: String) =>
+    val expectedUrl: String = serviceName match {
+      case "pensions" => s"http://localhost:9322/test-only/income-tax-pensions/test-clear-all-data/$nino"
+      case _ => fail("Invalid url input parameter")
+    }
+    driver.navigate().to(expectedUrl)
+  }
+
   Then("""^the (.*) is displayed$""") { (valueElement: String) =>
     val selector = CommonPage.load(valueElement)
     elementExists(selector)

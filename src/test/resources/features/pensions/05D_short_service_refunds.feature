@@ -3,6 +3,7 @@
 Feature: Pensions Journeys - 05D Short Service refunds - Income Tax Submission
   Background:
     Given the user navigates to the auth login page
+    And the existing data in service pensions is cleared for nino AA000001C
 
   Scenario: Individual user submits a new submission - Short Service Refunds
   When the user logs into the service with the following details
@@ -10,7 +11,7 @@ Feature: Pensions Journeys - 05D Short Service refunds - Income Tax Submission
   | Credential Strength | strong      |
   | Confidence Level    | 250         |
   | Affinity Group      | Individual  |
-  | Nino                | AA000001A   |
+  | Nino                | AA000001C   |
   | Enrolment Key 1     | HMRC-MTD-IT |
   | Identifier Name 1   | MTDITID     |
   | Identifier Value 1  | 1234567890  |
@@ -60,7 +61,7 @@ Feature: Pensions Journeys - 05D Short Service refunds - Income Tax Submission
   | Credential Strength | strong      |
   | Confidence Level    | 250         |
   | Affinity Group      | Individual  |
-  | Nino                | AA000001A   |
+  | Nino                | AA000001C   |
   | Enrolment Key 1     | HMRC-MTD-IT |
   | Identifier Name 1   | MTDITID     |
   | Identifier Value 1  | 1234567890  |

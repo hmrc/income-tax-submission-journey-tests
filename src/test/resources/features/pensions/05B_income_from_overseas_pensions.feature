@@ -3,6 +3,7 @@
 Feature: Pensions Journeys - 05B Overseas Pensions - Income from Overseas Pensions - Income Tax Submission
   Background:
     Given the user navigates to the auth login page
+    And the existing data in service pensions is cleared for nino AA000001C
 
   Scenario: Individual user as a new submission, goes through full income from overseas pension
     When the user logs into the service with the following details
@@ -10,7 +11,7 @@ Feature: Pensions Journeys - 05B Overseas Pensions - Income from Overseas Pensio
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AA000001A   |
+      | Nino                | AA000001C   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
@@ -55,7 +56,7 @@ Feature: Pensions Journeys - 05B Overseas Pensions - Income from Overseas Pensio
 
   Scenario: Agent user as a new submission, goes through full income from overseas pension
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000001A&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000001C&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                             |
       | Confidence Level    | 250                                                                              |
       | Affinity Group      | Agent                                                                            |
@@ -112,7 +113,7 @@ Feature: Pensions Journeys - 05B Overseas Pensions - Income from Overseas Pensio
       | Credential Strength | strong        |
       | Confidence Level    | 250           |
       | Affinity Group      | Individual    |
-      | Nino                | AA370343B     |
+      | Nino                | AA000001C     |
       | Enrolment Key 1     | HMRC-MTD-IT   |
       | Identifier Name 1   | MTDITID       |
       | Identifier Value 1  | 1234567890    |

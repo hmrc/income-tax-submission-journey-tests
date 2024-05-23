@@ -1,6 +1,7 @@
 @ZAP @pensions
 
 Feature: Pensions Journeys - 02A Income from Pensions - UK Pension Income - Income Tax Submission
+
   Background:
     Given the user navigates to the auth login page
     And the existing data in service pensions is cleared for nino AA000001C

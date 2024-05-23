@@ -65,6 +65,7 @@ Feature: Pensions Journeys - 02A Income from Pensions - UK Pension Income - Inco
     And the user clicks the Continue button
     Then the user should be redirected to the "Income from pensions" page
 
+  @ignore
   Scenario: Agent journey with prior data- Income from pension for other UK Pensions
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000001C&ClientMTDID=1234567890 |

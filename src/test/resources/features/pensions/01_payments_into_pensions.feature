@@ -146,54 +146,18 @@ Feature: Pensions Journeys - 01 Payments Into Pensions - Income Tax Submission
     When the user clicks the Continue button
     Then the user should be redirected to the "Pensions" page
 
-  Scenario: Individual user as a new submission, minimal flow - selects no for all
+    Given the user navigates to the auth login page
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start  |
-      | Credential Strength | strong      |
-      | Confidence Level    | 250         |
-      | Affinity Group      | Individual  |
-      | Nino                | AA000001C   |
-      | Enrolment Key 1     | HMRC-MTD-IT |
-      | Identifier Name 1   | MTDITID     |
-      | Identifier Value 1  | 1234567890  |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the addSections link
-    Then the user should be redirected to the "Add sections to your Income Tax Return" page
-    When the user clicks the addPension tailoring option
-    And the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the pensions link
-    Then the user should be redirected to the "Pensions" page
-    When the user clicks on the Payments into pensions link
-    Then the user should be redirected to the "Relief at source (RAS) pensions" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Pensions where tax relief is not claimed" page
-    When the user selects the no radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your payments into pensions" page
-    When the user clicks the save and continue button
-    Then the user should be redirected to the "Have you finished this section?" page for pensions
-    When the user selects the Yes, I’ve completed this section radio button
-    When the user clicks the Continue button
-    Then the user should be redirected to the "Pensions" page
-
-  # TODO Use stateful nino SASS-8170
-  @ignore
-  Scenario: Agent user has prior submission, updates all payments into pensions amount fields
-    When the user logs into the service with the following details
-      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA000001C&ClientMTDID=1234567890 |
-      | Credential Strength | weak                                                                                |
-      | Confidence Level    | 250                                                                                 |
-      | Affinity Group      | Agent                                                                               |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                         |
-      | Identifier Name 1   | MTDITID                                                                             |
-      | Identifier Value 1  | 1234567890                                                                          |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                       |
-      | Identifier Name 2   | AgentReferenceNumber                                                                |
-      | Identifier Value 2  | XARN1234567                                                                         |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000001C&ClientMTDID=1234567890 |
+      | Credential Strength | weak                                                                             |
+      | Confidence Level    | 250                                                                              |
+      | Affinity Group      | Agent                                                                            |
+      | Enrolment Key 1     | HMRC-MTD-IT                                                                      |
+      | Identifier Name 1   | MTDITID                                                                          |
+      | Identifier Value 1  | 1234567890                                                                       |
+      | Enrolment Key 2     | HMRC-AS-AGENT                                                                    |
+      | Identifier Name 2   | AgentReferenceNumber                                                             |
+      | Identifier Value 2  | XARN1234567                                                                      |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
@@ -237,18 +201,50 @@ Feature: Pensions Journeys - 01 Payments Into Pensions - Income Tax Submission
     When the user clicks the Continue button
     Then the user should be redirected to the "Pensions" page
 
-  # TODO Use stateful nino SASS-8170
-  @ignore
-  Scenario: Individual user has prior submission, says yes on relief at source (RAS) pensions page
+  Scenario: Individual user as a new submission, minimal flow - selects no for all
     When the user logs into the service with the following details
-      | Redirect url        | /InYear/start |
-      | Credential Strength | strong        |
-      | Confidence Level    | 250           |
-      | Affinity Group      | Individual    |
-      | Nino                | AA000001C     |
-      | Enrolment Key 1     | HMRC-MTD-IT   |
-      | Identifier Name 1   | MTDITID       |
-      | Identifier Value 1  | 1234567890    |
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001C   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Payments into pensions link
+    Then the user should be redirected to the "Relief at source (RAS) pensions" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Pensions where tax relief is not claimed" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your payments into pensions" page
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Pensions" page
+
+    Given the user navigates to the auth login page
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001C   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -264,6 +260,15 @@ Feature: Pensions Journeys - 01 Payments Into Pensions - Income Tax Submission
     When the user clicks on the change link in position 1
     Then the user should be redirected to the "Relief at source (RAS) pensions" page
     When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Total payments into relief at source (RAS) pensions, plus basic rate tax relief" page
+    When the user selects the amount field and enters a value of 100.10
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you make any one-off payments into relief at source (RAS) pensions?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Total one-off payments into relief at source (RAS) pensions, plus basic rate tax relief" page
+    When the user selects the amount field and enters a value of 200.20
     And the user clicks the continue button
     Then the user should be redirected to the "Check your payments into pensions" page
     When the user clicks the save and continue button

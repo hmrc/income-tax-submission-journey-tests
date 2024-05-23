@@ -314,9 +314,9 @@ Feature: Pensions Journeys - 04 Unauthorised Payments from Pensions - Income Tax
     When the user clicks the Continue button
     Then the user should be redirected to the "Pensions" page
 
-  Scenario: View prior submission, Unauthorised pensions payments journey
+    Given the user navigates to the auth login page
     When the user logs into the service with the following details
-      | Redirect url        | /InYear/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong        |
       | Confidence Level    | 250           |
       | Affinity Group      | Individual    |
@@ -338,7 +338,6 @@ Feature: Pensions Journeys - 04 Unauthorised Payments from Pensions - Income Tax
     Then the user should be redirected to the "Check your unauthorised payments" page
     When the user clicks on the change link in position 1
     Then the user should be redirected to the "Unauthorised payments" page
-
 
   Scenario: Individual journey flow submission without a PSTR - Unauthorised pensions journey
     When the user logs into the service with the following details

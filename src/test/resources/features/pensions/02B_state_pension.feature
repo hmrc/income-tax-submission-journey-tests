@@ -1,8 +1,10 @@
 @ZAP @pensions
 
 Feature: Pensions Journeys - 02B Income from Pensions - State Pension - Income Tax Submission
+
   Background:
     Given the user navigates to the auth login page
+    And the existing data in service pensions is cleared for nino AA000001C
 
   Scenario: Individual journey - Income from pension, state pensions
     When the user logs into the service with the following details
@@ -10,7 +12,7 @@ Feature: Pensions Journeys - 02B Income from Pensions - State Pension - Income T
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AA000001A   |
+      | Nino                | AA000001C   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |

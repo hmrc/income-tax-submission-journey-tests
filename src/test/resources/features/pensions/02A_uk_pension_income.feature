@@ -1,8 +1,10 @@
 @ZAP @pensions
 
 Feature: Pensions Journeys - 02A Income from Pensions - UK Pension Income - Income Tax Submission
+
   Background:
     Given the user navigates to the auth login page
+    And the existing data in service pensions is cleared for nino AA000001C
 
   Scenario: Individual journey - Income from pension for other UK Pensions
     When the user logs into the service with the following details
@@ -10,7 +12,7 @@ Feature: Pensions Journeys - 02A Income from Pensions - UK Pension Income - Inco
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AA000001A   |
+      | Nino                | AA000001C   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
@@ -64,11 +66,10 @@ Feature: Pensions Journeys - 02A Income from Pensions - UK Pension Income - Inco
     And the user clicks the Continue button
     Then the user should be redirected to the "Income from pensions" page
 
-  # TODO Use stateful nino SASS-8170
   @ignore
   Scenario: Agent journey with prior data- Income from pension for other UK Pensions
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA370343B&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000001C&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                             |
       | Confidence Level    | 250                                                                              |
       | Affinity Group      | Agent                                                                            |

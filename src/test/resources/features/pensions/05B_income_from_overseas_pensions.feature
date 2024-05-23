@@ -1,8 +1,10 @@
 @ZAP @pensions
 
 Feature: Pensions Journeys - 05B Overseas Pensions - Income from Overseas Pensions - Income Tax Submission
+
   Background:
     Given the user navigates to the auth login page
+    And the existing data in service pensions is cleared for nino AA000001C
 
   Scenario: Individual user as a new submission, goes through full income from overseas pension
     When the user logs into the service with the following details
@@ -10,7 +12,7 @@ Feature: Pensions Journeys - 05B Overseas Pensions - Income from Overseas Pensio
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AA000001A   |
+      | Nino                | AA000001C   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
@@ -52,10 +54,40 @@ Feature: Pensions Journeys - 05B Overseas Pensions - Income from Overseas Pensio
     Then the user should be redirected to the "Overseas pension income" page
     And the user clicks the continue button
     Then the user should be redirected to the "Check income from overseas pensions" page
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Overseas pensions" page
+
+    Given the user navigates to the auth login page
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001C   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+    When the user clicks on the Overseas pensions link
+    Then the user should be redirected to the "Overseas pensions" page
+    When the user clicks on the Income from overseas pensions link
+    Then the user should be redirected to the "Check income from overseas pensions" page
 
   Scenario: Agent user as a new submission, goes through full income from overseas pension
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000001A&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000001C&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                             |
       | Confidence Level    | 250                                                                              |
       | Affinity Group      | Agent                                                                            |
@@ -105,17 +137,22 @@ Feature: Pensions Journeys - 05B Overseas Pensions - Income from Overseas Pensio
     Then the user should be redirected to the "Overseas pension income" page
     And the user clicks the continue button
     Then the user should be redirected to the "Check income from overseas pensions" page
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Overseas pensions" page
 
-  Scenario: income from overseas pension - user has prior data
+    Given the user navigates to the auth login page
     When the user logs into the service with the following details
-      | Redirect url        | /InYear/start |
-      | Credential Strength | strong        |
-      | Confidence Level    | 250           |
-      | Affinity Group      | Individual    |
-      | Nino                | AA370343B     |
-      | Enrolment Key 1     | HMRC-MTD-IT   |
-      | Identifier Name 1   | MTDITID       |
-      | Identifier Value 1  | 1234567890    |
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001C   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page

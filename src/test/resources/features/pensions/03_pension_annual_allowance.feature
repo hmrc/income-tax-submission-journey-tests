@@ -1,8 +1,10 @@
 @ZAP @pensions
 
 Feature: Pensions Journeys - 03 Pension Annual Allowance - Income Tax Submission
+
   Background:
     Given the user navigates to the auth login page
+    And the existing data in service pensions is cleared for nino AA000001C
 
   Scenario: Individual flow - Pension Annual allowance
     When the user logs into the service with the following details
@@ -10,7 +12,7 @@ Feature: Pensions Journeys - 03 Pension Annual Allowance - Income Tax Submission
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AA000001A   |
+      | Nino                | AA000001C   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
@@ -69,7 +71,7 @@ Feature: Pensions Journeys - 03 Pension Annual Allowance - Income Tax Submission
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AA000001A   |
+      | Nino                | AA000001C   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
@@ -100,7 +102,7 @@ Feature: Pensions Journeys - 03 Pension Annual Allowance - Income Tax Submission
 
   Scenario: Agent journey flow - Pension Annual allowance
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000001A&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000001C&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                             |
       | Confidence Level    | 250                                                                              |
       | Affinity Group      | Agent                                                                            |
@@ -166,7 +168,7 @@ Feature: Pensions Journeys - 03 Pension Annual Allowance - Income Tax Submission
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AA370343B   |
+      | Nino                | AA000001C   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |

@@ -1,8 +1,10 @@
 @ZAP @pensions
 
 Feature: Pensions Journeys - 04 Unauthorised Payments from Pensions - Income Tax Submission
+
   Background:
     Given the user navigates to the auth login page
+    And the existing data in service pensions is cleared for nino AA000001C
 
   Scenario: Individual journey flow - Full Unauthorised pensions journey
     When the user logs into the service with the following details
@@ -10,7 +12,7 @@ Feature: Pensions Journeys - 04 Unauthorised Payments from Pensions - Income Tax
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AA000001A   |
+      | Nino                | AA000001C   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
@@ -70,7 +72,7 @@ Feature: Pensions Journeys - 04 Unauthorised Payments from Pensions - Income Tax
 
   Scenario: Agent journey flow - Full Unauthorised pensions journey
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000001A&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000001C&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                             |
       | Confidence Level    | 250                                                                              |
       | Affinity Group      | Agent                                                                            |
@@ -140,7 +142,7 @@ Feature: Pensions Journeys - 04 Unauthorised Payments from Pensions - Income Tax
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AA000001A   |
+      | Nino                | AA000001C   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
@@ -193,7 +195,7 @@ Feature: Pensions Journeys - 04 Unauthorised Payments from Pensions - Income Tax
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AA000001A   |
+      | Nino                | AA000001C   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
@@ -246,7 +248,7 @@ Feature: Pensions Journeys - 04 Unauthorised Payments from Pensions - Income Tax
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AA000001A   |
+      | Nino                | AA000001C   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
@@ -312,13 +314,13 @@ Feature: Pensions Journeys - 04 Unauthorised Payments from Pensions - Income Tax
     When the user clicks the Continue button
     Then the user should be redirected to the "Pensions" page
 
-  Scenario: View prior submission, Unauthorised pensions payments journey
+    Given the user navigates to the auth login page
     When the user logs into the service with the following details
-      | Redirect url        | /InYear/start |
+      | Redirect url        | /EOY/start |
       | Credential Strength | strong        |
       | Confidence Level    | 250           |
       | Affinity Group      | Individual    |
-      | Nino                | AA370343B     |
+      | Nino                | AA000001C     |
       | Enrolment Key 1     | HMRC-MTD-IT   |
       | Identifier Name 1   | MTDITID       |
       | Identifier Value 1  | 1234567890    |
@@ -337,14 +339,13 @@ Feature: Pensions Journeys - 04 Unauthorised Payments from Pensions - Income Tax
     When the user clicks on the change link in position 1
     Then the user should be redirected to the "Unauthorised payments" page
 
-
   Scenario: Individual journey flow submission without a PSTR - Unauthorised pensions journey
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AA000001A   |
+      | Nino                | AA000001C   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
@@ -395,7 +396,7 @@ Feature: Pensions Journeys - 04 Unauthorised Payments from Pensions - Income Tax
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AA000001A   |
+      | Nino                | AA000001C   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |

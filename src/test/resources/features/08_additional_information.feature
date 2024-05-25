@@ -291,7 +291,7 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     Then the user should be redirected to the "Check your gains from life insurance policies and contracts" page
     When the user clicks the return to overview button
     Then the user should be redirected to the "Your Income Tax Return" page
-    Then the "Gains status" on the page displays "EXCLUDED"
+    Then the "Gains status" on the page displays "Excluded"
 
   @gains
   Scenario: Individual User maximum flow - Gains - User answers no on Deficiency relief page
@@ -575,7 +575,7 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     Then the user should be redirected to the "How much did your client get in dividends from UK-based companies?" page
     When the user selects the UK dividends amount field and enters a value of 1000
     And the user clicks the continue button
-    Then the user should be redirected to the "Did your client get dividends from UK-based trusts or open-ended investment companies?" page
+    Then the user should be redirected to the "Dividends from UK-based trusts or open-ended investment companies" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "How much did your client get in dividends from trusts and open-ended investment companies based in the UK?" page
@@ -632,7 +632,7 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     Then the user should be redirected to the "How much did you get in dividends from UK-based companies?" page
     When the user selects the UK dividends amount field and enters a value of 1000
     And the user clicks the continue button
-    Then the user should be redirected to the "Did you get dividends from UK-based trusts or open-ended investment companies?" page
+    Then the user should be redirected to the "Dividends from UK-based trusts or open-ended investment companies" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "How much did you get in dividends from trusts and open-ended investment companies based in the UK?" page
@@ -680,7 +680,7 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     Then the user should be redirected to the "How much did you get in dividends from UK-based companies?" page
     When the user selects the UK dividends amount field and enters a value of 1000
     And the user clicks the continue button
-    Then the user should be redirected to the "Did you get dividends from UK-based trusts or open-ended investment companies?" page
+    Then the user should be redirected to the "Dividends from UK-based trusts or open-ended investment companies" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "How much did you get in dividends from trusts and open-ended investment companies based in the UK?" page

@@ -4,9 +4,10 @@ Feature: Pensions Journeys - 02A Income from Pensions - UK Pension Income - Inco
 
   Background:
     Given the user navigates to the auth login page
-    And the existing data in service pensions is cleared for nino AA000001C
+
 
   Scenario: Individual journey - Income from pension for other UK Pensions
+    Given the existing data in service pensions is cleared for nino AA000001C
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
@@ -66,7 +67,7 @@ Feature: Pensions Journeys - 02A Income from Pensions - UK Pension Income - Inco
     And the user clicks the Continue button
     Then the user should be redirected to the "Income from pensions" page
 
-  @ignore
+
   Scenario: Agent journey with prior data- Income from pension for other UK Pensions
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000001C&ClientMTDID=1234567890 |

@@ -256,7 +256,7 @@ trait CommonElements extends BasePage with Matchers {
     //Pensions Elements
     "pensions" -> By.id("pensions_link"),
     "Payments into pensions" -> By.id("payments-into-pensions-link"),
-    "Unauthorised payments from pensions" -> By.id("unauthorised-payments-link"),
+    "Unauthorised payments from pensions" -> By.id("unauthorised-payments-from-pensions-link"),
     "Yes, unauthorised payments that resulted in a surcharge" -> By.id("unauthorisedPayments"),
     "Yes, unauthorised payments that did not result in a surcharge" -> By.id("unauthorisedPayments-2"),
     "No unauthorised payments" -> By.id("unauthorisedPayments-4"),

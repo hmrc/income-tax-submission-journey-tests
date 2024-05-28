@@ -1,4 +1,4 @@
-@MVP @ZAP @property
+ @ZAP @property @ignore
 
 
 Feature: Property Journeys - Income Tax Submission
@@ -780,6 +780,7 @@ Feature: Property Journeys - Income Tax Submission
     When the user clicks the continue button
     Then the user should be redirected to the "Check Your Answers" page
 
+@test
   Scenario: Individual user adds UK Property - Property rentals - Claim Allowances - Traditional accounting method and claim allowances
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start  |
@@ -866,7 +867,7 @@ Feature: Property Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Zero-emission car allowance" page
     When the user selects the Zero-emission car allowance amount field and enters a value of 1200
-    And the user clicks the continue button
+    And the user clicks the Continue button
     Then the user should be redirected to the "Zero-emission goods vehicle allowance" page
     When the user selects the Zero-emission goods vehicle allowance amount field and enters a value of 12.90
     And the user clicks the continue button

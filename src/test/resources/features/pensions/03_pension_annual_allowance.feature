@@ -4,9 +4,10 @@ Feature: Pensions Journeys - 03 Pension Annual Allowance - Income Tax Submission
 
   Background:
     Given the user navigates to the auth login page
-    And the existing data in service pensions is cleared for nino AA000001C
+
 
   Scenario: Individual flow - Pension Annual allowance
+    Given the existing data in service pensions is cleared for nino AA000001C
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
@@ -101,6 +102,7 @@ Feature: Pensions Journeys - 03 Pension Annual Allowance - Income Tax Submission
     Then the user should be redirected to the "Pensions" page
 
   Scenario: Agent journey flow - Pension Annual allowance
+    Given the existing data in service pensions is cleared for nino AA000001C
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA000001C&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                             |
@@ -160,8 +162,7 @@ Feature: Pensions Journeys - 03 Pension Annual Allowance - Income Tax Submission
     And the user clicks the Continue button
     Then the user should be redirected to the "Pensions" page
 
-  # TODO Use stateful nino SASS-8170
-  @ignore
+
   Scenario: Individual with prior data - Pension Annual allowance
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |

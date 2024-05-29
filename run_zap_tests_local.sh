@@ -40,7 +40,7 @@ TEST_FAILED=false
 ENV=${1:-local}
 BROWSER=${2:-chrome}
 
-sbt clean -Dbrowser="${BROWSER}" -Denvironment="${ENV}" -Dzap.proxy=true "testOnly uk.gov.hmrc.test.ui.cucumber.runner.ZapRunner"|| TEST_FAILED=true testReport
+sbt clean -Dbrowser="${BROWSER}" -Denvironment="${ENV}" -Dzap.proxy=true -Dbrowser.option.headless=false "testOnly uk.gov.hmrc.test.ui.cucumber.runner.ZapRunner"|| TEST_FAILED=true testReport
 
 (
     cd dast-config-manager

@@ -57,4 +57,4 @@ elif [ "$MACHINE" != "pipeline" ]; then
     fi
 
 # Running tests
-sbt clean -Dbrowser="${BROWSER}" -Denvironment="${ENV}" "testOnly uk.gov.hmrc.test.ui.cucumber.runner.SelfEmploymentRunner" testReport
+sbt clean -Dbrowser="${BROWSER}" -Denvironment="${ENV}" -Dbrowser.option.headless=false "testOnly uk.gov.hmrc.test.ui.cucumber.runner.SelfEmploymentRunner" testReport

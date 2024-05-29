@@ -33,7 +33,7 @@ Feature: Charities Journeys - Income Tax Submission
     Then the user is redirected to the "Do you want to add any donations made after 5 April" "InYear" "to this tax year?" page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Did you donate qualifying shares or securities to charity?" page
+    Then the user should be redirected to the "Qualifying shares and securities" page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Did you donate land or property to charity?" page
@@ -109,7 +109,7 @@ Feature: Charities Journeys - Income Tax Submission
     Then the user is redirected to the "How much of the donations your client made after 5 April" "InYear" "do you want to add to this tax year?" page
     When the user selects the Amount to add to this tax year field and enters a value of 0.48
     And the user clicks the continue button
-    Then the user should be redirected to the "Did your client donate qualifying shares or securities to charity?" page
+    Then the user should be redirected to the "Qualifying shares and securities" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "What is the total value of qualifying shares or securities donated to charity?" page
@@ -221,7 +221,7 @@ Feature: Charities Journeys - Income Tax Submission
     Then the user is redirected to the "How much of the donations your client made after 5 April" "InYear" "do you want to add to this tax year?" page
     When the user selects the Amount to add to this tax year field and enters a value of 0.48
     And the user clicks the continue button
-    Then the user should be redirected to the "Did your client donate qualifying shares or securities to charity?" page
+    Then the user should be redirected to the "Qualifying shares and securities" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "What is the total value of qualifying shares or securities donated to charity?" page

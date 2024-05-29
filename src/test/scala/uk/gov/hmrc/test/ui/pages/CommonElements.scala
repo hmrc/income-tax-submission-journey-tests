@@ -477,7 +477,7 @@ trait CommonElements extends BasePage with Matchers {
     "No,electric charge point allowance" -> By.id("electricChargePointAllowanceYesNo-no"),
     "Electric charge-point allowance amount" -> By.id("electricChargePointAllowanceAmount"),
     "Zero-emission car allowance" -> By.cssSelector("#main-content > div > div > h1"),
-    "Zero-emission car allowance amount" -> By.id("zeroEmissionCarAllowance"),
+    "Zero-emission car allowance amount" -> By.id("zeroEmissionCarAllowanceAmount"),
     "Zero-emission goods vehicle allowance" -> By.cssSelector(" #main-content > div > div > h1"),
     "Zero-emission goods vehicle allowance amount" -> By.id("zeroEmissionGoodsVehicleAllowanceAmount"),
     "Business premises renovation allowance" -> By.cssSelector("#main-content > div > div > h1"),

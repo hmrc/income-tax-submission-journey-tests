@@ -6,7 +6,6 @@ Feature: Pensions Journeys - 05A Overseas Pensions - Payments into Overseas Pens
     Given the user navigates to the auth login page
     And the existing data in service pensions is cleared for nino AA000001C
 
-  @ignore # SASS-7920
   Scenario: Individual user as a new submission - Payment into overseas pension (No customer Reference)
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -52,42 +51,6 @@ Feature: Pensions Journeys - 05A Overseas Pensions - Payments into Overseas Pens
     And the user clicks the Continue button
     Then the user should be redirected to the "Overseas pensions" page
 
-  @ignore # SASS-7920
-  Scenario: Payment into overseas pensions (InYear) - user has prior data
-    When the user logs into the service with the following details
-      | Redirect url        | /InYear/start |
-      | Credential Strength | strong        |
-      | Confidence Level    | 250           |
-      | Affinity Group      | Individual    |
-      | Nino                | AA000001C     |
-      | Enrolment Key 1     | HMRC-MTD-IT   |
-      | Identifier Name 1   | MTDITID       |
-      | Identifier Value 1  | 1234567890    |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the addSections link
-    Then the user should be redirected to the "Add sections to your Income Tax Return" page
-    When the user clicks the addPension tailoring option
-    And the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the pensions link
-    Then the user should be redirected to the "Pensions" page
-    When the user clicks on the Overseas pensions link
-    Then the user should be redirected to the "Overseas pensions" page
-
-    When the user clicks on the Payment into overseas pensions link
-
-    Then the user should be redirected to the "Check payments into overseas pensions" page
-
-    When the user clicks the save and continue button
-    Then the user should be redirected to the "Have you finished this section?" page for pensions
-
-    When the user selects the Yes, I’ve completed this section radio button
-    And the user clicks the Continue button
-    Then the user should be redirected to the "Overseas pensions" page
-
-  @ignore # SASS-7920
   Scenario: Individual user as a new submission - Payment into overseas pension (Migrant member relief - add QOPS)
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -155,7 +118,6 @@ Feature: Pensions Journeys - 05A Overseas Pensions - Payments into Overseas Pens
     And the user clicks the Continue button
     Then the user should be redirected to the "Overseas pensions" page
 
-  @ignore # SASS-7920
   Scenario: Individual user as a new submission - Payment into overseas pension (Migrant member relief - NO QOPS)
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -221,7 +183,6 @@ Feature: Pensions Journeys - 05A Overseas Pensions - Payments into Overseas Pens
     And the user clicks the Continue button
     Then the user should be redirected to the "Overseas pensions" page
 
-  @ignore # SASS-7920
   Scenario: Individual user as a new submission - Payment into overseas pension (Double taxation relief)
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -291,7 +252,6 @@ Feature: Pensions Journeys - 05A Overseas Pensions - Payments into Overseas Pens
     And the user clicks the Continue button
     Then the user should be redirected to the "Overseas pensions" page
 
-  @ignore # SASS-7920
   Scenario: Individual user as a new submission - Payment into overseas pension (Transitional corresponding relief)
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -359,7 +319,6 @@ Feature: Pensions Journeys - 05A Overseas Pensions - Payments into Overseas Pens
     And the user clicks the Continue button
     Then the user should be redirected to the "Overseas pensions" page
 
-  @ignore # SASS-7920
   Scenario: Individual user as a new submission - Payment into overseas pension (None of these)
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -423,7 +382,6 @@ Feature: Pensions Journeys - 05A Overseas Pensions - Payments into Overseas Pens
     And the user clicks the Continue button
     Then the user should be redirected to the "Overseas pensions" page
 
-  @ignore # SASS-7920
   Scenario: Payment into overseas pensions (InYear) - user selects NO on first question
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
@@ -458,6 +416,14 @@ Feature: Pensions Journeys - 05A Overseas Pensions - Payments into Overseas Pens
     When the user clicks the save and continue button
     Then the user should be redirected to the "Have you finished this section?" page for pensions
 
+    When the user selects the Yes, I’ve completed this section radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Overseas pensions" page
+
+    When the user clicks on the Payment into overseas pensions link
+    Then the user should be redirected to the "Check payments into overseas pensions" page
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
     When the user selects the Yes, I’ve completed this section radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Overseas pensions" page

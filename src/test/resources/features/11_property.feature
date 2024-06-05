@@ -1,4 +1,4 @@
- @MVP @ZAP @property
+@MVP @ZAP @property
 
 
 Feature: Property Journeys - Income Tax Submission
@@ -12,7 +12,7 @@ Feature: Property Journeys - Income Tax Submission
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AA123456A   |
+      | Nino                | AC180000A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
@@ -53,7 +53,7 @@ Feature: Property Journeys - Income Tax Submission
 
   Scenario: Agent user adds UK Property details
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA133742A&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AC180000A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                                |
       | Confidence Level    | 250                                                                                 |
       | Affinity Group      | Agent                                                                               |
@@ -104,12 +104,17 @@ Feature: Property Journeys - Income Tax Submission
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AA123456A   |
+      | Nino                | AC190000B   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addProperty tailoring option
+    And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the Property link
     Then the user should be redirected to the "About your UK Properties" page
@@ -184,7 +189,7 @@ Feature: Property Journeys - Income Tax Submission
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AA123456A   |
+      | Nino                | AC180000A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
@@ -272,7 +277,7 @@ Feature: Property Journeys - Income Tax Submission
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AA123456A   |
+      | Nino                | AC180000A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
@@ -347,7 +352,7 @@ Feature: Property Journeys - Income Tax Submission
 
   Scenario: Agent user adds UK Property Property rentals - Agent user - answers questions in the Income Journey
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA133742A&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AC180000A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                                |
       | Confidence Level    | 250                                                                                 |
       | Affinity Group      | Agent                                                                               |
@@ -432,12 +437,17 @@ Feature: Property Journeys - Income Tax Submission
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AA123456A   |
+      | Nino                | AC190000B   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addProperty tailoring option
+    And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the Property link
     Then the user should be redirected to the "About your UK Properties" page
@@ -527,12 +537,17 @@ Feature: Property Journeys - Income Tax Submission
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AA123456A   |
+      | Nino                | AC180000A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addProperty tailoring option
+    And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the Property link
     Then the user should be redirected to the "About your UK Properties" page
@@ -605,12 +620,17 @@ Feature: Property Journeys - Income Tax Submission
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AA123456A   |
+      | Nino                | AC180000A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addProperty tailoring option
+    And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the Property link
     Then the user should be redirected to the "About your UK Properties" page
@@ -703,7 +723,7 @@ Feature: Property Journeys - Income Tax Submission
       | Credential Strength | strong         |
       | Confidence Level    | 250            |
       | Affinity Group      | Individual     |
-      | Nino                | AC180000B      |
+      | Nino                | AC190000B      |
       | Enrolment Key 1     | HMRC-MTD-IT    |
       | Identifier Name 1   | MTDITID        |
       | Identifier Value 1  | 1234567890     |
@@ -1015,7 +1035,7 @@ Feature: Property Journeys - Income Tax Submission
     And the user selects the How much is your enhanced structures and buildings allowance claim? amount field and enters a value of 1650
     When the user clicks the Continue button
     Then the user should be redirected to the "Where is the new enhanced structure or building located?" page
-    And the user selects the Building name field and enters a value of MBNX fan mill, Shropshore
+    And the user selects the Building name field and enters a value of MBNX Fan Mall, Shropshore
     And the user selects the Building number field and enters a value of 11
     And the user selects the Postcode field and enters a value of SA1 1AA
     When the user clicks the Continue button

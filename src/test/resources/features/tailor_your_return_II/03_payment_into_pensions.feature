@@ -15,11 +15,10 @@ Feature: About You Journeys Tailor Your Return - Income Tax Submission
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
     Then the user navigates to the Tailor return start page
     ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for EOY
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to the "Update and submit a Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
     When the user navigates to the Payments into pensions page
@@ -29,4 +28,4 @@ Feature: About You Journeys Tailor Your Return - Income Tax Submission
     Then the user should be redirected to the "Add sections to your Tax Return" page
     ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for EOY
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to the "Update and submit a Tax Return" page

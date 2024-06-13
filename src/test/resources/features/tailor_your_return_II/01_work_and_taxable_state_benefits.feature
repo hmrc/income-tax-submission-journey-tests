@@ -15,11 +15,10 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
       | Enrolment Key 1     | HMRC-MTD-IT   |
       | Identifier Name 1   | MTDITID       |
       | Identifier Value 1  | 1234567890    |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
     Then the user navigates to the Tailor return start page
     ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for InYear
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to the "Update and submit a Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
       ##---- About you steps have to be Completed in order for Income from work and taxable state benefits link to be active ----##
@@ -52,7 +51,7 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
     Then the "Income from work and taxable state benefits tag" on the page displays "Completed"
     ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for InYear
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to the "Update and submit a Tax Return" page
 
   Scenario: Agent User selects employed only on "what did you do for work" page  - Income from work and taxable state benefits - Tailor your return
     When the user logs into the service with the following details
@@ -66,11 +65,10 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
       | Enrolment Key 2     | HMRC-AS-AGENT                                                                       |
       | Identifier Name 2   | AgentReferenceNumber                                                                |
       | Identifier Value 2  | XARN1234567                                                                         |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
     Then the user navigates to the Tailor return start page
       ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for InYear
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to the "Update and submit a Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your client’s Tax Return" page
     ##---- About you steps have to be Completed in order for Income from work and taxable state benefits link to be active ----##
@@ -102,7 +100,7 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
     Then the "Income from work and taxable state benefits tag" on the page displays "Completed"
     ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for InYear
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to the "Update and submit a Tax Return" page
 
   Scenario: Individual user without employed or self-employed - Income from work and taxable state benefits - Tailor your return
     When the user logs into the service with the following details
@@ -114,11 +112,10 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
       | Enrolment Key 1     | HMRC-MTD-IT   |
       | Identifier Name 1   | MTDITID       |
       | Identifier Value 1  | 1234567890    |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
     Then the user navigates to the Tailor return start page
    ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for InYear
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to the "Update and submit a Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
     ##---- About you steps have to be Completed in order for Income from work and taxable state benefits link to be active ----##
@@ -147,7 +144,7 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
     Then the "Income from work and taxable state benefits tag" on the page displays "Completed"
     ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for InYear
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to the "Update and submit a Tax Return" page
 
   Scenario: Individual User maximal flow user selects self employed only - Income from work and taxable state benefits - Tailor your return
     When the user logs into the service with the following details
@@ -159,11 +156,10 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
       | Enrolment Key 1     | HMRC-MTD-IT   |
       | Identifier Name 1   | MTDITID       |
       | Identifier Value 1  | 1234567890    |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
     Then the user navigates to the Tailor return start page
    ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for InYear
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to the "Update and submit a Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
      ##---- About you steps have to be Completed in order for Income from work and taxable state benefits link to be active ----##
@@ -195,4 +191,4 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
     Then the "Income from work and taxable state benefits tag" on the page displays "Completed"
     ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for InYear
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to the "Update and submit a Tax Return" page

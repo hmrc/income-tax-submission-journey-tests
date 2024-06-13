@@ -15,13 +15,12 @@ Feature: Income from Property, Pensions And Investments Tailor Your Return - Inc
       | Enrolment Key 1     | HMRC-MTD-IT   |
       | Identifier Name 1   | MTDITID       |
       | Identifier Value 1  | 1234567890    |
-  Then the user should be redirected to the "Update and submit an Income Tax Return" page
   Then the user navigates to the Tailor return start page
     ##- complete about you section --##
     Then the user navigates to the Tailor return start page
     ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for InYear
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to the "Update and submit a Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
     When the user clicks on the About you link
@@ -68,7 +67,7 @@ Feature: Income from Property, Pensions And Investments Tailor Your Return - Inc
     Then the user should be redirected to the "Add sections to your Tax Return" page
     ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for InYear
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to the "Update and submit a Tax Return" page
   Scenario: Agent User maximal flow - Income from Property, Pensions And Investments - Tailor your return
     When the user logs into the service with the following details
       | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA123459A&ClientMTDID=1234567890 |
@@ -81,11 +80,10 @@ Feature: Income from Property, Pensions And Investments Tailor Your Return - Inc
       | Enrolment Key 2     | HMRC-AS-AGENT                                                                       |
       | Identifier Name 2   | AgentReferenceNumber                                                                |
       | Identifier Value 2  | 1234567890                                                                          |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
     Then the user navigates to the Tailor return start page
     ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for InYear
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to the "Update and submit a Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your client’s Tax Return" page
     ##---- About you steps have to be completed in order for Income from work and taxable state benefits link to be active ----##
@@ -132,4 +130,4 @@ Feature: Income from Property, Pensions And Investments Tailor Your Return - Inc
     Then the user should be redirected to the "Add sections to your client’s Tax Return" page
     ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for InYear
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to the "Update and submit a Tax Return" page

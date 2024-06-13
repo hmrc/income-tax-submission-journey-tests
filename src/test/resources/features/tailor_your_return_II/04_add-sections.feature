@@ -15,11 +15,10 @@ Feature: Add sections Journeys Tailor Your Return - Income Tax Submission
       | Enrolment Key 1     | HMRC-MTD-IT   |
       | Identifier Name 1   | MTDITID       |
       | Identifier Value 1  | 1234567000    |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
     Then the user navigates to the Tailor return start page
      ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for InYear
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to the "Update and submit a Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
     Then the "About you tag" on the page displays "Not started"
@@ -32,7 +31,7 @@ Feature: Add sections Journeys Tailor Your Return - Income Tax Submission
     Then the user should be redirected to the "Add sections to your Tax Return" page
     ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for InYear
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to the "Update and submit a Tax Return" page
 
   Scenario: Agent User completes all sections on add sections page - Tailor your return
     When the user logs into the service with the following details
@@ -46,11 +45,10 @@ Feature: Add sections Journeys Tailor Your Return - Income Tax Submission
       | Enrolment Key 2     | HMRC-AS-AGENT                                                                       |
       | Identifier Name 2   | AgentReferenceNumber                                                                |
       | Identifier Value 2  | XARN1234566                                                                         |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
     Then the user navigates to the Tailor return start page
      ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for InYear
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to the "Update and submit a Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your client’s Tax Return" page
     Then the "About you tag" on the page displays "Not started"
@@ -111,4 +109,4 @@ Feature: Add sections Journeys Tailor Your Return - Income Tax Submission
     Then the user should be redirected to the "Add sections to your client’s Tax Return" page
     ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for InYear
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to the "Update and submit a Tax Return" page

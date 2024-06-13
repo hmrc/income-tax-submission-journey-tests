@@ -53,7 +53,7 @@ Feature: Property Journeys - Income Tax Submission
 
   Scenario: Agent user adds UK Property details
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AC180000A&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AC180000A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                                |
       | Confidence Level    | 250                                                                                 |
       | Affinity Group      | Agent                                                                               |
@@ -149,12 +149,17 @@ Feature: Property Journeys - Income Tax Submission
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AA123456A   |
+      | Nino                | AC180000A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addProperty tailoring option
+    And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the Property link
     Then the user should be redirected to the "About your UK Properties" page
@@ -228,7 +233,7 @@ Feature: Property Journeys - Income Tax Submission
 
   Scenario: Agent user adds UK Property details
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA133742A&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AC180000A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                                |
       | Confidence Level    | 250                                                                                 |
       | Affinity Group      | Agent                                                                               |
@@ -240,6 +245,11 @@ Feature: Property Journeys - Income Tax Submission
       | Identifier Value 2  | XARN1234567                                                                         |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your client’s Income Tax Return" page
+    When the user clicks the addProperty tailoring option
+    And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the Property link
     Then the user should be redirected to the "About your UK Properties" page

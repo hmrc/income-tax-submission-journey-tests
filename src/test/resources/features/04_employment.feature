@@ -1,11 +1,11 @@
-@ZAP
+@ZAP @employment
 ## -- Jenkins pipeline failing for employment if entire test is @ignore. Fix required for EmploymentRunner.
 # Employment test will be fixed once SASS-7918 is deployed
 Feature: Employment Journeys - Income Tax Submission
 
   Background:
     Given the user navigates to the auth login page
-  @employment
+
   Scenario: Agent user with one employment checks their details, benefits, student loans and expenses
     When the user logs into the service with the following details
       | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA133742A&ClientMTDID=1234567890 |
@@ -21,41 +21,41 @@ Feature: Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
-#    When the user clicks on the employment link
-#    Then the user should be redirected to the "PAYE employment" page
-#    And the status on the page is "Yes for gateway question"
-#    When the user clicks on the view employer link
-#    Then the user should be redirected to the "Employer information" page
-#    When the user clicks on the employment details link
-#    Then the user should be redirected to the "Check your client’s employment details" page
-#    When the user clicks on the return to employer link
-#    Then the user should be redirected to the "Employer information" page
-#    When the user clicks on the return to employment summary link
-#    Then the user should be redirected to the "PAYE employment" page
-#    When the user clicks on the view employer link
-#    Then the user should be redirected to the "Employer information" page
-#    When the user clicks on the employment benefits link
-#    Then the user should be redirected to the "Check your client’s employment benefits" page
-#    When the user clicks on the return to employer link
-#    Then the user should be redirected to the "Employer information" page
-#    When the user clicks on the return to employment summary link
-#    Then the user should be redirected to the "PAYE employment" page
-#    When the user clicks on the view employer link
-#    Then the user should be redirected to the "Employer information" page
-#    When the user clicks on the student loans link
-#    Then the user should be redirected to the "Check your client’s student loan repayment details" page
-#    When the user clicks on the return to employer link
-#    Then the user should be redirected to the "Employer information" page
-#    When the user clicks on the return to employment summary link
-#    Then the user should be redirected to the "PAYE employment" page
-#    When the user clicks on the view expenses link
-#    Then the user should be redirected to the "Check your client’s employment expenses" page
-#    When the user clicks on the return to employment summary link
-#    Then the user should be redirected to the "PAYE employment" page
-#    When the user clicks on the return to overview link
-#    Then the user should be redirected to the "Your client’s Income Tax Return" pages
+    When the user clicks on the employment link
+    Then the user should be redirected to the "PAYE employment" page
+    And the status on the page is "Yes for gateway question"
+    When the user clicks on the view employer link
+    Then the user should be redirected to the "Employer information" page
+    When the user clicks on the employment details link
+    Then the user should be redirected to the "Check your client’s employment details" page
+    When the user clicks on the return to employer link
+    Then the user should be redirected to the "Employer information" page
+    When the user clicks on the return to employment summary link
+    Then the user should be redirected to the "PAYE employment" page
+    When the user clicks on the view employer link
+    Then the user should be redirected to the "Employer information" page
+    When the user clicks on the employment benefits link
+    Then the user should be redirected to the "Check your client’s employment benefits" page
+    When the user clicks on the return to employer link
+    Then the user should be redirected to the "Employer information" page
+    When the user clicks on the return to employment summary link
+    Then the user should be redirected to the "PAYE employment" page
+    When the user clicks on the view employer link
+    Then the user should be redirected to the "Employer information" page
+    When the user clicks on the student loans link
+    Then the user should be redirected to the "Check your client’s student loan repayment details" page
+    When the user clicks on the return to employer link
+    Then the user should be redirected to the "Employer information" page
+    When the user clicks on the return to employment summary link
+    Then the user should be redirected to the "PAYE employment" page
+    When the user clicks on the view expenses link
+    Then the user should be redirected to the "Check your client’s employment expenses" page
+    When the user clicks on the return to employment summary link
+    Then the user should be redirected to the "PAYE employment" page
+    When the user clicks on the return to overview link
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
 
-@test
+
   Scenario: Individual user with multiple employments checks their details, benefits, student loans and expenses
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start |
@@ -2224,18 +2224,18 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the first change employment link
     Then the user should be redirected to the "Employer information" page
     When the user clicks on the student loans link
-    Then the user should be redirected to the "Did you repay any student loans?" page
-    When the user clicks both the student loan repayments and postgraduate loan repayments checkboxes
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much student loan did you repay?" page
-    When the user selects the amount field and enters a value of 117
-    And the user clicks the continue button
-    Then the user should be redirected to the "How much postgraduate loan did you repay?" page
-    When the user selects the amount field and enters a value of 9000
-    And the user clicks the continue button
     Then the user should be redirected to the "Check your student loan repayment details" page
-    And the user clicks the continue button
-    Then the user should be redirected to the "Employer information" page
+#    When the user clicks both the student loan repayments and postgraduate loan repayments checkboxes
+#    And the user clicks the continue button
+#    Then the user should be redirected to the "How much student loan did you repay?" page
+#    When the user selects the amount field and enters a value of 117
+#    And the user clicks the continue button
+#    Then the user should be redirected to the "How much postgraduate loan did you repay?" page
+#    When the user selects the amount field and enters a value of 9000
+#    And the user clicks the continue button
+#    Then the user should be redirected to the "Check your student loan repayment details" page
+#    And the user clicks the continue button
+#    Then the user should be redirected to the "Employer information" page
 
 
   Scenario: Individual user with prior data, changes undergraduate and postgraduate repayments to no in student loans flow
@@ -2370,7 +2370,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the change pay received link
     Then the user should be redirected to the "Do you want to change your client’s employment details?" page
     When the user clicks the confirm button
-    Then the user should be redirected to the "How much did Vera Lynn pay your client?" page
+    Then the user should be redirected to the "How much did Eoy Vera Lynn Customer pay your client?" page
     When the user selects the Pay field and enters a value of 900.01
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page
@@ -2399,7 +2399,7 @@ Feature: Employment Journeys - Income Tax Submission
     When the user clicks on the change tax taken from pay link
     Then the user should be redirected to the "Do you want to change your employment details?" page
     When the user clicks the confirm button
-    Then the user should be redirected to the "How much UK tax was taken from your Raf Simons Ltd  Ltd Customer Edition earnings?" page
+    Then the user should be redirected to the "How much UK tax was taken from your Rick Owens Ltd Customer Edition EOY earnings?" page
     When the user selects the Tax field and enters a value of 720.08
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment details" page

@@ -56,6 +56,37 @@ trait CommonElements extends BasePage with Matchers {
     "addProperty"   -> By.id("property"),
     "addSelfEmployment" -> By.id("self-employment"),
 
+
+    //Task List Elements
+
+    "UK residence status"                                 -> By.cssSelector("#main-content > div > div > ul:nth-child(5) > li:nth-child(1) > div.govuk-task-list__name-and-hint > a"),
+    "Foster carer status"                                 -> By.cssSelector("#main-content > div > div > ul:nth-child(5) > li:nth-child(2) > div.govuk-task-list__name-and-hint > a"),
+    "Donations using Gift Aid1"                           -> By.className("DonationsUsingGiftAidTitle"),
+    "Gifts of land or property1"                          -> By.className("GiftsOfLandOrPropertyTitle"),
+    "Gifts of shares or securities1"                      -> By.className("GiftsOfSharesTitle"),
+    "Gifts of overseas charities1"                        -> By.cssSelector("#main-content > div > div > ul:nth-child(7) > li:nth-child(3) > div.govuk-task-list__name-and-hint > a"),
+    "PAYE employment (including student loans)1"          -> By.className("PayeEmploymentTitle"),
+    "Construction Industry Schemes deductions"           -> By.className("CISTitle"),
+    "Review Employment and support allowance claims"     -> By.className("ESATitle"),
+    "Review Jobseeker’s Allowance claims"                -> By.className("JSATitle"),
+    "State Pension1"                                      -> By.className("StatePensionTitle"),
+    "Other UK Pensions1"                                  -> By.className("OtherUkPensionsTitle"),
+    "Unauthorised payments1"                              -> By.className("UnauthorisedPaymentsTitle"),
+    "Short service refunds1"                              -> By.className("ShortServiceRefundsTitle"),
+    "Income from overseas pensions1"                      -> By.className("IncomeFromOverseasTitle"),
+    "Payments into UK pensions1"                          -> By.className("PaymentsIntoUkTitle"),
+    "Annual allowances"                                   -> By.className("AnnualAllowancesTitle"),
+    "Payments into overseas pensions"                     -> By.className("PaymentsIntoOverseasTitle"),
+    "Overseas transfer charge1"                           -> By.className("OverseasTransferTitle"),
+    "Banks and building societies1"                       -> By.className("BanksAndBuildingTitle"),
+    "Trust fund bond or bonds"                           -> By.className("TrustFundBondTitle"),
+    "Gilt-edged or accrued income securities1"            -> By.className("GiltEdgedTitle"),
+    "Cash dividends from UK stocks and shares1"           -> By.className("CashDividendsTitle"),
+    "Stock dividends from UK companies"                  -> By.className("StockDividendsTitle"),
+    "Dividends from unit trusts or investment companies" -> By.className("DividendsFromUnitTrustsTitle"),
+    "Free or redeemable shares1"                          -> By.className("FreeRedeemableSharesTitle"),
+    "Close company loans written off or released"        -> By.className("CloseCompanyLoansTitle"),
+
     //Dividends Elements
     "dividends"                                                  -> By.id("dividends_link"),
     "UK dividends amount"                                        -> By.id("amount"),
@@ -338,6 +369,10 @@ trait CommonElements extends BasePage with Matchers {
     "My partner’s income"                                 -> By.cssSelector("[value='MyPartnersIncome']"),
     "I do not have a partner"                             -> By.cssSelector("[value='NoPartner']"),
     "Donations using Gift Aid"                            -> By.id("CharitableDonations"),
+    "Gifts of shares or securities"                       -> By.id("CharitableDonations-2"),
+    "Gifts of land or property"                           -> By.id("CharitableDonations-3"),
+    "Gifts of overseas charities"                           -> By.id("CharitableDonations-4"),
+    "No, I did not donate to charity"                     -> By.id("CharitableDonations-5"),
     "yes, but permanent home is abroad"                   -> By.cssSelector("[value='domiciled']"),
     "Not a resident"                                      -> By.cssSelector("[value='nonUK']"),
     "My client was not resident in the UK"                -> By.cssSelector("[value='nonResident']"),
@@ -550,6 +585,9 @@ trait CommonElements extends BasePage with Matchers {
 
     //Payments into Pensions
     "Payments into UK pensions"                                            -> By.id("PaymentsIntoPensions"),
+    "Payments into non-UK pensions"                                        -> By.id("PaymentsIntoPensions-2"),
+    "Annual allowances"                                                    -> By.id("PaymentsIntoPensions-3"),
+    "Overseas transfer charges"                                            -> By.id("PaymentsIntoPensions-4"),
     "Payments into UK pensions task list"                                  -> By.cssSelector("#main-content > div > div > ul > li:nth-child(4) > div.govuk-task-list__name-and-hint > a"),
     "Payments into pensions tag"                                           -> By.cssSelector("#task-list-4-status"),
 

@@ -36,7 +36,7 @@ Feature: Property Journeys - Income Tax Submission
     And the user clicks the property continue button
 
  #--------- SASS-5401- Property Rentals -------------------
-    Then the user should be redirected to the "Select UK property" page
+    Then the user should be redirected to the "Which rental property do you have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
     Then the user should be redirected to the "Check Your Answers" page
@@ -83,7 +83,7 @@ Feature: Property Journeys - Income Tax Submission
     And the user clicks the property continue button
 
   # ----------------- SASS-5401 - Property Rentals  ------------------------------
-    Then the user should be redirected to the "Select UK property" page
+    Then the user should be redirected to the "Which rental property does your client have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
     Then the user should be redirected to the "Check Your Answers" page
@@ -124,7 +124,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "How much total income did you get from your UK properties?" page
     When the user selects the second property radio button: Between 1000 and 85000
     And the user clicks the property continue button
-    Then the user should be redirected to the "Select UK property" page
+    Then the user should be redirected to the "Which rental property do you have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
     Then the user should be redirected to the "Check Your Answers" page
@@ -169,7 +169,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "How much total income did you get from your UK properties?" page
     When the user selects the second property radio button: Between 1000 and 85000
     And the user clicks the property continue button
-    Then the user should be redirected to the "Select UK property" page
+    Then the user should be redirected to the "Which rental property do you have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
     Then the user should be redirected to the "Check Your Answers" page
@@ -209,7 +209,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "How much total income did you get from your UK properties?" page
     When the user selects the second property radio button: Between 1000 and 85000
     And the user clicks the property continue button
-    Then the user should be redirected to the "Select UK property" page
+    Then the user should be redirected to the "Which rental property do you have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
     Then the user should be redirected to the "Check Your Answers" page
@@ -259,7 +259,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "How much total income did your client get from all of their properties?" page
     When the user selects the second property radio button: Between 1000 and 85000
     And the user clicks the property continue button
-    Then the user should be redirected to the "Select UK property" page
+    Then the user should be redirected to the "Which rental property does your client have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
     Then the user should be redirected to the "Check Your Answers" page
@@ -302,7 +302,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "How much total income did you get from your UK properties?" page
     When the user selects the second property radio button: Between 1000 and 85000
     And the user clicks the property continue button
-    Then the user should be redirected to the "Select UK property" page
+    Then the user should be redirected to the "Which rental property do you have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
     Then the user should be redirected to the "Check Your Answers" page
@@ -383,7 +383,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "How much total income did your client get from all of their properties?" page
     When the user selects the second property radio button: Between 1000 and 85000
     And the user clicks the property continue button
-    Then the user should be redirected to the "Select UK property" page
+    Then the user should be redirected to the "Which rental property does your client have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
     Then the user should be redirected to the "Check Your Answers" page
@@ -467,7 +467,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "How much total income did you get from your UK properties?" page
     When the user selects the second property radio button: Between 1000 and 85000
     And the user clicks the property continue button
-    Then the user should be redirected to the "Select UK property" page
+    Then the user should be redirected to the "Which rental property do you have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
     Then the user should be redirected to the "Check Your Answers" page
@@ -567,7 +567,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "How much total income did you get from your UK properties?" page
     When the user selects the second property radio button: Between 1000 and 85000
     And the user clicks the property continue button
-    Then the user should be redirected to the "Select UK property" page
+    Then the user should be redirected to the "Which rental property do you have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
     Then the user should be redirected to the "Check Your Answers" page
@@ -650,7 +650,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "How much total income did you get from your UK properties?" page
     When the user selects the second property radio button: Between 1000 and 85000
     And the user clicks the property continue button
-    Then the user should be redirected to the "Select UK property" page
+    Then the user should be redirected to the "Which rental property do you have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
     Then the user should be redirected to the "Check Your Answers" page
@@ -753,7 +753,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "How much total income did you get from your UK properties?" page
     When the user selects the second property radio button: Between 1000 and 85000
     And the user clicks the property continue button
-    Then the user should be redirected to the "Select UK property" page
+    Then the user should be redirected to the "Which rental property do you have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
     Then the user should be redirected to the "Check Your Answers" page
@@ -836,7 +836,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "How much total income did you get from your UK properties?" page
     When the user selects the second property radio button: Between 1000 and 85000
     And the user clicks the property continue button
-    Then the user should be redirected to the "Select UK property" page
+    Then the user should be redirected to the "Which rental property do you have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
     Then the user should be redirected to the "Check Your Answers" page
@@ -936,7 +936,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "How much total income did you get from your UK properties?" page
     When the user selects the second property radio button: Between 1000 and 85000
     And the user clicks the property continue button
-    Then the user should be redirected to the "Select UK property" page
+    Then the user should be redirected to the "Which rental property do you have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
     Then the user should be redirected to the "Check Your Answers" page
@@ -1009,7 +1009,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "How much total income did you get from your UK properties?" page
     When the user selects the second property radio button: Between 1000 and 85000
     And the user clicks the property continue button
-    Then the user should be redirected to the "Select UK property" page
+    Then the user should be redirected to the "Which rental property do you have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
     Then the user should be redirected to the "Check Your Answers" page

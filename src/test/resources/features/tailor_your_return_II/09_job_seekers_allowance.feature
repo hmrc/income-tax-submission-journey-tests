@@ -1,40 +1,11 @@
-@TYR_private_beta @addSections
+@TYR_Jobseekers_Allowance @TYR_Common_Task_List @TYR_private_beta
 
-Feature: Add sections Journeys Tailor Your Return - Income Tax Submission
+Feature: Jobseeker's Allowance Journeys - Income Tax Submission
 
   Background:
     Given the user navigates to the auth login page
 
-  Scenario: Individual user clicks on continue on add sections page without completing any section - Tailor your return
-    When the user logs into the service with the following details
-      | Redirect url        | /InYear/start |
-      | Credential Strength | strong        |
-      | Confidence Level    | 250           |
-      | Affinity Group      | Individual    |
-      | Nino                | AA123456A     |
-      | Enrolment Key 1     | HMRC-MTD-IT   |
-      | Identifier Name 1   | MTDITID       |
-      | Identifier Value 1  | 1234567000    |
-    Then the user navigates to the Tailor return start page
-     ##---- clear Test data ----##
-    When the user navigates to the Test only clear data page for InYear
-    Then the user should be redirected to the "Update and submit a Tax Return" page
-    When the user clicks the Continue button
-    Then the user should be redirected to the "Add sections to your Tax Return" page
-    Then the "About you tag" on the page displays "Not started"
-    Then the "Income from work and taxable state benefits tag" on the page displays "Cannot start yet"
-    Then the "Income from property, pensions and investments tag" on the page displays "Cannot start yet"
-    Then the "Payments into pensions tag" on the page displays "Not started"
-    And the user clicks the Continue button
-    Then the user should be redirected to the "Your Tax Return is not ready to fill in yet" page
-    When the user clicks the Continue button
-    Then the user should be redirected to the "Add sections to your Tax Return" page
-    ##---- clear Test data ----##
-    When the user navigates to the Test only clear data page for InYear
-    Then the user should be redirected to the "Update and submit a Tax Return" page
-
-
-  Scenario: Individual User completes all sections on add sections page - Tailor your return
+  Scenario: Individual User - Jobseeker's Allowance - Review Jobseeker's Allowance Claims
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
       | Credential Strength | strong      |
@@ -118,3 +89,8 @@ Feature: Add sections Journeys Tailor Your Return - Income Tax Submission
     When the user selects the Overseas transfer charges radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the Review Jobseeker’s Allowance claims link
+    Then the user should be redirected to the "Jobseeker’s Allowance" page
+

@@ -590,7 +590,7 @@ trait CommonElements extends BasePage with Matchers {
     "Non-UK interest"                                                      -> By.cssSelector("[value='NonukInterest']"),
     "Non-UK dividends while living in the UK"                              -> By.cssSelector("[value='NonukDividendsWhileLivingInTheUk]"),
     "No non-UK interest, dividends or income from insurance policies"      -> By.cssSelector("[value='NoNonUkInterestDividendsInsurance']"),
-    "Life Insurance"                                                         -> By.id("UkInsuranceGains"),
+    "Life Insurance Option"                                                -> By.id("UkInsuranceGains"),
     "Life Annuity"                                                         -> By.id("UkInsuranceGains-2"),
     "Capital Redemption"                                                   -> By.id("UkInsuranceGains-3"),
     "Voided ISA (a policy cancelled by your ISA manager)"                  -> By.id("UkInsuranceGains-4"),

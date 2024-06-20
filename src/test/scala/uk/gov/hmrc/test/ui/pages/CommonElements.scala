@@ -24,7 +24,7 @@ trait CommonElements extends BasePage with Matchers {
   def load(key: String): By =
     elements(key)
 
-  val elements: Map[String, By] = Map(
+  private[pages] val commonMapping: List[(String, By)] = List(
     //Common Elements
     "yes"                       -> By.id("value"),
     "no"                        -> By.id("value-no"),
@@ -540,27 +540,27 @@ trait CommonElements extends BasePage with Matchers {
     "How much is your structures and buildings allowance claim?" -> By.cssSelector("#main-content > div > div > form > h1"),
     "How much is your structures and buildings allowance claim? amount" -> By.id("structureBuildingAllowanceClaim"),
     "Where is the new structure or building located?" -> By.cssSelector("#main-content > div > div > h1"),
-     "Building name" -> By.id("buildingName"),
-     "Building number" -> By.id("buildingNumber"),
-     "Postcode" -> By.id("postcode"),
-     "Check Your Answers" -> By.cssSelector("#main-content > div > div > h1"),
-     "Save and conitnue" -> By.id("continue"),
-     "Your structures and buildings allowance claims" -> By.cssSelector("#main-content > div > div > form > h1"),
-     "Do you want to add another claim?" -> By.cssSelector("#main-content > div > div > form > div > fieldset > legend > h1"),
-     "Yes,anotherClaim" -> By.id("anotherClaim"),
-     "No,anotherClaim" -> By.id("anotherClaim-no"),
-     "Enhanced Structures and Buildings AllowanceLink" -> By.id("enhancedStructuresAndBuildingAllowance_link"),
-     "Do you want to claim enhanced structures and buildings allowance?" -> By.cssSelector("#main-content > div > div > form > div > fieldset > legend"),
-     "Yes, claim" -> By.id("claimEnhancedStructureBuildingAllowance"),
-     "No, claim" -> By.id("claimEnhancedStructureBuildingAllowance-no"),
-     "esba Day" -> By.id("esbaQualifyingDate.day"),
-     "esba Month" -> By.id("esbaQualifyingDate.month"),
-     "esba Year" -> By.id("esbaQualifyingDate.year"),
-     "Enhanced structures and buildings allowance claims" -> By.cssSelector("#main-content > div > div > h1"),
-     "How much is your enhanced structures and buildings allowance claim?" -> By.cssSelector("#main-content > div > div > form > div > h1 > label"),
-     "How much is your enhanced structures and buildings allowance claim? amount" -> By.id("esbaClaim"),
-     "Where is the new enhanced structure or building located?" -> By.cssSelector("#main-content > div > div > h1"),
-     "Your enhanced structures and buildings allowance claims" -> By.cssSelector("#main-content > div > div > form > h1"),
+    "Building name" -> By.id("buildingName"),
+    "Building number" -> By.id("buildingNumber"),
+    "Postcode" -> By.id("postcode"),
+    "Check Your Answers" -> By.cssSelector("#main-content > div > div > h1"),
+    "Save and conitnue" -> By.id("continue"),
+    "Your structures and buildings allowance claims" -> By.cssSelector("#main-content > div > div > form > h1"),
+    "Do you want to add another claim?" -> By.cssSelector("#main-content > div > div > form > div > fieldset > legend > h1"),
+    "Yes,anotherClaim" -> By.id("anotherClaim"),
+    "No,anotherClaim" -> By.id("anotherClaim-no"),
+    "Enhanced Structures and Buildings AllowanceLink" -> By.id("enhancedStructuresAndBuildingAllowance_link"),
+    "Do you want to claim enhanced structures and buildings allowance?" -> By.cssSelector("#main-content > div > div > form > div > fieldset > legend"),
+    "Yes, claim" -> By.id("claimEnhancedStructureBuildingAllowance"),
+    "No, claim" -> By.id("claimEnhancedStructureBuildingAllowance-no"),
+    "esba Day" -> By.id("esbaQualifyingDate.day"),
+    "esba Month" -> By.id("esbaQualifyingDate.month"),
+    "esba Year" -> By.id("esbaQualifyingDate.year"),
+    "Enhanced structures and buildings allowance claims" -> By.cssSelector("#main-content > div > div > h1"),
+    "How much is your enhanced structures and buildings allowance claim?" -> By.cssSelector("#main-content > div > div > form > div > h1 > label"),
+    "How much is your enhanced structures and buildings allowance claim? amount" -> By.id("esbaClaim"),
+    "Where is the new enhanced structure or building located?" -> By.cssSelector("#main-content > div > div > h1"),
+    "Your enhanced structures and buildings allowance claims" -> By.cssSelector("#main-content > div > div > form > h1"),
 
 
 
@@ -600,7 +600,8 @@ trait CommonElements extends BasePage with Matchers {
     "Payments into UK pensions"                                            -> By.id("PaymentsIntoPensions"),
     "Payments into non-UK pensions"                                        -> By.id("PaymentsIntoPensions-2"),
     "Annual allowances"                                                    -> By.id("PaymentsIntoPensions-3"),
-    "Overseas transfer charges"                                            -> By.id("PaymentsIntoPensions-4"),
+    // TODO Please use some prefix to your common task list links, it clashes with our
+//        "Overseas transfer charges"                                            -> By.id("PaymentsIntoPensions-4"),
     "Payments into UK pensions task list"                                  -> By.cssSelector("#main-content > div > div > ul > li:nth-child(4) > div.govuk-task-list__name-and-hint > a"),
     "Payments into pensions tag"                                           -> By.cssSelector("#task-list-4-status"),
 
@@ -664,10 +665,7 @@ trait CommonElements extends BasePage with Matchers {
     "Zero-emission cars" -> By.xpath("//a[text()=' Zero-emission cars ']"),
     "10 percent" -> By.id("10%"),
     "full cost" -> By.id("fullCost")
-
-
-
-
-
   )
+
+  val elements: Map[String, By] = Map(commonMapping: _*)
 }

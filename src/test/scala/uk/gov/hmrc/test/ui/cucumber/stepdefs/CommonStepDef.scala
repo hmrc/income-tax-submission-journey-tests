@@ -161,6 +161,7 @@ class CommonStepDef extends Steps with TaxYearHelper{
     val expectedTaxYear = replaceTaxYear(taxYear)
     val expectedUrl: String = url match {
       case "Test only clear data" => s"http://localhost:10007/update-and-submit-income-tax-return/tailored-return/test-only/$expectedTaxYear/clear-data"
+      case "Test only add data"   => s"http://localhost:10007/update-and-submit-income-tax-return/tailored-return/test-only/$expectedTaxYear/add-data"
       case _ => fail("Invalid url input parameter")
     }
     driver.navigate().to(expectedUrl)

@@ -600,8 +600,7 @@ trait CommonElements extends BasePage with Matchers {
     "Payments into UK pensions"                                            -> By.id("PaymentsIntoPensions"),
     "Payments into non-UK pensions"                                        -> By.id("PaymentsIntoPensions-2"),
     "Annual allowances"                                                    -> By.id("PaymentsIntoPensions-3"),
-    // TODO Please use some prefix to your common task list links, it clashes with Pension links
-//        "Overseas transfer charges"                                            -> By.id("PaymentsIntoPensions-4"),
+    "Overseas transfer charges1"                                            -> By.id("PaymentsIntoPensions-4"),
     "Payments into UK pensions task list"                                  -> By.cssSelector("#main-content > div > div > ul > li:nth-child(4) > div.govuk-task-list__name-and-hint > a"),
     "Payments into pensions tag"                                           -> By.cssSelector("#task-list-4-status"),
 

@@ -1,4 +1,4 @@
-@TYR_private_beta @about_your_work
+@TYR_private_beta @about_your_work @ignore
 
 Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
 

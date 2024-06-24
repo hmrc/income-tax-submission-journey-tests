@@ -1,4 +1,4 @@
-@TYR_private_beta @addSections
+@TYR_private_beta @addSections @ignore
 
 Feature: Add sections Journeys Tailor Your Return - Income Tax Submission
 

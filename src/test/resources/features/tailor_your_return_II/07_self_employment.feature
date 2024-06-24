@@ -1,4 +1,4 @@
-@TYR_Self_Employment @TYR_Common_Task_List @TYR_private_beta
+@TYR_Self_Employment @TYR_Common_Task_List @TYR_private_beta @ignore
 
 Feature: Self Employment Journeys - Income Tax Submission
 

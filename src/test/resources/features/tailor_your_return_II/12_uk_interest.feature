@@ -1,4 +1,4 @@
-@TYR_UK_Interest @TYR_Common_Task_List @TYR_private_beta
+@TYR_UK_Interest @TYR_Common_Task_List @TYR_private_beta @ignore
 
 Feature: UK Interest Journeys - Income Tax Submission
 

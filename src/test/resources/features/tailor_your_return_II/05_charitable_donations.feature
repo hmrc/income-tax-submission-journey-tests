@@ -1,4 +1,4 @@
-@TYR_Charitable_Donations @TYR_Common_Task_List @TYR_private_beta @ignore
+@TYR_Charitable_Donations @TYR_Common_Task_List @TYR_private_beta
 
 Feature: Charitable Donations Journeys - Income Tax Submission
 

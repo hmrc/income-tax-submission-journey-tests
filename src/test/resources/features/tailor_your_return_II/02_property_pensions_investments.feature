@@ -1,4 +1,4 @@
-@TYR_private_beta @property_pensions_investments @ignore
+@TYR_private_beta @property_pensions_investments
 
 Feature: Income from Property, Pensions And Investments Tailor Your Return - Income Tax Submission
 

@@ -1,4 +1,4 @@
-@TYR_private_beta @payment_into_pensions @TYR @ignore
+@TYR_private_beta @payment_into_pensions @TYR
 
 Feature: About You Journeys Tailor Your Return - Income Tax Submission
 

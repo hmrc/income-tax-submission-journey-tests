@@ -115,6 +115,6 @@ Feature: Add sections Journeys Tailor Your Return - Income Tax Submission
     When the user selects the Payments into UK pensions radio button
     When the user selects the Payments into non-UK pensions radio button
     When the user selects the Annual allowances radio button
-    When the user selects the Overseas transfer charges radio button
+    When the user selects the Overseas transfer charges1 radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page

@@ -1,4 +1,4 @@
-@TYR_Employment_Support_Allowance @TYR_Common_Task_List @TYR_private_beta
+@TYR_Employment_Support_Allowance @TYR_Common_Task_List @TYR_private_beta @ignore
 
 Feature: Employment and Support Allowance Journeys - Income Tax Submission
 

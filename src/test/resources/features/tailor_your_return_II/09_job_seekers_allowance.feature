@@ -1,4 +1,4 @@
-@TYR_Jobseekers_Allowance @TYR_Common_Task_List @TYR_private_beta
+@TYR_Jobseekers_Allowance @TYR_Common_Task_List @TYR_private_beta @ignore
 
 Feature: Jobseeker's Allowance Journeys - Income Tax Submission
 

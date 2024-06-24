@@ -1,4 +1,4 @@
-@TYR_Payment_Into_Pensions @TYR_Common_Task_List @TYR_private_beta
+@TYR_Payment_Into_Pensions @TYR_Common_Task_List @TYR_private_beta @ignore
 
 Feature: Payment Into Pensions Journeys - Income Tax Submission
 

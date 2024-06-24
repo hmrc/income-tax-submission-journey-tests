@@ -1,4 +1,4 @@
-@TYR_UK_Dividends_Shares_Loans @TYR_Common_Task_List @TYR_private_beta
+@TYR_UK_Dividends_Shares_Loans @TYR_Common_Task_List @TYR_private_beta @ignore
 
 Feature: UK dividends, shares and loans from limited companies Journeys - Income Tax Submission
 

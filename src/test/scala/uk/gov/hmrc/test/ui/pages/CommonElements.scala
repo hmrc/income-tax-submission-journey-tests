@@ -57,7 +57,7 @@ trait CommonElements extends BasePage with Matchers {
     "addSelfEmployment" -> By.id("self-employment"),
 
 
-    //Task List Elements
+    //Common Task List Elements
 
     "UK residence status"                                 -> By.cssSelector("#main-content > div > div > ul:nth-child(5) > li:nth-child(1) > div.govuk-task-list__name-and-hint > a"),
     "Foster carer status"                                 -> By.cssSelector("#main-content > div > div > ul:nth-child(5) > li:nth-child(2) > div.govuk-task-list__name-and-hint > a"),
@@ -66,26 +66,30 @@ trait CommonElements extends BasePage with Matchers {
     "Gifts of shares or securities1"                      -> By.className("GiftsOfSharesTitle"),
     "Gifts of overseas charities1"                        -> By.cssSelector("#main-content > div > div > ul:nth-child(7) > li:nth-child(3) > div.govuk-task-list__name-and-hint > a"),
     "PAYE employment (including student loans)1"          -> By.className("PayeEmploymentTitle"),
-    "Construction Industry Schemes deductions"           -> By.className("CISTitle"),
-    "Review Employment and support allowance claims"     -> By.className("ESATitle"),
-    "Review Jobseeker’s Allowance claims"                -> By.className("JSATitle"),
+    "Construction Industry Schemes deductions"            -> By.className("CISTitle"),
+    "Review Employment and support allowance claims"      -> By.className("ESATitle"),
+    "Review Jobseeker’s Allowance claims"                 -> By.className("JSATitle"),
     "State Pension1"                                      -> By.className("StatePensionTitle"),
     "Other UK Pensions1"                                  -> By.className("OtherUkPensionsTitle"),
     "Unauthorised payments1"                              -> By.className("UnauthorisedPaymentsTitle"),
     "Short service refunds1"                              -> By.className("ShortServiceRefundsTitle"),
     "Income from overseas pensions1"                      -> By.className("IncomeFromOverseasTitle"),
     "Payments into UK pensions1"                          -> By.className("PaymentsIntoUkTitle"),
-    "Annual allowances1"                                   -> By.className("AnnualAllowancesTitle"),
+    "Annual allowances1"                                  -> By.className("AnnualAllowancesTitle"),
     "Payments into overseas pensions"                     -> By.className("PaymentsIntoOverseasTitle"),
     "Overseas transfer charge1"                           -> By.className("OverseasTransferTitle"),
     "Banks and building societies1"                       -> By.className("BanksAndBuildingTitle"),
-    "Trust fund bond or bonds"                           -> By.className("TrustFundBondTitle"),
+    "Trust fund bond or bonds"                            -> By.className("TrustFundBondTitle"),
     "Gilt-edged or accrued income securities1"            -> By.className("GiltEdgedTitle"),
     "Cash dividends from UK stocks and shares1"           -> By.className("CashDividendsTitle"),
     "Stock dividends from UK companies1"                  -> By.className("StockDividendsTitle"),
     "Dividends from unit trusts or investment companies1" -> By.className("DividendsFromUnitTrustsTitle"),
     "Free or redeemable shares1"                          -> By.className("FreeRedeemableSharesTitle"),
     "Close company loans written off or released1"        -> By.className("CloseCompanyLoansTitle"),
+    "Life Insurance common task list"                     -> By.className("LifeInsuranceTitle"),
+    "Life Annuity common task list"                       -> By.className("LifeAnnuityTitle"),
+    "Capital Redemption common task list"                 -> By.className("CapitalRedemptionTitle"),
+    "Voided ISA(a policy cancelled by your ISA manager) common task list" -> By.className("VoidedISATitle"),
 
     //Dividends Elements
     "dividends"                                                  -> By.id("dividends_link"),

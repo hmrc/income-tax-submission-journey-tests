@@ -102,3 +102,43 @@ Feature: Pensions Journeys - 02A Income from Pensions - UK Pension Income - Inco
     When the user selects the Yes, I’ve completed this section radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Income from pensions" page
+
+
+  Scenario: Individual journey - User answers NO on first question page
+    Given the existing data in service pensions is cleared for nino AA000001C
+    When the user logs into the service with the following details
+      | Redirect url        | /InYear/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA000001C   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addPension tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the pensions link
+    Then the user should be redirected to the "Pensions" page
+
+    When the user clicks on the Income from pensions link
+    Then the user should be redirected to the "Income from pensions" page
+    When the user clicks on the Other UK Pensions link
+
+    Then the user should be redirected to the "Do you get UK pension scheme payments?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+
+    Then the user should be redirected to the "Check UK Pension Income" page
+
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page for pensions
+
+    When the user selects the Yes, I’ve completed this section radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Income from pensions" page

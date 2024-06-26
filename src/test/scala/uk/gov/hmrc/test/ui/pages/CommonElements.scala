@@ -35,7 +35,7 @@ trait CommonElements extends BasePage with Matchers {
     "continue"                  -> By.id("continue"),
     "confirm"                   -> By.xpath("//*[contains(text(),'Confirm')]"),
     "back"                      -> By.cssSelector("a.govuk-back-link"),
-    "remove account"            -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(1) > span.hmrc-add-to-a-list__remove > a"),
+    "remove account"            -> By.cssSelector("#main-content > div > div > div.govuk-form-group > dl > div:nth-child(1) > dd > ul > li:nth-child(2) > a"),
     "change"                    -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li > span.hmrc-add-to-a-list__change > a"),
     "return to overview"        -> By.id("returnToOverviewPageBtn"),
     "remove"                    -> By.id("remove"),
@@ -220,7 +220,7 @@ trait CommonElements extends BasePage with Matchers {
     "change value of land or property" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(9) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
     "change value of shares, securities, land or property" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(10) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
     "change overseas charities shares, securities, land or property were donated to" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(11) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a"),
-    "change charity name" -> By.cssSelector("#main-content > div > div > div.govuk-form-group > ul > li:nth-child(1) > span.hmrc-add-to-a-list__change > a"),
+    "change charity name" -> By.cssSelector("#main-content > div > div > div.govuk-form-group > dl > div > dd > ul > li:nth-child(1) > a"),
 
     //Crystallisation Elements
     "I agree - Submit Income Tax Return" -> By.cssSelector("#agree"),

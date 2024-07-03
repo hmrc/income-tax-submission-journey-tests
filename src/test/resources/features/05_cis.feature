@@ -289,7 +289,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "Contractor CIS deductions" page
     When the user goes back to the previous page in their browser's history
     Then the user should be redirected to the "CIS deductions" page
-@test
+
   Scenario: Individual user adds new CIS deductions data to a contractor with no existing CIS history EOY
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |

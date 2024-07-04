@@ -667,7 +667,24 @@ trait CommonElements extends BasePage with Matchers {
     "Balancing allowance" -> By.xpath("//a[text()=' Balancing allowance ']"),
     "Zero-emission cars" -> By.xpath("//a[text()=' Zero-emission cars ']"),
     "10 percent" -> By.id("10%"),
-    "full cost" -> By.id("fullCost")
+    "full cost" -> By.id("fullCost"),
+    "Zero-emission goods vehicles" -> By.xpath("//a[text()=' Zero-emission goods vehicles ']"),
+    "Electric vehicle charge-points" -> By.xpath("//a[text()=' Electric vehicle charge-points ']"),
+    "Structures and Buildings Allowance" -> By.xpath("//a[text()=' Structures and Buildings Allowance ']"),
+    "QualifyingUse Day" -> By.id("structuresBuildingsQualifyingUseDate.day"),
+    "QualifyingUse Month" -> By.id("structuresBuildingsQualifyingUseDate.month"),
+    "QualifyingUse Year" -> By.id("structuresBuildingsQualifyingUseDate.year"),
+    "Self employment building number" -> By.id("buildingNumber"),
+    "Self employment postcode" -> By.id("postcode"),
+    "Freeport sites" -> By.xpath("//a[text()=' Freeport sites ']"),
+    "Construction start Day" -> By.id("contractStartDate.day"),
+    "Construction start Month" -> By.id("contractStartDate.month"),
+    "Construction start Year" -> By.id("contractStartDate.year"),
+    "Qualifying start Day" -> By.id("qualifyingUseStartDate.day"),
+    "Qualifying start Month" -> By.id("qualifyingUseStartDate.month"),
+    "Qualifying start Year" -> By.id("qualifyingUseStartDate.year"),
+    "Annual Investment Allowance" -> By.xpath("//a[text()=' Annual Investment Allowance ']"),
+    "Writing down allowance" -> By.xpath("//a[text()=' ‘Writing down’ allowance ']")
   )
 
   val elements: Map[String, By] = Map(commonMapping: _*)

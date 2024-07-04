@@ -883,7 +883,7 @@ Feature: Self Employment Journeys
 
     #-----------Allowances for vehicles, equipment and building -  Zero-Emission cars journey ----- #
 
-  Scenario: Individual - Self employment Expenses - Questions page from task list
+  Scenario: Individual - Self employment Expenses - Questions Allowances for vehicles, equipment and building
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start  |
       | Credential Strength | strong      |
@@ -937,10 +937,226 @@ Feature: Self Employment Journeys
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
+   #-----------Allowances for vehicles, equipment and building -  zero emission goods Vehicle journey ----- #
+    When the user clicks on the Zero-emission goods vehicles link
+
+    Then the user should be redirected to the "Zero-emission goods vehicles" page under self employment
+    When the user selects the yes radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Zero-emission goods vehicle allowance" page under self employment
+    When the user selects the yes radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "What was the total cost of the vehicle, in pounds?" page under self employment
+    And the user selects the Amount-field field and enters a value of 900
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Did you only use the vehicle for your self-employment?" page under self employment
+    When the user selects the yes radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "How much of the vehicle’s cost do you want to claim under this 100% allowance?" page under self employment
+    When the user selects the full cost radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Check your answers" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+    #-----------Allowances for vehicles, equipment and building -   Electric vehicle charge-points  ----- #
+    When the user clicks on the Electric vehicle charge-points link
+
+    Then the user should be redirected to the "Electric vehicle charge-point allowance" page under self employment
+    When the user selects the yes radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Tax relief on charge-points" page under self employment
+    When the user selects the yes radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "How much did you spend on electric vehicle charge-points, in pounds?" page under self employment
+    And the user selects the Amount-field field and enters a value of 900
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Did you only use these charge-points for your self-employment?" page under self employment
+    When the user selects the yes radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "How much of the charge-points’ costs do you want to claim under the 100% allowance?" page under self employment
+    When the user selects the full cost radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Check your answers" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+     #-----------Allowances for vehicles, equipment and building -   structure and building allowance journey  ----- #
+
+    When the user clicks on the Structures and Buildings Allowance link
+
+    Then the user should be redirected to the "Structures and buildings allowance" page under self employment
+    When the user selects the yes radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Can you still claim?" page under self employment
+    When the user selects the yes radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Qualifying use" page under self employment
+    When the user selects the QualifyingUse Day field and enters a value of 01
+    And the user selects the QualifyingUse Month field and enters a value of 01
+    And the user selects the QualifyingUse Year field and enters a value of 2023
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Where is the new structure or building located?" page under self employment
+    When the user selects the Self employment building number field and enters a value of 10
+    When the user selects the Self employment postcode field and enters a value of AB1 2ED
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Claim amount" page under self employment
+    And the user selects the Amount-field field and enters a value of 900
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "New structures or buildings" page under self employment
+    When the user selects the no radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Can you still claim?" page under self employment
+    When the user selects the yes radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Claim amount" page under self employment
+    And the user selects the Amount-field field and enters a value of 100
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Check your answers" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+    #-----------Allowances for vehicles, equipment and building -   freeport sites journey  ----- #
+
+    When the user clicks on the Freeport sites link
+
+    Then the user should be redirected to the "Special tax sites allowance" page under self employment
+    When the user selects the yes radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Date construction started" page under self employment
+    When the user selects the yes radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "When was the earliest contract entered into?" page under self employment
+    When the user selects the Construction start Day field and enters a value of 01
+    And the user selects the Construction start Month field and enters a value of 01
+    And the user selects the Construction start Year field and enters a value of 2023
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Qualifying use" page under self employment
+    When the user selects the Qualifying start Day field and enters a value of 01
+    And the user selects the Qualifying start Month field and enters a value of 01
+    And the user selects the Qualifying start Year field and enters a value of 2023
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Where is the special tax site located?" page under self employment
+    When the user selects the Self employment building number field and enters a value of 10
+    When the user selects the Self employment postcode field and enters a value of AB1 2ED
+    And the user clicks the Continue button
+
+    #todo - bug
+    Then the user should be redirected to the "newSiteClaimingAmount.subHeading" page under self employment
+    And the user selects the Amount-field field and enters a value of 100
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "New special tax site structures or buildings" page under self employment
+    When the user selects the no radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Do you have a continuing claim for enhanced structures and buildings allowance?" page under self employment
+    When the user selects the yes radio button
+    And the user clicks the Continue button
+
+    #todo - bug
+    Then the user should be redirected to the "Do you want to remove this special tax site structure or building?" page under self employment
+    When the user selects the yes radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Claim amount" page under self employment
+    And the user selects the Amount-field field and enters a value of 100
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Check your answers" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
 
 
+    #-----------Allowances for vehicles, equipment and building - Annual investment allowance journey  ----- #
 
+    When the user clicks on the Annual Investment Allowance link
 
+    Then the user should be redirected to the "Annual Investment Allowance" page under self employment
+    When the user selects the yes radio button
+    And the user clicks the Continue button
 
+    Then the user should be redirected to the "How much annual investment allowance do you want to claim?" page under self employment
+    And the user selects the Amount-field field and enters a value of 100
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Check your answers" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+    #-----------Allowances for vehicles, equipment and building - Writing down allowance  ----- #
+
+    When the user clicks on the Writing down allowance link
+
+    Then the user should be redirected to the "‘Writing down’ allowance" page under self employment
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Special rate (6%) pool" page under self employment
+    When the user selects the yes radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Claim amount" page under self employment
+    And the user selects the Amount-field field and enters a value of 100
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Main rate (18%) pool" page under self employment
+    When the user selects the yes radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Claim amount" page under self employment
+    And the user selects the Amount-field field and enters a value of 100
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Single asset pools" page under self employment
+    When the user selects the yes radio button
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Claim amount for single asset pools" page under self employment
+    And the user selects the Amount-field field and enters a value of 100
+    And the user clicks the Continue button
+
+    Then the user should be redirected to the "Check your answers" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
 
 

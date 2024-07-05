@@ -684,7 +684,7 @@ trait CommonElements extends BasePage with Matchers {
     "Qualifying start Month" -> By.id("qualifyingUseStartDate.month"),
     "Qualifying start Year" -> By.id("qualifyingUseStartDate.year"),
     "Annual Investment Allowance" -> By.xpath("//a[text()=' Annual Investment Allowance ']"),
-    "Writing down allowance" -> By.xpath("//a[text()=' ‘Writing down’ allowance ']")
+    "Writing down" -> By.xpath("//a[text()=' ‘Writing down’ allowance ']")
   )
 
   val elements: Map[String, By] = Map(commonMapping: _*)

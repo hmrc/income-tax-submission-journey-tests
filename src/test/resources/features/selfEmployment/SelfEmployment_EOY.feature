@@ -4,7 +4,7 @@ Feature: Self Employment Journeys
   Background:
     Given the user navigates to the auth login page
 
-        #-------------- Review Self Employment Page ----------#
+  #-------------- Review Self Employment Page ----------#
   Scenario: Individual Check self employment details
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -39,7 +39,7 @@ Feature: Self Employment Journeys
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-    #-------------- Self Employment Abroad  ----------#
+  #-------------- Self Employment Abroad  ----------#
 
   Scenario: Individual - Self employment abroad
     When the user logs into the service with the following details
@@ -74,7 +74,7 @@ Feature: Self Employment Journeys
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-    #-------------- Self Employment Income  ----------#
+  #-------------- Self Employment Income  ----------#
   Scenario: Individual - Self employment EOY Income journey - (Accural accounting - declare expenses)
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -156,7 +156,7 @@ Feature: Self Employment Journeys
     Then the user should be redirected to the "Self-employment" page under self employment
 
 
-  #-------------- Self Employment Expenses  ----------#
+  #-------------- Self Employment Expenses tailoring journey ----------#
   Scenario: Individual - Self employment Expenses Tailoring journey
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -268,7 +268,8 @@ Feature: Self Employment Journeys
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-      #-------------- Self Employment Expenses - Questions page from task list  ----------#
+
+  #---------- Self Employment Expenses - Questions page from task list  ----------#
 
   Scenario: Individual - Self employment Expenses - Questions page from task list
     When the user logs into the service with the following details

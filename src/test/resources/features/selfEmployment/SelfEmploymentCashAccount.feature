@@ -51,8 +51,6 @@ Feature: Self Employment Journeys
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
-    #--------------End of Self Employment Abroad section ----------#
-
 
     #--------------Self Employment Income section ----------#
     When the user clicks on the Self-employment Income link

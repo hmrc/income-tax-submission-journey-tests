@@ -1,4 +1,4 @@
-@ignore @state_benefits
+@MVP @ZAP @state_benefits
 
 Feature: State Benefits Journeys - Income Tax Submission
 
@@ -46,7 +46,9 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "State benefits" page
     When the user clicks on the Jobseeker’s Allowance link
     Then the user should be redirected to the "Jobseeker’s Allowance" page
-    When the user clicks the Add missing claim button
+    When the user selects the Yes, claim Jobseeker's Allowance radio button
+    And the user clicks the continue, missing claim button
+#    When the user clicks the Add missing claim button
     Then the user should be redirected to the "When did you start getting Jobseeker’s Allowance?" page
     When the user selects the claim day field and enters a value of 01
     And the user selects the claim month field and enters a value of 10
@@ -72,23 +74,11 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks the state benefit save and continue button
     Then the user should be redirected to the "Jobseeker’s Allowance" page
-#    When the user clicks on the state benefit back link
-#    Then the user should be redirected to the "Jobseeker’s Allowance" page
     When the user clicks on the first view link
     When the user clicks on the remove claim link
     Then the user should be redirected to the "Are you sure you want to remove this Jobseeker’s Allowance claim?" page
     When the user clicks the Remove claim button
     Then the user should be redirected to the "Jobseeker’s Allowance" page
-#    When the user clicks on the state benefit back link
-#    Then the user should be redirected to the "Jobseeker’s Allowance" page
-#    When the user clicks on the first ignored view link
-#    Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
-#    When the user clicks the Restore claim button
-#    Then the user should be redirected to the "Jobseeker’s Allowance" page
-#    When the user clicks on the state benefit back link
-#    Then the user should be redirected to the "Jobseeker’s Allowance" page
-#    When the user clicks the continue button
-#    Then the user should be redirected to the "State benefits" page
 
   Scenario: Individual User edits Jobseeker’s Allowance in session data EOY
     When the user logs into the service with the following details
@@ -176,7 +166,9 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "State benefits" page
     When the user clicks on the Jobseeker’s Allowance link
     Then the user should be redirected to the "Jobseeker’s Allowance" page
-    When the user clicks the Add missing claim button
+    When the user selects the Yes, claim Jobseeker's Allowance radio button
+    And the user clicks the continue, missing claim button
+ #   When the user clicks the Add missing claim button
     Then the user should be redirected to the "When did you start getting Jobseeker’s Allowance?" page
     When the user selects the claim day field and enters a value of 01
     And the user selects the claim month field and enters a value of 07
@@ -251,7 +243,8 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "State benefits" page
     When the user clicks on the Jobseeker’s Allowance link
     Then the user should be redirected to the "Jobseeker’s Allowance" page
-    When the user clicks the Add missing claim button
+    When the user selects the Yes, claim Jobseeker's Allowance radio button
+    And the user clicks the continue, missing claim button
     Then the user should be redirected to the "When did your client start getting Jobseeker’s Allowance?" page
     When the user selects the claim day field and enters a value of 01
     And the user selects the claim month field and enters a value of 11
@@ -397,7 +390,8 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "State benefits" page
     When the user clicks on the Employment and Support Allowance link
     Then the user should be redirected to the "Employment and Support Allowance" page
-    When the user clicks the Add missing claim button
+    When the user selects the Yes, claim Employment and Support Allowance radio button
+    And the user clicks the continue, missing claim button
     Then the user should be redirected to the "When did you start getting Employment and Support Allowance?" page
     When the user selects the claim day field and enters a value of 01
     And the user selects the claim month field and enters a value of 01
@@ -423,10 +417,8 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     When the user clicks the state benefit save and continue button
     Then the user should be redirected to the "Employment and Support Allowance" page
- #   When the user clicks on the state benefit back link
- #   Then the user should be redirected to the "Employment and Support Allowance" page
     When the user clicks on the first view link
-    When the user clicks on the remove claim link
+    And the user clicks on the remove claim link
     Then the user should be redirected to the "Are you sure you want to remove this Employment and Support Allowance claim?" page
     When the user clicks the Remove claim button
     Then the user should be redirected to the "Employment and Support Allowance" page
@@ -544,7 +536,8 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "State benefits" page
     When the user clicks on the Employment and Support Allowance link
     Then the user should be redirected to the "Employment and Support Allowance" page
-    When the user clicks the Add missing claim button
+    When the user selects the Yes, claim Employment and Support Allowance radio button
+    And the user clicks the continue, missing claim button
     Then the user should be redirected to the "When did your client start getting Employment and Support Allowance?" page
     When the user selects the claim day field and enters a value of 01
     And the user selects the claim month field and enters a value of 01

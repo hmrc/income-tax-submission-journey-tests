@@ -283,6 +283,9 @@ trait CommonElements extends BasePage with Matchers {
     "The date you started getting Jobseeker’s Allowance must include a day" -> By.id("value-for-error"),
     "The date you started getting Jobseeker’s Allowance must include a month"   -> By.id("emptyMonth-error"),
     "The date you started getting Jobseeker’s Allowance must include a year" -> By.id("emptyYear-error"),
+    "Yes, claim Jobseeker's Allowance" -> By.id("value"),
+    "Yes, claim Employment and Support Allowance" -> By.id("value"),
+    "continue, missing claim" -> By.id("add-missing-claim-button-id"),
 
     //View Estimation Elements
     "Update tax calculation"   -> By.id("updateTaxCalculation"),

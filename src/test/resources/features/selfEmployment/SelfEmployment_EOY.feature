@@ -1,11 +1,10 @@
 @SelfEmployment
-
 Feature: Self Employment Journeys
 
   Background:
     Given the user navigates to the auth login page
 
-    #-------------- Review Self Employment Page ----------#
+  #-------------- Review Self Employment Page ----------#
   Scenario: Individual Check self employment details
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -40,44 +39,7 @@ Feature: Self Employment Journeys
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-
-  Scenario: Agent Check self employment details
-    When the user logs into the service with the following details
-      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA000001D&ClientMTDID=1234567890 |
-      | Credential Strength | weak                                                                                |
-      | Confidence Level    | 250                                                                                 |
-      | Affinity Group      | Agent                                                                               |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                         |
-      | Identifier Name 1   | MTDITID                                                                             |
-      | Identifier Value 1  | 1234567890                                                                          |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                       |
-      | Identifier Name 2   | AgentReferenceNumber                                                                |
-      | Identifier Value 2  | XARN1234567                                                                         |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the addSections link
-    Then the user should be redirected to the "Add sections to your client’s Income Tax Return" page
-    When the user clicks the addSelfEmployment tailoring option
-    And the user clicks the continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the Self Employment link
-    Then the user should be redirected to the "Self-employment" page under self employment
-
-    When the user clicks on the Review self-employments link
-    Then the user should be redirected to the "Self-employment" page under self employment
-    When the user clicks on the View Self Employment link
-    Then the user should be redirected to the "Check your client’s self-employment details" page under self employment
-    And the user clicks the Self Employment Save and continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
-
-    When the user clicks the Continue button
-    Then the user should be redirected to the "Have you finished this section?" page under self employment
-    When the user selects the Yes, I’ve completed this section radio button
-    When the user clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
-
-#-------------- Self Employment Abroad  ----------#
+  #-------------- Self Employment Abroad  ----------#
 
   Scenario: Individual - Self employment abroad
     When the user logs into the service with the following details
@@ -112,43 +74,7 @@ Feature: Self Employment Journeys
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-  Scenario: Agent - Self Employment Abroad
-    When the user logs into the service with the following details
-      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA000001D&ClientMTDID=1234567890 |
-      | Credential Strength | weak                                                                                |
-      | Confidence Level    | 250                                                                                 |
-      | Affinity Group      | Agent                                                                               |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                         |
-      | Identifier Name 1   | MTDITID                                                                             |
-      | Identifier Value 1  | 1234567890                                                                          |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                       |
-      | Identifier Name 2   | AgentReferenceNumber                                                                |
-      | Identifier Value 2  | XARN1234567                                                                         |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the addSections link
-    Then the user should be redirected to the "Add sections to your client’s Income Tax Return" page
-    When the user clicks the addSelfEmployment tailoring option
-    And the user clicks the continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the Self Employment link
-    Then the user should be redirected to the "Self-employment" page under self employment
-
-    When the user clicks on the Self-employment abroad link
-    Then the user should be redirected to the "Did your client carry out all of their self-employment abroad?" page under self employment
-    When the user selects the yes radio button
-    And the user clicks the Continue button
-    Then the user should be redirected to the "Check your client’s details" page under self employment
-    And the user clicks the Self Employment Save and continue button
-
-    Then the user should be redirected to the "Have you finished this section?" page under self employment
-    When the user selects the Yes, I’ve completed this section radio button
-    When the user clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
-
-
- #-------------- Self Employment Income  ----------#
+  #-------------- Self Employment Income  ----------#
   Scenario: Individual - Self employment EOY Income journey - (Accural accounting - declare expenses)
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -229,166 +155,8 @@ Feature: Self Employment Journeys
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-  Scenario: Agent - Self employment InYear Income journey - (Accural accounting - maximum trading allowance)
-    When the user logs into the service with the following details
-      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA000001D&ClientMTDID=1234567890 |
-      | Credential Strength | weak                                                                                |
-      | Confidence Level    | 250                                                                                 |
-      | Affinity Group      | Agent                                                                               |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                         |
-      | Identifier Name 1   | MTDITID                                                                             |
-      | Identifier Value 1  | 1234567890                                                                          |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                       |
-      | Identifier Name 2   | AgentReferenceNumber                                                                |
-      | Identifier Value 2  | XARN1234567                                                                         |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the addSections link
-    Then the user should be redirected to the "Add sections to your client’s Income Tax Return" page
-    When the user clicks the addSelfEmployment tailoring option
-    And the user clicks the continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the Self Employment link
-    Then the user should be redirected to the "Self-employment" page under self employment
 
-    When the user clicks on the Self-employment Income link
-    Then the user should be redirected to the "Income not counted as turnover" page under self employment
-    When the user selects the yes radio button
-    And the user clicks the Continue button
-
-    Then the user should be redirected to the "How much non-turnover income did your client get?" page under self employment
-    And the user selects the Amount-field field and enters a value of 20000
-    And the user clicks the Continue button
-
-    Then the user should be redirected to the "Your turnover" page under self employment
-    And the user selects the Amount-field field and enters a value of 50000
-    And the user clicks the Continue button
-
-    Then the user should be redirected to the "Is there any other self-employment income your client needs to tell us about?" page under self employment
-    When the user selects the yes radio button
-    And the user clicks the Continue button
-
-    Then the user should be redirected to the "How much other self-employment income did your client get?" page under self employment
-    And the user selects the Amount-field field and enters a value of 100000
-    And the user clicks the Continue button
-
-    Then the user should be redirected to the "Turnover exempt from tax" page under self employment
-    When the user selects the yes radio button
-    And the user clicks the Continue button
-
-    Then the user should be redirected to the "How much of your client’s turnover is exempt from being taxed as profit?" page under self employment
-    And the user selects the Amount-field field and enters a value of 120,000
-    And the user clicks the Continue button
-
-    Then the user should be redirected to the "Trading allowance" page under self employment
-    #Use trading allowance
-    When the user selects the Use the trading allowance radio button
-    And the user clicks the Continue button
-
-    Then the user should be redirected to the "Trading allowance for income under £1,000" page under self employment
-    #Use The maximum £1,000
-    When the user selects the first radio button radio button
-    And the user clicks the Continue button
-
-   Then the user should be redirected to the "Check your client’s income" page under self employment
-    And the user clicks the Self Employment Save and continue button
-
-    Then the user should be redirected to the "Have you finished this section?" page under self employment
-    When the user selects the Yes, I’ve completed this section radio button
-    When the user clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
-
-  Scenario: Individual - Self employment Income journey - (Cash accounting - Use Less than the maximum of £1,000)
-    When the user logs into the service with the following details
-      | Redirect url        | /EOY/start  |
-      | Credential Strength | strong      |
-      | Confidence Level    | 250         |
-      | Affinity Group      | Individual  |
-      | Nino                | CY682344B   |
-      | Enrolment Key 1     | HMRC-MTD-IT |
-      | Identifier Name 1   | MTDITID     |
-      | Identifier Value 1  | 1234567890  |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the addSections link
-    Then the user should be redirected to the "Add sections to your Income Tax Return" page
-    When the user clicks the addSelfEmployment tailoring option
-    And the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the Self Employment link
-    Then the user should be redirected to the "Self-employment" page under self employment
-
-    #-------------- Review Self Employment Page ----------#
-    When the user clicks on the Review self-employments link
-    Then the user should be redirected to the "Self-employment" page under self employment
-    When the user clicks on the View Self Employment link
-    Then the user should be redirected to the "Check your self-employment details" page under self employment
-    And the user clicks the Self Employment Save and continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
-    When the user clicks the Continue button
-    Then the user should be redirected to the "Have you finished this section?" page under self employment
-    When the user selects the Yes, I’ve completed this section radio button
-    When the user clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
-    #-------------- End of Review Self Employment Page ----------#
-
-
-    #-------------- Self Employment Abroad section ----------#
-    When the user clicks on the Self-employment abroad link
-    Then the user should be redirected to the "Did you carry out all of your self-employment abroad?" page under self employment
-    When the user selects the yes radio button
-    And the user clicks the Continue button
-    Then the user should be redirected to the "Check your details" page under self employment
-    And the user clicks the Self Employment Save and continue button
-    Then the user should be redirected to the "Have you finished this section?" page under self employment
-    When the user selects the Yes, I’ve completed this section radio button
-    When the user clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
-    #--------------End of Self Employment Abroad section ----------#
-
-
-    #--------------Self Employment Income section ----------#
-    When the user clicks on the Self-employment Income link
-    Then the user should be redirected to the "Income not counted as turnover" page under self employment
-    When the user selects the yes radio button
-    And the user clicks the Continue button
-    Then the user should be redirected to the "How much non-turnover income did you get?" page under self employment
-    And the user selects the Amount-field field and enters a value of 20000
-    And the user clicks the Continue button
-    Then the user should be redirected to the "Your turnover" page under self employment
-    And the user selects the Amount-field field and enters a value of 50000
-    And the user clicks the Continue button
-    Then the user should be redirected to the "Is there any other self-employment income you need to tell us about?" page under self employment
-    When the user selects the yes radio button
-    And the user clicks the Continue button
-    Then the user should be redirected to the "How much other self-employment income did you get?" page under self employment
-    And the user selects the Amount-field field and enters a value of 100000
-    And the user clicks the Continue button
-    Then the user should be redirected to the "Trading allowance" page under self employment
-
-    #Use trading allowance
-    When the user selects the Use the trading allowance radio button
-    And the user clicks the Continue button
-    Then the user should be redirected to the "Trading allowance for income under £1,000" page under self employment
-
-    #Use Less than the maximum of £1,000
-    When the user selects the second radio button radio button
-    And the user clicks the Continue button
-    Then the user should be redirected to the "How much trading allowance do you want to use?" page under self employment
-    And the user selects the Amount-field field and enters a value of 999
-    And the user clicks the Continue button
-
-    Then the user should be redirected to the "Check your income" page under self employment
-    And the user clicks the Self Employment Save and continue button
-    Then the user should be redirected to the "Have you finished this section?" page under self employment
-    When the user selects the Yes, I’ve completed this section radio button
-    When the user clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
-
-  #-------------- Self Employment Expenses  ----------#
-
+  #-------------- Self Employment Expenses tailoring journey ----------#
   Scenario: Individual - Self employment Expenses Tailoring journey
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -500,7 +268,8 @@ Feature: Self Employment Journeys
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-  #-------------- Self Employment Expenses - Questions page from task list  ----------#
+
+  #---------- Self Employment Expenses - Questions page from task list  ----------#
 
   Scenario: Individual - Self employment Expenses - Questions page from task list
     When the user logs into the service with the following details
@@ -812,135 +581,3 @@ Feature: Self Employment Journeys
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
-
-  #-------------- Self Employment Expenses -  Allowances for vehicles, equipment and building  tailoring journey -----#
-
-  Scenario: Agent - Self employment - Allowances for vehicles, equipment and building journey
-    When the user logs into the service with the following details
-      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA000001D&ClientMTDID=1234567890 |
-      | Credential Strength | weak                                                                                |
-      | Confidence Level    | 250                                                                                 |
-      | Affinity Group      | Agent                                                                               |
-      | Enrolment Key 1     | HMRC-MTD-IT                                                                         |
-      | Identifier Name 1   | MTDITID                                                                             |
-      | Identifier Value 1  | 1234567890                                                                          |
-      | Enrolment Key 2     | HMRC-AS-AGENT                                                                       |
-      | Identifier Name 2   | AgentReferenceNumber                                                                |
-      | Identifier Value 2  | XARN1234567                                                                         |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the addSections link
-    Then the user should be redirected to the "Add sections to your client’s Income Tax Return" page
-    When the user clicks the addSelfEmployment tailoring option
-    And the user clicks the continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the Self Employment link
-    Then the user should be redirected to the "Self-employment" page under self employment
-
-    When the user clicks on the Allowances for vehicles, equipment and buildings link
-
-    Then the user should be redirected to the "Allowances for vehicles, equipment and buildings" page under self employment
-    When the user selects the yes radio button
-    And the user clicks the Continue button
-
-    Then the user should be redirected to the "Choose which allowances your client wants to claim" page under self employment
-    When the user clicks the Zero-emission car allowance checkbox
-    When the user clicks the Zero-emission goods vehicle allowance checkbox
-    When the user clicks the Electric vehicle charge-point allowance checkbox
-    When the user clicks the Structures and buildings allowance checkbox
-    When the user clicks the Freeport structures and buildings allowance checkbox
-    When the user clicks the Annual investment allowance (business equipment) checkbox
-    When the user clicks the Writing down allowance checkbox
-    When the user clicks the Balancing allowance (allowance on sales) checkbox
-    When the user clicks the Balancing charge checkbox
-    And the user clicks the Continue button
-
-    Then the user should be redirected to the "Check your client’s answers" page under self employment
-    And the user clicks the Self Employment Save and continue button
-    Then the user should be redirected to the "Have you finished this section?" page under self employment
-    When the user selects the Yes, I’ve completed this section radio button
-    When the user clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
-
-   #-----------Allowances for vehicles, equipment and building -  Balancing allowance journey ----- #
-    When the user clicks on the Balancing allowance link
-
-    Then the user should be redirected to the "Does your client have a balancing allowance to report?" page under self employment
-    When the user selects the yes radio button
-    And the user clicks the Continue button
-
-    Then the user should be redirected to the "How much is the total of your client’s balancing allowances?" page under self employment
-    And the user selects the Amount-field field and enters a value of 900.67
-    And the user clicks the Continue button
-
-    Then the user should be redirected to the "Check your client’s answers" page under self employment
-    And the user clicks the Self Employment Save and continue button
-    Then the user should be redirected to the "Have you finished this section?" page under self employment
-    When the user selects the Yes, I’ve completed this section radio button
-    When the user clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
-
-    #-----------Allowances for vehicles, equipment and building -  Zero-Emission cars journey ----- #
-
-  Scenario: Individual - Self employment Expenses - Questions page from task list
-    When the user logs into the service with the following details
-      | Redirect url        | /InYear/start  |
-      | Credential Strength | strong      |
-      | Confidence Level    | 250         |
-      | Affinity Group      | Individual  |
-      | Nino                | AA000001D   |
-      | Enrolment Key 1     | HMRC-MTD-IT |
-      | Identifier Name 1   | MTDITID     |
-      | Identifier Value 1  | 1234567890  |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the addSections link
-    Then the user should be redirected to the "Add sections to your Income Tax Return" page
-    When the user clicks the addSelfEmployment tailoring option
-    And the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the Self Employment link
-    Then the user should be redirected to the "Self-employment" page under self employment
-
-    When the user clicks on the Zero-emission cars link
-
-    Then the user should be redirected to the "Zero-emission cars" page under self employment
-    When the user selects the yes radio button
-    And the user clicks the Continue button
-
-    Then the user should be redirected to the "Zero-emission car allowance" page under self employment
-    When the user selects the yes radio button
-    And the user clicks the Continue button
-
-    Then the user should be redirected to the "What was the total cost of the car, in pounds?" page under self employment
-    And the user selects the Amount-field field and enters a value of 700
-    And the user clicks the Continue button
-
-    Then the user should be redirected to the "Did you only use the car for your self-employment?" page under self employment
-    When the user selects the no radio button
-    And the user clicks the Continue button
-
-    Then the user should be redirected to the "How much did you use the car outside your self-employment?" page under self employment
-    When the user selects the 10 percent radio button
-    And the user clicks the Continue button
-
-    Then the user should be redirected to the "How much of your car’s cost do you want to claim under the 100% allowance?" page under self employment
-    When the user selects the full cost radio button
-    And the user clicks the Continue button
-
-    Then the user should be redirected to the "Check your answers" page under self employment
-    And the user clicks the Self Employment Save and continue button
-    Then the user should be redirected to the "Have you finished this section?" page under self employment
-    When the user selects the Yes, I’ve completed this section radio button
-    When the user clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
-
-
-
-
-
-
-
-

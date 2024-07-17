@@ -1,0 +1,116 @@
+{
+  "_id": "/registration/business-details/mtdId/XAIT00000888888",
+  "schemaId": "getIfBusinessDetails",
+  "method": "GET",
+  "status": 200,
+  "response": {
+    "processingDate" : "2019-03-13T10:11:00",
+    "taxPayerDisplayResponse": {
+      "safeId": "888888",
+      "nino": "AA888888A",
+      "mtdId": "XAIT00000888888",
+      "yearOfMigration": "2017",
+      "propertyIncome": true,
+      "businessData": [
+        {
+          "incomeSourceId": "XAIS88888800001",
+          "accountingPeriodStartDate": "2016-04-06",
+          "accountingPeriodEndDate": "2017-04-05",
+          "tradingName": "AB Clothing",
+          "businessAddressDetails": {
+            "addressLine1": "1 Long Road",
+            "addressLine2": "Test Unit",
+            "addressLine3": "Lonely Town",
+            "addressLine4": "Sin City",
+            "postalCode": "SC1 1SC",
+            "countryCode": "GB"
+          },
+          "tradingStartDate": "2017-01-01",
+          "cashOrAccruals": true,
+          "seasonal": true,
+          "paperLess": true,
+          "firstAccountingPeriodStartDate": "2016-04-06",
+          "firstAccountingPeriodEndDate": "2017-04-05"
+        },
+        {
+          "incomeSourceId": "XAIS88888800002",
+          "accountingPeriodStartDate": "2017-04-06",
+          "accountingPeriodEndDate": "2018-04-05",
+          "tradingName": "AB Clothing",
+          "businessAddressDetails": {
+            "addressLine1": "1 Long Road",
+            "addressLine2": "Test Unit",
+            "addressLine3": "Lonely Town",
+            "addressLine4": "Sin City",
+            "postalCode": "SC1 1SC",
+            "countryCode": "GB"
+          },
+          "tradingStartDate": "2017-01-01",
+          "cashOrAccruals": true,
+          "seasonal": true,
+          "paperLess": true,
+          "firstAccountingPeriodStartDate": "2017-04-06",
+          "firstAccountingPeriodEndDate": "2018-04-05"
+        },
+        {
+          "incomeSourceId": "XAIS88888800003",
+          "accountingPeriodStartDate": "2018-04-06",
+          "accountingPeriodEndDate": "2019-04-05",
+          "tradingName": "AB Clothing",
+          "businessAddressDetails": {
+            "addressLine1": "1 Long Road",
+            "addressLine2": "Test Unit",
+            "addressLine3": "Lonely Town",
+            "addressLine4": "Sin City",
+            "postalCode": "SC1 1SC",
+            "countryCode": "GB"
+          },
+          "tradingStartDate": "2017-01-01",
+          "cashOrAccruals": true,
+          "seasonal": true,
+          "paperLess": true,
+          "firstAccountingPeriodStartDate": "2018-04-06",
+          "firstAccountingPeriodEndDate": "2019-04-05"
+        },
+        {
+          "incomeSourceId": "XAIS88888800004",
+          "accountingPeriodStartDate": "2019-04-06",
+          "accountingPeriodEndDate": "2020-04-05",
+          "tradingName": "AB Tayloring",
+          "businessAddressDetails": {
+            "addressLine1": "1 Long Road",
+            "addressLine2": "Test Unit",
+            "addressLine3": "Lonely Town",
+            "addressLine4": "Sin City",
+            "postalCode": "SC1 1SC",
+            "countryCode": "GB"
+          },
+          "tradingStartDate": "2017-01-01",
+          "cashOrAccruals": true,
+          "seasonal": true,
+          "paperLess": true,
+          "firstAccountingPeriodStartDate": "2019-04-06",
+          "firstAccountingPeriodEndDate": "2020-04-05"
+        }
+      ],
+      "propertyData": [
+        {
+          "incomeSourceId": "XAIS88888800005",
+          "accountingPeriodStartDate": "2019-04-06",
+          "accountingPeriodEndDate": "2020-04-05",
+          "numPropRentedUK": "4",
+          "numPropRentedEEA": "1",
+          "numPropRentedNONEEA": "0",
+          "cessationDate": "2017-12-31",
+          "cessationReason": "001",
+          "numPropRented": "5",
+          "cashOrAccruals": false,
+          "paperLess": true,
+          "firstAccountingPeriodStartDate": "2019-04-06",
+          "firstAccountingPeriodEndDate": "2020-04-05",
+          "incomeSourceType": "uk-property"
+        }
+      ]
+    }
+  }
+}

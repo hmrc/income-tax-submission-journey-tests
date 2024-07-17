@@ -1,0 +1,176 @@
+{
+  "_id": "/enterprise/02.00.00/financial-data/NINO/AA888888A/ITSA?dateFrom=2017-04-06&dateTo=2018-04-05&onlyOpenItems=false&includeLocks=true&calculateAccruedInterest=true&removePOA=false&customerPaymentInformation=true&includeStatistical=false",
+  "schemaId": "getFinancialDetailsSuccess",
+  "method": "GET",
+  "status": 200,
+  "response": {
+    "taxPayerDetails": {
+      "idType": "NINO",
+      "idNumber": "AA888888A",
+      "regimeType": "ITSA"
+    },
+    "balanceDetails": {
+      "balanceDueWithin30Days": 0.00,
+      "nextPaymentDateForChargesDueIn30Days": "1920-02-29",
+      "balanceNotDueIn30Days": 0.00,
+      "nextPaymentDateBalanceNotDue": "1920-02-29",
+      "overDueAmount": 5694.46,
+      "earliestPaymentDateOverDue": "1920-02-29",
+      "totalBalance": 5694.46,
+      "amountCodedOut": 0.0
+    },
+    "documentDetails": [
+      {
+        "taxYear": "2019",
+        "documentId": "DOCID02",
+        "documentDate": "2018-03-29",
+        "documentDescription": "ITSA - POA 2",
+        "documentText": "documentText",
+        "documentDueDate": "2020-04-15",
+        "formBundleNumber": "88888888",
+        "totalAmount": 10000,
+        "documentOutstandingAmount": 9000,
+        "lastClearingDate": "2018-04-15",
+        "lastClearingReason": "last Clearing Reason",
+        "lastClearedAmount": 589958.83,
+        "statisticalFlag": false,
+        "interestRate": 123.45,
+        "interestFromDate": "2018-08-01",
+        "interestEndDate": "2021-07-18",
+        "latePaymentInterestAmount": 100,
+        "effectiveDateOfPayment": "2020-04-15"
+      },
+      {
+        "taxYear": "2019",
+        "documentId": "PAYID01",
+        "documentDate": "2018-03-29",
+        "documentDescription": "Payment",
+        "documentText": "documentText",
+        "documentDueDate": "2020-04-15",
+        "formBundleNumber": "88888888",
+        "totalAmount": -10005,
+        "documentOutstandingAmount": -1000,
+        "lastClearingDate": "2018-04-15",
+        "lastClearingReason": "last Clearing Reason",
+        "lastClearedAmount": 589958.83,
+        "statisticalFlag": false,
+        "paymentLot": "081203010025",
+        "paymentLotItem": "000001",
+        "effectiveDateOfPayment": "2019-08-13"
+      }
+    ],
+    "financialDetails": [
+      {
+        "taxYear": "2019",
+        "documentId": "DOCID02",
+        "chargeType": "ITSA England & NI",
+        "mainType": "SA Payment on Account 2",
+        "mainTransaction": "4930",
+        "periodKey": "17PO",
+        "periodKeyDescription": "6th April 2018 to 5th April 2019",
+        "taxPeriodFrom": "2018-04-06",
+        "taxPeriodTo": "2019-04-05",
+        "businessPartner": "6622334455",
+        "contractAccountCategory": "02",
+        "contractAccount": "X",
+        "contractObjectType": "ABCD",
+        "contractObject": "00000003000000002757",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "chargeReference": "AA888888A019DD02",
+        "subTransaction": "1005",
+        "originalAmount": 10000,
+        "outstandingAmount": 9000,
+        "clearedAmount": 1000,
+        "accruedInterest": 11,
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2019-08-13",
+            "amount": 10000,
+            "clearingDate": "2018-04-13",
+            "clearingReason": "01",
+            "outgoingPaymentMethod": "outgoing Payment",
+            "clearingSAPDocument": "3350000253",
+            "statisticalDocument": "A",
+            "returnReason": "ABCA"
+          },
+          {
+            "subItem": "002",
+            "dueDate": "2019-08-13",
+            "amount": -7500,
+            "clearingDate": "2019-07-31",
+            "clearingReason": "Cleared by Payment",
+            "paymentReference": "GF235688",
+            "paymentAmount": -10000,
+            "paymentMethod": "Payment",
+            "clearingSAPDocument": "3350000255"
+          }
+        ]
+      },
+      {
+        "taxYear": "2019",
+        "documentId": "DOCID02",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "originalAmount": 2500,
+        "outstandingAmount": 0,
+        "clearedAmount": 2500,
+        "chargeType": "NIC4-GB",
+        "mainType": "SA Payment on Account 2",
+        "chargeReference": "AA888888A019DD02",
+        "mainTransaction": "4930",
+        "subTransaction": "1010",
+        "accruedInterest": 12,
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2019-07-31",
+            "amount": 2500
+          },
+          {
+            "subItem": "002",
+            "dueDate": "2019-08-13",
+            "amount": -2500,
+            "clearingDate": "2019-07-31",
+            "clearingReason": "Cleared by Payment",
+            "paymentReference": "GF235688",
+            "paymentAmount": -10000,
+            "paymentMethod": "Payment",
+            "clearingSAPDocument": "3350000255"
+          }
+        ]
+      },
+      {
+        "taxYear": "2019",
+        "documentId": "PAYID01",
+        "mainType": "Payment on Account",
+        "mainTransaction": "0060",
+        "businessPartner": "6622334455",
+        "contractAccountCategory": "02",
+        "contractAccount": "X",
+        "contractObjectType": "ABCD",
+        "contractObject": "00000003000000002757",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "chargeReference": "AA888888A019PD01",
+        "originalAmount": -10000,
+        "outstandingAmount": -1000,
+        "clearedAmount": -9000,
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2019-08-13",
+            "amount": -10000,
+            "paymentReference": "GF235687",
+            "paymentAmount": -10000,
+            "paymentMethod": "Payment",
+            "paymentLot": "081203010025",
+            "paymentLotItem": "000001",
+            "clearingSAPDocument": "3350000255"
+          }
+        ]
+      }
+    ]
+  }
+}

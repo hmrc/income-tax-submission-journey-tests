@@ -1,0 +1,52 @@
+{
+  "businessDetails": [
+    {
+      "accountingPeriodStartDate": "2019-04-01",
+      "accountingPeriodEndDate": "2020-03-03",
+      "tradingName": "ABY Ltd",
+      "addressDetails": {
+        "addressLine1": "Phoenix Building",
+        "addressLine2": "NewStreet",
+        "addressLine3": "Telford",
+        "addressLine4": "Shroshire",
+        "postalCode": "TF34ER",
+        "countryCode": "GB"
+      },
+      "typeOfBusiness": "self-employment",
+      "tradingStartDate": "2019-01-01",
+      "cashOrAccrualsFlag": false,
+      "cessationDate": "2018-03-03",
+      "cessationReason": "Business incorporated",
+      "accountingPeriodStartDate": "2019-04-01",
+      "accountingPeriodEndDate": "2020-03-03",
+      "tradingName": "ABCD Group",
+      "addressDetails": {
+        "addressLine1": "1 Woolworths Way",
+        "addressLine2": "Bella Vista",
+        "addressLine3": "",
+        "addressLine4": "NSW",
+        "postalCode": "MK18 1TF",
+        "countryCode": "GB"
+      },
+      "typeOfBusiness": "foreign-property",
+      "tradingStartDate": "1920-02-03",
+      "cashOrAccrualsFlag": true,
+      "cessationDate": "2020-01-31",
+      "cessationReason": "Business has become a partnership"
+    }
+  ],
+  "ukPropertyDetails": {
+    "tradingStartDate": "2019-01-01",
+    "cashOrAccrualsFlag": false,
+    "startDate": "2019-04-01",
+    "cessationDate": "2019-06-01",
+    "cessationReason": "Business incorporated"
+  },
+  "foreignPropertyDetails": {
+    "tradingStartDate": "2018-11-03",
+    "cashOrAccrualsFlag": true,
+    "startDate": "2019-03-01",
+    "cessationDate": "2019-07-01",
+    "cessationReason": "Retirement"
+  }
+}

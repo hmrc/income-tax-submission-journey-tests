@@ -1,0 +1,61 @@
+{
+  "_id": "/registration/business-details/nino/AA888888A",
+  "schemaId": "getIfBusinessDetails",
+  "method": "GET",
+  "status": 200,
+  "response": {
+    "processingDate" : "2019-03-13T10:11:00",
+    "taxPayerDisplayResponse": {
+      "safeId": "888888",
+      "nino": "AA888888A",
+      "mtdId": "XAIT00000888888",
+      "yearOfMigration": "2016",
+      "propertyIncome": true,
+      "businessData": [
+        {
+          "incomeSourceId": "XAIS88888800001",
+          "accountingPeriodStartDate": "2017-06-01",
+          "accountingPeriodEndDate": "2018-05-31",
+          "tradingName": "8th Street Barbers",
+          "businessAddressDetails": {
+            "addressLine1": "8 Test Lane",
+            "addressLine2": "Test Unit",
+            "addressLine3": "Test Town",
+            "addressLine4": "Test City",
+            "postalCode": "TE5 7TE",
+            "countryCode": "GB"
+          },
+          "businessContactDetails": {
+            "phoneNumber": "01332752856",
+            "mobileNumber": "07782565326",
+            "faxNumber": "01332754256",
+            "emailAddress": "stephen@manncorpone.co.uk"
+          },
+          "tradingStartDate": "2017-01-01",
+          "cashOrAccruals": false,
+          "seasonal": true,
+          "paperLess": true,
+          "firstAccountingPeriodStartDate": "2014-06-01",
+          "firstAccountingPeriodEndDate": "2015-05-31"
+        }
+      ],
+      "propertyData": [
+        {
+          "incomeSourceId": "XAIS88888800002",
+          "accountingPeriodStartDate": "2017-04-06",
+          "accountingPeriodEndDate": "2018-04-05",
+          "emailAddress": "stephen@manncorpone.co.uk",
+          "numPropRentedUK": "2",
+          "numPropRentedEEA": "0",
+          "numPropRentedNONEEA": "0",
+          "numPropRented": "2",
+          "cashOrAccruals": true,
+          "paperLess": false,
+          "firstAccountingPeriodStartDate": "2014-04-06",
+          "firstAccountingPeriodEndDate": "2015-04-05",
+          "incomeSourceType": "uk-property"
+        }
+      ]
+    }
+  }
+}

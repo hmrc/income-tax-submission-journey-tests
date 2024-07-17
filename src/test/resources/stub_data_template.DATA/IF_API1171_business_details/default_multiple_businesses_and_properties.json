@@ -1,0 +1,95 @@
+{
+  "_id": "/registration/business-details/mtdId/XAIT00000000000",
+  "schemaId": "getIfBusinessDetails",
+  "method": "GET",
+  "status": 200,
+  "response": {
+    "processingDate" : "2019-03-13T10:11:00",
+    "taxPayerDisplayResponse": {
+      "safeId": "A000000",
+      "nino": "AA000000A",
+      "mtdId": "XAIT00000000000",
+      "yearOfMigration": "2010",
+      "propertyIncome": true,
+      "businessData": [
+        {
+          "incomeSourceId": "XAIS00000000001",
+          "accountingPeriodStartDate": "2017-04-01",
+          "accountingPeriodEndDate": "2018-03-31",
+          "tradingName": "Fruit Company",
+          "businessAddressDetails": {
+            "addressLine1": "Twisted Melons, Unit 65x",
+            "addressLine2": "Twisted Miracle Lane",
+            "addressLine3": "District 9",
+            "addressLine4": "Shrewsbury",
+            "postalCode": "SY7 3ST",
+            "countryCode": "GB"
+          },
+          "tradingStartDate": "2013-01-01",
+          "cessationDate": "2017-12-31",
+          "cashOrAccruals": false,
+          "seasonal": false,
+          "paperLess": true,
+          "firstAccountingPeriodStartDate": "2017-04-01",
+          "firstAccountingPeriodEndDate": "2018-03-31"
+        },
+        {
+          "incomeSourceId": "XAIS00000000002",
+          "accountingPeriodStartDate": "2018-04-01",
+          "accountingPeriodEndDate": "2019-03-31",
+          "tradingName": "A-Z Cars",
+          "businessAddressDetails": {
+            "addressLine1": "2 Test Lane",
+            "addressLine2": "Test Unit",
+            "addressLine3": "Test Town",
+            "addressLine4": "Test City",
+            "postalCode": "TE5 7TT",
+            "countryCode": "GB"
+          },
+          "tradingStartDate": "2017-01-01",
+          "cashOrAccruals": false,
+          "seasonal": true,
+          "paperLess": true,
+          "firstAccountingPeriodStartDate": "2018-04-01",
+          "firstAccountingPeriodEndDate": "2019-03-31"
+        },
+        {
+          "incomeSourceId": "XAIS00000000003",
+          "accountingPeriodStartDate": "2019-04-01",
+          "accountingPeriodEndDate": "2020-03-31",
+          "tradingName": "Vegetable Inc",
+          "businessAddressDetails": {
+            "addressLine1": "3 Test Lane",
+            "addressLine2": "Test Unit",
+            "addressLine3": "Test Town",
+            "addressLine4": "Test City",
+            "postalCode": "TE5 7TT",
+            "countryCode": "GB"
+          },
+          "tradingStartDate": "2017-01-01",
+          "cashOrAccruals": true,
+          "seasonal": true,
+          "paperLess": true,
+          "firstAccountingPeriodStartDate": "2019-04-01",
+          "firstAccountingPeriodEndDate": "2020-03-31"
+        }
+      ],
+      "propertyData": [
+        {
+          "incomeSourceId": "XAIS00000000004",
+          "accountingPeriodStartDate": "2017-04-06",
+          "accountingPeriodEndDate": "2018-04-05",
+          "numPropRentedUK": "4",
+          "numPropRentedEEA": "1",
+          "numPropRentedNONEEA": "0",
+          "cessationDate": "2017-12-31",
+          "cessationReason": "001",
+          "numPropRented": "5",
+          "paperLess": true,
+          "firstAccountingPeriodStartDate": "2017-04-06",
+          "firstAccountingPeriodEndDate": "2018-04-05"
+        }
+      ]
+    }
+  }
+}

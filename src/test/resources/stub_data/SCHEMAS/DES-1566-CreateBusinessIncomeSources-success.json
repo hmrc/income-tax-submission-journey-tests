@@ -1,0 +1,21 @@
+{
+  "_id": "createBusinessIncomeSources",
+  "url": "\/income-tax\/income-sources\/mtdbsa\/[A-Z]{4}[0-9]{11}\/ITSA\/business.*",
+  "method": "POST",
+  "responseSchema": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "API#1566 Create Business Income Sources Success Response Schema v1.0.0",
+    "description": "API#1566 Create Business Income Sources Success Response Schema v1.0.0",
+    "type": "array",
+    "minItems": 1,
+    "items": {
+      "type": "object",
+      "properties": {
+        "incomeSourceId": {
+          "type": "string",
+          "description": "An identifier for the self-employment business, unique to the Taxpayer"
+        }
+      }
+    }
+  }
+}

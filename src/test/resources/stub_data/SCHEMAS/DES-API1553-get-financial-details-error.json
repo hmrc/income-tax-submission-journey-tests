@@ -1,0 +1,78 @@
+{
+  "_id": "getFinancialDetailsError",
+  "url": "/enterprise/02.00.00/financial-data/NINO/ITSA.*",
+  "method": "GET",
+  "responseSchema": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "API#1553 Get Financial Details Failure Response Schema",
+    "description": "API#1553 Get Financial Details Failure Response Schema",
+    "type": "object",
+    "oneOf": [
+      {
+        "$ref": "#/definitions/failureResponseArray"
+      },
+      {
+        "$ref": "#/definitions/failureResponseElement"
+      }
+    ],
+    "definitions": {
+      "failureResponseArray": {
+        "type": "object",
+        "properties": {
+          "failures": {
+            "type": "array",
+            "minItems": 2,
+            "uniqueItems": true,
+            "items": {
+              "$ref": "#/definitions/failureResponseElement"
+            }
+          }
+        },
+        "required": [
+          "failures"
+        ],
+        "additionalProperties": false
+      },
+      "failureResponseElement": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "INVALID_IDTYPE",
+              "INVALID_IDNUMBER",
+              "INVALID_REGIME_TYPE",
+              "INVALID_DOC_NUMBER",
+              "INVALID_ONLY_OPEN_ITEMS",
+              "INVALID_INCLUDE_LOCKS",
+              "INVALID_CALCULATE_ACCRUED_INTEREST",
+              "INVALID_CUSTOMER_PAYMENT_INFORMATION",
+              "INVALID_DATE_FROM",
+              "INVALID_DATE_TO",
+              "INVALID_DATE_RANGE",
+              "INVALID_REQUEST",
+              "INVALID_REMOVE_PAYMENT_ON_ACCOUNT",
+              "INVALID_INCLUDE_STATISTICAL",
+              "REQUEST_NOT_PROCESSED",
+              "NO_DATA_FOUND",
+              "SERVER_ERROR",
+              "SERVICE_UNAVAILABLE"
+            ],
+            "description": "Keys for all the errors returned"
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "description": "A simple description for the failure"
+          }
+        },
+        "required": [
+          "code",
+          "reason"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

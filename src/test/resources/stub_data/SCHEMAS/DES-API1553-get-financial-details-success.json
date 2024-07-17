@@ -1,0 +1,542 @@
+{
+  "_id": "getFinancialDetailsSuccess",
+  "url": "\/enterprise\/02.00.00\/financial-data\/NINO\/[A-Z]{2}[0-9]{6}[A-Z]\/ITSA\\?dateFrom=[0-9]{4}-[0-9]{2}-[0-9]{2}\\&dateTo=[0-9]{4}-[0-9]{2}-[0-9]{2}.*",
+  "method": "GET",
+  "responseSchema": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "API#1553 Get Financial Details Success Response Schema",
+    "description": "API#1553 Get Financial Details Success Response Schema",
+    "type": "object",
+    "properties": {
+      "taxPayerDetails": {
+        "type": "object",
+        "properties": {
+          "idType": {
+            "description": "Expected values: MTDBSA , NINO",
+            "type": "string",
+            "pattern": "^[A-Z]{1,10}$"
+          },
+          "idNumber": {
+            "description": "MTDBSA number, Example XQIT00000000001. NINO number, Example IN408059B",
+            "type": "string",
+            "pattern": "^[0-9A-Z]{1,30}$"
+          },
+          "regimeType": {
+            "description": "RegimeType, expected value ITSA",
+            "type": "string",
+            "pattern": "^[A-Z]{1,10}$"
+          }
+        },
+        "required": [
+          "idType",
+          "idNumber",
+          "regimeType"
+        ],
+        "additionalProperties": false
+      },
+      "balanceDetails": {
+        "type": "object",
+        "properties": {
+          "balanceDueWithin30Days": {
+            "$ref": "#/definitions/monetary"
+          },
+          "nextPaymentDateForChargesDueIn30Days": {
+            "$ref": "#/definitions/dateType"
+          },
+          "balanceNotDueIn30Days": {
+            "$ref": "#/definitions/monetary"
+          },
+          "nextPaymentDateBalanceNotDue": {
+            "$ref": "#/definitions/dateType"
+          },
+          "overDueAmount": {
+            "$ref": "#/definitions/monetary"
+          },
+          "earliestPaymentDateOverDue": {
+            "$ref": "#/definitions/dateType"
+          },
+          "totalBalance": {
+            "$ref": "#/definitions/monetary"
+          },
+          "amountCodedOut": {
+            "description": "Total amount of debt Coded Out",
+            "$ref": "#/definitions/monetary"
+          },
+
+		  "unallocatedCredit": {
+			"$ref": "#/definitions/monetary"
+		  },
+          "allocatedCredit": {
+            "$ref": "#/definitions/monetary"
+          },
+          "totalCredit": {
+            "$ref": "#/definitions/monetary"
+          },
+          "firstPendingAmountRequested": {
+            "$ref": "#/definitions/monetary"
+          },
+          "secondPendingAmountRequested": {
+            "$ref": "#/definitions/monetary"
+          },
+          "availableCredit": {
+            "$ref": "#/definitions/monetary"
+          }
+		},
+        "required": [
+          "balanceDueWithin30Days",
+          "balanceNotDueIn30Days",
+          "overDueAmount",
+          "totalBalance"
+        ],
+        "additionalProperties": false
+      },
+      "codingDetails": {
+        "$ref": "#/definitions/codingDetailsType"
+      },
+      "documentDetails": {
+        "$ref": "#/definitions/documentDetailsType"
+      },
+      "financialDetails": {
+        "$ref": "#/definitions/financialDetailsType"
+      }
+    },
+    "required": [
+      "taxPayerDetails",
+      "balanceDetails"
+    ],
+    "additionalProperties": false,
+    "definitions": {
+      "financialDetailsType": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "object",
+          "properties": {
+            "taxYear": {
+              "$ref": "#/definitions/taxYearType"
+            },
+            "documentId": {
+              "description": "Unique ID for the document (e.g. External number or SAP Doc Number)",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 30
+            },
+            "chargeType": {
+              "description": "Description of charge type",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "mainType": {
+              "description": "Description of main type",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 30
+            },
+            "periodKey": {
+              "description": "Period Key",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4
+            },
+            "periodKeyDescription": {
+              "description": "Description of Period Key Description",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 50
+            },
+            "taxPeriodFrom": {
+              "description": "Tax Period From. Format YYYY-MM-DD",
+              "$ref": "#/definitions/dateType"
+            },
+            "taxPeriodTo": {
+              "description": "Tax Period To. Format YYYY-MM-DD",
+              "$ref": "#/definitions/dateType"
+            },
+            "businessPartner": {
+              "description": "Business Partner",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 10
+            },
+            "contractAccountCategory": {
+              "description": "Contract Account Category",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2
+            },
+            "contractAccount": {
+              "description": "Contract Account",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 12
+            },
+            "contractObjectType": {
+              "description": "Contract Object Type",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4
+            },
+            "contractObject": {
+              "description": "Contract Object",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 20
+            },
+            "sapDocumentNumber": {
+              "description": "SAP Document Number",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 12
+            },
+            "sapDocumentNumberItem": {
+              "description": "SAP Document Number Item",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4
+            },
+            "chargeReference": {
+              "description": "Charge Reference",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 16
+            },
+            "mainTransaction": {
+              "description": "Main Transaction",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4
+            },
+            "subTransaction": {
+              "description": "Sub Transaction",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4
+            },
+            "originalAmount": {
+              "description": "Original Amount",
+              "$ref": "#/definitions/monetary"
+            },
+            "outstandingAmount": {
+              "description": "Outstanding Amount",
+              "$ref": "#/definitions/monetary"
+            },
+            "clearedAmount": {
+              "description": "Cleared Amount",
+              "$ref": "#/definitions/monetary"
+            },
+            "accruedInterest": {
+              "description": "Accrued interest",
+              "$ref": "#/definitions/monetary"
+            },
+            "items": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "subItem": {
+                    "description": "Sub Item",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 3
+                  },
+                  "dueDate": {
+                    "description": "Due Date. Format YYYY-MM-DD",
+                    "$ref": "#/definitions/dateType"
+                  },
+                  "amount": {
+                    "description": "Amount",
+                    "$ref": "#/definitions/monetary"
+                  },
+                  "clearingDate": {
+                    "description": "Clearing Date. Format YYYY-MM-DD",
+                    "$ref": "#/definitions/dateType"
+                  },
+                  "clearingReason": {
+                    "description": "Clearing Reason",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 50
+                  },
+                  "outgoingPaymentMethod": {
+                    "description": "Outgoing Payment Method",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 30
+                  },
+                  "paymentLock": {
+                    "description": "Payment Lock",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 30
+                  },
+                  "clearingLock": {
+                    "description": "Clearing Lock",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 30
+                  },
+                  "interestLock": {
+                    "description": "Interest Lock",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 30
+                  },
+                  "dunningLock": {
+                    "description": "Dunning Lock",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 30
+                  },
+                  "returnFlag": {
+                    "description": "If true, means that the charge has been generated by a 'return'",
+                    "type": "boolean"
+                  },
+                  "paymentReference": {
+                    "description": "Payment Reference",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 35
+                  },
+                  "paymentAmount": {
+                    "description": "Payment Amount",
+                    "$ref": "#/definitions/monetary"
+                  },
+                  "paymentMethod": {
+                    "description": "Payment Method",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 30
+                  },
+                  "paymentLot": {
+                    "description": "Payment Lot",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 12
+                  },
+                  "paymentLotItem": {
+                    "description": "Payment Lot Item",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 6
+                  },
+                  "clearingSAPDocument": {
+                    "description": "Clearing SAP Document",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 12
+                  },
+                  "codingInitiationDate": {
+                    "$ref": "#/definitions/dateType"
+                  },
+                  "statisticalDocument": {
+                    "description": "Statistical Document Possible Value 'S'",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1
+                  },
+                  "returnReason": {
+                    "description": "Return Reason",
+                    "type": "string",
+                    "maxLength": 50
+                  }
+
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "taxYear",
+            "documentId",
+            "items"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "documentDetailsType": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "object",
+          "properties": {
+            "taxYear": {
+              "description": "When a document does not have a taxyear (field NIL), this field can be filled with a dummy value 9999",
+              "$ref": "#/definitions/taxYearType"
+            },
+            "documentId": {
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]{1,30}$"
+            },
+            "documentDate": {
+              "$ref": "#/definitions/dateType"
+            },
+            "documentDescription": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 50
+            },
+            "documentText": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 50
+            },
+            "documentDueDate": {
+            "$ref": "#/definitions/dateType"
+            },
+            "formBundleNumber": {
+              "description": "Exists only if the document was created using Form Bundle",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 16
+            },
+            "totalAmount": {
+              "$ref": "#/definitions/monetary"
+            },
+            "documentOutstandingAmount": {
+              "$ref": "#/definitions/monetary"
+            },
+            "poaRelevantAmount": {
+              "description": "Original amount of the POA prior to adjustments taking place",
+              "$ref": "#/definitions/monetary"
+            },
+            "lastClearingDate": {
+              "$ref": "#/definitions/dateType"
+            },
+            "lastClearingReason": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 30
+            },
+            "lastClearedAmount": {
+              "$ref": "#/definitions/monetary"
+            },
+            "statisticalFlag": {
+              "description": "true for Statistical. false for not",
+              "type": "boolean"
+            },
+            "informationCode":{
+            "type": "string",
+            "description": "Identifies a charge that has multiple items associated e.g. there are two BCD items due to coding occurring . Possible Value 'i'",
+              "enum": [
+                "i"
+              ]
+            },
+            "paymentLot": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 12
+            },
+            "paymentLotItem": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 6
+            },
+            "amountCodedOut": {
+              "$ref": "#/definitions/monetary"
+            },
+            "interestRate": {
+              "$ref": "#/definitions/monetary"
+            },
+            "interestFromDate": {
+              "$ref": "#/definitions/dateType"
+            },
+            "interestEndDate": {
+              "$ref": "#/definitions/dateType"
+            },
+            "latePaymentInterestID": {
+              "description": "Late Payment Interest ID",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 16
+            },
+            "latePaymentInterestAmount": {
+              "$ref": "#/definitions/monetary"
+            },
+            "lpiWithDunningBlock": {
+              "$ref": "#/definitions/monetary"
+            },
+            "lpiWithDunningLock": {
+              "$ref": "#/definitions/monetary"
+            },
+            "interestOutstandingAmount": {
+              "$ref": "#/definitions/monetary"
+            },
+            "accruingInterestAmount": {
+              "$ref": "#/definitions/monetary"
+            },
+            "effectiveDateOfPayment": {
+              "$ref": "#/definitions/dateType"
+            }
+          },
+          "required": [
+            "taxYear",
+            "documentId",
+            "documentDate",
+            "totalAmount",
+            "documentOutstandingAmount",
+            "statisticalFlag"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "codingDetailsType": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "object",
+          "properties": {
+            "taxYearReturn": {
+              "description": "Tax year of the Document (Billing period from – billing period to)",
+              "$ref": "#/definitions/taxYearType"
+            },
+            "totalReturnAmount": {
+              "description": "Total amount of the SA tax return inclusive of coded charges",
+              "$ref": "#/definitions/monetary"
+            },
+            "amountNotCoded": {
+              "description": "Total amount of the SA tax return minus the amount specified for coding",
+              "$ref": "#/definitions/monetary"
+            },
+            "amountNotCodedDueDate": {
+              "description": "Due date of the amount not marked for coding",
+              "$ref": "#/definitions/dateType"
+            },
+            "amountCodedOut": {
+              "description": "Total amount of the charges marked for coding",
+              "$ref": "#/definitions/monetary"
+            },
+            "taxYearCoding": {
+              "description": "Tax year of Coding Initiation date on ETMP",
+              "$ref": "#/definitions/taxYearType"
+            }
+          },
+          "required": [
+            "taxYearReturn",
+            "amountCodedOut",
+            "taxYearCoding"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "dateType": {
+        "description": "Format YYYY-MM-DD",
+        "type": "string",
+        "pattern": "^(((19|20)([2468][048]|[13579][26]|0[48])|2000)[-]02[-]29|((19|20)[0-9]{2}[-](0[469]|11)[-](0[1-9]|1[0-9]|2[0-9]|30)|(19|20)[0-9]{2}[-](0[13578]|1[02])[- ](0[1-9]|[12][0-9]|3[01])|(19|20)[0-9]{2}[-]02[-](0[1-9]|1[0-9]|2[0-8])))$"
+      },
+      "monetary": {
+        "description": "Defines a monetary value (to 2 decimal places), between -99999999999.99 and 99999999999.99",
+        "type": "number",
+        "minimum": -99999999999.99,
+        "maximum": 99999999999.99,
+        "multipleOf": 0.01
+      },
+      "taxYearType": {
+        "description": "Format: YYYY",
+        "type": "string",
+        "pattern": "^[0-9]{4}$"
+      }
+    }
+  }
+}

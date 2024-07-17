@@ -1,0 +1,9 @@
+{
+  "_id": "checkAgentClientRelationship",
+  "url": "\/agent-client-relationships\/agent\/.*\/service\/HMRC-MTD-IT\/client\/MTDITID\/.*",
+  "method": "GET",
+  "responseSchema": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "response for a call to the agent-client relationship"
+  }
+}

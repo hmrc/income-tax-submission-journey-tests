@@ -1,0 +1,11 @@
+{
+    "_id" : "/income-tax/income-sources/mtdbsa/XAIT00000888888/ITSA/business",
+    "schemaId" : "createBusinessIncomeSources",
+    "method" : "POST",
+    "status" : 200,
+    "response" : [
+        {
+            "incomeSourceId" : "AAIS12AA888888A"
+        }
+    ]
+}

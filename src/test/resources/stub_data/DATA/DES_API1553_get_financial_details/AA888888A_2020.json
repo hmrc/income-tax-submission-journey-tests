@@ -1,0 +1,647 @@
+{
+  "_id": "/enterprise/02.00.00/financial-data/NINO/AA888888A/ITSA?dateFrom=2019-04-06&dateTo=2020-04-05&onlyOpenItems=false&includeLocks=true&calculateAccruedInterest=true&removePOA=false&customerPaymentInformation=true&includeStatistical=false",
+  "schemaId": "getFinancialDetailsSuccess",
+  "method": "GET",
+  "status": 200,
+  "response": {
+    "taxPayerDetails": {
+      "idType": "NINO",
+      "idNumber": "AA888888A",
+      "regimeType": "ITSA"
+    },
+    "balanceDetails": {
+      "balanceDueWithin30Days": 0.00,
+      "nextPaymentDateForChargesDueIn30Days": "1920-02-29",
+      "balanceNotDueIn30Days": 0.00,
+      "nextPaymentDateBalanceNotDue": "1920-02-29",
+      "overDueAmount": 5694.46,
+      "earliestPaymentDateOverDue": "1920-02-29",
+      "totalBalance": 5694.46,
+      "amountCodedOut": 0.0
+    },
+    "documentDetails": [
+      {
+        "taxYear": "2020",
+        "documentId": "DOCID01",
+        "documentDate": "2018-03-29",
+        "documentDescription": "ITSA- POA 1",
+        "documentText": "documentText",
+        "documentDueDate": "2020-04-15",
+        "formBundleNumber": "88888888",
+        "totalAmount": 10000,
+        "documentOutstandingAmount": 10000,
+        "lastClearingDate": "2018-04-15",
+        "lastClearingReason": "last Clearing Reason",
+        "lastClearedAmount": 589958.83,
+        "statisticalFlag": false,
+        "interestRate": 2.60,
+        "interestFromDate": "2019-02-01",
+        "interestEndDate": "2021-07-18",
+        "interestOutstandingAmount": 47.23,
+        "latePaymentInterestAmount": 47.23,
+        "lpiWithDunningBlock": 1000,
+        "latePaymentInterestID": "LATE01",
+        "effectiveDateOfPayment": "2020-08-13"
+      },
+      {
+        "taxYear": "2020",
+        "documentId": "DOCID02",
+        "documentDate": "2018-03-29",
+        "documentDescription": "ITSA - POA 2",
+        "documentText": "documentText",
+        "documentDueDate": "2021-04-15",
+        "formBundleNumber": "88888888",
+        "totalAmount": 10000,
+        "documentOutstandingAmount": 1000,
+        "lastClearingDate": "2018-04-15",
+        "lastClearingReason": "last Clearing Reason",
+        "lastClearedAmount": 589958.83,
+        "statisticalFlag": false,
+        "interestRate": 3,
+        "interestFromDate": "2020-08-01",
+        "interestEndDate": "2021-07-18",
+        "interestOutstandingAmount": 47.23,
+        "effectiveDateOfPayment": "2020-08-13"
+      },
+      {
+        "taxYear": "2020",
+        "documentId": "DOCID03",
+        "documentDate": "2018-03-29",
+        "documentDescription": "TRM New Charge",
+        "documentText": "documentText",
+        "documentDueDate": "2021-04-15",
+        "formBundleNumber": "88888888",
+        "totalAmount": 10000,
+        "documentOutstandingAmount": 1000,
+        "lastClearingDate": "2018-04-15",
+        "lastClearingReason": "last Clearing Reason",
+        "lastClearedAmount": 589958.83,
+        "statisticalFlag": false,
+        "interestRate": 3,
+        "interestFromDate": "2020-08-01",
+        "interestEndDate": "2021-07-21",
+        "interestOutstandingAmount": 0,
+        "latePaymentInterestAmount": 1000,
+        "lpiWithDunningBlock": 0,
+        "effectiveDateOfPayment": "2020-08-13"
+      },
+      {
+        "taxYear": "2020",
+        "documentId": "PAYID03",
+        "documentDate": "2018-03-29",
+        "documentDescription": "Payment",
+        "documentText": "documentText",
+        "documentDueDate": "2021-04-15",
+        "formBundleNumber": "88888888",
+        "totalAmount": -10000,
+        "documentOutstandingAmount": -1000,
+        "lastClearingDate": "2018-04-15",
+        "lastClearingReason": "last Clearing Reason",
+        "lastClearedAmount": 589958.83,
+        "statisticalFlag": false,
+        "paymentLot": "081203010023",
+        "paymentLotItem": "000001",
+        "effectiveDateOfPayment": "2020-08-13"
+      },
+      {
+        "taxYear": "2020",
+        "documentId": "LPI01",
+        "documentDate": "2018-03-29",
+        "documentDescription": "Payment",
+        "documentText": "documentText",
+        "documentDueDate": "2021-04-15",
+        "formBundleNumber": "88888888",
+        "totalAmount": -10000,
+        "documentOutstandingAmount": -4000,
+        "lastClearingDate": "2018-04-15",
+        "lastClearingReason": "last Clearing Reason",
+        "lastClearedAmount": 510.83,
+        "statisticalFlag": false,
+        "paymentLot": "081203010066",
+        "paymentLotItem": "000001",
+        "effectiveDateOfPayment": "2020-08-13"
+      }
+    ],
+    "financialDetails": [
+      {
+        "taxYear": "2020",
+        "documentId": "DOCID01",
+        "chargeType": "ITSA England & NI",
+        "mainType": "SA Payment on Account 1",
+        "mainTransaction": "4920",
+        "periodKey": "17PO",
+        "periodKeyDescription": "6th April 2019 to 5th April 2020",
+        "taxPeriodFrom": "2019-04-06",
+        "taxPeriodTo": "2020-04-05",
+        "businessPartner": "6622334455",
+        "contractAccountCategory": "02",
+        "contractAccount": "X",
+        "contractObjectType": "ABCD",
+        "contractObject": "00000003000000002757",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "chargeReference": "AA888888A020DD01",
+        "subTransaction": "1005",
+        "originalAmount": 10000,
+        "outstandingAmount": 10000,
+        "clearedAmount": 10000,
+        "accruedInterest": 100,
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2020-08-13",
+            "amount": 10000,
+            "clearingDate": "2019-08-13",
+            "clearingReason": "Cleared by Payment",
+            "outgoingPaymentMethod": "outgoing Payment",
+            "clearingSAPDocument": "3350000253",
+            "statisticalDocument": "A",
+            "returnReason": "ABCA"
+          },
+          {
+            "subItem": "002",
+            "dueDate": "2020-08-13",
+            "amount": -7500,
+            "clearingDate": "2020-07-31",
+            "clearingReason": "Cleared by Payment",
+            "paymentReference": "GF235688",
+            "paymentAmount": -10000,
+            "paymentMethod": "Payment",
+            "clearingSAPDocument": "3350000253"
+          },
+          {
+            "subItem": "003",
+            "interestLock": "Clerical Interest Signal"
+          }
+        ]
+      },
+      {
+        "taxYear": "2020",
+        "documentId": "DOCID01",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "originalAmount": 2500,
+        "outstandingAmount": 0,
+        "clearedAmount": 2500,
+        "chargeType": "NIC4-GB",
+        "mainType": "SA Payment on Account 1",
+        "chargeReference": "AA888888A020DD01",
+        "mainTransaction": "4920",
+        "subTransaction": "1010",
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2020-07-31",
+            "amount": 2500
+          },
+          {
+            "subItem": "002",
+            "dueDate": "2020-08-13",
+            "amount": -2500,
+            "clearingDate": "2020-07-31",
+            "clearingReason": "Cleared by Payment",
+            "paymentReference": "GF235688",
+            "paymentAmount": -10000,
+            "paymentMethod": "Payment",
+            "clearingSAPDocument": "3350000253"
+          },
+          {
+            "subItem": "003",
+            "interestLock": "Manual Interest Calculated"
+          }
+        ]
+      },
+      {
+        "taxYear": "2020",
+        "documentId": "DOCID02",
+        "chargeType": "ITSA England & NI",
+        "mainType": "SA Payment on Account 2",
+        "mainTransaction": "4930",
+        "periodKey": "19PO",
+        "periodKeyDescription": "6th April 2018 to 5th April 2019",
+        "taxPeriodFrom": "2018-04-06",
+        "taxPeriodTo": "2019-04-05",
+        "businessPartner": "6622334455",
+        "contractAccountCategory": "02",
+        "contractAccount": "X",
+        "contractObjectType": "ABCD",
+        "contractObject": "00000003000000002757",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "chargeReference": "AA888888A020DD02",
+        "subTransaction": "1005",
+        "originalAmount": 10000,
+        "outstandingAmount": 1000,
+        "clearedAmount": 9000,
+        "accruedInterest": 10,
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2020-08-13",
+            "amount": 10000,
+            "clearingDate": "2018-08-13",
+            "clearingReason": "01",
+            "outgoingPaymentMethod": "outgoing Payment",
+            "clearingSAPDocument": "3350000253",
+            "statisticalDocument": "A",
+            "returnReason": "ABCA"
+          },
+          {
+            "subItem": "002",
+            "dueDate": "2020-08-13",
+            "amount": -7500,
+            "clearingDate": "2020-07-31",
+            "clearingReason": "Cleared by Payment",
+            "paymentReference": "GF235688",
+            "paymentAmount": -10000,
+            "paymentMethod": "Payment",
+            "clearingSAPDocument": "3350000253"
+          },
+          {
+            "subItem": "003",
+            "interestLock": "C18 Appeal in Progress"
+          }
+        ]
+      },
+      {
+        "taxYear": "2020",
+        "documentId": "DOCID02",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "originalAmount": 2500,
+        "outstandingAmount": 0,
+        "clearedAmount": 2500,
+        "chargeType": "NIC4-GB",
+        "mainType": "SA Payment on Account 2",
+        "chargeReference": "AA888888A020DD02",
+        "mainTransaction": "4930",
+        "subTransaction": "1010",
+        "accruedInterest": 10,
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2020-07-31",
+            "amount": 2500
+          },
+          {
+            "subItem": "002",
+            "dueDate": "2020-08-13",
+            "amount": -2500,
+            "clearingDate": "2020-07-31",
+            "clearingReason": "Cleared by Payment",
+            "paymentReference": "GF235688",
+            "paymentAmount": -10000,
+            "paymentMethod": "Payment",
+            "clearingSAPDocument": "3350000253"
+          },
+          {
+            "subItem": "003",
+            "interestLock": "Manual RPI Signal"
+          }
+        ]
+      },
+      {
+        "taxYear": "2020",
+        "documentId": "DOCID03",
+        "chargeType": "ITSA England & NI",
+        "mainType": "SA Balancing Charge",
+        "mainTransaction": "4910",
+        "periodKey": "19PO",
+        "periodKeyDescription": "6th April 2018 to 5th April 2019",
+        "taxPeriodFrom": "2018-04-06",
+        "taxPeriodTo": "2019-04-05",
+        "businessPartner": "6622334455",
+        "contractAccountCategory": "02",
+        "contractAccount": "X",
+        "contractObjectType": "ABCD",
+        "contractObject": "00000003000000002757",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "chargeReference": "AA888888A020DD03",
+        "subTransaction": "1005",
+        "originalAmount": 10000,
+        "outstandingAmount": 10000,
+        "clearedAmount": 0,
+        "accruedInterest": 0,
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2020-08-13",
+            "amount": 10000,
+            "clearingDate": "2018-08-13",
+            "clearingReason": "01",
+            "outgoingPaymentMethod": "outgoing Payment",
+            "clearingSAPDocument": "3350000253",
+            "statisticalDocument": "A",
+            "returnReason": "ABCA"
+          },
+          {
+            "subItem": "002",
+            "dueDate": "2020-08-13",
+            "amount": -7500,
+            "clearingDate": "2020-07-31",
+            "clearingReason": "Cleared by Payment",
+            "paymentReference": "GF235688",
+            "paymentAmount": -10000,
+            "paymentMethod": "Payment",
+            "clearingSAPDocument": "3350000253"
+          },
+          {
+            "subItem": "003",
+            "interestLock": "Breathing Space Moratorium Act"
+          }
+        ]
+      },
+      {
+        "taxYear": "2020",
+        "documentId": "DOCID03",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "originalAmount": 1450,
+        "outstandingAmount": 0,
+        "clearedAmount": 1450,
+        "chargeType": "NIC4-GB",
+        "mainType": "SA Balancing Charge",
+        "chargeReference": "AA888888A020DD03",
+        "mainTransaction": "4910",
+        "subTransaction": "1010",
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2020-07-31",
+            "amount": 2500
+          },
+          {
+            "subItem": "002",
+            "dueDate": "2020-08-13",
+            "amount": -1450,
+            "clearingDate": "2021-01-31",
+            "clearingReason": "Cleared by Payment",
+            "paymentReference": "GF235688",
+            "paymentAmount": -10000,
+            "paymentMethod": "Payment",
+            "clearingSAPDocument": "3350000253"
+          },
+          {
+            "subItem": "003",
+            "interestLock": "Clerical Interest Signal"
+          }
+        ]
+      },
+      {
+        "taxYear": "2020",
+        "documentId": "DOCID03",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "originalAmount": 1550,
+        "outstandingAmount": 0,
+        "clearedAmount": 1550,
+        "chargeType": "NIC2-GB",
+        "mainType": "SA Balancing Charge",
+        "chargeReference": "AA888888A020DD03",
+        "mainTransaction": "4910",
+        "subTransaction": "1046",
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2020-08-13",
+            "amount": -1550,
+            "clearingDate": "2021-01-31",
+            "clearingReason": "Cleared by Payment"
+          },
+          {
+            "subItem": "002",
+            "dueDate": "2020-08-13",
+            "amount": -1450,
+            "clearingDate": "2021-01-31",
+            "clearingReason": "Cleared by Payment",
+            "paymentReference": "GF235688",
+            "paymentAmount": -10000,
+            "paymentMethod": "Payment",
+            "clearingSAPDocument": "3350000253"
+          },
+          {
+            "subItem": "003",
+            "interestLock": "Clerical Interest Signal"
+          }
+        ]
+      },
+      {
+        "taxYear": "2020",
+        "documentId": "DOCID03",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "originalAmount": 1450,
+        "outstandingAmount": 0,
+        "clearedAmount": 1450,
+        "chargeType": "NIC4-GB",
+        "mainType": "SA Balancing Charge",
+        "chargeReference": "AA888888A020DD03",
+        "mainTransaction": "4910",
+        "subTransaction": "1010",
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2021-01-31",
+            "amount": 1450
+          },
+          {
+            "subItem": "002",
+            "dueDate": "2020-08-13",
+            "amount": -1450,
+            "clearingDate": "2021-01-31",
+            "clearingReason": "Cleared by Payment",
+            "paymentReference": "GF235688",
+            "paymentAmount": -10000,
+            "paymentMethod": "Payment",
+            "clearingSAPDocument": "3350000255"
+          }
+        ]
+      },
+      {
+        "taxYear": "2020",
+        "documentId": "DOCID03",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "originalAmount": 1550,
+        "outstandingAmount": 0,
+        "clearedAmount": 1550,
+        "chargeType": "NIC2-GB",
+        "mainType": "SA Balancing Charge",
+        "chargeReference": "AA888888A020DD03",
+        "mainTransaction": "4910",
+        "subTransaction": "1046",
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2021-01-31",
+            "amount": 1550
+          },
+          {
+            "subItem": "002",
+            "dueDate": "2020-08-13",
+            "amount": -1550,
+            "clearingDate": "2021-01-31",
+            "clearingReason": "Cleared by Payment",
+            "paymentReference": "GF235688",
+            "paymentAmount": -10000,
+            "paymentMethod": "Payment",
+            "clearingSAPDocument": "3350000255"
+          }
+        ]
+      },
+      {
+        "taxYear": "2020",
+        "documentId": "DOCID03",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "originalAmount": 1500,
+        "outstandingAmount": 0,
+        "clearedAmount": 1500,
+        "chargeType": "Voluntary NIC2-GB",
+        "mainType": "SA Balancing Charge",
+        "chargeReference": "AA888888A020DD03",
+        "mainTransaction": "4910",
+        "subTransaction": "2195",
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2021-01-31",
+            "amount": 1500
+          },
+          {
+            "subItem": "002",
+            "dueDate": "2020-08-13",
+            "amount": -1500,
+            "clearingDate": "2021-01-31",
+            "clearingReason": "Cleared by Payment",
+            "paymentReference": "GF235688",
+            "paymentAmount": -10000,
+            "paymentMethod": "Payment",
+            "clearingSAPDocument": "3350000255"
+          }
+        ]
+      },
+      {
+        "taxYear": "2020",
+        "documentId": "DOCID03",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "originalAmount": 1500,
+        "outstandingAmount": 0,
+        "clearedAmount": 1500,
+        "chargeType": "SL",
+        "mainType": "SA Balancing Charge",
+        "chargeReference": "AA888888A020DD03",
+        "mainTransaction": "4910",
+        "subTransaction": "1100",
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2021-01-31",
+            "amount": 1500
+          },
+          {
+            "subItem": "002",
+            "dueDate": "2020-08-13",
+            "amount": -1500,
+            "clearingDate": "2021-01-31",
+            "clearingReason": "Cleared by Payment",
+            "paymentReference": "GF235688",
+            "paymentAmount": -10000,
+            "paymentMethod": "Payment",
+            "clearingSAPDocument": "3350000255"
+          }
+        ]
+      },
+      {
+        "taxYear": "2020",
+        "documentId": "DOCID03",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "originalAmount": 1500,
+        "outstandingAmount": 0,
+        "clearedAmount": 1500,
+        "chargeType": "CGT",
+        "mainType": "SA Balancing Charge",
+        "chargeReference": "AA888888A020DD03",
+        "mainTransaction": "4910",
+        "subTransaction": "1060",
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2021-01-31",
+            "amount": 1500
+          },
+          {
+            "subItem": "002",
+            "dueDate": "2020-08-13",
+            "amount": -1500,
+            "clearingDate": "2021-01-31",
+            "clearingReason": "Cleared by Payment",
+            "paymentReference": "GF235688",
+            "paymentAmount": -10000,
+            "paymentMethod": "Payment",
+            "clearingSAPDocument": "3350000255"
+          }
+        ]
+      },
+      {
+        "taxYear": "2020",
+        "documentId": "PAYID03",
+        "mainType": "Payment on Account",
+        "mainTransaction": "0060",
+        "businessPartner": "6622334455",
+        "contractAccountCategory": "02",
+        "contractAccount": "X",
+        "contractObjectType": "ABCD",
+        "contractObject": "00000003000000002757",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "chargeReference": "AA888888A020PD03",
+        "originalAmount": -10000,
+        "outstandingAmount": -1000,
+        "clearedAmount": -9000,
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2020-08-13",
+            "amount": -10000,
+            "paymentReference": "GF235687",
+            "paymentAmount": -10000,
+            "paymentMethod": "Payment",
+            "clearingSAPDocument": "3350000253"
+          }
+        ]
+      },
+      {
+        "taxYear": "2020",
+        "documentId": "LPI01",
+        "mainType": "Payment on Account",
+        "mainTransaction": "0060",
+        "businessPartner": "6622334455",
+        "contractAccountCategory": "02",
+        "contractAccount": "X",
+        "contractObjectType": "ABCD",
+        "contractObject": "00000003000000002757",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "chargeReference": "AA888888A020LI01",
+        "originalAmount": -10000,
+        "outstandingAmount": -1000,
+        "clearedAmount": -9000,
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2020-08-13",
+            "amount": -10000,
+            "paymentReference": "GF235687",
+            "paymentAmount": -10000,
+            "paymentMethod": "Payment",
+            "clearingSAPDocument": "3350000256"
+          }
+        ]
+      }
+    ]
+  }
+}

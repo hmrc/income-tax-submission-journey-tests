@@ -437,7 +437,6 @@ Feature: Self Employment Journeys
     Then the user should be redirected to the "Self-employment" page under self employment
 
    #---------  freeport sites journey  ------------ #
-  @ignore
   Scenario: Individual - Self employment Expenses - freeport site journey
     When the user logs into the service with the following details
       | Redirect url        | /InYear/start  |
@@ -487,7 +486,7 @@ Feature: Self Employment Journeys
     And the user clicks the Continue button
 
     #todo - SASS-8982 8983 (remove comments and fix test when bugs are fixed)
-    Then the user should be redirected to the "newSiteClaimingAmount.subHeading" page under self employment
+    Then the user should be redirected to the "How much enhanced structures and buildings allowance do you want to claim?" page under self employment
     And the user selects the Amount-field field and enters a value of 100
     And the user clicks the Continue button
 
@@ -500,7 +499,7 @@ Feature: Self Employment Journeys
     And the user clicks the Continue button
 
     #todo - SASS-8983
-    Then the user should be redirected to the "Do you want to remove this special tax site structure or building?" page under self employment
+    Then the user should be redirected to the "Do you want to continue to claim this allowance for an existing site?" page under self employment
     When the user selects the yes radio button
     And the user clicks the Continue button
 

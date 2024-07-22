@@ -7,6 +7,23 @@
     {
       "path": "/test-only/",
       "reason": "Test-only endpoints do not need accessibility testing as they are used purely for testing purposes."
+    },
+    {
+      "path": "/capital-allowances/claim-amount",
+      "reason": "platform wide issue accepted by HMRC"
+    },
+    {
+      "path": "/capital-allowances/cars/amount-outside-self-employment",
+      "reason": "platform wide issue accepted by HMRC"
+    },
+    {
+      "path": "/capital-allowances/electric-vehicle-charge-points/claim-amount",
+      "reason": "platform wide issue accepted by HMRC"
+    },
+    {
+      "path": "/capital-allowances/goods-vehicles/claim-amount",
+      "reason": "platform wide issue accepted by HMRC"
     }
+
   ]
 }

@@ -41,13 +41,19 @@ Feature: View Estimation Journeys - Income Tax Submission
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks the Update tax calculation button
+    Then the user navigates to the V&C login page page
+    When the user AA888888A is selected on V&C page
+    Then the agent checkbox on V&C page is selected
+    And the user clicks the Login button on the V&C page
     Then the user should be redirected to V&C "What is your client’s UTR? - GOV.UK" page
     When the user selects the Client SA UTR field and enters a value of 0008888888
     And the user clicks the View and Change Continue button
     Then the user should be redirected to V&C "Confirm your client’s details - GOV.UK" page
     When the user clicks the View and Change Continue button
     Then the user should be redirected to V&C "Your client’s Income Tax - Manage your client’s Income Tax updates - GOV.UK" page
-    When the user navigates to the tax overview for agents page
+    When the user navigates to the tax view page
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks the Update tax calculation button
     And the user clicks the Go to Income Tax Account button
     Then the user should be redirected to V&C "Your client’s Income Tax - Manage your client’s Income Tax updates - GOV.UK" agent page on the View and Change service

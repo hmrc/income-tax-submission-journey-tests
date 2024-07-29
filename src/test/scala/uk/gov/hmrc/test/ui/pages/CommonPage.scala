@@ -17,6 +17,8 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
+import org.openqa.selenium.support.ui.Select
+import uk.gov.hmrc.selenium.webdriver.Driver
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 
 import scala.jdk.CollectionConverters.CollectionHasAsScala
@@ -31,18 +33,16 @@ object CommonPage extends BasePage with CommonElements {
 
   def clickOnRadioButton(radioButtonBoolean: String): Unit = {
     val selector: By = load(radioButtonBoolean)
-    if(!driver.findElement(selector).isSelected)
-      {
-        clickOn(selector)
-      }
+    if (!driver.findElement(selector).isSelected) {
+      clickOn(selector)
+    }
   }
 
   def deselectRadioButton(checkboxes: String): Unit = {
     val selector: By = load(checkboxes)
-    if (driver.findElement(selector).isSelected)
-      {
-        clickOn(selector)
-      }
+    if (driver.findElement(selector).isSelected) {
+      clickOn(selector)
+    }
   }
 
   def enterValue(valueTextBox: String, value: String): Unit = {
@@ -80,5 +80,18 @@ object CommonPage extends BasePage with CommonElements {
   def containsText(selector: By, textToContain: String): Boolean = {
     val elements = driver.findElements(selector)
     elements.asScala.exists(_.getText.contains(textToContain))
+  }
+
+  def selectDropDownOptionByValue(id: String, value: String): Unit = {
+    Driver.instance.findElement(By.id(id))
+    val dropdown = new Select(findElementById(id))
+    dropdown.selectByValue(value)
+  }
+
+  def clickOnAgentCheckbox(): Unit = {
+    val selector: By = load("agentCheckboxV&C")
+    if (!driver.findElement(selector).isSelected) {
+      clickOn(selector)
+    }
   }
 }

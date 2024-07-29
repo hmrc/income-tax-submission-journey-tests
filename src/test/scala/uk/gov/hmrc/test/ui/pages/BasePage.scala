@@ -17,9 +17,10 @@
 package uk.gov.hmrc.test.ui.pages
 
 import io.cucumber.datatable.DataTable
-import org.openqa.selenium.By
+import org.openqa.selenium.{By, WebElement}
 import org.openqa.selenium.support.ui.Select
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.selenium.webdriver.Driver
 import uk.gov.hmrc.test.ui.conf.TaxYearHelper
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
@@ -44,6 +45,8 @@ trait BasePage extends Matchers with BrowserDriver with TaxYearHelper {
   var delegatedIdentifierValue: String = ""
   var delegatedAuthRule: String = ""
 
+  def findElementById(id: String): WebElement = Driver.instance.findElement(By.id(id))
+
   def replaceTaxYear(url : String): String ={
     url match {
       case x if url.contains("EOY") => url.replace("EOY",taxYearEOY.toString)
@@ -52,7 +55,6 @@ trait BasePage extends Matchers with BrowserDriver with TaxYearHelper {
       case _ => "invalid url passed, should be EOY or InYear"
     }
   }
-
 
   def useDataTable(data: DataTable): Unit = {
     var firstColumn: String = ""

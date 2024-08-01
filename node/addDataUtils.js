@@ -11,6 +11,18 @@ const { getAllFiles, getTemplateJson, writeJson } = require("./fileutils")
 
 const yearOfMigration = "2020"
 
+const startYear = 2019;
+const numberOfYears = 5;
+
+const dateRanges = Array.from({ length: numberOfYears }, (_, i) => {
+    const fromYear = startYear + i;
+    const toYear = fromYear + 1;
+    return {
+        from: `${fromYear}-04-06`,
+        to: `${toYear}-04-05`
+    };
+});
+
 const addBusinessDetails1171IF = (nino, mtdItId) => {
           // 1171 v2 (IF platform) files
           const businessDetailsIF = getTemplateJson(`${templatePath}/IF_API1171_business_details/default_multiple_businesses_and_properties.json`)
@@ -26,18 +38,31 @@ const addBusinessDetails1171IF = (nino, mtdItId) => {
       }
 
 module.exports = {
-    addObligations1330: (nino) => {
-        const obligations = getTemplateJson(`${templatePath}/DES_API1330_obligations/default_multiple_obligations.json`)
-        obligations._id = `/enterprise/obligation-data/nino/${nino}/ITSA?status=O`
-        writeJson(`${dataPath}/DES_API1330_obligations/${nino}.json`, obligations, null, 2)
-    },
+    addObligations1330StatusO: (nino) => {
+            const obligations = getTemplateJson(`${templatePath}/DES_API1330_obligations/default_multiple_obligations.json`);
+            obligations._id = `/enterprise/obligation-data/nino/${nino}/ITSA?status=O`;
+            writeJson(`${dataPath}/DES_API1330_obligations/${nino}.json`, obligations, null, 2);
+        },
+        addObligations1330ForPeriod: (nino) => {
+            dateRanges.forEach(range => {
+                const obligations = getTemplateJson(`${templatePath}/DES_API1330_obligations/default_multiple_obligations.json`);
+                obligations._id = `/enterprise/obligation-data/nino/${nino}/ITSA?from=${range.from}&to=${range.to}`;
+                writeJson(`${dataPath}/DES_API1330_obligations/${nino}_${range.to.split('-')[0]}.json`, obligations, null, 2);
+            });
+        },
     addBusinessDetails1171IF: (nino, mtdItId) => {
         addBusinessDetails1171IF(nino, mtdItId)
     },
-    addCredits1553: (nino) => {
-        const fds = getTemplateJson(`${templatePath}/DES_API1553_get_financial_details/default_with_credits.json`)
-        fds._id = fds._id.replace("$NINO$", nino)
-        writeJson(`${dataPath}/DES_API1553_get_financial_details/${nino}.json`, fds)
+addCredits1553: (nino) => {
+        const template = getTemplateJson(`${templatePath}/DES_API1553_get_financial_details/default_with_credits.json`);
+        dateRanges.forEach(({ from, to }) => {
+            const fds = { ...template };
+            fds._id = fds._id
+                .replace("$NINO$", nino)
+                .replace("$DATEFROM$", from)
+                .replace("$DATETO$", to);
+            writeJson(`${dataPath}/DES_API1553_get_financial_details/${nino}_${to.split('-')[0]}.json`, fds, null, 2);
+        });
     },
     addCalcData: (nino, firstTaxYear) => {
         const getCalcId = (nino, taxYear) => {

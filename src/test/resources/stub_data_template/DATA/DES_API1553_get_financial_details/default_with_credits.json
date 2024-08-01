@@ -1,5 +1,5 @@
 {
-  "_id": "/enterprise/02.00.00/financial-data/NINO/$NINO$/ITSA?dateFrom=2021-04-06&dateTo=2022-04-05&onlyOpenItems=false&includeLocks=true&calculateAccruedInterest=true&removePOA=false&customerPaymentInformation=true&includeStatistical=false",
+  "_id": "/enterprise/02.00.00/financial-data/NINO/$NINO$/ITSA?dateFrom=$DATEFROM$&dateTo=$DATETO$&onlyOpenItems=false&includeLocks=true&calculateAccruedInterest=true&removePOA=false&customerPaymentInformation=true&includeStatistical=false",
   "schemaId": "getFinancialDetailsSuccess",
   "method": "GET",
   "status": 200,

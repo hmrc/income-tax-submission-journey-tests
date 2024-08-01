@@ -3,7 +3,7 @@
  *
  */
 
-const { addCredits1553, addObligations1330, addBusinessDetails1171IF, addCalcData } = require("./node/addDataUtils")
+const { addCredits1553, addObligations1330StatusO,addObligations1330ForPeriod, addBusinessDetails1171IF, addCalcData,dateRanges } = require("./node/addDataUtils")
 const { randNumberGen, userExists,  checkArgs,
            uploadUserData, getMTDITID } = require("./node/utils")
 const { appendToFile } = require("./node/fileUtils")
@@ -32,7 +32,8 @@ if (userExists(nino)) {
 }
 
 // step 2
-addObligations1330(nino)
+addObligations1330StatusO(nino)
+addObligations1330ForPeriod(nino)
 
 // step 3: Generate business details for mtdItId and nino calls: set year of migration to 2010
 addBusinessDetails1171IF(nino, mtdItId)

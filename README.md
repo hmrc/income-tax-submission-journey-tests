@@ -151,6 +151,16 @@ See the `drivers/` directory for some helpful scripts to do the installation wor
      sm2 --start INCOME_TAX_VIEW_CHANGE_FRONTEND
      sm2 --start INCOME_TAX_VIEW_CHANGE
 
+### Dynamic Data Generation (new nodeJS method):
+Install NodeJS using brew, if you don't have it already:
+
+    brew install node
+then
+
+    node genuser.js AA123456A "description of user"
+
+This would generate default data for the user AA123456A with required obligations, business data, payment history and calcs.
+
 ### Load/Reload stub data locally
     ./run_setupStubData_local.sh
 

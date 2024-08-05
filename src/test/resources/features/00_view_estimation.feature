@@ -1,4 +1,4 @@
-@MVP @ZAP @view_estimation @V&C
+@ZAP @view_estimation @V&C
 
 Feature: View Estimation Journeys - Income Tax Submission
 

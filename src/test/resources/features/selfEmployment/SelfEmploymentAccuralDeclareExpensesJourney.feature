@@ -1,5 +1,5 @@
 @SelfEmployment
-Feature: Self Employment Journeys
+Feature: SelfEmployment Accural accounting -declear expenses
 
   Background:
     Given the user navigates to the auth login page

@@ -97,8 +97,8 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Does your client want to claim property income allowance?" page
     And the user selects the No, claim expenses radio button
     And the user clicks the save and continue button
-  Then the user should be redirected to the "Check Your Answers" page
-  When the user selects the save and continue radio button
+    Then the user should be redirected to the "Check Your Answers" page
+    When the user selects the save and continue radio button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the HYFTS AboutPropertyYes radio button
     And the user clicks the save and continue button
@@ -919,7 +919,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the HYFTS,Yes radio button
     And the user clicks the continue button
-   Then the user should be redirected to the "UK property" page
+    Then the user should be redirected to the "UK property" page
     When the user clicks on the Property rentals about link
     Then the user should be redirected to the "Property rentals" page
     And the user clicks the continue button
@@ -1223,7 +1223,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the Yes HYFTS radio button
     And the user clicks the property continue button
-   Then the user should be redirected to the "UK property" page
+    Then the user should be redirected to the "UK property" page
     When the user clicks on the Enhanced Structures and Buildings AllowanceLink link
     Then the user should be redirected to the "Do you want to claim enhanced structures and buildings allowance?" page
     Then the user selects the Yes, claim radio button

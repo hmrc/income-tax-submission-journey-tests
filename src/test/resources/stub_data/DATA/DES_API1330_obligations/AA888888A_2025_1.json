@@ -1,0 +1,95 @@
+{
+  "_id" : "/enterprise/obligation-data/nino/AA888888A/ITSA?from=2024-04-06&to=2025-04-05",
+  "schemaId" : "getDesObligations",
+  "method" : "GET",
+  "status" : 200,
+  "response" : {
+    "obligations": [
+      {
+        "identification": {
+          "incomeSourceType": "ITSB",
+          "referenceNumber": "XAIS88888800009",
+          "referenceType": "MTDBIS"
+        },
+        "obligationDetails": [
+          {
+            "status": "F",
+            "inboundCorrespondenceFromDate": "2021-04-06",
+            "inboundCorrespondenceToDate": "2021-07-05",
+            "inboundCorrespondenceDueDate": "2021-08-05",
+            "inboundCorrespondenceDateReceived": "2021-07-05",
+            "periodKey": "#001"
+          },
+          {
+            "status": "F",
+            "inboundCorrespondenceFromDate": "2021-07-06",
+            "inboundCorrespondenceToDate": "2021-10-05",
+            "inboundCorrespondenceDueDate": "2021-11-05",
+            "inboundCorrespondenceDateReceived": "2021-10-05",
+            "periodKey": "#002"
+          },
+          {
+            "status": "F",
+            "inboundCorrespondenceFromDate": "2021-10-06",
+            "inboundCorrespondenceToDate": "2022-01-05",
+            "inboundCorrespondenceDueDate": "2022-02-05",
+            "inboundCorrespondenceDateReceived": "2022-01-05",
+            "periodKey": "#003"
+
+          }
+        ]
+      },
+      {
+        "identification": {
+          "incomeSourceType": "ITSB",
+          "referenceNumber": "XAIS88888800002",
+          "referenceType": "MTDBIS"
+        },
+        "obligationDetails": [
+          {
+            "status": "F",
+            "inboundCorrespondenceFromDate": "2021-04-06",
+            "inboundCorrespondenceToDate": "2021-07-05",
+            "inboundCorrespondenceDueDate": "2021-08-05",
+            "inboundCorrespondenceDateReceived": "2021-07-05",
+            "periodKey": "#001"
+          },
+          {
+            "status": "F",
+            "inboundCorrespondenceFromDate": "2021-07-06",
+            "inboundCorrespondenceToDate": "2021-10-05",
+            "inboundCorrespondenceDueDate": "2021-11-05",
+            "inboundCorrespondenceDateReceived": "2021-10-05",
+            "periodKey": "#002"
+          },
+          {
+            "status": "F",
+            "inboundCorrespondenceFromDate": "2021-10-06",
+            "inboundCorrespondenceToDate": "2022-01-05",
+            "inboundCorrespondenceDueDate": "2022-02-05",
+            "inboundCorrespondenceDateReceived": "2022-01-05",
+            "periodKey": "#003"
+
+          }
+        ]
+
+      },
+      {
+        "identification": {
+          "incomeSourceType": "ITSA",
+          "referenceNumber": "XAIT00000888888",
+          "referenceType": "MTDBIS"
+        },
+        "obligationDetails": [
+          {
+            "status": "O",
+            "inboundCorrespondenceFromDate": "2021-04-06",
+            "inboundCorrespondenceToDate": "2022-04-05",
+            "inboundCorrespondenceDueDate": "2022-05-05",
+            "periodKey": "C"
+          }
+        ]
+      }
+    ]
+  }
+}

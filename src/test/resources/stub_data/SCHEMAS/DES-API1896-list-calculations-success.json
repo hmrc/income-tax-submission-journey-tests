@@ -1,0 +1,107 @@
+{
+  "_id": "getCalculationListDetailsSuccess",
+  "url": "\/income-tax\/view\/calculations\/liability\/[0-9]{2}-[0-9]{2}\/[A-Z]{2}[0-9]{6}[A-Z]",
+  "method": "GET",
+  "responseSchema": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "API#1404 List Calculation Details Success Response Schema",
+    "description": "API#1404 List Calculation Details Success Response Schema",
+    "type": "array",
+    "minItems": 1,
+    "items": {
+      "type": "object",
+      "properties": {
+        "calculationId": {
+          "description": "The Id of the calculation. This is either 8 digit value with leading zeros (legacy calculation ID) or a UUID from April 2018. The regex ensures that all calculation IDs end in the tax year and NINO identifier, which is the format for internal purposes.",
+          "type": "string",
+          "pattern": "^[0-9]{8}$|^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{6}20[1-2][0-9][0-9a-z]{2}$"
+        },
+        "calculationTimestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "calculationType": {
+          "description": "The type of calculation being performed",
+          "type": "string",
+          "enum": [
+            "inYear",
+            "crystallisation",
+            "biss",
+            "POA"
+          ]
+        },
+        "requestedBy": {
+          "description": "The requester of the calculation between a customer/agent generated request and a calculation due to an hmrc event requiring a new calculation. Currently agent will default to customer until it can be supported",
+          "type": "string",
+          "enum": [
+            "customer",
+            "hmrc",
+            "agent"
+          ]
+        },
+        "year": {
+          "description": "For year specific calculations this identifies a year (or Tax Year) to which the calculation relates in the format yyyy. For Tax Year it will always be the year ending (e.g. 2018 relates to Tax Year 2017-2018)",
+          "type": "number",
+          "minimum": 2016,
+          "maximum": 2999
+        },
+        "fromDate": {
+          "description": "Defines the inclusive start date of the period to which the calculation data relates in the format dd-mm-yyyy",
+          "type": "string",
+          "format": "date"
+        },
+        "toDate": {
+          "description": "Defines the inclusive end date of the period to which the calculation data relates in the format dd-mm-yyyy",
+          "type": "string",
+          "format": "date"
+        },
+        "totalIncomeTaxAndNicsDue": {
+          "description": "The high level calculated amount.  For Income Tax this is the total amount of Income Tax and national Insurance.",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 99999999999.99,
+          "multipleOf": 0.01
+        },
+        "intentToCrystallise": {
+          "description": "Defines if this calculation is provided with the intent to crystallise",
+          "type": "boolean"
+        },
+        "crystallised": {
+          "description": "Indicates if the calculation has been declared as crystallised",
+          "type": "boolean"
+        },
+        "crystallisationTimestamp": {
+          "description": "Crystallisation Timestamp",
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "calculationId",
+        "calculationTimestamp",
+        "calculationType",
+        "totalIncomeTaxAndNicsDue"
+      ],
+      "additionalProperties": false
+    },
+    "definitions": {
+      "dateString": {
+        "description": "YYYY-MM-DD",
+        "type": "string",
+        "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$"
+      },
+      "timestampString": {
+        "description": "Standard Timestamp format",
+        "type": "string",
+        "format": "date-time"
+      },
+      "monetaryPosNeg": {
+        "description": "Defines a monetary value (to 2 decimal places), between -99999999999.99 and 99999999999.99",
+        "type": "number",
+        "minimum": -99999999999.99,
+        "maximum": 99999999999.99,
+        "multipleOf": 0.01
+      }
+    }
+  }
+}

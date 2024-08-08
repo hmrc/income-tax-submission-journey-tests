@@ -1,0 +1,6 @@
+{
+  "_id": "/agent-client-relationships/agent/2/service/HMRC-MTD-IT/client/MTDITID/XAIT00000000000",
+  "schemaId": "checkAgentClientRelationship",
+  "method": "GET",
+  "status": 404
+}

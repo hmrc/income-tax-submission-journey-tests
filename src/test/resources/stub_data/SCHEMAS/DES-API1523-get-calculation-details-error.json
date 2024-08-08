@@ -1,0 +1,45 @@
+{
+  "_id": "getCalculationDetailsError",
+  "url": "\/income-tax\/view\/calculations\/liability\/(.{9})\/(.{8}|.{36})",
+  "method": "GET",
+  "responseSchema": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "API#1523 Get Calculation Details Failure Response Schema",
+    "description": "API#1523 Get Calculation Details Failure Response Schema",
+    "failureResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "failures"
+      ],
+      "properties": {
+        "failures": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "code",
+              "reason"
+            ],
+            "properties": {
+              "code": {
+                "description": "Keys for all the errors returned",
+                "type": "string",
+                "pattern": "^[A-Z0-9_-]{1,160}$"
+              },
+              "reason": {
+                "description": "A simple description for the failure",
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

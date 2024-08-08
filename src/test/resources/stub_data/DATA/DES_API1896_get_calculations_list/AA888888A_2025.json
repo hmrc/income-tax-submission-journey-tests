@@ -1,0 +1,17 @@
+{
+  "_id": "/income-tax/view/calculations/liability/24-25/AA888888A",
+  "schemaId": "getCalculationListDetailsSuccess",
+  "method": "GET",
+  "status": 200,
+  "response": [
+    {
+      "calculationId": "1d35cfe4-cd23-22b2-b074-fae6052025a8",
+      "calculationTimestamp": "2023-09-30T09:15:34.0Z",
+      "calculationType": "crystallisation",
+      "totalIncomeTaxAndNicsDue": 15450,
+      "crystallised": false,
+      "intentToCrystallise": false,
+      "crystallisationTimestamp": "2023-09-08T01:03:31.0Z"
+    }
+  ]
+}

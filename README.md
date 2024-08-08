@@ -139,3 +139,39 @@ See the `drivers/` directory for some helpful scripts to do the installation wor
 **Note 1:** *You will need to ensure that you have a recent version of Chrome and/or Firefox installed for the later versions of the drivers to work reliably.*
 
 **Note 2** *These scripts use sudo to set the right permissions on the drivers so you will likely be prompted to enter your password.*
+
+## Running Test Integrated with V&C services 
+**TO DO:** *Run the following V&C services.*
+
+     sm2 --start MATCHING_STUB
+     sm2 --start CITIZEN_DETAILS
+     sm2 --start BTA_STUBS
+     sm2 --start BT_ACCOUNT
+     sm2 --start INCOME_TAX_VIEW_CHANGE_DYNAMIC_STUB
+     sm2 --start INCOME_TAX_VIEW_CHANGE_FRONTEND
+     sm2 --start INCOME_TAX_VIEW_CHANGE
+
+### Dynamic Data Generation (new nodeJS method):
+Install NodeJS using brew, if you don't have it already:
+
+    brew install node
+then
+
+    node genuser.js AA123456A "description of user"
+
+This would generate default data for the user AA123456A with required obligations, business data, payment history and calcs.
+
+### Load/Reload stub data locally
+    ./run_setupStubData_local.sh
+
+### Load/Reload Staging Data
+    ./run_setupStubData_staging.sh
+
+### Running V&C Tests
+    ./run_v_and_c_tests.sh
+
+### Delete itvc-stub and income-tax-view-change-frontend Mongo databases locally
+    ./run_deleteStubData_local.sh
+
+### Delete itvc-stub and income-tax-view-change-frontend Mongo databases staging
+    ./run_deleteStubData_staging.sh

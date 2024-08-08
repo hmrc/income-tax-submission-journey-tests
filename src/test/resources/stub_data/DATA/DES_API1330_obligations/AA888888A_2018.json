@@ -1,0 +1,63 @@
+{
+  "_id" : "/enterprise/obligation-data/nino/AA888888A/ITSA?from=2017-04-06&to=2018-04-05",
+  "schemaId" : "getDesObligations",
+  "method" : "GET",
+  "status" : 200,
+  "response" : {
+    "obligations": [
+      {
+        "identification": {
+          "incomeSourceType": "ITSB",
+          "referenceNumber": "XAIS88888800009",
+          "referenceType": "MTDBIS"
+        },
+        "obligationDetails": [
+          {
+            "status": "O",
+            "inboundCorrespondenceFromDate": "2017-06-01",
+            "inboundCorrespondenceToDate": "2017-08-31",
+            "inboundCorrespondenceDueDate": "2017-09-30",
+            "periodKey": "#001"
+          },
+          {
+            "status": "O",
+            "inboundCorrespondenceFromDate": "2017-09-01",
+            "inboundCorrespondenceToDate": "2017-12-31",
+            "inboundCorrespondenceDueDate": "2018-01-31",
+            "periodKey": "#002"
+          },
+          {
+            "status": "O",
+            "inboundCorrespondenceFromDate": "2018-01-01",
+            "inboundCorrespondenceToDate": "2018-03-31",
+            "inboundCorrespondenceDueDate": "2018-04-30",
+            "periodKey": "#003"
+          }
+        ]
+      },
+      {
+        "identification": {
+          "incomeSourceType": "ITSB",
+          "referenceNumber": "XAIS88888800002",
+          "referenceType": "MTDBIS"
+        },
+        "obligationDetails": [
+          {
+            "status": "O",
+            "inboundCorrespondenceFromDate": "2017-07-01",
+            "inboundCorrespondenceToDate": "2017-09-30",
+            "inboundCorrespondenceDueDate": "2017-10-30",
+            "periodKey": "#001"
+          },
+          {
+            "status": "O",
+            "inboundCorrespondenceFromDate": "2017-10-01",
+            "inboundCorrespondenceToDate": "2018-01-30",
+            "inboundCorrespondenceDueDate": "2018-03-01",
+            "periodKey": "#002"
+          }
+        ]
+      }
+    ]
+  }
+}

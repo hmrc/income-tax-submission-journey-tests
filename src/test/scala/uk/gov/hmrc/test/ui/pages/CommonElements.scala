@@ -43,6 +43,8 @@ trait CommonElements extends BasePage with Matchers {
     "No for gateway question"   -> By.xpath("//dd[contains(text(),'No')]"),
     "amount"                    -> By.id("amount"),
     "cancel"                    -> By.xpath("//*[contains(text(),'Cancel')]"),
+    "agentCheckboxV&C"          -> By.xpath("//*[@id='Agent']"),
+    "vcLoginButton"             -> By.xpath("//*[@class='govuk-button']"),
 
     //Tailoring Elements
     "addSections"   -> By.id("addSectionsLink"),

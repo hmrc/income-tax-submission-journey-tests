@@ -1,0 +1,505 @@
+{
+  "_id": "/enterprise/02.00.00/financial-data/NINO/$NINO$/ITSA?dateFrom=$DATEFROM$&dateTo=$DATETO$&onlyOpenItems=false&includeLocks=true&calculateAccruedInterest=true&removePOA=false&customerPaymentInformation=true&includeStatistical=false",
+  "schemaId": "getFinancialDetailsSuccess",
+  "method": "GET",
+  "status": 200,
+  "response": {
+    "taxPayerDetails": {
+      "idType": "NINO",
+      "idNumber": "AY888881A",
+      "regimeType": "ITSA"
+    },
+    "balanceDetails": {
+      "balanceDueWithin30Days": 0.00,
+      "balanceNotDueIn30Days": 0.00,
+      "overDueAmount": 0.00,
+      "totalBalance": 0.00,
+      "amountCodedOut": 0.0,
+      "availableCredit": 2300.00,
+      "firstPendingAmountRequested": 200.00,
+	  "unallocatedCredit": 200.00
+	},
+    "documentDetails": [
+      {
+        "taxYear": "2022",
+        "documentId": "AY888881202201",
+        "documentDate": "2021-10-10",
+        "documentDescription": "ITSA- POA 1",
+        "documentText": "documentText",
+        "documentDueDate": "2022-04-15",
+        "formBundleNumber": "88888888",
+        "totalAmount": 10000.0,
+        "documentOutstandingAmount": 0.0,
+        "lastClearingDate": "2021-01-31",
+        "lastClearingReason": "last Clearing Reason",
+        "lastClearedAmount": 10000.0,
+        "statisticalFlag": false,
+        "effectiveDateOfPayment": "2022-04-15"
+      },
+      {
+        "taxYear": "2022",
+        "documentId": "AY888881202202",
+        "documentDate": "2021-10-10",
+        "documentDescription": "ITSA - POA 2",
+        "documentText": "documentText",
+        "documentDueDate": "2022-04-15",
+        "formBundleNumber": "88888888",
+        "totalAmount": 10000.0,
+        "documentOutstandingAmount": 0.0,
+        "lastClearingDate": "2021-07-31",
+        "lastClearingReason": "last Clearing Reason",
+        "lastClearedAmount": 10000.0,
+        "statisticalFlag": false,
+        "effectiveDateOfPayment": "2022-04-15"
+      },
+
+      {
+        "taxYear": "9999",
+        "documentId": "AY888881202204",
+        "documentDate": "2021-07-31",
+        "documentDescription": "Payment",
+        "documentText": "documentText",
+        "documentDueDate": "2021-04-15",
+        "totalAmount": -10500.0,
+        "documentOutstandingAmount": -500.0,
+        "paymentLot": "AY888881",
+        "paymentLotItem": "2",
+        "statisticalFlag": false,
+        "effectiveDateOfPayment": "2021-07-28"
+      },
+      {
+        "taxYear": "2022",
+        "documentId" : "AY888881202206",
+        "documentDate": "2022-08-22",
+        "documentDescription" : "TRM New Charge",
+        "documentText": "documentText",
+        "documentDueDate": "2022-04-15",
+        "totalAmount": -2000.0,
+        "documentOutstandingAmount": -1000.0,
+        "statisticalFlag": false,
+        "effectiveDateOfPayment": "2022-04-15"
+      },
+      {
+        "taxYear": "2022",
+        "documentId" : "AY888881202207",
+        "documentDate": "2022-07-31",
+        "documentDescription" : "TRM New Charge",
+        "documentText": "documentText",
+        "documentDueDate": "2022-04-15",
+        "totalAmount": -1500.0,
+        "documentOutstandingAmount": 0.0,
+        "statisticalFlag": false,
+        "effectiveDateOfPayment": "2022-04-15"
+      },
+      {
+        "taxYear": "2022",
+        "documentId": "AY888881202208",
+        "documentDate": "2022-01-31",
+        "documentDescription" : "New Charge",
+        "documentText": "documentText",
+        "documentDueDate": "2022-04-15",
+        "totalAmount": -10000.0,
+        "documentOutstandingAmount": -100.0,
+        "statisticalFlag": false,
+        "effectiveDateOfPayment": "2022-04-15"
+      },
+      {
+        "taxYear": "2022",
+        "documentId": "AY888881202209",
+        "documentDate": "2022-07-31",
+        "documentDescription" : "New Charge",
+        "documentText": "documentText",
+        "documentDueDate": "2022-04-15",
+        "totalAmount": -10000.0,
+        "documentOutstandingAmount": -200.0,
+        "statisticalFlag": false,
+        "effectiveDateOfPayment": "2022-04-15"
+      },
+      {
+        "taxYear": "2022",
+        "documentId": "AY888881202210",
+        "documentDate": "2022-07-31",
+        "documentDescription" : "New Charge",
+        "documentText": "documentText",
+        "documentDueDate": "2022-04-15",
+        "totalAmount": -12346.0,
+        "documentOutstandingAmount": -200.0,
+        "statisticalFlag": false,
+        "effectiveDateOfPayment": "2022-04-15"
+      },
+      {
+        "taxYear": "2022",
+        "documentId": "AY888881202212",
+        "documentDate": "2022-06-12",
+        "documentDescription" : "ITSA- Bal Charge",
+        "documentText": "documentText",
+        "documentDueDate": "2022-04-15",
+        "totalAmount": -12345.0,
+        "documentOutstandingAmount": -3700.0,
+        "statisticalFlag": false,
+        "effectiveDateOfPayment": "2022-04-15"
+      },
+      {
+        "taxYear": "2022",
+        "documentId": "AY888881202211",
+        "documentDate": "2022-07-31",
+        "documentDescription" : "New Charge",
+        "documentText": "documentText",
+        "documentDueDate": "2022-04-15",
+        "totalAmount": -100.0,
+        "documentOutstandingAmount": -100.0,
+        "statisticalFlag": false,
+        "effectiveDateOfPayment": "2022-04-15"
+      },
+      {
+        "taxYear": "2022",
+        "documentId" : "AY888881202212",
+        "documentDate": "2022-07-31",
+        "documentDescription" : "TRM New Charge",
+        "documentText": "documentText",
+        "documentDueDate": "2022-04-15",
+        "totalAmount": -1500.0,
+        "documentOutstandingAmount": 0.0,
+        "statisticalFlag": false,
+        "effectiveDateOfPayment": "2022-04-15"
+      }
+    ],
+    "financialDetails": [
+      {
+        "taxYear": "2022",
+        "documentId": "AY888881202201",
+        "chargeType": "ITSA England & NI",
+        "mainType": "SA Payment on Account 1",
+        "periodKey": "17PO",
+        "periodKeyDescription": "6th April 2021 to 5th April 2022",
+        "taxPeriodFrom": "2021-04-06",
+        "taxPeriodTo": "2022-04-05",
+        "contractAccountCategory": "02",
+        "contractAccount": "X",
+        "contractObjectType": "ABCD",
+        "contractObject": "00000003000000002757",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "chargeReference": "AY888881A02201",
+        "mainTransaction": "4920",
+        "subTransaction": "1005",
+        "originalAmount": 6000.0,
+        "outstandingAmount": 0.0,
+        "clearedAmount": 6000.0,
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2021-01-31",
+            "amount": 6000.0
+          },
+          {
+            "subItem": "002",
+            "dueDate": "2021-01-28",
+            "amount": -6000,
+            "clearingDate": "2021-01-31",
+            "clearingReason": "01",
+            "paymentReference": "GF235688",
+            "paymentAmount": -10000,
+            "paymentMethod": "Payment",
+            "paymentLot": "AY888881",
+            "paymentLotItem": "1"
+          }
+        ]
+      },
+      {
+        "taxYear": "2022",
+        "documentId": "AY888881202201",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "periodKey": "17PO",
+        "periodKeyDescription": "6th April 2021 to 5th April 2022",
+        "originalAmount": 4000.0,
+        "outstandingAmount": 0,
+        "clearedAmount": 4000.0,
+        "chargeType": "NIC4-GB",
+        "mainType": "SA Payment on Account 1",
+        "chargeReference": "AY888881A02201",
+        "mainTransaction": "4920",
+        "subTransaction": "1010",
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2021-01-31",
+            "amount": 4000
+          },
+          {
+            "subItem": "002",
+            "dueDate": "2021-01-28",
+            "amount": -4000,
+            "clearingDate": "2021-07-31",
+            "clearingReason": "01",
+            "paymentReference": "GF235688",
+            "paymentAmount": -10000,
+            "paymentMethod": "Payment",
+            "paymentLot": "AY888881",
+            "paymentLotItem": "1"
+          }
+        ]
+      },
+      {
+        "taxYear": "2022",
+        "documentId": "AY888881202202",
+        "chargeType": "ITSA England & NI",
+        "mainType": "SA Payment on Account 2",
+        "periodKey": "19PO",
+        "periodKeyDescription": "6th April 2021 to 5th April 2022",
+        "taxPeriodFrom": "2021-04-06",
+        "taxPeriodTo": "2022-04-05",
+        "contractAccountCategory": "02",
+        "contractAccount": "X",
+        "contractObjectType": "ABCD",
+        "contractObject": "00000003000000002757",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "chargeReference": "AY888881A02202",
+        "mainTransaction": "4930",
+        "subTransaction": "1005",
+        "originalAmount": 6000,
+        "outstandingAmount": 0,
+        "clearedAmount": 6000,
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2021-07-31",
+            "amount": 6000
+          },
+          {
+            "subItem": "002",
+            "dueDate": "2021-07-28",
+            "amount": -6000,
+            "clearingDate": "2021-07-31",
+            "clearingReason": "01",
+            "paymentReference": "GF235688",
+            "paymentAmount": -10500,
+            "paymentMethod": "Payment",
+            "paymentLot": "AY888881",
+            "paymentLotItem": "2"
+          }
+        ]
+      },
+      {
+        "taxYear": "2022",
+        "documentId": "AY888881202202",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "originalAmount": 4000,
+        "outstandingAmount": 0,
+        "clearedAmount": 4000,
+        "chargeType": "NIC4-GB",
+        "mainType": "SA Payment on Account 2",
+        "chargeReference": "AY888881A02202",
+        "mainTransaction": "4930",
+        "subTransaction": "1010",
+        "accruedInterest": 10,
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2021-07-31",
+            "amount": 4000
+          },
+          {
+            "subItem": "002",
+            "dueDate": "2021-07-28",
+            "amount": -4000,
+            "clearingDate": "2021-07-31",
+            "clearingReason": "01",
+            "paymentReference": "GF235688",
+            "paymentAmount": -10500,
+            "paymentMethod": "Payment",
+            "paymentLot": "AY888881",
+            "paymentLotItem": "2"
+          }
+        ]
+      },
+
+      {
+        "taxYear": "9999",
+        "documentId": "AY888881202204",
+        "mainType": "Payment on Account",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "chargeReference": "AY888881A0992204",
+        "originalAmount": -10000.0,
+        "outstandingAmount": 0.0,
+        "clearedAmount": -10000.0,
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2021-07-28",
+            "amount": -10000,
+            "paymentReference": "GF235687",
+            "paymentAmount": -10000,
+            "paymentMethod": "Payment",
+            "paymentLot": "AY888881",
+            "paymentLotItem": "2"
+          }
+        ]
+      },
+      {
+        "taxYear": "2022",
+        "documentId": "AY888881202206",
+        "mainType": "ITSA Standalone Claim",
+        "sapDocumentNumber":"1040000872",
+        "sapDocumentNumberItem":"XM00",
+        "chargeReference": "AY888881A02206",
+        "originalAmount":-2000.0,
+        "outstandingAmount": -1000.0,
+        "clearedAmount":-1000.0,
+        "items":[
+          {
+            "subItem":"001",
+            "dueDate":"2022-08-22",
+            "amount":-1000
+          }
+        ]
+      },
+      {
+        "taxYear": "2022",
+        "documentId": "AY888881202207",
+        "mainType": "ITSA Averaging Adjustment",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "chargeReference": "AY888881A02207",
+        "originalAmount": -1500.0,
+        "outstandingAmount": -0.0,
+        "clearedAmount": -1500.0,
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2022-07-31",
+            "amount": -1500
+          }
+        ]
+      },
+      {
+        "taxYear": "2022",
+        "documentId": "AY888881202208",
+        "chargeType": "Cutover Credits" ,
+        "mainType": "ITSA Cutover Credits",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "chargeReference": "AY888881A02208",
+        "originalAmount": -10000.0,
+        "outstandingAmount": 0.0,
+        "clearedAmount": -10000.0,
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2022-01-05",
+            "amount": -10000,
+            "clearingDate": "2022-01-31",
+            "clearingReason": "Allocated to Charge",
+            "clearingSAPDocument": "002910013224"
+          }
+        ]
+      },
+      {
+        "taxYear": "2022",
+        "documentId": "AY888881202209",
+        "chargeType": "Cutover Credits" ,
+        "mainType": "ITSA Cutover Credits",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "chargeReference": "AY888881A02209",
+        "originalAmount": -10000.0,
+        "outstandingAmount": -10000.0,
+        "clearedAmount": -10000.0,
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2022-07-28",
+            "amount": -10000,
+            "clearingDate": "2022-07-31",
+            "clearingReason": "Allocated to Charge",
+            "clearingSAPDocument": "002910013224"
+          }
+        ]
+      },
+      {
+        "taxYear": "2022",
+        "documentId": "AY888881202210",
+        "chargeType": "Cutover Credits" ,
+        "mainType": "ITSA Cutover Credits",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "chargeReference": "AY888881A02210",
+        "originalAmount": -12346.0,
+        "outstandingAmount": 0.0,
+        "clearedAmount": -10000.0,
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2022-06-13",
+            "amount": -10000,
+            "clearingDate": "2022-01-31",
+            "clearingReason": "Allocated to Charge",
+            "clearingSAPDocument": "002910013224"
+          }
+        ]
+      },
+      {
+        "taxYear": "2022",
+        "documentId": "AY888881202212",
+        "chargeType": "ITSA Wales",
+        "mainType": "SA Balancing Charge Credit",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "chargeReference": "AY888881A02212",
+        "originalAmount": -12345.0,
+        "outstandingAmount": 0.0,
+        "clearedAmount": -10000.0,
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2022-06-12",
+            "amount": -10000,
+            "clearingDate": "2022-01-31",
+            "clearingReason": "Allocated to Charge",
+            "clearingSAPDocument": "002910013224"
+          }
+        ]
+      },
+      {
+        "taxYear": "2022",
+        "documentId": "AY888881202211",
+        "mainType": "SA Balancing Charge Credit",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "chargeReference": "AY888881A02211",
+        "originalAmount": -100.0,
+        "outstandingAmount": -100.0,
+        "clearedAmount": 0.0,
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2021-07-31",
+            "amount": 100
+          }
+        ]
+      },
+      {
+        "taxYear": "2022",
+        "documentId": "AY888881202212",
+        "mainType": "SA Balancing Charge Credit",
+        "sapDocumentNumber": "1040000872",
+        "sapDocumentNumberItem": "XM00",
+        "chargeReference": "AY888881A02202",
+        "originalAmount": -1500.0,
+        "outstandingAmount": -0.0,
+        "clearedAmount": -1500.0,
+        "items": [
+          {
+            "subItem": "001",
+            "dueDate": "2022-07-31",
+            "amount": -1500
+          }
+        ]
+      }
+    ]
+  }
+}

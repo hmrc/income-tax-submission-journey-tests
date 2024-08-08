@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.conf.TaxYearHelper
-import uk.gov.hmrc.test.ui.pages.CommonPage.{clickOn, elementExists, load, replaceTaxYear}
+import uk.gov.hmrc.test.ui.pages.CommonPage._
 import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, CommonPage}
 
 class CommonStepDef extends Steps with TaxYearHelper{
@@ -140,7 +140,9 @@ class CommonStepDef extends Steps with TaxYearHelper{
       case "untaxed interest" => s"http://localhost:9308/update-and-submit-income-tax-return/personal-income/$taxYear/interest/untaxed-uk-interest"
       case "employment summary" => s"http://localhost:9317/update-and-submit-income-tax-return/employment-income/$taxYear/employment-summary"
       case "interest check your answers" => s"http://localhost:9308/update-and-submit-income-tax-return/personal-income/$taxYear/interest/check-interest"
+      case "V&C login page" => "http://localhost:9081/report-quarterly/income-and-expenses/view/test-only/custom-login"
       case "final tax overview" => s"http://localhost:9302/update-and-submit-income-tax-return/$taxYearEOY/income-tax-return-overview"
+      case "tax view" => s"http://localhost:9302/update-and-submit-income-tax-return/$taxYear/income-tax-return-overview"
       case "tax overview for individuals" => "http://localhost:9081/report-quarterly/income-and-expenses/view/tax-overview"
       case "tax overview for agents" => "http://localhost:9081/report-quarterly/income-and-expenses/view/agents/tax-overview"
       case "auth login" => AuthLoginPage.url
@@ -155,6 +157,18 @@ class CommonStepDef extends Steps with TaxYearHelper{
       case _ => fail("Invalid url input parameter")
     }
     driver.navigate().to(expectedUrl)
+  }
+
+  Given("""^the user (.*) is selected on V&C page$""") { (nino: String) =>
+    selectDropDownOptionByValue("nino", nino)
+  }
+
+  Given("""^the agent checkbox on V&C page is selected$""") { () =>
+    clickOnAgentCheckbox()
+  }
+
+  Given("""^the user clicks the Login button on the V&C page$""") { () =>
+    clickOnButton("vcLoginButton")
   }
 
   Then("""^the user navigates to the (.*) page for (.*)$""") { (url: String, taxYear: String) =>

@@ -54,7 +54,7 @@ Feature: Charitable Donations Journeys - Income Tax Submission
     When the user clicks on the Gifts of shares or securities task list link
     Then the user should be redirected to the "What is the total value of qualifying shares or securities donated to charity?" page
 
-  @ignore #remove ignore tag when SASS-7785 is complete
+
   Scenario: Individual User - Charities - Gifts of land or property
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |

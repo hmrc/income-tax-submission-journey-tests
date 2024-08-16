@@ -79,7 +79,7 @@ Feature: Charitable Donations Journeys - Income Tax Submission
     When the user clicks on the Gifts of land or property task list link
     Then the user should be redirected to the "What is the value of land or property donated to charity?" page
 
-  @ignore #remove ignore tag when SASS-7786 is complete
+
   Scenario: Individual User - Charities - Gifts to overseas charities
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |

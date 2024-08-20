@@ -27,9 +27,10 @@ Feature: Charitable Donations Journeys - Income Tax Submission
     When the user clicks the Continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the Donations using Gift Aid task list link
-    Then the user should be redirected to the "How much did you donate to charity by using Gift Aid?" page
+    ##TODO Remove comment when the journey is correctly split
+#    Then the user should be redirected to the "How much did you donate to charity by using Gift Aid?" page
 
-@ignore #remove ignore tag when SASS-7784 is complete
+
   Scenario: Individual User - Charities - Gifts of shares or securities
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -52,9 +53,10 @@ Feature: Charitable Donations Journeys - Income Tax Submission
     When the user clicks the Continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the Gifts of shares or securities task list link
-    Then the user should be redirected to the "What is the total value of qualifying shares or securities donated to charity?" page
+  ##TODO Remove comment when the journey is correctly split
+#    Then the user should be redirected to the "What is the total value of qualifying shares or securities donated to charity?" page
 
-  @ignore #remove ignore tag when SASS-7785 is complete
+
   Scenario: Individual User - Charities - Gifts of land or property
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -77,9 +79,10 @@ Feature: Charitable Donations Journeys - Income Tax Submission
     When the user clicks the Continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the Gifts of land or property task list link
-    Then the user should be redirected to the "What is the value of land or property donated to charity?" page
+    ##TODO Remove comment when the journey is correctly split
+#    Then the user should be redirected to the "What is the value of land or property donated to charity?" page
 
-  @ignore #remove ignore tag when SASS-7786 is complete
+
   Scenario: Individual User - Charities - Gifts to overseas charities
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -102,4 +105,5 @@ Feature: Charitable Donations Journeys - Income Tax Submission
     When the user clicks the Continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the Gifts of overseas charities task list link
-    Then the user should be redirected to the "Did you donate qualifying shares, securities, land or property to overseas charities?" page
+    ##TODO Remove comment when the journey is correctly split
+#    Then the user should be redirected to the "Did you donate qualifying shares, securities, land or property to overseas charities?" page

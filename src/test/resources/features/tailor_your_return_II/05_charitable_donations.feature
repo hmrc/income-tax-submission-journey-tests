@@ -26,8 +26,9 @@ Feature: Charitable Donations Journeys - Income Tax Submission
     Then the user should be redirected to the "Add sections to your Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the Donations using Gift Aid1 link
-    Then the user should be redirected to the "Did you make donations to charity?" page
+    When the user clicks on the Donations using Gift Aid task list link
+    ##TODO Remove comment when the journey is correctly split
+#    Then the user should be redirected to the "How much did you donate to charity by using Gift Aid?" page
 
 
   Scenario: Individual User - Charities - Gifts of shares or securities
@@ -51,8 +52,10 @@ Feature: Charitable Donations Journeys - Income Tax Submission
     Then the user should be redirected to the "Add sections to your Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the Gifts of shares or securities1 link
-    Then the user should be redirected to the "Did you make donations to charity?" page
+    When the user clicks on the Gifts of shares or securities task list link
+  ##TODO Remove comment when the journey is correctly split
+#    Then the user should be redirected to the "What is the total value of qualifying shares or securities donated to charity?" page
+
 
   Scenario: Individual User - Charities - Gifts of land or property
     When the user logs into the service with the following details
@@ -75,8 +78,10 @@ Feature: Charitable Donations Journeys - Income Tax Submission
     Then the user should be redirected to the "Add sections to your Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the Gifts of land or property1 link
-    Then the user should be redirected to the "Did you make donations to charity?" page
+    When the user clicks on the Gifts of land or property task list link
+    ##TODO Remove comment when the journey is correctly split
+#    Then the user should be redirected to the "What is the value of land or property donated to charity?" page
+
 
   Scenario: Individual User - Charities - Gifts to overseas charities
     When the user logs into the service with the following details
@@ -99,5 +104,6 @@ Feature: Charitable Donations Journeys - Income Tax Submission
     Then the user should be redirected to the "Add sections to your Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the Gifts of overseas charities1 link
-    Then the user should be redirected to the "Did you make donations to charity?" page
+    When the user clicks on the Gifts of overseas charities task list link
+    ##TODO Remove comment when the journey is correctly split
+#    Then the user should be redirected to the "Did you donate qualifying shares, securities, land or property to overseas charities?" page

@@ -60,13 +60,12 @@ trait CommonElements extends BasePage with Matchers {
 
 
     //Common Task List Elements
-
     "UK residence status"                                 -> By.cssSelector("#main-content > div > div > ul:nth-child(5) > li:nth-child(1) > div.govuk-task-list__name-and-hint > a"),
     "Foster carer status"                                 -> By.cssSelector("#main-content > div > div > ul:nth-child(5) > li:nth-child(2) > div.govuk-task-list__name-and-hint > a"),
-    "Donations using Gift Aid1"                           -> By.className("DonationsUsingGiftAidTitle"),
-    "Gifts of land or property1"                          -> By.className("GiftsOfLandOrPropertyTitle"),
-    "Gifts of shares or securities1"                      -> By.className("GiftsOfSharesTitle"),
-    "Gifts of overseas charities1"                        -> By.className("GiftsToOverseasCharitiesTitle"),
+    "Donations using Gift Aid task list"                  -> By.className("DonationsUsingGiftAidTitle"),
+    "Gifts of land or property task list"                 -> By.className("GiftsOfLandOrPropertyTitle"),
+    "Gifts of shares or securities task list"             -> By.className("GiftsOfSharesTitle"),
+    "Gifts of overseas charities task list"               -> By.className("GiftsToOverseasCharitiesTitle"),
     "PAYE employment (including student loans)1"          -> By.className("PayeEmploymentTitle"),
     "Construction Industry Schemes deductions"            -> By.className("CISTitle"),
     "Review Employment and support allowance claims"      -> By.className("ESATitle"),

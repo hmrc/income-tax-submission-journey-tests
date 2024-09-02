@@ -83,7 +83,7 @@ trait CommonElements extends BasePage with Matchers {
     "Trust fund bond or bonds task list"                            -> By.className("TrustFundBondTitle"),
     "Gilt-edged or accrued income securities task list"            -> By.className("GiltEdgedTitle"),
     "Cash dividends from UK stocks and shares1"           -> By.className("CashDividendsTitle"),
-    "Stock dividends from UK companies1"                  -> By.className("StockDividendsTitle"),
+    "Stock dividends from UK companies task list"                  -> By.className("StockDividendsTitle"),
     "Dividends from unit trusts or investment companies1" -> By.className("DividendsFromUnitTrustsTitle"),
     "Free or redeemable shares1"                          -> By.className("FreeRedeemableSharesTitle"),
     "Close company loans written off or released1"        -> By.className("CloseCompanyLoansTitle"),

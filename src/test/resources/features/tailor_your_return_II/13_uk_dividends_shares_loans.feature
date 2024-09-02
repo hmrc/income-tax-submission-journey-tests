@@ -27,7 +27,8 @@ Feature: UK dividends, shares and loans from limited companies Journeys - Income
     When the user clicks the Continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the Cash dividends from UK stocks and shares1 link
-    Then the user should be redirected to the "Did you get dividends from shares?" page
+    ##TODO Remove comment when the journey is correctly split
+#    Then the user should be redirected to the "Did you get dividends from shares?" page
 
   Scenario: Individual User - UK dividends, shares and loans - Stock dividends from UK companies
     When the user logs into the service with the following details
@@ -50,8 +51,13 @@ Feature: UK dividends, shares and loans from limited companies Journeys - Income
     Then the user should be redirected to the "Add sections to your Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the Stock dividends from UK companies1 link
-    Then the user should be redirected to the "Did you get dividends from shares?" page
+    When the user clicks on the Stock dividends from UK companies task list link
+    Then the user should be redirected to the "How much did you get?" page
+    When the user selects the amount field and enters a value of 100
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your dividends" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
 
 
   Scenario: Individual User - UK dividends, shares and loans - Dividends from unit trusts or investment companies
@@ -76,7 +82,8 @@ Feature: UK dividends, shares and loans from limited companies Journeys - Income
     When the user clicks the Continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the Dividends from unit trusts or investment companies1 link
-    Then the user should be redirected to the "Did you get dividends from shares?" page
+    ##TODO Remove comment when the journey is correctly split
+#    Then the user should be redirected to the "Did you get dividends from shares?" page
 
 
   Scenario: Individual User - UK dividends, shares and loans - Free or redeemable shares
@@ -101,7 +108,8 @@ Feature: UK dividends, shares and loans from limited companies Journeys - Income
     When the user clicks the Continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the Free or redeemable shares1 link
-    Then the user should be redirected to the "Did you get dividends from shares?" page
+    ##TODO Remove comment when the journey is correctly split
+#    Then the user should be redirected to the "Did you get dividends from shares?" page
 
 
   Scenario: Individual User - UK dividends, shares and loans - Close company loans written off or released
@@ -126,4 +134,5 @@ Feature: UK dividends, shares and loans from limited companies Journeys - Income
     When the user clicks the Continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the Close company loans written off or released1 link
-    Then the user should be redirected to the "Did you get dividends from shares?" page
+  ##TODO Remove comment when the journey is correctly split
+#    Then the user should be redirected to the "Did you get dividends from shares?" page

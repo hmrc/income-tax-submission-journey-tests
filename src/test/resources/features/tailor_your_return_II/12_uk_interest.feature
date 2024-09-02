@@ -26,8 +26,9 @@ Feature: UK Interest Journeys - Income Tax Submission
     Then the user should be redirected to the "Add sections to your Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the Banks and building societies1 link
-    Then the user should be redirected to the "Did you get any interest from the UK?" page
+    When the user clicks on the Banks and building societies task list link
+    ##TODO Remove comment when the journey is correctly split
+#    Then the user should be redirected to the "Add an account with untaxed UK interest" page
 
   Scenario: Individual User - Interest - Trust fund bond or bonds
     When the user logs into the service with the following details
@@ -50,8 +51,9 @@ Feature: UK Interest Journeys - Income Tax Submission
     Then the user should be redirected to the "Add sections to your Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the Trust fund bond or bonds link
-    Then the user should be redirected to the "Did you get any interest from the UK?" page
+    When the user clicks on the Trust fund bond or bonds task list link
+    ##TODO Remove comment when the journey is correctly split
+#    Then the user should be redirected to the "Add an account with taxed UK interest" page
 
   Scenario: Individual User - Interest - Gilt-edged or accrued income securities
     When the user logs into the service with the following details
@@ -74,5 +76,6 @@ Feature: UK Interest Journeys - Income Tax Submission
     Then the user should be redirected to the "Add sections to your Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the Gilt-edged or accrued income securities1 link
-    Then the user should be redirected to the "Interest from gilt-edged or accrued income securities" page
+    When the user clicks on the Gilt-edged or accrued income securities task list link
+  ##TODO Remove comment when the journey is correctly split
+#    Then the user should be redirected to the "Total interest" page

@@ -100,7 +100,7 @@ trait CommonElements extends BasePage with Matchers {
     "change uk dividends amount"                                 -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a"),
     "change other dividends amount"                              -> By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dd.govuk-summary-list__actions > a"),
     "change stock dividends"                                     -> By.cssSelector("#main-content > div > div > dl > div:nth-child(4) > dd.govuk-summary-list__actions > a"),
-    "change value of stock dividends"                            -> By.xpath("//*[contains(text(),'Value of stock dividends')]/parent::div/dd[2]"),
+    "change value of stock dividends"                            -> By.xpath("//*[contains(text(),'Value of stock dividends')]/parent::div/dd[2]/a"),
     "change value of free or redeemable shares"                  -> By.xpath("//*[contains(text(),'Free or redeemable shares')]/parent::div/dd[2]"),
     "change value of close company loan written off or released" -> By.xpath("//*[contains(text(),'Close company loan written off or released')]/parent::div/dd[2]"),
 

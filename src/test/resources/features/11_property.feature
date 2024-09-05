@@ -1096,14 +1096,14 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the sbaYes,HYFTS radio button
     And the user clicks the property continue button
     Then  the user should be redirected to the "UK property" page
-
+@test
   Scenario: Individual user adds UK Property - Property rentals - Claim Expenses - Enhanced Structures and Buildings Allowance
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start     |
       | Credential Strength | strong         |
       | Confidence Level    | 250            |
       | Affinity Group      | Individual     |
-      | Nino                | AC180000A      |
+      | Nino                | AC210000B      |
       | Enrolment Key 1     | HMRC-MTD-IT    |
       | Identifier Name 1   | MTDITID        |
       | Identifier Value 1  | 1234567890     |

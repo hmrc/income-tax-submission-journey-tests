@@ -1096,7 +1096,7 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the sbaYes,HYFTS radio button
     And the user clicks the property continue button
     Then  the user should be redirected to the "UK property" page
-@test
+
   Scenario: Individual user adds UK Property - Property rentals - Claim Expenses - Enhanced Structures and Buildings Allowance
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start     |

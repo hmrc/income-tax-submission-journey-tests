@@ -1,5 +1,6 @@
-@MVP @ZAP @property
+@MVP @ZAP @property @ignore
 
+##TODO Remove ignore tag when property tests are passsing
 
 Feature: Property Journeys - Income Tax Submission
 

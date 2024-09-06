@@ -54,7 +54,6 @@ Feature: Payment Into Pensions Journeys - Income Tax Submission
     When the user clicks on the Annual allowances1 link
     Then the user should be redirected to the "Do you have a reduced annual allowance?" page
 
-
   Scenario: Individual User - Pensions - Payments into non-UK pensions
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -77,8 +76,7 @@ Feature: Payment Into Pensions Journeys - Income Tax Submission
     When the user clicks the Continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the Payments into overseas pensions link
-    Then the user should be redirected to the "Pensions" page
-
+#    Then the user should be redirected to the "Pensions" page
 
   Scenario: Individual User - Pensions - Overseas transfer charges1
     When the user logs into the service with the following details

@@ -146,7 +146,7 @@ Feature: UK dividends, shares and loans from limited companies Journeys - Income
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the Dividends from unit trusts or investment companies task list link
     Then the user should be redirected to the "Check your client's dividends" page
-    When the user clicks on the "change value of unit trusts or investment companies" link
+    When the user clicks on the change value of unit trusts or investment companies link
     Then the user should be redirected to the "How much did your client get in dividends from trusts and open-ended investment companies based in the UK?" page
     When the user selects the amount field and enters a value of 195.5
     And the user clicks the continue button

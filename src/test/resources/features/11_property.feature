@@ -1,4 +1,4 @@
-@MVP @ZAP @property @ignore
+@MVP @ZAP @property
 
 ##TODO Remove ignore tag when property tests are passsing
 
@@ -564,7 +564,7 @@ Feature: Property Journeys - Income Tax Submission
     And the user selects the BalancingChargeYes radio button
     Then the user selects the How much is the balancing charge? Amount field and enters a value of 1200
     And the user clicks the continue button
-    Then the user should be redirected to the "How much Property Income Allowance (PIA) do you want to claim?" page
+    Then the user should be redirected to the "Your Property Income Allowance claim" page
     And the user selects the Enter your share of PIA for this property Amount field and enters a value of 1000
     When the user clicks the continue button
     Then the user should be redirected to the "Business premises renovation allowance balancing charge" page

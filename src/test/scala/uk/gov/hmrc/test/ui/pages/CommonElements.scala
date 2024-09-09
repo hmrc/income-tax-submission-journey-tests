@@ -86,7 +86,7 @@ trait CommonElements extends BasePage with Matchers {
     "Stock dividends from UK companies task list"                  -> By.className("StockDividendsTitle"),
     "Dividends from unit trusts or investment companies task list" -> By.className("DividendsFromUnitTrustsTitle"),
     "Free or redeemable shares task list"                          -> By.className("FreeRedeemableSharesTitle"),
-    "Close company loans written off or released1"        -> By.className("CloseCompanyLoansTitle"),
+    "Close company loans written off or released task list"        -> By.className("CloseCompanyLoansTitle"),
     "Life Insurance common task list"                     -> By.className("LifeInsuranceTitle"),
     "Life Annuity common task list"                       -> By.className("LifeAnnuityTitle"),
     "Capital Redemption common task list"                 -> By.className("CapitalRedemptionTitle"),
@@ -104,7 +104,7 @@ trait CommonElements extends BasePage with Matchers {
     "change value of stock dividends"                            -> By.xpath("//*[contains(text(),'Value of stock dividends')]/parent::div/dd[2]/a"),
     "change value of free or redeemable shares"                  -> By.xpath("//*[contains(text(),' value of free or redeemable shares')]/parent::a"),
     "change value of unit trusts or investment companies"        -> By.xpath("//*[contains(text(),' amount of dividends from unit trusts or investment companies')]/parent::a"),
-    "change value of close company loan written off or released" -> By.xpath("//*[contains(text(),'Close company loan written off or released')]/parent::div/dd[2]"),
+    "change value of close company loan written off or released" -> By.xpath("//*[contains(text(),'Close company loan written off or released')]/parent::div/dd[2]/a"),
 
     //Interest Elements
     "Interest from savings and securities"                  -> By.id("interest_link"),

@@ -366,6 +366,7 @@ trait CommonElements extends BasePage with Matchers {
     "Voided ISA"                                                      -> By.cssSelector("[value='voidedIsa']"),
     "Add another gain from a different policy"                        -> By.xpath("//*[contains(text(),'Add another gain from a different policy')]"),
     "Gains status"                                                    -> By.xpath("//*[@id='gains_link']/parent::span/parent::li/span[2]/strong"),
+    "Chane Policy"                                                    -> By.id("policy-change"),
 
     //About You
     "About you"                                                   -> By.cssSelector("#main-content > div > div > ul > li:nth-child(1) > div.govuk-task-list__name-and-hint > a"),

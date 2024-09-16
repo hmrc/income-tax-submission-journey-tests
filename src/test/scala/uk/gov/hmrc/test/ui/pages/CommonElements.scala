@@ -66,7 +66,7 @@ trait CommonElements extends BasePage with Matchers {
     "Gifts of land or property task list"                 -> By.className("GiftsOfLandOrPropertyTitle"),
     "Gifts of shares or securities task list"             -> By.className("GiftsOfSharesTitle"),
     "Gifts of overseas charities task list"               -> By.className("GiftsToOverseasCharitiesTitle"),
-    "PAYE employment (including student loans)1"          -> By.className("PayeEmploymentTitle"),
+    "PAYE employment (including student loans) task list"          -> By.className("PayeEmploymentTitle"),
     "Construction Industry Schemes deductions"            -> By.className("CISTitle"),
     "Review Employment and support allowance claims"      -> By.className("ESATitle"),
     "Review Jobseeker’s Allowance claims"                 -> By.className("JSATitle"),

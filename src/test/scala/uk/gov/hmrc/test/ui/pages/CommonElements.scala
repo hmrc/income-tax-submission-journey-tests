@@ -121,6 +121,7 @@ trait CommonElements extends BasePage with Matchers {
     "change interest from the uk summary"         -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a"),
     "change uk untaxed interest accounts summary" -> By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a"),
     "change uk taxed interest accounts summary"   -> By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dd.govuk-summary-list__actions > a"),
+    "change amount of interest"                   -> By.xpath("//*[contains(text(),' Change amount of interest')]/parent::a"),
     "remove interest"                             -> By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd > ul > li:nth-child(2) > a"),
     "first"                                       -> By.id("value"),
     "second"                                      -> By.id("value-2"),

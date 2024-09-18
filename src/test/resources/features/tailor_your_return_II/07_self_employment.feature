@@ -27,5 +27,30 @@ Feature: Self Employment Journeys - Income Tax Submission
     When the user clicks the Continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the Construction Industry Schemes deductions link
+    #TODO - Delete line 30 - 35 when CIS Hyperlink/ Mini Journey is complete
     Then the user should be redirected to the "Have you had CIS deductions taken from your payments by contractors?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "CIS deductions" page
+    When the user clicks on the Add a contractor link
+    #TODO - Delete line 30 - 35 when CIS Hyperlink/ Mini Journey is complete
+    Then the user should be redirected to the "Contractor details" page
+    When the user selects the Contractor name field and enters a value of Boots Ltd
+    And the user selects the Employer Reference Number field and enters a value of 123/4567
+    And the user clicks the continue button
+    Then the user should be redirected to the "When did your contractor make CIS deductions?" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Amount paid before tax by this contractor" page
+    When the user selects the amount field and enters a value of 20.02
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much was taken by your contractor in CIS deductions?" page
+    When the user selects the amount field and enters a value of 200
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did you pay for materials for your contractor?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much did you pay for building materials for your contractor?" page
+    When the user selects the amount field and enters a value of 110.02
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your CIS deductions" page
 

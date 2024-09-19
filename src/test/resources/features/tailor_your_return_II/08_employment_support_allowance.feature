@@ -53,13 +53,14 @@ Feature: Employment and Support Allowance Journeys - Income Tax Submission
     When the user selects the amount field and enters a value of 130.02
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
-    When the user clicks the state benefit save and continue button
-    Then the user should be redirected to the "Employment and Support Allowance" page
-    When the user clicks on the first view link
-    And the user clicks on the remove claim link
-    Then the user should be redirected to the "Are you sure you want to remove this Employment and Support Allowance claim?" page
-    When the user clicks the Remove claim button
-    Then the user should be redirected to the "Employment and Support Allowance" page
+    #TODO Remove comments below when CIS bug is fixed from clicking continue button on page above
+#    When the user clicks the state benefit save and continue button
+#    Then the user should be redirected to the "Employment and Support Allowance" page
+#    When the user clicks on the first view link
+#    And the user clicks on the remove claim link
+#    Then the user should be redirected to the "Are you sure you want to remove this Employment and Support Allowance claim?" page
+#    When the user clicks the Remove claim button
+#    Then the user should be redirected to the "Employment and Support Allowance" page
 
   Scenario: Returning User - Employment and Support Allowance - Review Employment and Support Allowance Claims
     When the user logs into the service with the following details

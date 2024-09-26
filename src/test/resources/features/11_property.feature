@@ -1,4 +1,4 @@
-@MVP @ZAP @property @ignore
+@MVP @ZAP @property
 
 
 Feature: Property Journeys - Income Tax Submission
@@ -300,6 +300,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the Yes HYFTS radio button
     And the user clicks the property continue button
+
 
   Scenario: Individual user adds UK Property Property rentals - Individual user - answers questions in the Income Journey
     When the user logs into the service with the following details

@@ -301,7 +301,6 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the Yes HYFTS radio button
     And the user clicks the property continue button
 
-
   Scenario: Individual user adds UK Property Property rentals - Individual user - answers questions in the Income Journey
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -354,7 +353,7 @@ Feature: Property Journeys - Income Tax Submission
     And the user selects the Tax deducted Yes radio button
     And the user selects the Tax Deducted Amount field and enters a value of 340.55
     When the user clicks the continue button
-    Then the user should be redirected to the "Income from Property Rentals" page
+    Then the user should be redirected to the "Property rental income" page
     When the user selects the Property rental amount field and enters a value of 340.55
     And the user clicks the continue button
     Then the user should be redirected to the "Premiums for the grant of a lease" page
@@ -441,7 +440,7 @@ Feature: Property Journeys - Income Tax Submission
     And the user selects the Tax deducted Yes radio button
     And the user selects the Tax Deducted Amount field and enters a value of 340.55
     When the user clicks the continue button
-    Then the user should be redirected to the "Income from Property Rentals" page
+    Then the user should be redirected to the "Property rental income" page
     When the user selects the Property rental amount field and enters a value of 340.55
     And the user clicks the continue button
     Then the user should be redirected to the "Premiums for the grant of a lease" page
@@ -531,7 +530,7 @@ Feature: Property Journeys - Income Tax Submission
     And the user selects the Tax deducted Yes radio button
     And the user selects the Tax Deducted Amount field and enters a value of 340.55
     When the user clicks the continue button
-    Then the user should be redirected to the "Income from Property Rentals" page
+    Then the user should be redirected to the "Property rental income" page
     When the user selects the Property rental amount field and enters a value of 340.55
     And the user clicks the continue button
     Then the user should be redirected to the "Premiums for the grant of a lease" page
@@ -641,7 +640,7 @@ Feature: Property Journeys - Income Tax Submission
     And the user selects the Tax deducted Yes radio button
     And the user selects the Tax Deducted Amount field and enters a value of 13400.50
     When the user clicks the continue button
-    Then the user should be redirected to the "Income from Property Rentals" page
+    Then the user should be redirected to the "Property rental income" page
     When the user selects the Property rental amount field and enters a value of 24000.00
     And the user clicks the continue button
     Then the user should be redirected to the "Premiums for the grant of a lease" page
@@ -735,7 +734,7 @@ Feature: Property Journeys - Income Tax Submission
     And the user selects the Tax deducted Yes radio button
     And the user selects the Tax Deducted Amount field and enters a value of 13400.50
     When the user clicks the continue button
-    Then the user should be redirected to the "Income from Property Rentals" page
+    Then the user should be redirected to the "Property rental income" page
     When the user selects the Property rental amount field and enters a value of 24000.00
     And the user clicks the continue button
     Then the user should be redirected to the "Premiums for the grant of a lease" page
@@ -849,7 +848,7 @@ Feature: Property Journeys - Income Tax Submission
     And the user selects the Tax deducted Yes radio button
     And the user selects the Tax Deducted Amount field and enters a value of 13400.50
     When the user clicks the continue button
-    Then the user should be redirected to the "Income from Property Rentals" page
+    Then the user should be redirected to the "Property rental income" page
     When the user selects the Property rental amount field and enters a value of 24000.00
     And the user clicks the continue button
     Then the user should be redirected to the "Premiums for the grant of a lease" page
@@ -942,7 +941,7 @@ Feature: Property Journeys - Income Tax Submission
     And the user selects the Tax deducted Yes radio button
     And the user selects the Tax Deducted Amount field and enters a value of 13400.50
     When the user clicks the continue button
-    Then the user should be redirected to the "Income from Property Rentals" page
+    Then the user should be redirected to the "Property rental income" page
     When the user selects the Property rental amount field and enters a value of 24000.00
     And the user clicks the continue button
     Then the user should be redirected to the "Premiums for the grant of a lease" page

@@ -1,6 +1,5 @@
 @MVP @ZAP @property
 
-
 Feature: Property Journeys - Income Tax Submission
 
   Background:
@@ -1161,7 +1160,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "How much is your enhanced structures and buildings allowance claim?" page
     And the user selects the How much is your enhanced structures and buildings allowance claim? amount field and enters a value of 1650
     When the user clicks the Continue button
-    Then the user should be redirected to the "Where is the new enhanced structure or building located?" page
+    Then the user should be redirected to the "Enhanced structures and buildings allowance address" page
     And the user selects the Building name field and enters a value of MBNX Fan Mall, Shropshore
     And the user selects the Building number field and enters a value of 11
     And the user selects the Postcode field and enters a value of SA1 1AA
@@ -1240,7 +1239,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "How much is your enhanced structures and buildings allowance claim?" page
     And the user selects the How much is your enhanced structures and buildings allowance claim? amount field and enters a value of 1650
     When the user clicks the Continue button
-    Then the user should be redirected to the "Where is the new enhanced structure or building located?" page
+    Then the user should be redirected to the "Enhanced structures and buildings allowance address" page
     And the user selects the Building name field and enters a value of MBNX Fan Mall, Shropshore
     And the user selects the Building number field and enters a value of 11
     And the user selects the Postcode field and enters a value of SA1 1AA

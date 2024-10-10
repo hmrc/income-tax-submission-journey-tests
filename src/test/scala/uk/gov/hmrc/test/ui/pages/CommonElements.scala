@@ -596,9 +596,35 @@ trait CommonElements extends BasePage with Matchers {
     "Enhanced structures and buildings allowance claims" -> By.cssSelector("#main-content > div > div > h1"),
     "How much is your enhanced structures and buildings allowance claim?" -> By.cssSelector("#main-content > div > div > form > div > h1 > label"),
     "How much is your enhanced structures and buildings allowance claim? amount" -> By.id("esbaClaim"),
-    "Where is the new enhanced structure or building located?" -> By.cssSelector("#main-content > div > div > h1"),
+    "Enhanced structures and buildings allowance address" -> By.cssSelector("#main-content > div > div > h1"),
     "Your enhanced structures and buildings allowance claims" -> By.cssSelector("#main-content > div > div > form > h1"),
 
+    // Property - rent-a-room
+    "Rent-a-room" -> By.id("value_1"),
+  "Rentaroom About" -> By.cssSelector("#main-content > div > div > ol:nth-child(5) > li > div.govuk-task-list__name-and-hint > a"),//By.id("rent_a_room_about_link"),
+  "Rent a room" -> By.cssSelector("#main-content > div > div > h1"),
+  "Jointly let rent a room" -> By.cssSelector("#main-content > div > div > h1"),
+  "Jointly let rent a room, Yes" -> By.id("jointlyLetYesOrNo"),
+  "Jointly let rent a room, No" -> By.id("jointlyLetYesOrNo-no"),
+  "How much total rent a room income did you receive?" -> By.cssSelector("#main-content > div > div > form > div > h1 > label"),
+  "TotalRentaRoomAmt" -> By.id("totalIncomeAmount"),
+  "Claim expenses or rent a room relief" -> By.cssSelector("#main-content > div > div > form > h1"),
+  "Rent a room relief" -> By.id("rentARoomAmount"),
+  "Expenses" -> By.id("rentARoomAmount-no"),
+  "RentaRoomCYA About" -> By.cssSelector("#main-content > div > div > h1"),
+  "RaRAboutHYFTS,Yes" -> By.id("rentARoomIsSectionCompleteYesOrNo"),
+  "RaRAboutHYFTS,No" -> By.id("rentARoomIsSectionCompleteYesOrNo-no"),
+  "RaREpensesLink" -> By.cssSelector("#main-content > div > div > ol:nth-child(5) > li:nth-child(2) > div.govuk-task-list__name-and-hint > a"),
+  "Rent a room expenses" -> By.cssSelector("#main-content > div > div > h1"),
+  "Consolidated or individual expenses" -> By.cssSelector("#main-content > div > div > h1"),
+  "Claim consolidated expenses" -> By.id("consolidatedExpensesYesOrNo"),
+  "Claim individual expenses" -> By.id("consolidatedExpensesYesOrNo-no"),
+  "Claim consolidated expensesAmt"-> By.id("consolidatedExpensesAmount"),
+  "RaRExpensesHYFTS,Yes" -> By.id("expensesRRSectionCompleteYesOrNo"),
+  "RaRExpensesHYFTS,No" -> By.id("expensesRRSectionCompleteYesOrNo"),
+  "How much total income did your client get from all of their properties?" -> By.cssSelector("#main-content > div > div > h1"),
+  "Which rental property does your client have in the UK?" -> By.cssSelector("#main-content > div > div > h1"),
+  "How much total rent a room income did your client receive?" -> By.cssSelector("#main-content > div > div > h1"),
 
 
     // Property, Pensions And Investments
@@ -717,8 +743,10 @@ trait CommonElements extends BasePage with Matchers {
     "Qualifying start Month" -> By.id("qualifyingUseStartDate.month"),
     "Qualifying start Year" -> By.id("qualifyingUseStartDate.year"),
     "Annual Investment Allowance" -> By.xpath("//a[text()=' Annual Investment Allowance ']"),
-    "Writing down" -> By.xpath("//a[text()=' ‘Writing down’ allowance ']")
+    "Writing down" -> By.xpath("//a[text()=' ‘Writing down’ allowance ']"),
   )
 
   val elements: Map[String, By] = Map(commonMapping: _*)
+
+
 }

@@ -6,7 +6,7 @@ Feature: SelfEmployment Accural accounting -Use Maximum trading allowance Journe
 
   Scenario: Agent Check self employment details
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA000001D&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=BB000001A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                                |
       | Confidence Level    | 250                                                                                 |
       | Affinity Group      | Agent                                                                               |
@@ -42,7 +42,7 @@ Feature: SelfEmployment Accural accounting -Use Maximum trading allowance Journe
 
   Scenario: Agent - Self Employment Abroad
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA000001D&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=BB000001A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                                |
       | Confidence Level    | 250                                                                                 |
       | Affinity Group      | Agent                                                                               |
@@ -77,7 +77,7 @@ Feature: SelfEmployment Accural accounting -Use Maximum trading allowance Journe
 
   Scenario: Agent - Self employment InYear Income journey - (Accural accounting - maximum trading allowance)
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA000001D&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=BB000001A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                                |
       | Confidence Level    | 250                                                                                 |
       | Affinity Group      | Agent                                                                               |
@@ -150,7 +150,7 @@ Feature: SelfEmployment Accural accounting -Use Maximum trading allowance Journe
 
   Scenario: Agent - Self employment - Allowances for vehicles, equipment and building journey
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA000001D&ClientMTDID=1234567890 |
+      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=BB000001A&ClientMTDID=1234567890 |
       | Credential Strength | weak                                                                                |
       | Confidence Level    | 250                                                                                 |
       | Affinity Group      | Agent                                                                               |
@@ -180,7 +180,7 @@ Feature: SelfEmployment Accural accounting -Use Maximum trading allowance Journe
     Then the user should be redirected to the "Choose which allowances your client wants to claim" page under self employment
     When the user clicks the Zero-emission car allowance checkbox
     When the user clicks the Zero-emission goods vehicle allowance checkbox
-    When the user clicks the Electric vehicle charge-point allowance checkbox
+
     When the user clicks the Structures and buildings allowance checkbox
     When the user clicks the Freeport structures and buildings allowance checkbox
     When the user clicks the Annual investment allowance (business equipment) checkbox
@@ -222,7 +222,7 @@ Feature: SelfEmployment Accural accounting -Use Maximum trading allowance Journe
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AA000001D   |
+      | Nino                | BB000001A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
@@ -302,35 +302,6 @@ Feature: SelfEmployment Accural accounting -Use Maximum trading allowance Journe
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-    #----------   Electric vehicle charge-points  ----- #
-    When the user clicks on the Electric vehicle charge-points link
-
-    Then the user should be redirected to the "Electric vehicle charge-point allowance" page under self employment
-    When the user selects the yes radio button
-    And the user clicks the Continue button
-
-    Then the user should be redirected to the "Tax relief on charge-points" page under self employment
-    When the user selects the yes radio button
-    And the user clicks the Continue button
-
-    Then the user should be redirected to the "How much did you spend on electric vehicle charge-points, in pounds?" page under self employment
-    And the user selects the Amount-field field and enters a value of 900
-    And the user clicks the Continue button
-
-    Then the user should be redirected to the "Did you only use these charge-points for your self-employment?" page under self employment
-    When the user selects the yes radio button
-    And the user clicks the Continue button
-
-    Then the user should be redirected to the "How much of the charge-points’ costs do you want to claim under the 100% allowance?" page under self employment
-    When the user selects the full cost radio button
-    And the user clicks the Continue button
-
-    Then the user should be redirected to the "Check your answers" page under self employment
-    And the user clicks the Self Employment Save and continue button
-    Then the user should be redirected to the "Have you finished this section?" page under self employment
-    When the user selects the Yes, I’ve completed this section radio button
-    When the user clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
 
      #---------  structure and building allowance journey  ----- #
 
@@ -443,7 +414,7 @@ Feature: SelfEmployment Accural accounting -Use Maximum trading allowance Journe
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | AA000001D   |
+      | Nino                | BB000001A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |

@@ -468,7 +468,7 @@ trait CommonElements extends BasePage with Matchers {
     "Tax Deducted Amount" -> By.id("taxDeductedAmount"),
     "Property rental income" -> By.cssSelector("#main-content > div > div > form > h1"),
     "How much total income did you recieve from from all of your property rentals?" -> By.cssSelector("#main-content > div > div > form > h3"),
-    "Property rental amount" -> By.id("incomeFromPropertyRentals"),
+    "Property rental amount" -> By.id("propertyRentalIncome"),
     "Premiums for the grant of a lease" -> By.cssSelector("#main-content > div > div > h1"),
     "Have you calculated the figure yourself?" -> By.cssSelector("#main-content > div > div > form > div > fieldset > legend > h1"),
     "Did your client calculate the figure themselves?" -> By.cssSelector("#main-content > div > div > form > div > fieldset > legend > h1"),

@@ -1,4 +1,3 @@
-**This is a template README.md.  Be sure to update this with project specific content that describes your ui test project.**
 # App name 
 income-tax-submission-journey-tests
 UI test suite for the `<Income Tax Submission Service>` using WebDriver and `<Cucumber>`.

@@ -9,16 +9,11 @@ Prior to executing the tests ensure you have:
  - Docker - to run a Chrome or Firefox browser inside a container
  - Installed [MongoDB](https://docs.mongodb.com/manual/installation/) 
  - Installed/configured [service manager](https://github.com/hmrc/service-manager).  
- - 
-To run a Chrome or Firefox browser locally:
- - Installed/configured [Local Selenium grid](https://github.com/hmrc/local-selenium-grid).
 
 Ensure that local selenium grid is started, and in a new terminal by running:
 
 `./start.sh`
 
-To run a Chrome or Firefox browser inside a container:
-- Installed/configured [docker Selenium grid](https://github.com/hmrc/docker-selenium-grid).
 
 Ensure that docker selenium grid is started, and in a new terminal by running:
 

@@ -28,8 +28,17 @@ Feature: Charitable Donations Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the Donations using Gift Aid task list link
     ##TODO Remove comment when the journey is correctly split
-#    Then the user should be redirected to the "How much did you donate to charity by using Gift Aid?" page
-
+   ##TODO Mini Journey implemented here when ready
+  # Then the user should be redirected to the "How much did you donate to charity by using Gift Aid?" page
+  # When the user selects the Amount donated using Gift Aid field and enters a value of 50000
+  # And the user clicks the continue button
+  # Check your answers page for Donations using Gift Aid
+  # And the user clicks the continue button
+  ##TODO SASS-10191 to add have you completed this section to the navigation, however mini journey is not ready for gift aid yet
+  # Then the user should be redirected to the "Have you finished this section?" page
+  # When the user selects the yes radio button
+  # When the user clicks the Continue button
+  # Then the user should be redirected to the "Your Income Tax Return" page
 
   Scenario: Individual User - Charities - Gifts of shares or securities
     When the user logs into the service with the following details
@@ -54,8 +63,17 @@ Feature: Charitable Donations Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the Gifts of shares or securities task list link
   ##TODO Remove comment when the journey is correctly split
-#    Then the user should be redirected to the "What is the total value of qualifying shares or securities donated to charity?" page
-
+  ##TODO Mini Journey implemented here when ready
+  # Then the user should be redirected to the "What is the total value of qualifying shares or securities donated to charity?" page
+  # When the user selects the Total value of qualifying shares or securities field and enters a value of 1500
+  # And the user clicks the continue button
+  # Check your answers page for qualifying shares or securities
+  # And the user clicks the continue button
+  ##TODO SASS-10191 to add have you completed this section to the navigation, however mini journey is not ready for gift aid yet
+  # Then the user should be redirected to the "Have you finished this section?" page
+  # When the user selects the yes radio button
+  # When the user clicks the Continue button
+  # Then the user should be redirected to the "Your Income Tax Return" page
 
   Scenario: Individual User - Charities - Gifts of land or property
     When the user logs into the service with the following details
@@ -80,8 +98,17 @@ Feature: Charitable Donations Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the Gifts of land or property task list link
     ##TODO Remove comment when the journey is correctly split
-#    Then the user should be redirected to the "What is the value of land or property donated to charity?" page
-
+  ##TODO Mini Journey implemented here when ready
+  # Then the user should be redirected to the "What is the value of land or property donated to charity?" page
+  # When the user selects the Value of land or property field and enters a value of 750
+  # And the user clicks the continue button
+  # Check your answers page for land or property
+  # And the user clicks the continue button
+  ##TODO SASS-10191 to add have you completed this section to the navigation, however mini journey is not ready for gift aid yet
+  # Then the user should be redirected to the "Have you finished this section?" page
+  # When the user selects the yes radio button
+  # When the user clicks the Continue button
+  # Then the user should be redirected to the "Your Income Tax Return" page
 
   Scenario: Individual User - Charities - Gifts to overseas charities
     When the user logs into the service with the following details
@@ -106,4 +133,14 @@ Feature: Charitable Donations Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the Gifts of overseas charities task list link
     ##TODO Remove comment when the journey is correctly split
-#    Then the user should be redirected to the "Did you donate qualifying shares, securities, land or property to overseas charities?" page
+    ##TODO Mini Journey implemented here when ready
+  # Then the user should be redirected to the "How much did your client donate to overseas charities by using Gift Aid?" page
+  # When the user selects the Amount donated to overseas charities using Gift Aid field and enters a value of 12.99
+  # And the user clicks the continue button
+  # Check your answers page for qualifying shares or securities
+  # And the user clicks the continue button
+  ##TODO SASS-10191 to add have you completed this section to the navigation, however mini journey is not ready for gift aid yet
+  # Then the user should be redirected to the "Have you finished this section?" page
+  # When the user selects the yes radio button
+  # When the user clicks the Continue button
+  # Then the user should be redirected to the "Your Income Tax Return" page

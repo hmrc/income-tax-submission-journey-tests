@@ -52,10 +52,6 @@ tail -f /var/tmp/*_LOCAL/logs/stdout.txt
 Then execute the `run_tests.sh` script:
 ./run_tests.sh <environment> <browser-driver>
 
-The `run_tests.sh` script defaults to the `local` environment with local-selenium-grid/docker-selenium-grid running.  For a complete list of supported param values, see:
- - `src/test/resources/application.conf` for **environment** 
- - [ui-test-runner](https://github.com/hmrc/ui-test-runner) for **browser-driver**
-
 ## Running tests against a containerised browser - on a developer machine
 
 The script `./run-browser-with-docker.sh` can be used to start a Chrome or Firefox container on a developer machine. 
@@ -66,7 +62,6 @@ Read more about the script's functionality [here](run-browser-with-docker.sh).
 To run against a containerised Chrome browser:
 
 ```bash
-./run-browser-with-docker.sh remote-chrome 
 ./run_tests.sh local remote-chrome
 ```
 

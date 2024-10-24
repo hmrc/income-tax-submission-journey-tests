@@ -1,29 +1,14 @@
-**This is a template README.md.  Be sure to update this with project specific content that describes your ui test project.**
-
-# income-tax-submission-journey-tests
+# App name 
+income-tax-submission-journey-tests
 UI test suite for the `<Income Tax Submission Service>` using WebDriver and `<Cucumber>`.
 
 ## Running the tests
-
 Prior to executing the tests ensure you have:
  - Docker - to run a Chrome or Firefox browser inside a container
  - Installed [MongoDB](https://docs.mongodb.com/manual/installation/) 
  - Installed/configured [service manager](https://github.com/hmrc/service-manager).  
- - 
-To run a Chrome or Firefox browser locally:
- - Installed/configured [Local Selenium grid](https://github.com/hmrc/local-selenium-grid).
 
-Ensure that local selenium grid is started, and in a new terminal by running:
-
-`./start.sh`
-
-To run a Chrome or Firefox browser inside a container:
-- Installed/configured [docker Selenium grid](https://github.com/hmrc/docker-selenium-grid).
-
-Ensure that docker selenium grid is started, and in a new terminal by running:
-
-`./start.sh`
-
+### Before running the app
 Run the following command to start services locally:
 
     sudo mongod (If not already running)
@@ -53,13 +38,9 @@ Finally, remember where the log files are:
 tail -f /var/tmp/*_LOCAL/logs/stdout.txt
 ```
 
-
+### Running the test suite
 Then execute the `run_tests.sh` script:
 ./run_tests.sh <environment> <browser-driver>
-
-The `run_tests.sh` script defaults to the `local` environment with local-selenium-grid/docker-selenium-grid running.  For a complete list of supported param values, see:
- - `src/test/resources/application.conf` for **environment** 
- - [ui-test-runner](https://github.com/hmrc/ui-test-runner) for **browser-driver**
 
 ## Running tests against a containerised browser - on a developer machine
 
@@ -71,7 +52,6 @@ Read more about the script's functionality [here](run-browser-with-docker.sh).
 To run against a containerised Chrome browser:
 
 ```bash
-./run-browser-with-docker.sh remote-chrome 
 ./run_tests.sh local remote-chrome
 ```
 
@@ -175,3 +155,10 @@ This would generate default data for the user AA123456A with required obligation
 
 ### Delete itvc-stub and income-tax-view-change-frontend Mongo databases staging
     ./run_deleteStubData_staging.sh
+## Nomenclature
+InYear = Current tax year i.e 24-25
+EOY = previous tax year i.e 23-24
+### Further documentation
+ N/A
+## Licence
+N/A

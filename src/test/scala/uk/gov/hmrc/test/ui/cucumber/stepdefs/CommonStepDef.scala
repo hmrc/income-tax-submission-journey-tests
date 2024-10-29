@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
+import org.openqa.selenium.support.ui.ExpectedConditions
 import uk.gov.hmrc.test.ui.conf.TaxYearHelper
 import uk.gov.hmrc.test.ui.pages.CommonPage._
 import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, CommonPage}
@@ -32,6 +33,11 @@ class CommonStepDef extends Steps with TaxYearHelper{
   val pensions = "Update and submit an Income Tax Return - site.govuk - Update and submit an Income Tax Return"
 
   Then("""^the user should be redirected to the "(.*)" page$""") { (title: String) =>
+    fluentWait.until(ExpectedConditions.titleIs(replaceWhitespaceInDate(s"$title - $serviceName - $govUkExtension")))
+  }
+
+  // TODO: this is a temporary fix. Team B needs to look into the date employment page and add   in their date format
+  Then("""^the user should get redirected to the "(.*)" page$""") { (title: String) =>
     driver.getTitle.replace("\u00A0", " ") should be(s"$title - $serviceName - $govUkExtension")
   }
 

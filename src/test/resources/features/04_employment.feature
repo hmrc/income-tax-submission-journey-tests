@@ -222,7 +222,7 @@ Feature: Employment Journeys - Income Tax Submission
     And the user selects the Month field and enters a value of 09
     And the user selects the Year field and enters a value of 2021
     And the user clicks the continue button
-    Then the user should be redirected to the "Did you leave between 6 April 2023 and 5 April 2024?" page
+    Then the user should get redirected to the "Did you leave between 6 April 2023 and 5 April 2024?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then  the user should be redirected to the "When did you leave Bear’s Blue House LTD?" page
@@ -283,7 +283,7 @@ Feature: Employment Journeys - Income Tax Submission
     And the user selects the Month field and enters a value of 07
     And the user selects the Year field and enters a value of 2012
     And the user clicks the continue button
-    Then the user should be redirected to the "Did your client leave between 6 April 2023 and 5 April 2024?" page
+    Then the user should get redirected to the "Did your client leave between 6 April 2023 and 5 April 2024?" page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "What is Bear’s Blue House LTD’s employer PAYE reference? (optional)" page
@@ -330,7 +330,7 @@ Feature: Employment Journeys - Income Tax Submission
     And the user selects the Month field and enters a value of 09
     And the user selects the Year field and enters a value of 2022
     And the user clicks the continue button
-    Then the user should be redirected to the "Did your client leave between 6 April 2023 and 5 April 2024?" page
+    Then the user should get redirected to the "Did your client leave between 6 April 2023 and 5 April 2024?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then  the user should be redirected to the "When did your client leave Bear’s Blue House LTD?" page
@@ -387,12 +387,12 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page
     When the user clicks on the change still working reference link
-    Then the user should be redirected to the "Did your client leave between 6 April 2023 and 5 April 2024?" page
+    Then the user should get redirected to the "Did your client leave between 6 April 2023 and 5 April 2024?" page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page
     When the user clicks on the change still working reference link
-    Then the user should be redirected to the "Did your client leave between 6 April 2023 and 5 April 2024?" page
+    Then the user should get redirected to the "Did your client leave between 6 April 2023 and 5 April 2024?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then  the user should be redirected to the "When did your client leave Mishima Zaibatsu?" page

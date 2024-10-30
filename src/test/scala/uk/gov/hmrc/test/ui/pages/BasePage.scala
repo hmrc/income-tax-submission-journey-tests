@@ -17,14 +17,13 @@
 package uk.gov.hmrc.test.ui.pages
 
 import io.cucumber.datatable.DataTable
-import org.openqa.selenium.{By, WebDriver, WebElement}
-import org.openqa.selenium.support.ui.{FluentWait, Select}
+import org.openqa.selenium.{By, WebElement}
+import org.openqa.selenium.support.ui.Select
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.selenium.webdriver.Driver
 import uk.gov.hmrc.test.ui.conf.TaxYearHelper
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
-import java.time.Duration
 import java.util
 
 trait BasePage extends Matchers with BrowserDriver with TaxYearHelper {
@@ -111,13 +110,4 @@ trait BasePage extends Matchers with BrowserDriver with TaxYearHelper {
   def navigateBack(): Unit =
     driver.navigate().back()
 
-  def fluentWait: FluentWait[WebDriver] = new FluentWait[WebDriver](driver)
-    .withTimeout(Duration.ofSeconds(10))
-    .pollingEvery(Duration.ofMillis(200))
-    .ignoring(classOf[org.openqa.selenium.NoSuchElementException])
-
-  def replaceWhitespaceInDate(inputString: String): String = {
-    val regex = """(\d+)(\s+)([A-Za-z]+)(\s+)(\d{4})""".r
-    regex.replaceAllIn(inputString, m => s"${m.group(1)} ${m.group(3)} ${m.group(5)}")
-  }
 }

@@ -37,7 +37,7 @@ Feature: Employment Journeys - Income Tax Submission
     And the user selects the Month field and enters a value of 09
     And the user selects the Year field and enters a value of 2021
     And the user clicks the continue button
-    Then the user should get redirected to the "Did you leave between 6 April 2023 and 5 April 2024?" page
+    Then the user should be redirected to the "Did you leave between 6 April 2023 and 5 April 2024?" page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then  the user should be redirected to the "When did you leave Bear’s Blue House LTD?" page

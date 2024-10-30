@@ -33,17 +33,12 @@ class CommonStepDef extends Steps with TaxYearHelper{
   val pensions = "Update and submit an Income Tax Return - site.govuk - Update and submit an Income Tax Return"
 
   Then("""^the user should be redirected to the "(.*)" page$""") { (title: String) =>
-    fluentWait.until(ExpectedConditions.titleIs(replaceWhitespaceInDate(s"$title - $serviceName - $govUkExtension")))
-  }
-
-  // TODO: this is a temporary fix. Team B needs to look into the date employment page and add   in their date format
-  Then("""^the user should get redirected to the "(.*)" page$""") { (title: String) =>
     driver.getTitle.replace("\u00A0", " ") should be(s"$title - $serviceName - $govUkExtension")
   }
 
   Then("""^the user is redirected to the "(.*)" "(.*)" "(.*)" page$""") { (title: String, taxYear : String,titleCont: String) =>
     val expectedTaxYear = replaceTaxYear(taxYear)
-    fluentWait.until(ExpectedConditions.titleIs(s"$title $expectedTaxYear $titleCont - $serviceName - $govUkExtension"))
+    driver.getTitle.replace("\u00A0", " ") should be(s"$title $expectedTaxYear $titleCont - $serviceName - $govUkExtension")
   }
 
   Then("""^the user is then redirected to the "(.*)" "(.*)" "(.*)" "(.*)" page$""") { (title: String, taxYearPrevious: String, taxYear: String,  titleCont: String) =>

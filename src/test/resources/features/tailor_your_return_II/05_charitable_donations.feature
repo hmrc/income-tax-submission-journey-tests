@@ -4,7 +4,7 @@ Feature: Charitable Donations Journeys - Income Tax Submission
 
   Background:
     Given the user navigates to the auth login page
-
+@x
   Scenario: Individual User - Charities - Donations using Gift Aid
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |
@@ -34,11 +34,16 @@ Feature: Charitable Donations Journeys - Income Tax Submission
   # And the user clicks the continue button
   # Check your answers page for Donations using Gift Aid
   # And the user clicks the continue button
-  ##TODO SASS-10191 to add have you completed this section to the navigation, however mini journey is not ready for gift aid yet
-  # Then the user should be redirected to the "Have you finished this section?" page
-  # When the user selects the yes radio button
-  # When the user clicks the Continue button
-  # Then the user should be redirected to the "Your Income Tax Return" page
+  ##TODO remove steps when mini journey is ready for gift aid
+    Then the user should be redirected to the "Did you make donations to charity?" page
+    When the user selects the no radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Check your donations to charity" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Have you finished this section?" page
+    When the user selects the yes radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
 
   Scenario: Individual User - Charities - Gifts of shares or securities
     When the user logs into the service with the following details

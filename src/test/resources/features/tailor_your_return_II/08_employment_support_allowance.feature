@@ -89,3 +89,9 @@ Feature: Employment and Support Allowance Journeys - Income Tax Submission
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     When the user clicks the state benefit save and continue button
     Then the user should be redirected to the "Employment and Support Allowance" page
+    When the user selects the no radio button
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Have you finished this section?" page
+    When the user selects the yes radio button
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page

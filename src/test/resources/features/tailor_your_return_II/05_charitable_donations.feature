@@ -4,7 +4,7 @@ Feature: Charitable Donations Journeys - Income Tax Submission
 
   Background:
     Given the user navigates to the auth login page
-@x
+
   Scenario: Individual User - Charities - Donations using Gift Aid
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |

@@ -485,7 +485,7 @@ Feature: SelfEmployment Accural accounting -declear expenses
     And the user selects the Amount-field field and enters a value of 1000.89
     And the user clicks the Continue button
 
-    Then the user should be redirected to the "Check you irrecoverable debts" page under self employment
+    Then the user should be redirected to the "Check your irrecoverable debts" page under self employment
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button

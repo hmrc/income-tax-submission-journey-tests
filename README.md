@@ -44,7 +44,7 @@ Then execute the `run_tests.sh` script:
 
 ## Running tests against a containerised browser - on a developer machine
 
-The script `./run-browser-with-docker.sh` can be used to start a Chrome or Firefox container on a developer machine. 
+The script `./run_browser_with_docker.sh` can be used to start a Chrome or Firefox container on a developer machine. 
 The script requires `remote-chrome` or `remote-firefox` as an argument.
 
 Read more about the script's functionality [here](run-browser-with-docker.sh).

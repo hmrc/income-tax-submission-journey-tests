@@ -50,7 +50,7 @@ Feature: Self Employment Accrual Accounting Journey
 
     ##################################### Scenario: 3 #####################################################
 
-  Scenario: 3 - Individual - Income
+  Scenario: 3 - Individual - Income and expenses
     When the user clicks on the Self Employment link
     Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the Self-employment Income link
@@ -175,11 +175,7 @@ Feature: Self Employment Accrual Accounting Journey
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-    ##################################### Scenario: 5 #####################################################
-
-  Scenario: 5 - Individual - Office Supplies
-    When the user clicks on the Self Employment link
-    Then the user should be redirected to the "Self-employment" page under self employment
+    # Office Supplies
     When the user clicks on the Office supplies link
     Then the user should be redirected to the "How much did you spend on office supplies?" page under self employment
     And the user selects the Amount-field field and enters a value of 3000.89
@@ -194,10 +190,7 @@ Feature: Self Employment Accrual Accounting Journey
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-    ##################################### Scenario: 6 #####################################################
-
-  Scenario: 6 - Individual - Goods to Sell or use
-    When the user clicks on the Self Employment link
+    # Goods to Sell or use
     Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the Goods to sell or use link
     Then the user should be redirected to the "Were you a taxi, minicab or road haulage industry driver?" page under self employment
@@ -216,10 +209,7 @@ Feature: Self Employment Accrual Accounting Journey
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-    ##################################### Scenario: 7 #####################################################
-
-  Scenario: 7 - Individual - Repairs and maintenance
-    When the user clicks on the Self Employment link
+    #  Repairs and maintenance
     Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the Repairs and maintenance link
     Then the user should be redirected to the "How much did you spend on repairs and maintenance?" page under self employment
@@ -235,10 +225,7 @@ Feature: Self Employment Accrual Accounting Journey
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-        ##################################### Scenario: 8 #####################################################
-
-  Scenario: 8 - Individual - Workplace running costs
-    When the user clicks on the Self Employment link
+    # Workplace running costs
     Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the Workplace running costs (including working from home) link
     Then the user should be redirected to the "Did you work from home for more than 25 hours a month?" page under self employment
@@ -284,10 +271,7 @@ Feature: Self Employment Accrual Accounting Journey
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-    ##################################### Scenario: 9 #####################################################
-
-  Scenario: 9 - Individual - Advertising or marketing
-    When the user clicks on the Self Employment link
+    # Advertising or marketing
     Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the Advertising or marketing link
     Then the user should be redirected to the "How much did you spend on advertising or marketing?" page under self employment
@@ -303,10 +287,7 @@ Feature: Self Employment Accrual Accounting Journey
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-    ##################################### Scenario: 10 #####################################################
-
-  Scenario: 10 - Individual - Entertainment costs
-    When the user clicks on the Self Employment link
+    # Entertainment costs
     Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the Entertainment costs link
     Then the user should be redirected to the "How much did you spend on entertainment?" page under self employment
@@ -319,10 +300,7 @@ Feature: Self Employment Accrual Accounting Journey
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-    ##################################### Scenario: 11 #####################################################
-
-  Scenario: 11 - Individual - Staff costs
-    When the user clicks on the Self Employment link
+    # Staff costs
     Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the Staff costs link
     Then the user should be redirected to the "How much did you spend on staff costs?" page under self employment
@@ -338,10 +316,7 @@ Feature: Self Employment Accrual Accounting Journey
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-    ##################################### Scenario: 12 #####################################################
-
-  Scenario: 12 - Individual - Construction industry subcontractors
-    When the user clicks on the Self Employment link
+    # Construction industry subcontractors
     Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the Construction industry subcontractors link
     Then the user should be redirected to the "How much did you spend on construction industry expenses?" page under self employment
@@ -357,10 +332,7 @@ Feature: Self Employment Accrual Accounting Journey
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-    ##################################### Scenario: 13 #####################################################
-
-  Scenario: 13 - Individual - Professional fees
-    When the user clicks on the Self Employment link
+    # Professional fees
     Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the Professional fess link
     Then the user should be redirected to the "How much did you spend on professional fees?" page under self employment
@@ -376,10 +348,7 @@ Feature: Self Employment Accrual Accounting Journey
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-    ##################################### Scenario: 14 #####################################################
-
-  Scenario: 14 - Individual - Interest paid on bank and other business Loans
-    When the user clicks on the Self Employment link
+    # Interest paid on bank and other business Loans
     Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the Interest paid on bank and other business loans link
     Then the user should be redirected to the "How much did you spend on interest on bank and other business loans?" page under self employment
@@ -395,10 +364,7 @@ Feature: Self Employment Accrual Accounting Journey
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-    ##################################### Scenario: 15 #####################################################
-
-  Scenario: 15 - Individual - Bank, credit card and other financial charges
-    When the user clicks on the Self Employment link
+    # Bank, credit card and other financial charges
     Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the Bank, credit card and other financial charges link
     Then the user should be redirected to the "How much did you spend on bank, credit card and other financial charges?" page under self employment
@@ -414,10 +380,7 @@ Feature: Self Employment Accrual Accounting Journey
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-    ##################################### Scenario: 16 #####################################################
-
-  Scenario: 16 - Individual - Irrecoverable debts
-    When the user clicks on the Self Employment link
+    # Irrecoverable debts
     Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the Irrecoverable debt link
     Then the user should be redirected to the "What is the value of the irrecoverable debts you’ve written off?" page under self employment
@@ -433,10 +396,7 @@ Feature: Self Employment Accrual Accounting Journey
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-    ##################################### Scenario: 17 #####################################################
-
-  Scenario: 17 - Individual - Depreciation costs
-    When the user clicks on the Self Employment link
+    # Depreciation costs
     Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the Depreciation costs link
     Then the user should be redirected to the "How much are you claiming in depreciation costs?" page under self employment
@@ -449,10 +409,7 @@ Feature: Self Employment Accrual Accounting Journey
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-    ##################################### Scenario: 18 #####################################################
-
-  Scenario: 18 - Individual - Other expenses
-    When the user clicks on the Self Employment link
+    # Other expenses
     Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the Other expenses link
     Then the user should be redirected to the "How much did you spend on other expenses?" page under self employment

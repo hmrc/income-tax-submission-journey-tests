@@ -1,5 +1,4 @@
-@WIP
-#@MVP @ZAP @property
+@MVP @ZAP @property
 
 Feature: Property Journeys - Income Tax Submission
 
@@ -1078,7 +1077,7 @@ Feature: Property Journeys - Income Tax Submission
     And the user selects the How much is your structures and buildings allowance claim? amount field and enters a value of 1659.45
     When the user clicks the Continue button
     Then the user should be redirected to the "Structures and buildings allowance address" page
-    And the user selects the Building name field and enters a value of Crest Palace Limited, London
+    And the user selects the Building name field and enters a value of Crest Palace Limited
     And the user selects the Building number field and enters a value of 123A
     And the user selects the Postcode field and enters a value of SW1A 1AA
     When the user clicks the Continue button
@@ -1162,7 +1161,7 @@ Feature: Property Journeys - Income Tax Submission
     And the user selects the How much is your enhanced structures and buildings allowance claim? amount field and enters a value of 1650
     When the user clicks the Continue button
     Then the user should be redirected to the "Enhanced structures and buildings allowance address" page
-    And the user selects the Building name field and enters a value of MBNX Fan Mall, Shropshore
+    And the user selects the Building name field and enters a value of MBNX Fan Mall
     And the user selects the Building number field and enters a value of 11
     And the user selects the Postcode field and enters a value of SA1 1AA
     When the user clicks the Continue button
@@ -1241,7 +1240,7 @@ Feature: Property Journeys - Income Tax Submission
     And the user selects the How much is your enhanced structures and buildings allowance claim? amount field and enters a value of 1650
     When the user clicks the Continue button
     Then the user should be redirected to the "Enhanced structures and buildings allowance address" page
-    And the user selects the Building name field and enters a value of MBNX Fan Mall, Shropshore
+    And the user selects the Building name field and enters a value of MBNX Fan Mall
     And the user selects the Building number field and enters a value of 11
     And the user selects the Postcode field and enters a value of SA1 1AA
     When the user clicks the Continue button

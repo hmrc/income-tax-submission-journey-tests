@@ -20,28 +20,11 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.AuthLoginPage._
 import uk.gov.hmrc.test.ui.pages.{BasePage, CommonPage}
 
+import java.time.Year
+
 class AuthStepDef extends BasePage with Steps {
 
-  import java.time.LocalDate
-
-  val currentYear: Int = LocalDate.now.getYear
-
-  Given("""^the user logs into the service as an individual""") { ()
-    getRedirectUrl.sendKeys(CommonPage.url + "/" + currentYear + "/start")
-    selectCredentialStrength("strong")
-    selectConfidenceLevel("250")
-    selectAffinityGroup("Individual")
-    getNino.sendKeys("BB000002A")
-    getEnrolmentKeyOne.sendKeys("HMRC-MTD-IT")
-    getIdentifierNameOne.sendKeys("MTDITID")
-    getIdentifierValueOne.sendKeys("1234567890")
-  driver.findElement(By.cssSelector("#submit")).click()
-}
-
-  And("""^navigates to the self-employment section""") { () =>
-    CommonPage.clickOnButton(buttonTitle = "continue")
-    driver.getTitle.replace("\u00A0", " ") should be("Your Income Tax Return - Update and submit an Income Tax Return - GOV.UK")
-  }
+  val currentYear = Year.now().getValue.toString
 
   Given("""^the user logs into the service with the following details$""") { arg: DataTable =>
     useDataTable(arg)
@@ -56,13 +39,26 @@ class AuthStepDef extends BasePage with Steps {
     getEnrolmentKeyTwo.sendKeys(enrolmentKeyTwo)
     getIdentifierNameTwo.sendKeys(identifierNameTwo)
     getIdentifierValueTwo.sendKeys(identifierValueTwo)
-    if(affinityGroup.contains("Agent")) {
+    if (affinityGroup.contains("Agent")) {
       driver.findElement(By.cssSelector("#js-add-delegated-enrolment")).click()
       getDelegatedEnrolmentKey.sendKeys(delegatedEnrolmentKey)
       getDelegatedIdentifierName.sendKeys(delegatedIdentifierName)
       getDelegatedIdentifierValue.sendKeys(delegatedIdentifierValue)
       getDelegatedAuthRule.sendKeys(delegatedAuthRule)
     }
+    driver.findElement(By.cssSelector("#submit")).click()
+  }
+
+  Given("""^the user logs into the service as an individual""") {
+    ()
+    getRedirectUrl.sendKeys(CommonPage.url + "/" + currentYear + "/" + "start")
+    selectCredentialStrength("strong")
+    selectConfidenceLevel("250")
+    selectAffinityGroup("Individual")
+    getNino.sendKeys("BB000002A")
+    getEnrolmentKeyOne.sendKeys("HMRC-MTD-IT")
+    getIdentifierNameOne.sendKeys("MTDITID")
+    getIdentifierValueOne.sendKeys("1234567890")
     driver.findElement(By.cssSelector("#submit")).click()
   }
 }

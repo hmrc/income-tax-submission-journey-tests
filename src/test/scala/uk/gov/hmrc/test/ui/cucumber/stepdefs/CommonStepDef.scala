@@ -86,6 +86,11 @@ class CommonStepDef extends Steps with TaxYearHelper{
     CommonPage.clickOnRadioButton(radioButtonIdentifier)
   }
 
+  When("""^the user selects the (.*) radio button and clicks the (.*) button$""") { (radioButtonIdentifier: String, buttonTitle: String) =>
+    CommonPage.clickOnRadioButton(radioButtonIdentifier)
+    CommonPage.clickOnButton(buttonTitle)
+  }
+
   When("""^the user deselects the (.*) radio button$""") { radioButtonIdentifier: String =>
     CommonPage.deselectRadioButton(radioButtonIdentifier)
   }
@@ -100,6 +105,13 @@ class CommonStepDef extends Steps with TaxYearHelper{
 
   When("""^the user clicks the (.*) checkbox$""") { checkboxTitle: String =>
     CommonPage.clickOnCheckbox(checkboxTitle)
+  }
+
+  When("""^the user clicks the (.*), (.*) and (.*) checkboxes$""") {
+    (checkboxTitle: String, checkboxTitleTwo: String, checkboxTitleThree: String) =>
+    CommonPage.clickOnCheckbox(checkboxTitle)
+    CommonPage.clickOnCheckbox(checkboxTitleTwo)
+    CommonPage.clickOnCheckbox(checkboxTitleThree)
   }
 
   When("""^the user clicks the (.*) dropdown and selects (.*)$""") { (dropdownTitle: String, dropdownValue: String) =>

@@ -692,6 +692,7 @@ trait CommonElements extends BasePage with Matchers {
     "first option" -> By.id("value_0"),
     "second option" -> By.id("value_1"),
     "third option" -> By.id("value_2"),
+    "all checkbox options" -> By.cssSelector("#value_0, #value_1, #value_2, #value_3, #value_4, #value_5, #value_6, #value_7"),
     "Office supplies" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/office-supplies/amount') + 1) = 'expenses/office-supplies/amount']"),
     "Goods to sell or use" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/goods-sell-use/taxi-minicab-road-haulage-industry-driver') + 1) = 'expenses/goods-sell-use/taxi-minicab-road-haulage-industry-driver']"),
     "Repairs and maintenance" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/repairs-maintenance/amount') + 1) = 'expenses/repairs-maintenance/amount']"),

@@ -1,4 +1,4 @@
-@ZAP @property @rar @combined
+@MVP @ZAP @property @rar @combined
 
 Feature: Property Journeys - Income Tax Submission
 

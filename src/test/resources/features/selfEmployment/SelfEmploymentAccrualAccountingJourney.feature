@@ -1,5 +1,5 @@
 @SelfEmployment
-Feature: Self Employment Accrual Accounting Journey
+Feature: Self Employment Accrual Accounting Journey (Expenses)
 
   Background:
     Given the user navigates to the auth login page
@@ -159,7 +159,6 @@ Feature: Self Employment Accrual Accounting Journey
     Then the user should be redirected to the "Self-employment" page under self employment
 
     # Goods to Sell or use
-    Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the Goods to sell or use link
     Then the user should be redirected to the "Were you a taxi, minicab or road haulage industry driver?" page under self employment
     When the user selects the yes radio button and clicks the Continue button
@@ -176,7 +175,6 @@ Feature: Self Employment Accrual Accounting Journey
     Then the user should be redirected to the "Self-employment" page under self employment
 
     #  Repairs and maintenance
-    Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the Repairs and maintenance link
     Then the user should be redirected to the "How much did you spend on repairs and maintenance?" page under self employment
     And the user selects the Amount-field field and enters a value of 1,677.57
@@ -191,7 +189,6 @@ Feature: Self Employment Accrual Accounting Journey
     Then the user should be redirected to the "Self-employment" page under self employment
 
     # Workplace running costs
-    Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the Workplace running costs (including working from home) link
     Then the user should be redirected to the "Did you work from home for more than 25 hours a month?" page under self employment
     When the user selects the yes radio button and clicks the Continue button
@@ -233,7 +230,6 @@ Feature: Self Employment Accrual Accounting Journey
     Then the user should be redirected to the "Self-employment" page under self employment
 
     # Advertising or marketing
-    Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the Advertising or marketing link
     Then the user should be redirected to the "How much did you spend on advertising or marketing?" page under self employment
     And the user selects the Amount-field field and enters a value of 1,677.57
@@ -248,7 +244,6 @@ Feature: Self Employment Accrual Accounting Journey
     Then the user should be redirected to the "Self-employment" page under self employment
 
     # Entertainment costs
-    Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the Entertainment costs link
     Then the user should be redirected to the "How much did you spend on entertainment?" page under self employment
     And the user selects the Amount-field field and enters a value of 1,677.57
@@ -260,7 +255,6 @@ Feature: Self Employment Accrual Accounting Journey
     Then the user should be redirected to the "Self-employment" page under self employment
 
     # Staff costs
-    Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the Staff costs link
     Then the user should be redirected to the "How much did you spend on staff costs?" page under self employment
     And the user selects the Amount-field field and enters a value of 1,677.57
@@ -275,7 +269,6 @@ Feature: Self Employment Accrual Accounting Journey
     Then the user should be redirected to the "Self-employment" page under self employment
 
     # Construction industry subcontractors
-    Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the Construction industry subcontractors link
     Then the user should be redirected to the "How much did you spend on construction industry expenses?" page under self employment
     And the user selects the Amount-field field and enters a value of 1,677.57
@@ -290,7 +283,6 @@ Feature: Self Employment Accrual Accounting Journey
     Then the user should be redirected to the "Self-employment" page under self employment
 
     # Professional fees
-    Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the Professional fess link
     Then the user should be redirected to the "How much did you spend on professional fees?" page under self employment
     And the user selects the Amount-field field and enters a value of 1,677.57
@@ -305,7 +297,6 @@ Feature: Self Employment Accrual Accounting Journey
     Then the user should be redirected to the "Self-employment" page under self employment
 
     # Interest paid on bank and other business Loans
-    Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the Interest paid on bank and other business loans link
     Then the user should be redirected to the "How much did you spend on interest on bank and other business loans?" page under self employment
     And the user selects the Amount-field field and enters a value of 1,677.57
@@ -320,7 +311,6 @@ Feature: Self Employment Accrual Accounting Journey
     Then the user should be redirected to the "Self-employment" page under self employment
 
     # Bank, credit card and other financial charges
-    Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the Bank, credit card and other financial charges link
     Then the user should be redirected to the "How much did you spend on bank, credit card and other financial charges?" page under self employment
     And the user selects the Amount-field field and enters a value of 1,677.57
@@ -335,7 +325,6 @@ Feature: Self Employment Accrual Accounting Journey
     Then the user should be redirected to the "Self-employment" page under self employment
 
     # Irrecoverable debts
-    Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the Irrecoverable debt link
     Then the user should be redirected to the "What is the value of the irrecoverable debts you’ve written off?" page under self employment
     And the user selects the Amount-field field and enters a value of 1,677.57
@@ -350,7 +339,6 @@ Feature: Self Employment Accrual Accounting Journey
     Then the user should be redirected to the "Self-employment" page under self employment
 
     # Depreciation costs
-    Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the Depreciation costs link
     Then the user should be redirected to the "How much are you claiming in depreciation costs?" page under self employment
     And the user selects the Amount-field field and enters a value of 1,677.57
@@ -362,7 +350,6 @@ Feature: Self Employment Accrual Accounting Journey
     Then the user should be redirected to the "Self-employment" page under self employment
 
     # Other expenses
-    Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the Other expenses link
     Then the user should be redirected to the "How much did you spend on other expenses?" page under self employment
     And the user selects the Amount-field field and enters a value of 1,677.57
@@ -375,3 +362,99 @@ Feature: Self Employment Accrual Accounting Journey
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
+
+    # Allowances for vehicles, equipment and buildings
+    When the user clicks on the Allowances for vehicles, equipment and buildings link
+    Then the user should be redirected to the "Allowances for vehicles, equipment and buildings" page under self employment
+    And the user selects the yes radio button and clicks the Continue button
+    Then the user should be redirected to the "Choose which allowances you want to claim" page under self employment
+    And the user clicks all checkbox options and selects Continue
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
+
+    # Zero-emission cars
+    When the user clicks on the Zero-emission cars link
+    Then the user should be redirected to the "Zero-emission cars" page under self employment
+    And the user selects the yes radio button and clicks the Continue button
+    Then the user should be redirected to the "Zero-emission car allowance" page under self employment
+    And the user selects the yes radio button and clicks the Continue button
+    Then the user should be redirected to the "What was the total cost of the car, in pounds?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1,000
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Did you only use the car for your self-employment?" page under self employment
+    And the user selects the no radio button and clicks the Continue button
+    Then the user should be redirected to the "How much did you use the car outside your self-employment?" page under self employment
+    And the user selects the 10 percent radio button and clicks the Continue button
+    Then the user should be redirected to the "How much of your car’s cost do you want to claim under the 100% allowance?" page under self employment
+    And the user selects the full cost radio button and clicks the Continue button
+    Then the user should be redirected to the "Check your answers" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+    # Zero-emission goods vehicles
+    When the user clicks on the Zero-emission goods vehicles link
+    Then the user should be redirected to the "Zero-emission goods vehicles" page under self employment
+    And the user selects the yes radio button and clicks the Continue button
+    Then the user should be redirected to the "Zero-emission goods vehicle allowance" page under self employment
+    And the user selects the yes radio button and clicks the Continue button
+    Then the user should be redirected to the "What was the total cost of the vehicle, in pounds?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1,000
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Did you only use the vehicle for your self-employment?" page under self employment
+    And the user selects the no radio button and clicks the Continue button
+    Then the user should be redirected to the "How much did you use the vehicle outside your self-employment?" page under self employment
+    And the user selects the 10 percent radio button and clicks the Continue button
+    Then the user should be redirected to the "How much of the vehicle’s cost do you want to claim under this 100% allowance?" page under self employment
+    And the user selects the full cost radio button and clicks the Continue button
+    Then the user should be redirected to the "Check your answers" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+    # Structures and Buildings Allowance
+    When the user clicks on the Structures and Buildings Allowance link
+    Then the user should be redirected to the "Structures and buildings allowance" page under self employment
+    And the user selects the yes radio button and clicks the Continue button
+    Then the user should be redirected to the "Can you still claim?" page under self employment
+    And the user selects the yes radio button and clicks the Continue button
+    Then the user should be redirected to the "Qualifying use" page under self employment
+    And the user selects the QualifyingUse Day field and enters a value of 24
+    And the user selects the QualifyingUse Month field and enters a value of 09
+    And the user selects the QualifyingUse Year field and enters a value of 2021
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Where is the new structure or building located?" page under self employment
+    And the user selects the Building name field and enters a value of Self-Employment Business ONE
+    And the user selects the Building number field and enters a value of 24
+    And the user selects the Postcode field and enters a value of BN1 1AA
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Claim amount" page under self employment
+    And the user selects the Amount-field field and enters a value of 1,000
+    And the user clicks the Continue button
+    Then the user should be redirected to the "New structures or buildings" page under self employment
+    And the user selects the no radio button and clicks the Continue button
+    Then the user should be redirected to the "Can you still claim?" page under self employment
+    And the user selects the yes radio button and clicks the Continue button
+    Then the user should be redirected to the "Claim amount" page under self employment
+    And the user selects the Amount-field field and enters a value of 999
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Check your answers" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+    # Freeport sites
+    # Annual Investment Allowance
+    # ‘Writing down’ allowance
+    # Balancing allowance
+    # Balancing charge
+    # Work out your adjusted profit or loss
+    # Your National Insurance Contributions
+
+
+
+

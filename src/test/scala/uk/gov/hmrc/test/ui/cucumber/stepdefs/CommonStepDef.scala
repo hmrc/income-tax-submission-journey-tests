@@ -114,6 +114,13 @@ class CommonStepDef extends Steps with TaxYearHelper{
     CommonPage.clickOnCheckbox(checkboxTitleThree)
   }
 
+  When("""^the user clicks all checkbox options and selects (.*)""") { (buttonTitle: String) =>
+    val allCheckboxIds = List("value_0", "value_1", "value_2", "value_3", "value_4", "value_5", "value_6", "value_7")
+    allCheckboxIds.foreach(id => driver.findElement(By.id(id)).click())
+    CommonPage.clickOnButton(buttonTitle)
+  }
+
+
   When("""^the user clicks the (.*) dropdown and selects (.*)$""") { (dropdownTitle: String, dropdownValue: String) =>
     CommonPage.clickOnDropdown(dropdownTitle, dropdownValue)
   }

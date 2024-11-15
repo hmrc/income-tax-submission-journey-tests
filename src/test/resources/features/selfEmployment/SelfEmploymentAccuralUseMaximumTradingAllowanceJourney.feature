@@ -1,4 +1,4 @@
-@SelfEmployment
+#@SelfEmployment
 Feature: Self Employment accrual accounting -Use Maximum trading allowance Journeys
 
   Background:

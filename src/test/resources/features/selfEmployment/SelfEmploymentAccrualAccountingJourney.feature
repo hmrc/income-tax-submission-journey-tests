@@ -1,5 +1,5 @@
 @SelfEmployment
-Feature: Self Employment Accrual Accounting Journey (Expenses)
+Feature: Self Employment Accrual Accounting Journey
 
   Background:
     Given the user navigates to the auth login page
@@ -426,6 +426,9 @@ Feature: Self Employment Accrual Accounting Journey (Expenses)
     And the user selects the QualifyingUse Month field and enters a value of 09
     And the user selects the QualifyingUse Year field and enters a value of 2021
     And the user clicks the Continue button
+    Then the user should be redirected to the "What was the total qualifying expenditure on this building?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1,078
+    And the user clicks the Continue button
     Then the user should be redirected to the "Where is the new structure or building located?" page under self employment
     And the user selects the Building name field and enters a value of Self-Employment Business ONE
     And the user selects the Building number field and enters a value of 24
@@ -448,6 +451,44 @@ Feature: Self Employment Accrual Accounting Journey (Expenses)
     Then the user should be redirected to the "Self-employment" page under self employment
 
     # Freeport sites
+    When the user clicks on the Freeport sites link
+    Then the user should be redirected to the "Special tax sites allowance" page under self employment
+    And the user selects the yes radio button and clicks the Continue button
+    Then the user should be redirected to the "Date construction started" page under self employment
+    And the user selects the yes radio button and clicks the Continue button
+    Then the user should be redirected to the "When was the earliest contract entered into?" page under self employment
+    And the user selects the Construction start Day field and enters a value of 24
+    And the user selects the Construction start Month field and enters a value of 09
+    And the user selects the Construction start Year field and enters a value of 2021
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Qualifying use" page under self employment
+    And the user selects the Qualifying start Day field and enters a value of 24
+    And the user selects the Qualifying start Month field and enters a value of 09
+    And the user selects the Qualifying start Year field and enters a value of 2021
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Where is the special tax site located?" page under self employment
+    And the user selects the Building name field and enters a value of Self-Employment Business ONE
+    And the user selects the Building number field and enters a value of 24
+    And the user selects the Postcode field and enters a value of BN1 1AA
+    And the user clicks the Continue button
+    Then the user should be redirected to the "How much enhanced structures and buildings allowance do you want to claim?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1,000
+    And the user clicks the Continue button
+    Then the user should be redirected to the "New special tax site structures or buildings" page under self employment
+    And the user selects the no radio button and clicks the Continue button
+    Then the user should be redirected to the "Do you have a continuing claim for enhanced structures and buildings allowance?" page under self employment
+    And the user selects the yes radio button and clicks the Continue button
+    Then the user should be redirected to the "Do you want to continue to claim this allowance for an existing site?" page under self employment
+    And the user selects the yes radio button and clicks the Continue button
+    Then the user should be redirected to the "Claim amount" page under self employment
+    And the user selects the Amount-field field and enters a value of 999
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Check your answers" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
     # Annual Investment Allowance
     # ‘Writing down’ allowance
     # Balancing allowance

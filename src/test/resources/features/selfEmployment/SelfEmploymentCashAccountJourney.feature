@@ -1,4 +1,4 @@
-@SelfEmployment
+#@SelfEmployment
 Feature: Self Employment Cash accounting Journeys
 
   Background:

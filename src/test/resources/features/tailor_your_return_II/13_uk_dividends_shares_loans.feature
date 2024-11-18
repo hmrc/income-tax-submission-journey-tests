@@ -1,5 +1,4 @@
 @TYR_UK_Dividends_Shares_Loans @TYR_Common_Task_List @TYR_private_beta
-
 Feature: UK dividends, shares and loans from limited companies Journeys - Income Tax Submission
 
   Background:
@@ -31,6 +30,9 @@ Feature: UK dividends, shares and loans from limited companies Journeys - Income
     When the user selects the amount field and enters a value of 100
     And the user clicks the continue button
     Then the user should be redirected to the "Check your dividends" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Have you finished this section?" page
+    When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
 
@@ -65,6 +67,9 @@ Feature: UK dividends, shares and loans from limited companies Journeys - Income
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client's dividends" page
     And the user clicks the continue button
+    Then the user should be redirected to the "Have you finished this section?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
 
   Scenario: Individual User - UK dividends, shares and loans - Stock dividends from UK companies
@@ -93,6 +98,9 @@ Feature: UK dividends, shares and loans from limited companies Journeys - Income
     When the user selects the amount field and enters a value of 100
     And the user clicks the continue button
     Then the user should be redirected to the "Check your dividends" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Have you finished this section?" page
+    When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
 
@@ -127,6 +135,9 @@ Feature: UK dividends, shares and loans from limited companies Journeys - Income
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client's dividends" page
     And the user clicks the continue button
+    Then the user should be redirected to the "Have you finished this section?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
 
   Scenario: Individual User - UK dividends, shares and loans - Dividends from unit trusts or investment companies
@@ -155,6 +166,9 @@ Feature: UK dividends, shares and loans from limited companies Journeys - Income
     When the user selects the amount field and enters a value of 193.45
     And the user clicks the continue button
     Then the user should be redirected to the "Check your dividends" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Have you finished this section?" page
+    When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
 
@@ -189,6 +203,9 @@ Feature: UK dividends, shares and loans from limited companies Journeys - Income
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client's dividends" page
     And the user clicks the continue button
+    Then the user should be redirected to the "Have you finished this section?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
 
   Scenario: Individual User - UK dividends, shares and loans - Free or redeemable shares
@@ -217,6 +234,9 @@ Feature: UK dividends, shares and loans from limited companies Journeys - Income
     When the user selects the amount field and enters a value of 100
     And the user clicks the continue button
     Then the user should be redirected to the "Check your dividends" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Have you finished this section?" page
+    When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
 
@@ -251,6 +271,9 @@ Feature: UK dividends, shares and loans from limited companies Journeys - Income
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client's dividends" page
     And the user clicks the continue button
+    Then the user should be redirected to the "Have you finished this section?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
 
   Scenario: Individual User - UK dividends, shares and loans - Close company loans written off or released
@@ -279,6 +302,9 @@ Feature: UK dividends, shares and loans from limited companies Journeys - Income
     When the user selects the amount field and enters a value of 100
     And the user clicks the continue button
     Then the user should be redirected to the "Check your dividends" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Have you finished this section?" page
+    When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
 
@@ -312,5 +338,8 @@ Feature: UK dividends, shares and loans from limited companies Journeys - Income
     When the user selects the amount field and enters a value of 100
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client's dividends" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Have you finished this section?" page
+    When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page

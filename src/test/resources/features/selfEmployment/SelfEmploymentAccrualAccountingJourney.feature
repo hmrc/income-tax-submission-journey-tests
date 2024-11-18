@@ -490,11 +490,100 @@ Feature: Self Employment Accrual Accounting Journey
     Then the user should be redirected to the "Self-employment" page under self employment
 
     # Annual Investment Allowance
+    When the user clicks on the Annual Investment Allowance link
+    Then the user should be redirected to the "Annual Investment Allowance" page under self employment
+    And the user selects the yes radio button and clicks the Continue button
+    Then the user should be redirected to the "How much annual investment allowance do you want to claim?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1,000
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Check your answers" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
     # ‘Writing down’ allowance
+    When the user clicks on the 'Writing down' allowance link
+    Then the user should be redirected to the "‘Writing down’ allowance" page under self employment
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Special rate (6%) pool" page under self employment
+    And the user selects the yes radio button and clicks the Continue button
+    Then the user should be redirected to the "Claim amount" page under self employment
+    And the user selects the Amount-field field and enters a value of 1,000
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Main rate (18%) pool" page under self employment
+    And the user selects the yes radio button and clicks the Continue button
+    Then the user should be redirected to the "Claim amount" page under self employment
+    And the user selects the Amount-field field and enters a value of 999
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Single asset pools" page under self employment
+    And the user selects the yes radio button and clicks the Continue button
+    Then the user should be redirected to the "Claim amount for single asset pools" page under self employment
+    And the user selects the Amount-field field and enters a value of 999
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Check your answers" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
     # Balancing allowance
+    When the user clicks on the Balancing allowance link
+    Then the user should be redirected to the "Do you have a balancing allowance to report?" page under self employment
+    And the user selects the yes radio button and clicks the Continue button
+    Then the user should be redirected to the "How much is the total of your balancing allowances?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1,000
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Check your answers" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
     # Balancing charge
+    When the user clicks on the Balancing charge link
+    Then the user should be redirected to the "Do you have a balancing charge to report?" page under self employment
+    And the user selects the yes radio button and clicks the Continue button
+    Then the user should be redirected to the "How much is the total of your balancing charges?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1,000
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Check your answers" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+
     # Work out your adjusted profit or loss
-    # Your National Insurance Contributions
+    When the user clicks on the Work out your adjusted profit or loss link
+    Then the user should be redirected to the "Goods and services for your own use" page under self employment
+    And the user selects the yes radio button and clicks the Continue button
+    Then the user should be redirected to the "What was the market value of the goods and services you provided?" page under self employment
+    And the user selects the Amount-field field and enters a value of 567
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Net business profit: £200" page under self employment
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Claim a loss relief" page under self employment
+    And the user selects the yes radio button and clicks the Continue button
+    Then the user should be redirected to the "What do you want to do with the loss for the 2023 to 2024 tax year?" page under self employment
+    When the user clicks both checkboxes
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Did Circus Performer A1 have any unused losses in previous years?" page under self employment
+    And the user selects the yes radio button and clicks the Continue button
+    And the user selects the Amount-field field and enters a value of 1,456
+    And the user clicks the Continue button
+    Then the user should be redirected to the "When you reported the loss" page under self employment
+    Then the user clicks the fifth option checkbox
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Check your answers" page under self employment
+    And the user clicks the Self Employment Save and continue button
+    And the user should be redirected to the "Adjusted loss: £100" page under self employment
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+
 
 
 

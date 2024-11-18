@@ -692,6 +692,7 @@ trait CommonElements extends BasePage with Matchers {
     "first option" -> By.id("value_0"),
     "second option" -> By.id("value_1"),
     "third option" -> By.id("value_2"),
+    "fifth option" -> By.id("value_4"),
     "all checkbox options" -> By.cssSelector("#value_0, #value_1, #value_2, #value_3, #value_4, #value_5, #value_6, #value_7"),
     "Office supplies" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/office-supplies/amount') + 1) = 'expenses/office-supplies/amount']"),
     "Goods to sell or use" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/goods-sell-use/taxi-minicab-road-haulage-industry-driver') + 1) = 'expenses/goods-sell-use/taxi-minicab-road-haulage-industry-driver']"),
@@ -721,9 +722,9 @@ trait CommonElements extends BasePage with Matchers {
     "Structures and buildings allowance" -> By.xpath("//input[@value='structuresAndBuildings']"),
     "Freeport structures and buildings allowance" -> By.xpath("//input[@value='specialTaxSitesStructuresAndBuildings']"),
     "Annual investment allowance (business equipment)" -> By.xpath("//input[@value='annualInvestment']"),
-    "Writing down allowance" -> By.xpath("//input[@value='writingDown']"),
+    "'Writing down' allowance" -> By.xpath("//a[text()=' ‘Writing down’ allowance ']"),
     "Balancing allowance (allowance on sales)" -> By.xpath("//input[@value='balancing']"),
-    "Balancing charge" -> By.xpath("//input[@value='balancingCharge']"),
+    "Balancing charge" -> By.xpath("//a[text()=' Balancing charge ']"),
     "Balancing allowance" -> By.xpath("//a[text()=' Balancing allowance ']"),
     "Zero-emission cars" -> By.xpath("//a[text()=' Zero-emission cars ']"),
     "10 percent" -> By.id("10%"),
@@ -744,7 +745,9 @@ trait CommonElements extends BasePage with Matchers {
     "Qualifying start Month" -> By.id("qualifyingUseStartDate.month"),
     "Qualifying start Year" -> By.id("qualifyingUseStartDate.year"),
     "Annual Investment Allowance" -> By.xpath("//a[text()=' Annual Investment Allowance ']"),
-    "Writing down" -> By.xpath("//a[text()=' ‘Writing down’ allowance ']"),
+    "Writing down allowance" -> By.cssSelector("#main-content > div > div > h1"),
+    "Work out your adjusted profit or loss" -> By.xpath("//a[text()=' Work out your adjusted profit or loss ']"),
+    "When you reported the loss" -> By.cssSelector("#main-content > div > div > form > h1")
   )
 
   val elements: Map[String, By] = Map(commonMapping: _*)

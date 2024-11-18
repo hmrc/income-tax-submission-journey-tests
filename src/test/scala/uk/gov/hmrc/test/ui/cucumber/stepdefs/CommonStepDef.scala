@@ -107,6 +107,11 @@ class CommonStepDef extends Steps with TaxYearHelper{
     CommonPage.clickOnCheckbox(checkboxTitle)
   }
 
+  When("""^the user clicks both checkboxes$""") { () =>
+    driver.findElement(By.cssSelector("#value_0")).click()
+    driver.findElement(By.cssSelector("#value_1")).click()
+  }
+
   When("""^the user clicks the (.*), (.*) and (.*) checkboxes$""") {
     (checkboxTitle: String, checkboxTitleTwo: String, checkboxTitleThree: String) =>
     CommonPage.clickOnCheckbox(checkboxTitle)

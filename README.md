@@ -95,10 +95,14 @@ For example, to execute ZAP tests locally using a Chrome browser
 
 #### Taking screenshots of a journey
 
-Execute `run_tests_screenshots.sh` to take screenshots of a journey.
-Before running it, add the @screenshots tag to the feature or scenario you want to take screenshots of.
-Images are saved as `target/screenshots/{last-segment-of-url-path-and-query-string}.png`.
-To avoid files for the same URL getting overwritten it's probably best to tag one scenario at a time.
+1. Add the `@screenshots` tag to all features or scenarios you want to take screenshots of
+2. Execute `run_tests_screenshots.sh` to take screenshots of a journey.
+3. Screenshots will be saved as `target/screenshots/{scenario}/{timestamp} - {page title}.png`. The timestamp ensures that the images are not overwritten.
+
+If you need to capture screenshots for a Welsh translation, it is advisable to create a specific feature which triggers 
+all error messages throughout the journey, so the Welsh Language Unit can QA all content.
+
+> Note: Old screenshots will be deleted at the start of each run, so ensure you have taken copies before running the tests again.
 
 ### Running tests using BrowserStack
 If you would like to run your tests via BrowserStack from your local development environment please refer to the [webdriver-factory](https://github.com/hmrc/webdriver-factory/blob/master/README.md/#user-content-running-tests-using-browser-stack) project.

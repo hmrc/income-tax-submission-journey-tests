@@ -20,10 +20,13 @@ import io.cucumber.scala._
 import org.openqa.selenium._
 import uk.gov.hmrc.selenium.webdriver.{Browser, Driver}
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
+import uk.gov.hmrc.test.ui.util.{ScreenshotUtil, TimeMachine}
 
-object BaseStepDef extends ScalaDsl with EN with Browser with BrowserDriver{
+object BaseStepDef extends ScalaDsl with EN with Browser with BrowserDriver {
+
   BeforeAll {
     startBrowser()
+    ScreenshotUtil.clearOldScreenshots()
     Driver.instance.manage().deleteAllCookies()
   }
 
@@ -35,7 +38,16 @@ object BaseStepDef extends ScalaDsl with EN with Browser with BrowserDriver{
     }
   }
 
+  AfterStep(tagExpression = "@screenshots") { scenario: Scenario =>
+    val pageName = s"${TimeMachine.getEpochString} - ${driver.getTitle.replaceFirst("- GOV.UK", "")}"
+
+    ScreenshotUtil.makeScenarioDir(scenario).map { scenarioFolder =>
+        ScreenshotUtil.takeScreenshot(scenarioFolder, pageName)
+    }
+  }
+
   AfterAll {
     quitBrowser()
   }
+
 }

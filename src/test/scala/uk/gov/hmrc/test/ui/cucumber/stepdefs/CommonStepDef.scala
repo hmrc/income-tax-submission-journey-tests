@@ -263,4 +263,8 @@ class CommonStepDef extends Steps with TaxYearHelper{
     driver.getTitle.replace("\u00A0", " ") should be(s"$title - $pensions - $govUkExtension")
   }
 
+  Then("""^the user visits Gains gateway$""") { () =>
+    driver.navigate().to("http://localhost:10005/update-and-submit-income-tax-return/additional-information/2024/gains/gains-gateway")
+  }
+
 }

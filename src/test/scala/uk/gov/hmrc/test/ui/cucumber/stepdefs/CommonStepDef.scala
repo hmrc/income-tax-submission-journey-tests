@@ -16,12 +16,13 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
+import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.conf.TaxYearHelper
 import uk.gov.hmrc.test.ui.pages.CommonPage._
 import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, CommonPage}
 
-class CommonStepDef extends Steps with TaxYearHelper{
+class CommonStepDef extends Steps with TaxYearHelper {
 
   val serviceName = "Update and submit an Income Tax Return"
   val testOnlyViewAndChangeServiceName = "Your client’s Income Tax details"
@@ -35,12 +36,12 @@ class CommonStepDef extends Steps with TaxYearHelper{
     driver.getTitle.replace("\u00A0", " ") should be(s"$title - $serviceName - $govUkExtension")
   }
 
-  Then("""^the user is redirected to the "(.*)" "(.*)" "(.*)" page$""") { (title: String, taxYear : String,titleCont: String) =>
+  Then("""^the user is redirected to the "(.*)" "(.*)" "(.*)" page$""") { (title: String, taxYear: String, titleCont: String) =>
     val expectedTaxYear = replaceTaxYear(taxYear)
     driver.getTitle.replace("\u00A0", " ") should be(s"$title $expectedTaxYear $titleCont - $serviceName - $govUkExtension")
   }
 
-  Then("""^the user is then redirected to the "(.*)" "(.*)" "(.*)" "(.*)" page$""") { (title: String, taxYearPrevious: String, taxYear: String,  titleCont: String) =>
+  Then("""^the user is then redirected to the "(.*)" "(.*)" "(.*)" "(.*)" page$""") { (title: String, taxYearPrevious: String, taxYear: String, titleCont: String) =>
     val expectedTaxYear = replaceTaxYear(taxYear)
     val taxYearMinusTwo = replaceTaxYear(taxYearPrevious)
     driver.getTitle.replace("\u00A0", " ") should be(s"$title $taxYearMinusTwo to $expectedTaxYear $titleCont - $serviceName - $govUkExtension")
@@ -107,24 +108,15 @@ class CommonStepDef extends Steps with TaxYearHelper{
     CommonPage.clickOnCheckbox(checkboxTitle)
   }
 
-  When("""^the user clicks both checkboxes$""") { () =>
-    driver.findElement(By.cssSelector("#value_0")).click()
-    driver.findElement(By.cssSelector("#value_1")).click()
+  When("""^the user clicks the following checkboxes:$""") { (checkboxTitles: DataTable) =>
+    checkboxTitles.asList(classOf[String]).forEach { checkboxTitle =>
+      CommonPage.clickOnCheckbox(checkboxTitle)
+    }
   }
 
-  When("""^the user clicks the (.*), (.*) and (.*) checkboxes$""") {
-    (checkboxTitle: String, checkboxTitleTwo: String, checkboxTitleThree: String) =>
-    CommonPage.clickOnCheckbox(checkboxTitle)
-    CommonPage.clickOnCheckbox(checkboxTitleTwo)
-    CommonPage.clickOnCheckbox(checkboxTitleThree)
+  When("""^the user clicks all checkboxes$""") { () =>
+    CommonPage.clickAllCheckboxes()
   }
-
-  When("""^the user clicks all checkbox options and selects (.*)""") { (buttonTitle: String) =>
-    val allCheckboxIds = List("value_0", "value_1", "value_2", "value_3", "value_4", "value_5", "value_6", "value_7")
-    allCheckboxIds.foreach(id => driver.findElement(By.id(id)).click())
-    CommonPage.clickOnButton(buttonTitle)
-  }
-
 
   When("""^the user clicks the (.*) dropdown and selects (.*)$""") { (dropdownTitle: String, dropdownValue: String) =>
     CommonPage.clickOnDropdown(dropdownTitle, dropdownValue)

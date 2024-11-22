@@ -48,17 +48,4 @@ class AuthStepDef extends BasePage with Steps {
     }
     driver.findElement(By.cssSelector("#submit")).click()
   }
-
-  Given("""^the user logs into the service as an individual""") {
-    ()
-    getRedirectUrl.sendKeys(CommonPage.url + "/" + currentYear + "/" + "start")
-    selectCredentialStrength("strong")
-    selectConfidenceLevel("250")
-    selectAffinityGroup("Individual")
-    getNino.sendKeys("BB000002A")
-    getEnrolmentKeyOne.sendKeys("HMRC-MTD-IT")
-    getIdentifierNameOne.sendKeys("MTDITID")
-    getIdentifierValueOne.sendKeys("1234567890")
-    driver.findElement(By.cssSelector("#submit")).click()
-  }
 }

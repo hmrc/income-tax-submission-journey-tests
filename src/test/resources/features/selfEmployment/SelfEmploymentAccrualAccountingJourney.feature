@@ -3,7 +3,15 @@ Feature: Self Employment Accrual Accounting Journey
 
   Background:
     Given the user navigates to the auth login page
-    And the user logs into the service as an individual
+    And the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | BB000002A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
@@ -117,7 +125,10 @@ Feature: Self Employment Accrual Accounting Journey
     Then the user should be redirected to the "Entertainment costs" page under self employment
     When the user selects the yes radio button and clicks the Continue button
     Then the user should be redirected to the "Staff, construction industry and professional services expenses" page under self employment
-    When the user clicks the first option, second option and third option checkboxes
+    When the user clicks the following checkboxes:
+    | first option  |
+    | second option |
+    | third option  |
     And the user clicks the Continue button
     Then the user should be redirected to the "Disallowable staff costs" page under self employment
     When the user selects the yes radio button and clicks the Continue button
@@ -126,7 +137,10 @@ Feature: Self Employment Accrual Accounting Journey
     Then the user should be redirected to the "Disallowable professional fees" page under self employment
     When the user selects the yes radio button and clicks the Continue button
     Then the user should be redirected to the "Financial expenses" page under self employment
-    When the user clicks the first option, second option and third option checkboxes
+    When the user clicks the following checkboxes:
+      | first option  |
+      | second option |
+      | third option  |
     And the user clicks the Continue button
     Then the user should be redirected to the "Is any of your interest on bank and other business loans disallowable?" page under self employment
     When the user selects the yes radio button and clicks the Continue button
@@ -368,7 +382,8 @@ Feature: Self Employment Accrual Accounting Journey
     Then the user should be redirected to the "Allowances for vehicles, equipment and buildings" page under self employment
     And the user selects the yes radio button and clicks the Continue button
     Then the user should be redirected to the "Choose which allowances you want to claim" page under self employment
-    And the user clicks all checkbox options and selects Continue
+    And the user clicks all checkboxes
+    And the user clicks the Continue button
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
@@ -426,13 +441,16 @@ Feature: Self Employment Accrual Accounting Journey
     And the user selects the QualifyingUse Month field and enters a value of 09
     And the user selects the QualifyingUse Year field and enters a value of 2021
     And the user clicks the Continue button
+    Then the user should be redirected to the "What was the total qualifying expenditure on this building?" page under self employment
+    And the user selects the Amount-field field and enters a value of 1,456.54
+    And the user clicks the Continue button
     Then the user should be redirected to the "Where is the new structure or building located?" page under self employment
     And the user selects the Building name field and enters a value of Self-Employment Business ONE
     And the user selects the Building number field and enters a value of 24
     And the user selects the Postcode field and enters a value of BN1 1AA
     And the user clicks the Continue button
     Then the user should be redirected to the "Claim amount" page under self employment
-    And the user selects the Amount-field field and enters a value of 1,000
+    And the user selects the Amount-field field and enters a value of 1,124.78
     And the user clicks the Continue button
     Then the user should be redirected to the "New structures or buildings" page under self employment
     And the user selects the no radio button and clicks the Continue button
@@ -563,14 +581,17 @@ Feature: Self Employment Accrual Accounting Journey
     Then the user should be redirected to the "Claim a loss relief" page under self employment
     And the user selects the yes radio button and clicks the Continue button
     Then the user should be redirected to the "What do you want to do with the loss for the 2023 to 2024 tax year?" page under self employment
-    When the user clicks both checkboxes
+    When the user clicks the following checkboxes:
+      | first option  |
+      | second option |
     And the user clicks the Continue button
     Then the user should be redirected to the "Did Circus Performer A1 have any unused losses in previous years?" page under self employment
     And the user selects the yes radio button and clicks the Continue button
     And the user selects the Amount-field field and enters a value of 1,456
     And the user clicks the Continue button
     Then the user should be redirected to the "When you reported the loss" page under self employment
-    Then the user clicks the fifth option checkbox
+    When the user clicks the following checkboxes:
+      | fifth option  |
     And the user clicks the Continue button
     Then the user should be redirected to the "Check your answers" page under self employment
     And the user clicks the Self Employment Save and continue button

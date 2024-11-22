@@ -63,6 +63,15 @@ object CommonPage extends BasePage with CommonElements {
     clickOn(selector)
   }
 
+  def clickAllCheckboxes(): Unit = {
+    val checkboxes = driver.findElements(By.cssSelector("input[type=checkbox]"))
+    checkboxes.forEach { checkbox =>
+      if (!checkbox.isSelected) {
+        checkbox.click()
+      }
+    }
+  }
+
   def clickOnDropdown(dropdownTitle: String, dropdownValue: String): Unit = {
     val selector: By = load(dropdownTitle)
     select(selector, dropdownValue)

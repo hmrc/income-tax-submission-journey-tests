@@ -1,5 +1,5 @@
 @SelfEmployment
-Feature: SelfEmployment Cash accounting Journeys
+Feature: Self Employment Cash accounting Journeys
 
   Background:
     Given the user navigates to the auth login page

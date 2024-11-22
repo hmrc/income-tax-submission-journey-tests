@@ -16,12 +16,13 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
+import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.conf.TaxYearHelper
 import uk.gov.hmrc.test.ui.pages.CommonPage._
 import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, CommonPage}
 
-class CommonStepDef extends Steps with TaxYearHelper{
+class CommonStepDef extends Steps with TaxYearHelper {
 
   val serviceName = "Update and submit an Income Tax Return"
   val testOnlyViewAndChangeServiceName = "Your client’s Income Tax details"
@@ -35,12 +36,12 @@ class CommonStepDef extends Steps with TaxYearHelper{
     driver.getTitle.replace("\u00A0", " ") should be(s"$title - $serviceName - $govUkExtension")
   }
 
-  Then("""^the user is redirected to the "(.*)" "(.*)" "(.*)" page$""") { (title: String, taxYear : String,titleCont: String) =>
+  Then("""^the user is redirected to the "(.*)" "(.*)" "(.*)" page$""") { (title: String, taxYear: String, titleCont: String) =>
     val expectedTaxYear = replaceTaxYear(taxYear)
     driver.getTitle.replace("\u00A0", " ") should be(s"$title $expectedTaxYear $titleCont - $serviceName - $govUkExtension")
   }
 
-  Then("""^the user is then redirected to the "(.*)" "(.*)" "(.*)" "(.*)" page$""") { (title: String, taxYearPrevious: String, taxYear: String,  titleCont: String) =>
+  Then("""^the user is then redirected to the "(.*)" "(.*)" "(.*)" "(.*)" page$""") { (title: String, taxYearPrevious: String, taxYear: String, titleCont: String) =>
     val expectedTaxYear = replaceTaxYear(taxYear)
     val taxYearMinusTwo = replaceTaxYear(taxYearPrevious)
     driver.getTitle.replace("\u00A0", " ") should be(s"$title $taxYearMinusTwo to $expectedTaxYear $titleCont - $serviceName - $govUkExtension")
@@ -86,6 +87,11 @@ class CommonStepDef extends Steps with TaxYearHelper{
     CommonPage.clickOnRadioButton(radioButtonIdentifier)
   }
 
+  When("""^the user selects the (.*) radio button and clicks the (.*) button$""") { (radioButtonIdentifier: String, buttonTitle: String) =>
+    CommonPage.clickOnRadioButton(radioButtonIdentifier)
+    CommonPage.clickOnButton(buttonTitle)
+  }
+
   When("""^the user deselects the (.*) radio button$""") { radioButtonIdentifier: String =>
     CommonPage.deselectRadioButton(radioButtonIdentifier)
   }
@@ -100,6 +106,16 @@ class CommonStepDef extends Steps with TaxYearHelper{
 
   When("""^the user clicks the (.*) checkbox$""") { checkboxTitle: String =>
     CommonPage.clickOnCheckbox(checkboxTitle)
+  }
+
+  When("""^the user clicks the following checkboxes:$""") { (checkboxTitles: DataTable) =>
+    checkboxTitles.asList(classOf[String]).forEach { checkboxTitle =>
+      CommonPage.clickOnCheckbox(checkboxTitle)
+    }
+  }
+
+  When("""^the user clicks all checkboxes$""") { () =>
+    CommonPage.clickAllCheckboxes()
   }
 
   When("""^the user clicks the (.*) dropdown and selects (.*)$""") { (dropdownTitle: String, dropdownValue: String) =>

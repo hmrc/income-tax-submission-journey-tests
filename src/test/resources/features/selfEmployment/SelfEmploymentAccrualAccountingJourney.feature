@@ -481,6 +481,9 @@ Feature: Self Employment Accrual Accounting Journey
     And the user selects the Qualifying start Month field and enters a value of 09
     And the user selects the Qualifying start Year field and enters a value of 2021
     And the user clicks the Continue button
+    Then the user should be redirected to the "What was the total qualifying expenditure on this building?" page under self employment
+    And the user selects the Amount-field field and enters a value of 999
+    And the user clicks the Continue button
     Then the user should be redirected to the "Where is the special tax site located?" page under self employment
     And the user selects the Building name field and enters a value of Self-Employment Business ONE
     And the user selects the Building number field and enters a value of 24

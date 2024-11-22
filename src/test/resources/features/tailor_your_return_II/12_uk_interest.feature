@@ -27,7 +27,7 @@ Feature: UK Interest Journeys - Income Tax Submission
     When the user clicks the Continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the Banks and building societies task list link
-    ##TODO Remove comment when the journey is correctly split
+    ##TODO Remove comment when the journey is correctly split and add have you completed section
 #    Then the user should be redirected to the "Add an account with untaxed UK interest" page
 
   Scenario: Individual User - Interest - Trust fund bond or bonds
@@ -52,7 +52,7 @@ Feature: UK Interest Journeys - Income Tax Submission
     When the user clicks the Continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the Trust fund bond or bonds task list link
-    ##TODO Remove comment when the journey is correctly split
+    ##TODO Remove comment when the journey is correctly split and add have you completed section
 #    Then the user should be redirected to the "Add an account with taxed UK interest" page
 
   Scenario: Individual User - Interest - Gilt-edged or accrued income securities
@@ -88,6 +88,9 @@ Feature: UK Interest Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your interest from gilt-edged or accrued income securities" page
     And the user clicks the continue button
+    Then the user should be redirected to the "Have you finished this section?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
 
   Scenario: Returning Agent User - Interest - Gilt-edged or accrued income securities
@@ -120,5 +123,8 @@ Feature: UK Interest Journeys - Income Tax Submission
     When the user selects the amount field and enters a value of 1000
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client's interest from gilt-edged or accrued income securities" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "Have you finished this section?" page
+    When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page

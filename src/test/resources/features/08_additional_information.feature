@@ -121,6 +121,7 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
       | Delegated Identifier Name  | MTDITID                                                                             |
       | Delegated Identifier Value | 1234567893                                                                          |
       | Delegated Auth Rule        | mtd-it-auth-supp                                                                    |
+    ## TODO: delete the following steps once SASS-10357 gets implemented
     Then the user should be redirected to the "There’s a problem" page
     When the user visits Gains gateway
     Then the user should be redirected to the "Gains from life insurance policies and contracts" page

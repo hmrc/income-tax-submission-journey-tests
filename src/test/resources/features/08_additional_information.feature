@@ -108,24 +108,6 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user clicks the save and continue button
     Then the user should be redirected to the "Interest from savings and securities" page
 
-  Scenario: Secondary Agent User authorised
-    When the user logs into the service with the following details
-      | Redirect url               | /test-only/InYear/additional-parameters?ClientNino=AA123457A&ClientMTDID=1234567893 |
-      | Credential Strength        | weak                                                                                |
-      | Confidence Level           | 250                                                                                 |
-      | Affinity Group             | Agent                                                                               |
-      | Enrolment Key 1            | HMRC-AS-AGENT                                                                       |
-      | Identifier Name 1          | AgentReferenceNumber                                                                |
-      | Identifier Value 1         | XARN1234567                                                                         |
-      | Delegated Enrolment Key    | HMRC-MTD-IT-SUPP                                                                    |
-      | Delegated Identifier Name  | MTDITID                                                                             |
-      | Delegated Identifier Value | 1234567893                                                                          |
-      | Delegated Auth Rule        | mtd-it-auth-supp                                                                    |
-    ## TODO: delete the following steps once SASS-10357 gets implemented
-    Then the user should be redirected to the "There’s a problem" page
-    When the user visits Gains gateway
-    Then the user should be redirected to the "Gains from life insurance policies and contracts" page
-
 ################################# Gains Journey ####################################################################################
   @gains
   Scenario: Individual User maximal flow - Gains - User says yes to all questions

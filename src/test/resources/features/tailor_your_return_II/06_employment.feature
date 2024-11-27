@@ -1,5 +1,4 @@
 @TYR_Employment @TYR_Common_Task_List @TYR_private_beta
-
 Feature: Employment Journeys - Income Tax Submission
 
   Background:
@@ -58,6 +57,35 @@ Feature: Employment Journeys - Income Tax Submission
     When the user selects the Tax field and enters a value of 20.54
     And the user clicks the continue button
     Then the user should be redirected to the "Check your employment details" page
+
+  Scenario: Individual User - Employment - PAYE employment complete section
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start |
+      | Credential Strength | strong        |
+      | Confidence Level    | 250           |
+      | Affinity Group      | Individual    |
+      | Nino                | BB444444A     |
+      | Enrolment Key 1     | HMRC-MTD-IT   |
+      | Identifier Name 1   | MTDITID       |
+      | Identifier Value 1  | 1234567000    |
+    Then the user navigates to the Tailor return start page
+     ##---- clear Test data ----##
+    When the user navigates to the Test only clear data page for EOY
+    Then the user should be redirected to the "Update and submit a Tax Return" page
+    ##---- add Test data ----##
+    When the user navigates to the Test only add data page for EOY
+    Then the user should be redirected to the "Update and submit a Tax Return" page
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Add sections to your Tax Return" page
+    When the user clicks the Continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the PAYE employment (including student loans) task list link
+    Then the user should be redirected to the "PAYE employment" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Have you finished this section?" page
+    When the user selects the yes radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
 
   Scenario: Returning Agent User In Year- Employment - PAYE employment (Including student loans)
     When the user logs into the service with the following details

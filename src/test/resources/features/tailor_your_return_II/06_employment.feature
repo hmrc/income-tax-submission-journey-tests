@@ -60,14 +60,14 @@ Feature: Employment Journeys - Income Tax Submission
 
   Scenario: Individual User - Employment - PAYE employment complete section
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start |
-      | Credential Strength | strong        |
-      | Confidence Level    | 250           |
-      | Affinity Group      | Individual    |
-      | Nino                | BB444444A     |
-      | Enrolment Key 1     | HMRC-MTD-IT   |
-      | Identifier Name 1   | MTDITID       |
-      | Identifier Value 1  | 1234567000    |
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA123456A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567000  |
     Then the user navigates to the Tailor return start page
      ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for EOY

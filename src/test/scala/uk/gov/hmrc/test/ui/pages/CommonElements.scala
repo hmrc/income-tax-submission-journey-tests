@@ -626,6 +626,8 @@ trait CommonElements extends BasePage with Matchers {
   "Which rental property does your client have in the UK?" -> By.cssSelector("#main-content > div > div > h1"),
   "How much total rent a room income did your client receive?" -> By.cssSelector("#main-content > div > div > h1"),
 
+    // UK & Foreign Property
+    "UK & Foreign Property About" -> By.cssSelector("#main-content > div > div > ul > li:nth-child(2) > div.govuk-task-list__name-and-hint > a"),
 
     // Property, Pensions And Investments
     "Income from property, pensions and investments tag"                   -> By.cssSelector("#task-list-3-status"),

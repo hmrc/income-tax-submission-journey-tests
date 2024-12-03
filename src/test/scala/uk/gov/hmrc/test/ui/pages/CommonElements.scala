@@ -599,6 +599,26 @@ trait CommonElements extends BasePage with Matchers {
     "Enhanced structures and buildings allowance address" -> By.cssSelector("#main-content > div > div > h1"),
     "Your enhanced structures and buildings allowance claims" -> By.cssSelector("#main-content > div > div > form > h1"),
 
+    // Foreign Property
+    "Foreign property select country" -> By.cssSelector("#main-content > div > div > ol:nth-of-type(4) > li > div.govuk-task-list__name-and-hint > a"),
+    "Country" -> By.id("country-autocomplete"),
+    "Country option" -> By.id("country-autocomplete__option--0"),
+
+    "Foreign property details" -> By.cssSelector("#main-content > div > div > form > div > fieldset > legend > h1"),
+    "Which country did you receive this income from?" -> By.cssSelector("#main-content > div > div > h1"),
+    "Which country did your client receive this income from?" -> By.cssSelector("#main-content > div > div > h1"),
+    "Countries where you rented out property" -> By.cssSelector("#main-content > div > div > h1"),
+    "Countries where your client rented out property" -> By.cssSelector("#main-content > div > div > h1"),
+    "No" -> By.id("countriesRentedPropertyYesOrNo-no"),
+    "Use the property income allowance" -> By.id("claimPropertyIncomeAllowanceOrExpenses"),
+    "How much total income did your client get from all of their properties?" -> By.cssSelector("#main-content > div > div > form > div > fieldset > legend > h1"),
+    "How much total income did your client get from all of their foreign properties?" -> By.cssSelector("#main-content > div > div > form > div > fieldset > legend > h1"),
+
+    // UK & Foreign Property
+    "UK & Foreign Property About" -> By.cssSelector("#main-content > div > div > ol:nth-of-type(3) > li > div.govuk-task-list__name-and-hint > a"),
+    "Foreign property About" -> By.cssSelector("#main-content > div > div > ul > li:nth-child(3) > div.govuk-task-list__name-and-hint > a"),
+    "I do not want to report my property income" -> By.id("reportPropertyIncome-no"),
+
     // Property - rent-a-room
     "Rent-a-room" -> By.id("value_1"),
   "Rentaroom About" -> By.cssSelector("#main-content > div > div > ol:nth-child(5) > li > div.govuk-task-list__name-and-hint > a"),//By.id("rent_a_room_about_link"),
@@ -625,9 +645,6 @@ trait CommonElements extends BasePage with Matchers {
   "How much total income did your client get from all of their properties?" -> By.cssSelector("#main-content > div > div > h1"),
   "Which rental property does your client have in the UK?" -> By.cssSelector("#main-content > div > div > h1"),
   "How much total rent a room income did your client receive?" -> By.cssSelector("#main-content > div > div > h1"),
-
-    // UK & Foreign Property
-    "UK & Foreign Property About" -> By.cssSelector("#main-content > div > div > ul > li:nth-child(2) > div.govuk-task-list__name-and-hint > a"),
 
     // Property, Pensions And Investments
     "Income from property, pensions and investments tag"                   -> By.cssSelector("#task-list-3-status"),

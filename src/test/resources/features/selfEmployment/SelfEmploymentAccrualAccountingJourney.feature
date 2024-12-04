@@ -579,7 +579,7 @@ Feature: Self Employment Accrual Accounting Journey
     Then the user should be redirected to the "What was the market value of the goods and services you provided?" page under self employment
     And the user selects the Amount-field field and enters a value of 567
     And the user clicks the Continue button
-    Then the user should be redirected to the "Net business profit: £200" page under self employment
+    Then the user should be redirected to the "Net business loss: £200" page under self employment
     And the user clicks the Continue button
     Then the user should be redirected to the "Claim a loss relief" page under self employment
     And the user selects the yes radio button and clicks the Continue button

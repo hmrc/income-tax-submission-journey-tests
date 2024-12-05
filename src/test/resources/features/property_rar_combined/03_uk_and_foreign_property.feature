@@ -65,6 +65,8 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
     # UK and foreign property
     When the user clicks on the UK & Foreign Property About link
     Then the user should be redirected to the "UK and foreign property details" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much total income did you get from all of your UK and foreign properties?" page
 
   Scenario: Agent user adds UK and Foreign Property details
     When the user logs into the service with the following details
@@ -128,6 +130,8 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
     # UK and foreign property
     When the user clicks on the UK & Foreign Property About link
     Then the user should be redirected to the "UK and foreign property details" page
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much total income did you get from all of your UK and foreign properties?" page
 
 
 

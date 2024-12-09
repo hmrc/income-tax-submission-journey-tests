@@ -34,8 +34,8 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Which rental property do you have in the UK?" page
     When the user clicks the Rent-a-room checkbox
     And the user clicks the UK Property continue button
-    Then the user should be redirected to the "Check Your Answers" page
-    When the user clicks the Check Your Answers continue button
+    Then the user should be redirected to the "Check your answers" page
+    When the user clicks the Check your answers continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the HYFTS,Yes radio button
     And the user clicks the continue button
@@ -52,7 +52,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Claim expenses or rent a room relief" page
     When the user selects the Expenses radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     And the user clicks the continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the RaRAboutHYFTS,Yes radio button
@@ -66,7 +66,7 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the Claim consolidated expenses radio button
     And the user selects the Claim consolidated expensesAmt field and enters a value of 160.89
     And the user clicks the continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
    And the user clicks the continue button
    Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the RaRExpensesHYFTS,Yes radio button
@@ -105,8 +105,8 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Which rental property does your client have in the UK?" page
     When the user clicks the Rent-a-room checkbox
     And the user clicks the UK Property continue button
-    Then the user should be redirected to the "Check Your Answers" page
-    When the user clicks the Check Your Answers continue button
+    Then the user should be redirected to the "Check your answers" page
+    When the user clicks the Check your answers continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the HYFTS,Yes radio button
     And the user clicks the continue button
@@ -123,7 +123,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Claim expenses or rent a room relief" page
     When the user selects the Expenses radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     And the user clicks the continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the RaRAboutHYFTS,Yes radio button
@@ -137,7 +137,7 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the Claim consolidated expenses radio button
     And the user selects the Claim consolidated expensesAmt field and enters a value of 160.89
     And the user clicks the continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     And the user clicks the continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the RaRExpensesHYFTS,Yes radio button

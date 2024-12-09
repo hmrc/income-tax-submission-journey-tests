@@ -31,7 +31,7 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
       | first option  |
       | second option |
     And the user clicks the continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the Yes radio button
@@ -55,7 +55,7 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
     Then the user should be redirected to the "Claim property income allowance or expenses" page
     And the user selects the Use the property income allowance radio button
     And the user clicks the Continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the Yes radio button
@@ -96,7 +96,7 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
       | first option  |
       | second option |
     And the user clicks the continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the Yes radio button
@@ -120,7 +120,7 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
     Then the user should be redirected to the "Claim property income allowance or expenses" page
     And the user selects the Use the property income allowance radio button
     And the user clicks the Continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the Yes radio button

@@ -34,8 +34,8 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Which rental property do you have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
-    Then the user should be redirected to the "Check Your Answers" page
-    When the user clicks the Check Your Answers continue button
+    Then the user should be redirected to the "Check your answers" page
+    When the user clicks the Check your answers continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the HYFTS,Yes radio button
     And the user clicks the continue button
@@ -46,7 +46,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Do you want to claim property income allowance?" page
     And the user selects the Yes, claim property income allowance radio button
     And the user clicks the save and continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     When the user selects the save and continue radio button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the HYFTS AboutPropertyYes radio button
@@ -84,8 +84,8 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Which rental property does your client have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
-    Then the user should be redirected to the "Check Your Answers" page
-    When the user clicks the Check Your Answers continue button
+    Then the user should be redirected to the "Check your answers" page
+    When the user clicks the Check your answers continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the HYFTS,Yes radio button
     And the user clicks the continue button
@@ -96,7 +96,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Does your client want to claim property income allowance?" page
     And the user selects the No, claim expenses radio button
     And the user clicks the save and continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     When the user selects the save and continue radio button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the HYFTS AboutPropertyYes radio button
@@ -132,8 +132,8 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Which rental property do you have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
-    Then the user should be redirected to the "Check Your Answers" page
-    When the user clicks the Check Your Answers continue button
+    Then the user should be redirected to the "Check your answers" page
+    When the user clicks the Check your answers continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the HYFTS,Yes radio button
     And the user clicks the continue button
@@ -144,7 +144,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Do you want to claim property income allowance?" page
     When the user selects the Yes, claim property income allowance radio button
     And the user clicks the Continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks the continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the Yes HYFTS radio button
@@ -180,8 +180,8 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Which rental property do you have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
-    Then the user should be redirected to the "Check Your Answers" page
-    When the user clicks the Check Your Answers continue button
+    Then the user should be redirected to the "Check your answers" page
+    When the user clicks the Check your answers continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the HYFTS,Yes radio button
     And the user clicks the continue button
@@ -192,7 +192,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Do you want to claim property income allowance?" page
     When the user selects the No, claim expenses radio button
     And the user clicks the Continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks the continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the Yes HYFTS radio button
@@ -223,8 +223,8 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Which rental property do you have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
-    Then the user should be redirected to the "Check Your Answers" page
-    When the user clicks the Check Your Answers continue button
+    Then the user should be redirected to the "Check your answers" page
+    When the user clicks the Check your answers continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the HYFTS,Yes radio button
     And the user clicks the continue button
@@ -235,13 +235,13 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Do you want to claim property income allowance?" page
     When the user selects the No, claim expenses radio button
     And the user clicks the Continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks on the Change link
     Then the user should be redirected to the "Do you want to claim property income allowance?" page
     When the user selects the Yes, claim property income allowance radio button
     And the user clicks the save and continue button
-    Then the user should be redirected to the "Check Your Answers" page
-    And the user clicks the Check Your Answers continue button
+    Then the user should be redirected to the "Check your answers" page
+    And the user clicks the Check your answers continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the Yes HYFTS radio button
     And the user clicks the property continue button
@@ -277,8 +277,8 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Which rental property does your client have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
-    Then the user should be redirected to the "Check Your Answers" page
-    When the user clicks the Check Your Answers continue button
+    Then the user should be redirected to the "Check your answers" page
+    When the user clicks the Check your answers continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the HYFTS,Yes radio button
     And the user clicks the continue button
@@ -289,13 +289,13 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Does your client want to claim property income allowance?" page
     When the user selects the No, claim expenses radio button
     And the user clicks the Continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks on the Change link
     Then the user should be redirected to the "Does your client want to claim property income allowance?" page
     When the user selects the Yes, claim property income allowance radio button
     And the user clicks the Continue button
-    Then the user should be redirected to the "Check Your Answers" page
-    And the user clicks the Check Your Answers continue button
+    Then the user should be redirected to the "Check your answers" page
+    And the user clicks the Check your answers continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the Yes HYFTS radio button
     And the user clicks the property continue button
@@ -324,8 +324,8 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Which rental property do you have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
-    Then the user should be redirected to the "Check Your Answers" page
-    When the user clicks the Check Your Answers continue button
+    Then the user should be redirected to the "Check your answers" page
+    When the user clicks the Check your answers continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the HYFTS,Yes radio button
     And the user clicks the continue button
@@ -336,7 +336,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Do you want to claim property income allowance?" page
     When the user selects the Yes, claim property income allowance radio button
     And the user clicks the Continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks the continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the Yes HYFTS radio button
@@ -378,7 +378,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Other income from property" page
     When the user selects the Other income amount field and enters a value of 1350.78
     Then the user clicks the continue button
-    And the user should be redirected to the "Check Your Answers" page
+    And the user should be redirected to the "Check your answers" page
     When the user clicks the continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the IncomeYes,HYFTS radio button
@@ -411,8 +411,8 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Which rental property does your client have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
-    Then the user should be redirected to the "Check Your Answers" page
-    When the user clicks the Check Your Answers continue button
+    Then the user should be redirected to the "Check your answers" page
+    When the user clicks the Check your answers continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the HYFTS,Yes radio button
     And the user clicks the continue button
@@ -423,7 +423,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Does your client want to claim property income allowance?" page
     When the user selects the No, claim expenses radio button
     And the user clicks the Continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks the continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the Yes HYFTS radio button
@@ -465,7 +465,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Other income from property" page
     When the user selects the Other income amount field and enters a value of 1350.78
     Then the user clicks the continue button
-    And the user should be redirected to the "Check Your Answers" page
+    And the user should be redirected to the "Check your answers" page
     When the user clicks the continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the IncomeYes,HYFTS radio button
@@ -501,8 +501,8 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Which rental property do you have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
-    Then the user should be redirected to the "Check Your Answers" page
-    When the user clicks the Check Your Answers continue button
+    Then the user should be redirected to the "Check your answers" page
+    When the user clicks the Check your answers continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the HYFTS,Yes radio button
     And the user clicks the continue button
@@ -513,7 +513,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Do you want to claim property income allowance?" page
     When the user selects the Yes, claim property income allowance radio button
     And the user clicks the Continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks the continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the Yes HYFTS radio button
@@ -546,7 +546,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Other income from property" page
     When the user selects the Other income amount field and enters a value of 3590.78
     Then the user clicks the continue button
-    And the user should be redirected to the "Check Your Answers" page
+    And the user should be redirected to the "Check your answers" page
     When the user clicks the continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the IncomeYes,HYFTS radio button
@@ -575,7 +575,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Unused residential costs brought forward" page
     And the user selects the How much unused residential costs do you want to bring forward? Amount field and enters a value of 1200
     When the user clicks the continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks the continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the AdjustmentsYes,HYFTS radio button
@@ -611,8 +611,8 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Which rental property do you have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
-    Then the user should be redirected to the "Check Your Answers" page
-    When the user clicks the Check Your Answers continue button
+    Then the user should be redirected to the "Check your answers" page
+    When the user clicks the Check your answers continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the HYFTS,Yes radio button
     And the user clicks the continue button
@@ -623,7 +623,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Do you want to claim property income allowance?" page
     Then the user selects the No, claim expenses radio button
     And the user clicks the Continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks the continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the Yes HYFTS radio button
@@ -656,7 +656,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Other income from property" page
     When the user selects the Other income amount field and enters a value of 3590.78
     Then the user clicks the continue button
-    And the user should be redirected to the "Check Your Answers" page
+    And the user should be redirected to the "Check your answers" page
     And the user clicks the property continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the IncomeYes,HYFTS radio button
@@ -669,7 +669,7 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the Yes,consolidated expenses radio button
     And the user selects the consolidated expenses amount field and enters a value of 1250.89
     And the user clicks the continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     And the user clicks the continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the ExpensesYes,HYFTS radio button
@@ -705,8 +705,8 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Which rental property do you have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
-    Then the user should be redirected to the "Check Your Answers" page
-    When the user clicks the Check Your Answers continue button
+    Then the user should be redirected to the "Check your answers" page
+    When the user clicks the Check your answers continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the HYFTS,Yes radio button
     And the user clicks the continue button
@@ -717,7 +717,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Do you want to claim property income allowance?" page
     Then the user selects the No, claim expenses radio button
     And the user clicks the Continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks the continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the Yes HYFTS radio button
@@ -750,7 +750,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Other income from property" page
     When the user selects the Other income amount field and enters a value of 3590.78
     Then the user clicks the continue button
-    And the user should be redirected to the "Check Your Answers" page
+    And the user should be redirected to the "Check your answers" page
     When the user clicks the continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the IncomeYes,HYFTS radio button
@@ -783,7 +783,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Other allowable property expenses" page
     And the user selects the Other allowable property expenses amount field and enters a value of 200
     When the user clicks the continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks the continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the ExpensesYes,HYFTS radio button
@@ -819,8 +819,8 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Which rental property do you have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
-    Then the user should be redirected to the "Check Your Answers" page
-    When the user clicks the Check Your Answers continue button
+    Then the user should be redirected to the "Check your answers" page
+    When the user clicks the Check your answers continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the HYFTS,Yes radio button
     And the user clicks the continue button
@@ -831,7 +831,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Do you want to claim property income allowance?" page
     Then the user selects the No, claim expenses radio button
     And the user clicks the Continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks the continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the Yes HYFTS radio button
@@ -864,7 +864,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Other income from property" page
     When the user selects the Other income amount field and enters a value of 3590.78
     Then the user clicks the continue button
-    And the user should be redirected to the "Check Your Answers" page
+    And the user should be redirected to the "Check your answers" page
     When the user clicks the continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the IncomeYes,HYFTS radio button
@@ -877,7 +877,7 @@ Feature: Property Journeys - Income Tax Submission
     And the user selects the Yes,capital allowances for a car radio button
     Then the user selects the Capital allowances for a car amount field and enters a value of 1290
     When the user clicks the continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks the continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the AllowancesYes,HYFTS radio button
@@ -912,8 +912,8 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Which rental property do you have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
-    Then the user should be redirected to the "Check Your Answers" page
-    When the user clicks the Check Your Answers continue button
+    Then the user should be redirected to the "Check your answers" page
+    When the user clicks the Check your answers continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the HYFTS,Yes radio button
     And the user clicks the continue button
@@ -924,7 +924,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Do you want to claim property income allowance?" page
     Then the user selects the No, claim expenses radio button
     And the user clicks the Continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks the continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the Yes HYFTS radio button
@@ -957,7 +957,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Other income from property" page
     When the user selects the Other income amount field and enters a value of 3590.78
     Then the user clicks the continue button
-    And the user should be redirected to the "Check Your Answers" page
+    And the user should be redirected to the "Check your answers" page
     When the user clicks the continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the IncomeYes,HYFTS radio button
@@ -984,7 +984,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Other capital allowances" page
     When the user selects the Other capital allowances amount field and enters a value of 1011.90
     And the user clicks the continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks the continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the AllowancesYes,HYFTS radio button
@@ -1019,8 +1019,8 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Which rental property do you have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
-    Then the user should be redirected to the "Check Your Answers" page
-    When the user clicks the Check Your Answers continue button
+    Then the user should be redirected to the "Check your answers" page
+    When the user clicks the Check your answers continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the HYFTS,Yes radio button
     And the user clicks the continue button
@@ -1031,7 +1031,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Do you want to claim property income allowance?" page
     Then the user selects the No, claim expenses radio button
     And the user clicks the Continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks the continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the Yes HYFTS radio button
@@ -1059,7 +1059,7 @@ Feature: Property Journeys - Income Tax Submission
     And the user selects the Building number field and enters a value of 123B
     And the user selects the Postcode field and enters a value of SW1A 1AA
     When the user clicks the Continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     And the user clicks the continue button
     Then the user should be redirected to the "Your structures and buildings allowance claims" page
     And the user selects the Yes,anotherClaim radio button
@@ -1081,7 +1081,7 @@ Feature: Property Journeys - Income Tax Submission
     And the user selects the Building number field and enters a value of 123A
     And the user selects the Postcode field and enters a value of SW1A 1AA
     When the user clicks the Continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     And the user clicks the continue button
     Then the user should be redirected to the "Your structures and buildings allowance claims" page
     When the user clicks on the RemoveClaim link
@@ -1125,8 +1125,8 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Which rental property do you have in the UK?" page
     When the user clicks the Property Rentals checkbox
     And the user clicks the UK Property continue button
-    Then the user should be redirected to the "Check Your Answers" page
-    When the user clicks the Check Your Answers continue button
+    Then the user should be redirected to the "Check your answers" page
+    When the user clicks the Check your answers continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the HYFTS,Yes radio button
     And the user clicks the continue button
@@ -1137,7 +1137,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Do you want to claim property income allowance?" page
     Then the user selects the No, claim expenses radio button
     And the user clicks the Continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks the continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the Yes HYFTS radio button
@@ -1165,7 +1165,7 @@ Feature: Property Journeys - Income Tax Submission
     And the user selects the Building number field and enters a value of 11
     And the user selects the Postcode field and enters a value of SA1 1AA
     When the user clicks the Continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     And the user clicks the continue button
     Then the user should be redirected to the "Your enhanced structures and buildings allowance claims" page
     And the user selects the No,anotherClaim radio button
@@ -1204,8 +1204,8 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Which rental property do you have in the UK?" page
     When the user clicks the Property rentals checkbox
     And the user clicks the Property rentals continue button
-    Then the user should be redirected to the "Check Your Answers" page
-    When the user clicks the Check Your Answers continue button
+    Then the user should be redirected to the "Check your answers" page
+    When the user clicks the Check your answers continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the HYFTS,Yes radio button
     And the user clicks the continue button
@@ -1216,7 +1216,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Do you want to claim property income allowance?" page
     Then the user selects the No, claim expenses radio button
     And the user clicks the Continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     When the user clicks the continue button
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the Yes HYFTS radio button
@@ -1244,7 +1244,7 @@ Feature: Property Journeys - Income Tax Submission
     And the user selects the Building number field and enters a value of 11
     And the user selects the Postcode field and enters a value of SA1 1AA
     When the user clicks the Continue button
-    Then the user should be redirected to the "Check Your Answers" page
+    Then the user should be redirected to the "Check your answers" page
     And the user clicks the continue button
     Then the user should be redirected to the "Your enhanced structures and buildings allowance claims" page
     And the user selects the No,anotherClaim radio button

@@ -67,6 +67,9 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
     Then the user should be redirected to the "UK and foreign property details" page
     And the user clicks the continue button
     Then the user should be redirected to the "How much total income did you get from all of your UK and foreign properties?" page
+    And the user selects the £1,000 or more radio button
+    And the user clicks the foreign property continue button
+    Then the user should be redirected to the "Which type of rental property do you have in the UK?" page
 
   Scenario: Agent user adds UK and Foreign Property details
     When the user logs into the service with the following details
@@ -132,6 +135,9 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
     Then the user should be redirected to the "UK and foreign property details" page
     And the user clicks the continue button
     Then the user should be redirected to the "How much total income did you get from all of your UK and foreign properties?" page
+    And the user selects the £1,000 or more radio button
+    And the user clicks the foreign property continue button
+    Then the user should be redirected to the "Which type of rental property does your client have in the UK?" page
 
 
 

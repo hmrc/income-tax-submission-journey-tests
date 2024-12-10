@@ -131,7 +131,7 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
     When the user clicks on the UK & Foreign Property About link
     Then the user should be redirected to the "UK and foreign property details" page
     And the user clicks the continue button
-    Then the user should be redirected to the "How much total income did you get from all of your UK and foreign properties?" page
+    Then the user should be redirected to the "How much total income did your client get from all of their UK and foreign properties?" page
 
 
 

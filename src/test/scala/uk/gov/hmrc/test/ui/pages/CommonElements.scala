@@ -488,7 +488,7 @@ trait CommonElements extends BasePage with Matchers {
     "Amount, premiums for a grant of lease" -> By.id("premiumsGrantLeaseAmount"),
     "premium amount"-> By.id("PremiumPayment"),
     "Reverse premiums received" -> By.cssSelector("#main-content > div > div > h1"),
-    "premium recieved amount"-> By.id("reversePremiumsReceivedAmount"),
+    "premium recieved amount"-> By.id("reversePremiums"),
     "Yes,premiums recieved" -> By.id("reversePremiumsReceived"),
     "No,premiums recieved" -> By.id("reversePremiumsReceived-no"),
     "Other income from property" -> By.cssSelector("#main-content > div > div > form > h1"),

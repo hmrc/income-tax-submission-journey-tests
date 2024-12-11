@@ -565,13 +565,13 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Scenario: Agent User - Check back links for adding new contractor EOY
     When the user logs into the service with the following details
-      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890  |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567891  |
       | Credential Strength | strong                                                                            |
       | Confidence Level    | 250                                                                               |
       | Affinity Group      | Agent                                                                             |
       | Enrolment Key 1     | HMRC-MTD-IT                                                                       |
       | Identifier Name 1   | MTDITID                                                                           |
-      | Identifier Value 1  | 1234567890                                                                        |
+      | Identifier Value 1  | 1234567891                                                                        |
       | Enrolment Key 2     | HMRC-AS-AGENT                                                                     |
       | Identifier Name 2   | AgentReferenceNumber                                                              |
       | Identifier Value 2  | XARN1234567                                                                       |

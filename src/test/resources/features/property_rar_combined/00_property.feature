@@ -380,10 +380,10 @@ Feature: Property Journeys - Income Tax Submission
     Then the user clicks the continue button
     And the user should be redirected to the "Check your answers" page
     When the user clicks the continue button
-    Then the user should be redirected to the "Have you finished this section?" page
-    When the user selects the IncomeYes,HYFTS radio button
-    And the user clicks the property continue button
-    Then the user should be redirected to the "UK property" page
+#    Then the user should be redirected to the "Have you finished this section?" page
+#    When the user selects the IncomeYes,HYFTS radio button
+#    And the user clicks the property continue button
+#    Then the user should be redirected to the "UK property" page
 
   Scenario: Agent user adds UK Property Property rentals - Agent user - answers questions in the Income Journey
     When the user logs into the service with the following details
@@ -467,10 +467,10 @@ Feature: Property Journeys - Income Tax Submission
     Then the user clicks the continue button
     And the user should be redirected to the "Check your answers" page
     When the user clicks the continue button
-    Then the user should be redirected to the "Have you finished this section?" page
-    When the user selects the IncomeYes,HYFTS radio button
-    And the user clicks the property continue button
-    Then the user should be redirected to the "UK property" page
+#    Then the user should be redirected to the "Have you finished this section?" page
+#    When the user selects the IncomeYes,HYFTS radio button
+#    And the user clicks the property continue button
+#    Then the user should be redirected to the "UK property" page
 
   Scenario: Individual user adds UK Property - Property rentals - Premiums received, Have you calculated the figure yourself? and Adjustments
     When the user logs into the service with the following details

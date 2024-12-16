@@ -30,7 +30,7 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
     When the user selects the Donations using Gift Aid radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Were you a foster carer or shared lives carer?" page
-    When the user selects the No radio button
+    When the user selects the no radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
     Then the "About you tag" on the page displays "Completed"
@@ -127,7 +127,7 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
     When the user selects the Donations using Gift Aid radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Were you a foster carer or shared lives carer?" page
-    When the user selects the No radio button
+    When the user selects the no radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
     Then the "About you tag" on the page displays "Completed"
@@ -171,7 +171,7 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
     When the user selects the Donations using Gift Aid radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Were you a foster carer or shared lives carer?" page
-    When the user selects the No radio button
+    When the user selects the no radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
     Then the "About you tag" on the page displays "Completed"

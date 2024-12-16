@@ -1,4 +1,4 @@
-@property
+#Tags to be added later + Agent journey
 
 Feature: Foreign Property Journey - Income Tax Submission
 

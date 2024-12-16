@@ -45,7 +45,7 @@ Feature: Self Employment Journeys - Income Tax Submission
     When the user selects the amount field and enters a value of 110.02
     And the user clicks the continue button
     Then the user should be redirected to the "Check your CIS deductions" page
-    When the user clicks the CIS save and continue button
+    When the user clicks on the CIS save and continue link
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the yes radio button
     And the user clicks the continue button
@@ -74,7 +74,7 @@ Feature: Self Employment Journeys - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the Construction Industry Schemes deductions link
     Then the user should be redirected to the "CIS deductions" page
-    When the user clicks the CIS save and continue button
+    When the user clicks on the CIS save and continue link
     Then the user should be redirected to the "Have you finished this section?" page
     When the user selects the yes radio button
     And the user clicks the continue button

@@ -171,7 +171,7 @@ Feature: Pensions Journeys - 05C Overseas Pensions - Overseas transfer charges -
     And the user selects the Name of pension scheme field and enters a value of TEST
     And the user selects the Pension Scheme Tax Reference field and enters a value of 123456
     And the user selects the Pension provider address field and enters a value of AB1 2DE
-    When the user selects the Country field and enters a value of France
+    When the user selects the Country field field and enters a value of France
     And the user clicks the Country List button
     And the user clicks the continue button
 

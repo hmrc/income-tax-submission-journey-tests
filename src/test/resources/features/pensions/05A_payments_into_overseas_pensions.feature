@@ -233,7 +233,7 @@ Feature: Pensions Journeys - 05A Overseas Pensions - Payments into Overseas Pens
     And the user clicks the continue button
 
     Then the user should be redirected to the "Double taxation agreement details" page
-    When the user selects the Country field and enters a value of Ghana
+    When the user selects the Country field field and enters a value of Ghana
     And the user clicks the Country List button
     When the user selects the amount in pounds field and enters a value of 100.20
     And the user clicks the continue button

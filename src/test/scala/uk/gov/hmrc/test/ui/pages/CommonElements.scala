@@ -311,7 +311,7 @@ trait CommonElements extends BasePage with Matchers {
     "Remove Reference" -> By.id("remove-pension-button-id"),
     "Overseas pensions" -> By.id("overseas-pensions-summary-link"),
     "Income from overseas pensions" -> By.id("income-from-overseas-pensions-link"),
-    "Country" -> By.id("countryId"),
+    "Country field" -> By.id("countryId"),
     "Country List" -> By.id("countryId__listbox"),
     "amount before tax" -> By.id("amount-1"),
     "tax paid" -> By.id("amount-2"),

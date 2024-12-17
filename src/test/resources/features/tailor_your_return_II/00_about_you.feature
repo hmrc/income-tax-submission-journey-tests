@@ -83,16 +83,16 @@ Feature: About You Journeys Tailor Your Return - Income Tax Submission
     When the user selects the No, my client did not donate to charity radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Marriage Allowance" page
-    When the user selects the No radio button
+    When the user selects the no radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Did your client, their partner or someone else get Child Benefit for a child living with them?" page
-    When the user selects the No radio button
+    When the user selects the no radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Was your client a foster carer or shared lives carer?" page
-    When the user selects the No radio button
+    When the user selects the no radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Did your client make any patent royalty payments?" page
-    When the user selects the No radio button
+    When the user selects the no radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Tax avoidance schemes" page
     When the user selects the No, my client was not in any tax avoidance schemes radio button

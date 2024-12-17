@@ -600,7 +600,7 @@ trait CommonElements extends BasePage with Matchers {
     "Your enhanced structures and buildings allowance claims" -> By.cssSelector("#main-content > div > div > form > h1"),
 
     // Foreign Property
-    "Foreign property select country" -> By.cssSelector("#main-content > div > div > ol:nth-of-type(4) > li > div.govuk-task-list__name-and-hint > a"),
+    "Foreign property select country" -> By.cssSelector("a[aria-describedby='foreign_property_select_country']"),
     "Country" -> By.id("country-autocomplete"),
     "Country option" -> By.id("country-autocomplete__option--0"),
 
@@ -609,10 +609,48 @@ trait CommonElements extends BasePage with Matchers {
     "Which country did your client receive this income from?" -> By.cssSelector("#main-content > div > div > h1"),
     "Countries where you rented out property" -> By.cssSelector("#main-content > div > div > h1"),
     "Countries where your client rented out property" -> By.cssSelector("#main-content > div > div > h1"),
+    "Foreign property Declare expenses" -> By.id("claimPropertyIncomeAllowanceOrExpenses-no"),
     "No" -> By.id("countriesRentedPropertyYesOrNo-no"),
     "Use the property income allowance" -> By.id("claimPropertyIncomeAllowanceOrExpenses"),
     "How much total income did your client get from all of their properties?" -> By.cssSelector("#main-content > div > div > form > div > fieldset > legend > h1"),
     "How much total income did your client get from all of their foreign properties?" -> By.cssSelector("#main-content > div > div > form > div > fieldset > legend > h1"),
+
+    // Foreign tax
+    "Foreign tax" -> By.cssSelector("a[aria-describedby='foreign_property_income_tax']"),
+    "Did you pay foreign tax on the income from your property in Spain?" -> By.cssSelector("#main-content > div > div > h1"),
+    "Foreign income tax Yes" -> By.id("foreignIncomeTaxForm"),
+    "Foreign income tax Amount" -> By.id("foreignTaxPaidOrDeducted"),
+    "Do you want to claim foreign tax credit relief?" -> By.cssSelector("#main-content > div > div > h1"),
+
+    // Foreign income
+    "Foreign income Spain" -> By.cssSelector("a[aria-describedby='foreign_property_income_ESP"),
+    "Income from your property in Spain" -> By.cssSelector("#main-content > div > div > h1"),
+    "Foreign property rental income" -> By.cssSelector("#main-content > div > div > form > h1"),
+    "Rental income" -> By.id("rentIncome"),
+    "No, calculate it for me" -> By.id("calculatedPremiumLeaseTaxable-no"),
+    "12 month period" -> By.id("twelveMonthPeriodsInLease"),
+    "Have you calculated the premium for the grant of a lease taxable amount?" -> By.cssSelector("#main-content > div > div > form > div > fieldset > legend > h1"),
+    "No disagree premiums grant lease" -> By.id("foreignPremiumsGrantLeaseForm-no"),
+    "Calculated premiums grant lease" -> By.id("premiumsOfLeaseGrant"),
+    "Foreign other income amount" -> By.id("otherPropertyIncome"),
+
+    // Foreign expenses
+    "Foreign expenses Spain" -> By.cssSelector("a[aria-describedby='foreign_property_expenses_ESP']"),
+    "Expenses for your property in Spain" -> By.cssSelector("#main-content > div > div > h1"),
+    "Claim individual expenses foreign" -> By.id("consolidatedOrIndividualExpenses-no"),
+    "Rents, rates and insurance costs for your property" -> By.cssSelector("#main-content > div > div > h1"),
+    "Rents, rates and insurance" -> By.id("foreignRentsRatesAndInsurance"),
+    "Property repairs and maintenance" -> By.cssSelector("#main-content > div > div > form > h1"),
+    "Property repairs and maintenance" -> By.id("foreignPropertyRepairsAndMaintenanceAmount"),
+    "Non-residential property finance costs" -> By.cssSelector("#main-content > div > div > form > h1"),
+    "Non-residential property finance costs" -> By.id("foreignNonResidentialPropertyFinanceCostsAmount"),
+    "Legal, management or other professional fees" -> By.cssSelector("#main-content > div > div > form > h1"),
+    "Legal, management or other professional fees" -> By.id("foreignProfessionalFeesAmount"),
+    "Costs of services provided, including wages" -> By.cssSelector("#main-content > div > div > form > h1"),
+    "Costs of services provided, including wages" -> By.id("foreignCostsOfServicesProvided"),
+    "Other allowable property expenses" -> By.cssSelector("#main-content > div > div > form > h1"),
+    "Other allowable property expenses" -> By.id("otherAllowablePropertyExpensesAmount"),
+
 
     // UK & Foreign Property
     "UK & Foreign Property About" -> By.cssSelector("#main-content > div > div > ol:nth-of-type(3) > li > div.govuk-task-list__name-and-hint > a"),

@@ -33,7 +33,7 @@ Feature: Pensions Journeys - 05B Overseas Pensions - Income from Overseas Pensio
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "What country is the pension scheme registered in?" page
-    When the user selects the Country field and enters a value of Togo
+    When the user selects the Country field field and enters a value of Togo
     And the user clicks the Country List button
     And the user clicks the continue button
     Then the user should be redirected to the "Pension payments" page
@@ -116,7 +116,7 @@ Feature: Pensions Journeys - 05B Overseas Pensions - Income from Overseas Pensio
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "What country is the pension scheme registered in?" page
-    When the user selects the Country field and enters a value of Togo
+    When the user selects the Country field field and enters a value of Togo
     And the user clicks the Country List button
     And the user clicks the continue button
     Then the user should be redirected to the "Pension payments" page

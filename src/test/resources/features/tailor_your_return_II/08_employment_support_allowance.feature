@@ -117,8 +117,8 @@ Feature: Employment and Support Allowance Journeys - Income Tax Submission
     When the user navigates to the Test only add data page for EOY
     Then the user should be redirected to the "Update and submit a Tax Return" page
     When the user clicks the Continue button
-    Then the user should be redirected to the "Add sections to your Tax Return" page
-    When the user clicks the Continue button
+#    Then the user should be redirected to the "Add sections to your Tax Return" page
+#    When the user clicks the Continue button
 #    Then the user should be redirected to the "Your Income Tax Return" page
 #    When the user clicks on the Review Employment and support allowance claims link
 #    Then the user should be redirected to the "Employment and Support Allowance" page

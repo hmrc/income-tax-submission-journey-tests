@@ -885,3 +885,24 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "Contractor details" page
     And the user should see the Contractor name field with the value of Boots Ltd
     And the user should see the Employer Reference Number field with the value of 123/AB4567
+
+  Scenario: Secondary Agent - Constructions Industry Scheme deductions
+    When the user logs into the service with the following details
+      | Redirect url               | /test-only/InYear/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567893 |
+      | Credential Strength        | weak                                                                                |
+      | Confidence Level           | 250                                                                                 |
+      | Affinity Group             | Agent                                                                               |
+      | Enrolment Key 1            | HMRC-AS-AGENT                                                                       |
+      | Identifier Name 1          | AgentReferenceNumber                                                                |
+      | Identifier Value 1         | XARN1234567                                                                         |
+      | Delegated Enrolment Key    | HMRC-MTD-IT-SUPP                                                                    |
+      | Delegated Identifier Name  | MTDITID                                                                             |
+      | Delegated Identifier Value | 1234567893                                                                          |
+      | Delegated Auth Rule        | mtd-it-auth-supp                                                                    |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the cis deductions link
+    Then the user should be redirected to the "CIS deductions" page
+    When the user clicks on the cis return to overview link
+    Then the user should be redirected to the "Your client’s Income Tax Return" page

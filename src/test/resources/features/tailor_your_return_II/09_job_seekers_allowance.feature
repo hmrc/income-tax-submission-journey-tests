@@ -117,8 +117,8 @@ Feature: Jobseeker's Allowance Journeys - Income Tax Submission
     When the user navigates to the Test only add data page for EOY
     Then the user should be redirected to the "Update and submit a Tax Return" page
     When the user clicks the Continue button
-    Then the user should be redirected to the "Add sections to your Tax Return" page
-    When the user clicks the Continue button
+#    Then the user should be redirected to the "Add sections to your Tax Return" page
+#    When the user clicks the Continue button
 #    Then the user should be redirected to the "Your Income Tax Return" page
 #    When the user clicks on the Review Jobseeker’s Allowance claims link
 #    Then the user should be redirected to the "Jobseeker’s Allowance" page

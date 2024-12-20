@@ -300,6 +300,63 @@ Feature: Employment Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Check your client’s employment details" page
 
+  Scenario: Secondary Agent user with at least one prior employment adds a new Employment and no to "Did your client leave this employer in the tax year?"
+    When the user logs into the service with the following details
+      | Redirect url               | /test-only/EOY/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |
+      | Credential Strength        | weak                                                                             |
+      | Confidence Level           | 250                                                                              |
+      | Affinity Group             | Agent                                                                            |
+      | Enrolment Key 1            | HMRC-AS-AGENT                                                                    |
+      | Identifier Name 1          | AgentReferenceNumber                                                             |
+      | Identifier Value 1         | XARN1234567                                                                      |
+      | Delegated Enrolment Key    | HMRC-MTD-IT-SUPP                                                                 |
+      | Delegated Identifier Name  | MTDITID                                                                          |
+      | Delegated Identifier Value | 1234567890                                                                       |
+      | Delegated Auth Rule        | mtd-it-auth-supp                                                                 |
+    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your client’s Income Tax Return" page
+    When the user clicks the addEmployment tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your client’s Income Tax Return" page
+    When the user clicks on the employment link
+    Then the user should be redirected to the "PAYE employment" page
+    And the status on the page is "Yes for gateway question"
+    When the user clicks on the Add another employer link
+    Then the user should be redirected to the "Which period of employment do you want to add?" page
+    When the user selects the first radio button: select existing one
+    And the user clicks the continue button
+    When the user clicks on the Add another employer link
+    Then the user should be redirected to the "Which period of employment do you want to add?" page
+    When the user selects the third radio button: select Add a new employer
+    And the user clicks the continue button
+    Then the user should be redirected to the "What’s the name of your client’s employer?" page
+    When the user selects the Employer name field and enters a value of Bear’s Blue House LTD
+    And the user clicks the continue button
+    Then the user should be redirected to the "When did your client start working at Bear’s Blue House LTD?" page
+    When the user selects the Day field and enters a value of 14
+    And the user selects the Month field and enters a value of 07
+    And the user selects the Year field and enters a value of 2012
+    And the user clicks the continue button
+    Then the user should be redirected to the "Did your client leave between 6 April 2023 and 5 April 2024?" page
+    When the user selects the no radio button
+    And the user clicks the continue button
+    Then the user should be redirected to the "What is Bear’s Blue House LTD’s employer PAYE reference? (optional)" page
+    When the user selects the PAYE reference field and enters a value of 123/AB456
+    And the user clicks the continue button
+    Then the user should be redirected to the "What’s your client’s payroll ID for Bear’s Blue House LTD? (optional)" page
+    When the user selects the Payroll id field and enters a value of 123456
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much did Bear’s Blue House LTD pay your client?" page
+    When the user selects the Pay field and enters a value of 2000.54
+    And the user clicks the continue button
+    Then the user should be redirected to the "How much UK tax was taken from your client’s Bear’s Blue House LTD earnings?" page
+    When the user selects the Tax field and enters a value of 20.54
+    And the user clicks the continue button
+    Then the user should be redirected to the "Check your client’s employment details" page
+
   Scenario: Agent user with at least one prior employment adds a new Employment and yes to "Did your client leave this employer in the tax year?"
     When the user logs into the service with the following details
       | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=BB444444A&ClientMTDID=1234567890 |

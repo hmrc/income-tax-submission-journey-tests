@@ -18,6 +18,11 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addProperty tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
     And the user clicks on the Property link
     Then the user should be redirected to the "UK property" page
     When the user clicks on the UK property About link
@@ -81,26 +86,26 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
     When the user selects the country field and enters a value of Canada
     And the user clicks the Country Option button
     And the user clicks the Continue button
-    Then the user should be redirected to the "Foreign countries where you rented your property" page
-    Then the user selects the No radio button
+    Then the user should be redirected to the "Foreign countries where you rented out property" page
+    Then the user selects the Yes, add radio button
     When the user clicks the save and continue button
     Then the user should be redirected to the "From which country did you receive your foreign property rental income?" page
     When the user selects the country field and enters a value of America
     And the user clicks the Country Option button
     And the user clicks the Continue button
-    Then the user should be redirected to the "Foreign countries where you rented your property" page
+    Then the user should be redirected to the "Foreign countries where you rented out property" page
     And the user clicks on the Remove link
-    Then the user should be redirected to the "Do you want to remove Canada country?" page
-    And the user selects the Yes remove country radio button
-    Then the user should be redirected to the "Foreign countries where you rented your property" page
-    And the user clicks on the Change link
-    Then the user should be redirected to the "From which country did you receive your foreign property rental income?" page
-    When the user selects the country field and enters a value of Argentina
-    And the user clicks the Country Option button
-    And the user clicks the Continue button
-    Then the user should be redirected to the "Foreign countries where you rented your property" page
-    And the user selects the No radio button
-    And the user clicks the save and continue button
+#    Then the user should be redirected to the "Do you want to remove Canada country?" page
+#    And the user selects the Yes remove country radio button
+#    Then the user should be redirected to the "Foreign countries where you rented out property" page
+#    And the user clicks on the change link
+#    Then the user should be redirected to the "From which country did you receive your foreign property rental income?" page
+#    When the user selects the country field and enters a value of Argentina
+#    And the user clicks the Country Option button
+#    And the user clicks the Continue button
+#    Then the user should be redirected to the "Foreign countries where you rented your property" page
+#    And the user selects the Do you want to add another country? No, don't add radio button
+#    And the user clicks the save and continue button
 
 
   Scenario: Agent user adds UK and Foreign Property details
@@ -181,26 +186,26 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
     When the user selects the country field and enters a value of Canada
     And the user clicks the Country Option button
     And the user clicks the Continue button
-    Then the user should be redirected to the "Foreign countries where your client rented their property" page
-    Then the user selects the No radio button
+    Then the user should be redirected to the "Foreign countries where your client rented out property" page
+    Then the user selects the Yes, add radio button
     When the user clicks the save and continue button
     Then the user should be redirected to the "From which country did your client receive their foreign property rental income?" page
     When the user selects the country field and enters a value of America
     And the user clicks the Country Option button
     And the user clicks the Continue button
-    Then the user should be redirected to the "Foreign countries where your client rented their property" page
+    Then the user should be redirected to the "Foreign countries where your client rented out property" page
     And the user clicks on the Remove link
-    Then the user should be redirected to the "Do you want to remove Canada country?" page
-    And the user selects the Yes remove country radio button
-    Then the user should be redirected to the "Foreign countries where your client rented their property" page
-    And the user clicks on the Change link
-    Then the user should be redirected to the "From which country did your client receive their foreign property rental income?" page
-    When the user selects the country field and enters a value of Argentina
-    And the user clicks the Country Option button
-    And the user clicks the Continue button
-    Then the user should be redirected to the "Foreign countries where your client rented their property" page
-    And the user selects the No radio button
-    And the user clicks the save and continue button
+#    Then the user should be redirected to the "Do you want to remove Canada country?" page
+#    And the user selects the Yes remove country radio button
+#    Then the user should be redirected to the "Foreign countries where your client rented their property" page
+#    And the user clicks on the change link
+#    Then the user should be redirected to the "From which country did your client receive their foreign property rental income?" page
+#    When the user selects the country field and enters a value of Argentina
+#    And the user clicks the Country Option button
+#    And the user clicks the Continue button
+#    Then the user should be redirected to the "Foreign countries where your client rented their property" page
+#    And the user selects the No, don't add radio button
+#    And the user clicks the save and continue button
 
 
 

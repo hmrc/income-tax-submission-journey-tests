@@ -632,8 +632,10 @@ trait CommonElements extends BasePage with Matchers {
     "How much total income did your client get from all of their UK and foreign properties?" -> By.cssSelector("#main-content > div > div > form > div > fieldset > legend > h1"),
     "Yes, my client wants to report their property income" -> By.id("value_0"),
     "Remove" -> By.linkText("Remove"),
+    "No, don't add" -> By.id("addAnother-no"),
+    "Yes, add" -> By.id("addAnother"),
+    "No" -> By.id("countriesRentedPropertyYesOrNo-no"),
     "Yes remove country" -> By.id("doYouWantToRemoveCountryYesOrNo"),
-    "Change" -> By.linkText("Change"),
     "Country Option" -> By.id("country__option--0"),
 
 

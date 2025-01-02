@@ -95,18 +95,20 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
     And the user clicks the Continue button
     Then the user should be redirected to the "Foreign countries where you rented out property" page
     And the user clicks on the Remove link
-#    Then the user should be redirected to the "Do you want to remove Canada country?" page
-#    And the user selects the Yes remove country radio button
-#    Then the user should be redirected to the "Foreign countries where you rented out property" page
-#    And the user clicks on the change link
-#    Then the user should be redirected to the "From which country did you receive your foreign property rental income?" page
-#    When the user selects the country field and enters a value of Argentina
-#    And the user clicks the Country Option button
+    Then the user should be redirected to the "Do you want to remove Canada country?" page
+    And the user selects the Yes remove country radio button
+    Then the user should be redirected to the "Foreign countries where you rented out property" page
+    And the user selects the No, don't add radio button
+    And the user clicks the save and continue button
+    Then the user should be redirected to the "Claim expenses or rent a room relief" page
+    And the user selects the expenses radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Claim property income allowance or expenses" page
+    And the user selects the use the property income allowance radio button
+    And the user clicks the Continue button
+#    Then the user should be redirected to the "Non-UK resident landlord" page
+#    And the user selects the Yes radio button
 #    And the user clicks the Continue button
-#    Then the user should be redirected to the "Foreign countries where you rented your property" page
-#    And the user selects the Do you want to add another country? No, don't add radio button
-#    And the user clicks the save and continue button
-
 
   Scenario: Agent user adds UK and Foreign Property details
     When the user logs into the service with the following details
@@ -195,17 +197,20 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
     And the user clicks the Continue button
     Then the user should be redirected to the "Foreign countries where your client rented out property" page
     And the user clicks on the Remove link
-#    Then the user should be redirected to the "Do you want to remove Canada country?" page
-#    And the user selects the Yes remove country radio button
-#    Then the user should be redirected to the "Foreign countries where your client rented their property" page
-#    And the user clicks on the change link
-#    Then the user should be redirected to the "From which country did your client receive their foreign property rental income?" page
-#    When the user selects the country field and enters a value of Argentina
-#    And the user clicks the Country Option button
+    Then the user should be redirected to the "Do you want to remove Canada country?" page
+    And the user selects the Yes remove country radio button
+    Then the user should be redirected to the "Foreign countries where your client rented out property" page
+    And the user selects the No, don't add radio button
+    And the user clicks the save and continue button
+    Then the user should be redirected to the "Claim expenses or rent a room relief" page
+    And the user selects the expenses radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Claim property income allowance or expenses" page
+    And the user selects the use the property income allowance radio button
+    And the user clicks the Continue button
+#    Then the user should be redirected to the "Non-UK resident landlord" page
+#    And the user selects the Yes radio button
 #    And the user clicks the Continue button
-#    Then the user should be redirected to the "Foreign countries where your client rented their property" page
-#    And the user selects the No, don't add radio button
-#    And the user clicks the save and continue button
 
 
 

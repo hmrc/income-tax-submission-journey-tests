@@ -635,12 +635,12 @@ trait CommonElements extends BasePage with Matchers {
     "No, don't add" -> By.id("addAnother-no"),
     "Yes, add" -> By.id("addAnother"),
     "No" -> By.id("countriesRentedPropertyYesOrNo-no"),
-    "Yes remove country" -> By.id("doYouWantToRemoveCountryYesOrNo"),
+    "Yes remove country" -> By.cssSelector("button.govuk-button.govuk-button--warning"),
     "Country Option" -> By.id("country__option--0"),
+    "expenses" -> By.id("ukAndForeignPropertyClaimExpensesOrRelief-no"),
+    "use the property income allowance" -> By.id("ukAndForeignPropertyClaimPropertyIncomeAllowanceOrExpenses"),
 
-
-
-    // Property - rent-a-room
+  // Property - rent-a-room
     "Rent-a-room" -> By.id("value_1"),
   "Rentaroom About" -> By.cssSelector("#main-content > div > div > ol:nth-child(5) > li > div.govuk-task-list__name-and-hint > a"),//By.id("rent_a_room_about_link"),
   "Rent a room" -> By.cssSelector("#main-content > div > div > h1"),

@@ -18,6 +18,11 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
     Then the user should be redirected to the "Update and submit an Income Tax Return" page
     And the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    When the user clicks the addProperty tailoring option
+    And the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
     And the user clicks on the Property link
     Then the user should be redirected to the "UK property" page
     When the user clicks on the UK property About link
@@ -67,6 +72,43 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
     Then the user should be redirected to the "UK and foreign property details" page
     And the user clicks the continue button
     Then the user should be redirected to the "How much total income did you get from all of your UK and foreign properties?" page
+    And the user selects the Less than £1,000 radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Do you want to report your property income?" page
+    And the user selects the Yes, I want to report my property income radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Which type of rental property do you have in the UK?" page
+    When the user clicks the following checkboxes:
+      | first option  |
+      | second option |
+    And the user clicks the continue button
+    Then the user should be redirected to the "From which country did you receive your foreign property rental income?" page
+    When the user selects the country field and enters a value of Canada
+    And the user clicks the Country Option button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Foreign countries where you rented out property" page
+    Then the user selects the Yes, add radio button
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "From which country did you receive your foreign property rental income?" page
+    When the user selects the country field and enters a value of America
+    And the user clicks the Country Option button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Foreign countries where you rented out property" page
+    And the user clicks on the Remove link
+    Then the user should be redirected to the "Do you want to remove Canada country?" page
+    And the user selects the Yes remove country radio button
+    Then the user should be redirected to the "Foreign countries where you rented out property" page
+    And the user selects the No, don't add radio button
+    And the user clicks the save and continue button
+    Then the user should be redirected to the "Claim expenses or rent a room relief" page
+    And the user selects the expenses radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Claim property income allowance or expenses" page
+    And the user selects the use the property income allowance radio button
+    And the user clicks the Continue button
+#    Then the user should be redirected to the "Non-UK resident landlord" page
+#    And the user selects the Yes radio button
+#    And the user clicks the Continue button
 
   Scenario: Agent user adds UK and Foreign Property details
     When the user logs into the service with the following details
@@ -132,8 +174,43 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
     Then the user should be redirected to the "UK and foreign property details" page
     And the user clicks the continue button
     Then the user should be redirected to the "How much total income did your client get from all of their UK and foreign properties?" page
-
-
+    And the user selects the Less than £1,000 radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Do you want to report your client’s property income?" page
+    And the user selects the Yes, my client wants to report their property income radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Which type of rental property does your client have in the UK?" page
+    When the user clicks the following checkboxes:
+      | first option  |
+      | second option |
+    And the user clicks the continue button
+    Then the user should be redirected to the "From which country did your client receive their foreign property rental income?" page
+    When the user selects the country field and enters a value of Canada
+    And the user clicks the Country Option button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Foreign countries where your client rented out property" page
+    Then the user selects the Yes, add radio button
+    When the user clicks the save and continue button
+    Then the user should be redirected to the "From which country did your client receive their foreign property rental income?" page
+    When the user selects the country field and enters a value of America
+    And the user clicks the Country Option button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Foreign countries where your client rented out property" page
+    And the user clicks on the Remove link
+    Then the user should be redirected to the "Do you want to remove Canada country?" page
+    And the user selects the Yes remove country radio button
+    Then the user should be redirected to the "Foreign countries where your client rented out property" page
+    And the user selects the No, don't add radio button
+    And the user clicks the save and continue button
+    Then the user should be redirected to the "Claim expenses or rent a room relief" page
+    And the user selects the expenses radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Claim property income allowance or expenses" page
+    And the user selects the use the property income allowance radio button
+    And the user clicks the Continue button
+#    Then the user should be redirected to the "Non-UK resident landlord" page
+#    And the user selects the Yes radio button
+#    And the user clicks the Continue button
 
 
 

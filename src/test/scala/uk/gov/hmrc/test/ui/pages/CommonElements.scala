@@ -602,6 +602,7 @@ trait CommonElements extends BasePage with Matchers {
     // Foreign Property
     "Foreign property select country" -> By.cssSelector("a[aria-describedby='foreign_property_select_country']"),
     "Country" -> By.id("country-autocomplete"),
+    "country" -> By.id("country"),
     "Country option" -> By.id("country-autocomplete__option--0"),
 
     "Foreign property details" -> By.cssSelector("#main-content > div > div > form > div > fieldset > legend > h1"),
@@ -656,8 +657,28 @@ trait CommonElements extends BasePage with Matchers {
     "UK & Foreign Property About" -> By.cssSelector("#main-content > div > div > ol:nth-of-type(3) > li > div.govuk-task-list__name-and-hint > a"),
     "Foreign property About" -> By.cssSelector("#main-content > div > div > ul > li:nth-child(3) > div.govuk-task-list__name-and-hint > a"),
     "I do not want to report my property income" -> By.id("reportPropertyIncome-no"),
+    "Less than £1,000" -> By.id("value_0"),
+    "Do you want to report your property income?" -> By.cssSelector("#main-content > div > div > h1"),
+    "Yes, I want to report my property income" -> By.id("value_0"),
+    "Which type of rental property do you have in the UK?" -> By.cssSelector("#main-content > div > div > h1"),
+    "Which type of rental property does your client have in the UK?" -> By.cssSelector("#main-content > div > div > h1"),
+    "Foreign countries where you rented out property" -> By.cssSelector("#main-content > div > div > h1"),
+    "Foreign countries where your client rented out property" -> By.cssSelector("#main-content > div > div > h1"),
+    "From which country did your client receive their foreign property rental income?" -> By.cssSelector("#main-content > div > div > h1"),
+    "From which country did you receive your foreign property rental income?" -> By.cssSelector("#main-content > div > div > h1"),
+    "Do you want to report your client’s property income?" -> By.cssSelector("#main-content > div > div > h1"),
+    "How much total income did your client get from all of their UK and foreign properties?" -> By.cssSelector("#main-content > div > div > form > div > fieldset > legend > h1"),
+    "Yes, my client wants to report their property income" -> By.id("value_0"),
+    "Remove" -> By.linkText("Remove"),
+    "No, don't add" -> By.id("addAnother-no"),
+    "Yes, add" -> By.id("addAnother"),
+    "No" -> By.id("countriesRentedPropertyYesOrNo-no"),
+    "Yes remove country" -> By.cssSelector("button.govuk-button.govuk-button--warning"),
+    "Country Option" -> By.id("country__option--0"),
+    "expenses" -> By.id("ukAndForeignPropertyClaimExpensesOrRelief-no"),
+    "use the property income allowance" -> By.id("ukAndForeignPropertyClaimPropertyIncomeAllowanceOrExpenses"),
 
-    // Property - rent-a-room
+  // Property - rent-a-room
     "Rent-a-room" -> By.id("value_1"),
   "Rentaroom About" -> By.cssSelector("#main-content > div > div > ol:nth-child(5) > li > div.govuk-task-list__name-and-hint > a"),//By.id("rent_a_room_about_link"),
   "Rent a room" -> By.cssSelector("#main-content > div > div > h1"),

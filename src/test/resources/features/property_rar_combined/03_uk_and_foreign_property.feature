@@ -106,9 +106,9 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
     Then the user should be redirected to the "Claim property income allowance or expenses" page
     And the user selects the use the property income allowance radio button
     And the user clicks the Continue button
-#    Then the user should be redirected to the "Non-UK resident landlord" page
-#    And the user selects the Yes radio button
-#    And the user clicks the Continue button
+    Then the user should be redirected to the "Non-UK resident landlord" page
+    And the user selects the Yes radio button
+    And the user clicks the Continue button
 
   Scenario: Agent user adds UK and Foreign Property details
     When the user logs into the service with the following details
@@ -208,9 +208,9 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
     Then the user should be redirected to the "Claim property income allowance or expenses" page
     And the user selects the use the property income allowance radio button
     And the user clicks the Continue button
-#    Then the user should be redirected to the "Non-UK resident landlord" page
-#    And the user selects the Yes radio button
-#    And the user clicks the Continue button
+    Then the user should be redirected to the "Non-UK resident landlord" page
+    And the user selects the Yes radio button
+    And the user clicks the Continue button
 
 
 

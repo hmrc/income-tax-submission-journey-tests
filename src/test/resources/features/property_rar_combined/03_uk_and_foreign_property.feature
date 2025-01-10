@@ -184,14 +184,14 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
       | first option  |
       | second option |
     And the user clicks the continue button
-    Then the user should be redirected to the "From which country did your client receive their foreign property rental income?" page
+    Then the user should be redirected to the "From which countries did your client receive their foreign property rental income?" page
     When the user selects the country field and enters a value of Canada
     And the user clicks the Country Option button
     And the user clicks the Continue button
     Then the user should be redirected to the "Foreign countries where your client rented out property" page
     Then the user selects the Yes, add radio button
     When the user clicks the save and continue button
-    Then the user should be redirected to the "From which country did your client receive their foreign property rental income?" page
+    Then the user should be redirected to the "From which countries did your client receive their foreign property rental income?" page
     When the user selects the country field and enters a value of America
     And the user clicks the Country Option button
     And the user clicks the Continue button

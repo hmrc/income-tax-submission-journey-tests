@@ -96,7 +96,8 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
     Then the user should be redirected to the "Foreign countries where you rented out property" page
     And the user clicks on the Remove link
     Then the user should be redirected to the "Do you want to remove Canada country?" page
-    And the user selects the Yes remove country radio button
+    And the user selects the Yes radio button
+    And the user clicks the Continue button
     Then the user should be redirected to the "Foreign countries where you rented out property" page
     And the user selects the No, don't add radio button
     And the user clicks the save and continue button
@@ -198,7 +199,8 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
     Then the user should be redirected to the "Foreign countries where your client rented out property" page
     And the user clicks on the Remove link
     Then the user should be redirected to the "Do you want to remove Canada country?" page
-    And the user selects the Yes remove country radio button
+    And the user selects the Yes radio button
+    And the user clicks the Continue button
     Then the user should be redirected to the "Foreign countries where your client rented out property" page
     Then Wait 5
     And the user clicks on the Change country link

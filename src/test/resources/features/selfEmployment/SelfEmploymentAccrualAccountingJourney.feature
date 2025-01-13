@@ -1,4 +1,4 @@
-@SelfEmployment
+@SelfEmployment @screenshots
 Feature: Self Employment Accrual Accounting Journey
 
   Background:

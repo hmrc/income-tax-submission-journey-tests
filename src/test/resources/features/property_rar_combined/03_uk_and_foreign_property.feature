@@ -1,4 +1,4 @@
-@property
+@property @wip
 
 Feature: UK and Foreign Property Journey - Income Tax Submission
 
@@ -203,6 +203,10 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
     And the user clicks the Continue button
     Then the user should be redirected to the "Foreign countries where your client rented out property" page
     Then Wait 5
+    And the user clicks on the Change country link
+    Then the user should be redirected to the "Which country did your client receive their foreign property rental income from?" page
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Foreign countries where your client rented out property" page
     And the user clicks on the Change country link
     Then the user should be redirected to the "Which country did your client receive their foreign property rental income from?" page
     And the user clicks the Continue button

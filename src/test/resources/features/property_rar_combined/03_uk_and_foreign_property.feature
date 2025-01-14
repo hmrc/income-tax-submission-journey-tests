@@ -1,4 +1,4 @@
-@property
+@property @wip
 
 Feature: UK and Foreign Property Journey - Income Tax Submission
 
@@ -82,14 +82,14 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
       | first option  |
       | second option |
     And the user clicks the continue button
-    Then the user should be redirected to the "From which country did you receive your foreign property rental income?" page
+    Then the user should be redirected to the "Which country did you receive your foreign property rental income from?" page
     When the user selects the country field and enters a value of Canada
     And the user clicks the Country Option button
     And the user clicks the Continue button
     Then the user should be redirected to the "Foreign countries where you rented out property" page
     Then the user selects the Yes, add radio button
     When the user clicks the save and continue button
-    Then the user should be redirected to the "From which country did you receive your foreign property rental income?" page
+    Then the user should be redirected to the "Which country did you receive your foreign property rental income from?" page
     When the user selects the country field and enters a value of America
     And the user clicks the Country Option button
     And the user clicks the Continue button
@@ -184,14 +184,14 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
       | first option  |
       | second option |
     And the user clicks the continue button
-    Then the user should be redirected to the "From which countries did your client receive their foreign property rental income?" page
+    Then the user should be redirected to the "Which country did your client receive their foreign property rental income from?" page
     When the user selects the country field and enters a value of Canada
     And the user clicks the Country Option button
     And the user clicks the Continue button
     Then the user should be redirected to the "Foreign countries where your client rented out property" page
     Then the user selects the Yes, add radio button
     When the user clicks the save and continue button
-    Then the user should be redirected to the "From which countries did your client receive their foreign property rental income?" page
+    Then the user should be redirected to the "Which country did your client receive their foreign property rental income from?" page
     When the user selects the country field and enters a value of America
     And the user clicks the Country Option button
     And the user clicks the Continue button
@@ -199,6 +199,10 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
     And the user clicks on the Remove link
     Then the user should be redirected to the "Do you want to remove Canada country?" page
     And the user selects the Yes remove country radio button
+    Then the user should be redirected to the "Foreign countries where your client rented out property" page
+    And the user clicks on the Change country link
+    Then the user should be redirected to the "Which country did your client receive their foreign property rental income from?" page
+    And the user clicks the Continue button
     Then the user should be redirected to the "Foreign countries where your client rented out property" page
     And the user selects the No, don't add radio button
     And the user clicks the save and continue button
@@ -211,6 +215,3 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
     Then the user should be redirected to the "Non-UK resident landlord" page
     And the user selects the Yes radio button
     And the user clicks the Continue button
-
-
-

@@ -15,7 +15,7 @@ Feature: Foreign Property Journey - Income Tax Submission
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to "Update and submit an Income Tax Return" page
     And the user clicks the Continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     And the user clicks on the Property link

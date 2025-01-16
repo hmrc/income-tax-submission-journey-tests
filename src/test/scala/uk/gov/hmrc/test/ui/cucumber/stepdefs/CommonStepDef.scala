@@ -36,6 +36,10 @@ class CommonStepDef extends Steps with TaxYearHelper {
     driver.getTitle.replace("\u00A0", " ") should be(s"$title - $serviceName - $govUkExtension")
   }
 
+  Then("""^the user should be redirected to "(.*)" page$""") { (title: String) =>
+    driver.getTitle.replace("\u00A0", " ") should be(s"$title - $govUkExtension")
+  }
+
   Then("""^the user is redirected to the "(.*)" "(.*)" "(.*)" page$""") { (title: String, taxYear: String, titleCont: String) =>
     val expectedTaxYear = replaceTaxYear(taxYear)
     driver.getTitle.replace("\u00A0", " ") should be(s"$title $expectedTaxYear $titleCont - $serviceName - $govUkExtension")

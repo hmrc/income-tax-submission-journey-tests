@@ -18,7 +18,7 @@ Feature: Crystallisation Journeys - Income Tax Submission
       | Enrolment Key 2     | IR-SA           |
       | Identifier Name 2   | UTR             |
       | Identifier Value 2  | 0008888888      |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks the Continue button
@@ -40,7 +40,7 @@ Feature: Crystallisation Journeys - Income Tax Submission
       | Enrolment Key 2     | HMRC-AS-AGENT                                                                         |
       | Identifier Name 2   | AgentReferenceNumber                                                                  |
       | Identifier Value 2  | 0008888888                                                                            |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     Then the user navigates to the V&C login page page

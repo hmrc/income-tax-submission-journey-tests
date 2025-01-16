@@ -17,7 +17,7 @@ Feature: Pensions Journeys - 02A Income from Pensions - UK Pension Income - Inco
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the addSections link
@@ -80,7 +80,7 @@ Feature: Pensions Journeys - 02A Income from Pensions - UK Pension Income - Inco
       | Enrolment Key 2     | HMRC-AS-AGENT                                                                    |
       | Identifier Name 2   | AgentReferenceNumber                                                             |
       | Identifier Value 2  | XARN1234567                                                                      |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the addSections link
@@ -115,7 +115,7 @@ Feature: Pensions Journeys - 02A Income from Pensions - UK Pension Income - Inco
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks on the addSections link

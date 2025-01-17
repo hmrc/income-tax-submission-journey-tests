@@ -29,7 +29,7 @@ class CommonStepDef extends Steps with TaxYearHelper {
   val viewAndChangeServiceName = "Business Tax account"
   val viewAndChangeServiceNameAgent = "Your client’s Income Tax details"
   val govUkExtension = "GOV.UK"
-  val selfEmployment = "income-tax-self-employment-frontend"
+  val selfEmployment = "Update and submit an Income Tax Return"
   val pensions = "Update and submit an Income Tax Return - site.govuk - Update and submit an Income Tax Return"
 
   Then("""^the user should be redirected to the "(.*)" page$""") { (title: String) =>

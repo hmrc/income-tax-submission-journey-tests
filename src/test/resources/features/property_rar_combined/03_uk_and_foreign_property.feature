@@ -1,4 +1,4 @@
-@property @wip
+@property
 
 Feature: UK and Foreign Property Journey - Income Tax Submission
 

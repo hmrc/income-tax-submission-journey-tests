@@ -431,7 +431,7 @@ Feature: Self Employment Accrual Accounting Journey
     Then the user should be redirected to the "Self-employment" page under self employment
 
     # Structures and Buildings Allowance
-    When the user clicks on the Structures and Buildings Allowance link
+    When the user clicks on the Structures and buildings allowance link
     Then the user should be redirected to the "Structures and buildings allowance" page under self employment
     And the user selects the yes radio button and clicks the Continue button
     Then the user should be redirected to the "Can you still claim?" page under self employment

@@ -507,9 +507,9 @@ Feature: Self Employment Accrual Accounting Journey
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-    # Annual Investment Allowance
-    When the user clicks on the Annual Investment Allowance link
-    Then the user should be redirected to the "Annual Investment Allowance" page under self employment
+    # Annual investment allowance
+    When the user clicks on the Annual investment allowance link
+    Then the user should be redirected to the "Annual investment allowance" page under self employment
     And the user selects the yes radio button and clicks the Continue button
     Then the user should be redirected to the "How much annual investment allowance do you want to claim?" page under self employment
     And the user selects the Amount-field field and enters a value of 1,000

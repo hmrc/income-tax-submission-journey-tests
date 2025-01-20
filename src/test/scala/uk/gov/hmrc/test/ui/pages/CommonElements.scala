@@ -810,7 +810,7 @@ trait CommonElements extends BasePage with Matchers {
     "full cost" -> By.id("fullCost"),
     "Zero-emission goods vehicles" -> By.xpath("//a[text()=' Zero-emission goods vehicles ']"),
     "Electric vehicle charge-points" -> By.xpath("//a[text()=' Electric vehicle charge-points ']"),
-    "Structures and Buildings Allowance" -> By.xpath("//a[text()=' Structures and Buildings Allowance ']"),
+    "Structures and buildings allowance" -> By.xpath("//a[text()=' Structures and buildings allowance ']"),
     "QualifyingUse Day" -> By.id("structuresBuildingsQualifyingUseDate.day"),
     "QualifyingUse Month" -> By.id("structuresBuildingsQualifyingUseDate.month"),
     "QualifyingUse Year" -> By.id("structuresBuildingsQualifyingUseDate.year"),
@@ -823,7 +823,7 @@ trait CommonElements extends BasePage with Matchers {
     "Qualifying start Day" -> By.id("qualifyingUseStartDate.day"),
     "Qualifying start Month" -> By.id("qualifyingUseStartDate.month"),
     "Qualifying start Year" -> By.id("qualifyingUseStartDate.year"),
-    "Annual Investment Allowance" -> By.xpath("//a[text()=' Annual Investment Allowance ']"),
+    "Annual investment allowance" -> By.xpath("//a[text()=' Annual investment allowance ']"),
     "Writing down allowance" -> By.cssSelector("#main-content > div > div > h1"),
     "Work out your adjusted profit or loss" -> By.xpath("//a[text()=' Work out your adjusted profit or loss ']"),
     "When you reported the loss" -> By.cssSelector("#main-content > div > div > form > h1")

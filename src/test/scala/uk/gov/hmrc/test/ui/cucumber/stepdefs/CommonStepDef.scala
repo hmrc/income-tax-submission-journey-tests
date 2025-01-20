@@ -87,10 +87,6 @@ class CommonStepDef extends Steps with TaxYearHelper {
     CommonPage.clickOnLink(linkName)
   }
 
-  When("""^Wait 5$""") { () =>
-    Thread.sleep(5000)
-  }
-
   When("""^the user selects the (.*) radio button$""") { radioButtonIdentifier: String =>
     CommonPage.clickOnRadioButton(radioButtonIdentifier)
   }

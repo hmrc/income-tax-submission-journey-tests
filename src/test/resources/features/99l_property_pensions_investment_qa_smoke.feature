@@ -15,7 +15,7 @@ Feature: Smoke Income from Property, Pensions And Investments Tailor Your Return
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 9876543210  |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     Then the user navigates to the Rental income page

@@ -113,7 +113,7 @@ Feature: About You Journeys Tailor Your Return - Income Tax Submission
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234569990  |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to "Update and submit an Income Tax Return" page
     Then the user navigates to the Tailor return start page
       ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for EOY
@@ -148,7 +148,7 @@ Feature: About You Journeys Tailor Your Return - Income Tax Submission
       | Enrolment Key 2     | HMRC-AS-AGENT                                                                    |
       | Identifier Name 2   | AgentReferenceNumber                                                             |
       | Identifier Value 2  | 1234568890                                                                       |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to "Update and submit an Income Tax Return" page
     Then the user navigates to the Tailor return start page
       ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for EOY

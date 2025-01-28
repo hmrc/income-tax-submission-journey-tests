@@ -18,7 +18,7 @@ Feature: Smoke Estimation Journey in QA - Income Tax Submission
       | Enrolment Key 2     | IR-SA           |
       | Identifier Name 2   | UTR             |
       | Identifier Value 2  | XAIT00000888888 |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to "Update and submit an Income Tax Return" page
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks the Update tax calculation button

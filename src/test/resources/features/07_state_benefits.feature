@@ -362,7 +362,7 @@ Feature: State Benefits Journeys - Income Tax Submission
 #      | Delegated Identifier Name  | MTDITID                                                                          |
 #      | Delegated Identifier Value | 1234567890                                                                       |
 #      | Delegated Auth Rule        | mtd-it-auth-supp                                                                 |
-#    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+#    Then the user should be redirected to "Update and submit an Income Tax Return" page
 #    When the user clicks the continue button
 #    Then the user should be redirected to the "Your client’s Income Tax Return" page
 #    When the user clicks on the State benefits link

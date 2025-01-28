@@ -13,7 +13,7 @@ Feature: About You Journeys Tailor Your Return - Income Tax Submission
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to "Update and submit an Income Tax Return" page
     Then the user navigates to the QA Tailor return start page
     When the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page
@@ -57,7 +57,7 @@ Feature: About You Journeys Tailor Your Return - Income Tax Submission
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
-    Then the user should be redirected to the "Update and submit an Income Tax Return" page
+    Then the user should be redirected to "Update and submit an Income Tax Return" page
     Then the user navigates to the QA Tailor return start page
     When the user clicks the Continue button
     Then the user should be redirected to the "Add sections to your Tax Return" page

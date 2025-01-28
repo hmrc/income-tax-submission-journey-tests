@@ -31,7 +31,7 @@ Feature: Self Employment accrual accounting -Use Maximum trading allowance Journ
     Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the View Self Employment link
     Then the user should be redirected to the "Check your client’s self-employment details" page under self employment
-    And the user clicks the Self Employment Save and continue button
+    And the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
     When the user clicks the Continue button
@@ -172,7 +172,7 @@ Feature: Self Employment accrual accounting -Use Maximum trading allowance Journ
     Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks on the View Self Employment link
     Then the user should be redirected to the "Check your client’s self-employment details" page under self employment
-    And the user clicks the Self Employment Save and continue button
+    And the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks the Continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment

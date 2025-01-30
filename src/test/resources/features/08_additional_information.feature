@@ -374,6 +374,27 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user clicks the return to overview button
     Then the user should be redirected to the "Your Income Tax Return" page
 
+  @gains
+  Scenario: Returning flow - Individual User with prior Gains Data, removes policy
+    When the user logs into the service with the following details
+      | Redirect url        | /InYear/start |
+      | Credential Strength | strong        |
+      | Confidence Level    | 250           |
+      | Affinity Group      | Individual    |
+      | Nino                | AA637489D     |
+      | Enrolment Key 1     | HMRC-MTD-IT   |
+      | Identifier Name 1   | MTDITID       |
+      | Identifier Value 1  | 1234567890    |
+    Then the user should be redirected to "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the Gains from policies and contracts link
+    Then the user should be redirected to the "Your policies" page
+    When the user clicks on the Policy remove link
+    Then the user should be redirected to the "Are you sure you want to remove this policy?" page
+    When the user clicks the remove button
+    Then the user should be redirected to the "Your policies" page
+
     ################################# Gains Voided ISA Journey ####################################################################################
   @gains
   Scenario: Individual User maximal flow - Gains - User says yes to all questions

@@ -361,6 +361,7 @@ trait CommonElements extends BasePage with Matchers {
     "Policy number"                                                   -> By.id("value"),
     "Gains Year"                                                      -> By.id("year"),
     "Policy remove"                                                   -> By.id("policy-remove"),
+    "remove"                                                          -> By.id("remove"),
     "Updated Tag"                                                     -> By.xpath("//*[contains(text(),'Updated')]/../../span/a[@id='gains_link']"),
     "Add a policy"                                                    -> By.id("continue"),
     "Excluded for Gains"                                              -> By.xpath("//*[contains(text(),'Excluded')]/../../span/a[@id='gains_link']"),

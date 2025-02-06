@@ -655,7 +655,7 @@ trait CommonElements extends BasePage with Matchers {
 
 
     // UK & Foreign Property
-    "UK & Foreign Property About" -> By.cssSelector("#main-content > div > div > ol:nth-of-type(3) > li > div.govuk-task-list__name-and-hint > a"),
+    "UK & Foreign Property About" -> By.id("uk_and_foreign_property_about_link"),
     "Foreign property About" -> By.cssSelector("#main-content > div > div > ul > li:nth-child(3) > div.govuk-task-list__name-and-hint > a"),
     "I do not want to report my property income" -> By.id("reportPropertyIncome-no"),
     "Less than £1,000" -> By.id("value_0"),

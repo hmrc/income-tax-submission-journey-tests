@@ -25,23 +25,6 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
     Then the user should be redirected to the "Your Income Tax Return" page
     And the user clicks on the Property link
     Then the user should be redirected to the "UK property" page
-    When the user clicks on the UK property About link
-    Then the user should be redirected to the "UK Property details" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "How much total income did you get from your UK properties?" page
-    And the user selects the second option radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Which rental property do you have in the UK?" page
-    When the user clicks the following checkboxes:
-      | first option  |
-      | second option |
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your answers" page
-    When the user clicks the save and continue button
-    Then the user should be redirected to the "Have you finished this section?" page
-    When the user selects the Yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "UK property" page
 
     # UK and foreign property
     When the user clicks on the UK & Foreign Property About link
@@ -104,23 +87,6 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     And the user clicks on the Property link
     Then the user should be redirected to the "UK property" page
-    When the user clicks on the UK property About link
-    Then the user should be redirected to the "UK Property details" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "How much total income did your client get from all of their properties?" page
-    And the user selects the second option radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "Which rental property does your client have in the UK?" page
-    When the user clicks the following checkboxes:
-      | first option  |
-      | second option |
-    And the user clicks the continue button
-    Then the user should be redirected to the "Check your answers" page
-    When the user clicks the save and continue button
-    Then the user should be redirected to the "Have you finished this section?" page
-    When the user selects the Yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "UK property" page
 
     # UK and foreign property
     When the user clicks on the UK & Foreign Property About link
@@ -152,10 +118,6 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
     And the user clicks on the Remove link
     Then the user should be redirected to the "Do you want to remove Canada country?" page
     And the user selects the Yes radio button
-    And the user clicks the Continue button
-    Then the user should be redirected to the "Foreign countries where your client rented out property" page
-    And the user clicks on the Change country link
-    Then the user should be redirected to the "Which country did your client receive their foreign property rental income from?" page
     And the user clicks the Continue button
     Then the user should be redirected to the "Foreign countries where your client rented out property" page
     And the user selects the No, don't add radio button

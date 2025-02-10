@@ -265,7 +265,7 @@ trait CommonElements extends BasePage with Matchers {
     //State Benefits Elements
     // "State benefits"                          -> By.id("stateBenefits_link"),
     "State benefits"                          -> By.cssSelector("#stateBenefits_link"),
-    "Jobseeker’s Allowance"                   -> By.id("jobSeekersAllowance_link"),
+    "Jobseeker’s Allowance"                   -> By.cssSelector("#main-content > div > div > ul > li:nth-child(2) > div.govuk-task-list__name-and-hint > a"),
     "Add missing claim"                       -> By.id("add-missing-claim-button-id"),
     "claim day"                               -> By.id("value-for-day"),
     "claim month"                             -> By.id("value-for-month"),
@@ -283,7 +283,7 @@ trait CommonElements extends BasePage with Matchers {
     "state benefit change amount"             -> By.cssSelector("div.govuk-summary-list__row:nth-child(5) > dd:nth-child(3) > a:nth-child(1) > span:nth-child(1)"),
     "state benefit save and continue"         -> By.id("save-and-continue-button-id"),
     "state benefit back"                      -> By.id("back-link"),
-    "Employment and Support Allowance"        -> By.id("employmentSupportAllowance_link"),
+    "Employment and Support Allowance"        -> By.cssSelector("#main-content > div > div > ul > li:nth-child(1) > div.govuk-task-list__name-and-hint > a"),
     "The date you started getting Jobseeker’s Allowance must include a day" -> By.id("value-for-error"),
     "The date you started getting Jobseeker’s Allowance must include a month"   -> By.id("emptyMonth-error"),
     "The date you started getting Jobseeker’s Allowance must include a year" -> By.id("emptyYear-error"),

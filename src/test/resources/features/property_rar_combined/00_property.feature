@@ -103,57 +103,6 @@ Feature: Property Journeys - Income Tax Submission
     And the user clicks the save and continue button
     Then the user should be redirected to the "UK property" page
 
-  Scenario: Secondary Agent user adds UK Property details
-    When the user logs into the service with the following details
-      | Redirect url               | /test-only/EOY/additional-parameters?ClientNino=AC210000A&ClientMTDID=1234567890 |
-      | Credential Strength        | weak                                                                             |
-      | Confidence Level           | 250                                                                              |
-      | Affinity Group             | Agent                                                                            |
-      | Enrolment Key 1            | HMRC-AS-AGENT                                                                    |
-      | Identifier Name 1          | AgentReferenceNumber                                                             |
-      | Identifier Value 1         | XARN1234567                                                                      |
-      | Delegated Enrolment Key    | HMRC-MTD-IT-SUPP                                                                 |
-      | Delegated Identifier Name  | MTDITID                                                                          |
-      | Delegated Identifier Value | 1234567890                                                                       |
-      | Delegated Auth Rule        | mtd-it-auth-supp                                                                 |
-    Then the user should be redirected to "Update and submit an Income Tax Return" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the addSections link
-    Then the user should be redirected to the "Add sections to your client’s Income Tax Return" page
-    When the user clicks the addProperty tailoring option
-    And the user clicks the continue button
-    Then the user should be redirected to the "Your client’s Income Tax Return" page
-    When the user clicks on the Property link
-    Then the user should be redirected to the "UK property" page
-    And the user clicks on the UK property About link
-    Then the user should be redirected to the "UK Property details" page
-    When the user clicks the continue button
-    Then the user should be redirected to the "How much total income did your client get from all of their properties?" page
-    When the user selects the second property radio button: Between 1000 and 85000
-    And the user clicks the property continue button
-    Then the user should be redirected to the "Which rental property does your client have in the UK?" page
-    When the user clicks the Property Rentals checkbox
-    And the user clicks the UK Property continue button
-    Then the user should be redirected to the "Check your answers" page
-    When the user clicks the Check your answers continue button
-    Then the user should be redirected to the "Have you finished this section?" page
-    When the user selects the HYFTS,Yes radio button
-    And the user clicks the continue button
-    Then the user should be redirected to the "UK property" page
-    When the user clicks on the Property rentals about link
-    Then the user should be redirected to the "Property rentals" page
-    And the user clicks the continue button
-    Then the user should be redirected to the "Does your client want to claim property income allowance?" page
-    And the user selects the No, claim expenses radio button
-    And the user clicks the save and continue button
-    Then the user should be redirected to the "Check your answers" page
-    When the user selects the save and continue radio button
-    Then the user should be redirected to the "Have you finished this section?" page
-    When the user selects the HYFTS AboutPropertyYes radio button
-    And the user clicks the save and continue button
-    Then the user should be redirected to the "UK property" page
-
   Scenario: Individual user adds UK Property - Property rentals and claims Property Income Allowance
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |

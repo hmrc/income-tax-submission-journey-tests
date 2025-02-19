@@ -225,21 +225,3 @@ Feature: UK Insurance Gains Journeys - Income Tax Submission
     Then the user should be redirected to the "Your client's policies" page
     And the user clicks the return to overview button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
-
-  Scenario: Secondary Agent User authorised
-    When the user logs into the service with the following details
-      | Redirect url               | /test-only/InYear/additional-parameters?ClientNino=AA123457A&ClientMTDID=1234567893 |
-      | Credential Strength        | weak                                                                                |
-      | Confidence Level           | 250                                                                                 |
-      | Affinity Group             | Agent                                                                               |
-      | Enrolment Key 1            | HMRC-AS-AGENT                                                                       |
-      | Identifier Name 1          | AgentReferenceNumber                                                                |
-      | Identifier Value 1         | XARN1234567                                                                         |
-      | Delegated Enrolment Key    | HMRC-MTD-IT-SUPP                                                                    |
-      | Delegated Identifier Name  | MTDITID                                                                             |
-      | Delegated Identifier Value | 1234567893                                                                          |
-      | Delegated Auth Rule        | mtd-it-auth-supp                                                                    |
-    ## TODO: delete the following steps once SASS-10357 gets implemented
-    Then the user navigates to the Tailor return start page
-    When the user visits Gains gateway
-    Then the user should be redirected to the "Gains from life insurance policies and contracts" page

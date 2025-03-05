@@ -7,7 +7,7 @@ Feature: Income from Property, Pensions And Investments Tailor Your Return - Inc
 
   Scenario: Individual User maximal flow - Income from Property, Pensions And Investments - Tailor your return
     When the user logs into the service with the following details
-      | Redirect url        | /InYear/start |
+      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA123456A&ClientMTDID=1234567890 |
       | Credential Strength | strong        |
       | Confidence Level    | 250           |
       | Affinity Group      | Individual    |

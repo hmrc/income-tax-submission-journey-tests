@@ -36,7 +36,7 @@ Feature: Add sections Journeys Tailor Your Return - Income Tax Submission
 
   Scenario: Individual User completes all sections on add sections page - Tailor your return
     When the user logs into the service with the following details
-      | Redirect url        | /EOY/start  |
+      | Redirect url        | /test-only/EOY/additional-parameters?ClientNino=AA123456A&ClientMTDID=1234567000 |
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |

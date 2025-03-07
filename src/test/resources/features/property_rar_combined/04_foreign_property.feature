@@ -131,16 +131,16 @@ Feature: Foreign Property Journey - Income Tax Submission
     Then the user should be redirected to the "Allowances for your property in Spain" page
     And the user clicks the Continue button
     Then the user should be redirected to the "Zero-emission car allowance" page
-    And the user selects the Zero-emission car allowance amount field and enters a value of 300.25
+    And the user selects the Foreign zero-emission car allowance amount field and enters a value of 300.25
     And the user clicks the Continue button
     Then the user should be redirected to the "Zero-emission goods vehicles" page
     And the user selects the Zero-emission goods vehicles amount field and enters a value of 600
     And the user clicks the Continue button
     Then the user should be redirected to the "Replacement of domestic goods" page
-    And the user selects the Replacement of domestic goods amount field and enters a value of 32
+    And the user selects the Foreign replacement of domestic goods amount field and enters a value of 32
     And the user clicks the Continue button
     Then the user should be redirected to the "Other capital allowances" page
-    And the user selects the Other capital allowances amount field and enters a value of 180.27
+    And the user selects the Foreign other capital allowances amount field and enters a value of 180.27
     And the user clicks the Continue button
     And the user should be redirected to the "Check your answers" page
     When the user clicks the save and continue button
@@ -162,10 +162,10 @@ Feature: Foreign Property Journey - Income Tax Submission
     And the user selects the Year field and enters a value of 2024
     When the user clicks the Continue button
     Then the user should be redirected to the "Structures and buildings allowance qualifying amount" page
-    And the user selects the sba foreign qualifying amount field and enters a value of 750
+    And the user selects the Foreign sba qualifying amount field and enters a value of 750
     When the user clicks the Continue button
     Then the user should be redirected to the "How much is your structures and buildings allowance claim?" page
-    And the user selects the sba foreign claim amount field and enters a value of 15
+    And the user selects the Foreign sba claim amount field and enters a value of 15
     When the user clicks the Continue button
     And the user selects the Building name field and enters a value of Crest House
     And the user selects the Building number field and enters a value of 83

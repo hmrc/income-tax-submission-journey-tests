@@ -641,7 +641,7 @@ trait CommonElements extends BasePage with Matchers {
     "Rental income" -> By.id("rentIncome"),
     "No, calculate it for me" -> By.id("calculatedPremiumLeaseTaxable-no"),
     "12 month period" -> By.id("twelveMonthPeriodsInLease"),
-    "Have you calculated the premium for the grant of a lease taxable amount?" -> By.cssSelector("#main-content > div > div > form > div > fieldset > legend > h1"),
+    "Have you calculated the taxable amount for the premium for the grant of a lease?" -> By.cssSelector("<h1 class=\"govuk-heading-l\">Have you calculated the taxable amount for the premium for the grant of a lease?</h1>"),
     "No disagree premiums grant lease" -> By.id("foreignPremiumsGrantLeaseForm-no"),
     "Calculated premiums grant lease" -> By.id("premiumsOfLeaseGrant"),
     "Foreign other income amount" -> By.id("otherPropertyIncome"),

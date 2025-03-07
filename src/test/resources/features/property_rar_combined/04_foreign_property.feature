@@ -71,7 +71,7 @@ Feature: Foreign Property Journey - Income Tax Submission
     Then the user should be redirected to the "Premiums for the grant of a lease" page
     When the user selects the Yes radio button
     And the user clicks the Continue button
-    Then the user should be redirected to the "Have you calculated the premium for the grant of a lease taxable amount?" page
+    Then the user should be redirected to the "Have you calculated the taxable amount for the premium for the grant of a lease?" page
     When the user selects the No, calculate it for me radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "How much did you receive for the grant of a lease?" page

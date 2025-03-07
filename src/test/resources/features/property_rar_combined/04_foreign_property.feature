@@ -306,14 +306,6 @@ Feature: Foreign Property Journey - Income Tax Submission
     Then the user should be redirected to the "Your Property Income Allowance claim" page
     And the user selects the PIA claim amount field and enters a value of 240
     And the user clicks the Continue button
-
-#    Then the user should be redirected to the "Residential property finance costs" page
-#    And the user selects the Residential property finance costs amount field and enters a value of 240
-#    And the user clicks the Continue button
-#    Then the user should be redirected to the "Unused residential property finance costs brought forward" page
-#    And the user selects the Yes radio button
-#    Then the user selects the Foreign unused residential finance cost amount field and enters a value of 6000
-#    And the user clicks the Continue button
     Then the user should be redirected to the "Did your client have any unused losses for their property rental in previous years?" page
     And the user selects the No radio button
     And the user clicks the Continue button

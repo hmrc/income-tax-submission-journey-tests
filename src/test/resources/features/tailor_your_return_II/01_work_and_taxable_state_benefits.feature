@@ -7,7 +7,7 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
 
   Scenario: Individual user selects both employed and self employed maximum flow - Income from work and taxable state benefits - Tailor your return
     When the user logs into the service with the following details
-      | Redirect url        | /InYear/start |
+      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA123456A&ClientMTDID=1234567890 |
       | Credential Strength | strong        |
       | Confidence Level    | 250           |
       | Affinity Group      | Individual    |
@@ -104,7 +104,7 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
 
   Scenario: Individual user without employed or self-employed - Income from work and taxable state benefits - Tailor your return
     When the user logs into the service with the following details
-      | Redirect url        | /InYear/start |
+      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA123488A&ClientMTDID=1234567890 |
       | Credential Strength | strong        |
       | Confidence Level    | 250           |
       | Affinity Group      | Individual    |
@@ -148,7 +148,7 @@ Feature: About Your Work Journeys Tailor Your Return - Income Tax Submission
 
   Scenario: Individual User maximal flow user selects self employed only - Income from work and taxable state benefits - Tailor your return
     When the user logs into the service with the following details
-      | Redirect url        | /InYear/start |
+      | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=AA123456A&ClientMTDID=1234567890 |
       | Credential Strength | strong        |
       | Confidence Level    | 250           |
       | Affinity Group      | Individual    |

@@ -157,9 +157,9 @@ Feature: Foreign Property Journey - Income Tax Submission
     Then the user should be redirected to the "Structures Buildings Allowance" page
     And the user clicks the Add a claim button
     Then the user should be redirected to the "Structures and buildings allowance qualifying date" page
-    And the user selects the Day field and enters a value of 12
-    And the user selects the Month field and enters a value of 2
-    And the user selects the Year field and enters a value of 2024
+    And the user selects the Qualifying Day field and enters a value of 12
+    And the user selects the Qualifying Month field and enters a value of 2
+    And the user selects the Qualifying Year field and enters a value of 2024
     When the user clicks the Continue button
     Then the user should be redirected to the "Structures and buildings allowance qualifying amount" page
     And the user selects the Foreign sba qualifying amount field and enters a value of 750

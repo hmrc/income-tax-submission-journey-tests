@@ -119,7 +119,7 @@ Feature: Self Employment Accrual Accounting Journey
     Then the user should be redirected to the "Did you work from your own business premises?" page under self employment
     When the user selects the second radio button radio button and clicks the Continue button
     Then the user should be redirected to the "Travel and accommodation for work" page under self employment
-    When the user selects the second radio button radio button and clicks the Continue button
+    When the user selects the third radio button radio button and clicks the Continue button
     Then the user should be redirected to the "Advertising or marketing" page under self employment
     When the user selects the second radio button radio button and clicks the Continue button
     Then the user should be redirected to the "Entertainment costs" page under self employment

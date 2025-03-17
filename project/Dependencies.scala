@@ -3,7 +3,7 @@ import sbt._
 object Dependencies {
 
   val test: Seq[ModuleID] = Seq(
-    "uk.gov.hmrc"                %% "ui-test-runner"          % "0.42.0"   % Test,
+    "uk.gov.hmrc"                %% "ui-test-runner"          % "0.45.0"   % Test,
     "org.scalatest"              %% "scalatest"               % "3.2.18"   % Test,
     "io.cucumber"                %% "cucumber-scala"          % "8.20.0"   % Test,
     "com.typesafe.play"          %% "play-json"               % "2.10.4"   % Test,

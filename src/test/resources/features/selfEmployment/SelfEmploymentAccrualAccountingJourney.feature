@@ -1,4 +1,4 @@
-@SelfEmployment @screenshots
+@SelfEmployment
 Feature: Self Employment Accrual Accounting Journey
 
   Background:
@@ -242,6 +242,42 @@ Feature: Self Employment Accrual Accounting Journey
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
+
+    # Travel and accommodation for work
+#    When the user clicks on the Travel and accommodation for work link
+#    Then the user should be redirected to the "Which travel expenses do you need to claim?" page under self employment
+#    And the user clicks all checkboxes
+#    And the user clicks the Continue button
+#    Then the user should be redirected to the "your vehicle" page under self employment
+#    And the user selects the your-vehicle-text-input field and enters a value of Black toyota
+#    And the user clicks the Continue button
+#    Then the user should be redirected to the "What kind of vehicle is Black toyota?" page under self employment
+#    And the user selects the Car or goods vehicle radio button and clicks the Continue button
+#    Then the user should be redirected to "Simplified expenses for vehicles" page
+#    And the user selects the No radio button and clicks the Continue button
+#    Then the user should be redirected to the "You can choose how to claim your expenses for Black toyota" page under self employment
+#    And the user selects the Yes radio button and clicks the Continue button
+#    Then the user should be redirected to the "Your work mileage" page under self employment
+#    And the user selects the vehicles-simplified-mileage-input field and enters a value of 23567
+#    And the user clicks the Continue button
+#    Then the user should be redirected to the "Your flat rate for vehicle expenses is £7,891.75" page under self employment
+#    And the user selects the Flat rate radio button and clicks the Continue button
+#    Then the user should be redirected to the "Costs not covered by the flat rate" page under self employment
+#    And the user selects the se-expenses-travel-vehicle-additional-costs-input field and enters a value of 256.72
+#    Then the user clicks the Continue button
+#    And the user should be redirected to the "Do you need to add another vehicle?" page under self employment
+#    And the user selects the No radio button and clicks the Continue button
+#    Then the user should be redirected to the "Public transport and accommodation expenses" page under self employment
+#    And the user selects the se-expenses-travel-public-transport-amount-input field and enters a value of 5673.23
+#    Then the user clicks the Continue button
+#    Then the user should be redirected to the "How much of the £5673.23 you spent on public transport and accommodation is disallowable?" page under self employment
+#    And the user selects the se-expenses-travel-public-transport-disallowable-amount-input field and enters a value of 354.23
+#    Then the user clicks the Continue button
+#    Then the user should be redirected to the "Check your travel and accommodation expenses" page under self employment
+#    And the user clicks the Self Employment Save and continue button
+#    Then the user should be redirected to the "Have you finished this section?" page under self employment
+#    When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
+#    Then the user should be redirected to the "Self-employment" page under self employment
 
     # Advertising or marketing
     When the user clicks on the Advertising or marketing link

@@ -253,7 +253,7 @@ Feature: Self Employment Accrual Accounting Journey
 #    And the user clicks the Continue button
 #    Then the user should be redirected to the "What kind of vehicle is Black toyota?" page under self employment
 #    And the user selects the Car or goods vehicle radio button and clicks the Continue button
-#    Then the user should be redirected to "Simplified expenses for vehicles" page
+#    Then the user should be redirected to the "Simplified expenses for vehicles" page under self employment
 #    And the user selects the No radio button and clicks the Continue button
 #    Then the user should be redirected to the "You can choose how to claim your expenses for Black toyota" page under self employment
 #    And the user selects the Yes radio button and clicks the Continue button

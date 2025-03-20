@@ -445,7 +445,7 @@ Feature: Property Journeys - Income Tax Submission
     Then the user should be redirected to the "Premiums for the grant of a lease" page
     When the user selects the Yes, premiums for a grant of lease radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "Did your client calculate the figure themselves?" page
+    Then the user should be redirected to the "Has your client calculated the premium for the grant of a lease taxable amount themselves?" page
     When the user selects the No,calculated radio button
     And the user clicks the continue button
     Then the user should be redirected to the "How much did your client receive for the grant of a lease?" page

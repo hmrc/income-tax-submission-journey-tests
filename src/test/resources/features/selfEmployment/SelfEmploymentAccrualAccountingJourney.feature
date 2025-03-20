@@ -248,8 +248,8 @@ Feature: Self Employment Accrual Accounting Journey
 #    Then the user should be redirected to the "Which travel expenses do you need to claim?" page under self employment
 #    And the user clicks all checkboxes
 #    And the user clicks the Continue button
-#    Then the user should be redirected to the "your vehicle" page under self employment
-#    And the user selects the your-vehicle-text-input field and enters a value of Black toyota
+#    Then the user should be redirected to the "Your vehicle" page under self employment
+#    And the user selects the vehicle identity field and enters a value of Black toyota
 #    And the user clicks the Continue button
 #    Then the user should be redirected to the "What kind of vehicle is Black toyota?" page under self employment
 #    And the user selects the Car or goods vehicle radio button and clicks the Continue button

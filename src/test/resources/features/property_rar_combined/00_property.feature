@@ -342,7 +342,7 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the Yes HYFTS radio button
     And the user clicks the property continue button
     Then the user should be redirected to the "UK property" page
-    When the user clicks on the Income link
+    When the user clicks on the Rentals Income link
     Then the user should be redirected to the "Property income" page
     And the user clicks the continue button
     Then the user should be redirected to the "Non-UK resident landlord" page
@@ -429,7 +429,7 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the Yes HYFTS radio button
     And the user clicks the property continue button
     Then the user should be redirected to the "UK property" page
-    When the user clicks on the Income link
+    When the user clicks on the Rentals Income link
     Then the user should be redirected to the "Property income" page
     And the user clicks the continue button
     Then the user should be redirected to the "Non-UK resident landlord" page
@@ -519,7 +519,7 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the Yes HYFTS radio button
     And the user clicks the property continue button
     Then the user should be redirected to the "UK property" page
-    When the user clicks on the Income link
+    When the user clicks on the Rentals Income link
     Then the user should be redirected to the "Property income" page
     And the user clicks the continue button
     Then the user should be redirected to the "Non-UK resident landlord" page
@@ -552,7 +552,7 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the IncomeYes,HYFTS radio button
     And the user clicks the property continue button
     Then the user should be redirected to the "UK property" page
-    When the user clicks on the AdjustmentsLink link
+    When the user clicks on the Rentals Adjustments link
     Then the user should be redirected to the "Adjustments" page
     When the user clicks the continue button
     Then the user should be redirected to the "How much was your private use adjustment?" page
@@ -635,7 +635,7 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the Yes HYFTS radio button
     And the user clicks the property continue button
     Then the user should be redirected to the "UK property" page
-    When the user clicks on the Income link
+    When the user clicks on the Rentals Income link
     Then the user should be redirected to the "Property income" page
     And the user clicks the continue button
     Then the user should be redirected to the "Non-UK resident landlord" page
@@ -668,7 +668,7 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the IncomeYes,HYFTS radio button
     When the user clicks the continue button
     Then the user should be redirected to the "UK property" page
-    And the user clicks on the ExpensesLink link
+    And the user clicks on the Rentals Expenses link
     Then the user should be redirected to the "Expenses" page
     When the user clicks the continue button
     Then the user should be redirected to the "Consolidated or individual expenses" page
@@ -729,7 +729,7 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the Yes HYFTS radio button
     And the user clicks the property continue button
     Then the user should be redirected to the "UK property" page
-    When the user clicks on the Income link
+    When the user clicks on the Rentals Income link
     Then the user should be redirected to the "Property income" page
     And the user clicks the continue button
     Then the user should be redirected to the "Non-UK resident landlord" page
@@ -762,7 +762,7 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the IncomeYes,HYFTS radio button
     And the user clicks the property continue button
     Then the user should be redirected to the "UK property" page
-    And the user clicks on the ExpensesLink link
+    And the user clicks on the Rentals Expenses link
     Then the user should be redirected to the "Expenses" page
     When the user clicks the continue button
     Then the user should be redirected to the "Consolidated or individual expenses" page
@@ -843,7 +843,7 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the Yes HYFTS radio button
     And the user clicks the property continue button
     Then the user should be redirected to the "UK property" page
-    When the user clicks on the Income link
+    When the user clicks on the Rentals Income link
     Then the user should be redirected to the "Property income" page
     And the user clicks the continue button
     Then the user should be redirected to the "Non-UK resident landlord" page
@@ -876,7 +876,7 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the IncomeYes,HYFTS radio button
     And the user clicks the property continue button
     Then the user should be redirected to the "UK property" page
-    When the user clicks on the Allowanceslink link
+    When the user clicks on the Rentals Allowances link
     Then the user should be redirected to the "Allowances" page
     When the user clicks the continue button
     Then the user should be redirected to the "Capital allowances for a car" page
@@ -936,7 +936,7 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the Yes HYFTS radio button
     And the user clicks the property continue button
     Then the user should be redirected to the "UK property" page
-    When the user clicks on the Income link
+    When the user clicks on the Rentals Income link
     Then the user should be redirected to the "Property income" page
     And the user clicks the continue button
     Then the user should be redirected to the "Non-UK resident landlord" page
@@ -969,7 +969,7 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the IncomeYes,HYFTS radio button
     And the user clicks the property continue button
     Then the user should be redirected to the "UK property" page
-    When the user clicks on the Allowanceslink link
+    When the user clicks on the Rentals Allowances link
     Then the user should be redirected to the "Allowances" page
     When the user clicks the continue button
     Then the user should be redirected to the "Annual investment allowance" page
@@ -1043,7 +1043,7 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the Yes HYFTS radio button
     And the user clicks the property continue button
     Then the user should be redirected to the "UK property" page
-    When the user clicks on the Structures and Buildings AllowanceLink link
+    When the user clicks on the Rentals Structures and Buildings Allowance link
     Then the user should be redirected to the "Do you want to claim structures and buildings allowance?" page
     Then the user selects the Yes, claimStructureBuildingAllowance radio button
     And the user clicks the Continue button
@@ -1149,7 +1149,7 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the Yes HYFTS radio button
     And the user clicks the property continue button
     Then the user should be redirected to the "UK property" page
-    When the user clicks on the Enhanced Structures and Buildings AllowanceLink link
+    When the user clicks on the Rentals Enhanced Structures and Buildings Allowance link
     Then the user should be redirected to the "Do you want to claim enhanced structures and buildings allowance?" page
     Then the user selects the Yes, claim radio button
     And the user clicks the Continue button
@@ -1228,7 +1228,7 @@ Feature: Property Journeys - Income Tax Submission
     When the user selects the Yes HYFTS radio button
     And the user clicks the property continue button
     Then the user should be redirected to the "UK property" page
-    When the user clicks on the Enhanced Structures and Buildings AllowanceLink link
+    When the user clicks on the Rentals Enhanced Structures and Buildings Allowance link
     Then the user should be redirected to the "Do you want to claim enhanced structures and buildings allowance?" page
     Then the user selects the Yes, claim radio button
     And the user clicks the Continue button

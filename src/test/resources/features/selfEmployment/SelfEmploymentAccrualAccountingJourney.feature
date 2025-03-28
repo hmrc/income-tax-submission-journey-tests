@@ -249,21 +249,21 @@ Feature: Self Employment Accrual Accounting Journey
 #    And the user clicks all checkboxes
 #    And the user clicks the Continue button
 #    Then the user should be redirected to the "Your vehicle" page under self employment
-#    And the user selects the vehicle identity field and enters a value of Black toyota
+#    And the user selects the textbox field and enters a value of Black toyota
 #    And the user clicks the Continue button
 #    Then the user should be redirected to the "What kind of vehicle is Black toyota?" page under self employment
 #    And the user selects the Car or goods vehicle radio button and clicks the Continue button
-#    Then the user should be redirected to "Simplified expenses for vehicles" page
+#    Then the user should be redirected to the "Simplified expenses for vehicles" page under self employment
 #    And the user selects the No radio button and clicks the Continue button
 #    Then the user should be redirected to the "You can choose how to claim your expenses for Black toyota" page under self employment
 #    And the user selects the Yes radio button and clicks the Continue button
 #    Then the user should be redirected to the "Your work mileage" page under self employment
-#    And the user selects the vehicles-simplified-mileage-input field and enters a value of 23567
+#    And the user selects the textbox field and enters a value of 23567
 #    And the user clicks the Continue button
 #    Then the user should be redirected to the "Your flat rate for vehicle expenses is £7,891.75" page under self employment
 #    And the user selects the Flat rate radio button and clicks the Continue button
 #    Then the user should be redirected to the "Costs not covered by the flat rate" page under self employment
-#    And the user selects the se-expenses-travel-vehicle-additional-costs-input field and enters a value of 256.72
+#    And the user selects the textbox field and enters a value of 256.72
 #    Then the user clicks the Continue button
 #    And the user should be redirected to the "Do you need to add another vehicle?" page under self employment
 #    And the user selects the No radio button and clicks the Continue button

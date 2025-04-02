@@ -28,4 +28,7 @@ object AdditionalInfoPage {
   def postCessationTradeReliefUrl(taxYear: Int): String =
     businessReliefsUrl(taxYear) + "/post-cessation-trade-relief/relief-claimed"
 
+  def nonDeductibleLoanInterestReliefUrl(taxYear: Int): String =
+    businessReliefsUrl(taxYear) + "/non-deductible-loan-interest/relief-claimed"
+
 }

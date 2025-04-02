@@ -744,6 +744,9 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user navigates to the Post-cessation trade relief page
     And the user selects the amount field and enters a value of 50.99
     When the user clicks the continue button
+    When the user navigates to the Non-deductible Loan Interest relief page
+    And the user selects the amount field and enters a value of 50.99
+    When the user clicks the continue button
     #TODO: Add the below in when the CYA page is built
     #Then the user should be redirected to the "Check you answers" page
     #When the user clicks the continue button

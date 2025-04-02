@@ -176,6 +176,7 @@ class CommonStepDef extends Steps with TaxYearHelper {
       case "Rental income" => s"http://localhost:10007/update-and-submit-income-tax-return/tailored-return/$taxYearEOY/property-pensions-investments/rental-income"
       //TODO: Remove the below when the Business Tax Reliefs have been added to Tailor Return and Tax Return Overview
       case "Post-cessation trade relief" => AdditionalInfoPage.postCessationTradeReliefUrl(taxYear)
+      case "Non-deductible Loan Interest relief" => AdditionalInfoPage.nonDeductibleLoanInterestReliefUrl(taxYear)
       case _ => fail("Invalid url input parameter")
     }
     driver.navigate().to(expectedUrl)

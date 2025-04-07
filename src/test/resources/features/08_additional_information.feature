@@ -722,3 +722,29 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     Then the user should be redirected to the "Check your dividends" page
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your Income Tax Return" page
+
+  @businessTaxReliefs @wip
+  Scenario:  Maximal flow - User with no prior data - adds all available Business Tax Reliefs
+    When the user logs into the service with the following details
+      | Redirect url        | /EOY/start  |
+      | Credential Strength | strong      |
+      | Confidence Level    | 250         |
+      | Affinity Group      | Individual  |
+      | Nino                | AA123458A   |
+      | Enrolment Key 1     | HMRC-MTD-IT |
+      | Identifier Name 1   | MTDITID     |
+      | Identifier Value 1  | 1234567890  |
+    Then the user should be redirected to "Update and submit an Income Tax Return" page
+    When the user clicks the continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
+    When the user clicks on the addSections link
+    Then the user should be redirected to the "Add sections to your Income Tax Return" page
+    #TODO: Add logic here as part of future story to add the Business Tax Reliefs sections and navigate the journey
+    #TODO: For now, we'll need to manually navigate directly to the pages that are being created
+    When the user navigates to the Post-cessation trade relief page
+    And the user selects the amount field and enters a value of 50.99
+    When the user clicks the continue button
+    #TODO: Add the below in when the CYA page is built
+    #Then the user should be redirected to the "Check you answers" page
+    #When the user clicks the continue button
+    #Then the user should be redirected to the "Your Income Tax Return" page???

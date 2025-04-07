@@ -20,7 +20,7 @@ import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.conf.TaxYearHelper
 import uk.gov.hmrc.test.ui.pages.CommonPage._
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, CommonPage}
+import uk.gov.hmrc.test.ui.pages.{AdditionalInfoPage, AuthLoginPage, CommonPage}
 
 class CommonStepDef extends Steps with TaxYearHelper {
 
@@ -174,6 +174,8 @@ class CommonStepDef extends Steps with TaxYearHelper {
       case "QA Tailor return start" => s"https://www.qa.tax.service.gov.uk/update-and-submit-income-tax-return/tailored-return/$taxYearEOY/start"
       case "Payments into pensions" => s"http://localhost:10007/update-and-submit-income-tax-return/tailored-return/$taxYearEOY/payments-pensions"
       case "Rental income" => s"http://localhost:10007/update-and-submit-income-tax-return/tailored-return/$taxYearEOY/property-pensions-investments/rental-income"
+      //TODO: Remove the below when the Business Tax Reliefs have been added to Tailor Return and Tax Return Overview
+      case "Post-cessation trade relief" => AdditionalInfoPage.postCessationTradeReliefUrl(taxYear)
       case _ => fail("Invalid url input parameter")
     }
     driver.navigate().to(expectedUrl)

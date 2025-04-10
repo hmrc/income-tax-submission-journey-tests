@@ -25,5 +25,6 @@ trait TaxYearHelper {
 
   val taxYear: Int = if (dateNow.isAfter(taxYearCutoffDate)) LocalDate.now().getYear + 1 else LocalDate.now().getYear
   val taxYearEOY: Int = taxYear - 1
+  val currentTaxYear: Int = LocalDate.now().getYear
   val taxYearMinusTwo: Int = taxYear - 2
 }

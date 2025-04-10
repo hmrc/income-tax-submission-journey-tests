@@ -173,7 +173,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "Contractor CIS deductions" page
     When the user clicks on the Add another CIS deduction link
     Then the user should be redirected to the "When did your contractor make CIS deductions?" page
-    When the user clicks the Tax month ending dropdown and selects 5 October 2023
+    When the user clicks the Tax month ending dropdown and selects 5 October
     And the user clicks the continue button
     Then the user should be redirected to the "Amount paid before tax by this contractor" page
     When the user selects the amount field and enters a value of 20.02
@@ -260,7 +260,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "Contractor CIS deductions" page
     When the user clicks on the Add another CIS deduction link
     Then the user should be redirected to the "When did your contractor make CIS deductions?" page
-    When the user clicks the Tax month ending dropdown and selects 5 October 2023
+    When the user clicks the Tax month ending dropdown and selects 5 October
     And the user clicks the continue button
     Then the user should be redirected to the "Amount paid before tax by this contractor" page
     When the user selects the amount field and enters a value of 20.02
@@ -310,7 +310,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "Contractor CIS deductions" page
     When the user clicks on the Add another CIS deduction link
     Then the user should be redirected to the "When did your contractor make CIS deductions?" page
-    When the user clicks the Tax month ending dropdown and selects 5 January 2024
+    When the user clicks the Tax month ending dropdown and selects 5 January
     And the user clicks the continue button
     Then the user should be redirected to the "Amount paid before tax by this contractor" page
     When the user selects the amount field and enters a value of 2000.02
@@ -547,7 +547,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "Contractor CIS deductions" page
     When the user clicks on the Add another CIS deduction link
     Then the user should be redirected to the "When did your client’s contractor make CIS deductions?" page
-    When the user clicks the Tax month ending dropdown and selects 5 December 2023
+    When the user clicks the Tax month ending dropdown and selects 5 December
     And the user clicks the continue button
     Then the user should be redirected to the "How much did the contractor pay your client for labour?" page
     When the user selects the amount field and enters a value of 20.02
@@ -638,7 +638,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     And the status on the page is "Yes for gateway question"
     When the user clicks on the Add another CIS deduction link
     Then the user should be redirected to the "When did your client’s contractor make CIS deductions?" page
-    When the user clicks the Tax month ending dropdown and selects 5 October 2023
+    When the user clicks the Tax month ending dropdown and selects 5 October
     And the user clicks the continue button
     Then the user should be redirected to the "How much did the contractor pay your client for labour?" page
     When the user selects the amount field and enters a value of 20.02
@@ -690,7 +690,7 @@ Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
     Then the user should be redirected to the "Contractor CIS deductions" page
     When the user clicks on the Add another CIS deduction link
     Then the user should be redirected to the "When did your client’s contractor make CIS deductions?" page
-    When the user clicks the Tax month ending dropdown and selects 5 October 2023
+    When the user clicks the Tax month ending dropdown and selects 5 October
     And the user clicks the continue button
     Then the user should be redirected to the "How much did the contractor pay your client for labour?" page
     When the user selects the amount field and enters a value of 2000.02

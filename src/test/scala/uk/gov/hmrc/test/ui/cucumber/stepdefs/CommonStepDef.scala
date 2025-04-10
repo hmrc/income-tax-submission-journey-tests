@@ -40,20 +40,6 @@ class CommonStepDef extends Steps with TaxYearHelper {
     driver.getTitle.replace("\u00A0", " ") should be(s"$title - $govUkExtension")
   }
 
-  Then("""^the user will be redirected to the "(.*)" between (.*) and (.*) page$""") {
-    (partialTitle: String, startDate: String, endDate: String) =>
-
-      val (startYear, endYear) =
-        if (partialTitle == "Did this claim end") (taxYearMinusTwo, currentTaxYear)
-        else if (partialTitle.contains("Jobseeker")) (taxYearMinusTwo, taxYearMinusTwo)
-        else (taxYearMinusTwo, taxYearMinusTwo)
-
-      val fullTitle = s"$partialTitle between $startDate $startYear and $endDate $endYear?"
-      val expectedTitle = s"$fullTitle - $serviceName - $govUkExtension"
-
-      driver.getTitle.replace("\u00A0", " ") should be(expectedTitle)
-  }
-
   Then("""^the user is redirected to the "(.*)" "(.*)" "(.*)" page$""") { (title: String, taxYear: String, titleCont: String) =>
     val expectedTaxYear = replaceTaxYear(taxYear)
     driver.getTitle.replace("\u00A0", " ") should be(s"$title $expectedTaxYear $titleCont - $serviceName - $govUkExtension")
@@ -137,14 +123,8 @@ class CommonStepDef extends Steps with TaxYearHelper {
   }
 
   When("""^the user clicks the (.*) dropdown and selects (.*)$""") { (dropdownTitle: String, dropdownValue: String) =>
-    dropdownValue match {
-      case "5 January" =>
-        CommonPage.clickOnDropdown(dropdownTitle, dropdownValue + " " + taxYearEOY)
-      case _ =>
-        CommonPage.clickOnDropdown(dropdownTitle, dropdownValue + " " + taxYearMinusTwo)
-    }
+    CommonPage.clickOnDropdown(dropdownTitle, dropdownValue)
   }
-
 
   When("""^the user clicks both the (.*) and (.*) checkboxes$""") { (checkbox1Title: String, checkbox2Title: String) =>
     CommonPage.clickOnCheckbox(checkbox1Title)

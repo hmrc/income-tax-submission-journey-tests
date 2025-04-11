@@ -619,7 +619,7 @@ Feature: Self Employment Accrual Accounting Journey
     And the user clicks the Continue button
     Then the user should be redirected to the "Claim a loss relief" page under self employment
     And the user selects the yes radio button and clicks the Continue button
-    Then the user should be redirected to the "What do you want to do with the loss for the 2024 to 2025 tax year?" page under self employment
+    Then the user should be redirected to the "Loss for the 2024 to 2025 tax year" page under self employment
     When the user clicks the following checkboxes:
       | first option  |
       | second option |

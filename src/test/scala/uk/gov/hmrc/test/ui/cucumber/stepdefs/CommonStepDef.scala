@@ -197,6 +197,7 @@ class CommonStepDef extends Steps with TaxYearHelper {
       //TODO: Remove the below when the Business Tax Reliefs have been added to Tailor Return and Tax Return Overview
       case "Post-cessation trade relief" => AdditionalInfoPage.postCessationTradeReliefUrl(taxYear)
       case "Non-deductible Loan Interest relief" => AdditionalInfoPage.nonDeductibleLoanInterestReliefUrl(taxYear)
+      case "Qualifying loan interest relief" => AdditionalInfoPage.qualifyingLoanInterestReliefUrl(taxYear)
       case _ => fail("Invalid url input parameter")
     }
     driver.navigate().to(expectedUrl)

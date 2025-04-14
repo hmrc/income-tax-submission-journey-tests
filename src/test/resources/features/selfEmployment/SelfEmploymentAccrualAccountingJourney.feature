@@ -265,13 +265,15 @@ Feature: Self Employment Accrual Accounting Journey
 #    Then the user should be redirected to the "Costs not covered by the flat rate" page under self employment
 #    And the user selects the textbox field and enters a value of 256.72
 #    Then the user clicks the Continue button
-#    And the user should be redirected to the "Do you need to add another vehicle?" page under self employment
+#    Then the user should be redirected to the "Check your travel and accommodation expenses" page under self employment
+#    And the user clicks the Self Employment Save and continue button
+#    And the user should be redirected to the "You have added {0} vehicle" page under self employment
 #    And the user selects the No radio button and clicks the Continue button
 #    Then the user should be redirected to the "Public transport and accommodation expenses" page under self employment
-#    And the user selects the se-expenses-travel-public-transport-amount-input field and enters a value of 5673.23
+#    And the user selects the textbox field and enters a value of 5673.23
 #    Then the user clicks the Continue button
-#    Then the user should be redirected to the "How much of the £5673.23 you spent on public transport and accommodation is disallowable?" page under self employment
-#    And the user selects the se-expenses-travel-public-transport-disallowable-amount-input field and enters a value of 354.23
+#    Then the user should be redirected to the "How much of the £5,673.23 you spent on public transport and accommodation is disallowable?" page under self employment
+#    And the user selects the textbox field and enters a value of 354.23
 #    Then the user clicks the Continue button
 #    Then the user should be redirected to the "Check your travel and accommodation expenses" page under self employment
 #    And the user clicks the Self Employment Save and continue button

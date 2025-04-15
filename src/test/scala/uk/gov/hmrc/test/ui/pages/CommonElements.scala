@@ -880,7 +880,9 @@ trait CommonElements extends BasePage with Matchers {
     "Annual investment allowance" -> By.xpath("//a[text()=' Annual investment allowance ']"),
     "Writing down allowance" -> By.cssSelector("#main-content > div > div > h1"),
     "Work out your adjusted profit or loss" -> By.xpath("//a[text()=' Work out your adjusted profit or loss ']"),
-    "When you reported the loss" -> By.cssSelector("#main-content > div > div > form > h1")
+    "When you reported the loss" -> By.cssSelector("#main-content > div > div > form > h1"),
+    "Deduct from other types" -> By.id("value_0"),
+    "Carry it forward" -> By.id("value_1")
   )
 
   val elements: Map[String, By] = Map(commonMapping: _*)

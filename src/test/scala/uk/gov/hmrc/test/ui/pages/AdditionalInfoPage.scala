@@ -31,4 +31,7 @@ object AdditionalInfoPage {
   def nonDeductibleLoanInterestReliefUrl(taxYear: Int): String =
     businessReliefsUrl(taxYear) + "/non-deductible-loan-interest/relief-claimed"
 
+  def qualifyingLoanInterestReliefUrl(taxYear: Int): String =
+    businessReliefsUrl(taxYear) + "/qualifying-loan-interest/relief-claimed"
+
 }

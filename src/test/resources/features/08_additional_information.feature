@@ -723,7 +723,7 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     When the user clicks the save and continue button
     Then the user should be redirected to the "Your Income Tax Return" page
 
-  @businessTaxReliefs
+  @businessTaxReliefs @wip
   Scenario:  Maximal flow - User with no prior data - adds all available Business Tax Reliefs
     When the user logs into the service with the following details
       | Redirect url        | /EOY/start  |

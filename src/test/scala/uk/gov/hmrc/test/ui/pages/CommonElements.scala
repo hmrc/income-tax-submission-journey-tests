@@ -651,7 +651,6 @@ trait CommonElements extends BasePage with Matchers {
     "Foreign expenses Spain" -> By.id("foreign_property_expenses_ESP"),
     "Expenses for your property in Spain" -> By.cssSelector("#main-content > div > div > h1"),
     "Claim individual expenses foreign" -> By.id("consolidatedOrIndividualExpenses-no"),
-//    "Rents, rates and insurance costs for your property" -> By.cssSelector("#main-content > div > div > h1"),
     "Rents, rates and insurance" -> By.id("foreignRentsRatesAndInsurance"),
     "Property repairs and maintenance" -> By.id("foreignPropertyRepairsAndMaintenanceAmount"),
     "Non-residential property finance costs" -> By.id("foreignNonResidentialPropertyFinanceCostsAmount"),

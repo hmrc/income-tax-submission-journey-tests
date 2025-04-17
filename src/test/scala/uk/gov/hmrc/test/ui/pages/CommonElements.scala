@@ -702,7 +702,6 @@ trait CommonElements extends BasePage with Matchers {
     "When you reported the loss" -> By.cssSelector("<h1 class=\"govuk-heading-l\">When you reported the loss</h1>"),
     "2021 to 2022" -> By.id("value_3"),
 
-
     // UK & Foreign Property
     "UK & Foreign Property About" -> By.id("uk_and_foreign_property_about_link"),
     "Foreign property About" -> By.cssSelector("#main-content > div > div > ul > li:nth-child(3) > div.govuk-task-list__name-and-hint > a"),
@@ -727,6 +726,10 @@ trait CommonElements extends BasePage with Matchers {
     "Country Option" -> By.id("country__option--0"),
     "expenses" -> By.id("ukAndForeignPropertyClaimExpensesOrRelief-no"),
     "use the property income allowance" -> By.id("ukAndForeignPropertyClaimPropertyIncomeAllowanceOrExpenses"),
+
+    //Foreign income - Dividends from foreign companies
+    "Dividends from foreign companies" -> By.id("foreign_income_dividends"),
+    "Foreign dividends by country" -> By.cssSelector("<h1 class=\"govuk-heading-l\">Foreign dividends by country"),
 
     // Property - rent-a-room
     "Rent-a-room" -> By.id("value_1"),

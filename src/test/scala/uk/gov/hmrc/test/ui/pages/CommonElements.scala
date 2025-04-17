@@ -752,6 +752,10 @@ trait CommonElements extends BasePage with Matchers {
 
 
 
+    //Foreign income - Dividends from foreign companies
+    "Dividends from foreign companies" -> By.id("foreign_income_dividends"),
+    "Foreign dividends by country" -> By.cssSelector("<h1 class=\"govuk-heading-l\">Foreign dividends by country</h1>"),
+
     // Property - rent-a-room
     "Rent-a-room" -> By.id("value_1"),
     "Rentaroom About" -> By.id("rent_a_room_about_link"),

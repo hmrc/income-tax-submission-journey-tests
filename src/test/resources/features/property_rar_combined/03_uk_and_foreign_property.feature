@@ -206,7 +206,7 @@ Feature: UK and Foreign Property Journey - Income Tax Submission
     And the user selects the Foreign income tax Yes radio button
     And the user selects the Foreign income tax Amount field and enters a value of 1200.75
     Then the user clicks the Continue button
-    Then the user should be redirected to the "Do you want to claim foreign tax credit relief?" page
+    Then the user should be redirected to the "Do you want to claim Foreign Tax Credit Relief?" page
     And the user selects the Yes radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Check your answers" page

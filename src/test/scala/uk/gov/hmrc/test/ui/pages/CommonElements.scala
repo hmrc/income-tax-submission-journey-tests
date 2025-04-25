@@ -630,8 +630,8 @@ trait CommonElements extends BasePage with Matchers {
     "Did your client pay foreign tax on the income from their property in Italy?" -> By.cssSelector("<h1 class=\"govuk-heading-l\">Did your client pay foreign tax on the income from their property in Italy?</h1>"),
     "Foreign income tax Yes" -> By.id("foreignIncomeTaxForm"),
     "Foreign income tax Amount" -> By.id("foreignTaxPaidOrDeducted"),
-    "Do you want to claim foreign tax credit relief?" -> By.cssSelector("#main-content > div > div > h1"),
-    "Does your client want to claim foreign tax credit relief?" -> By.cssSelector("<h1 class=\"govuk-heading-l\">Does your client want to claim foreign tax credit relief?</h1>"),
+    "Do you want to claim Foreign Tax Credit Relief?" -> By.cssSelector("#main-content > div > div > h1"),
+    "Does your client want to claim Foreign Tax Credit Relief?" -> By.cssSelector("<h1 class=\"govuk-heading-l\">Does your client want to claim Foreign Tax Credit Relief?</h1>"),
 
     // Foreign income
     "Foreign income Spain" -> By.id("foreign_property_income_ESP"),

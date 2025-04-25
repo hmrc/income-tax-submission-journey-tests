@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.CommonPage
 class CYAStepDef extends Steps {
 
   When("""^the user clicks on the change link in position (.*)$""") { position: String =>
-    CommonPage.clickBySelector(s"#main-content > div > div > dl > div:nth-child($position) > dd.govuk-summary-list__actions > a > span:nth-child(1)")
+    CommonPage.clickBySelector(s"#main-content > div > div > dl > div:nth-child($position) > dd.govuk-summary-list__actions > a")
   }
 
   When("""^the user clicks on the change (.*) benefit link in position (.*)$""") { (section: String, position: String) =>

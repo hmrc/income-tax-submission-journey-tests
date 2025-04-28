@@ -747,18 +747,22 @@ Feature: Additional Information Journeys (Interest Securities & Gains) - Income 
     #TODO: Add the below in when the CYA page is built
     #Then the user should be redirected to the "Check you answers" page
     #When the user clicks the continue button
-    #Then the user should be redirected to the "Your Income Tax Return" page???
+    #Then the user should be redirected to the "Have you finished" page???
     When the user navigates to the Non-deductible Loan Interest relief page
     And the user selects the amount field and enters a value of 50.99
     When the user clicks the continue button
     #TODO: Add the below in when the CYA page is built
     #Then the user should be redirected to the "Check you answers" page
     #When the user clicks the continue button
-    #Then the user should be redirected to the "Your Income Tax Return" page???
+    #Then the user should be redirected to the "Have you finished" page???
     When the user navigates to the Qualifying loan interest relief page
     And the user selects the amount field and enters a value of 120.44
     When the user clicks the continue button
-    #TODO: Add the below in when the CYA page is built
-    #Then the user should be redirected to the "Check you answers" page
-    #When the user clicks the continue button
-    #Then the user should be redirected to the "Your Income Tax Return" page???
+    Then the user should be redirected to the "Check your answers" page
+    When the user clicks on the change link in position 1
+    Then the user should be redirected to the "Qualifying loan interest payable in the year" page
+    When the user selects the amount field and enters a value of 125.44
+    When the user clicks the continue button
+    Then the user should be redirected to the "Check your answers" page
+    When the user clicks the continue button
+    #Then the user should be redirected to the "Have you finished" page???

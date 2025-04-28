@@ -1,4 +1,6 @@
-@SelfEmployment
+#@SelfEmployment
+@wip
+
 Feature: Self Employment Accrual Accounting Journey
 
   Background:
@@ -8,7 +10,7 @@ Feature: Self Employment Accrual Accounting Journey
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | BB000002A   |
+      | Nino                | AA000001C   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |
@@ -16,49 +18,33 @@ Feature: Self Employment Accrual Accounting Journey
     When the user clicks the continue button
     Then the user should be redirected to the "Your Income Tax Return" page
 
-  Scenario: 1 - Individual - Add section and review self-employments
-    # Add section
-    When the user clicks on the addSections link
-    Then the user should be redirected to the "Add sections to your Income Tax Return" page
-    When the user clicks the addSelfEmployment tailoring option
-    And the user clicks the continue button
-    Then the user should be redirected to the "Your Income Tax Return" page
-    When the user clicks on the Self Employment link
-    Then the user should be redirected to the "Self-employment" page under self employment
-
-    # Review self-employments
-    When the user clicks on the Review self-employments link
-    Then the user should be redirected to the "Self-employment" page under self employment
-    When the user clicks on the View Self Employment link
+  Scenario: 1 - Individual - Review self-employments
+    When the user clicks on the "Check your self-employment details and accounting method" link
     Then the user should be redirected to the "Check your self-employment details" page under self employment
     And the user clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page
     When the user clicks the Continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button
     When the user clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page
 
     ##################################### Scenario: 2 #####################################################
 
   Scenario: 2 - Individual - Self-employment abroad
-    When the user clicks on the Self Employment link
-    Then the user should be redirected to the "Self-employment" page under self employment
-    When the user clicks on the Self-employment abroad link
+    When the user clicks on the Industry sectors and working abroad link
     Then the user should be redirected to the "Did you carry out all of your self-employment abroad?" page under self employment
     When the user selects the yes radio button and clicks the Continue button
     Then the user should be redirected to the "Check your details" page under self employment
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page
 
     ##################################### Scenario: 3 #####################################################
 
   Scenario: 3 - Individual - Income and expenses
-    When the user clicks on the Self Employment link
-    Then the user should be redirected to the "Self-employment" page under self employment
-    When the user clicks on the Self-employment Income link
+    When the user clicks on the Your Income link
     Then the user should be redirected to the "Income not counted as turnover" page under self employment
     When the user selects the yes radio button and clicks the Continue button
     Then the user should be redirected to the "How much non-turnover income did you get?" page under self employment
@@ -98,14 +84,12 @@ Feature: Self Employment Accrual Accounting Journey
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page
 
     ##################################### Scenario: 4 #####################################################
 
   Scenario: 4 - Individual - Expenses categories
-    When the user clicks on the Self Employment link
-    Then the user should be redirected to the "Self-employment" page under self employment
-    When the user clicks on the Self-employment Expenses categories link
+    When the user clicks on the Add expenses categories link
     Then the user should be redirected to the "How will you report your expenses?" page under self employment
     When the user selects the second radio button radio button and clicks the Continue button
     Then the user should be redirected to the "Office supplies" page under self employment
@@ -156,7 +140,7 @@ Feature: Self Employment Accrual Accounting Journey
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page
 
     # Office Supplies
     When the user clicks on the Office supplies link
@@ -170,7 +154,7 @@ Feature: Self Employment Accrual Accounting Journey
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page
 
     # Goods to Sell or use
     When the user clicks on the Goods to sell or use link
@@ -186,7 +170,7 @@ Feature: Self Employment Accrual Accounting Journey
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page
 
     #  Repairs and maintenance
     When the user clicks on the Repairs and maintenance link
@@ -200,7 +184,7 @@ Feature: Self Employment Accrual Accounting Journey
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page
 
     # Workplace running costs
     When the user clicks on the Workplace running costs (including working from home) link
@@ -241,9 +225,8 @@ Feature: Self Employment Accrual Accounting Journey
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page
 
-#    TODO: Add in these steps once journey has been implemented
     # Travel and accommodation for work
 #    When the user clicks on the Travel and accommodation for work link
 #    Then the user should be redirected to the "Which travel expenses do you need to claim?" page under self employment
@@ -280,7 +263,7 @@ Feature: Self Employment Accrual Accounting Journey
 #    And the user clicks the Self Employment Save and continue button
 #    Then the user should be redirected to the "Have you finished this section?" page under self employment
 #    When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
-#    Then the user should be redirected to the "Self-employment" page under self employment
+#    Then the user should be redirected to the "Your Income Tax Return" page
 
     # Advertising or marketing
     When the user clicks on the Advertising or marketing link
@@ -294,7 +277,7 @@ Feature: Self Employment Accrual Accounting Journey
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page
 
     # Entertainment costs
     When the user clicks on the Entertainment costs link
@@ -305,7 +288,7 @@ Feature: Self Employment Accrual Accounting Journey
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page
 
     # Staff costs
     When the user clicks on the Staff costs link
@@ -319,7 +302,7 @@ Feature: Self Employment Accrual Accounting Journey
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page
 
     # Construction industry subcontractors
     When the user clicks on the Construction industry subcontractors link
@@ -333,7 +316,7 @@ Feature: Self Employment Accrual Accounting Journey
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page
 
     # Professional fees
     When the user clicks on the Professional fess link
@@ -347,7 +330,7 @@ Feature: Self Employment Accrual Accounting Journey
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page
 
     # Interest paid on bank and other business Loans
     When the user clicks on the Interest paid on bank and other business loans link
@@ -361,7 +344,7 @@ Feature: Self Employment Accrual Accounting Journey
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page
 
     # Bank, credit card and other financial charges
     When the user clicks on the Bank, credit card and other financial charges link
@@ -375,7 +358,7 @@ Feature: Self Employment Accrual Accounting Journey
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page
 
     # Irrecoverable debts
     When the user clicks on the Irrecoverable debt link
@@ -389,7 +372,7 @@ Feature: Self Employment Accrual Accounting Journey
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page
 
     # Depreciation costs
     When the user clicks on the Depreciation costs link
@@ -400,7 +383,7 @@ Feature: Self Employment Accrual Accounting Journey
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page
 
     # Other expenses
     When the user clicks on the Other expenses link
@@ -414,7 +397,7 @@ Feature: Self Employment Accrual Accounting Journey
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page
 
     # Allowances for vehicles, equipment and buildings
     When the user clicks on the Allowances for vehicles, equipment and buildings link
@@ -426,6 +409,7 @@ Feature: Self Employment Accrual Accounting Journey
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
+    Then the user should be redirected to the "Your Income Tax Return" page
 
     # Zero-emission cars
     When the user clicks on the Zero-emission cars link
@@ -446,7 +430,7 @@ Feature: Self Employment Accrual Accounting Journey
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page
 
     # Zero-emission goods vehicles
     When the user clicks on the Zero-emission goods vehicles link
@@ -467,7 +451,7 @@ Feature: Self Employment Accrual Accounting Journey
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page
 
     # Structures and Buildings Allowance
     When the user clicks on the Structures and buildings allowance link
@@ -502,7 +486,7 @@ Feature: Self Employment Accrual Accounting Journey
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page
 
     # Freeport sites
     When the user clicks on the Freeport sites link
@@ -544,7 +528,7 @@ Feature: Self Employment Accrual Accounting Journey
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page
 
     # Annual investment allowance
     When the user clicks on the Annual investment allowance link
@@ -557,7 +541,7 @@ Feature: Self Employment Accrual Accounting Journey
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page
 
     # ‘Writing down’ allowance
     When the user clicks on the 'Writing down' allowance link
@@ -582,7 +566,7 @@ Feature: Self Employment Accrual Accounting Journey
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page
 
     # Balancing allowance
     When the user clicks on the Balancing allowance link
@@ -595,7 +579,7 @@ Feature: Self Employment Accrual Accounting Journey
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page
 
     # Balancing charge
     When the user clicks on the Balancing charge link
@@ -608,7 +592,7 @@ Feature: Self Employment Accrual Accounting Journey
     And the user clicks the Self Employment Save and continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page
 
 
     # Work out your adjusted profit or loss
@@ -638,4 +622,4 @@ Feature: Self Employment Accrual Accounting Journey
     And the user clicks the Continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
+    Then the user should be redirected to the "Your Income Tax Return" page

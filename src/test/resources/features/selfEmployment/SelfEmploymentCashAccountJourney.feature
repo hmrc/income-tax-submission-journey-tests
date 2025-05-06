@@ -27,11 +27,7 @@ Feature: Self Employment Cash accounting Journeys
 
     #-------------- Review Self Employment Page ----------#
     When the user clicks on the Review self-employments link
-    Then the user should be redirected to the "Self-employment" page under self employment
-    When the user clicks on the View Self Employment link
     Then the user should be redirected to the "Check your self-employment details" page under self employment
-    And the user clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
     When the user clicks the Continue button
     Then the user should be redirected to the "Have you finished this section?" page under self employment
     When the user selects the Yes, I’ve completed this section radio button

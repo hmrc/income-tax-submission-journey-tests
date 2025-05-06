@@ -27,19 +27,6 @@ Feature: Self Employment accrual accounting -Use Maximum trading allowance Journ
     When the user clicks on the Self Employment link
     Then the user should be redirected to the "Self-employment" page under self employment
 
-    When the user clicks on the Review self-employments link
-    Then the user should be redirected to the "Self-employment" page under self employment
-    When the user clicks on the View Self Employment link
-    Then the user should be redirected to the "Check your client’s self-employment details" page under self employment
-    And the user clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
-
-    When the user clicks the Continue button
-    Then the user should be redirected to the "Have you finished this section?" page under self employment
-    When the user selects the Yes, I’ve completed this section radio button
-    When the user clicks the Continue button
-    Then the user should be redirected to the "Self-employment" page under self employment
-
   Scenario: Agent - Self Employment Abroad
     When the user logs into the service with the following details
       | Redirect url        | /test-only/InYear/additional-parameters?ClientNino=BB000001A&ClientMTDID=1234567890 |
@@ -61,6 +48,14 @@ Feature: Self Employment accrual accounting -Use Maximum trading allowance Journ
     And the user clicks the continue button
     Then the user should be redirected to the "Your client’s Income Tax Return" page
     When the user clicks on the Self Employment link
+    Then the user should be redirected to the "Self-employment" page under self employment
+
+    When the user clicks on the Review self-employments link
+    Then the user should be redirected to the "Check your client’s self-employment details" page under self employment
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Have you finished this section?" page under self employment
+    When the user selects the Yes, I’ve completed this section radio button
+    When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
     When the user clicks on the Self-employment abroad link

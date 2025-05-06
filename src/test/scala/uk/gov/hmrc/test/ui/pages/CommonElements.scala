@@ -630,7 +630,7 @@ trait CommonElements extends BasePage with Matchers {
     "Did your client pay foreign tax on the income from their property in Italy?" -> By.cssSelector("<h1 class=\"govuk-heading-l\">Did your client pay foreign tax on the income from their property in Italy?</h1>"),
     "Foreign income tax Yes" -> By.id("foreignIncomeTaxForm"),
     "Foreign income tax Amount" -> By.id("foreignTaxPaidOrDeducted"),
-    "Do you want to claim Foreign Tax Credit Relief?" -> By.cssSelector("#main-content > div > div > h1"),
+    "Do you want to claim Foreign Tax Credit Relief?" -> By.cssSelector("<h1 class=\"govuk-heading-l\">Do you want to claim Foreign Tax Credit Relief?</h1>"),
     "Does your client want to claim Foreign Tax Credit Relief?" -> By.cssSelector("<h1 class=\"govuk-heading-l\">Does your client want to claim Foreign Tax Credit Relief?</h1>"),
 
     // Foreign income
@@ -750,11 +750,22 @@ trait CommonElements extends BasePage with Matchers {
     //UK & Foreign Property - Adjustments
     "UK property rentals and rent a room Adjustments" -> By.id("rentals_and_rent_a_room_adjustments_link"),
 
-
-
     //Foreign income - Dividends from foreign companies
     "Dividends from foreign companies" -> By.id("foreign_income_dividends"),
     "Foreign dividends by country" -> By.cssSelector("<h1 class=\"govuk-heading-l\">Foreign dividends by country</h1>"),
+    "Which country did you receive your dividend income from?" -> By.cssSelector("<h1 class=\"govuk-heading-l\">Which country did you receive your dividend income from?</h1>"),
+    "Which country did your client receive their dividend income from?Which country did your client receive their dividend income from?" -> By.cssSelector("<h1 class=\"govuk-heading-l\">Which country did your client receive their dividend income from?</h1>"),
+    "Tell us about dividend income you received from Portugal before foreign tax was deducted" -> By.cssSelector("<h1 class=\"govuk-heading-l\">Tell us about dividend income you received from Portugal before foreign tax was deducted</h1>"),
+    "Tell us about dividend income your client received from Italy before foreign tax was deducted" -> By.cssSelector("<h1 class=\"govuk-heading-l\">Tell us about dividend income your client received from Italy before foreign tax was deducted</h1>"),
+    "income received before foreign tax deducted amount" -> By.id("incomeBeforeForeignTaxDeducted"),
+    "Have you had foreign tax deducted from your dividend income from Portugal?" -> By.cssSelector("<h1 class=\"govuk-heading-l\">Have you had foreign tax deducted from your dividend income from Portugal?</h1>"),
+    "Has your client had foreign tax deducted from their dividend income from Italy?" -> By.cssSelector("<h1 class=\"govuk-heading-l\">Has your client had foreign tax deducted from their dividend income from Italy?</h1>"),
+    "How much foreign tax was deducted from your dividend income from Portugal?" -> By.cssSelector("<h1 class=\"govuk-heading-l\">How much foreign tax was deducted from your dividend income from Portugal?</h1>"),
+    "tax deducted from dividend income amount" -> By.id("howMuchForeignTaxDeductedFromDividendIncome"),
+    "How much foreign tax was deducted from your dividend income from Portugal?" -> By.cssSelector("<h1 class=\"govuk-heading-l\">How much foreign tax was deducted from your dividend income from Portugal?</h1>"),
+    "Your foreign dividends by country" -> By.cssSelector("<h1 class=\"govuk-heading-l\">Your foreign dividends by country</h1>"),
+    "Your client's foreign dividends by country" -> By.cssSelector("<h1 class=\"govuk-heading-l\">Your client's foreign dividends by country</h1>"),
+    "Have you completed this section?" -> By.cssSelector("<h1 class=\"govuk-heading-l\">Have you completed this section?</h1>"),
 
     // Property - rent-a-room
     "Rent-a-room" -> By.id("value_1"),

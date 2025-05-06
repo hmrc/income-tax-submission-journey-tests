@@ -34,7 +34,9 @@ Feature: Self Employment Accrual Accounting Journey
   Scenario: 2 - Individual - Self-employment abroad
     When the user clicks on the Industry sectors and working abroad link
     Then the user should be redirected to the "Were you a farmer or market gardener?" page under self employment
-    And the user selects the yes radio button and clicks the Continue button
+    And the user selects the no radio button and clicks the Continue button
+    Then the user should be redirected to the "Did you get over half of your profit from literary or creative works?" page under self employment
+    Then the user selects the yes radio button and clicks the Continue button
     Then the user should be redirected to the "Did you carry out all of your self-employment abroad?" page under self employment
     When the user selects the yes radio button and clicks the Continue button
     Then the user should be redirected to the "Check your details" page under self employment

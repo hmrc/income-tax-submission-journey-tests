@@ -48,27 +48,26 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "Jobseeker’s Allowance" page
     When the user selects the Yes, claim Jobseeker's Allowance radio button
     And the user clicks the continue, missing claim button
-#    When the user clicks the Add missing claim button
     Then the user should be redirected to the "When did you start getting Jobseeker’s Allowance?" page
     When the user selects the claim day field and enters a value of 01
     And the user selects the claim month field and enters a value of 10
-    And the user selects the claim year field and enters a value of 2023
+    And the user selects the claim year field and enters a value of TaxYearMinusTwo
     And the user clicks the continue button
-    Then the user will be redirected to the "Did this claim end" between 6 April and 5 April page
+    Then the user will be redirected to the "Did this claim end" between 1 October TaxYearMinusTwo and 5 April EOY page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "When did this claim end?" page
     When the user selects the claim day field and enters a value of 02
     And the user selects the claim month field and enters a value of 03
-    And the user selects the claim year field and enters a value of 2024
+    And the user selects the claim year field and enters a value of EOY
     And the user clicks the continue button
-    Then the user will be redirected to the "Did you have any tax taken off your Jobseeker’s Allowance" between 6 April and 2 March page
+    Then the user will be redirected to the "Did you have any tax taken off your Jobseeker’s Allowance" between 1 October TaxYearMinusTwo and 2 March EOY page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user will be redirected to the "How much Jobseeker’s Allowance did you get" between 6 April and 2 March page
+    Then the user will be redirected to the "How much Jobseeker’s Allowance did you get" between 1 October TaxYearMinusTwo and 2 March EOY page
     When the user selects the amount field and enters a value of 1100.02
     And the user clicks the continue button
-    Then the user will be redirected to the "How much tax was taken off your Jobseeker’s Allowance" between 6 April and 2 March page
+    Then the user will be redirected to the "How much tax was taken off your Jobseeker’s Allowance" between 1 October TaxYearMinusTwo and 2 March EOY page
     When the user selects the amount field and enters a value of 100.02
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
@@ -107,42 +106,42 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change end date question link
-    Then the user will be redirected to the "Did this claim end" between 6 April and 5 April page
+    Then the user will be redirected to the "Did this claim end" between 6 April TaxYearMinusTwo and 5 April EOY page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change end date question link
-    Then the user will be redirected to the "Did this claim end" between 6 April and 5 April page
+    Then the user will be redirected to the "Did this claim end" between 6 April TaxYearMinusTwo and 5 April EOY page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "When did this claim end?" page
     When the user selects the claim day field and enters a value of 04
     And the user selects the claim month field and enters a value of 11
-    And the user selects the claim year field and enters a value of 2023
+    And the user selects the claim year field and enters a value of TaxYearMinusTwo
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change end date link
     Then the user should be redirected to the "When did this claim end?" page
     When the user selects the claim day field and enters a value of 04
     And the user selects the claim month field and enters a value of 03
-    And the user selects the claim year field and enters a value of 2024
+    And the user selects the claim year field and enters a value of EOY
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change tax taken question link
-    Then the user will be redirected to the "Did you have any tax taken off your Jobseeker’s Allowance" between 6 April and 4 March page
+    Then the user will be redirected to the "Did you have any tax taken off your Jobseeker’s Allowance" between 6 April TaxYearMinusTwo and 4 March EOY page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change amount link
-    Then the user will be redirected to the "How much Jobseeker’s Allowance did you get" between 6 April and 4 March page
+    Then the user will be redirected to the "How much Jobseeker’s Allowance did you get" between 6 April TaxYearMinusTwo and 4 March EOY page
     When the user selects the amount field and enters a value of 510.02
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change tax taken question link
-    Then the user will be redirected to the "Did you have any tax taken off your Jobseeker’s Allowance" between 6 April and 4 March page
+    Then the user will be redirected to the "Did you have any tax taken off your Jobseeker’s Allowance" between 6 April TaxYearMinusTwo and 4 March EOY page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user will be redirected to the "How much tax was taken off your Jobseeker’s Allowance" between 6 April and 4 March page
+    Then the user will be redirected to the "How much tax was taken off your Jobseeker’s Allowance" between 6 April TaxYearMinusTwo and 4 March EOY page
     When the user selects the amount field and enters a value of 100.23
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
@@ -168,33 +167,32 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "Jobseeker’s Allowance" page
     When the user selects the Yes, claim Jobseeker's Allowance radio button
     And the user clicks the continue, missing claim button
- #   When the user clicks the Add missing claim button
     Then the user should be redirected to the "When did you start getting Jobseeker’s Allowance?" page
     When the user selects the claim day field and enters a value of 01
     And the user selects the claim month field and enters a value of 07
-    And the user selects the claim year field and enters a value of 2023
+    And the user selects the claim year field and enters a value of TaxYearMinusTwo
     And the user clicks the continue button
-    Then the user will be redirected to the "Did this claim end" between 6 April and 5 April page
+    Then the user will be redirected to the "Did this claim end" between 1 July TaxYearMinusTwo and 5 April EOY page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "When did this claim end?" page
     When the user selects the claim day field and enters a value of 02
     And the user selects the claim month field and enters a value of 02
-    And the user selects the claim year field and enters a value of 2024
+    And the user selects the claim year field and enters a value of EOY
     And the user clicks the continue button
-    Then the user will be redirected to the "Did you have any tax taken off your Jobseeker’s Allowance" between 6 April and 2 February page
+    Then the user will be redirected to the "Did you have any tax taken off your Jobseeker’s Allowance" between 1 July TaxYearMinusTwo and 2 February EOY page
     When the user selects the no radio button
     And the user clicks the continue button
-    Then the user will be redirected to the "How much Jobseeker’s Allowance did you get" between 6 April and 2 February page
+    Then the user will be redirected to the "How much Jobseeker’s Allowance did you get" between 1 July TaxYearMinusTwo and 2 February EOY page
     When the user selects the amount field and enters a value of 110.02
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user goes back to the previous page in their browser's history
     And the user goes back to the previous page in their browser's history
-    Then the user will be redirected to the "Did you have any tax taken off your Jobseeker’s Allowance" between 6 April and 2 February page
+    Then the user will be redirected to the "Did you have any tax taken off your Jobseeker’s Allowance" between 1 July TaxYearMinusTwo and 2 February EOY page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user will be redirected to the "How much tax was taken off your Jobseeker’s Allowance" between 6 April and 2 February page
+    Then the user will be redirected to the "How much tax was taken off your Jobseeker’s Allowance" between 1 July TaxYearMinusTwo and 2 February EOY page
     When the user selects the amount field and enters a value of 100.02
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
@@ -248,23 +246,23 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "When did your client start getting Jobseeker’s Allowance?" page
     When the user selects the claim day field and enters a value of 01
     And the user selects the claim month field and enters a value of 11
-    And the user selects the claim year field and enters a value of 2023
+    And the user selects the claim year field and enters a value of TaxYearMinusTwo
     And the user clicks the continue button
-    Then the user will be redirected to the "Did this claim end" between 6 April and 5 April page
+    Then the user will be redirected to the "Did this claim end" between 1 November TaxYearMinusTwo and 5 April EOY page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "When did this claim end?" page
     When the user selects the claim day field and enters a value of 02
     And the user selects the claim month field and enters a value of 03
-    And the user selects the claim year field and enters a value of 2024
+    And the user selects the claim year field and enters a value of EOY
     And the user clicks the continue button
-    Then the user will be redirected to the "Did your client have any tax taken off their Jobseeker’s Allowance" between 6 April and 2 March page
+    Then the user will be redirected to the "Did your client have any tax taken off their Jobseeker’s Allowance" between 1 November TaxYearMinusTwo and 2 March EOY page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user will be redirected to the "How much Jobseeker’s Allowance did your client get" between 6 April and 2 March page
+    Then the user will be redirected to the "How much Jobseeker’s Allowance did your client get" between 1 November TaxYearMinusTwo and 2 March EOY page
     When the user selects the amount field and enters a value of 110.02
     And the user clicks the continue button
-    Then the user will be redirected to the "How much tax was taken off your client’s Jobseeker’s Allowance" between 6 April and 2 March page
+    Then the user will be redirected to the "How much tax was taken off your client’s Jobseeker’s Allowance" between 1 November TaxYearMinusTwo and 2 March EOY page
     When the user selects the amount field and enters a value of 100.02
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
@@ -303,46 +301,46 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "When did your client start getting Jobseeker’s Allowance?" page
     When the user selects the claim day field and enters a value of 04
     And the user selects the claim month field and enters a value of 08
-    And the user selects the claim year field and enters a value of 2023
+    And the user selects the claim year field and enters a value of TaxYearMinusTwo
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change end date question link
-    Then the user will be redirected to the "Did this claim end" between 6 April and 5 April page
+    Then the user will be redirected to the "Did this claim end" between 4 August TaxYearMinusTwo and 5 April EOY page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change end date question link
-    Then the user will be redirected to the "Did this claim end" between 6 April and 5 April page
+    Then the user will be redirected to the "Did this claim end" between 4 August TaxYearMinusTwo and 5 April EOY page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "When did this claim end?" page
     When the user selects the claim day field and enters a value of 04
     And the user selects the claim month field and enters a value of 11
-    And the user selects the claim year field and enters a value of 2023
+    And the user selects the claim year field and enters a value of TaxYearMinusTwo
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change end date link
     Then the user should be redirected to the "When did this claim end?" page
     When the user selects the claim day field and enters a value of 04
     And the user selects the claim month field and enters a value of 02
-    And the user selects the claim year field and enters a value of 2024
+    And the user selects the claim year field and enters a value of EOY
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change tax taken question link
-    Then the user will be redirected to the "Did your client have any tax taken off their Jobseeker’s Allowance" between 6 April and 4 February page
+    Then the user will be redirected to the "Did your client have any tax taken off their Jobseeker’s Allowance" between 4 August TaxYearMinusTwo and 4 February EOY page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change amount link
-    Then the user will be redirected to the "How much Jobseeker’s Allowance did your client get" between 6 April and 4 February page
+    Then the user will be redirected to the "How much Jobseeker’s Allowance did your client get" between 4 August TaxYearMinusTwo and 4 February EOY page
     When the user selects the amount field and enters a value of 510.02
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
     When the user clicks on the state benefit change tax taken question link
-    Then the user will be redirected to the "Did your client have any tax taken off their Jobseeker’s Allowance" between 6 April and 4 February page
+    Then the user will be redirected to the "Did your client have any tax taken off their Jobseeker’s Allowance" between 4 August TaxYearMinusTwo and 4 February EOY page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user will be redirected to the "How much tax was taken off your client’s Jobseeker’s Allowance" between 6 April and 4 February page
+    Then the user will be redirected to the "How much tax was taken off your client’s Jobseeker’s Allowance" between 4 August TaxYearMinusTwo and 4 February EOY page
     When the user selects the amount field and enters a value of 100.23
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page
@@ -397,21 +395,21 @@ Feature: State Benefits Journeys - Income Tax Submission
     And the user selects the claim month field and enters a value of 01
     And the user selects the claim year field and enters a value of 2023
     And the user clicks the continue button
-    Then the user will be redirected to the "Did this claim end" between 6 April and 5 April page
+    Then the user will be redirected to the "Did this claim end" between 6 April TaxYearMinusTwo and 5 April EOY page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "When did this claim end?" page
     When the user selects the claim day field and enters a value of 02
     And the user selects the claim month field and enters a value of 02
-    And the user selects the claim year field and enters a value of 2024
+    And the user selects the claim year field and enters a value of EOY
     And the user clicks the continue button
-    Then the user will be redirected to the "Did you have any tax taken off your Employment and Support Allowance" between 6 April and 2 February page
+    Then the user will be redirected to the "Did you have any tax taken off your Employment and Support Allowance" between 6 April TaxYearMinusTwo and 2 February EOY page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user will be redirected to the "How much Employment and Support Allowance did you get" between 6 April and 2 February page
+    Then the user will be redirected to the "How much Employment and Support Allowance did you get" between 6 April TaxYearMinusTwo and 2 February EOY page
     When the user selects the amount field and enters a value of 1130.02
     And the user clicks the continue button
-    Then the user will be redirected to the "How much tax was taken off your Employment and Support Allowance" between 6 April and 2 February page
+    Then the user will be redirected to the "How much tax was taken off your Employment and Support Allowance" between 6 April TaxYearMinusTwo and 2 February EOY page
     When the user selects the amount field and enters a value of 130.02
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
@@ -446,46 +444,46 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "When did you start getting Employment and Support Allowance?" page
     When the user selects the claim day field and enters a value of 02
     And the user selects the claim month field and enters a value of 05
-    And the user selects the claim year field and enters a value of 2023
+    And the user selects the claim year field and enters a value of TaxYearMinusTwo
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     When the user clicks on the state benefit change end date question link
-    Then the user will be redirected to the "Did this claim end" between 6 April and 5 April page
+    Then the user will be redirected to the "Did this claim end" between 2 May TaxYearMinusTwo and 5 April EOY page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     When the user clicks on the state benefit change end date question link
-    Then the user will be redirected to the "Did this claim end" between 6 April and 5 April page
+    Then the user will be redirected to the "Did this claim end" between 2 May TaxYearMinusTwo and 5 April EOY page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "When did this claim end?" page
     When the user selects the claim day field and enters a value of 03
     And the user selects the claim month field and enters a value of 02
-    And the user selects the claim year field and enters a value of 2024
+    And the user selects the claim year field and enters a value of EOY
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     When the user clicks on the state benefit change end date link
     Then the user should be redirected to the "When did this claim end?" page
     When the user selects the claim day field and enters a value of 04
     And the user selects the claim month field and enters a value of 04
-    And the user selects the claim year field and enters a value of 2024
+    And the user selects the claim year field and enters a value of EOY
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     When the user clicks on the state benefit change tax taken question link
-    Then the user will be redirected to the "Did you have any tax taken off your Employment and Support Allowance" between 6 April and 4 April page
+    Then the user will be redirected to the "Did you have any tax taken off your Employment and Support Allowance" between 2 May TaxYearMinusTwo and 4 April EOY page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     When the user clicks on the state benefit change amount link
-    Then the user will be redirected to the "How much Employment and Support Allowance did you get" between 6 April and 4 April page
+    Then the user will be redirected to the "How much Employment and Support Allowance did you get" between 2 May TaxYearMinusTwo and 4 April EOY page
     When the user selects the amount field and enters a value of 5100.02
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     When the user clicks on the state benefit change tax taken question link
-    Then the user will be redirected to the "Did you have any tax taken off your Employment and Support Allowance" between 6 April and 4 April page
+    Then the user will be redirected to the "Did you have any tax taken off your Employment and Support Allowance" between 2 May TaxYearMinusTwo and 4 April EOY page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user will be redirected to the "How much tax was taken off your Employment and Support Allowance" between 6 April and 4 April page
+    Then the user will be redirected to the "How much tax was taken off your Employment and Support Allowance" between 2 May TaxYearMinusTwo and 4 April EOY page
     When the user selects the amount field and enters a value of 100.23
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
@@ -541,29 +539,28 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "When did your client start getting Employment and Support Allowance?" page
     When the user selects the claim day field and enters a value of 01
     And the user selects the claim month field and enters a value of 01
-    And the user selects the claim year field and enters a value of 2023
+    And the user selects the claim year field and enters a value of TaxYearMinusTwo
     And the user clicks the continue button
-    Then the user will be redirected to the "Did this claim end" between 6 April and 5 April page
+    Then the user will be redirected to the "Did this claim end" between 6 April TaxYearMinusTwo and 5 April EOY page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "When did this claim end?" page
     When the user selects the claim day field and enters a value of 02
     And the user selects the claim month field and enters a value of 02
-    And the user selects the claim year field and enters a value of 2024
+    And the user selects the claim year field and enters a value of EOY
     And the user clicks the continue button
-    Then the user will be redirected to the "Did your client have any tax taken off their Employment and Support Allowance" between 6 April and 2 February page
+    Then the user will be redirected to the "Did your client have any tax taken off their Employment and Support Allowance" between 6 April TaxYearMinusTwo and 2 February EOY page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user will be redirected to the "How much Employment and Support Allowance did your client get" between 6 April and 2 February page
+    Then the user will be redirected to the "How much Employment and Support Allowance did your client get" between 6 April TaxYearMinusTwo and 2 February EOY page
     When the user selects the amount field and enters a value of 1310.02
     And the user clicks the continue button
-    Then the user will be redirected to the "How much tax was taken off your client’s Employment and Support Allowance" between 6 April and 2 February page
+    Then the user will be redirected to the "How much tax was taken off your client’s Employment and Support Allowance" between 6 April TaxYearMinusTwo and 2 February EOY page
     When the user selects the amount field and enters a value of 500.02
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     When the user clicks the state benefit save and continue button
     Then the user should be redirected to the "Employment and Support Allowance" page
-
 
   Scenario: Agent User edits Employment and Support Allowance in session data EOY
     When the user logs into the service with the following details
@@ -590,46 +587,46 @@ Feature: State Benefits Journeys - Income Tax Submission
     Then the user should be redirected to the "When did your client start getting Employment and Support Allowance?" page
     When the user selects the claim day field and enters a value of 02
     And the user selects the claim month field and enters a value of 01
-    And the user selects the claim year field and enters a value of 2023
+    And the user selects the claim year field and enters a value of TaxYearMinusTwo
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     When the user clicks on the state benefit change end date question link
-    Then the user will be redirected to the "Did this claim end" between 6 April and 5 April page
+    Then the user will be redirected to the "Did this claim end" between 6 April TaxYearMinusTwo and 5 April EOY page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     When the user clicks on the state benefit change end date question link
-    Then the user will be redirected to the "Did this claim end" between 6 April and 5 April page
+    Then the user will be redirected to the "Did this claim end" between 6 April TaxYearMinusTwo and 5 April EOY page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "When did this claim end?" page
     When the user selects the claim day field and enters a value of 03
     And the user selects the claim month field and enters a value of 07
-    And the user selects the claim year field and enters a value of 2023
+    And the user selects the claim year field and enters a value of TaxYearMinusTwo
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     When the user clicks on the state benefit change end date link
     Then the user should be redirected to the "When did this claim end?" page
     When the user selects the claim day field and enters a value of 04
     And the user selects the claim month field and enters a value of 02
-    And the user selects the claim year field and enters a value of 2024
+    And the user selects the claim year field and enters a value of EOY
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     When the user clicks on the state benefit change tax taken question link
-    Then the user will be redirected to the "Did your client have any tax taken off their Employment and Support Allowance" between 6 April and 4 February page
+    Then the user will be redirected to the "Did your client have any tax taken off their Employment and Support Allowance" between 6 April TaxYearMinusTwo and 4 February EOY page
     When the user selects the no radio button
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     When the user clicks on the state benefit change amount link
-    Then the user will be redirected to the "How much Employment and Support Allowance did your client get" between 6 April and 4 February page
+    Then the user will be redirected to the "How much Employment and Support Allowance did your client get" between 6 April TaxYearMinusTwo and 4 February EOY page
     When the user selects the amount field and enters a value of 5100.02
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page
     When the user clicks on the state benefit change tax taken question link
-    Then the user will be redirected to the "Did your client have any tax taken off their Employment and Support Allowance" between 6 April and 4 February page
+    Then the user will be redirected to the "Did your client have any tax taken off their Employment and Support Allowance" between 6 April TaxYearMinusTwo and 4 February EOY page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user will be redirected to the "How much tax was taken off your client’s Employment and Support Allowance" between 6 April and 4 February page
+    Then the user will be redirected to the "How much tax was taken off your client’s Employment and Support Allowance" between 6 April TaxYearMinusTwo and 4 February EOY page
     When the user selects the amount field and enters a value of 100.23
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page

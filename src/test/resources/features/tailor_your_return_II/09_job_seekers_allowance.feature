@@ -33,23 +33,23 @@ Feature: Jobseeker's Allowance Journeys - Income Tax Submission
     Then the user should be redirected to the "When did you start getting Jobseeker’s Allowance?" page
     When the user selects the claim day field and enters a value of 01
     And the user selects the claim month field and enters a value of 10
-    And the user selects the claim year field and enters a value of 2023
+    And the user selects the claim year field and enters a value of TaxYearMinusTwo
     And the user clicks the continue button
-    Then the user should be redirected to the "Did this claim end between 1 October 2023 and 5 April 2024?" page
+    Then the user will be redirected to the "Did this claim end" between 1 October TaxYearMinusTwo and 5 April EOY page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "When did this claim end?" page
     When the user selects the claim day field and enters a value of 02
     And the user selects the claim month field and enters a value of 03
-    And the user selects the claim year field and enters a value of 2024
+    And the user selects the claim year field and enters a value of EOY
     And the user clicks the continue button
-    Then the user should be redirected to the "Did you have any tax taken off your Jobseeker’s Allowance between 1 October 2023 and 2 March 2024?" page
+    Then the user will be redirected to the "Did you have any tax taken off your Jobseeker’s Allowance" between 1 October TaxYearMinusTwo and 2 March EOY page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "How much Jobseeker’s Allowance did you get between 1 October 2023 and 2 March 2024?" page
+    Then the user will be redirected to the "How much Jobseeker’s Allowance did you get" between 1 October TaxYearMinusTwo and 2 March EOY page
     When the user selects the amount field and enters a value of 1100.02
     And the user clicks the continue button
-    Then the user should be redirected to the "How much tax was taken off your Jobseeker’s Allowance between 1 October 2023 and 2 March 2024?" page
+    Then the user will be redirected to the "How much tax was taken off your Jobseeker’s Allowance" between 1 October TaxYearMinusTwo and 2 March EOY page
     When the user selects the amount field and enters a value of 100.02
     And the user clicks the continue button
     Then the user should be redirected to the "Review Jobseeker’s Allowance claim" page

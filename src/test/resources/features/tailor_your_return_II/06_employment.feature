@@ -36,13 +36,13 @@ Feature: Employment Journeys - Income Tax Submission
     And the user selects the Month field and enters a value of 09
     And the user selects the Year field and enters a value of 2021
     And the user clicks the continue button
-    Then the user should be redirected to the "Did you leave between 6 April 2023 and 5 April 2024?" page
+    Then the user will be redirected to the "Did you leave" between 6 April TaxYearMinusTwo and 5 April EOY page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then  the user should be redirected to the "When did you leave Bear’s Blue House LTD?" page
+    Then the user should be redirected to the "When did you leave Bear’s Blue House LTD?" page
     When the user selects the Day field and enters a value of 24
     And the user selects the Month field and enters a value of 12
-    And the user selects the Year field and enters a value of 2023
+    And the user selects the Year field and enters a value of TaxYearMinusTwo
     And the user clicks the continue button
     Then the user should be redirected to the "What is Bear’s Blue House LTD’s employer PAYE reference? (optional)" page
     When the user selects the PAYE reference field and enters a value of 123/AB456

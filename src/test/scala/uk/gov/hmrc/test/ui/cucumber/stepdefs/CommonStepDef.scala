@@ -41,14 +41,12 @@ class CommonStepDef extends Steps with TaxYearHelper {
   }
 
   Then("""^the user will be redirected to the "(.*)" between (.*) and (.*) page$""") {
-    (partialTitle: String, startDate: String, endDate: String) =>
+    (partialTitle: String, taxYearPrevious: String, taxYear: String) =>
 
-      val (startYear, endYear) =
-        if (partialTitle == "Did this claim end") (taxYearMinusTwo, currentTaxYear)
-        else if (partialTitle.contains("Jobseeker")) (taxYearMinusTwo, taxYearMinusTwo)
-        else (taxYearMinusTwo, taxYearMinusTwo)
+      val expectedTaxYear = replaceTaxYear(taxYear)
+      val previousTaxYear = replaceTaxYear(taxYearPrevious)
 
-      val fullTitle = s"$partialTitle between $startDate $startYear and $endDate $endYear?"
+      val fullTitle = s"$partialTitle between $previousTaxYear and $expectedTaxYear?"
       val expectedTitle = s"$fullTitle - $serviceName - $govUkExtension"
 
       driver.getTitle.replace("\u00A0", " ") should be(expectedTitle)
@@ -156,11 +154,16 @@ class CommonStepDef extends Steps with TaxYearHelper {
   }
 
   When("""^the user selects the (.*) field and enters a value of (.*)$""") { (valueTextBox: String, value: String) =>
-    CommonPage.enterValue(valueTextBox, value)
+    if (value == "EOY" || value ==  "TaxYearMinusTwo") {
+      val year: String = replaceTaxYear(value)
+      CommonPage.enterValue(valueTextBox, year)
+    } else {
+      CommonPage.enterValue(valueTextBox, value)
+    }
   }
 
   Then("""^the user should see the (.*) field with the value of (.*)$""") { (valueTextBox: String, expectedValue: String) =>
-    CommonPage.checkValue(valueTextBox, expectedValue) shouldEqual (true)
+    CommonPage.checkValue(valueTextBox, expectedValue) shouldEqual true
   }
 
   Then("""^the user should see the correct (.*) url$""") { (url: String) =>

@@ -33,23 +33,23 @@ Feature: Employment and Support Allowance Journeys - Income Tax Submission
     Then the user should be redirected to the "When did you start getting Employment and Support Allowance?" page
     When the user selects the claim day field and enters a value of 01
     And the user selects the claim month field and enters a value of 01
-    And the user selects the claim year field and enters a value of 2023
+    And the user selects the claim year field and enters a value of TaxYearMinusTwo
     And the user clicks the continue button
-    Then the user should be redirected to the "Did this claim end between 6 April 2023 and 5 April 2024?" page
+    Then the user will be redirected to the "Did this claim end" between 6 April TaxYearMinusTwo and 5 April EOY page
     When the user selects the yes radio button
     And the user clicks the continue button
     Then the user should be redirected to the "When did this claim end?" page
     When the user selects the claim day field and enters a value of 02
     And the user selects the claim month field and enters a value of 02
-    And the user selects the claim year field and enters a value of 2024
+    And the user selects the claim year field and enters a value of EOY
     And the user clicks the continue button
-    Then the user should be redirected to the "Did you have any tax taken off your Employment and Support Allowance between 6 April 2023 and 2 February 2024?" page
+    Then the user will be redirected to the "Did you have any tax taken off your Employment and Support Allowance" between 6 April TaxYearMinusTwo and 2 February EOY page
     When the user selects the yes radio button
     And the user clicks the continue button
-    Then the user should be redirected to the "How much Employment and Support Allowance did you get between 6 April 2023 and 2 February 2024?" page
+    Then the user will be redirected to the "How much Employment and Support Allowance did you get" between 6 April TaxYearMinusTwo and 2 February EOY page
     When the user selects the amount field and enters a value of 1130.02
     And the user clicks the continue button
-    Then the user should be redirected to the "How much tax was taken off your Employment and Support Allowance between 6 April 2023 and 2 February 2024?" page
+    Then the user will be redirected to the "How much tax was taken off your Employment and Support Allowance" between 6 April TaxYearMinusTwo and 2 February EOY page
     When the user selects the amount field and enters a value of 130.02
     And the user clicks the continue button
     Then the user should be redirected to the "Review Employment and Support Allowance claim" page

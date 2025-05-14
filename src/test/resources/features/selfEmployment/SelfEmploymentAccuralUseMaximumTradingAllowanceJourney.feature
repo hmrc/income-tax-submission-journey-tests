@@ -58,8 +58,11 @@ Feature: Self Employment accrual accounting -Use Maximum trading allowance Journ
     When the user clicks the Continue button
     Then the user should be redirected to the "Self-employment" page under self employment
 
-    When the user clicks on the Self-employment abroad link
-    Then the user should be redirected to the "Did your client carry out all of their self-employment abroad?" page under self employment
+    When the user clicks on the Industry sectors and working abroad link
+    Then the user should be redirected to the "Was your client a farmer or market gardener?" page under self employment
+    When the user selects the yes radio button
+    And the user clicks the Continue button
+    Then the user should be redirected to the "Did your client get over half their profit from literary or creative works?" page under self employment
     When the user selects the yes radio button
     And the user clicks the Continue button
     Then the user should be redirected to the "Check your client’s details" page under self employment

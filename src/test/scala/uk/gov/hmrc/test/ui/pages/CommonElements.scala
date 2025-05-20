@@ -91,6 +91,9 @@ trait CommonElements extends BasePage with Matchers {
     "Life Annuity common task list"                       -> By.className("LifeAnnuity"),
     "Capital Redemption common task list"                 -> By.className("CapitalRedemption"),
     "Voided ISA(a policy cancelled by your ISA manager) common task list" -> By.className("VoidedISA"),
+    "UK Foreign Property" -> By.className("UkForeignProperty"),
+    "UKProperty" -> By.className("UkProperty"),
+    "ForeignProperty" -> By.className("ForeignProperty"),
 
     //Dividends Elements
     "dividends"                                                  -> By.id("dividends_link"),
@@ -730,6 +733,7 @@ trait CommonElements extends BasePage with Matchers {
     "expenses" -> By.id("ukAndForeignPropertyClaimExpensesOrRelief-no"),
     "use the property income allowance" -> By.id("ukAndForeignPropertyClaimPropertyIncomeAllowanceOrExpenses"),
     "Expenses not PIA" -> By.id("ukAndForeignPropertyClaimPropertyIncomeAllowanceOrExpenses-no"),
+    "My Client does not want to report their property income" -> By.id("value_1"),
 
     //UK & Foreign Property - UK property rentals and rent a room
     "UK property rentals and rent a room About" -> By.id("rentals_and_rent_a_room_about_link"),

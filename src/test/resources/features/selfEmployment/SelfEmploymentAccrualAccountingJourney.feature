@@ -242,6 +242,21 @@ Feature: Self Employment Accrual Accounting Journey
     Then the user should be redirected to the "Self-employment" page under self employment
 
 #    TODO: Add in these steps once journey has been implemented
+    # Travel and accommodation for work MVP
+#    When the user clicks on the Travel and accommodation for work link
+#    Then the user should be redirected to the "How much did you spend on travel and accommodation for work?" page under self employment
+#    And the user selects the Amount-field field and enters a value of 673.27
+#    And the user clicks the Continue button
+#    Then the user should be redirected to the "How much of the £673.27 you spent on travel and accommodation costs is disallowable?" page under self employment
+#    And the user selects the Amount-field field and enters a value of 193.54
+#    And the user clicks the Continue button
+#    Then the user should be redirected to the "Check your travel and accommodation expenses" page under self employment
+#    And the user clicks the Self Employment Save and continue button
+#    Then the user should be redirected to the "Have you finished this section?" page under self employment
+#    When the user selects the Yes, I’ve completed this section radio button and clicks the Continue button
+#    Then the user should be redirected to the "Self-employment" page under self employment
+
+#    TODO: Add in these steps once journey has been implemented
     # Travel and accommodation for work
 #    When the user clicks on the Travel and accommodation for work link
 #    Then the user should be redirected to the "Which travel expenses do you need to claim?" page under self employment

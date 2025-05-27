@@ -10,7 +10,7 @@ Feature: Self Employment Cash accounting Journeys
       | Credential Strength | strong      |
       | Confidence Level    | 250         |
       | Affinity Group      | Individual  |
-      | Nino                | CY682344B   |
+      | Nino                | BB000002C   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
       | Identifier Value 1  | 1234567890  |

@@ -13,7 +13,7 @@ Feature: Self Employment Journeys - Income Tax Submission
       | Nino                | AA123456A   |
       | Enrolment Key 1     | HMRC-MTD-IT |
       | Identifier Name 1   | MTDITID     |
-      | Identifier Value 1  | 1234567000  |
+      | Identifier Value 1  | 1234567891  |
     Then the user navigates to the Tailor return start page
      ##---- clear Test data ----##
     When the user navigates to the Test only clear data page for EOY

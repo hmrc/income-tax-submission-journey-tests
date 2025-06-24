@@ -1,5 +1,4 @@
-@ZAP @pensions
-
+@pensions
 Feature: Pensions Journeys - 01 Payments Into Pensions - Income Tax Submission
 
   Background:

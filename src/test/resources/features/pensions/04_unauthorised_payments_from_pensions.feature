@@ -1,5 +1,4 @@
-@ZAP @pensions
-
+@pensions
 Feature: Pensions Journeys - 04 Unauthorised Payments from Pensions - Income Tax Submission
 
   Background:

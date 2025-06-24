@@ -1,4 +1,4 @@
-@ZAP @employment
+@employment
 ## -- Jenkins pipeline failing for employment if entire test is @ignore. Fix required for EmploymentRunner.
 # Employment test will be fixed once SASS-7918 is deployed
 Feature: Employment Journeys - Income Tax Submission

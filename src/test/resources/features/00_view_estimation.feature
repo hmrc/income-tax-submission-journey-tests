@@ -1,5 +1,4 @@
-@ZAP @view_estimation @V&C
-
+@view_estimation @V&C
 Feature: View Estimation Journeys - Income Tax Submission
 
   Background:

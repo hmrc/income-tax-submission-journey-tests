@@ -1,5 +1,4 @@
 @property
-
 Feature: Foreign Property Journey - Income Tax Submission
 
   Background:

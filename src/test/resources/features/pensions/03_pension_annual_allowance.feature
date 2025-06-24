@@ -1,5 +1,4 @@
-@ZAP @pensions
-
+@pensions
 Feature: Pensions Journeys - 03 Pension Annual Allowance - Income Tax Submission
 
   Background:

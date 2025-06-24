@@ -1,5 +1,4 @@
-@ZAP @pensions
-
+@pensions
 Feature: Pensions Journeys - 02A Income from Pensions - UK Pension Income - Income Tax Submission
 
   Background:

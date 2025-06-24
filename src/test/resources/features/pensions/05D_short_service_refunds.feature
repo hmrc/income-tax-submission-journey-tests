@@ -1,5 +1,4 @@
-@ZAP @pensions
-
+@pensions
 Feature: Pensions Journeys - 05D Short Service refunds - Income Tax Submission
 
   Background:

@@ -1,5 +1,4 @@
-@ZAP @pensions
-
+@pensions
 Feature: Pensions Journeys - 05B Overseas Pensions - Income from Overseas Pensions - Income Tax Submission
 
   Background:

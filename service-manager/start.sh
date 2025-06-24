@@ -3,15 +3,15 @@
 WAIT_TO_START_IN_SECONDS=1200
 WAIT_AFTER_STARTING_IN_SECONDS=30
 
-EXPECTED_SERVICES=($(sm --showcmdfor INCOME_TAX_SUBMISSION_ALL | grep -v 'The parameters you provided\|\/bin\/'))
+EXPECTED_SERVICES=($(sm2 --showcmdfor INCOME_TAX_SUBMISSION_ALL | grep -v 'The parameters you provided\|\/bin\/'))
 
 echo "About to start all the services in the INCOME_TAX_SUBMISSION_ALL profile. This might take a minute or so ..."
-sm --start INCOME_TAX_SUBMISSION_ALL -r --wait $WAIT_TO_START_IN_SECONDS --noprogress
+sm2 --start INCOME_TAX_SUBMISSION_ALL -r --wait $WAIT_TO_START_IN_SECONDS --noprogress
 
 echo "Waiting for ${WAIT_AFTER_STARTING_IN_SECONDS} seconds before checking all services ..."
 sleep $WAIT_AFTER_STARTING_IN_SECONDS
 
-STATUS_OUTPUT=$(sm -s)
+STATUS_OUTPUT=$(sm2 -s)
 echo "$STATUS_OUTPUT"
 
 

@@ -1,18 +1,18 @@
-# App name 
-income-tax-submission-journey-tests
-UI test suite for the `<Income Tax Submission Service>` using WebDriver and `<Cucumber>`.
+# income-tax-submission-journey-tests
+UI test suite for the `<Income Tax Submission Services>` using UITestRunner and `<Cucumber>`.
 
 ## Running the tests
 Prior to executing the tests ensure you have:
- - Docker - to run a Chrome or Firefox browser inside a container
- - Installed [MongoDB](https://docs.mongodb.com/manual/installation/) 
- - Installed/configured [service manager](https://github.com/hmrc/service-manager).  
+ - Installed [MongoDB](https://docs.mongodb.com/manual/installation/)
+ - Installed/configured [service manager](https://github.com/hmrc/sm2)
+
+This can be found in the [developer handbook](https://docs.tax.service.gov.uk/mdtp-handbook/documentation/developer-set-up/)
 
 ### Before running the app
 Run the following command to start services locally:
 
     sudo mongod (If not already running)
-    sm --start INCOME_TAX_SUBMISSION_ALL -r
+    sm2 --start INCOME_TAX_SUBMISSION_ALL
 
 Alternatively you can use [these scripts](./service-manager); for example:
 
@@ -40,22 +40,7 @@ tail -f /var/tmp/*_LOCAL/logs/stdout.txt
 
 ### Running the test suite
 Then execute the `run_tests.sh` script:
-./run_tests.sh <environment> <browser-driver>
-
-## Running tests against a containerised browser - on a developer machine
-
-The script `./run_browser_with_docker.sh` can be used to start a Chrome or Firefox container on a developer machine. 
-The script requires `remote-chrome` or `remote-firefox` as an argument.
-
-Read more about the script's functionality [here](run-browser-with-docker.sh).
-
-To run against a containerised Chrome browser:
-
-```bash
-./run_tests.sh local remote-chrome
-```
-
-`./run-browser-with-docker.sh` is **NOT** required when running in a CI environment. 
+./run_tests.sh <environment> <browser>
 
 #### Running the tests against a test environment
 
@@ -66,31 +51,16 @@ For example, to execute the `run_tests.sh` script against QA  environment using 
 
     ./run_tests.sh qa chrome
 
-## Running ZAP tests
+### Tailor your return journey
+If you wish to test the tailoring steps only, there is another label called 'tailorReturnFlows'. Please note that the service manager profile INCOME_TAX_TAILOR_RETURNS_ALL should be used for running these tests otherwise certain scenarios will fail.
+Run these tests with the following arguments
 
-We now run our zap tests to the following implementation - https://github.com/hmrc/dast-config-manager/blob/master/README.md#running-zap-locally
+* Argument `<environment>` must be `local`, `qa` or `staging`.
+* Argument `<browser>` must be `chrome`, `edge` or `firefox`.
+* Argument `<PrivateBeta>` must be `true` or `false`.
 
-For ease of use, this setup has been wrapped in the `run_zap_tests.sh` shell script. Please ensure you have Docker set up to be able to run this.
-
-#### Tagging tests for ZAP
-
-It is not required to proxy every journey test via ZAP. The intention of proxying a test through ZAP is to expose all the
- relevant pages of an application to ZAP. So tagging a subset of the journey tests or creating a 
- single ZAP focused journey test is sufficient.
-
-#### Configuring the browser to proxy via ZAP 
-
-Setting the system property `zap.proxy=true` configures the browser specified in `browser` property to proxy via ZAP. 
-This is achieved using [webdriver-factory](https://github.com/hmrc/webdriver-factory#proxying-trafic-via-zap).  
-
-#### Executing a ZAP test
-
-The shell script `run_zap_tests.sh` is available to execute ZAP tests. 
-
-For example, to execute ZAP tests locally using a Chrome browser
-
-```
-./run_zap_test.sh local chrome
+```bash
+./run_tailoring_tests.sh <environment> <browser> <PrivateBeta>
 ```
 
 #### Taking screenshots of a journey
@@ -104,28 +74,8 @@ all error messages throughout the journey, so the Welsh Language Unit can QA all
 
 > Note: Old screenshots will be deleted at the start of each run, so ensure you have taken copies before running the tests again.
 
-### Running tests using BrowserStack
-If you would like to run your tests via BrowserStack from your local development environment please refer to the [webdriver-factory](https://github.com/hmrc/webdriver-factory/blob/master/README.md/#user-content-running-tests-using-browser-stack) project.
-
-## [Installing local driver binaries](#install-driver-binaries)
-
-This project supports UI test execution using Firefox (Geckodriver) and Chrome (Chromedriver) browsers. 
-
-See the `drivers/` directory for some helpful scripts to do the installation work for you.  They should work on both Mac and Linux by running the following command:
-
-    ./installGeckodriver.sh <operating-system> <driver-version>
-    or
-    ./installChromedriver <operating-system> <driver-version>
-
-- *<operating-system>* defaults to **linux64**, however it also supports **macos**
-- *<driver-version>* defaults to **0.21.0** for Gecko/Firefox, and the latest release for Chrome.  You can, however, however pass any version available at the [Geckodriver](https://github.com/mozilla/geckodriver/tags) or [Chromedriver](http://chromedriver.storage.googleapis.com/) repositories.
-
-**Note 1:** *You will need to ensure that you have a recent version of Chrome and/or Firefox installed for the later versions of the drivers to work reliably.*
-
-**Note 2** *These scripts use sudo to set the right permissions on the drivers so you will likely be prompted to enter your password.*
-
 ## Running Test Integrated with V&C services 
-**TO DO:** *Run the following V&C services.*
+Run the following V&C services:
 
      sm2 --start MATCHING_STUB
      sm2 --start CITIZEN_DETAILS
@@ -159,10 +109,13 @@ This would generate default data for the user AA123456A with required obligation
 
 ### Delete itvc-stub and income-tax-view-change-frontend Mongo databases staging
     ./run_deleteStubData_staging.sh
+
 ## Nomenclature
-InYear = Current tax year i.e 24-25
-EOY = previous tax year i.e 23-24
+InYear = Current tax year i.e 25-26
+EOY = previous tax year i.e 24-25
+
 ### Further documentation
  N/A
+
 ## Licence
 N/A

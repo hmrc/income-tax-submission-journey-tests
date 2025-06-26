@@ -1,5 +1,4 @@
-@ZAP @pensions
-
+@pensions
 Feature: Pensions Journeys - 02B Income from Pensions - State Pension - Income Tax Submission
 
   Background:

@@ -1,5 +1,4 @@
-@ZAP @pensions
-
+@pensions
 Feature: Pensions Journeys - 05C Overseas Pensions - Overseas transfer charges - Income Tax Submission
 
   Background:

@@ -1,5 +1,4 @@
-@MVP @ZAP @cis
-
+@MVP @cis
 Feature: Construction Industry Scheme (CIS) Journeys - Income Tax Submission
 
   Background:

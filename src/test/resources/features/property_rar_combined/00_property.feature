@@ -1,5 +1,4 @@
-@MVP @ZAP @property
-
+@MVP @property
 Feature: Property Journeys - Income Tax Submission
 
   Background:

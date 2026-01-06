@@ -16,7 +16,11 @@
 
 package uk.gov.hmrc.test.ui.conf
 
-import java.time.LocalDate
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.support.ui.FluentWait
+import uk.gov.hmrc.selenium.webdriver.Driver
+
+import java.time.{Duration, LocalDate}
 
 trait TaxYearHelper {
 
@@ -27,4 +31,11 @@ trait TaxYearHelper {
   val taxYearEOY: Int = taxYear - 1
   val currentTaxYear: Int = LocalDate.now().getYear
   val taxYearMinusTwo: Int = taxYear - 2
+
+  val WAIT_POLLING_INTERVAL: Duration = Duration.ofMillis(250)
+  val WAIT_TIME_OUT: Duration         = Duration.ofSeconds(20)
+
+  def fluentWait: FluentWait[WebDriver] = new FluentWait[WebDriver](Driver.instance)
+    .withTimeout(WAIT_TIME_OUT)
+    .pollingEvery(WAIT_POLLING_INTERVAL)
 }

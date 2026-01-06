@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pages
 
 import io.cucumber.datatable.DataTable
 import org.openqa.selenium.{By, WebElement}
-import org.openqa.selenium.support.ui.Select
+import org.openqa.selenium.support.ui.{ExpectedCondition, ExpectedConditions, Select}
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.selenium.webdriver.Driver
 import uk.gov.hmrc.test.ui.conf.TaxYearHelper
@@ -87,6 +87,7 @@ trait BasePage extends Matchers with BrowserDriver with TaxYearHelper {
   }
 
   def clickOn(selector: By): Unit = {
+    fluentWait.until(ExpectedConditions.elementToBeClickable(selector))
     driver.findElement(selector).click()
   }
 

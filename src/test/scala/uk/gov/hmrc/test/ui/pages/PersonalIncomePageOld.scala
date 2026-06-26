@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 
-object PersonalIncomePage {
+object PersonalIncomePageOld {
 
   lazy val url: String = TestConfiguration.url("personal-income-tax-submission-frontend")
 

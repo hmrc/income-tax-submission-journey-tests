@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.pages
 import org.openqa.selenium.By
 import org.scalatest.matchers.should.Matchers
 
-trait CommonElements extends BasePage with Matchers {
+trait CommonElements extends BasePageOld with Matchers {
 
   def load(key: String): By =
     elements(key)
@@ -867,7 +867,7 @@ trait CommonElements extends BasePage with Matchers {
     "fifth option" -> By.id("value_4"),
     "all checkbox options" -> By.cssSelector("#value_0, #value_1, #value_2, #value_3, #value_4, #value_5, #value_6, #value_7"),
     "Office supplies" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/office-supplies/amount') + 1) = 'expenses/office-supplies/amount']"),
-    "Goods to sell or use" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/goods-sell-use/taxi-minicab-road-haulage-industry-driver') + 1) = 'expenses/goods-sell-use/taxi-minicab-road-haulage-industry-driver']"),
+    "Goods to sell or use" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/goods-sell-use/taxi-minicab-road-haulage-industry-Driver.instance') + 1) = 'expenses/goods-sell-use/taxi-minicab-road-haulage-industry-Driver.instance']"),
     "Repairs and maintenance" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/repairs-maintenance/amount') + 1) = 'expenses/repairs-maintenance/amount']"),
     "Travel and accommodation for work" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/travel/travel-accommodation-total-expenses') + 1) = 'expenses/travel/travel-accommodation-total-expenses']"),
     "Advertising or marketing" -> By.xpath("//dt[@class='govuk-summary-list__key']//a[substring(@href, string-length(@href) - string-length('expenses/advertising-marketing/amount') + 1) = 'expenses/advertising-marketing/amount']"),

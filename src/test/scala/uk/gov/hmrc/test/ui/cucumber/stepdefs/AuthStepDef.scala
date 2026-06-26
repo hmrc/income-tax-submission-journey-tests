@@ -17,18 +17,18 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.pages.AuthLoginPage._
-import uk.gov.hmrc.test.ui.pages.{BasePage, CommonPage}
+import uk.gov.hmrc.test.ui.pages.AuthLoginPageOld._
+import uk.gov.hmrc.test.ui.pages.{BasePageOld, CommonPageOld}
 
 import java.time.Year
 
-class AuthStepDef extends BasePage with Steps {
+class AuthStepDef extends BasePageOld with Steps {
 
   val currentYear = Year.now().getValue.toString
 
   Given("""^the user logs into the service with the following details$""") { arg: DataTable =>
     useDataTable(arg)
-    getRedirectUrl.sendKeys(CommonPage.url + redirectUrl)
+    getRedirectUrl.sendKeys(CommonPageOld.url + redirectUrl)
     selectCredentialStrength(credentialStrength)
     selectConfidenceLevel(confidenceLevel)
     selectAffinityGroup(affinityGroup)

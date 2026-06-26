@@ -17,13 +17,14 @@
 package uk.gov.hmrc.test.ui.pages
 
 import io.cucumber.datatable.DataTable
-import org.openqa.selenium.{By, WebElement}
-import org.openqa.selenium.support.ui.Select
+import org.openqa.selenium.{By, WebDriver, WebElement}
+import org.openqa.selenium.support.ui.{FluentWait, Select, Wait}
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.selenium.webdriver.Driver
 import uk.gov.hmrc.test.ui.conf.TaxYearHelper
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
+import java.time.Duration
 import java.util
 
 trait BasePage extends Matchers with BrowserDriver with TaxYearHelper {
@@ -87,27 +88,30 @@ trait BasePage extends Matchers with BrowserDriver with TaxYearHelper {
   }
 
   def clickOn(selector: By): Unit = {
-    driver.findElement(selector).click()
+    Driver.instance.findElement(selector).click()
   }
 
   def select(selector: By, value: String): Unit = {
-    val dropdown = new Select(driver.findElement(selector))
+    val dropdown = new Select(Driver.instance.findElement(selector))
     dropdown.selectByVisibleText(value)
   }
 
   def attemptToClickOn(selector: By): Unit = {
-    if (driver.findElements(selector).size() > 0) driver.findElement(selector).click()
+    if (Driver.instance.findElements(selector).size() > 0) Driver.instance.findElement(selector).click()
   }
 
   def sendKeys(selector: By, value: String): Unit = {
-    driver.findElement(selector).clear()
-    driver.findElement(selector).sendKeys(value)
+    Driver.instance.findElement(selector).clear()
+    Driver.instance.findElement(selector).sendKeys(value)
   }
 
   def elementExists(selector: By): Boolean =
-    !driver.findElements(selector).isEmpty
+    !Driver.instance.findElements(selector).isEmpty
 
   def navigateBack(): Unit =
-    driver.navigate().back()
+    Driver.instance.navigate().back()
 
+  def fluentWait: Wait[WebDriver] = new FluentWait[WebDriver](Driver.instance)
+    .withTimeout(Duration.ofSeconds(3))
+    .pollingEvery(Duration.ofSeconds(1))
 }

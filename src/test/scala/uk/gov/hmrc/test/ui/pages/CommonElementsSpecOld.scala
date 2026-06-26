@@ -18,11 +18,11 @@ package uk.gov.hmrc.test.ui.pages
 
 import org.scalatest.wordspec.AnyWordSpecLike
 
-class CommonElementsSpec extends AnyWordSpecLike {
+class CommonElementsSpecOld extends AnyWordSpecLike {
 
   "elements" should {
     "not have duplicates" in {
-      val common = new CommonElements {}
+      val common = new CommonElementsOld {}
       val mapping = common.commonMapping
       val groupedByKey = mapping.groupBy(_._1)
       val duplicatedKeys = groupedByKey.filter { case (_, values) => values.size > 1 }.keys.toList

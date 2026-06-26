@@ -16,12 +16,12 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import uk.gov.hmrc.test.ui.pages.CommonPage
+import uk.gov.hmrc.test.ui.pages.CommonPageOld
 
 class CYAStepDef extends Steps {
 
   When("""^the user clicks on the change link in position (.*)$""") { position: String =>
-    CommonPage.clickBySelector(s"#main-content > div > div > dl > div:nth-child($position) > dd.govuk-summary-list__actions > a")
+    CommonPageOld.clickBySelector(s"#main-content > div > div > dl > div:nth-child($position) > dd.govuk-summary-list__actions > a")
   }
 
   When("""^the user clicks on the change (.*) benefit link in position (.*)$""") { (section: String, position: String) =>
@@ -36,17 +36,17 @@ class CYAStepDef extends Steps {
       "assets" -> 9
     )
 
-    CommonPage.clickBySelector(s"#main-content > div > div > dl:nth-of-type(${sectionMaps(section)}) > div:nth-child($position) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a")
+    CommonPageOld.clickBySelector(s"#main-content > div > div > dl:nth-of-type(${sectionMaps(section)}) > div:nth-child($position) > dd.govuk-summary-list__actions.govuk-\\!-width-one-third > a")
   }
 
   Then("""^the status on the page is "(.*)"$""") { (status: String) =>
-    val selector = CommonPage.load(status)
-    CommonPage.elementExists(selector)
+    val selector = CommonPageOld.load(status)
+    CommonPageOld.elementExists(selector)
   }
 
   Then("""^the "(.*)" on the page displays "(.*)"$""") { (tag: String, status: String) =>
-    val selector = CommonPage.load(tag)
-    val result = CommonPage.containsText(selector, status)
+    val selector = CommonPageOld.load(tag)
+    val result = CommonPageOld.containsText(selector, status)
     assert(result, s"The value for '$tag' does not display '$status'")
   }
 }

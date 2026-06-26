@@ -19,8 +19,8 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.conf.TaxYearHelper
-import uk.gov.hmrc.test.ui.pages.CommonPage._
-import uk.gov.hmrc.test.ui.pages.{AdditionalInfoPage, AuthLoginPage, CommonPage}
+import uk.gov.hmrc.test.ui.pages.CommonPageOld._
+import uk.gov.hmrc.test.ui.pages.{AdditionalInfoPageOld, AuthLoginPageOld, CommonPageOld}
 
 class CommonStepDef extends Steps with TaxYearHelper {
 
@@ -92,78 +92,78 @@ class CommonStepDef extends Steps with TaxYearHelper {
   }
 
   When("""^the user goes back to the previous page in their browser's history$""") { () =>
-    CommonPage.navigateBack()
+    CommonPageOld.navigateBack()
   }
 
   When("""^the user clicks on the (.*) link$""") { linkName: String =>
-    CommonPage.clickOnLink(linkName)
+    CommonPageOld.clickOnLink(linkName)
   }
 
   When("""^the user selects the (.*) radio button$""") { radioButtonIdentifier: String =>
-    CommonPage.clickOnRadioButton(radioButtonIdentifier)
+    CommonPageOld.clickOnRadioButton(radioButtonIdentifier)
   }
 
   When("""^the user selects the (.*) radio button and clicks the (.*) button$""") { (radioButtonIdentifier: String, buttonTitle: String) =>
-    CommonPage.clickOnRadioButton(radioButtonIdentifier)
-    CommonPage.clickOnButton(buttonTitle)
+    CommonPageOld.clickOnRadioButton(radioButtonIdentifier)
+    CommonPageOld.clickOnButton(buttonTitle)
   }
 
   When("""^the user deselects the (.*) radio button$""") { radioButtonIdentifier: String =>
-    CommonPage.deselectRadioButton(radioButtonIdentifier)
+    CommonPageOld.deselectRadioButton(radioButtonIdentifier)
   }
 
   When("""^the user selects the (.*) radio button: (.*)$""") { (radioButtonIdentifier: String, buttonName: String) =>
-    CommonPage.clickOnRadioButton(radioButtonIdentifier)
+    CommonPageOld.clickOnRadioButton(radioButtonIdentifier)
   }
 
   When("""^the user clicks the (.*) button$""") { buttonTitle: String =>
-    CommonPage.clickOnButton(buttonTitle)
+    CommonPageOld.clickOnButton(buttonTitle)
   }
 
   When("""^the user clicks the (.*) checkbox$""") { checkboxTitle: String =>
-    CommonPage.clickOnCheckbox(checkboxTitle)
+    CommonPageOld.clickOnCheckbox(checkboxTitle)
   }
 
   When("""^the user clicks the following checkboxes:$""") { (checkboxTitles: DataTable) =>
     checkboxTitles.asList(classOf[String]).forEach { checkboxTitle =>
-      CommonPage.clickOnCheckbox(checkboxTitle)
+      CommonPageOld.clickOnCheckbox(checkboxTitle)
     }
   }
 
   When("""^the user clicks all checkboxes$""") { () =>
-    CommonPage.clickAllCheckboxes()
+    CommonPageOld.clickAllCheckboxes()
   }
 
   When("""^the user clicks the (.*) dropdown and selects (.*)$""") { (dropdownTitle: String, dropdownValue: String) =>
     dropdownValue match {
       case "5 January" =>
-        CommonPage.clickOnDropdown(dropdownTitle, dropdownValue + " " + taxYearEOY)
+        CommonPageOld.clickOnDropdown(dropdownTitle, dropdownValue + " " + taxYearEOY)
       case _ =>
-        CommonPage.clickOnDropdown(dropdownTitle, dropdownValue + " " + taxYearMinusTwo)
+        CommonPageOld.clickOnDropdown(dropdownTitle, dropdownValue + " " + taxYearMinusTwo)
     }
   }
 
 
   When("""^the user clicks both the (.*) and (.*) checkboxes$""") { (checkbox1Title: String, checkbox2Title: String) =>
-    CommonPage.clickOnCheckbox(checkbox1Title)
-    CommonPage.clickOnCheckbox(checkbox2Title)
+    CommonPageOld.clickOnCheckbox(checkbox1Title)
+    CommonPageOld.clickOnCheckbox(checkbox2Title)
   }
 
   When("""^the user clicks the (.*) tailoring option$""") { (checkboxTitle: String) =>
-    CommonPage.attemptToClickOnCheckbox(checkboxTitle)
+    CommonPageOld.attemptToClickOnCheckbox(checkboxTitle)
   }
 
   When("""^the user selects the (.*) field and enters a value of (.*)$""") { (valueTextBox: String, value: String) =>
     if (value == "EOY" || value ==  "TaxYearMinusTwo") {
       val year: String = replaceTaxYear(value)
-      CommonPage.enterValue(valueTextBox, year)
+      CommonPageOld.enterValue(valueTextBox, year)
     } else {
-      CommonPage.enterValue(valueTextBox, value)
+      CommonPageOld.enterValue(valueTextBox, value)
     }
   }
 
   Then("""^the user should see the (.*) field with the value of (.*)$""") { (valueTextBox: String, expectedValue: String) =>
-    CommonPage.checkValue(valueTextBox, expectedValue) shouldEqual true
+    CommonPageOld.checkValue(valueTextBox, expectedValue) shouldEqual true
   }
 
   Then("""^the user should see the correct (.*) url$""") { (url: String) =>
@@ -188,7 +188,7 @@ class CommonStepDef extends Steps with TaxYearHelper {
       case "tax view" => s"http://localhost:9302/update-and-submit-income-tax-return/$taxYear/income-tax-return-overview"
       case "tax overview for individuals" => "http://localhost:9081/report-quarterly/income-and-expenses/view/tax-overview"
       case "tax overview for agents" => "http://localhost:9081/report-quarterly/income-and-expenses/view/agents/tax-overview"
-      case "auth login" => AuthLoginPage.url
+      case "auth login" => AuthLoginPageOld.url
       //TODO remove pension summary pages when link on overview page is created
       case "pensions summary page" => s"http://localhost:9321/update-and-submit-income-tax-return/pensions/$taxYearEOY/pensions-summary"
       case "pensions summary page in year" => s"http://localhost:9321/update-and-submit-income-tax-return/pensions/$taxYear/pensions-summary"
@@ -198,9 +198,9 @@ class CommonStepDef extends Steps with TaxYearHelper {
       case "Payments into pensions" => s"http://localhost:10007/update-and-submit-income-tax-return/tailored-return/$taxYearEOY/payments-pensions"
       case "Rental income" => s"http://localhost:10007/update-and-submit-income-tax-return/tailored-return/$taxYearEOY/property-pensions-investments/rental-income"
       //TODO: Remove the below when the Business Tax Reliefs have been added to Tailor Return and Tax Return Overview
-      case "Post-cessation trade relief" => AdditionalInfoPage.postCessationTradeReliefUrl(taxYear)
-      case "Non-deductible Loan Interest relief" => AdditionalInfoPage.nonDeductibleLoanInterestReliefUrl(taxYear)
-      case "Qualifying loan interest relief" => AdditionalInfoPage.qualifyingLoanInterestReliefUrl(taxYear)
+      case "Post-cessation trade relief" => AdditionalInfoPageOld.postCessationTradeReliefUrl(taxYear)
+      case "Non-deductible Loan Interest relief" => AdditionalInfoPageOld.nonDeductibleLoanInterestReliefUrl(taxYear)
+      case "Qualifying loan interest relief" => AdditionalInfoPageOld.qualifyingLoanInterestReliefUrl(taxYear)
       case _ => fail("Invalid url input parameter")
     }
     driver.navigate().to(expectedUrl)
@@ -246,42 +246,42 @@ class CommonStepDef extends Steps with TaxYearHelper {
   }
 
   Given("""^no employment data exists$""") { () =>
-    if (elementExists(CommonPage.load("Employments list item"))) {
-      while (elementExists(CommonPage.load("remove employment"))) {
-        clickOn(CommonPage.load("remove employment")) // Click remove employment link
-        clickOn(CommonPage.load("Remove employer")) // Click remove employer button
+    if (elementExists(CommonPageOld.load("Employments list item"))) {
+      while (elementExists(CommonPageOld.load("remove employment"))) {
+        clickOn(CommonPageOld.load("remove employment")) // Click remove employment link
+        clickOn(CommonPageOld.load("Remove employer")) // Click remove employer button
       }
     }
   }
 
   Given("""^no expenses data exists$""") { () =>
-    if (elementExists(CommonPage.load("Expenses list item"))) {
-      if (elementExists(CommonPage.load("remove expenses"))) {
-        CommonPage.clickOnLink("remove expenses")
-        CommonPage.clickOnButton("Remove expenses")
+    if (elementExists(CommonPageOld.load("Expenses list item"))) {
+      if (elementExists(CommonPageOld.load("remove expenses"))) {
+        CommonPageOld.clickOnLink("remove expenses")
+        CommonPageOld.clickOnButton("Remove expenses")
       }
     }
   }
 
   Given("""^no cis deductions data exists$""") { () =>
-    val contractor = CommonPage.load("first contractor")
+    val contractor = CommonPageOld.load("first contractor")
     while (elementExists(contractor)) {
       clickOn(contractor)
-      val removeLink = CommonPage.load("first month remove")
+      val removeLink = CommonPageOld.load("first month remove")
       while (elementExists(removeLink)) {
         clickOn(removeLink)
-        clickOn(CommonPage.load("Remove period"))
+        clickOn(CommonPageOld.load("Remove period"))
       }
-      clickOn(CommonPage.load("cis deductions"))
+      clickOn(CommonPageOld.load("cis deductions"))
     }
   }
 
   Given("""no claims exist""") { () =>
-    val selector = CommonPage.load("first view")
+    val selector = CommonPageOld.load("first view")
     while (elementExists(selector)) {
       clickOn(selector)
-      clickOn(CommonPage.load("remove claim"))
-      clickOn(CommonPage.load("Remove claim"))
+      clickOn(CommonPageOld.load("remove claim"))
+      clickOn(CommonPageOld.load("Remove claim"))
     }
   }
 
@@ -294,12 +294,12 @@ class CommonStepDef extends Steps with TaxYearHelper {
   }
 
   Then("""^the (.*) is displayed$""") { (valueElement: String) =>
-    val selector = CommonPage.load(valueElement)
+    val selector = CommonPageOld.load(valueElement)
     elementExists(selector)
   }
 
   When("""^the user clicks on the change scheme link in position (.*)$""") { position: String =>
-    CommonPage.clickBySelector(s"div > dl > div:nth-child($position) > dd.hmrc-add-to-a-list__change > a")
+    CommonPageOld.clickBySelector(s"div > dl > div:nth-child($position) > dd.hmrc-add-to-a-list__change > a")
   }
 
   Then("""^the user should be redirected to the "(.*)" page under self employment$""") { (title: String) =>

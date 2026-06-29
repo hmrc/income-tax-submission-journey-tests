@@ -21,9 +21,12 @@ import uk.gov.hmrc.test.ui.pages.CommonPageOld
 object CYAStepDefSteps {
 
   // ^the user clicks on the change link in position (.*)$
-  def whenTheUserClicksOnTheChangeLinkInPositionX(): Unit = {
+  def whenTheUserClicksOnTheChangeLinkInPositionX(): Unit = { //TODO remove once all migrated to below step
     position: String =>
         CommonPageOld.clickBySelector(s"#main-content > div > div > dl > div:nth-child($position) > dd.govuk-summary-list__actions > a")
+  }
+   def whenTheUserClicksOnTheChangeLinkInPositionX(position: String): Unit = {
+      CommonPageOld.clickBySelector(s"#main-content > div > div > dl > div:nth-child($position) > dd.govuk-summary-list__actions > a")
   }
 
   // ^the user clicks on the change (.*) benefit link in position (.*)$

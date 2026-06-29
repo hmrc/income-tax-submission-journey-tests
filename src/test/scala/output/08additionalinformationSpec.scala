@@ -21,2531 +21,1842 @@ import specs.BaseSpec
 
 class additionalinformationSpec extends BaseSpec {
 
+  val individualUser3: Seq[Map[String, String]] = Seq(
+    Map("Redirect url" -> "/InYear/start"),
+    Map("Credential Strength" -> "strong"),
+    Map("Confidence Level" -> "250"),
+    Map("Affinity Group" -> "Individual"),
+    Map("Nino" -> "AA012345A"),
+    Map("Enrolment Key 1" -> "HMRC-MTD-IT"),
+    Map("Identifier Name 1" -> "MTDITID"),
+    Map("Identifier Value 1" -> "1234567890")
+  )
+
+  val individualGiltsOrAccruedIncomeSecurities: Seq[Map[String, String]] = Seq(
+    Map("Redirect url" -> "/EOY/start"),
+    Map("Credential Strength" -> "strong"),
+    Map("Confidence Level" -> "250"),
+    Map("Affinity Group" -> "Individual"),
+    Map("Nino" -> "AA123456A"),
+    Map("Enrolment Key 1" -> "HMRC-MTD-IT"),
+    Map("Identifier Name 1" -> "MTDITID"),
+    Map("Identifier Value 1" -> "1234567890")
+  )
+
+  val agentGiltsOrAccruedIncomeSecurities: Seq[Map[String, String]] = Seq(
+    Map("Redirect url" -> "/test-only/InYear/additional-parameters?ClientNino=AA123457A&ClientMTDID=1234567893"),
+    Map("Credential Strength" -> "weak"),
+    Map("Confidence Level" -> "250"),
+    Map("Affinity Group" -> "Agent"),
+    Map("Enrolment Key 1" -> "HMRC-MTD-IT"),
+    Map("Identifier Name 1" -> "MTDITID"),
+    Map("Identifier Value 1" -> "1234567893"),
+    Map("Enrolment Key 2" -> "HMRC-AS-AGENT"),
+    Map("Identifier Name 2" -> "AgentReferenceNumber"),
+    Map("Identifier Value 2" -> "XARN1234567")
+  )
+
+  // diff from agentGiltsOrAccruedIncomeSecurities is the Client NINO and Client MTDID value
+  val agentReturningGiltsOrAccruedIncomeSecurities: Seq[Map[String, String]] = Seq(
+    Map("Redirect url" -> "/test-only/EOY/additional-parameters?ClientNino=AA123457A&ClientMTDID=1234567890"),
+    Map("Credential Strength" -> "weak"),
+    Map("Confidence Level" -> "250"),
+    Map("Affinity Group" -> "Agent"),
+    Map("Enrolment Key 1" -> "HMRC-MTD-IT"),
+    Map("Identifier Name 1" -> "MTDITID"),
+    Map("Identifier Value 1" -> "1234567890"),
+    Map("Enrolment Key 2" -> "HMRC-AS-AGENT"),
+    Map("Identifier Name 2" -> "AgentReferenceNumber"),
+    Map("Identifier Value 2" -> "XARN1234567")
+  )
+
+  val individualGains: Seq[Map[String, String]] = Seq(
+    Map("Redirect url" -> "/InYear/start"),
+    Map("Credential Strength" -> "strong"),
+    Map("Confidence Level" -> "250"),
+    Map("Affinity Group" -> "Individual"),
+    Map("Nino" -> "AA123458A"),
+    Map("Enrolment Key 1" -> "HMRC-MTD-IT"),
+    Map("Identifier Name 1" -> "MTDITID"),
+    Map("Identifier Value 1" -> "1234567890")
+  )
+
+  val individualGainsEOY: Seq[Map[String, String]] = Seq(
+    Map("Redirect url" -> "/EOY/start"),
+    Map("Credential Strength" -> "strong"),
+    Map("Confidence Level" -> "250"),
+    Map("Affinity Group" -> "Individual"),
+    Map("Nino" -> "AA123458A"),
+    Map("Enrolment Key 1" -> "HMRC-MTD-IT"),
+    Map("Identifier Name 1" -> "MTDITID"),
+    Map("Identifier Value 1" -> "1234567890")
+  )
+
+  val individualUser2: Seq[Map[String, String]] = Seq(
+    Map("Redirect url" -> "/InYear/start"),
+    Map("Credential Strength" -> "strong"),
+    Map("Confidence Level" -> "250"),
+    Map("Affinity Group" -> "Individual"),
+    Map("Nino" -> "AA123456A"),
+    Map("Enrolment Key 1" -> "HMRC-MTD-IT"),
+    Map("Identifier Name 1" -> "MTDITID"),
+    Map("Identifier Value 1" -> "1234567890")
+  ) //TODO rename this user
+
+  val individualReturningWithGains: Seq[Map[String, String]] = Seq(
+    Map("Redirect url" -> "/InYear/start"),
+    Map("Credential Strength" -> "strong"),
+    Map("Confidence Level" -> "250"),
+    Map("Affinity Group" -> "Individual"),
+    Map("Nino" -> "AA123459A"),
+    Map("Enrolment Key 1" -> "HMRC-MTD-IT"),
+    Map("Identifier Name 1" -> "MTDITID"),
+    Map("Identifier Value 1" -> "1234567890")
+  )
+
   Feature("Additional Information Journeys (Interest Securities & Gains) - Income Tax Submission") {
 
     Scenario("Agent User maximal flow - Interest from gilt-edged or accrued income securities") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails()  // auto-chosen (score=1.00, AuthStepDefSteps.scala)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentGiltsOrAccruedIncomeSecurities)
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
-        thenTheUserShouldBeRedirectedToXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToTheXPage() [0.85] (CommonStepDefSteps.scala) pattern: the user should be redirected to the "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
 
       When("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your client’s Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your client’s Income Tax Return")
 
       When("the user clicks on the addSections link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("addSections")
 
       Then("the user should be redirected to the Add sections to your client’s Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheXOnThePageDisplaysX() [0.75] (CYAStepDefSteps.scala) pattern: the "(.*)" on the page displays "(.*)"
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Add sections to your client’s Income Tax Return")
 
       When("the user clicks the addInterest tailoring option")
-        whenTheUserClicksTheXTailoringOption("addInterest")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXTailoringOption("addInterest")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your client’s Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your client’s Income Tax Return")
 
       When("the user clicks on the Interest from savings and securities link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("Interest from savings and securities")
 
       Then("the user should be redirected to the Interest from savings and securities page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Interest from savings and securities")
 
       When("the user clicks on the Interest from gilt-edged or accrued income securities link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("Interest from gilt-edged or accrued income securities")
 
       Then("the user should be redirected to the Interest from gilt-edged or accrued income securities page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Interest from gilt-edged or accrued income securities")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Total interest page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Total interest")
 
       When("the user selects the amount field and enters a value of 400.40")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "400.40")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "400.40")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Was tax taken off your client’s interest? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Was tax taken off your client’s interest?")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the How much tax was taken off your client’s interest? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("How much tax was taken off your client’s interest?")
 
       When("the user selects the amount field and enters a value of 123.45")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "123.45")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "123.45")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Check your client's interest from gilt-edged or accrued income securities page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Check your client's interest from gilt-edged or accrued income securities")
 
       When("the user clicks the save and continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("save and continue")
 
       Then("the user should be redirected to the Interest from savings and securities page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Interest from savings and securities")
 
     }
 
     Scenario("Individual User says no on 'gateway question page' - Interest from gilt-edged or accrued income securities") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails()  // auto-chosen (score=1.00, AuthStepDefSteps.scala)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualGiltsOrAccruedIncomeSecurities)
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
-        thenTheUserShouldBeRedirectedToXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToTheXPage() [0.85] (CommonStepDefSteps.scala) pattern: the user should be redirected to the "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
 
       When("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
       When("the user clicks on the addSections link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("addSections")
 
       Then("the user should be redirected to the Add sections to your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheXOnThePageDisplaysX() [0.75] (CYAStepDefSteps.scala) pattern: the "(.*)" on the page displays "(.*)"
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Add sections to your Income Tax Return")
 
       When("the user clicks the addInterest tailoring option")
-        whenTheUserClicksTheXTailoringOption("addInterest")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXTailoringOption("addInterest")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
       When("the user clicks on the Interest from savings and securities link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("Interest from savings and securities")
 
       Then("the user should be redirected to the Interest from savings and securities page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Interest from savings and securities")
 
       When("the user clicks on the Interest from gilt-edged or accrued income securities link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("Interest from gilt-edged or accrued income securities")
 
       Then("the user should be redirected to the Interest from gilt-edged or accrued income securities page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Interest from gilt-edged or accrued income securities")
 
       When("the user selects the no radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("no")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Check your interest from gilt-edged or accrued income securities page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Check your interest from gilt-edged or accrued income securities")
 
       When("the user clicks the save and continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("save and continue")
 
       Then("the user should be redirected to the Interest from savings and securities page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Interest from savings and securities")
 
     }
 
     Scenario("Agent User says answers on 'Was tax taken off your interest?' page - Interest from gilt-edged or accrued income securities") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails()  // auto-chosen (score=1.00, AuthStepDefSteps.scala)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentGiltsOrAccruedIncomeSecurities)
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
-        thenTheUserShouldBeRedirectedToXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToTheXPage() [0.85] (CommonStepDefSteps.scala) pattern: the user should be redirected to the "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
 
       When("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your client’s Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your client’s Income Tax Return")
 
       When("the user clicks on the addSections link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("addSections")
 
       Then("the user should be redirected to the Add sections to your client’s Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheXOnThePageDisplaysX() [0.75] (CYAStepDefSteps.scala) pattern: the "(.*)" on the page displays "(.*)"
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Add sections to your client’s Income Tax Return")
 
       When("the user clicks the addInterest tailoring option")
-        whenTheUserClicksTheXTailoringOption("addInterest")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXTailoringOption("addInterest")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your client’s Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your client’s Income Tax Return")
 
       When("the user clicks on the Interest from savings and securities link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("Interest from savings and securities")
 
       Then("the user should be redirected to the Interest from savings and securities page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Interest from savings and securities")
 
       When("the user clicks on the Interest from gilt-edged or accrued income securities link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("Interest from gilt-edged or accrued income securities")
 
       Then("the user should be redirected to the Interest from gilt-edged or accrued income securities page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Interest from gilt-edged or accrued income securities")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Total interest page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Total interest")
 
       When("the user selects the amount field and enters a value of 400.40")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "400.40")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "400.40")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Was tax taken off your client’s interest? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Was tax taken off your client’s interest?")
 
       When("the user selects the no radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("no")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Check your client's interest from gilt-edged or accrued income securities page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Check your client's interest from gilt-edged or accrued income securities")
 
       When("the user clicks the save and continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("save and continue")
 
       Then("the user should be redirected to the Interest from savings and securities page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Interest from savings and securities")
 
     }
 
     Scenario("Individual User maximal flow - Gains - User says yes to all questions") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails()  // auto-chosen (score=1.00, AuthStepDefSteps.scala)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualGains)
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
-        thenTheUserShouldBeRedirectedToXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToTheXPage() [0.85] (CommonStepDefSteps.scala) pattern: the user should be redirected to the "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
 
       When("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
       When("the user clicks on the addSections link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("addSections")
 
       Then("the user should be redirected to the Add sections to your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheXOnThePageDisplaysX() [0.75] (CYAStepDefSteps.scala) pattern: the "(.*)" on the page displays "(.*)"
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Add sections to your Income Tax Return")
 
       When("the user clicks the addGains tailoring option")
-        whenTheUserClicksTheXTailoringOption("addGains")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXTailoringOption("addGains")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
       When("the user clicks on the Gains from policies and contracts link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("Gains from policies and contracts")
 
       Then("the user should be redirected to the Gains from life insurance policies and contracts page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Gains from life insurance policies and contracts")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the What type of policy gave you a gain? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("What type of policy gave you a gain?")
 
       When("the user selects the Life Insurance radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("Life Insurance")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy number page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy number")
 
       When("the user selects the Policy number field and enters a value of P-89879-123")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("Policy number", "P-89879-123")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("Policy number", "P-89879-123")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Chargeable event gain page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Chargeable event gain")
 
       When("the user selects the amount field and enters a value of 123.45")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "123.45")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "123.45")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy event page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy event")
 
       When("the user selects the Other radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("Other")
 
       And("the user selects the What caused this gain? field and enters a value of Inheritance")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("What caused this gain?", "Inheritance")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("What caused this gain?", "Inheritance")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Have you had a gain from this policy in an earlier tax year? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.85] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserIsThenRedirectedToTheXXXXPage() [0.79] (CommonStepDefSteps.scala) pattern: the user is then redirected to the "(.*)" "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Have you had a gain from this policy in an earlier tax year?")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Years since your last gain page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Years since your last gain")
 
       When("the user selects the Gains Year field and enters a value of 99")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("Gains Year", "99")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("Gains Year", "99")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy held page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy held")
 
       When("the user selects the Gains Year field and enters a value of 99")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("Gains Year", "99")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("Gains Year", "99")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Was your gain treated as tax paid? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Was your gain treated as tax paid?")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Are you entitled to deficiency relief? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Are you entitled to deficiency relief?")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user selects the amount field and enters a value of 193")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "193")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "193")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy summary page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy summary")
 
       When("the user clicks on the change link in position 1")
-        whenTheUserClicksOnTheChangeLinkInPositionX()  // auto-chosen (score=1.00, CYAStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserClicksOnTheXLink() [0.90] (CommonStepDefSteps.scala) pattern: the user clicks on the (.*) link
+      whenTheUserClicksOnTheChangeLinkInPositionX("1")
 
       Then("the user should be redirected to the What type of policy gave you a gain? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("What type of policy gave you a gain?")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy summary page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy summary")
 
       When("the user clicks on the change link in position 2")
-        whenTheUserClicksOnTheChangeLinkInPositionX()  // auto-chosen (score=1.00, CYAStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserClicksOnTheXLink() [0.90] (CommonStepDefSteps.scala) pattern: the user clicks on the (.*) link
+      whenTheUserClicksOnTheChangeLinkInPositionX("2")
 
       Then("the user should be redirected to the Policy number page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy number")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy summary page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy summary")
 
       When("the user clicks on the change link in position 3")
-        whenTheUserClicksOnTheChangeLinkInPositionX()  // auto-chosen (score=1.00, CYAStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserClicksOnTheXLink() [0.90] (CommonStepDefSteps.scala) pattern: the user clicks on the (.*) link
+      whenTheUserClicksOnTheChangeLinkInPositionX("3")
 
       Then("the user should be redirected to the Chargeable event gain page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Chargeable event gain")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy summary page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy summary")
 
       When("the user clicks on the change link in position 4")
-        whenTheUserClicksOnTheChangeLinkInPositionX()  // auto-chosen (score=1.00, CYAStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserClicksOnTheXLink() [0.90] (CommonStepDefSteps.scala) pattern: the user clicks on the (.*) link
+      whenTheUserClicksOnTheChangeLinkInPositionX("4")
 
       Then("the user should be redirected to the Policy event page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy event")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy summary page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy summary")
 
       When("the user clicks on the change link in position 5")
-        whenTheUserClicksOnTheChangeLinkInPositionX()  // auto-chosen (score=1.00, CYAStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserClicksOnTheXLink() [0.90] (CommonStepDefSteps.scala) pattern: the user clicks on the (.*) link
+      whenTheUserClicksOnTheChangeLinkInPositionX("5")
 
       Then("the user should be redirected to the Have you had a gain from this policy in an earlier tax year? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.85] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserIsThenRedirectedToTheXXXXPage() [0.79] (CommonStepDefSteps.scala) pattern: the user is then redirected to the "(.*)" "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Have you had a gain from this policy in an earlier tax year?")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Years since your last gain page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Years since your last gain")
 
       When("the user selects the Gains Year field and enters a value of 99")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("Gains Year", "99")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("Gains Year", "99")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy summary page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy summary")
 
       When("the user clicks on the change link in position 6")
-        whenTheUserClicksOnTheChangeLinkInPositionX()  // auto-chosen (score=1.00, CYAStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserClicksOnTheXLink() [0.90] (CommonStepDefSteps.scala) pattern: the user clicks on the (.*) link
+      whenTheUserClicksOnTheChangeLinkInPositionX("6")
 
       Then("the user should be redirected to the Years since your last gain page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Years since your last gain")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy summary page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy summary")
 
       When("the user clicks on the change link in position 7")
-        whenTheUserClicksOnTheChangeLinkInPositionX()  // auto-chosen (score=1.00, CYAStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserClicksOnTheXLink() [0.90] (CommonStepDefSteps.scala) pattern: the user clicks on the (.*) link
+      whenTheUserClicksOnTheChangeLinkInPositionX("7")
 
       Then("the user should be redirected to the Policy held page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy held")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy summary page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy summary")
 
       When("the user clicks on the change link in position 8")
-        whenTheUserClicksOnTheChangeLinkInPositionX()  // auto-chosen (score=1.00, CYAStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserClicksOnTheXLink() [0.90] (CommonStepDefSteps.scala) pattern: the user clicks on the (.*) link
+      whenTheUserClicksOnTheChangeLinkInPositionX("8")
 
       Then("the user should be redirected to the Was your gain treated as tax paid? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Was your gain treated as tax paid?")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy summary page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy summary")
 
       When("the user clicks on the change link in position 9")
-        whenTheUserClicksOnTheChangeLinkInPositionX()  // auto-chosen (score=1.00, CYAStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserClicksOnTheXLink() [0.90] (CommonStepDefSteps.scala) pattern: the user clicks on the (.*) link
+      whenTheUserClicksOnTheChangeLinkInPositionX("9")
 
       Then("the user should be redirected to the Are you entitled to deficiency relief? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Are you entitled to deficiency relief?")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user selects the amount field and enters a value of 193")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "193")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "193")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy summary page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy summary")
 
       When("the user clicks the save and continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("save and continue")
 
       Then("the user should be redirected to the Your policies page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Your policies")
 
     }
 
-    Scenario("Individual User maximal flow - Gains - User answers no on gains status page") {
+    Scenario("Individual User maximal flow - Gains - User answers no on gains status page - Life Insurance") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails()  // auto-chosen (score=1.00, AuthStepDefSteps.scala)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser2)
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
-        thenTheUserShouldBeRedirectedToXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToTheXPage() [0.85] (CommonStepDefSteps.scala) pattern: the user should be redirected to the "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
 
       When("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
       When("the user clicks on the addSections link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("addSections")
 
       Then("the user should be redirected to the Add sections to your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheXOnThePageDisplaysX() [0.75] (CYAStepDefSteps.scala) pattern: the "(.*)" on the page displays "(.*)"
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Add sections to your Income Tax Return")
 
       When("the user clicks the addGains tailoring option")
-        whenTheUserClicksTheXTailoringOption("addGains")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXTailoringOption("addGains")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
       When("the user clicks on the Gains from policies and contracts link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("Gains from policies and contracts")
 
       Then("the user should be redirected to the Gains from life insurance policies and contracts page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Gains from life insurance policies and contracts")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the What type of policy gave you a gain? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("What type of policy gave you a gain?")
 
       When("the user selects the Life Insurance radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("Life Insurance")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy number page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy number")
 
       When("the user selects the Policy number field and enters a value of P-89879-123")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("Policy number", "P-89879-123")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("Policy number", "P-89879-123")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Chargeable event gain page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Chargeable event gain")
 
       When("the user selects the amount field and enters a value of 123.45")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "123.45")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "123.45")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy event page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy event")
 
       When("the user selects the Full or part surrender radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("Full or part surrender")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Have you had a gain from this policy in an earlier tax year? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.85] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserIsThenRedirectedToTheXXXXPage() [0.79] (CommonStepDefSteps.scala) pattern: the user is then redirected to the "(.*)" "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Have you had a gain from this policy in an earlier tax year?")
 
       When("the user selects the no radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("no")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy held page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy held")
 
       When("the user selects the Gains Year field and enters a value of 99")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("Gains Year", "99")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("Gains Year", "99")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Was your gain treated as tax paid? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Was your gain treated as tax paid?")
 
       When("the user selects the no radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("no")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Are you entitled to deficiency relief? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Are you entitled to deficiency relief?")
 
       When("the user selects the no radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("no")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy summary page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy summary")
 
     }
 
     Scenario("Individual User minimum flow - Gains - User answers no on gain gateway question page") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails()  // auto-chosen (score=1.00, AuthStepDefSteps.scala)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser3)
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
-        thenTheUserShouldBeRedirectedToXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToTheXPage() [0.85] (CommonStepDefSteps.scala) pattern: the user should be redirected to the "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
 
       When("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
       When("the user clicks on the addSections link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("addSections")
 
       Then("the user should be redirected to the Add sections to your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheXOnThePageDisplaysX() [0.75] (CYAStepDefSteps.scala) pattern: the "(.*)" on the page displays "(.*)"
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Add sections to your Income Tax Return")
 
       When("the user clicks the addGains tailoring option")
-        whenTheUserClicksTheXTailoringOption("addGains")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXTailoringOption("addGains")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
       When("the user clicks on the Gains from policies and contracts link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("Gains from policies and contracts")
 
       Then("the user should be redirected to the Gains from life insurance policies and contracts page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Gains from life insurance policies and contracts")
 
       When("the user selects the no radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("no")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Check your gains from life insurance policies and contracts page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Check your gains from life insurance policies and contracts")
 
       When("the user clicks the return to overview button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("return to overview")
 
       Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
       Then("the Gains status on the page displays Excluded")
-        thenTheXOnThePageDisplaysX("", "")  // auto-chosen (score=1.00, CYAStepDefSteps.scala)
+      thenTheXOnThePageDisplaysX("Gains status", "Excluded")
 
     }
 
     Scenario("Individual User maximum flow - Gains - User answers no on Deficiency relief page") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails()  // auto-chosen (score=1.00, AuthStepDefSteps.scala)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser2)
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
-        thenTheUserShouldBeRedirectedToXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToTheXPage() [0.85] (CommonStepDefSteps.scala) pattern: the user should be redirected to the "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
 
       When("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
       When("the user clicks on the addSections link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("addSections")
 
       Then("the user should be redirected to the Add sections to your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheXOnThePageDisplaysX() [0.75] (CYAStepDefSteps.scala) pattern: the "(.*)" on the page displays "(.*)"
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Add sections to your Income Tax Return")
 
       When("the user clicks the addGains tailoring option")
-        whenTheUserClicksTheXTailoringOption("addGains")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXTailoringOption("addGains")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
       When("the user clicks on the Gains from policies and contracts link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("Gains from policies and contracts")
 
       Then("the user should be redirected to the Gains from life insurance policies and contracts page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Gains from life insurance policies and contracts")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the What type of policy gave you a gain? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("What type of policy gave you a gain?")
 
       When("the user selects the Life Insurance radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("Life Insurance")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy number page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy number")
 
       When("the user selects the Policy number field and enters a value of P-89879-123")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("Policy number", "P-89879-123")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("Policy number", "P-89879-123")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Chargeable event gain page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Chargeable event gain")
 
       When("the user selects the amount field and enters a value of 123.45")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "123.45")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "123.45")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy event page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy event")
 
       When("the user selects the Sale or assignment of a policy radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("Sale or assignment of a policy")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Have you had a gain from this policy in an earlier tax year? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.85] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserIsThenRedirectedToTheXXXXPage() [0.79] (CommonStepDefSteps.scala) pattern: the user is then redirected to the "(.*)" "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Have you had a gain from this policy in an earlier tax year?")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Years since your last gain page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Years since your last gain")
 
       When("the user selects the Gains Year field and enters a value of 99")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("Gains Year", "99")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("Gains Year", "99")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy held page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy held")
 
       When("the user selects the Gains Year field and enters a value of 99")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("Gains Year", "99")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("Gains Year", "99")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Was your gain treated as tax paid? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Was your gain treated as tax paid?")
 
       When("the user selects the no radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("no")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Are you entitled to deficiency relief? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Are you entitled to deficiency relief?")
 
       When("the user selects the no radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("no")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy summary page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy summary")
 
     }
 
-    Scenario("Returning flow - Individual User with prior Gains Data, Reviews data") {
+    Scenario("Returning flow - Individual User with prior Gains Data, Reviews data") { // TODO: is this needed? it adds Gains section, checks status tag is 'Updated',  goes to add another policy but clicks back
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails()  // auto-chosen (score=1.00, AuthStepDefSteps.scala)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualReturningWithGains)
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
-        thenTheUserShouldBeRedirectedToXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToTheXPage() [0.85] (CommonStepDefSteps.scala) pattern: the user should be redirected to the "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
 
       When("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
       When("the user clicks on the addSections link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("addSections")
 
       Then("the user should be redirected to the Add sections to your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheXOnThePageDisplaysX() [0.75] (CYAStepDefSteps.scala) pattern: the "(.*)" on the page displays "(.*)"
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Add sections to your Income Tax Return")
 
       When("the user clicks the addGains tailoring option")
-        whenTheUserClicksTheXTailoringOption("addGains")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXTailoringOption("addGains")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
       And("the status on the page is Updated Tag")
-        thenTheStatusOnThePageIsX("")  // auto-chosen (score=0.90, CYAStepDefSteps.scala)
+      thenTheStatusOnThePageIsX("Updated Tag")
 
       When("the user clicks on the Gains from policies and contracts link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("Gains from policies and contracts")
 
       Then("the user should be redirected to the Your policies page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Your policies")
 
       When("the user clicks on the Add another gain from a different policy link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("Add another gain from a different policy")
 
       Then("the user should be redirected to the What type of policy gave you a gain? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("What type of policy gave you a gain?")
 
       When("the user clicks on the back link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("back")
 
       Then("the user should be redirected to the Your policies page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Your policies")
 
       When("the user clicks the return to overview button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("return to overview")
 
       Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
     }
 
     Scenario("Returning flow - Individual User with prior Gains Data, removes policy") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails()  // auto-chosen (score=1.00, AuthStepDefSteps.scala)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualReturningWithGains)
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
-        thenTheUserShouldBeRedirectedToXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToTheXPage() [0.85] (CommonStepDefSteps.scala) pattern: the user should be redirected to the "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
 
       When("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
       When("the user clicks on the Gains from policies and contracts link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("Gains from policies and contracts")
 
       Then("the user should be redirected to the Your policies page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Your policies")
 
       When("the user clicks on the Policy remove link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("Policy remove")
 
       Then("the user should be redirected to the Are you sure you want to remove this policy? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Are you sure you want to remove this policy?")
 
       When("the user clicks the remove button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("remove")
 
       Then("the user should be redirected to the Your policies page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Your policies")
 
     }
 
-    Scenario("Individual User maximal flow - Gains - User says yes to all questions") {
+    Scenario("Individual User maximal flow - Gains - User says yes to all questions - Deficiency relief") { //deficiency relief
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails()  // auto-chosen (score=1.00, AuthStepDefSteps.scala)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualGains)
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
-        thenTheUserShouldBeRedirectedToXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToTheXPage() [0.85] (CommonStepDefSteps.scala) pattern: the user should be redirected to the "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
 
       When("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
       When("the user clicks on the addSections link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("addSections")
 
       Then("the user should be redirected to the Add sections to your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheXOnThePageDisplaysX() [0.75] (CYAStepDefSteps.scala) pattern: the "(.*)" on the page displays "(.*)"
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Add sections to your Income Tax Return")
 
       When("the user clicks the addGains tailoring option")
-        whenTheUserClicksTheXTailoringOption("addGains")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXTailoringOption("addGains")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
       When("the user clicks on the Gains from policies and contracts link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("Gains from policies and contracts")
 
       Then("the user should be redirected to the Gains from life insurance policies and contracts page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Gains from life insurance policies and contracts")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the What type of policy gave you a gain? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("What type of policy gave you a gain?")
 
       When("the user selects the Voided ISA radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("Voided ISA")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy number page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy number")
 
       When("the user selects the Policy number field and enters a value of P-89879-123")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("Policy number", "P-89879-123")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("Policy number", "P-89879-123")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Chargeable event gain page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Chargeable event gain")
 
       When("the user selects the amount field and enters a value of 123.45")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "123.45")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "123.45")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy event page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy event")
 
       When("the user selects the Other radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("Other")
 
       And("the user selects the What caused this gain? field and enters a value of Inheritance")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("What caused this gain?", "Inheritance")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("What caused this gain?", "Inheritance")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Have you had a gain from this policy in an earlier tax year? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.85] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserIsThenRedirectedToTheXXXXPage() [0.79] (CommonStepDefSteps.scala) pattern: the user is then redirected to the "(.*)" "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Have you had a gain from this policy in an earlier tax year?")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Years since your last gain page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Years since your last gain")
 
       When("the user selects the Gains Year field and enters a value of 99")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("Gains Year", "99")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("Gains Year", "99")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy held page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy held")
 
       When("the user selects the Gains Year field and enters a value of 99")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("Gains Year", "99")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("Gains Year", "99")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the How much tax did you pay on your gain? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheXOnThePageDisplaysX() [0.75] (CYAStepDefSteps.scala) pattern: the "(.*)" on the page displays "(.*)"
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("How much tax did you pay on your gain?")
 
       When("the user selects the amount field and enters a value of 123.45")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "123.45")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "123.45")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy summary page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy summary")
 
       When("the user clicks on the change link in position 1")
-        whenTheUserClicksOnTheChangeLinkInPositionX()  // auto-chosen (score=1.00, CYAStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserClicksOnTheXLink() [0.90] (CommonStepDefSteps.scala) pattern: the user clicks on the (.*) link
+      whenTheUserClicksOnTheChangeLinkInPositionX("1")
 
       Then("the user should be redirected to the What type of policy gave you a gain? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("What type of policy gave you a gain?")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy summary page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy summary")
 
       When("the user clicks on the change link in position 2")
-        whenTheUserClicksOnTheChangeLinkInPositionX()  // auto-chosen (score=1.00, CYAStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserClicksOnTheXLink() [0.90] (CommonStepDefSteps.scala) pattern: the user clicks on the (.*) link
+      whenTheUserClicksOnTheChangeLinkInPositionX("2")
 
       Then("the user should be redirected to the Policy number page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy number")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy summary page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy summary")
 
       When("the user clicks on the change link in position 3")
-        whenTheUserClicksOnTheChangeLinkInPositionX()  // auto-chosen (score=1.00, CYAStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserClicksOnTheXLink() [0.90] (CommonStepDefSteps.scala) pattern: the user clicks on the (.*) link
+      whenTheUserClicksOnTheChangeLinkInPositionX("3")
 
       Then("the user should be redirected to the Chargeable event gain page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Chargeable event gain")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy summary page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy summary")
 
       When("the user clicks on the change link in position 4")
-        whenTheUserClicksOnTheChangeLinkInPositionX()  // auto-chosen (score=1.00, CYAStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserClicksOnTheXLink() [0.90] (CommonStepDefSteps.scala) pattern: the user clicks on the (.*) link
+      whenTheUserClicksOnTheChangeLinkInPositionX("4")
 
       Then("the user should be redirected to the Policy event page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy event")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy summary page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy summary")
 
       When("the user clicks on the change link in position 5")
-        whenTheUserClicksOnTheChangeLinkInPositionX()  // auto-chosen (score=1.00, CYAStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserClicksOnTheXLink() [0.90] (CommonStepDefSteps.scala) pattern: the user clicks on the (.*) link
+      whenTheUserClicksOnTheChangeLinkInPositionX("5")
 
       Then("the user should be redirected to the Have you had a gain from this policy in an earlier tax year? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.85] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserIsThenRedirectedToTheXXXXPage() [0.79] (CommonStepDefSteps.scala) pattern: the user is then redirected to the "(.*)" "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Have you had a gain from this policy in an earlier tax year?")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Years since your last gain page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Years since your last gain")
 
       When("the user selects the Gains Year field and enters a value of 99")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("Gains Year", "99")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("Gains Year", "99")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy summary page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy summary")
 
       When("the user clicks on the change link in position 6")
-        whenTheUserClicksOnTheChangeLinkInPositionX()  // auto-chosen (score=1.00, CYAStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserClicksOnTheXLink() [0.90] (CommonStepDefSteps.scala) pattern: the user clicks on the (.*) link
+      whenTheUserClicksOnTheChangeLinkInPositionX("6")
 
       Then("the user should be redirected to the Years since your last gain page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Years since your last gain")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy summary page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy summary")
 
       When("the user clicks on the change link in position 7")
-        whenTheUserClicksOnTheChangeLinkInPositionX()  // auto-chosen (score=1.00, CYAStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserClicksOnTheXLink() [0.90] (CommonStepDefSteps.scala) pattern: the user clicks on the (.*) link
+      whenTheUserClicksOnTheChangeLinkInPositionX("7")
 
       Then("the user should be redirected to the Policy held page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy held")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy summary page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy summary")
 
       When("the user clicks on the change link in position 8")
-        whenTheUserClicksOnTheChangeLinkInPositionX()  // auto-chosen (score=1.00, CYAStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserClicksOnTheXLink() [0.90] (CommonStepDefSteps.scala) pattern: the user clicks on the (.*) link
+      whenTheUserClicksOnTheChangeLinkInPositionX("8")
 
       Then("the user should be redirected to the How much tax did you pay on your gain? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheXOnThePageDisplaysX() [0.75] (CYAStepDefSteps.scala) pattern: the "(.*)" on the page displays "(.*)"
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("How much tax did you pay on your gain?")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy summary page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy summary")
 
       When("the user clicks the save and continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("save and continue")
 
       Then("the user should be redirected to the Your policies page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Your policies")
 
     }
 
-    Scenario("Individual User maximal flow - Gains - User answers no on gains status page") {
+    Scenario("Individual User maximal flow - Gains - User answers no on gains status page - Voided ISA") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails()  // auto-chosen (score=1.00, AuthStepDefSteps.scala)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser2)
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
-        thenTheUserShouldBeRedirectedToXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToTheXPage() [0.85] (CommonStepDefSteps.scala) pattern: the user should be redirected to the "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
 
       When("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
       When("the user clicks on the addSections link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("addSections")
 
       Then("the user should be redirected to the Add sections to your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheXOnThePageDisplaysX() [0.75] (CYAStepDefSteps.scala) pattern: the "(.*)" on the page displays "(.*)"
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Add sections to your Income Tax Return")
 
       When("the user clicks the addGains tailoring option")
-        whenTheUserClicksTheXTailoringOption("addGains")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXTailoringOption("addGains")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
       When("the user clicks on the Gains from policies and contracts link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("Gains from policies and contracts")
 
       Then("the user should be redirected to the Gains from life insurance policies and contracts page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Gains from life insurance policies and contracts")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the What type of policy gave you a gain? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("What type of policy gave you a gain?")
 
       When("the user selects the Voided ISA radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("Voided ISA")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy number page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy number")
 
       When("the user selects the Policy number field and enters a value of P-89879-123")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("Policy number", "P-89879-123")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("Policy number", "P-89879-123")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Chargeable event gain page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Chargeable event gain")
 
       When("the user selects the amount field and enters a value of 123.45")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "123.45")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "123.45")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy event page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy event")
 
       When("the user selects the Full or part surrender radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("Full or part surrender")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Have you had a gain from this policy in an earlier tax year? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.85] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserIsThenRedirectedToTheXXXXPage() [0.79] (CommonStepDefSteps.scala) pattern: the user is then redirected to the "(.*)" "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Have you had a gain from this policy in an earlier tax year?")
 
       When("the user selects the no radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("no")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy held page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy held")
 
       When("the user selects the Gains Year field and enters a value of 99")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("Gains Year", "99")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("Gains Year", "99")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the How much tax did you pay on your gain? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheXOnThePageDisplaysX() [0.75] (CYAStepDefSteps.scala) pattern: the "(.*)" on the page displays "(.*)"
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("How much tax did you pay on your gain?")
 
       When("the user selects the amount field and enters a value of 123.45")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "123.45")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "123.45")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Policy summary page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Policy summary")
 
     }
 
-    Scenario("Returning flow - Individual User with prior Gains Data, Reviews data") {
-      When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails()  // auto-chosen (score=1.00, AuthStepDefSteps.scala)
+    /*
+        Scenario("Returning flow - Individual User with prior Gains Data, Reviews data") { // TODO: commented outas same as Scenario on line 1277 (same name) without adding the policy
+          When("the user logs into the service with the following details")
+            givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualReturningWithGains)
 
-      Then("the user should be redirected to Update and submit an Income Tax Return page")
-        thenTheUserShouldBeRedirectedToXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToTheXPage() [0.85] (CommonStepDefSteps.scala) pattern: the user should be redirected to the "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+          Then("the user should be redirected to Update and submit an Income Tax Return page")
+            thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
 
-      When("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+          When("the user clicks the continue button")
+            whenTheUserClicksTheXButton("continue")
 
-      Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+          Then("the user should be redirected to the Your Income Tax Return page")
+            thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
-      When("the user clicks on the addSections link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+          When("the user clicks on the addSections link")
+            whenTheUserClicksOnTheXLink("addSections")
 
-      Then("the user should be redirected to the Add sections to your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheXOnThePageDisplaysX() [0.75] (CYAStepDefSteps.scala) pattern: the "(.*)" on the page displays "(.*)"
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+          Then("the user should be redirected to the Add sections to your Income Tax Return page")
+            thenTheUserShouldBeRedirectedToTheXPage("Add sections to your Income Tax Return")
 
-      When("the user clicks the addGains tailoring option")
-        whenTheUserClicksTheXTailoringOption("addGains")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+          When("the user clicks the addGains tailoring option")
+            whenTheUserClicksTheXTailoringOption("addGains")
 
-      And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+          And("the user clicks the continue button")
+            whenTheUserClicksTheXButton("continue")
 
-      Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+          Then("the user should be redirected to the Your Income Tax Return page")
+            thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
-      And("the status on the page is Updated Tag")
-        thenTheStatusOnThePageIsX("")  // auto-chosen (score=0.90, CYAStepDefSteps.scala)
+          And("the status on the page is Updated Tag")
+            thenTheStatusOnThePageIsX("Updated Tag")  // auto-chosen (score=0.90, CYAStepDefSteps.scala)
 
-      When("the user clicks on the Gains from policies and contracts link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+          When("the user clicks on the Gains from policies and contracts link")
+            whenTheUserClicksOnTheXLink("Gains from policies and contracts")
 
-      Then("the user should be redirected to the Your policies page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+          Then("the user should be redirected to the Your policies page")
+            thenTheUserShouldBeRedirectedToTheXPage("Your policies")
 
-      When("the user clicks the return to overview button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+          When("the user clicks the return to overview button")
+            whenTheUserClicksTheXButton("return to overview")
 
-      Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+          Then("the user should be redirected to the Your Income Tax Return page")
+            thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
-    }
-
+        }
+    */
     Scenario("Maximal flow - Agent User - Stock Dividends") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails()  // auto-chosen (score=1.00, AuthStepDefSteps.scala)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentReturningGiltsOrAccruedIncomeSecurities)
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
-        thenTheUserShouldBeRedirectedToXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToTheXPage() [0.85] (CommonStepDefSteps.scala) pattern: the user should be redirected to the "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
 
       When("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your client’s Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your client’s Income Tax Return")
 
       When("the user clicks on the addSections link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("addSections")
 
       Then("the user should be redirected to the Add sections to your client’s Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheXOnThePageDisplaysX() [0.75] (CYAStepDefSteps.scala) pattern: the "(.*)" on the page displays "(.*)"
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Add sections to your client’s Income Tax Return")
 
       When("the user clicks the addDividend tailoring option")
-        whenTheUserClicksTheXTailoringOption("addDividend")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXTailoringOption("addDividend")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your client’s Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your client’s Income Tax Return")
 
       When("the user clicks on the dividends link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("dividends")
 
       Then("the user should be redirected to the Did your client get dividends from shares? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Did your client get dividends from shares?")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Did your client get dividends from UK-based companies? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Did your client get dividends from UK-based companies?")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the How much did your client get in dividends from UK-based companies? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("How much did your client get in dividends from UK-based companies?")
 
       When("the user selects the UK dividends amount field and enters a value of 1000")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("UK dividends amount", "1000")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("UK dividends amount", "1000")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Dividends from UK-based trusts or open-ended investment companies page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Dividends from UK-based trusts or open-ended investment companies")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the How much did your client get in dividends from trusts and open-ended investment companies based in the UK? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("How much did your client get in dividends from trusts and open-ended investment companies based in the UK?")
 
       When("the user selects the UK other dividends amount field and enters a value of 500")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("UK other dividends amount", "500")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("UK other dividends amount", "500")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Did your client get stock dividends? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Did your client get stock dividends?")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the How much did your client get? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("How much did your client get?")
 
       When("the user selects the amount field and enters a value of 100")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "100")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "100")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Did your client get free or redeemable shares? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Did your client get free or redeemable shares?")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the How much did your client get in free or redeemable shares? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("How much did your client get in free or redeemable shares?")
 
       When("the user selects the amount field and enters a value of 100")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "100")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "100")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Close company loans written off page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Close company loans written off")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the How much did the close company write off or release from your client's loan? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("How much did the close company write off or release from your client's loan?")
 
       When("the user selects the amount field and enters a value of 100")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "100")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "100")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Check your client's dividends page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Check your client's dividends")
 
       When("the user clicks the save and continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("save and continue")
 
       Then("the user should be redirected to the Your client’s Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your client’s Income Tax Return")
 
     }
 
     Scenario("Maximal flow - User with no prior data - answers No on Stock Dividends page") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails()  // auto-chosen (score=1.00, AuthStepDefSteps.scala)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualGainsEOY)
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
-        thenTheUserShouldBeRedirectedToXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToTheXPage() [0.85] (CommonStepDefSteps.scala) pattern: the user should be redirected to the "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
 
       When("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
       When("the user clicks on the addSections link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("addSections")
 
       Then("the user should be redirected to the Add sections to your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheXOnThePageDisplaysX() [0.75] (CYAStepDefSteps.scala) pattern: the "(.*)" on the page displays "(.*)"
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Add sections to your Income Tax Return")
 
       When("the user clicks the addDividend tailoring option")
-        whenTheUserClicksTheXTailoringOption("addDividend")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXTailoringOption("addDividend")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
       When("the user clicks on the dividends link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("dividends")
 
       Then("the user should be redirected to the Did you get dividends from shares? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Did you get dividends from shares?")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Did you get dividends from UK-based companies? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Did you get dividends from UK-based companies?")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the How much did you get in dividends from UK-based companies? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("How much did you get in dividends from UK-based companies?")
 
       When("the user selects the UK dividends amount field and enters a value of 1000")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("UK dividends amount", "1000")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("UK dividends amount", "1000")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Dividends from UK-based trusts or open-ended investment companies page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Dividends from UK-based trusts or open-ended investment companies")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the How much did you get in dividends from trusts and open-ended investment companies based in the UK? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("How much did you get in dividends from trusts and open-ended investment companies based in the UK?")
 
       When("the user selects the UK other dividends amount field and enters a value of 500")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("UK other dividends amount", "500")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("UK other dividends amount", "500")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Did you get stock dividends? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Did you get stock dividends?")
 
       When("the user selects the no radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("no")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Did you get free or redeemable shares? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Did you get free or redeemable shares?")
 
       When("the user selects the no radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("no")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Close company loans written off page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Close company loans written off")
 
       When("the user selects the no radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("no")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Check your dividends page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Check your dividends")
 
       When("the user clicks the save and continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("save and continue")
 
       Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
     }
 
     Scenario("Maximal flow - User with no prior data - answers Yes on Stock Dividends page but no for all following questions") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails()  // auto-chosen (score=1.00, AuthStepDefSteps.scala)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualGainsEOY)
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
-        thenTheUserShouldBeRedirectedToXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToTheXPage() [0.85] (CommonStepDefSteps.scala) pattern: the user should be redirected to the "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
 
       When("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
       When("the user clicks on the addSections link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("addSections")
 
       Then("the user should be redirected to the Add sections to your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheXOnThePageDisplaysX() [0.75] (CYAStepDefSteps.scala) pattern: the "(.*)" on the page displays "(.*)"
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Add sections to your Income Tax Return")
 
       When("the user clicks the addDividend tailoring option")
-        whenTheUserClicksTheXTailoringOption("addDividend")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXTailoringOption("addDividend")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
       When("the user clicks on the dividends link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("dividends")
 
       Then("the user should be redirected to the Did you get dividends from shares? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Did you get dividends from shares?")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Did you get dividends from UK-based companies? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Did you get dividends from UK-based companies?")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the How much did you get in dividends from UK-based companies? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("How much did you get in dividends from UK-based companies?")
 
       When("the user selects the UK dividends amount field and enters a value of 1000")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("UK dividends amount", "1000")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("UK dividends amount", "1000")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Dividends from UK-based trusts or open-ended investment companies page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Dividends from UK-based trusts or open-ended investment companies")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the How much did you get in dividends from trusts and open-ended investment companies based in the UK? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("How much did you get in dividends from trusts and open-ended investment companies based in the UK?")
 
       When("the user selects the UK other dividends amount field and enters a value of 500")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("UK other dividends amount", "500")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("UK other dividends amount", "500")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Did you get stock dividends? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Did you get stock dividends?")
 
       When("the user selects the yes radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("yes")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the How much did you get? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("How much did you get?")
 
       When("the user selects the amount field and enters a value of 100")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "100")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "100")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Did you get free or redeemable shares? page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Did you get free or redeemable shares?")
 
       When("the user selects the no radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("no")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Close company loans written off page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Close company loans written off")
 
       When("the user selects the no radio button")
-        whenTheUserSelectsTheXRadioButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserSelectsTheXRadioButtonX() [0.83] (CommonStepDefSteps.scala) pattern: the user selects the (.*) radio button: (.*)
+      whenTheUserSelectsTheXRadioButton("no")
 
       And("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Check your dividends page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Check your dividends")
 
       When("the user clicks the save and continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("save and continue")
 
       Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
     }
 
     Scenario("Maximal flow - User with no prior data - adds all available Business Tax Reliefs") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails()  // auto-chosen (score=1.00, AuthStepDefSteps.scala)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualGainsEOY)
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
-        thenTheUserShouldBeRedirectedToXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToTheXPage() [0.85] (CommonStepDefSteps.scala) pattern: the user should be redirected to the "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
 
       When("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
       When("the user clicks on the addSections link")
-        whenTheUserClicksOnTheXLink()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksOnTheXLink("addSections")
 
       Then("the user should be redirected to the Add sections to your Income Tax Return page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [1.00] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
-        // thenTheUserIsRedirectedToTheXXXPage() [0.78] (CommonStepDefSteps.scala) pattern: the user is redirected to the "(.*)" "(.*)" "(.*)" page
-        // thenTheXOnThePageDisplaysX() [0.75] (CYAStepDefSteps.scala) pattern: the "(.*)" on the page displays "(.*)"
-        // thenTheUserNavigatesToTheXPage() [0.75] (CommonStepDefSteps.scala) pattern: the user navigates to the (.*) page
+      thenTheUserShouldBeRedirectedToTheXPage("Add sections to your Income Tax Return")
 
       When("the user navigates to the Post-cessation trade relief page")
-        thenTheUserNavigatesToTheXPage("Post-cessation trade relief")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      thenTheUserNavigatesToTheXPage("Post-cessation trade relief")
 
       And("the user selects the amount field and enters a value of 50.99")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "50.99")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "50.99")
 
       When("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Check your answers page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Check your answers")
 
       When("the user clicks on the change link in position 1")
-        whenTheUserClicksOnTheChangeLinkInPositionX()  // auto-chosen (score=1.00, CYAStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserClicksOnTheXLink() [0.90] (CommonStepDefSteps.scala) pattern: the user clicks on the (.*) link
+      whenTheUserClicksOnTheChangeLinkInPositionX("1")
 
       Then("the user should be redirected to the Post-cessation trade relief and certain other losses page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Post-cessation trade relief and certain other losses")
 
       When("the user selects the amount field and enters a value of 125.44")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "125.44")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "125.44")
 
       When("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Check your answers page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Check your answers")
 
       When("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       When("the user navigates to the Non-deductible Loan Interest relief page")
-        thenTheUserNavigatesToTheXPage("Non-deductible Loan Interest relief")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      thenTheUserNavigatesToTheXPage("Non-deductible Loan Interest relief")
 
       And("the user selects the amount field and enters a value of 50.99")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "50.99")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "50.99")
 
       When("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Check your answers page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Check your answers")
 
       When("the user clicks on the change link in position 1")
-        whenTheUserClicksOnTheChangeLinkInPositionX()  // auto-chosen (score=1.00, CYAStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserClicksOnTheXLink() [0.90] (CommonStepDefSteps.scala) pattern: the user clicks on the (.*) link
+      whenTheUserClicksOnTheChangeLinkInPositionX("1")
 
       Then("the user should be redirected to the Non-deductible loan interest from investments into property letting partnerships page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Non-deductible loan interest from investments into property letting partnerships")
 
       When("the user selects the amount field and enters a value of 110.44")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "110.44")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "110.44")
 
       When("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Check your answers page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Check your answers")
 
       When("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       When("the user navigates to the Qualifying loan interest relief page")
-        thenTheUserNavigatesToTheXPage("Qualifying loan interest relief")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      thenTheUserNavigatesToTheXPage("Qualifying loan interest relief")
 
       And("the user selects the amount field and enters a value of 120.44")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "120.44")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "120.44")
 
       When("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Check your answers page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Check your answers")
 
       When("the user clicks on the change link in position 1")
-        whenTheUserClicksOnTheChangeLinkInPositionX()  // auto-chosen (score=1.00, CYAStepDefSteps.scala)
-        // --- Other possible matches ---
-        // whenTheUserClicksOnTheXLink() [0.90] (CommonStepDefSteps.scala) pattern: the user clicks on the (.*) link
+      whenTheUserClicksOnTheChangeLinkInPositionX("1")
 
       Then("the user should be redirected to the Qualifying loan interest payable in the year page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Qualifying loan interest payable in the year")
 
       When("the user selects the amount field and enters a value of 125.44")
-        whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "125.44")  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserSelectsTheXFieldAndEntersAValueOfX("amount", "125.44")
 
       When("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
       Then("the user should be redirected to the Check your answers page")
-        thenTheUserShouldBeRedirectedToTheXPage("")  // auto-chosen (score=0.92, CommonStepDefSteps.scala)
-        // --- Other possible matches ---
-        // thenTheUserShouldBeRedirectedToXPage() [0.91] (CommonStepDefSteps.scala) pattern: the user should be redirected to "(.*)" page
+      thenTheUserShouldBeRedirectedToTheXPage("Check your answers")
 
       When("the user clicks the continue button")
-        whenTheUserClicksTheXButton()  // auto-chosen (score=1.00, CommonStepDefSteps.scala)
+      whenTheUserClicksTheXButton("continue")
 
     }
   }

@@ -157,7 +157,7 @@ object CommonStepDefSteps extends PageObject {
   }
 
   // ^the user clicks the (.*) checkbox$
-  def whenTheUserClicksTheXCheckbox(): Unit = {
+  def whenTheUserClicksTheXCheckbox(): Unit = { //old
     checkboxTitle: String =>
       CommonPageOld.clickOnCheckbox(checkboxTitle)
   }
@@ -166,8 +166,8 @@ object CommonStepDefSteps extends PageObject {
   }
 
   // ^the user clicks the following checkboxes:$
-  def whenTheUserClicksTheFollowingCheckboxes(checkboxTitles: DataTable): Unit = {
-    checkboxTitles.asList(classOf[String]).forEach { checkboxTitle =>
+  def whenTheUserClicksTheFollowingCheckboxes(checkboxTitles:  Seq[String]): Unit = {
+    checkboxTitles.foreach { checkboxTitle =>
           CommonPageOld.clickOnCheckbox(checkboxTitle)
         }
   }
@@ -378,6 +378,7 @@ object CommonStepDefSteps extends PageObject {
 
   // ^the user should be redirected to the "(.*)" page under self employment$
   def thenTheUserShouldBeRedirectedToTheXPageUnderSelfEmployment(title: String): Unit = {
+
     Driver.instance.getTitle.replace("\u00A0", " ") should be(s"$title - $selfEmployment - $govUkExtension")
   }
 

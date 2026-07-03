@@ -19,32 +19,28 @@ package uk.gov.hmrc.test.ui.specs
 import uk.gov.hmrc.test.ui.specs.tags.MVP
 import uk.gov.hmrc.test.ui.steps.AuthStepDefSteps._
 import uk.gov.hmrc.test.ui.steps.CommonStepDefSteps._
+import uk.gov.hmrc.test.ui.util.UserLogin
 
 @MVP
 class StateBenefitsSpec extends BaseSpec {
 
-  val individualLoginDetails: Seq[Map[String, String]] = Seq(
-    Map("Redirect url" -> "/EOY/start"),
-    Map("Credential Strength" -> "strong"),
-    Map("Confidence Level" -> "250"),
-    Map("Affinity Group" -> "Individual"),
-    Map("Nino" -> "AC160000B"),
-    Map("Enrolment Key 1" -> "HMRC-MTD-IT"),
-    Map("Identifier Name 1" -> "MTDITID"),
-    Map("Identifier Value 1" -> "1234567890")
+  private val individualUser: UserLogin = UserLogin(
+    redirectUrl = "/EOY/start",
+    nino = "AC160000B",
+    enrolmentKey1 = "HMRC-MTD-IT",
+    identifierName1 = "MTDITID",
+    identifierValue1 = "1234567890"
   )
 
-  val agentUser: Seq[Map[String, String]] = Seq(
-    Map("Redirect url" -> "/test-only/EOY/additional-parameters?ClientNino=AC160000B&ClientMTDID=1234567890"),
-    Map("Credential Strength" -> "strong"),
-    Map("Confidence Level" -> "250"),
-    Map("Affinity Group" -> "Agent"),
-    Map("Enrolment Key 1" -> "HMRC-MTD-IT"),
-    Map("Identifier Name 1" -> "MTDITID"),
-    Map("Identifier Value 1" -> "1234567890"),
-    Map("Enrolment Key 2" -> "HMRC-AS-AGENT"),
-    Map("Identifier Name 2" -> "AgentReferenceNumber"),
-    Map("Identifier Value 2" -> "XARN1234567")
+  private val agentUser: UserLogin = UserLogin(
+    redirectUrl = "/test-only/EOY/additional-parameters?ClientNino=AC160000B&ClientMTDID=1234567890",
+    affinityGroup = "Agent",
+    enrolmentKey1 = "HMRC-MTD-IT",
+    identifierName1 = "MTDITID",
+    identifierValue1 = "1234567890",
+    enrolmentKey2 = "HMRC-AS-AGENT",
+    identifierName2 = "AgentReferenceNumber",
+    identifierValue2 = "XARN1234567"
   )
 
   Feature("State Benefits Journeys - Income Tax Submission") {
@@ -52,7 +48,7 @@ class StateBenefitsSpec extends BaseSpec {
   //--------------------------------------Individual-------------------------------------//
     Scenario("Individual User with pre populated State Benefits data - In Year Deductions") {
       When("the user logs into the service with the following details")
-      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualLoginDetails)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser)
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
       thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -91,7 +87,7 @@ class StateBenefitsSpec extends BaseSpec {
 
     Scenario("Individual User adds Jobseeker’s Allowance in session data EOY") {
       When("the user logs into the service with the following details")
-      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualLoginDetails)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser)
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
       thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -214,7 +210,7 @@ class StateBenefitsSpec extends BaseSpec {
 
     Scenario("Individual User edits Jobseeker’s Allowance in session data EOY") {
       When("the user logs into the service with the following details")
-      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualLoginDetails)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser)
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
       thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -394,7 +390,7 @@ class StateBenefitsSpec extends BaseSpec {
 
     Scenario("Individual User checks flow is correct for EOY") {
       When("the user logs into the service with the following details")
-      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualLoginDetails)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser)
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
       thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -861,48 +857,48 @@ class StateBenefitsSpec extends BaseSpec {
     }
   //-----------------------------Employment Support Allowance-----------------------------//
   //--------------------------------------Individual--------------------------------------//
-       Scenario("Individual User with pre populated State Benefits data - Employment Support Allowance - In Year Deductions") {
-         When("the user logs into the service with the following details")
-           givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualLoginDetails)
-    
-         Then("the user should be redirected to Update and submit an Income Tax Return page")
-           thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
-    
-         When("the user clicks the continue button")
-           whenTheUserClicksTheXButton("continue")
-    
-         Then("the user should be redirected to the Your Income Tax Return page")
-           thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
-    
-         When("the user clicks on the State benefits link")
-           whenTheUserClicksOnTheXLink("State benefits")
-    
-         Then("the user should be redirected to the State benefits page")
-           thenTheUserShouldBeRedirectedToTheXPage("State benefits")
-    
-         When("the user clicks on the Employment and Support Allowance link")
-           whenTheUserClicksOnTheXLink("Employment and Support Allowance")
-    
-         Then("the user should be redirected to the Employment and Support Allowance page")
-           thenTheUserShouldBeRedirectedToTheXPage("Employment and Support Allowance")
-    
-         When("the user clicks on the first view link")
-           whenTheUserClicksOnTheXLink("first view")
-    
-         Then("the user should be redirected to the Review Employment and Support Allowance claim page")
-           thenTheUserShouldBeRedirectedToTheXPage("Review Employment and Support Allowance claim")
-    
-         When("the user clicks the state benefit save and continue button")
-           whenTheUserClicksTheXButton("state benefit save and continue")
-    
-         Then("the user should be redirected to the Employment and Support Allowance page")
-           thenTheUserShouldBeRedirectedToTheXPage("Employment and Support Allowance")
-    
-       }
+    Scenario("Individual User with pre populated State Benefits data - Employment Support Allowance - In Year Deductions") {
+     When("the user logs into the service with the following details")
+       givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser)
+
+     Then("the user should be redirected to Update and submit an Income Tax Return page")
+       thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
+
+     When("the user clicks the continue button")
+       whenTheUserClicksTheXButton("continue")
+
+     Then("the user should be redirected to the Your Income Tax Return page")
+       thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
+
+     When("the user clicks on the State benefits link")
+       whenTheUserClicksOnTheXLink("State benefits")
+
+     Then("the user should be redirected to the State benefits page")
+       thenTheUserShouldBeRedirectedToTheXPage("State benefits")
+
+     When("the user clicks on the Employment and Support Allowance link")
+       whenTheUserClicksOnTheXLink("Employment and Support Allowance")
+
+     Then("the user should be redirected to the Employment and Support Allowance page")
+       thenTheUserShouldBeRedirectedToTheXPage("Employment and Support Allowance")
+
+     When("the user clicks on the first view link")
+       whenTheUserClicksOnTheXLink("first view")
+
+     Then("the user should be redirected to the Review Employment and Support Allowance claim page")
+       thenTheUserShouldBeRedirectedToTheXPage("Review Employment and Support Allowance claim")
+
+     When("the user clicks the state benefit save and continue button")
+       whenTheUserClicksTheXButton("state benefit save and continue")
+
+     Then("the user should be redirected to the Employment and Support Allowance page")
+       thenTheUserShouldBeRedirectedToTheXPage("Employment and Support Allowance")
+
+    }
 
     Scenario("Individual User adds Employment and Support Allowance in session data EOY") {
       When("the user logs into the service with the following details")
-      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualLoginDetails)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser)
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
       thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -1025,7 +1021,7 @@ class StateBenefitsSpec extends BaseSpec {
 
     Scenario("Individual User edits Employment and Support Allowance in session data EOY") {
       When("the user logs into the service with the following details")
-      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualLoginDetails)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser)
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
       thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -1203,44 +1199,43 @@ class StateBenefitsSpec extends BaseSpec {
 
     }
   //--------------------------------------Agent--------------------------------------//
-       Scenario("Agent User with pre populated State benefits data - Employer Support Allowance - Check client’s State benefits In Year Deductions") {
-         When("the user logs into the service with the following details")
-            givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUser)
-    
-         Then("the user should be redirected to Update and submit an Income Tax Return page")
-           thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
-    
-         When("the user clicks the continue button")
-           whenTheUserClicksTheXButton("continue")
-    
-         Then("the user should be redirected to the Your client’s Income Tax Return page")
-           thenTheUserShouldBeRedirectedToTheXPage("Your client’s Income Tax Return")
-    
-         When("the user clicks on the State benefits link")
-           whenTheUserClicksOnTheXLink("State benefits")
-    
-         Then("the user should be redirected to the State benefits page")
-           thenTheUserShouldBeRedirectedToTheXPage("State benefits")
-    
-         When("the user clicks on the Employment and Support Allowance link")
-           whenTheUserClicksOnTheXLink("Employment and Support Allowance")
-    
-         Then("the user should be redirected to the Employment and Support Allowance page")
-           thenTheUserShouldBeRedirectedToTheXPage("Employment and Support Allowance")
-    
-         When("the user clicks on the first view link")
-           whenTheUserClicksOnTheXLink("first view")
-    
-         Then("the user should be redirected to the Review Employment and Support Allowance claim page")
-           thenTheUserShouldBeRedirectedToTheXPage("Review Employment and Support Allowance claim")
-    
-         When("the user clicks the state benefit save and continue button")
-           whenTheUserClicksTheXButton("state benefit save and continue")
-    
-         Then("the user should be redirected to the Employment and Support Allowance page")
-           thenTheUserShouldBeRedirectedToTheXPage("Employment and Support Allowance")
-    
-       }
+    Scenario("Agent User with pre populated State benefits data - Employer Support Allowance - Check client’s State benefits In Year Deductions") {
+      When("the user logs into the service with the following details")
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUser)
+
+      Then("the user should be redirected to Update and submit an Income Tax Return page")
+      thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
+
+      When("the user clicks the continue button")
+      whenTheUserClicksTheXButton("continue")
+
+      Then("the user should be redirected to the Your client’s Income Tax Return page")
+      thenTheUserShouldBeRedirectedToTheXPage("Your client’s Income Tax Return")
+
+      When("the user clicks on the State benefits link")
+      whenTheUserClicksOnTheXLink("State benefits")
+
+      Then("the user should be redirected to the State benefits page")
+      thenTheUserShouldBeRedirectedToTheXPage("State benefits")
+
+      When("the user clicks on the Employment and Support Allowance link")
+      whenTheUserClicksOnTheXLink("Employment and Support Allowance")
+
+      Then("the user should be redirected to the Employment and Support Allowance page")
+      thenTheUserShouldBeRedirectedToTheXPage("Employment and Support Allowance")
+
+      When("the user clicks on the first view link")
+      whenTheUserClicksOnTheXLink("first view")
+
+      Then("the user should be redirected to the Review Employment and Support Allowance claim page")
+      thenTheUserShouldBeRedirectedToTheXPage("Review Employment and Support Allowance claim")
+
+      When("the user clicks the state benefit save and continue button")
+      whenTheUserClicksTheXButton("state benefit save and continue")
+
+      Then("the user should be redirected to the Employment and Support Allowance page")
+      thenTheUserShouldBeRedirectedToTheXPage("Employment and Support Allowance")
+    }
 
     Scenario("Agent User adds Employment and Support Allowance in session data EOY") {
       When("the user logs into the service with the following details")

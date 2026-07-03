@@ -16,71 +16,39 @@
 
 package uk.gov.hmrc.test.ui.specs
 
-/*
- * Copyright 2026 HM Revenue & Customs
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import uk.gov.hmrc.test.ui.specs.tags.MVP
 import uk.gov.hmrc.test.ui.steps.AuthStepDefSteps._
 import uk.gov.hmrc.test.ui.steps.CommonStepDefSteps._
+import uk.gov.hmrc.test.ui.util.UserLogin
 
 @MVP
 class CharitiesSpec extends BaseSpec {
 
-  def individualUser(returning: Boolean = false): Seq[Map[String, String]] = Seq(
-    Map("Redirect url" -> "/InYear/start"),
-    Map("Credential Strength" -> "strong"),
-    Map("Confidence Level" -> "250"),
-    Map("Affinity Group" -> "Individual"),
-    Map("Nino" -> (if (returning) "AA123459A" else "AA123456A")),
-    Map("Enrolment Key 1" -> "HMRC-MTD-IT"),
-    Map("Identifier Name 1" -> "MTDITID"),
-    Map("Identifier Value 1" -> (if (returning) "1234567891" else "1234567890"))
+  private def individualUserInYear(nino: String, mtdItId: String): UserLogin = UserLogin(
+    redirectUrl = "/InYear/start",
+    nino = nino,
+    enrolmentKey1 = "HMRC-MTD-IT",
+    identifierName1 = "MTDITID",
+    identifierValue1 = mtdItId
   )
 
-  def agentUser(returning: Boolean = false): Seq[Map[String, String]] = Seq(
-    Map("Redirect url" -> s"/test-only/InYear/additional-parameters?ClientNino=${if (returning) "AA123459A" else "AA123457A"}&ClientMTDID=1234567890"),
-    Map("Credential Strength" -> "weak"),
-    Map("Confidence Level" -> "250"),
-    Map("Affinity Group" -> "Agent"),
-    Map("Enrolment Key 1" -> "HMRC-MTD-IT"),
-    Map("Identifier Name 1" -> "MTDITID"),
-    Map("Identifier Value 1" -> "1234567890"),
-    Map("Enrolment Key 2" -> "HMRC-AS-AGENT"),
-    Map("Identifier Name 2" -> "AgentReferenceNumber"),
-    Map("Identifier Value 2" -> "XARN1234567")
-  )
-
-  val agentUserWithPriorData: Seq[Map[String, String]] = Seq(
-    Map("Redirect url" -> "/test-only/InYear/additional-parameters?ClientNino=AA123459A&ClientMTDID=1234567893"),
-    Map("Credential Strength" -> "weak"),
-    Map("Confidence Level" -> "250"),
-    Map("Affinity Group" -> "Agent"),
-    Map("Enrolment Key 1" -> "HMRC-MTD-IT"),
-    Map("Identifier Name 1" -> "MTDITID"),
-    Map("Identifier Value 1" -> "1234567893"),
-    Map("Enrolment Key 2" -> "HMRC-AS-AGENT"),
-    Map("Identifier Name 2" -> "AgentReferenceNumber"),
-    Map("Identifier Value 2" -> "XARN1234567")
+  private def agentUserInYear(clientNino: String, clientMtdItId: String = "1234567890"): UserLogin = UserLogin(
+    redirectUrl = s"/test-only/InYear/additional-parameters?ClientNino=$clientNino&ClientMTDID=$clientMtdItId",
+    credentialStrength = "weak",
+    affinityGroup = "Agent",
+    enrolmentKey1 = "HMRC-MTD-IT",
+    identifierName1 = "MTDITID",
+    identifierValue1 = clientMtdItId,
+    enrolmentKey2 = "HMRC-AS-AGENT",
+    identifierName2 = "AgentReferenceNumber",
+    identifierValue2 = "XARN1234567"
   )
 
   Feature("Charities Journeys - Income Tax Submission") {
 
     Scenario("Minimal flow - Individual User - Charities") {
       When("the user logs into the service with the following details")
-      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser())
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUserInYear(nino = "AA123456A", mtdItId = "1234567890"))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
       thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -166,7 +134,7 @@ class CharitiesSpec extends BaseSpec {
 
     Scenario("Maximal flow - Agent User - Charities") {
       When("the user logs into the service with the following details")
-      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUser())
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUserInYear(clientNino = "AA123457A"))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
       thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -462,7 +430,7 @@ class CharitiesSpec extends BaseSpec {
 
     Scenario("Account Removal flow - Agent User - Charities") {
       When("the user logs into the service with the following details")
-      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUser())
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUserInYear(clientNino = "AA123457A"))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
       thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -849,7 +817,7 @@ class CharitiesSpec extends BaseSpec {
 
     Scenario("Returning flow - Individual User, Review & change - Charities") {
       When("the user logs into the service with the following details")
-      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser(returning = true))
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUserInYear(nino = "AA123459A", mtdItId =  "1234567891"))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
       thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -1106,7 +1074,7 @@ class CharitiesSpec extends BaseSpec {
 
     Scenario("Returning flow - Agent User - Charities") {
       When("the user logs into the service with the following details")
-      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUser(returning = true))
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUserInYear(clientNino = "AA123459A"))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
       thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -1342,7 +1310,7 @@ class CharitiesSpec extends BaseSpec {
 
     Scenario("Individual User with No Prior Gift Aid Data adds Gift Aid in tailoring but then states they did not receive Gift Aid income") {
       When("the user logs into the service with the following details")
-      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser())
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUserInYear(nino = "AA123456A", mtdItId = "1234567890"))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
       thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -1401,7 +1369,7 @@ class CharitiesSpec extends BaseSpec {
 
     Scenario("Agent User with Prior Gift Aid Data states their client did not receive gift aid income") {
       When("the user logs into the service with the following details")
-      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUserWithPriorData)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUserInYear(clientNino = "AA123459A", clientMtdItId = "1234567893"))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
       thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")

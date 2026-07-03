@@ -19,87 +19,36 @@ package uk.gov.hmrc.test.ui.specs
 import uk.gov.hmrc.test.ui.specs.tags.MVP
 import uk.gov.hmrc.test.ui.steps.AuthStepDefSteps._
 import uk.gov.hmrc.test.ui.steps.CommonStepDefSteps._
+import uk.gov.hmrc.test.ui.util.UserLogin
 
 @MVP
 class InterestSpec extends BaseSpec {
 
-  val individualUserOne = Seq(
-      Map("Redirect url" -> "/InYear/start"),
-      Map("Credential Strength" -> "strong"),
-      Map("Confidence Level" -> "250"),
-      Map("Affinity Group" -> "Individual"),
-      Map("Nino" -> "AA123456A"),
-      Map("Enrolment Key 1" -> "HMRC-MTD-IT"),
-      Map("Identifier Name 1" -> "MTDITID"),
-      Map("Identifier Value 1" -> "1234567890")
-    )
+  private def individualUser(nino: String, mtdItId: String = "1234567890", inYear: Boolean): UserLogin = UserLogin(
+    redirectUrl = if (inYear) "/InYear/start" else "/EOY/start",
+    nino = nino,
+    enrolmentKey1 = "HMRC-MTD-IT",
+    identifierName1 = "MTDITID",
+    identifierValue1 = mtdItId
+  )
 
-    val agentUserOne = Seq(
-      Map("Redirect url" -> "/test-only/InYear/additional-parameters?ClientNino=AA123457A&ClientMTDID=1234567890"),
-      Map("Credential Strength" -> "weak"),
-      Map("Confidence Level" -> "250"),
-      Map("Affinity Group" -> "Agent"),
-      Map("Enrolment Key 1" -> "HMRC-MTD-IT"),
-      Map("Identifier Name 1" -> "MTDITID"),
-      Map("Identifier Value 1" -> "1234567890"),
-      Map("Enrolment Key 2" -> "HMRC-AS-AGENT"),
-      Map("Identifier Name 2" -> "AgentReferenceNumber"),
-      Map("Identifier Value 2" -> "XARN1234567")
-    )
-
-    val agentUserTwo = Seq(
-      Map("Redirect url" -> "/test-only/InYear/additional-parameters?ClientNino=AA123456A&ClientMTDID=1234567890"),
-      Map("Credential Strength" -> "weak"),
-      Map("Confidence Level" -> "250"),
-      Map("Affinity Group" -> "Agent"),
-      Map("Enrolment Key 1" -> "HMRC-MTD-IT"),
-      Map("Identifier Name 1" -> "MTDITID"),
-      Map("Identifier Value 1" -> "1234567890"),
-      Map("Enrolment Key 2" -> "HMRC-AS-AGENT"),
-      Map("Identifier Name 2" -> "AgentReferenceNumber"),
-      Map("Identifier Value 2" -> "XARN1234567")
-    )
-
-    val individualUserTwo = Seq(
-      Map("Redirect url" -> "/InYear/start"),
-      Map("Credential Strength" -> "strong"),
-      Map("Confidence Level" -> "250"),
-      Map("Affinity Group" -> "Individual"),
-      Map("Nino" -> "AA123459A"),
-      Map("Enrolment Key 1" -> "HMRC-MTD-IT"),
-      Map("Identifier Name 1" -> "MTDITID"),
-      Map("Identifier Value 1" -> "1234567890")
-    )
-
-    val individualUserThree = Seq(
-      Map("Redirect url" -> "/EOY/start"),
-      Map("Credential Strength" -> "strong"),
-      Map("Confidence Level" -> "250"),
-      Map("Affinity Group" -> "Individual"),
-      Map("Nino" -> "AA000002A"),
-      Map("Enrolment Key 1" -> "HMRC-MTD-IT"),
-      Map("Identifier Name 1" -> "MTDITID"),
-      Map("Identifier Value 1" -> "1234567890")
-    )
-
-    val agentUserThree = Seq(
-      Map("Redirect url" -> "/test-only/EOY/additional-parameters?ClientNino=AA000002A&ClientMTDID=1234567893"),
-      Map("Credential Strength" -> "weak"),
-      Map("Confidence Level" -> "250"),
-      Map("Affinity Group" -> "Agent"),
-      Map("Enrolment Key 1" -> "HMRC-MTD-IT"),
-      Map("Identifier Name 1" -> "MTDITID"),
-      Map("Identifier Value 1" -> "1234567893"),
-      Map("Enrolment Key 2" -> "HMRC-AS-AGENT"),
-      Map("Identifier Name 2" -> "AgentReferenceNumber"),
-      Map("Identifier Value 2" -> "XARN1234567")
-    )
+  private def agentUser(clientNino: String, clientMtdItId: String, inYear: Boolean): UserLogin = UserLogin(
+    redirectUrl = s"/test-only/${if (inYear) "InYear" else "EOY"}/additional-parameters?ClientNino=$clientNino&ClientMTDID=$clientMtdItId",
+    credentialStrength = "weak",
+    affinityGroup = "Agent",
+    enrolmentKey1 = "HMRC-MTD-IT",
+    identifierName1 = "MTDITID",
+    identifierValue1 = clientMtdItId,
+    enrolmentKey2 = "HMRC-AS-AGENT",
+    identifierName2 = "AgentReferenceNumber",
+    identifierValue2 = "XARN1234567"
+  )
 
   Feature("Interest Journeys - Income Tax Submission") {
 
     Scenario("Minimal flow - Individual User - Interest") {
       When("the user logs into the service with the following details")
-      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUserOne)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser(nino = "AA123456A", inYear = true))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
       thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -180,7 +129,7 @@ class InterestSpec extends BaseSpec {
 
     Scenario("Maximal flow - Agent User - Interest") {
       When("the user logs into the service with the following details")
-      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUserOne)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUser(clientNino = "AA123457A", clientMtdItId = "1234567890", inYear = true))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
       thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -399,7 +348,7 @@ class InterestSpec extends BaseSpec {
 
     Scenario("Account Removal flow - Agent User  - Interest") {
       When("the user logs into the service with the following details")
-      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUserTwo)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUser(clientNino = "AA123456A", clientMtdItId = "1234567890", inYear = true))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
       thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -636,7 +585,7 @@ class InterestSpec extends BaseSpec {
 
     Scenario("Returning flow - Individual User with prior UK Untaxed & Taxed Interest, Review & change - Interest") {
       When("the user logs into the service with the following details")
-      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUserTwo)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser(nino = "AA123459A", inYear = true))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
       thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -765,7 +714,7 @@ class InterestSpec extends BaseSpec {
 
     Scenario("Individual user with taxed/untaxed interest for a previous tax year, chooses a previous account for both") {
       When("the user logs into the service with the following details")
-      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUserThree)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser(nino = "AA000002A", inYear = false))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
       thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -900,7 +849,7 @@ class InterestSpec extends BaseSpec {
 
     Scenario("Agent user with taxed/untaxed interest for a previous tax year, chooses new accounts for both") {
       When("the user logs into the service with the following details")
-      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUserThree)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUser(clientNino = "AA000002A", clientMtdItId = "1234567893", inYear = false))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
       thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -1041,7 +990,7 @@ class InterestSpec extends BaseSpec {
 
     Scenario("Individual User with No Prior Interest Data adds Interest in tailoring but then states they did not receive Interest income") {
       When("the user logs into the service with the following details")
-      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUserOne)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser(nino = "AA123456A", inYear = true))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
       thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -1104,7 +1053,7 @@ class InterestSpec extends BaseSpec {
 
     Scenario("Agent User with Prior Interest Data states their client did not receive interest income") {
       When("the user logs into the service with the following details")
-      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUserThree)
+      givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUser(clientNino = "AA000002A", clientMtdItId = "1234567893", inYear = false))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
       thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")

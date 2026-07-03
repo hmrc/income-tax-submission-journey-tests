@@ -16,46 +16,43 @@
 
 package uk.gov.hmrc.test.ui.specs
 
-import uk.gov.hmrc.test.ui.specs.tags.{Ignore, MVP}
+import uk.gov.hmrc.test.ui.specs.tags.MVP
 import uk.gov.hmrc.test.ui.steps.AuthStepDefSteps._
 import uk.gov.hmrc.test.ui.steps.CommonStepDefSteps._
+import uk.gov.hmrc.test.ui.util.UserLogin
 
 @MVP
 class XXutilsSpec extends BaseSpec {
 
-  val supportingAgentUser: Seq[Map[String, String]] = Seq(
-    Map("Redirect url" -> "/test-only/InYear/additional-parameters?ClientNino=AC160000B&ClientMTDID=1234567890"),
-    Map("Credential Strength" -> "weak"),
-    Map("Confidence Level" -> "250"),
-    Map("Affinity Group" -> "Agent"),
-    Map("Enrolment Key 1" -> "HMRC-AS-AGENT"),
-    Map("Identifier Name 1" -> "AgentReferenceNumber"),
-    Map("Identifier Value 1" -> "XARN1234567"),
-    Map("Delegated Enrolment Key" -> "HMRC-MTD-IT-SUPP"),
-    Map("Delegated Identifier Name" -> "MTDITID"),
-    Map("Delegated Identifier Value" -> "1234567890"),
-    Map("Delegated Auth Rule" -> "mtd-it-auth-supp")
-  )
-  val agentUser: Seq[Map[String, String]] = Seq(
-    Map("Redirect url" -> "/test-only/InYear/additional-parameters?ClientNino=AA123456A&ClientMTDID=1234567890"),
-    Map("Credential Strength" -> "weak"),
-    Map("Confidence Level" -> "250"),
-    Map("Affinity Group" -> "Agent"),
-    Map("Enrolment Key 1" -> "HMRC-AS-AGENT"),
-    Map("Identifier Name 1" -> "AgentReferenceNumber"),
-    Map("Identifier Value 1" -> "XARN1234567")
-  )
-  val individualUser: Seq[Map[String, String]] = Seq(
-    Map("Redirect url" -> "/InYear/start"),
-    Map("Credential Strength" -> "strong"),
-    Map("Confidence Level" -> "250"),
-    Map("Affinity Group" -> "Individual"),
-    Map("Nino" -> "AA123459A"),
-    Map("Enrolment Key 1" -> "HMRC-MTD-IT"),
-    Map("Identifier Name 1" -> "MTDITID"),
-    Map("Identifier Value 1" -> "1234567890")
+  private val individualUser: UserLogin = UserLogin(
+    redirectUrl = "/InYear/start",
+    nino = "AA123459A",
+    enrolmentKey1 = "HMRC-MTD-IT",
+    identifierName1 = "MTDITID",
+    identifierValue1 = "1234567890"
   )
 
+  private val agentUser: UserLogin = UserLogin(
+    redirectUrl = "/test-only/InYear/additional-parameters?ClientNino=AA123456A&ClientMTDID=1234567890",
+    credentialStrength = "weak",
+    affinityGroup = "Agent",
+    enrolmentKey2 = "HMRC-AS-AGENT",
+    identifierName2 = "AgentReferenceNumber",
+    identifierValue2 = "XARN1234567"
+  )
+
+  private val supportingAgentUser: UserLogin = UserLogin(
+    redirectUrl = "/test-only/InYear/additional-parameters?ClientNino=AC160000B&ClientMTDID=1234567890",
+    credentialStrength = "weak",
+    affinityGroup = "Agent",
+    enrolmentKey1 = "HMRC-AS-AGENT",
+    identifierName1 = "AgentReferenceNumber",
+    identifierValue1 = "XARN1234567",
+    delegatedEnrolmentKey = "HMRC-MTD-IT-SUPP",
+    delegatedIdentifierName = "MTDITID",
+    delegatedIdentifierValue = "1234567890",
+    delegatedAuthRule       = "mtd-it-auth-supp"
+  )
 
   Feature("Util Journeys - Income Tax Submission") {
 

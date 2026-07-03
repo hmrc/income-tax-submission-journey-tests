@@ -16,70 +16,34 @@
 
 package uk.gov.hmrc.test.ui.specs
 
-import uk.gov.hmrc.test.ui.specs.tags.{MVP, Wip}
+import uk.gov.hmrc.test.ui.specs.tags.MVP
 import uk.gov.hmrc.test.ui.steps.AuthStepDefSteps._
 import uk.gov.hmrc.test.ui.steps.CommonStepDefSteps._
 import uk.gov.hmrc.test.ui.steps.CYAStepDefSteps._
+import uk.gov.hmrc.test.ui.util.UserLogin
 
 
 @MVP
 class CisSpec extends BaseSpec {
 
-  val individualUserInYearNoPriorData: Seq[Map[String, String]] = Seq(
-    Map("Redirect url" -> "/InYear/start"),
-    Map("Credential Strength" -> "strong"),
-    Map("Confidence Level" -> "250"),
-    Map("Affinity Group" -> "Individual"),
-    Map("Nino" -> "AC152222B"),
-    Map("Enrolment Key 1" -> "HMRC-MTD-IT"),
-    Map("Identifier Name 1" -> "MTDITID"),
-    Map("Identifier Value 1" -> "1234567890")
-  )
-  val individualUserNoCisData: Seq[Map[String, String]] = Seq(
-    Map("Redirect url" -> "/EOY/start"),
-    Map("Credential Strength" -> "strong"),
-    Map("Confidence Level" -> "250"),
-    Map("Affinity Group" -> "Individual"),
-    Map("Nino" -> "AC151111B"),
-    Map("Enrolment Key 1" -> "HMRC-MTD-IT"),
-    Map("Identifier Name 1" -> "MTDITID"),
-    Map("Identifier Value 1" -> "1234567890")
-  )
-  val individualUser: Seq[Map[String, String]] = Seq(
-    Map("Redirect url" -> "/EOY/start"),
-    Map("Credential Strength" -> "strong"),
-    Map("Confidence Level" -> "250"),
-    Map("Affinity Group" -> "Individual"),
-    Map("Nino" -> "AC150000B"),
-    Map("Enrolment Key 1" -> "HMRC-MTD-IT"),
-    Map("Identifier Name 1" -> "MTDITID"),
-    Map("Identifier Value 1" -> "1234567890")
+  private def individualUser(nino: String, mtdItId: String = "1234567890", inYear: Boolean): UserLogin = UserLogin(
+    redirectUrl = if (inYear) "/InYear/start" else "/EOY/start",
+    nino = nino,
+    enrolmentKey1 = "HMRC-MTD-IT",
+    identifierName1 = "MTDITID",
+    identifierValue1 = mtdItId
   )
 
-  val agentUser: Seq[Map[String, String]] = Seq(
-    Map("Redirect url" -> "/test-only/EOY/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567890"),
-    Map("Credential Strength" -> "strong"),
-    Map("Confidence Level" -> "250"),
-    Map("Affinity Group" -> "Agent"),
-    Map("Enrolment Key 1" -> "HMRC-MTD-IT"),
-    Map("Identifier Name 1" -> "MTDITID"),
-    Map("Identifier Value 1" -> "1234567890"),
-    Map("Enrolment Key 2" -> "HMRC-AS-AGENT"),
-    Map("Identifier Name 2" -> "AgentReferenceNumber"),
-    Map("Identifier Value 2" -> "XARN1234567")
-  )
-
-  val agentUserTwo: Seq[Map[String, String]] = Seq(
-    Map("Redirect url" -> "/test-only/EOY/additional-parameters?ClientNino=AC150000B&ClientMTDID=1234567891"),
-    Map("Credential Strength" -> "strong"),
-    Map("Confidence Level" -> "250"),
-    Map("Affinity Group" -> "Agent"),
-    Map("Enrolment Key 1" -> "HMRC-MTD-IT"),
-    Map("Identifier Name 1" -> "MTDITID"),
-    Map("Identifier Value 1" -> "1234567891"),
-    Map("Enrolment Key 2" -> "HMRC-AS-AGENT"),
-    Map("Identifier Name 2" -> "AgentReferenceNumber"),
-    Map("Identifier Value 2" -> "XARN1234567")
+  private def agentUser(clientNino: String, clientMtdItId: String): UserLogin = UserLogin(
+    redirectUrl = s"/test-only/EOY/additional-parameters?ClientNino=$clientNino&ClientMTDID=$clientMtdItId",
+    credentialStrength = "weak",
+    affinityGroup = "Agent",
+    enrolmentKey1 = "HMRC-MTD-IT",
+    identifierName1 = "MTDITID",
+    identifierValue1 = clientMtdItId,
+    enrolmentKey2 = "HMRC-AS-AGENT",
+    identifierName2 = "AgentReferenceNumber",
+    identifierValue2 = "XARN1234567"
   )
 
   Feature("Construction Industry Scheme (CIS) Journeys - Income Tax Submission") {
@@ -88,7 +52,7 @@ class CisSpec extends BaseSpec {
 
     Scenario("Individual User with pre populated CIS data - Check contractor's CIS In Year Deductions") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser)
+        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser(nino = "AC150000B", inYear = false))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
         thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -160,7 +124,7 @@ class CisSpec extends BaseSpec {
 
     Scenario("Individual User make changes in CYA page for EOY") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser)
+        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser(nino = "AC150000B", inYear = false))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
         thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -291,7 +255,7 @@ class CisSpec extends BaseSpec {
 
     Scenario("Individual User adds CIS in session data EOY") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser)
+        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser(nino = "AC150000B", inYear = false))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
         thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -375,7 +339,7 @@ class CisSpec extends BaseSpec {
 
     Scenario("Individual User adds another CIS deductions data EOY") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser)
+        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser(nino = "AC150000B", inYear = false))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
         thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -456,7 +420,7 @@ class CisSpec extends BaseSpec {
 
     Scenario("Individual User - Check back links for adding new contractor EOY") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser)
+        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser(nino = "AC150000B", inYear = false))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
         thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -582,7 +546,7 @@ class CisSpec extends BaseSpec {
 
     Scenario("Individual User - Check back links for adding new CIS deductions for existing contractor EOY") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser)
+        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser(nino = "AC150000B", inYear = false))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
         thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -705,7 +669,7 @@ class CisSpec extends BaseSpec {
 
     Scenario("Individual user adds new CIS deductions data to a contractor with no existing CIS history EOY") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser)
+        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser(nino = "AC150000B", inYear = false))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
         thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -890,7 +854,7 @@ class CisSpec extends BaseSpec {
 
     Scenario("Agent User with pre populated CIS data - Check client's CIS In Year Deductions") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUser)
+        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUser(clientNino = "AC150000B", clientMtdItId = "1234567890"))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
         thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -942,7 +906,7 @@ class CisSpec extends BaseSpec {
 
     Scenario("Agent User make changes in CYA page for EOY") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUser)
+        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUser(clientNino = "AC150000B", clientMtdItId = "1234567890"))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
         thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -1073,7 +1037,7 @@ class CisSpec extends BaseSpec {
 
     Scenario("Agent User adds CIS in session data EOY") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUser)
+        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUser(clientNino = "AC150000B", clientMtdItId = "1234567890"))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
         thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -1157,7 +1121,7 @@ class CisSpec extends BaseSpec {
 
     Scenario("Agent User adds another CIS deductions data EOY") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUser)
+        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUser(clientNino = "AC150000B", clientMtdItId = "1234567890"))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
         thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -1238,7 +1202,7 @@ class CisSpec extends BaseSpec {
 
     Scenario("Agent User - Check back links for adding new contractor EOY") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUserTwo)
+        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUser(clientNino = "AC150000B", clientMtdItId = "1234567891"))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
         thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -1364,7 +1328,7 @@ class CisSpec extends BaseSpec {
 
     Scenario("Agent User - Check back links for adding new CIS deductions for existing contractor EOY") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUser)
+        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUser(clientNino = "AC150000B", clientMtdItId = "1234567890"))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
         thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -1487,7 +1451,7 @@ class CisSpec extends BaseSpec {
 
     Scenario("Agent user adds new CIS deductions data to a contractor with no existing CIS history EOY") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUser)
+        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUser(clientNino = "AC150000B", clientMtdItId = "1234567890"))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
         thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -1670,7 +1634,7 @@ class CisSpec extends BaseSpec {
 //------------- agent user ends ---------------------//
     Scenario("Individual User - A user with no cis data answers yes on gateway question page and changes to no to remove data") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUserNoCisData)
+        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser(nino = "AC151111B", inYear = false))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
         thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -1781,7 +1745,7 @@ class CisSpec extends BaseSpec {
 
     Scenario("Individual User - A user with cis data answers yes on gateway question page") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser)
+        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser(nino = "AC150000B", inYear = false))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
         thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -1823,7 +1787,7 @@ class CisSpec extends BaseSpec {
 
     Scenario("In Year - user cannot update cis if there is prior data") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser)
+        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser(nino = "AC150000B", inYear = false))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
         thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -1847,7 +1811,7 @@ class CisSpec extends BaseSpec {
 
     Scenario("In Year - user cannot update cis if there is no prior data") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUserInYearNoPriorData)
+        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser(nino = "AC152222B", inYear = true))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
         thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
@@ -1886,7 +1850,7 @@ class CisSpec extends BaseSpec {
 
     Scenario("Individual User adds new Contractor Details - Back button Error") {
       When("the user logs into the service with the following details")
-        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser)
+        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser(nino = "AC150000B", inYear = false))
 
       Then("the user should be redirected to Update and submit an Income Tax Return page")
         thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")

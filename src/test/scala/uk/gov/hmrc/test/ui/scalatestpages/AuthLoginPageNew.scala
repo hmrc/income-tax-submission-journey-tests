@@ -21,7 +21,7 @@ import org.openqa.selenium.{By, WebElement}
 import uk.gov.hmrc.selenium.webdriver.Driver
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 
-object AuthLoginPage {
+object AuthLoginPageNew {
   val url: String = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
 
   def getRedirectUrl: WebElement = Driver.instance.findElement(By.name("redirectionUrl"))

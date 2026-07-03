@@ -24,7 +24,7 @@ import uk.gov.hmrc.test.ui.conf.TaxYearHelper
 
 import java.util
 
-trait BasePage extends TaxYearHelper {
+trait BasePageNew extends TaxYearHelper {
   val url: String = ""
 
   var redirectUrl: String = ""

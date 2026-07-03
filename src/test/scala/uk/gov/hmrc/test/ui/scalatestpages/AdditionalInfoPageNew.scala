@@ -18,8 +18,20 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 
-object PersonalIncomePage {
+object AdditionalInfoPageNew {
 
-  lazy val url: String = TestConfiguration.url("personal-income-tax-submission-frontend")
+  lazy val baseUrl: String = TestConfiguration.url("income-tax-additional-info-frontend")
+
+  def businessReliefsUrl(taxYear: Int): String =
+    baseUrl + s"/$taxYear/business-reliefs"
+
+  def postCessationTradeReliefUrl(taxYear: Int): String =
+    businessReliefsUrl(taxYear) + "/post-cessation-trade-relief/relief-claimed"
+
+  def nonDeductibleLoanInterestReliefUrl(taxYear: Int): String =
+    businessReliefsUrl(taxYear) + "/non-deductible-loan-interest/relief-claimed"
+
+  def qualifyingLoanInterestReliefUrl(taxYear: Int): String =
+    businessReliefsUrl(taxYear) + "/qualifying-loan-interest/relief-claimed"
 
 }

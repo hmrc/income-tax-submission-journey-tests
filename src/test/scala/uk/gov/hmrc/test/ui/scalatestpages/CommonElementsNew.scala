@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.pages
 import org.openqa.selenium.By
 import org.scalatest.matchers.should.Matchers
 
-trait CommonElements extends BasePage with Matchers {
+trait CommonElementsNew extends BasePageNew with Matchers {
 
   def load(key: String): By =
     elements(key)

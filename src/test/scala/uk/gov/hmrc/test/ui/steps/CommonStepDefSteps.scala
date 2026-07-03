@@ -1,9 +1,25 @@
+/*
+ * Copyright 2026 HM Revenue & Customs
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package uk.gov.hmrc.test.ui.steps
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.selenium.webdriver.Driver
 import uk.gov.hmrc.test.ui.pages.CommonPage._
-import uk.gov.hmrc.test.ui.pages.{AdditionalInfoPage, AuthLoginPage, CommonPage}
+import uk.gov.hmrc.test.ui.pages.{AdditionalInfoPageNew, AuthLoginPageNew, CommonPage}
 
 object CommonStepDefSteps {
 
@@ -197,7 +213,7 @@ object CommonStepDefSteps {
           case "tax view" => s"http://localhost:9302/update-and-submit-income-tax-return/$taxYear/income-tax-return-overview"
           case "tax overview for individuals" => "http://localhost:9081/report-quarterly/income-and-expenses/view/tax-overview"
           case "tax overview for agents" => "http://localhost:9081/report-quarterly/income-and-expenses/view/agents/tax-overview"
-          case "auth login" => AuthLoginPage.url
+          case "auth login" => AuthLoginPageNew.url
           //TODO remove pension summary pages when link on overview page is created
           case "pensions summary page" => s"http://localhost:9321/update-and-submit-income-tax-return/pensions/$taxYearEOY/pensions-summary"
           case "pensions summary page in year" => s"http://localhost:9321/update-and-submit-income-tax-return/pensions/$taxYear/pensions-summary"
@@ -207,9 +223,9 @@ object CommonStepDefSteps {
           case "Payments into pensions" => s"http://localhost:10007/update-and-submit-income-tax-return/tailored-return/$taxYearEOY/payments-pensions"
           case "Rental income" => s"http://localhost:10007/update-and-submit-income-tax-return/tailored-return/$taxYearEOY/property-pensions-investments/rental-income"
           //TODO: Remove the below when the Business Tax Reliefs have been added to Tailor Return and Tax Return Overview
-          case "Post-cessation trade relief" => AdditionalInfoPage.postCessationTradeReliefUrl(taxYear)
-          case "Non-deductible Loan Interest relief" => AdditionalInfoPage.nonDeductibleLoanInterestReliefUrl(taxYear)
-          case "Qualifying loan interest relief" => AdditionalInfoPage.qualifyingLoanInterestReliefUrl(taxYear)
+          case "Post-cessation trade relief" => AdditionalInfoPageNew.postCessationTradeReliefUrl(taxYear)
+          case "Non-deductible Loan Interest relief" => AdditionalInfoPageNew.nonDeductibleLoanInterestReliefUrl(taxYear)
+          case "Qualifying loan interest relief" => AdditionalInfoPageNew.qualifyingLoanInterestReliefUrl(taxYear)
           case _ => fail("Invalid url input parameter")
         }
         Driver.instance.navigate().to(expectedUrl)
@@ -320,9 +336,8 @@ object CommonStepDefSteps {
   }
 
   // ^the user clicks on the change scheme link in position (.*)$
-  def whenTheUserClicksOnTheChangeSchemeLinkInPositionX(): Unit = {
-    position: String =>
-        CommonPage.clickBySelector(s"div > dl > div:nth-child($position) > dd.hmrc-add-to-a-list__change > a")
+  def whenTheUserClicksOnTheChangeSchemeLinkInPositionX(position: String): Unit = {
+    CommonPage.clickBySelector(s"div > dl > div:nth-child($position) > dd.hmrc-add-to-a-list__change > a")
   }
 
   // ^the user should be redirected to the "(.*)" page under self employment$

@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pages
 
 import org.scalatest.wordspec.AnyWordSpecLike
 
-class CommonElementsSpec extends AnyWordSpecLike {
+class CommonElementsSpecNew extends AnyWordSpecLike {
 
   "elements" should {
     "not have duplicates" in {

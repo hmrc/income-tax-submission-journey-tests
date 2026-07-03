@@ -23,7 +23,7 @@ import uk.gov.hmrc.test.ui.conf.TestConfiguration
 
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 
-object CommonPage extends BasePage with CommonElements {
+object CommonPageNew extends BasePageNew with CommonElementsNew {
   override val url: String = TestConfiguration.url("income-tax-submission-frontend")
 
   def clickOnLink(linkName: String): Unit = {

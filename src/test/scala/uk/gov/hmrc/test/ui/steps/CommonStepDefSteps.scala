@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.steps
 import org.openqa.selenium.By
 import uk.gov.hmrc.selenium.webdriver.Driver
 import uk.gov.hmrc.test.ui.pages.CommonPage._
-import uk.gov.hmrc.test.ui.pages.{AdditionalInfoPageNew, AuthLoginPageNew, CommonPage}
+import uk.gov.hmrc.test.ui.pages.{AdditionalInfoPage, AuthLoginPage, CommonPage}
 
 object CommonStepDefSteps {
 
@@ -213,7 +213,7 @@ object CommonStepDefSteps {
           case "tax view" => s"http://localhost:9302/update-and-submit-income-tax-return/$taxYear/income-tax-return-overview"
           case "tax overview for individuals" => "http://localhost:9081/report-quarterly/income-and-expenses/view/tax-overview"
           case "tax overview for agents" => "http://localhost:9081/report-quarterly/income-and-expenses/view/agents/tax-overview"
-          case "auth login" => AuthLoginPageNew.url
+          case "auth login" => AuthLoginPage.url
           //TODO remove pension summary pages when link on overview page is created
           case "pensions summary page" => s"http://localhost:9321/update-and-submit-income-tax-return/pensions/$taxYearEOY/pensions-summary"
           case "pensions summary page in year" => s"http://localhost:9321/update-and-submit-income-tax-return/pensions/$taxYear/pensions-summary"
@@ -223,9 +223,9 @@ object CommonStepDefSteps {
           case "Payments into pensions" => s"http://localhost:10007/update-and-submit-income-tax-return/tailored-return/$taxYearEOY/payments-pensions"
           case "Rental income" => s"http://localhost:10007/update-and-submit-income-tax-return/tailored-return/$taxYearEOY/property-pensions-investments/rental-income"
           //TODO: Remove the below when the Business Tax Reliefs have been added to Tailor Return and Tax Return Overview
-          case "Post-cessation trade relief" => AdditionalInfoPageNew.postCessationTradeReliefUrl(taxYear)
-          case "Non-deductible Loan Interest relief" => AdditionalInfoPageNew.nonDeductibleLoanInterestReliefUrl(taxYear)
-          case "Qualifying loan interest relief" => AdditionalInfoPageNew.qualifyingLoanInterestReliefUrl(taxYear)
+          case "Post-cessation trade relief" => AdditionalInfoPage.postCessationTradeReliefUrl(taxYear)
+          case "Non-deductible Loan Interest relief" => AdditionalInfoPage.nonDeductibleLoanInterestReliefUrl(taxYear)
+          case "Qualifying loan interest relief" => AdditionalInfoPage.qualifyingLoanInterestReliefUrl(taxYear)
           case _ => fail("Invalid url input parameter")
         }
         Driver.instance.navigate().to(expectedUrl)

@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.steps
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.selenium.webdriver.Driver
-import uk.gov.hmrc.test.ui.pages.AuthLoginPageNew._
+import uk.gov.hmrc.test.ui.pages.AuthLoginPage._
 import uk.gov.hmrc.test.ui.pages.CommonPage
 import uk.gov.hmrc.test.ui.pages.CommonPage.replaceTaxYear
 import uk.gov.hmrc.test.ui.util.UserLogin

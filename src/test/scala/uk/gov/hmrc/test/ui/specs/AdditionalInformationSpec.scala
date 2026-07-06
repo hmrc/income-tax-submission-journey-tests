@@ -824,7 +824,7 @@ class AdditionalInformationSpec extends BaseSpec {
 
     }
 
-    Scenario("Returning flow - Individual User with prior Gains Data, Reviews data") { // TODO: is this needed? it adds Gains section, checks status tag is 'Updated',  goes to add another policy but clicks back
+    Scenario("Returning flow - Individual User with prior Gains Data, Reviews data, Adds another Policy") {
       When("the user logs into the service with the following details")
       givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser(nino = "AA123459A", inYear = true))
 
@@ -1256,52 +1256,51 @@ class AdditionalInformationSpec extends BaseSpec {
 
     }
 
-    /*
-        Scenario("Returning flow - Individual User with prior Gains Data, Reviews data") { // TODO: commented outas same as Scenario on line 1277 (same name) without adding the policy
-          When("the user logs into the service with the following details")
-            givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser(nino = "AA123459A", inYear = true))
+    Scenario("Returning flow - Individual User with prior Gains Data, Reviews data") {
+      When("the user logs into the service with the following details")
+        givenTheUserLogsIntoTheServiceWithTheFollowingDetails(individualUser(nino = "AA123459A", inYear = true))
 
-          Then("the user should be redirected to Update and submit an Income Tax Return page")
-            thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
+      Then("the user should be redirected to Update and submit an Income Tax Return page")
+        thenTheUserShouldBeRedirectedToXPage("Update and submit an Income Tax Return")
 
-          When("the user clicks the continue button")
-            whenTheUserClicksTheXButton("continue")
+      When("the user clicks the continue button")
+        whenTheUserClicksTheXButton("continue")
 
-          Then("the user should be redirected to the Your Income Tax Return page")
-            thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
+      Then("the user should be redirected to the Your Income Tax Return page")
+        thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
-          When("the user clicks on the addSections link")
-            whenTheUserClicksOnTheXLink("addSections")
+      When("the user clicks on the addSections link")
+        whenTheUserClicksOnTheXLink("addSections")
 
-          Then("the user should be redirected to the Add sections to your Income Tax Return page")
-            thenTheUserShouldBeRedirectedToTheXPage("Add sections to your Income Tax Return")
+      Then("the user should be redirected to the Add sections to your Income Tax Return page")
+        thenTheUserShouldBeRedirectedToTheXPage("Add sections to your Income Tax Return")
 
-          When("the user clicks the addGains tailoring option")
-            whenTheUserClicksTheXTailoringOption("addGains")
+      When("the user clicks the addGains tailoring option")
+        whenTheUserClicksTheXTailoringOption("addGains")
 
-          And("the user clicks the continue button")
-            whenTheUserClicksTheXButton("continue")
+      And("the user clicks the continue button")
+        whenTheUserClicksTheXButton("continue")
 
-          Then("the user should be redirected to the Your Income Tax Return page")
-            thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
+      Then("the user should be redirected to the Your Income Tax Return page")
+        thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
-          And("the status on the page is Updated Tag")
-            thenTheStatusOnThePageIsX("Updated Tag")  // auto-chosen (score=0.90, CYAStepDefSteps.scala)
+      And("the status on the page is Updated Tag")
+        thenTheStatusOnThePageIsX("Updated Tag")
 
-          When("the user clicks on the Gains from policies and contracts link")
-            whenTheUserClicksOnTheXLink("Gains from policies and contracts")
+      When("the user clicks on the Gains from policies and contracts link")
+        whenTheUserClicksOnTheXLink("Gains from policies and contracts")
 
-          Then("the user should be redirected to the Your policies page")
-            thenTheUserShouldBeRedirectedToTheXPage("Your policies")
+      Then("the user should be redirected to the Your policies page")
+        thenTheUserShouldBeRedirectedToTheXPage("Your policies")
 
-          When("the user clicks the return to overview button")
-            whenTheUserClicksTheXButton("return to overview")
+      When("the user clicks the return to overview button")
+        whenTheUserClicksTheXButton("return to overview")
 
-          Then("the user should be redirected to the Your Income Tax Return page")
-            thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
+      Then("the user should be redirected to the Your Income Tax Return page")
+        thenTheUserShouldBeRedirectedToTheXPage("Your Income Tax Return")
 
-        }
-    */
+    }
+
     Scenario("Maximal flow - Agent User - Stock Dividends") {
       When("the user logs into the service with the following details")
       givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUser(clientNino = "AA123457A", clientMtdItId = "1234567890", inYear = false))

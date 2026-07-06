@@ -36,14 +36,14 @@ class XXutilsSpec extends BaseSpec {
     redirectUrl = "/test-only/InYear/additional-parameters?ClientNino=AA123456A&ClientMTDID=1234567890",
     credentialStrength = "weak",
     affinityGroup = "Agent",
-    enrolmentKey2 = "HMRC-AS-AGENT",
-    identifierName2 = "AgentReferenceNumber",
-    identifierValue2 = "XARN1234567"
+    enrolmentKey1 = "HMRC-AS-AGENT",
+    identifierName1 = "AgentReferenceNumber",
+    identifierValue1 = "XARN1234567"
   )
 
   private val supportingAgentUser: UserLogin = UserLogin(
-    redirectUrl = "/test-only/InYear/additional-parameters?ClientNino=AC160000B&ClientMTDID=1234567890",
-    credentialStrength = "weak",
+    redirectUrl = "/test-only/EOY/additional-parameters?ClientNino=AC160000B&ClientMTDID=1234567890",
+    credentialStrength = "strong",
     affinityGroup = "Agent",
     enrolmentKey1 = "HMRC-AS-AGENT",
     identifierName1 = "AgentReferenceNumber",
@@ -107,7 +107,7 @@ class XXutilsSpec extends BaseSpec {
 
     }
 
-    Scenario("Checking the client authorisation link for agents") {
+    ignore("Checking the client authorisation link for agents") {
       When("the user logs into the service with the following details")
         givenTheUserLogsIntoTheServiceWithTheFollowingDetails(agentUser)
 

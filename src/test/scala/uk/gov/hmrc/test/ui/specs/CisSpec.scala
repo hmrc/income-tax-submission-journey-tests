@@ -36,7 +36,7 @@ class CisSpec extends BaseSpec {
 
   private def agentUser(clientNino: String, clientMtdItId: String): UserLogin = UserLogin(
     redirectUrl = s"/test-only/EOY/additional-parameters?ClientNino=$clientNino&ClientMTDID=$clientMtdItId",
-    credentialStrength = "weak",
+    credentialStrength = "strong",
     affinityGroup = "Agent",
     enrolmentKey1 = "HMRC-MTD-IT",
     identifierName1 = "MTDITID",

@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.specs.property_rar_combined
 
 import uk.gov.hmrc.test.ui.specs.BaseSpec
-import uk.gov.hmrc.test.ui.specs.tags.{MVP, Wip}
+import uk.gov.hmrc.test.ui.specs.tags.classTags.{MVP, Wip}
 import uk.gov.hmrc.test.ui.steps.AuthStepDefSteps._
 import uk.gov.hmrc.test.ui.steps.CommonStepDefSteps._
 import uk.gov.hmrc.test.ui.util.UserLogin

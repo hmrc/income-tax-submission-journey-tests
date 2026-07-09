@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specs.tags;
+package uk.gov.hmrc.test.ui.specs.tags.classTags;
 
 import java.lang.annotation.*;
 import org.scalatest.TagAnnotation;
@@ -22,4 +22,4 @@ import org.scalatest.TagAnnotation;
 @TagAnnotation
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE, ElementType.METHOD})
-public @interface Wip {}
+public @interface MVP {}

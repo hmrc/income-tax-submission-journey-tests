@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.specs
 
-import uk.gov.hmrc.test.ui.specs.tags.MVP
+import uk.gov.hmrc.test.ui.specs.tags.classTags.MVP
 import uk.gov.hmrc.test.ui.steps.AuthStepDefSteps._
 import uk.gov.hmrc.test.ui.steps.CommonStepDefSteps._
 import uk.gov.hmrc.test.ui.util.UserLogin

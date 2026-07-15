@@ -33,14 +33,14 @@ object CommonPage extends BasePage with CommonElements {
 
   def clickOnRadioButton(radioButtonBoolean: String): Unit = {
     val selector: By = load(radioButtonBoolean)
-    if (!driver.findElement(selector).isSelected) {
+    if (!Driver.instance.findElement(selector).isSelected) {
       clickOn(selector)
     }
   }
 
   def deselectRadioButton(checkboxes: String): Unit = {
     val selector: By = load(checkboxes)
-    if (driver.findElement(selector).isSelected) {
+    if (Driver.instance.findElement(selector).isSelected) {
       clickOn(selector)
     }
   }
@@ -51,7 +51,7 @@ object CommonPage extends BasePage with CommonElements {
   }
 
   def checkValue(valueTextBox: String, expectedValue: String): Boolean =
-    driver.findElement(load(valueTextBox)).getAttribute("value") == expectedValue
+    Driver.instance.findElement(load(valueTextBox)).getAttribute("value") == expectedValue
 
   def clickOnButton(buttonTitle: String): Unit = {
     val selector: By = load(buttonTitle)
@@ -64,7 +64,7 @@ object CommonPage extends BasePage with CommonElements {
   }
 
   def clickAllCheckboxes(): Unit = {
-    val checkboxes = driver.findElements(By.cssSelector("input[type=checkbox]"))
+    val checkboxes = Driver.instance.findElements(By.cssSelector("input[type=checkbox]"))
     checkboxes.forEach { checkbox =>
       if (!checkbox.isSelected) {
         checkbox.click()
@@ -87,7 +87,7 @@ object CommonPage extends BasePage with CommonElements {
   }
 
   def containsText(selector: By, textToContain: String): Boolean = {
-    val elements = driver.findElements(selector)
+    val elements = Driver.instance.findElements(selector)
     elements.asScala.exists(_.getText.contains(textToContain))
   }
 
@@ -99,7 +99,7 @@ object CommonPage extends BasePage with CommonElements {
 
   def clickOnAgentCheckbox(): Unit = {
     val selector: By = load("agentCheckboxV&C")
-    if (!driver.findElement(selector).isSelected) {
+    if (!Driver.instance.findElement(selector).isSelected) {
       clickOn(selector)
     }
   }

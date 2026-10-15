@@ -11,7 +11,7 @@ This migration uses *converter/injector* scripts already provided. Read the full
 > **Note:** Because all features use shared pages and steps, *Step 2: Convert Step Definitions* and *Step 3: Convert Page Objects* do not need to be run again — they have already been converted.
 
 ## Example
-`run_tests.sh` has already been migrated. See tests tagged with `@MVP` for reference.
+`run_tests.sh` have been migrated as part of this PR (ORD-758). See tests tagged with `@MVP` for reference.
 
 ## Instructions
 
@@ -35,20 +35,21 @@ This migration uses *converter/injector* scripts already provided. Read the full
 
 2. **Page redirects:** Eg. `Then("the user should be redirected to <page title> page")`
    - These will likely use the correct converted method but will be missing the string parameter (the page title).
-   - Recommended: use Copilot inline suggestions in VS Code to fill these in (does not use credits). Or ask Copilot to write a script to do this.
+   - If allowed: use VSCode Copilot inline suggestions to fill these in (does not use credits). Or ask GitHub Copilot to write a script to do this.
 
 ### Tags
-- ScalaTest tags are applied at the **scenario level**. To tag an entire feature/class (as in Cucumber feature files), use or create new tags under `specs/tags/classTags`.
+- ScalaTest tags are applied at the **scenario level**. To tag an entire feature/class (as in the Cucumber feature files), use or create new tags under `specs/tags/classTags`.
 
 ## Cucumber Runners
-| Runner                | Tags                          |
-|-----------------------|-------------------------------|
-| Employment Runner     | `"@employment and not @ignore"` |
-| Pensions Runner       | `"@pensions and not @ignore"`    |
-| Property Runner       | `"@property and not @ignore"`                             |
-| SelfEmployment Runner | `"@SelfEmployment and not @ignore"`                             |
-| TailoringBeta Runner  | `"@TYR_private_beta and not @ignore"`                             |
-| Tailoring Runner      | `"@TYR and not @ignore and not @about_you_private_beta"`                             |
-| VC Runner             | `"@V&C and not @ignore"`                             |
-| Wip Runner            | `"@wip and not @ignore"`                             |
+| Runner                | Tags                                                     |
+|-----------------------|----------------------------------------------------------|
+| ~~Runner~~            | ~~`"@MVP and not @ignore"`~~                             |
+| Employment Runner     | `"@employment and not @ignore"`                          |
+| Pensions Runner       | `"@pensions and not @ignore"`                            |
+| Property Runner       | `"@property and not @ignore"`                            |
+| SelfEmployment Runner | `"@SelfEmployment and not @ignore"`                      |
+| TailoringBeta Runner  | `"@TYR_private_beta and not @ignore"`                    |
+| Tailoring Runner      | `"@TYR and not @ignore and not @about_you_private_beta"` |
+| VC Runner             | `"@V&C and not @ignore"`                                 |
+| Wip Runner            | `"@wip and not @ignore"`                                 |
 

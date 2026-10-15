@@ -16,17 +16,14 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import io.cucumber.datatable.DataTable
-import org.openqa.selenium.{By, WebElement}
 import org.openqa.selenium.support.ui.Select
-import org.scalatest.matchers.should.Matchers
+import org.openqa.selenium.{By, WebElement}
 import uk.gov.hmrc.selenium.webdriver.Driver
 import uk.gov.hmrc.test.ui.conf.TaxYearHelper
-import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
 import java.util
 
-trait BasePage extends Matchers with BrowserDriver with TaxYearHelper {
+trait BasePage extends TaxYearHelper {
   val url: String = ""
 
   var redirectUrl: String = ""
@@ -56,58 +53,58 @@ trait BasePage extends Matchers with BrowserDriver with TaxYearHelper {
     }
   }
 
-  def useDataTable(data: DataTable): Unit = {
-    var firstColumn: String = ""
-    val secondColumn: Int = 1
-    val tableContent: util.List[util.Map[String, String]] = data.asMaps(classOf[String], classOf[String])
-
-    def getColumnValue(row: Int) = data.row(row).get(secondColumn)
-
-    for (row <- 0 to tableContent.toArray().length) {
-      firstColumn = data.row(row).get(0)
-      firstColumn match {
-        case "Redirect url" => redirectUrl = replaceTaxYear(getColumnValue(row))
-        case "Credential Strength" => credentialStrength = getColumnValue(row)
-        case "Confidence Level" => confidenceLevel = getColumnValue(row)
-        case "Affinity Group" => affinityGroup = getColumnValue(row)
-        case "Nino" => niNumber = getColumnValue(row)
-        case "Enrolment Key 1" => enrolmentKeyOne = getColumnValue(row)
-        case "Identifier Name 1" => identifierNameOne = getColumnValue(row)
-        case "Identifier Value 1" => identifierValueOne = getColumnValue(row)
-        case "Enrolment Key 2" => enrolmentKeyTwo = getColumnValue(row)
-        case "Identifier Name 2" => identifierNameTwo = getColumnValue(row)
-        case "Identifier Value 2" => identifierValueTwo = getColumnValue(row)
-        case "Delegated Enrolment Key" => delegatedEnrolmentKey = getColumnValue(row)
-        case "Delegated Identifier Name" => delegatedIdentifierName = getColumnValue(row)
-        case "Delegated Identifier Value" => delegatedIdentifierValue = getColumnValue(row)
-        case "Delegated Auth Rule" => delegatedAuthRule = getColumnValue(row)
-        case _ =>
-      }
-    }
-  }
+//  def useDataTable(data: DataTable): Unit = {
+//    var firstColumn: String = ""
+//    val secondColumn: Int = 1
+//    val tableContent: util.List[util.Map[String, String]] = data.asMaps(classOf[String], classOf[String])
+//
+//    def getColumnValue(row: Int) = data.row(row).get(secondColumn)
+//
+//    for (row <- 0 to tableContent.toArray().length) {
+//      firstColumn = data.row(row).get(0)
+//      firstColumn match {
+//        case "Redirect url" => redirectUrl = replaceTaxYear(getColumnValue(row))
+//        case "Credential Strength" => credentialStrength = getColumnValue(row)
+//        case "Confidence Level" => confidenceLevel = getColumnValue(row)
+//        case "Affinity Group" => affinityGroup = getColumnValue(row)
+//        case "Nino" => niNumber = getColumnValue(row)
+//        case "Enrolment Key 1" => enrolmentKeyOne = getColumnValue(row)
+//        case "Identifier Name 1" => identifierNameOne = getColumnValue(row)
+//        case "Identifier Value 1" => identifierValueOne = getColumnValue(row)
+//        case "Enrolment Key 2" => enrolmentKeyTwo = getColumnValue(row)
+//        case "Identifier Name 2" => identifierNameTwo = getColumnValue(row)
+//        case "Identifier Value 2" => identifierValueTwo = getColumnValue(row)
+//        case "Delegated Enrolment Key" => delegatedEnrolmentKey = getColumnValue(row)
+//        case "Delegated Identifier Name" => delegatedIdentifierName = getColumnValue(row)
+//        case "Delegated Identifier Value" => delegatedIdentifierValue = getColumnValue(row)
+//        case "Delegated Auth Rule" => delegatedAuthRule = getColumnValue(row)
+//        case _ =>
+//      }
+//    }
+//  }
 
   def clickOn(selector: By): Unit = {
-    driver.findElement(selector).click()
+    Driver.instance.findElement(selector).click()
   }
 
   def select(selector: By, value: String): Unit = {
-    val dropdown = new Select(driver.findElement(selector))
+    val dropdown = new Select(Driver.instance.findElement(selector))
     dropdown.selectByVisibleText(value)
   }
 
   def attemptToClickOn(selector: By): Unit = {
-    if (driver.findElements(selector).size() > 0) driver.findElement(selector).click()
+    if (Driver.instance.findElements(selector).size() > 0) Driver.instance.findElement(selector).click()
   }
 
   def sendKeys(selector: By, value: String): Unit = {
-    driver.findElement(selector).clear()
-    driver.findElement(selector).sendKeys(value)
+    Driver.instance.findElement(selector).clear()
+    Driver.instance.findElement(selector).sendKeys(value)
   }
 
   def elementExists(selector: By): Boolean =
-    !driver.findElements(selector).isEmpty
+    !Driver.instance.findElements(selector).isEmpty
 
   def navigateBack(): Unit =
-    driver.navigate().back()
+    Driver.instance.navigate().back()
 
 }
